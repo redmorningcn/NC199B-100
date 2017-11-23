@@ -1,0 +1,3026 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       16/Nov/2017  10:15:03
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\SPI_CS5463_AC.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\SPI_CS5463_AC.c -D
+#        USE_STDPERIPH_DRIVER -D _STM32F10X_HD -D STM32F10X_CL -D DEBUG -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\SPI_CS5463_AC.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\SPI_CS5463_AC.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\Driver\SPI_CS5463_AC.c
+      1          /******************** (C) COPYRIGHT 2013 www.nanche.com  ********************
+      2          * 文件名  ：SPI_CS5463_AC.c
+      3          * 描述    ：实现CS5463的底层函数
+      4          * 实验平台：STM32神舟开发板
+      5          * 标准库  ：STM32F10x_StdPeriph_Driver V3.5.0
+      6          * 作者    ：zw
+      7          *******************************************************************************/
+      8          
+      9          /* Includes ------------------------------------------------------------------*/
+     10          #include "SZ_STM32F107VC_LIB.h"
+     11          #include "DELAY.h"
+     12          #include "POWER_MACRO.h"
+     13          #include "SPI_CS5463_AC.h"
+     14          #include "FM24CL64.h"
+     15          #include <includes.h>
+     16          
+     17          #define SPI_CS5463_AC_SCK_PIN           GPIO_Pin_2             /* PE.02 */
+     18          #define SPI_CS5463_AC_SCK_PIN_NUM       2          
+     19          #define SPI_CS5463_AC_SCK_GPIO_PORT     GPIOE
+     20          #define SPI_CS5463_AC_SCK_GPIO_CLK      RCC_APB2Periph_GPIOE
+     21          
+     22          #define SPI_CS5463_AC_MISO_PIN          GPIO_Pin_3             /* PE.03 */
+     23          #define SPI_CS5463_AC_MISO_PIN_NUM      3 
+     24          #define SPI_CS5463_AC_MISO_GPIO_PORT    GPIOE
+     25          #define SPI_CS5463_AC_MISO_GPIO_CLK     RCC_APB2Periph_GPIOE
+     26          
+     27          #define SPI_CS5463_AC_MOSI_PIN          GPIO_Pin_5             /* PE.05 */
+     28          #define SPI_CS5463_AC_MOSI_PIN_NUM      5 
+     29          #define SPI_CS5463_AC_MOSI_GPIO_PORT    GPIOE
+     30          #define SPI_CS5463_AC_MOSI_GPIO_CLK     RCC_APB2Periph_GPIOE
+     31          
+     32          #define SPI_CS5463_AC_CS_PIN            GPIO_Pin_4              /* PE.04 */
+     33          #define SPI_CS5463_AC_CS_PIN_NUM        4 
+     34          #define SPI_CS5463_AC_CS_GPIO_PORT      GPIOE
+     35          #define SPI_CS5463_AC_CS_GPIO_CLK       RCC_APB2Periph_GPIOE
+     36          
+     37          #define SPI_RST_AC_PIN                  GPIO_Pin_6  		    /* PE.06 */
+     38          #define SPI_RST_AC_PIN_NUM              6
+     39          #define SPI_RST_AC_GPIO_PORT            GPIOE
+     40          #define SPI_RST_AC_GPIO_CLK             RCC_APB2Periph_GPIOE
+     41          
+     42          #define E1_AC_PIN                       GPIO_Pin_0				/* PE.00 */
+     43          #define E1_AC_PIN_NUM                   0
+     44          #define E1_AC_TIMER_PORT                GPIOE
+     45          #define E1_AC_TIMER_CLK                 RCC_APB2Periph_GPIOE
+     46          
+     47          #define E2_AC_PIN                       GPIO_Pin_2				 /* PD.02 */
+     48          #define E2_AC_PIN_NUM                   2
+     49          #define E2_AC_TIMER_PORT                GPIOD
+     50          #define E2_AC_TIMER_CLK                 RCC_APB2Periph_GPIOD
+     51          
+     52          /*寄存器读写*/
+     53          
+     54          #define CONFIG_DATA_AC                  0x000001
+     55          #define STATUS_DATA_AC                  0x800000
+     56          #define INTMASK_DATA_AC                 0x000000
+     57          #define CTRL_DATA_AC                    0x000005
+     58          #define CYCLE_COUNT_DATA_AC             0x000FA0
+     59          
+     60          #define PULSE_RATE_DATA_AC              0x027818				   //1号样机
+     61          //#define PULSE_RATE_DATA_AC              0x027019				   //1号样机
+     62          //#define PULSE_RATE_DATA_AC              0x027D00				   //2号样机
+     63          //#define PULSE_RATE_DATA_AC              0x027819				   //型式试验
+     64          #define MODE_DATA_AC                    0x000001
+     65          //#define PULSE_RATE_DATA_AC              0x027D00				   //2号样机
+     66          
+
+   \                                 In section .bss, align 4
+     67          CONFIGSFR   configsfr_AC , configsfr_AC_RD;
+   \                     configsfr_AC:
+   \   00000000                      DS8 160
+
+   \                                 In section .bss, align 4
+   \                     configsfr_AC_RD:
+   \   00000000                      DS8 160
+     68          
+     69          /* Private macro -------------------------------------------------------------*/
+     70          /* Select SPI FLASH: Chip Select pin low  */
+     71          
+     72          //#define SPI_CS5463_AC_CS_LOW()     (Periph_BB((uint32_t) & SPI_CS5463_AC_CS_GPIO_PORT->ODR, SPI_CS5463_AC_CS_PIN_NUM) = 0)
+     73          //#define SPI_CS5463_AC_CS_HIGH()    (Periph_BB((uint32_t) & SPI_CS5463_AC_CS_GPIO_PORT->ODR, SPI_CS5463_AC_CS_PIN_NUM) = 1)
+     74          
+     75          #define SPI_CS5463_AC_CS_LOW(n)    {GPIO_ResetBits(SPI_CS5463_AC_CS_GPIO_PORT, SPI_CS5463_AC_CS_PIN),Delay(n);}
+     76          #define SPI_CS5463_AC_CS_HIGH(n)   {GPIO_SetBits(SPI_CS5463_AC_CS_GPIO_PORT, SPI_CS5463_AC_CS_PIN),Delay(n);}
+     77          
+     78          #define SPI_RST_AC_LOW()           GPIO_ResetBits(SPI_RST_AC_GPIO_PORT, SPI_RST_AC_PIN)
+     79          #define SPI_RST_AC_HIGH()          GPIO_SetBits(SPI_RST_AC_GPIO_PORT, SPI_RST_AC_PIN)
+     80          
+     81          #define SPI_CS5463_AC_SCK_LOW()    GPIO_ResetBits(SPI_CS5463_AC_SCK_GPIO_PORT,SPI_CS5463_AC_SCK_PIN)
+     82          #define SPI_CS5463_AC_SCK_HIGH()   GPIO_SetBits(SPI_CS5463_AC_SCK_GPIO_PORT,SPI_CS5463_AC_SCK_PIN)
+     83          
+     84          #define SPI_CS5463_AC_MISO_LOW()   GPIO_ResetBits(SPI_CS5463_AC_MISO_GPIO_PORT,SPI_CS5463_AC_MISO_PIN)
+     85          #define SPI_CS5463_AC_MISO_HIGH()  GPIO_SetBits(SPI_CS5463_AC_MISO_GPIO_PORT,SPI_CS5463_AC_MISO_PIN)
+     86          
+     87          #define SPI_CS5463_AC_MOSI_LOW()   GPIO_ResetBits(SPI_CS5463_AC_MOSI_GPIO_PORT,SPI_CS5463_AC_MOSI_PIN)
+     88          #define SPI_CS5463_AC_MOSI_HIGH()  GPIO_SetBits(SPI_CS5463_AC_MOSI_GPIO_PORT,SPI_CS5463_AC_MOSI_PIN)
+     89          
+     90          /* Private variables ---------------------------------------------------------*/
+     91          /* Private function prototypes -----------------------------------------------*/
+     92          /* Private functions ---------------------------------------------------------*/
+     93          extern void uartprintf(MODBUS_CH  *pch,const char *fmt, ...);
+     94          /**-----------------------------------------------------------------
+     95          * @函数名 SPI_CS5463_AC_INIT
+     96          * @功能   初始化与CS5463接口的驱动函数
+     97          * @参数   无
+     98          * @返回值 无
+     99          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    100          void SPI_AC_INIT(void)
+    101          {
+   \                     SPI_AC_INIT: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+    102              GPIO_InitTypeDef GPIO_InitStructure;
+    103              
+    104              RCC_APB2PeriphClockCmd(SPI_CS5463_AC_CS_GPIO_CLK | SPI_CS5463_AC_MOSI_GPIO_CLK |
+    105                                     SPI_CS5463_AC_MISO_GPIO_CLK | SPI_CS5463_AC_SCK_GPIO_CLK, ENABLE);
+   \   00000004   0x2101             MOVS     R1,#+1
+   \   00000006   0x2040             MOVS     R0,#+64
+   \   00000008   0x.... 0x....      BL       RCC_APB2PeriphClockCmd
+    106              
+    107              /*!< Configure SPI_CS5463_AC pins: SCK */
+    108              GPIO_InitStructure.GPIO_Pin = SPI_CS5463_AC_SCK_PIN;
+   \   0000000C   0x2004             MOVS     R0,#+4
+   \   0000000E   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    109              GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+   \   00000012   0x2003             MOVS     R0,#+3
+   \   00000014   0xF88D 0x0002      STRB     R0,[SP, #+2]
+    110              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+   \   00000018   0x2010             MOVS     R0,#+16
+   \   0000001A   0xF88D 0x0003      STRB     R0,[SP, #+3]
+    111              GPIO_Init(SPI_CS5463_AC_SCK_GPIO_PORT, &GPIO_InitStructure);
+   \   0000001E   0x.... 0x....      LDR.W    R4,??DataTable27  ;; 0x40011800
+   \   00000022   0x4669             MOV      R1,SP
+   \   00000024   0x4620             MOV      R0,R4
+   \   00000026   0x.... 0x....      BL       GPIO_Init
+    112              
+    113              /*!< Configure SPI_CS5463_AC pins: MOSI */
+    114              GPIO_InitStructure.GPIO_Pin = SPI_CS5463_AC_MOSI_PIN;			//speed和mode无需修改，故无重新赋值
+   \   0000002A   0x2020             MOVS     R0,#+32
+   \   0000002C   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    115              GPIO_Init(SPI_CS5463_AC_MOSI_GPIO_PORT, &GPIO_InitStructure);
+   \   00000030   0x4669             MOV      R1,SP
+   \   00000032   0x4620             MOV      R0,R4
+   \   00000034   0x.... 0x....      BL       GPIO_Init
+    116              
+    117              /*!< Configure SPI_CS5463_AC pins: MISO */
+    118              GPIO_InitStructure.GPIO_Pin = SPI_CS5463_AC_MISO_PIN;
+   \   00000038   0x2008             MOVS     R0,#+8
+   \   0000003A   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    119              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;          //GPIO_Mode_IPU;
+   \   0000003E   0x2004             MOVS     R0,#+4
+   \   00000040   0xF88D 0x0003      STRB     R0,[SP, #+3]
+    120              GPIO_Init(SPI_CS5463_AC_MISO_GPIO_PORT, &GPIO_InitStructure);
+   \   00000044   0x4669             MOV      R1,SP
+   \   00000046   0x4620             MOV      R0,R4
+   \   00000048   0x.... 0x....      BL       GPIO_Init
+    121              
+    122              /*!< Configure SPI_CS5463_AC_CS_PIN pin: CS5463 Chip CS pin */
+    123              GPIO_InitStructure.GPIO_Pin = SPI_CS5463_AC_CS_PIN;
+   \   0000004C   0x2010             MOVS     R0,#+16
+   \   0000004E   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    124              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+   \   00000052   0xF88D 0x0003      STRB     R0,[SP, #+3]
+    125              GPIO_Init(SPI_CS5463_AC_CS_GPIO_PORT, &GPIO_InitStructure);
+   \   00000056   0x4669             MOV      R1,SP
+   \   00000058   0x4620             MOV      R0,R4
+   \   0000005A   0x.... 0x....      BL       GPIO_Init
+    126              
+    127          	/*!< Configure SPI_CS5463_AC pins: RST */
+    128              RCC_APB2PeriphClockCmd(SPI_RST_AC_GPIO_CLK, ENABLE);
+   \   0000005E   0x2101             MOVS     R1,#+1
+   \   00000060   0x2040             MOVS     R0,#+64
+   \   00000062   0x.... 0x....      BL       RCC_APB2PeriphClockCmd
+    129          	GPIO_InitStructure.GPIO_Pin = SPI_RST_AC_PIN;
+   \   00000066   0x2040             MOVS     R0,#+64
+   \   00000068   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    130              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+   \   0000006C   0x2010             MOVS     R0,#+16
+   \   0000006E   0xF88D 0x0003      STRB     R0,[SP, #+3]
+    131              GPIO_Init(SPI_RST_AC_GPIO_PORT, &GPIO_InitStructure);
+   \   00000072   0x4669             MOV      R1,SP
+   \   00000074   0x4620             MOV      R0,R4
+   \   00000076   0x.... 0x....      BL       GPIO_Init
+    132              
+    133              //	RCC_APB2PeriphClockCmd(E1_AC_TIMER_CLK | E2_AC_TIMER_CLK , ENABLE);
+    134              //	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
+    135              //	GPIO_InitStructure.GPIO_Pin = E1_AC_PIN;
+    136              //    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    137              //    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
+    138              //    GPIO_Init(E1_AC_TIMER_PORT , &GPIO_InitStructure);
+    139              //	GPIO_Init(E2_AC_TIMER_PORT , &GPIO_InitStructure); 
+    140              /* Deselect the FLASH: Chip Select high */
+    141              SPI_CS5463_AC_CS_HIGH(1);
+   \   0000007A   0x2110             MOVS     R1,#+16
+   \   0000007C   0x4620             MOV      R0,R4
+   \   0000007E   0x.... 0x....      BL       GPIO_SetBits
+   \   00000082   0x2001             MOVS     R0,#+1
+   \   00000084   0x.... 0x....      BL       Delay
+    142          }
+   \   00000088   0xBD13             POP      {R0,R1,R4,PC}    ;; return
+    143          
+    144          /**-----------------------------------------------------------------
+    145          * @函数名 SPI_CS5463_AC_SendByte
+    146          * @功能   通过SPI总线发送一个字节数据(同时接收一个字节数据)
+    147          *         Sends a byte through the SPI interface and return the byte
+    148          *         received from the SPI bus.
+    149          * @参数   要写入的一个字节数据
+    150          * @返回值 在发数据时，MISO信号线上接收的一个字节
+    151          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    152          void SPI_CS5463_AC_SendByte(uint8_t byte)
+    153          {
+   \                     SPI_CS5463_AC_SendByte: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    154              uint8_t i;
+    155              
+    156              for(i=0;i<8;i++)
+   \   00000004   0x2500             MOVS     R5,#+0
+   \   00000006   0x.... 0x....      LDR.W    R6,??DataTable27  ;; 0x40011800
+   \   0000000A   0xE00F             B.N      ??SPI_CS5463_AC_SendByte_0
+    157          	{		
+    158          		SPI_CS5463_AC_SCK_LOW();
+    159          		Delay(10);
+    160          		if(byte & 0x80)
+    161          			SPI_CS5463_AC_MOSI_HIGH();
+    162          		else
+    163          			SPI_CS5463_AC_MOSI_LOW();
+   \                     ??SPI_CS5463_AC_SendByte_1: (+1)
+   \   0000000C   0x2120             MOVS     R1,#+32
+   \   0000000E   0x4630             MOV      R0,R6
+   \   00000010   0x.... 0x....      BL       GPIO_ResetBits
+    164          		byte = byte << 1;
+   \                     ??SPI_CS5463_AC_SendByte_2: (+1)
+   \   00000014   0x0064             LSLS     R4,R4,#+1
+    165          		Delay(5);
+   \   00000016   0x2005             MOVS     R0,#+5
+   \   00000018   0x.... 0x....      BL       Delay
+    166          		SPI_CS5463_AC_SCK_HIGH();
+   \   0000001C   0x2104             MOVS     R1,#+4
+   \   0000001E   0x4630             MOV      R0,R6
+   \   00000020   0x.... 0x....      BL       GPIO_SetBits
+    167          		Delay(10);
+   \   00000024   0x200A             MOVS     R0,#+10
+   \   00000026   0x.... 0x....      BL       Delay
+   \   0000002A   0x1C6D             ADDS     R5,R5,#+1
+   \                     ??SPI_CS5463_AC_SendByte_0: (+1)
+   \   0000002C   0x2D08             CMP      R5,#+8
+   \   0000002E   0xDA0D             BGE.N    ??SPI_CS5463_AC_SendByte_3
+   \   00000030   0x2104             MOVS     R1,#+4
+   \   00000032   0x4630             MOV      R0,R6
+   \   00000034   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000038   0x200A             MOVS     R0,#+10
+   \   0000003A   0x.... 0x....      BL       Delay
+   \   0000003E   0x0620             LSLS     R0,R4,#+24
+   \   00000040   0xD5E4             BPL.N    ??SPI_CS5463_AC_SendByte_1
+   \   00000042   0x2120             MOVS     R1,#+32
+   \   00000044   0x4630             MOV      R0,R6
+   \   00000046   0x.... 0x....      BL       GPIO_SetBits
+   \   0000004A   0xE7E3             B.N      ??SPI_CS5463_AC_SendByte_2
+    168          	}
+    169          }	
+   \                     ??SPI_CS5463_AC_SendByte_3: (+1)
+   \   0000004C   0xBD70             POP      {R4-R6,PC}       ;; return
+    170          
+    171          /**-----------------------------------------------------------------
+    172          * @函数名 SPI_CS5463_AC_ReadByte
+    173          * @功能   读取CS5463的一个字节，未包含发送读命令和起始地址
+    174          * @参数   无
+    175          * @返回值 从CS5463读取的一个字节
+    176          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    177          uint8_t SPI_CS5463_AC_ReadByte(uint8_t Command)
+    178          {
+   \                     SPI_CS5463_AC_ReadByte: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    179              uint8_t i ,result = 0x00;
+   \   00000004   0x2500             MOVS     R5,#+0
+    180          	unsigned char SDI;
+    181          	for(i=0;i<8;i++)
+   \   00000006   0x462E             MOV      R6,R5
+   \   00000008   0x.... 0x....      LDR.W    R7,??DataTable27  ;; 0x40011800
+   \   0000000C   0xE016             B.N      ??SPI_CS5463_AC_ReadByte_0
+    182          	{
+    183          		SPI_CS5463_AC_SCK_LOW();
+    184          		Delay(2);
+    185          		if (Command & 0x80)
+    186          		{
+    187          			SPI_CS5463_AC_MOSI_HIGH();
+    188          		}
+    189          		else 
+    190          			SPI_CS5463_AC_MOSI_LOW();
+   \                     ??SPI_CS5463_AC_ReadByte_1: (+1)
+   \   0000000E   0x2120             MOVS     R1,#+32
+   \   00000010   0x4638             MOV      R0,R7
+   \   00000012   0x.... 0x....      BL       GPIO_ResetBits
+    191          		Command = Command << 1;
+   \                     ??SPI_CS5463_AC_ReadByte_2: (+1)
+   \   00000016   0x0064             LSLS     R4,R4,#+1
+    192          		SPI_CS5463_AC_SCK_HIGH();
+   \   00000018   0x2104             MOVS     R1,#+4
+   \   0000001A   0x4638             MOV      R0,R7
+   \   0000001C   0x.... 0x....      BL       GPIO_SetBits
+    193          		Delay(2);
+   \   00000020   0x2002             MOVS     R0,#+2
+   \   00000022   0x.... 0x....      BL       Delay
+    194          		SDI =  GPIO_ReadInputDataBit(SPI_CS5463_AC_MISO_GPIO_PORT, SPI_CS5463_AC_MISO_PIN);
+   \   00000026   0x2108             MOVS     R1,#+8
+   \   00000028   0x4638             MOV      R0,R7
+   \   0000002A   0x.... 0x....      BL       GPIO_ReadInputDataBit
+    195          		result = result << 1;
+   \   0000002E   0x006D             LSLS     R5,R5,#+1
+   \   00000030   0xB2ED             UXTB     R5,R5
+    196          		if(SDI)
+   \   00000032   0x2800             CMP      R0,#+0
+   \   00000034   0xD001             BEQ.N    ??SPI_CS5463_AC_ReadByte_3
+    197          			result = result | 0x01;
+   \   00000036   0xF045 0x0501      ORR      R5,R5,#0x1
+   \                     ??SPI_CS5463_AC_ReadByte_3: (+1)
+   \   0000003A   0x1C76             ADDS     R6,R6,#+1
+   \                     ??SPI_CS5463_AC_ReadByte_0: (+1)
+   \   0000003C   0x2E08             CMP      R6,#+8
+   \   0000003E   0xDA0D             BGE.N    ??SPI_CS5463_AC_ReadByte_4
+   \   00000040   0x2104             MOVS     R1,#+4
+   \   00000042   0x4638             MOV      R0,R7
+   \   00000044   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000048   0x2002             MOVS     R0,#+2
+   \   0000004A   0x.... 0x....      BL       Delay
+   \   0000004E   0x0620             LSLS     R0,R4,#+24
+   \   00000050   0xD5DD             BPL.N    ??SPI_CS5463_AC_ReadByte_1
+   \   00000052   0x2120             MOVS     R1,#+32
+   \   00000054   0x4638             MOV      R0,R7
+   \   00000056   0x.... 0x....      BL       GPIO_SetBits
+   \   0000005A   0xE7DC             B.N      ??SPI_CS5463_AC_ReadByte_2
+    198          	}
+    199          	return result;
+   \                     ??SPI_CS5463_AC_ReadByte_4: (+1)
+   \   0000005C   0x4628             MOV      R0,R5
+   \   0000005E   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    200          }
+    201          
+    202          /**-----------------------------------------------------------------
+    203          * @函数名 SPI_CS5463_AC_Write
+    204          * @功能   往CS5463中写任意长度数据
+    205          * @参数   *buf 数组，len 数组长度(以字节为最小单位)
+    206          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    207          void SPI_CS5463_AC_Write(uint8_t *buf , uint8_t len)
+    208          {
+   \                     SPI_CS5463_AC_Write: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   \   00000004   0x460D             MOV      R5,R1
+    209          	uint8_t i;
+    210          	/* Select the CS5463: Chip Select low */
+    211          	SPI_CS5463_AC_CS_LOW(1);//Delay(2);
+   \   00000006   0x.... 0x....      LDR.W    R6,??DataTable27  ;; 0x40011800
+   \   0000000A   0x2110             MOVS     R1,#+16
+   \   0000000C   0x4630             MOV      R0,R6
+   \   0000000E   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000012   0x2001             MOVS     R0,#+1
+   \   00000014   0x.... 0x....      BL       Delay
+    212          	buf[0]|=0x40;
+   \   00000018   0x7820             LDRB     R0,[R4, #+0]
+   \   0000001A   0xF040 0x0040      ORR      R0,R0,#0x40
+   \   0000001E   0x7020             STRB     R0,[R4, #+0]
+    213          	for(i=0;i<len;i++)
+   \   00000020   0x2700             MOVS     R7,#+0
+   \   00000022   0xE003             B.N      ??SPI_CS5463_AC_Write_0
+    214          		SPI_CS5463_AC_SendByte(buf[i]);
+   \                     ??SPI_CS5463_AC_Write_1: (+1)
+   \   00000024   0x5D38             LDRB     R0,[R7, R4]
+   \   00000026   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+   \   0000002A   0x1C7F             ADDS     R7,R7,#+1
+   \                     ??SPI_CS5463_AC_Write_0: (+1)
+   \   0000002C   0xB2FF             UXTB     R7,R7
+   \   0000002E   0x42AF             CMP      R7,R5
+   \   00000030   0xD3F8             BCC.N    ??SPI_CS5463_AC_Write_1
+    215          	Delay(1);
+   \   00000032   0x2001             MOVS     R0,#+1
+   \   00000034   0x.... 0x....      BL       Delay
+    216          	SPI_CS5463_AC_CS_HIGH(1);
+   \   00000038   0x2110             MOVS     R1,#+16
+   \   0000003A   0x4630             MOV      R0,R6
+   \   0000003C   0x.... 0x....      BL       GPIO_SetBits
+   \   00000040   0x2001             MOVS     R0,#+1
+   \   00000042   0xE8BD 0x40F2      POP      {R1,R4-R7,LR}
+   \   00000046   0x.... 0x....      B.W      Delay
+    217          }
+    218          
+    219          /**-----------------------------------------------------------------
+    220          * @函数名 SPI_CS5463_WriteRegister
+    221          * @功能   写CS5463的寄存器
+    222          * @参数   Command为命令，DATA为数据
+    223          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    224          void SPI_CS5463_AC_WriteRegister(uint8_t Command , uint32_t DATA)
+    225          {
+   \                     SPI_CS5463_AC_WriteRegister: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    226          	uint8_t buf[4];
+    227          	/* Select the CS5463: Chip Select low */
+    228          	buf[0] = Command;
+   \   00000002   0xF88D 0x0000      STRB     R0,[SP, #+0]
+    229          	buf[1] = (DATA >> 16) & 0xFF;
+   \   00000006   0x0C08             LSRS     R0,R1,#+16
+   \   00000008   0xF88D 0x0001      STRB     R0,[SP, #+1]
+    230          	buf[2] = (DATA >> 8) & 0xFF;
+   \   0000000C   0x0A08             LSRS     R0,R1,#+8
+   \   0000000E   0xF88D 0x0002      STRB     R0,[SP, #+2]
+    231          	buf[3] = DATA & 0xFF;
+   \   00000012   0xF88D 0x1003      STRB     R1,[SP, #+3]
+    232          	SPI_CS5463_AC_Write(buf , 4);
+   \   00000016   0x2104             MOVS     R1,#+4
+   \   00000018   0x4668             MOV      R0,SP
+   \   0000001A   0x.... 0x....      BL       SPI_CS5463_AC_Write
+    233          }
+   \   0000001E   0xBD01             POP      {R0,PC}          ;; return
+    234          
+    235          /**-----------------------------------------------------------------
+    236          * @函数名 SPI_CS5463_AC_Read
+    237          * @功能   读取CS5463的寄存器
+    238          * @参数   Command：单字节命令,buf为读取到的数组
+    239          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    240          void SPI_CS5463_AC_Read(uint8_t Command , uint8_t *buf)
+    241          {
+   \                     SPI_CS5463_AC_Read: (+1)
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0x4604             MOV      R4,R0
+   \   00000006   0x460D             MOV      R5,R1
+    242          	uint8_t i;
+    243              /* Select the CS5463: Chip Select low */
+    244              SPI_CS5463_AC_CS_LOW(2);//Delay(2);
+   \   00000008   0x.... 0x....      LDR.W    R6,??DataTable27  ;; 0x40011800
+   \   0000000C   0x2110             MOVS     R1,#+16
+   \   0000000E   0x4630             MOV      R0,R6
+   \   00000010   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000014   0x2002             MOVS     R0,#+2
+   \   00000016   0x.... 0x....      BL       Delay
+    245              /* Send  instruction */
+    246              SPI_CS5463_AC_SendByte(Command);
+   \   0000001A   0x4620             MOV      R0,R4
+   \   0000001C   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    247          	for(i=1;i<4;i++)
+   \   00000020   0x2701             MOVS     R7,#+1
+   \   00000022   0xE005             B.N      ??SPI_CS5463_AC_Read_0
+    248          		buf[i] = SPI_CS5463_AC_ReadByte(0xFE);
+   \                     ??SPI_CS5463_AC_Read_1: (+1)
+   \   00000024   0x20FE             MOVS     R0,#+254
+   \   00000026   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   0000002A   0xF808 0x0005      STRB     R0,[R8, R5]
+   \   0000002E   0x1C7F             ADDS     R7,R7,#+1
+   \                     ??SPI_CS5463_AC_Read_0: (+1)
+   \   00000030   0xB2FF             UXTB     R7,R7
+   \   00000032   0x46B8             MOV      R8,R7
+   \   00000034   0xF1B8 0x0F04      CMP      R8,#+4
+   \   00000038   0xDBF4             BLT.N    ??SPI_CS5463_AC_Read_1
+    249          	buf[0] = Command;
+   \   0000003A   0x702C             STRB     R4,[R5, #+0]
+    250          	Delay(1);
+   \   0000003C   0x2001             MOVS     R0,#+1
+   \   0000003E   0x.... 0x....      BL       Delay
+    251          	SPI_CS5463_AC_CS_HIGH(2);//Delay(2);  
+   \   00000042   0x2110             MOVS     R1,#+16
+   \   00000044   0x4630             MOV      R0,R6
+   \   00000046   0x.... 0x....      BL       GPIO_SetBits
+   \   0000004A   0x2002             MOVS     R0,#+2
+   \   0000004C   0xE8BD 0x41F0      POP      {R4-R8,LR}
+   \   00000050   0x.... 0x....      B.W      Delay
+    252          }
+    253          
+    254          /**-----------------------------------------------------------------
+    255          * @函数名 SPI_CS5463_AC_ReadRegister_INT32
+    256          * @功能   读取CS5463的寄存器，得到1个3字节数据
+    257          * @参数   Command：单字节命令
+    258          * @返回   Data，3字节数据
+    259          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    260          uint32_t SPI_CS5463_AC_ReadRegister_INT32(uint8_t Command)
+    261          {
+   \                     SPI_CS5463_AC_ReadRegister_INT32: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    262          	uint32_t Data = 0;
+    263          	uint8_t Data0 = 0,Data1 = 0,Data2 = 0;
+    264              /* Select the CS5463: Chip Select low */
+    265            	SPI_CS5463_AC_CS_LOW(1);
+   \   00000004   0x.... 0x....      LDR.W    R5,??DataTable27  ;; 0x40011800
+   \   00000008   0x2110             MOVS     R1,#+16
+   \   0000000A   0x4628             MOV      R0,R5
+   \   0000000C   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000010   0x2001             MOVS     R0,#+1
+   \   00000012   0x.... 0x....      BL       Delay
+    266              /* Send  instruction */
+    267            	SPI_CS5463_AC_SendByte(Command);
+   \   00000016   0x4620             MOV      R0,R4
+   \   00000018   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    268              
+    269          	Data0 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   0000001C   0x20FE             MOVS     R0,#+254
+   \   0000001E   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   00000022   0x4604             MOV      R4,R0
+    270          	Data1 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   00000024   0x20FE             MOVS     R0,#+254
+   \   00000026   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   0000002A   0x4606             MOV      R6,R0
+    271          	Data2 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   0000002C   0x20FE             MOVS     R0,#+254
+   \   0000002E   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   00000032   0x4607             MOV      R7,R0
+    272          	Data = Data0<<16 | Data1<<8 | Data2;
+    273          	SPI_CS5463_AC_CS_HIGH(5);
+   \   00000034   0x2110             MOVS     R1,#+16
+   \   00000036   0x4628             MOV      R0,R5
+   \   00000038   0x.... 0x....      BL       GPIO_SetBits
+   \   0000003C   0x2005             MOVS     R0,#+5
+   \   0000003E   0x.... 0x....      BL       Delay
+    274          	return Data;
+   \   00000042   0x0230             LSLS     R0,R6,#+8
+   \   00000044   0xEA40 0x4004      ORR      R0,R0,R4, LSL #+16
+   \   00000048   0x4338             ORRS     R0,R7,R0
+   \   0000004A   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    275          }
+    276          
+    277          /**-----------------------------------------------------------------
+    278          * @函数名 SPI_CS5463_AC_Read_Temp_FLOAT
+    279          * @功能   读取CS5463的寄存器，得到1个浮点型数据
+    280          * @参数   Command：单字节命令
+    281          * @返回   Data，浮点型数据
+    282          * @备注   返回的的字节为-2^7,2^6到2^-16
+    283          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    284          float SPI_CS5463_AC_Read_Temp_FLOAT(uint8_t Command)
+    285          {
+   \                     SPI_CS5463_AC_Read_Temp_FLOAT: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    286          	float Data = 0;
+    287          	uint8_t Data0 = 0,Data1 = 0,Data2 = 0;
+    288              /* Select the CS5463: Chip Select low */
+    289            	SPI_CS5463_AC_CS_LOW(1);
+   \   00000004   0x.... 0x....      LDR.W    R5,??DataTable27  ;; 0x40011800
+   \   00000008   0x2110             MOVS     R1,#+16
+   \   0000000A   0x4628             MOV      R0,R5
+   \   0000000C   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000010   0x2001             MOVS     R0,#+1
+   \   00000012   0x.... 0x....      BL       Delay
+    290              /* Send  instruction */
+    291            	SPI_CS5463_AC_SendByte(Command);
+   \   00000016   0x4620             MOV      R0,R4
+   \   00000018   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    292          	
+    293          	Data0 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   0000001C   0x20FE             MOVS     R0,#+254
+   \   0000001E   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   00000022   0x4604             MOV      R4,R0
+    294          	Data1 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   00000024   0x20FE             MOVS     R0,#+254
+   \   00000026   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   0000002A   0x4606             MOV      R6,R0
+    295          	Data2 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   0000002C   0x20FE             MOVS     R0,#+254
+   \   0000002E   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   00000032   0x4607             MOV      R7,R0
+    296          	Data = ((uint8_t)((Data0>>7) & 0x01))*(-128) + (Data0 & 0x7F) + (float)Data1/256 + (float)Data2/65536;
+    297          	SPI_CS5463_AC_CS_HIGH(5);
+   \   00000034   0x2110             MOVS     R1,#+16
+   \   00000036   0x4628             MOV      R0,R5
+   \   00000038   0x.... 0x....      BL       GPIO_SetBits
+   \   0000003C   0x2005             MOVS     R0,#+5
+   \   0000003E   0x.... 0x....      BL       Delay
+    298          	return Data;
+   \   00000042   0xF004 0x007F      AND      R0,R4,#0x7F
+   \   00000046   0x09E1             LSRS     R1,R4,#+7
+   \   00000048   0xEBA0 0x10C1      SUB      R0,R0,R1, LSL #+7
+   \   0000004C   0x.... 0x....      BL       __aeabi_i2f
+   \   00000050   0x4604             MOV      R4,R0
+   \   00000052   0x4630             MOV      R0,R6
+   \   00000054   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000058   0xF04F 0x516E      MOV      R1,#+998244352
+   \   0000005C   0x.... 0x....      BL       __aeabi_fmul
+   \   00000060   0x4621             MOV      R1,R4
+   \   00000062   0x.... 0x....      BL       __aeabi_fadd
+   \   00000066   0x4604             MOV      R4,R0
+   \   00000068   0x4638             MOV      R0,R7
+   \   0000006A   0x.... 0x....      BL       __aeabi_ui2f
+   \   0000006E   0xF04F 0x515E      MOV      R1,#+931135488
+   \   00000072   0x.... 0x....      BL       __aeabi_fmul
+   \   00000076   0x4621             MOV      R1,R4
+   \   00000078   0xE8BD 0x40F4      POP      {R2,R4-R7,LR}
+   \   0000007C   0x.... 0x....      B.W      __aeabi_fadd
+    299          }
+    300          
+    301          /**-----------------------------------------------------------------
+    302          * @函数名 SPI_CS5463_AC_Read_VIrms_FLOAT
+    303          * @功能   读取CS5463的电压/电流有效值，得到1个浮点型数据
+    304          * @参数   Command：单字节命令
+    305          * @返回   Data，浮点型数据				  
+    306          * @备注   返回的的字节为2^-1到2^-24
+    307          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    308          float SPI_CS5463_AC_Read_VIrms_FLOAT(uint8_t Command)
+    309          {
+   \                     SPI_CS5463_AC_Read_VIrms_FLOAT: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    310          	float Data = 0;
+    311          	uint8_t Data0 = 0,Data1 = 0,Data2 = 0;
+    312              /* Select the CS5463: Chip Select low */
+    313            	SPI_CS5463_AC_CS_LOW(1);
+   \   00000004   0x.... 0x....      LDR.W    R5,??DataTable27  ;; 0x40011800
+   \   00000008   0x2110             MOVS     R1,#+16
+   \   0000000A   0x4628             MOV      R0,R5
+   \   0000000C   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000010   0x2001             MOVS     R0,#+1
+   \   00000012   0x.... 0x....      BL       Delay
+    314              /* Send  instruction */
+    315            	SPI_CS5463_AC_SendByte(Command);
+   \   00000016   0x4620             MOV      R0,R4
+   \   00000018   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    316          	
+    317          	Data0 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   0000001C   0x20FE             MOVS     R0,#+254
+   \   0000001E   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   00000022   0x4604             MOV      R4,R0
+    318          	Data1 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   00000024   0x20FE             MOVS     R0,#+254
+   \   00000026   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   0000002A   0x4606             MOV      R6,R0
+    319          	Data2 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   0000002C   0x20FE             MOVS     R0,#+254
+   \   0000002E   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   00000032   0x4607             MOV      R7,R0
+    320          	Data = (float)(Data0)/256 + (float)Data1/256/256 + (float)Data2/256/256/256;
+    321          	SPI_CS5463_AC_CS_HIGH(5);
+   \   00000034   0x2110             MOVS     R1,#+16
+   \   00000036   0x4628             MOV      R0,R5
+   \   00000038   0x.... 0x....      BL       GPIO_SetBits
+   \   0000003C   0x2005             MOVS     R0,#+5
+   \   0000003E   0x.... 0x....      BL       Delay
+    322          	return Data;
+   \   00000042   0x4620             MOV      R0,R4
+   \   00000044   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000048   0xF04F 0x516E      MOV      R1,#+998244352
+   \   0000004C   0x.... 0x....      BL       __aeabi_fmul
+   \   00000050   0x4604             MOV      R4,R0
+   \   00000052   0x4630             MOV      R0,R6
+   \   00000054   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000058   0xF04F 0x515E      MOV      R1,#+931135488
+   \   0000005C   0x.... 0x....      BL       __aeabi_fmul
+   \   00000060   0x4621             MOV      R1,R4
+   \   00000062   0x.... 0x....      BL       __aeabi_fadd
+   \   00000066   0x4604             MOV      R4,R0
+   \   00000068   0x4638             MOV      R0,R7
+   \   0000006A   0x.... 0x....      BL       __aeabi_ui2f
+   \   0000006E   0xF04F 0x514E      MOV      R1,#+864026624
+   \   00000072   0x.... 0x....      BL       __aeabi_fmul
+   \   00000076   0x4621             MOV      R1,R4
+   \   00000078   0xE8BD 0x40F4      POP      {R2,R4-R7,LR}
+   \   0000007C   0x.... 0x....      B.W      __aeabi_fadd
+    323          }
+    324          
+    325          /**-----------------------------------------------------------------
+    326          * @函数名 SPI_CS5463_AC_Read_VIgain_FLOAT
+    327          * @功能   读取CS5463的电压/电流增益，得到1个浮点型数据
+    328          * @参数   Command：单字节命令
+    329          * @返回   Data，浮点型数据
+    330          * @备注   返回的的字节为2^1到2^0 + 2^-1到2^-22 (2^1到2^-22)
+    331          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    332          float SPI_CS5463_AC_Read_VIgain_FLOAT(uint8_t Command)
+    333          {
+   \                     SPI_CS5463_AC_Read_VIgain_FLOAT: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    334          	float Data = 0;
+    335          	uint8_t Data0 = 0,Data1 = 0,Data2 = 0;
+    336              /* Select the CS5463: Chip Select low */
+    337            	SPI_CS5463_AC_CS_LOW(1);
+   \   00000004   0x.... 0x....      LDR.W    R5,??DataTable27  ;; 0x40011800
+   \   00000008   0x2110             MOVS     R1,#+16
+   \   0000000A   0x4628             MOV      R0,R5
+   \   0000000C   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000010   0x2001             MOVS     R0,#+1
+   \   00000012   0x.... 0x....      BL       Delay
+    338              /* Send  instruction */
+    339            	SPI_CS5463_AC_SendByte(Command);
+   \   00000016   0x4620             MOV      R0,R4
+   \   00000018   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    340          	
+    341          	Data0 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   0000001C   0x20FE             MOVS     R0,#+254
+   \   0000001E   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   00000022   0x4604             MOV      R4,R0
+    342          	Data1 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   00000024   0x20FE             MOVS     R0,#+254
+   \   00000026   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   0000002A   0x4606             MOV      R6,R0
+    343          	Data2 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   0000002C   0x20FE             MOVS     R0,#+254
+   \   0000002E   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   00000032   0x4607             MOV      R7,R0
+    344          	Data = ((Data0>>6)&0x03)+(float)(Data0&0x3F)/64 + (float)Data1/64/256 + (float)Data2/64/256/256;
+    345          	SPI_CS5463_AC_CS_HIGH(5);
+   \   00000034   0x2110             MOVS     R1,#+16
+   \   00000036   0x4628             MOV      R0,R5
+   \   00000038   0x.... 0x....      BL       GPIO_SetBits
+   \   0000003C   0x2005             MOVS     R0,#+5
+   \   0000003E   0x.... 0x....      BL       Delay
+    346          	return Data;
+   \   00000042   0x4620             MOV      R0,R4
+   \   00000044   0x0980             LSRS     R0,R0,#+6
+   \   00000046   0x.... 0x....      BL       __aeabi_ui2f
+   \   0000004A   0x4605             MOV      R5,R0
+   \   0000004C   0xF004 0x003F      AND      R0,R4,#0x3F
+   \   00000050   0x.... 0x....      BL       __aeabi_i2f
+   \   00000054   0xF04F 0x5172      MOV      R1,#+1015021568
+   \   00000058   0x.... 0x....      BL       __aeabi_fmul
+   \   0000005C   0x4629             MOV      R1,R5
+   \   0000005E   0x.... 0x....      BL       __aeabi_fadd
+   \   00000062   0x4604             MOV      R4,R0
+   \   00000064   0x4630             MOV      R0,R6
+   \   00000066   0x.... 0x....      BL       __aeabi_ui2f
+   \   0000006A   0xF04F 0x5162      MOV      R1,#+947912704
+   \   0000006E   0x.... 0x....      BL       __aeabi_fmul
+   \   00000072   0x4621             MOV      R1,R4
+   \   00000074   0x.... 0x....      BL       __aeabi_fadd
+   \   00000078   0x4604             MOV      R4,R0
+   \   0000007A   0x4638             MOV      R0,R7
+   \   0000007C   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000080   0xF04F 0x5152      MOV      R1,#+880803840
+   \   00000084   0x.... 0x....      BL       __aeabi_fmul
+   \   00000088   0x4621             MOV      R1,R4
+   \   0000008A   0xE8BD 0x40F4      POP      {R2,R4-R7,LR}
+   \   0000008E   0x.... 0x....      B.W      __aeabi_fadd
+    347          }
+    348          
+    349          /**-----------------------------------------------------------------
+    350          * @函数名 SPI_CS5463_AC_Read_Else_FLOAT
+    351          * @功能   读取CS5463的电压电流DC偏移，得到1个浮点型数据
+    352          * @参数   Command：单字节命令
+    353          * @返回   Data，浮点型数据
+    354          * @备注   返回的的字节为2^-1到2^-23，再加上最高位负值-2^0
+    355          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    356          float SPI_CS5463_AC_Read_Else_FLOAT(uint8_t Command)
+    357          {
+   \                     SPI_CS5463_AC_Read_Else_FLOAT: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    358          	float Data = 0;
+    359          	uint8_t Data0 = 0,Data1 = 0,Data2 = 0;
+    360              /* Select the CS5463: Chip Select low */
+    361            	SPI_CS5463_AC_CS_LOW(1);
+   \   00000004   0x.... 0x....      LDR.W    R5,??DataTable27  ;; 0x40011800
+   \   00000008   0x2110             MOVS     R1,#+16
+   \   0000000A   0x4628             MOV      R0,R5
+   \   0000000C   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000010   0x2001             MOVS     R0,#+1
+   \   00000012   0x.... 0x....      BL       Delay
+    362              /* Send  instruction */
+    363            	SPI_CS5463_AC_SendByte(Command);
+   \   00000016   0x4620             MOV      R0,R4
+   \   00000018   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    364          	
+    365          	Data0 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   0000001C   0x20FE             MOVS     R0,#+254
+   \   0000001E   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   00000022   0x4604             MOV      R4,R0
+    366          	Data1 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   00000024   0x20FE             MOVS     R0,#+254
+   \   00000026   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   0000002A   0x4606             MOV      R6,R0
+    367          	Data2 = SPI_CS5463_AC_ReadByte(0xFE);
+   \   0000002C   0x20FE             MOVS     R0,#+254
+   \   0000002E   0x.... 0x....      BL       SPI_CS5463_AC_ReadByte
+   \   00000032   0x4607             MOV      R7,R0
+    368          	Data = (float)((Data0>>7)&0x01)*(-1)+(float)(Data0&0x7F)/128 + (float)Data1/32768 + (float)Data2/256/32768;
+    369          	SPI_CS5463_AC_CS_HIGH(5);
+   \   00000034   0x2110             MOVS     R1,#+16
+   \   00000036   0x4628             MOV      R0,R5
+   \   00000038   0x.... 0x....      BL       GPIO_SetBits
+   \   0000003C   0x2005             MOVS     R0,#+5
+   \   0000003E   0x.... 0x....      BL       Delay
+    370          	return Data;
+   \   00000042   0x4620             MOV      R0,R4
+   \   00000044   0x09C0             LSRS     R0,R0,#+7
+   \   00000046   0x.... 0x....      BL       __aeabi_ui2f
+   \   0000004A   0x.... 0x....      LDR.W    R1,??DataTable27_1  ;; 0xbf800000
+   \   0000004E   0x.... 0x....      BL       __aeabi_fmul
+   \   00000052   0x4605             MOV      R5,R0
+   \   00000054   0xF004 0x007F      AND      R0,R4,#0x7F
+   \   00000058   0x.... 0x....      BL       __aeabi_i2f
+   \   0000005C   0xF04F 0x5170      MOV      R1,#+1006632960
+   \   00000060   0x.... 0x....      BL       __aeabi_fmul
+   \   00000064   0x4629             MOV      R1,R5
+   \   00000066   0x.... 0x....      BL       __aeabi_fadd
+   \   0000006A   0x4604             MOV      R4,R0
+   \   0000006C   0x4630             MOV      R0,R6
+   \   0000006E   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000072   0xF04F 0x5160      MOV      R1,#+939524096
+   \   00000076   0x.... 0x....      BL       __aeabi_fmul
+   \   0000007A   0x4621             MOV      R1,R4
+   \   0000007C   0x.... 0x....      BL       __aeabi_fadd
+   \   00000080   0x4604             MOV      R4,R0
+   \   00000082   0x4638             MOV      R0,R7
+   \   00000084   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000088   0xF04F 0x5150      MOV      R1,#+872415232
+   \   0000008C   0x.... 0x....      BL       __aeabi_fmul
+   \   00000090   0x4621             MOV      R1,R4
+   \   00000092   0xE8BD 0x40F4      POP      {R2,R4-R7,LR}
+   \   00000096   0x.... 0x....      B.W      __aeabi_fadd
+    371          }
+    372          
+    373          
+    374          /**-----------------------------------------------------------------
+    375          * @函数名 SPI_CS5463_AC_SendCommand
+    376          * @功能   通过SPI总线发送一个字节命令
+    377          *         Sends a byte through the SPI interface
+    378          * @参数   要写入的一个字节命令
+    379          * @返回值 无
+    380          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    381          void SPI_CS5463_AC_SendCommand(u8 Command)
+    382          {
+   \                     SPI_CS5463_AC_SendCommand: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    383          	SPI_CS5463_AC_CS_LOW(5);
+   \   00000004   0x.... 0x....      LDR.W    R5,??DataTable27  ;; 0x40011800
+   \   00000008   0x2110             MOVS     R1,#+16
+   \   0000000A   0x4628             MOV      R0,R5
+   \   0000000C   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000010   0x2005             MOVS     R0,#+5
+   \   00000012   0x.... 0x....      BL       Delay
+    384          	SPI_CS5463_AC_SendByte(Command);
+   \   00000016   0x4620             MOV      R0,R4
+   \   00000018   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    385          	SPI_CS5463_AC_CS_HIGH(5);
+   \   0000001C   0x2110             MOVS     R1,#+16
+   \   0000001E   0x4628             MOV      R0,R5
+   \   00000020   0x.... 0x....      BL       GPIO_SetBits
+   \   00000024   0x2005             MOVS     R0,#+5
+   \   00000026   0xE8BD 0x4032      POP      {R1,R4,R5,LR}
+   \   0000002A   0x.... 0x....      B.W      Delay
+    386          }	
+    387          
+
+   \                                 In section .bss, align 4
+    388          uint32_t    CS5463Sts   = 0;
+   \                     CS5463Sts:
+   \   00000000                      DS8 4
+    389          /**-----------------------------------------------------------------
+    390          * @函数名 SPI_CS5463_AC_ClearDrdy
+    391          * @功能   CS5463进入清除数据就绪状态位
+    392          * @参数   无
+    393          * @返回值 无
+    394          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    395          void SPI_CS5463_AC_ClearDrdy(void)
+    396          {
+   \                     SPI_CS5463_AC_ClearDrdy: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    397          	SPI_CS5463_AC_WriteRegister(STATUS , 0xFFFFFF);
+   \   00000002   0xF06F 0x417F      MVN      R1,#-16777216
+   \   00000006   0x201E             MOVS     R0,#+30
+   \   00000008   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    398              CS5463Sts   = SPI_CS5463_AC_ReadRegister_INT32(STATUS);
+   \   0000000C   0x201E             MOVS     R0,#+30
+   \   0000000E   0x.... 0x....      BL       SPI_CS5463_AC_ReadRegister_INT32
+   \   00000012   0x.... 0x....      LDR.W    R1,??DataTable27_2
+   \   00000016   0x6008             STR      R0,[R1, #+0]
+    399          }
+   \   00000018   0xBD01             POP      {R0,PC}          ;; return
+    400          
+    401          /**-----------------------------------------------------------------
+    402          * @函数名 SPI_CS5463_AC_WaitDrdy
+    403          * @功能   CS5463等待数据就绪状态位
+    404          * @参数   无
+    405          * @返回值 无
+    406          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    407          void SPI_CS5463_AC_WaitDrdy(void)
+    408          {
+    409              
+    410          	while (SPI_CS5463_AC_ReadRegister_INT32(STATUS) & 0x800000 == 0);
+   \                     SPI_CS5463_AC_WaitDrdy: (+1)
+   \   00000000   0x201E             MOVS     R0,#+30
+   \   00000002   0x....             B.N      SPI_CS5463_AC_ReadRegister_INT32
+    411              return;
+    412              
+    413              uint32_t    timeout = 0;
+    414          	do {
+    415                  CS5463Sts   = SPI_CS5463_AC_ReadRegister_INT32(STATUS);
+    416                  if ( (0x800000 & CS5463Sts) != 0x800000 )
+    417                      BSP_OS_TimeDly(5);
+    418                  else
+    419                      break;
+    420              } while ( ++timeout < 2000 );
+    421          }
+    422          
+
+   \                                 In section .text, align 2, keep-with-next
+    423          uint8_t SPI_CS5463_AC_GetDrdy(void)
+    424          {
+   \                     SPI_CS5463_AC_GetDrdy: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    425              CS5463Sts   = SPI_CS5463_AC_ReadRegister_INT32(STATUS);
+   \   00000002   0x201E             MOVS     R0,#+30
+   \   00000004   0x.... 0x....      BL       SPI_CS5463_AC_ReadRegister_INT32
+   \   00000008   0x.... 0x....      LDR.W    R1,??DataTable27_2
+   \   0000000C   0x6008             STR      R0,[R1, #+0]
+    426          	if (( CS5463Sts & 0x800000 ) == 0x800000)
+   \   0000000E   0xF400 0x0000      AND      R0,R0,#0x800000
+   \   00000012   0x1E40             SUBS     R0,R0,#+1
+   \   00000014   0x4180             SBCS     R0,R0,R0
+   \   00000016   0x0FC0             LSRS     R0,R0,#+31
+    427                  return FALSE;
+    428              else
+    429                  return TRUE;
+   \   00000018   0xBD02             POP      {R1,PC}          ;; return
+    430          }
+    431          /**-----------------------------------------------------------------
+    432          * @函数名 SPI_SPI_CS5463_AC_SLEEP
+    433          * @功能   CS5463进入睡眠模式
+    434          * @参数   无
+    435          * @返回值 无
+    436          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    437          void SPI_CS5463_AC_SLEEP(void)   
+    438          { 
+   \                     SPI_CS5463_AC_SLEEP: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    439          	/* Select the CS5463: Chip Select low */
+    440          	SPI_CS5463_AC_CS_LOW(1);
+   \   00000002   0x.... 0x....      LDR.W    R4,??DataTable27  ;; 0x40011800
+   \   00000006   0x2110             MOVS     R1,#+16
+   \   00000008   0x4620             MOV      R0,R4
+   \   0000000A   0x.... 0x....      BL       GPIO_ResetBits
+   \   0000000E   0x2001             MOVS     R0,#+1
+   \   00000010   0x.... 0x....      BL       Delay
+    441              
+    442          	/* Send "SLEEP" instruction */
+    443          	SPI_CS5463_AC_SendCommand(SLEEP);
+   \   00000014   0x2010             MOVS     R0,#+16
+   \   00000016   0x.... 0x....      BL       SPI_CS5463_AC_SendCommand
+    444          	
+    445          	/* Deselect the CS5463: Chip Select high */
+    446          	SPI_CS5463_AC_CS_HIGH(1);
+   \   0000001A   0x2110             MOVS     R1,#+16
+   \   0000001C   0x4620             MOV      R0,R4
+   \   0000001E   0x.... 0x....      BL       GPIO_SetBits
+   \   00000022   0x2001             MOVS     R0,#+1
+   \   00000024   0xE8BD 0x4010      POP      {R4,LR}
+   \   00000028   0x.... 0x....      B.W      Delay
+    447          }   
+    448          
+    449          /**-----------------------------------------------------------------
+    450          * @函数名 SPI_SPI_CS5463_AC_Wait
+    451          * @功能   CS5463进入等待模式
+    452          * @参数   无
+    453          * @返回值 无
+    454          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    455          void SPI_CS5463_AC_WAIT(void)   
+    456          { 
+   \                     SPI_CS5463_AC_WAIT: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    457          	/* Select the CS5463: Chip Select low */
+    458          	SPI_CS5463_AC_CS_LOW(1);
+   \   00000002   0x.... 0x....      LDR.W    R4,??DataTable27  ;; 0x40011800
+   \   00000006   0x2110             MOVS     R1,#+16
+   \   00000008   0x4620             MOV      R0,R4
+   \   0000000A   0x.... 0x....      BL       GPIO_ResetBits
+   \   0000000E   0x2001             MOVS     R0,#+1
+   \   00000010   0x.... 0x....      BL       Delay
+    459          	
+    460          	/* Send "WAIT" instruction */
+    461          	SPI_CS5463_AC_SendCommand(WAIT);
+   \   00000014   0x2001             MOVS     R0,#+1
+   \   00000016   0x.... 0x....      BL       SPI_CS5463_AC_SendCommand
+    462          	
+    463          	/* Deselect the CS5463: Chip Select high */
+    464          	SPI_CS5463_AC_CS_HIGH(1);
+   \   0000001A   0x2110             MOVS     R1,#+16
+   \   0000001C   0x4620             MOV      R0,R4
+   \   0000001E   0x.... 0x....      BL       GPIO_SetBits
+   \   00000022   0x2001             MOVS     R0,#+1
+   \   00000024   0xE8BD 0x4010      POP      {R4,LR}
+   \   00000028   0x.... 0x....      B.W      Delay
+    465          }   
+    466          
+    467          /**-----------------------------------------------------------------
+    468          * @函数名 SPI_CS5463_AC_SOFT_RESET
+    469          * @功能   软件复位CS5463
+    470          * @参数   无
+    471          * @返回值 无
+    472          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    473          void SPI_CS5463_AC_SOFT_RESET(void)   
+    474          {
+   \                     SPI_CS5463_AC_SOFT_RESET: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    475          	/* Select the CS5463: Chip Select low */
+    476          	SPI_CS5463_AC_CS_LOW(1);
+   \   00000002   0x.... 0x....      LDR.W    R4,??DataTable27  ;; 0x40011800
+   \   00000006   0x2110             MOVS     R1,#+16
+   \   00000008   0x4620             MOV      R0,R4
+   \   0000000A   0x.... 0x....      BL       GPIO_ResetBits
+   \   0000000E   0x2001             MOVS     R0,#+1
+   \   00000010   0x.... 0x....      BL       Delay
+    477          	
+    478          	/* Send "SOFT_RESET" instruction */
+    479          	SPI_CS5463_AC_SendCommand(SOFT_RESET);
+   \   00000014   0x2000             MOVS     R0,#+0
+   \   00000016   0x.... 0x....      BL       SPI_CS5463_AC_SendCommand
+    480          	
+    481          	/* Deselect the CS5463: Chip Select high */
+    482          	SPI_CS5463_AC_CS_HIGH(1);
+   \   0000001A   0x2110             MOVS     R1,#+16
+   \   0000001C   0x4620             MOV      R0,R4
+   \   0000001E   0x.... 0x....      BL       GPIO_SetBits
+   \   00000022   0x2001             MOVS     R0,#+1
+   \   00000024   0xE8BD 0x4010      POP      {R4,LR}
+   \   00000028   0x.... 0x....      B.W      Delay
+    483          }   
+    484          union {
+    485          float   x;
+    486          uint32_t y;
+
+   \                                 In section .bss, align 4
+    487          } sx;
+   \                     sx:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+    488          uint32_t y;
+   \                     y:
+   \   00000000                      DS8 4
+    489          /**-----------------------------------------------------------------
+    490          * @函数名 CS5463_AC_INIT
+    491          * @功能   CS5463初始化
+    492          *         
+    493          * @参数   无
+    494          * @返回值 无
+    495          ***----------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+    496          void CS5463_AC_INIT(void)
+    497          {
+   \                     CS5463_AC_INIT: (+1)
+   \   00000000   0xB57C             PUSH     {R2-R6,LR}
+    498          	uint8_t buf[4];
+    499          	uint8_t temp[4];
+    500          	uint32_t STATUS_VALUE = 0; 
+    501              
+    502              //sx.x = 0.01929;
+    503              //y = sx.x * 0x800000;
+    504              //sx.x = (float)y / 0x800000;
+    505              
+    506          	SPI_RST_AC_LOW();
+   \   00000002   0x.... 0x....      LDR.W    R4,??DataTable27  ;; 0x40011800
+   \   00000006   0x2140             MOVS     R1,#+64
+   \   00000008   0x4620             MOV      R0,R4
+   \   0000000A   0x.... 0x....      BL       GPIO_ResetBits
+    507          	SPI_RST_AC_LOW();
+   \   0000000E   0x2140             MOVS     R1,#+64
+   \   00000010   0x4620             MOV      R0,R4
+   \   00000012   0x.... 0x....      BL       GPIO_ResetBits
+    508          	SPI_RST_AC_LOW();
+   \   00000016   0x2140             MOVS     R1,#+64
+   \   00000018   0x4620             MOV      R0,R4
+   \   0000001A   0x.... 0x....      BL       GPIO_ResetBits
+    509          	Delay(2000);
+   \   0000001E   0xF44F 0x60FA      MOV      R0,#+2000
+   \   00000022   0x.... 0x....      BL       Delay
+    510          	SPI_RST_AC_HIGH() ;
+   \   00000026   0x2140             MOVS     R1,#+64
+   \   00000028   0x4620             MOV      R0,R4
+   \   0000002A   0x.... 0x....      BL       GPIO_SetBits
+    511          	SPI_RST_AC_HIGH();
+   \   0000002E   0x2140             MOVS     R1,#+64
+   \   00000030   0x4620             MOV      R0,R4
+   \   00000032   0x.... 0x....      BL       GPIO_SetBits
+    512          	SPI_RST_AC_HIGH();
+   \   00000036   0x2140             MOVS     R1,#+64
+   \   00000038   0x4620             MOV      R0,R4
+   \   0000003A   0x.... 0x....      BL       GPIO_SetBits
+    513          	Delay(4000);
+   \   0000003E   0xF44F 0x607A      MOV      R0,#+4000
+   \   00000042   0x.... 0x....      BL       Delay
+    514              
+    515              /* Send  instruction */    
+    516          	SPI_CS5463_AC_CS_LOW(1);
+   \   00000046   0x2110             MOVS     R1,#+16
+   \   00000048   0x4620             MOV      R0,R4
+   \   0000004A   0x.... 0x....      BL       GPIO_ResetBits
+   \   0000004E   0x2001             MOVS     R0,#+1
+   \   00000050   0x.... 0x....      BL       Delay
+    517          	SPI_CS5463_AC_SendByte(SYNC1);
+   \   00000054   0x20FF             MOVS     R0,#+255
+   \   00000056   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    518          	SPI_CS5463_AC_SendByte(SYNC1);
+   \   0000005A   0x20FF             MOVS     R0,#+255
+   \   0000005C   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    519          	SPI_CS5463_AC_SendByte(SYNC1);
+   \   00000060   0x20FF             MOVS     R0,#+255
+   \   00000062   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    520          	SPI_CS5463_AC_SendByte(SYNC0);
+   \   00000066   0x20FE             MOVS     R0,#+254
+   \   00000068   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    521          	SPI_CS5463_AC_CS_HIGH(1);
+   \   0000006C   0x2110             MOVS     R1,#+16
+   \   0000006E   0x4620             MOV      R0,R4
+   \   00000070   0x.... 0x....      BL       GPIO_SetBits
+   \   00000074   0x2001             MOVS     R0,#+1
+   \   00000076   0x.... 0x....      BL       Delay
+    522              //配置寄存器设置为0x000001，K=1
+    523          	SPI_CS5463_AC_WriteRegister(CONFIG , CONFIG_DATA_AC);
+   \   0000007A   0x2101             MOVS     R1,#+1
+   \   0000007C   0x2000             MOVS     R0,#+0
+   \   0000007E   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    524              //操作模式寄存器设置为0x000000
+    525          	SPI_CS5463_AC_WriteRegister(MODE   , MODE_DATA_AC);
+   \   00000082   0x2101             MOVS     R1,#+1
+   \   00000084   0x2024             MOVS     R0,#+36
+   \   00000086   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    526              //E2为电能方向，E3为无功电能										 
+    527              
+    528              //	SPI_CS5463_AC_WriteRegister(IG , 0x400000);
+    529              //	SPI_CS5463_AC_WriteRegister(VG , 0x400000);
+    530              //	SPI_CS5463_AC_WriteRegister(IDCOFF , 0x000000);
+    531              //	SPI_CS5463_AC_WriteRegister(VDCOFF , 0x000000);
+    532              //	SPI_CS5463_AC_WriteRegister(IACOFF , 0x000000);
+    533              //	SPI_CS5463_AC_WriteRegister(VACOFF , 0x000000);
+    534              
+    535              //	SPI_CS5463_AC_WriteRegister(IG , 0x406538);
+    536              //	SPI_CS5463_AC_WriteRegister(VG , 0x41B96C);
+    537              
+    538              /*型式试验样机*/
+    539              //	SPI_CS5463_AC_WriteRegister(IDCOFF , 0xFE3014);	
+    540              //	SPI_CS5463_AC_WriteRegister(VDCOFF , 0x06C0FD);
+    541              //	SPI_CS5463_AC_WriteRegister(IACOFF , 0xFFFC00);
+    542              //	SPI_CS5463_AC_WriteRegister(VACOFF , 0x000000);
+    543              //	SPI_CS5463_AC_WriteRegister(IG , 0x429ec1);
+    544              //	SPI_CS5463_AC_WriteRegister(VG , 0x6b661c);	                       
+    545              ////	SPI_CS5463_AC_WriteRegister(POFF , 0xFA9E2B);
+    546          	
+    547          	ReadFM24CL64(32, temp,4);
+   \   0000008A   0x2204             MOVS     R2,#+4
+   \   0000008C   0xA901             ADD      R1,SP,#+4
+   \   0000008E   0x2020             MOVS     R0,#+32
+   \   00000090   0x.... 0x....      BL       ReadFM24CL64
+    548          	configsfr_AC_RD.Vdcoff =  temp[3]<<24 |  temp[2]<<16 | temp[1]<<8 | temp[0];
+   \   00000094   0x.... 0x....      LDR.W    R5,??DataTable27_3
+   \   00000098   0xAE01             ADD      R6,SP,#+4
+   \   0000009A   0x78F0             LDRB     R0,[R6, #+3]
+   \   0000009C   0x78B1             LDRB     R1,[R6, #+2]
+   \   0000009E   0x0409             LSLS     R1,R1,#+16
+   \   000000A0   0xEA41 0x6000      ORR      R0,R1,R0, LSL #+24
+   \   000000A4   0x7871             LDRB     R1,[R6, #+1]
+   \   000000A6   0xEA40 0x2001      ORR      R0,R0,R1, LSL #+8
+   \   000000AA   0xF89D 0x1004      LDRB     R1,[SP, #+4]
+   \   000000AE   0x4308             ORRS     R0,R1,R0
+   \   000000B0   0x6068             STR      R0,[R5, #+4]
+    549          	ReadFM24CL64(36, temp,4);
+   \   000000B2   0x2204             MOVS     R2,#+4
+   \   000000B4   0xA901             ADD      R1,SP,#+4
+   \   000000B6   0x2024             MOVS     R0,#+36
+   \   000000B8   0x.... 0x....      BL       ReadFM24CL64
+    550          	configsfr_AC_RD.Idcoff =  temp[3]<<24 |  temp[2]<<16 | temp[1]<<8 | temp[0];
+   \   000000BC   0x78F0             LDRB     R0,[R6, #+3]
+   \   000000BE   0x78B1             LDRB     R1,[R6, #+2]
+   \   000000C0   0x0409             LSLS     R1,R1,#+16
+   \   000000C2   0xEA41 0x6000      ORR      R0,R1,R0, LSL #+24
+   \   000000C6   0x7871             LDRB     R1,[R6, #+1]
+   \   000000C8   0xEA40 0x2001      ORR      R0,R0,R1, LSL #+8
+   \   000000CC   0xF89D 0x1004      LDRB     R1,[SP, #+4]
+   \   000000D0   0x4308             ORRS     R0,R1,R0
+   \   000000D2   0x6028             STR      R0,[R5, #+0]
+    551          	ReadFM24CL64(40, temp,4);
+   \   000000D4   0x2204             MOVS     R2,#+4
+   \   000000D6   0xA901             ADD      R1,SP,#+4
+   \   000000D8   0x2028             MOVS     R0,#+40
+   \   000000DA   0x.... 0x....      BL       ReadFM24CL64
+    552          	configsfr_AC_RD.Vacoff =  temp[3]<<24 |  temp[2]<<16 | temp[1]<<8 | temp[0];
+   \   000000DE   0x78F0             LDRB     R0,[R6, #+3]
+   \   000000E0   0x78B1             LDRB     R1,[R6, #+2]
+   \   000000E2   0x0409             LSLS     R1,R1,#+16
+   \   000000E4   0xEA41 0x6000      ORR      R0,R1,R0, LSL #+24
+   \   000000E8   0x7871             LDRB     R1,[R6, #+1]
+   \   000000EA   0xEA40 0x2001      ORR      R0,R0,R1, LSL #+8
+   \   000000EE   0xF89D 0x1004      LDRB     R1,[SP, #+4]
+   \   000000F2   0x4308             ORRS     R0,R1,R0
+   \   000000F4   0x60E8             STR      R0,[R5, #+12]
+    553          	ReadFM24CL64(44, temp,4);
+   \   000000F6   0x2204             MOVS     R2,#+4
+   \   000000F8   0xA901             ADD      R1,SP,#+4
+   \   000000FA   0x202C             MOVS     R0,#+44
+   \   000000FC   0x.... 0x....      BL       ReadFM24CL64
+    554          	configsfr_AC_RD.Iacoff =  temp[3]<<24 |  temp[2]<<16 | temp[1]<<8 | temp[0];
+   \   00000100   0x78F0             LDRB     R0,[R6, #+3]
+   \   00000102   0x78B1             LDRB     R1,[R6, #+2]
+   \   00000104   0x0409             LSLS     R1,R1,#+16
+   \   00000106   0xEA41 0x6000      ORR      R0,R1,R0, LSL #+24
+   \   0000010A   0x7871             LDRB     R1,[R6, #+1]
+   \   0000010C   0xEA40 0x2001      ORR      R0,R0,R1, LSL #+8
+   \   00000110   0xF89D 0x1004      LDRB     R1,[SP, #+4]
+   \   00000114   0x4308             ORRS     R0,R1,R0
+   \   00000116   0x60A8             STR      R0,[R5, #+8]
+    555          	ReadFM24CL64(48, temp,4);
+   \   00000118   0x2204             MOVS     R2,#+4
+   \   0000011A   0xA901             ADD      R1,SP,#+4
+   \   0000011C   0x2030             MOVS     R0,#+48
+   \   0000011E   0x.... 0x....      BL       ReadFM24CL64
+    556          	configsfr_AC_RD.Vgain =  temp[3]<<24 |  temp[2]<<16 | temp[1]<<8 | temp[0];
+   \   00000122   0x78F0             LDRB     R0,[R6, #+3]
+   \   00000124   0x78B1             LDRB     R1,[R6, #+2]
+   \   00000126   0x0409             LSLS     R1,R1,#+16
+   \   00000128   0xEA41 0x6000      ORR      R0,R1,R0, LSL #+24
+   \   0000012C   0x7871             LDRB     R1,[R6, #+1]
+   \   0000012E   0xEA40 0x2001      ORR      R0,R0,R1, LSL #+8
+   \   00000132   0xF89D 0x1004      LDRB     R1,[SP, #+4]
+   \   00000136   0x4308             ORRS     R0,R1,R0
+   \   00000138   0x6168             STR      R0,[R5, #+20]
+    557          	ReadFM24CL64(52, temp,4);
+   \   0000013A   0x2204             MOVS     R2,#+4
+   \   0000013C   0xA901             ADD      R1,SP,#+4
+   \   0000013E   0x2034             MOVS     R0,#+52
+   \   00000140   0x.... 0x....      BL       ReadFM24CL64
+    558          	configsfr_AC_RD.Igain =  temp[3]<<24 |  temp[2]<<16 | temp[1]<<8 | temp[0];	
+   \   00000144   0x78F0             LDRB     R0,[R6, #+3]
+   \   00000146   0x78B1             LDRB     R1,[R6, #+2]
+   \   00000148   0x0409             LSLS     R1,R1,#+16
+   \   0000014A   0xEA41 0x6000      ORR      R0,R1,R0, LSL #+24
+   \   0000014E   0x7871             LDRB     R1,[R6, #+1]
+   \   00000150   0xEA40 0x2001      ORR      R0,R0,R1, LSL #+8
+   \   00000154   0xF89D 0x1004      LDRB     R1,[SP, #+4]
+   \   00000158   0x4308             ORRS     R0,R1,R0
+   \   0000015A   0x6128             STR      R0,[R5, #+16]
+    559          	ReadFM24CL64(56, temp,4);
+   \   0000015C   0x2204             MOVS     R2,#+4
+   \   0000015E   0xA901             ADD      R1,SP,#+4
+   \   00000160   0x2038             MOVS     R0,#+56
+   \   00000162   0x.... 0x....      BL       ReadFM24CL64
+    560          	configsfr_AC_RD.P_rate =  temp[3]<<24 |  temp[2]<<16 | temp[1]<<8 | temp[0];	
+   \   00000166   0x78F0             LDRB     R0,[R6, #+3]
+   \   00000168   0x78B1             LDRB     R1,[R6, #+2]
+   \   0000016A   0x0409             LSLS     R1,R1,#+16
+   \   0000016C   0xEA41 0x6000      ORR      R0,R1,R0, LSL #+24
+   \   00000170   0x7871             LDRB     R1,[R6, #+1]
+   \   00000172   0xEA40 0x2001      ORR      R0,R0,R1, LSL #+8
+   \   00000176   0xF89D 0x1004      LDRB     R1,[SP, #+4]
+   \   0000017A   0x4308             ORRS     R0,R1,R0
+   \   0000017C   0x61A8             STR      R0,[R5, #+24]
+    561              //	printf("\r\n 直流电压偏移 = %x\n", configsfr_AC_RD.Vdcoff);
+    562              //	printf("\r\n 直流电流偏移 = %x\n", configsfr_AC_RD.Idcoff);
+    563              //	printf("\r\n 交流电压偏移 = %x\n", configsfr_AC_RD.Vacoff);
+    564              //	printf("\r\n 交流电流偏移 = %x\n", configsfr_AC_RD.Iacoff);
+    565              //	printf("\r\n 交流电压增益 = %x\n", configsfr_AC_RD.Vgain);
+    566              //	printf("\r\n 交流电流增益 = %x\n", configsfr_AC_RD.Igain);
+    567              
+    568          	if((configsfr_AC_RD.Vdcoff&0xFF000000)==0xAA000000) {
+   \   0000017E   0x6868             LDR      R0,[R5, #+4]
+   \   00000180   0x466E             MOV      R6,SP
+   \   00000182   0xF000 0x417F      AND      R1,R0,#0xFF000000
+   \   00000186   0xF111 0x4FAC      CMN      R1,#+1442840576
+   \   0000018A   0xD10C             BNE.N    ??CS5463_AC_INIT_0
+    569          	    buf[0]=VDCOFF;
+   \   0000018C   0x2106             MOVS     R1,#+6
+   \   0000018E   0xF88D 0x1000      STRB     R1,[SP, #+0]
+    570              	buf[1]=(configsfr_AC_RD.Vdcoff&0xFF0000)>>16;           
+   \   00000192   0x0C01             LSRS     R1,R0,#+16
+   \   00000194   0x7071             STRB     R1,[R6, #+1]
+    571              	buf[2]=(configsfr_AC_RD.Vdcoff&0xFF00)>>8;           
+   \   00000196   0x0A01             LSRS     R1,R0,#+8
+   \   00000198   0x70B1             STRB     R1,[R6, #+2]
+    572               	buf[3]=configsfr_AC_RD.Vdcoff&0xFF;
+   \   0000019A   0x70F0             STRB     R0,[R6, #+3]
+    573                  //电压偏移校准寄存器** 
+    574          	    SPI_CS5463_AC_Write(buf,4);
+   \   0000019C   0x2104             MOVS     R1,#+4
+   \   0000019E   0x4668             MOV      R0,SP
+   \   000001A0   0x.... 0x....      BL       SPI_CS5463_AC_Write
+   \   000001A4   0xE009             B.N      ??CS5463_AC_INIT_1
+    575              } else {
+    576          	    buf[0]=VDCOFF;          
+   \                     ??CS5463_AC_INIT_0: (+1)
+   \   000001A6   0x2006             MOVS     R0,#+6
+   \   000001A8   0xF88D 0x0000      STRB     R0,[SP, #+0]
+    577               	buf[1]=0x00;
+   \   000001AC   0x2000             MOVS     R0,#+0
+   \   000001AE   0x7070             STRB     R0,[R6, #+1]
+    578              	buf[2]=0x00;           
+   \   000001B0   0x8070             STRH     R0,[R6, #+2]
+    579              	buf[3]=0x00; 
+    580                  //电压偏移校准寄存器** 
+    581          	    SPI_CS5463_AC_Write(buf,4);     										
+   \   000001B2   0x2104             MOVS     R1,#+4
+   \   000001B4   0x4668             MOV      R0,SP
+   \   000001B6   0x.... 0x....      BL       SPI_CS5463_AC_Write
+    582              }
+    583              
+    584          	if((configsfr_AC_RD.Idcoff&0xFF000000)==0xAA000000) {
+   \                     ??CS5463_AC_INIT_1: (+1)
+   \   000001BA   0x6828             LDR      R0,[R5, #+0]
+   \   000001BC   0xF000 0x417F      AND      R1,R0,#0xFF000000
+   \   000001C0   0xF111 0x4FAC      CMN      R1,#+1442840576
+   \   000001C4   0xD10C             BNE.N    ??CS5463_AC_INIT_2
+    585          	    buf[0]=IDCOFF;          
+   \   000001C6   0x2102             MOVS     R1,#+2
+   \   000001C8   0xF88D 0x1000      STRB     R1,[SP, #+0]
+    586              	buf[1]=(configsfr_AC_RD.Idcoff&0xFF0000)>>16;  
+   \   000001CC   0x0C01             LSRS     R1,R0,#+16
+   \   000001CE   0x7071             STRB     R1,[R6, #+1]
+    587              	buf[2]=(configsfr_AC_RD.Idcoff&0xFF00)>>8; 
+   \   000001D0   0x0A01             LSRS     R1,R0,#+8
+   \   000001D2   0x70B1             STRB     R1,[R6, #+2]
+    588              	buf[3]=configsfr_AC_RD.Idcoff&0xFF; 
+   \   000001D4   0x70F0             STRB     R0,[R6, #+3]
+    589                  //电流偏移校准寄存器** 
+    590          	    SPI_CS5463_AC_Write(buf,4);     										
+   \   000001D6   0x2104             MOVS     R1,#+4
+   \   000001D8   0x4668             MOV      R0,SP
+   \   000001DA   0x.... 0x....      BL       SPI_CS5463_AC_Write
+   \   000001DE   0xE009             B.N      ??CS5463_AC_INIT_3
+    591          	} else {
+    592          	    buf[0]=IDCOFF;          
+   \                     ??CS5463_AC_INIT_2: (+1)
+   \   000001E0   0x2002             MOVS     R0,#+2
+   \   000001E2   0xF88D 0x0000      STRB     R0,[SP, #+0]
+    593               	buf[1]=0x00;
+   \   000001E6   0x2000             MOVS     R0,#+0
+   \   000001E8   0x7070             STRB     R0,[R6, #+1]
+    594              	buf[2]=0x00;           
+   \   000001EA   0x8070             STRH     R0,[R6, #+2]
+    595              	buf[3]=0x00;
+    596                  //电流偏移校准寄存器** 
+    597          	    SPI_CS5463_AC_Write(buf,4);     										
+   \   000001EC   0x2104             MOVS     R1,#+4
+   \   000001EE   0x4668             MOV      R0,SP
+   \   000001F0   0x.... 0x....      BL       SPI_CS5463_AC_Write
+    598          	}
+    599          	if((configsfr_AC_RD.Vacoff&0xFF000000)==0xAA000000) {
+   \                     ??CS5463_AC_INIT_3: (+1)
+   \   000001F4   0x68E8             LDR      R0,[R5, #+12]
+   \   000001F6   0xF000 0x417F      AND      R1,R0,#0xFF000000
+   \   000001FA   0xF111 0x4FAC      CMN      R1,#+1442840576
+   \   000001FE   0xD10C             BNE.N    ??CS5463_AC_INIT_4
+    600          	    buf[0]=VACOFF;
+   \   00000200   0x2122             MOVS     R1,#+34
+   \   00000202   0xF88D 0x1000      STRB     R1,[SP, #+0]
+    601              	buf[1]=(configsfr_AC_RD.Vacoff>>16)&0xFF; 
+   \   00000206   0x0C01             LSRS     R1,R0,#+16
+   \   00000208   0x7071             STRB     R1,[R6, #+1]
+    602              	buf[2]=(configsfr_AC_RD.Vacoff>>8)&0xFF; 
+   \   0000020A   0x0A01             LSRS     R1,R0,#+8
+   \   0000020C   0x70B1             STRB     R1,[R6, #+2]
+    603               	buf[3]=configsfr_AC_RD.Vacoff&0xFF;
+   \   0000020E   0x70F0             STRB     R0,[R6, #+3]
+    604                  //电压偏移校准寄存器** 
+    605          	    SPI_CS5463_AC_Write(buf,4);
+   \   00000210   0x2104             MOVS     R1,#+4
+   \   00000212   0x4668             MOV      R0,SP
+   \   00000214   0x.... 0x....      BL       SPI_CS5463_AC_Write
+   \   00000218   0xE009             B.N      ??CS5463_AC_INIT_5
+    606              } else {
+    607          	    buf[0]=VACOFF;          
+   \                     ??CS5463_AC_INIT_4: (+1)
+   \   0000021A   0x2022             MOVS     R0,#+34
+   \   0000021C   0xF88D 0x0000      STRB     R0,[SP, #+0]
+    608               	buf[1]=0x00;
+   \   00000220   0x2000             MOVS     R0,#+0
+   \   00000222   0x7070             STRB     R0,[R6, #+1]
+    609              	buf[2]=0x00;           
+   \   00000224   0x8070             STRH     R0,[R6, #+2]
+    610              	buf[3]=0x00;
+    611                  //电压偏移校准寄存器** 
+    612          	    SPI_CS5463_AC_Write(buf,4); 
+   \   00000226   0x2104             MOVS     R1,#+4
+   \   00000228   0x4668             MOV      R0,SP
+   \   0000022A   0x.... 0x....      BL       SPI_CS5463_AC_Write
+    613              }
+    614          	if((configsfr_AC_RD.Iacoff&0xFF000000)==0xAA000000) {
+   \                     ??CS5463_AC_INIT_5: (+1)
+   \   0000022E   0x68A8             LDR      R0,[R5, #+8]
+   \   00000230   0xF000 0x417F      AND      R1,R0,#0xFF000000
+   \   00000234   0xF111 0x4FAC      CMN      R1,#+1442840576
+   \   00000238   0xD10C             BNE.N    ??CS5463_AC_INIT_6
+    615          	    buf[0]=IACOFF;
+   \   0000023A   0x2120             MOVS     R1,#+32
+   \   0000023C   0xF88D 0x1000      STRB     R1,[SP, #+0]
+    616          		buf[1]=(configsfr_AC_RD.Iacoff&0xFF0000)>>16;             
+   \   00000240   0x0C01             LSRS     R1,R0,#+16
+   \   00000242   0x7071             STRB     R1,[R6, #+1]
+    617              	buf[2]=(configsfr_AC_RD.Iacoff&0xFF00)>>8; 
+   \   00000244   0x0A01             LSRS     R1,R0,#+8
+   \   00000246   0x70B1             STRB     R1,[R6, #+2]
+    618              	buf[3]=configsfr_AC_RD.Iacoff&0xFF;
+   \   00000248   0x70F0             STRB     R0,[R6, #+3]
+    619                  //电流偏移校准寄存器** 
+    620          	    SPI_CS5463_AC_Write(buf,4);     										
+   \   0000024A   0x2104             MOVS     R1,#+4
+   \   0000024C   0x4668             MOV      R0,SP
+   \   0000024E   0x.... 0x....      BL       SPI_CS5463_AC_Write
+   \   00000252   0xE009             B.N      ??CS5463_AC_INIT_7
+    621          	} else {
+    622          	    buf[0]=IACOFF;          
+   \                     ??CS5463_AC_INIT_6: (+1)
+   \   00000254   0x2020             MOVS     R0,#+32
+   \   00000256   0xF88D 0x0000      STRB     R0,[SP, #+0]
+    623               	buf[1]=0x00;
+   \   0000025A   0x2000             MOVS     R0,#+0
+   \   0000025C   0x7070             STRB     R0,[R6, #+1]
+    624              	buf[2]=0x00;           
+   \   0000025E   0x8070             STRH     R0,[R6, #+2]
+    625              	buf[3]=0x00;
+    626                  //电流偏移校准寄存器** 
+    627          	    SPI_CS5463_AC_Write(buf,4);     										
+   \   00000260   0x2104             MOVS     R1,#+4
+   \   00000262   0x4668             MOV      R0,SP
+   \   00000264   0x.... 0x....      BL       SPI_CS5463_AC_Write
+    628          	}
+    629          	if((configsfr_AC_RD.Vgain&0xFF000000)==0xAA000000) {
+   \                     ??CS5463_AC_INIT_7: (+1)
+   \   00000268   0x6968             LDR      R0,[R5, #+20]
+   \   0000026A   0xF000 0x417F      AND      R1,R0,#0xFF000000
+   \   0000026E   0xF111 0x4FAC      CMN      R1,#+1442840576
+   \   00000272   0xD10C             BNE.N    ??CS5463_AC_INIT_8
+    630          	    buf[0]=VG;          
+   \   00000274   0x2108             MOVS     R1,#+8
+   \   00000276   0xF88D 0x1000      STRB     R1,[SP, #+0]
+    631              	buf[1]=(configsfr_AC_RD.Vgain&0xFF0000)>>16;
+   \   0000027A   0x0C01             LSRS     R1,R0,#+16
+   \   0000027C   0x7071             STRB     R1,[R6, #+1]
+    632              	buf[2]=(configsfr_AC_RD.Vgain&0xFF00)>>8; 
+   \   0000027E   0x0A01             LSRS     R1,R0,#+8
+   \   00000280   0x70B1             STRB     R1,[R6, #+2]
+    633               	buf[3]=configsfr_AC_RD.Vgain&0xFF;
+   \   00000282   0x70F0             STRB     R0,[R6, #+3]
+    634                  //电压增益校准寄存器** 
+    635          	    SPI_CS5463_AC_Write(buf,4);     										
+   \   00000284   0x2104             MOVS     R1,#+4
+   \   00000286   0x4668             MOV      R0,SP
+   \   00000288   0x.... 0x....      BL       SPI_CS5463_AC_Write
+   \   0000028C   0xE00A             B.N      ??CS5463_AC_INIT_9
+    636              } else {
+    637          	    buf[0]=VG;          
+   \                     ??CS5463_AC_INIT_8: (+1)
+   \   0000028E   0x2008             MOVS     R0,#+8
+   \   00000290   0xF88D 0x0000      STRB     R0,[SP, #+0]
+    638               	buf[1]=0x40;
+   \   00000294   0x2040             MOVS     R0,#+64
+   \   00000296   0x7070             STRB     R0,[R6, #+1]
+    639              	buf[2]=0x00;           
+   \   00000298   0x2000             MOVS     R0,#+0
+   \   0000029A   0x8070             STRH     R0,[R6, #+2]
+    640              	buf[3]=0x00;
+    641                  //电压增益校准寄存器** 
+    642          	    SPI_CS5463_AC_Write(buf,4);     										
+   \   0000029C   0x2104             MOVS     R1,#+4
+   \   0000029E   0x4668             MOV      R0,SP
+   \   000002A0   0x.... 0x....      BL       SPI_CS5463_AC_Write
+    643              }
+    644          	if((configsfr_AC_RD.Igain&0xFF000000)==0xAA000000) {
+   \                     ??CS5463_AC_INIT_9: (+1)
+   \   000002A4   0x6928             LDR      R0,[R5, #+16]
+   \   000002A6   0xF000 0x417F      AND      R1,R0,#0xFF000000
+   \   000002AA   0xF111 0x4FAC      CMN      R1,#+1442840576
+   \   000002AE   0xD10C             BNE.N    ??CS5463_AC_INIT_10
+    645          	    buf[0]=IG;
+   \   000002B0   0x2104             MOVS     R1,#+4
+   \   000002B2   0xF88D 0x1000      STRB     R1,[SP, #+0]
+    646          		buf[1]=(configsfr_AC_RD.Igain&0xFF0000)>>16;
+   \   000002B6   0x0C01             LSRS     R1,R0,#+16
+   \   000002B8   0x7071             STRB     R1,[R6, #+1]
+    647          		buf[2]=(configsfr_AC_RD.Igain&0xFF00)>>8;                      
+   \   000002BA   0x0A01             LSRS     R1,R0,#+8
+   \   000002BC   0x70B1             STRB     R1,[R6, #+2]
+    648               	buf[3]=configsfr_AC_RD.Igain&0xFF;
+   \   000002BE   0x70F0             STRB     R0,[R6, #+3]
+    649                  //电压增益校准寄存器** 
+    650          	    SPI_CS5463_AC_Write(buf,4); 
+   \   000002C0   0x2104             MOVS     R1,#+4
+   \   000002C2   0x4668             MOV      R0,SP
+   \   000002C4   0x.... 0x....      BL       SPI_CS5463_AC_Write
+   \   000002C8   0xE00A             B.N      ??CS5463_AC_INIT_11
+    651              } else {
+    652          	    buf[0]=IG;          
+   \                     ??CS5463_AC_INIT_10: (+1)
+   \   000002CA   0x2004             MOVS     R0,#+4
+   \   000002CC   0xF88D 0x0000      STRB     R0,[SP, #+0]
+    653               	buf[1]=0x40;
+   \   000002D0   0x2040             MOVS     R0,#+64
+   \   000002D2   0x7070             STRB     R0,[R6, #+1]
+    654              	buf[2]=0x00;           
+   \   000002D4   0x2000             MOVS     R0,#+0
+   \   000002D6   0x8070             STRH     R0,[R6, #+2]
+    655              	buf[3]=0x00;
+    656                  //电压增益校准寄存器** 
+    657          	    SPI_CS5463_AC_Write(buf,4);     										
+   \   000002D8   0x2104             MOVS     R1,#+4
+   \   000002DA   0x4668             MOV      R0,SP
+   \   000002DC   0x.... 0x....      BL       SPI_CS5463_AC_Write
+    658              }
+    659              //状态寄存器（读）
+    660          	STATUS_VALUE = SPI_CS5463_AC_ReadRegister_INT32(STATUS);
+   \                     ??CS5463_AC_INIT_11: (+1)
+   \   000002E0   0x201E             MOVS     R0,#+30
+   \   000002E2   0x.... 0x....      BL       SPI_CS5463_AC_ReadRegister_INT32
+   \   000002E6   0x4601             MOV      R1,R0
+    661              //写状态寄存器
+    662          	SPI_CS5463_AC_WriteRegister(STATUS , STATUS_VALUE);
+   \   000002E8   0x201E             MOVS     R0,#+30
+   \   000002EA   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    663              //屏蔽中断
+    664          	SPI_CS5463_AC_WriteRegister(INTMASK , INTMASK_DATA_AC);
+   \   000002EE   0x2100             MOVS     R1,#+0
+   \   000002F0   0x2034             MOVS     R0,#+52
+   \   000002F2   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    665              //控制寄存器初始化
+    666          	SPI_CS5463_AC_WriteRegister(CTRL , CTRL_DATA_AC);
+   \   000002F6   0x2105             MOVS     R1,#+5
+   \   000002F8   0x2038             MOVS     R0,#+56
+   \   000002FA   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    667              //转换周期数寄存器设置为4000
+    668          	SPI_CS5463_AC_WriteRegister(CYCLE_COUNT , CYCLE_COUNT_DATA_AC);	
+   \   000002FE   0xF44F 0x617A      MOV      R1,#+4000
+   \   00000302   0x200A             MOVS     R0,#+10
+   \   00000304   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    669              
+    670          	if((configsfr_AC_RD.P_rate&0xFF000000)==0xAA000000) {
+   \   00000308   0x69A8             LDR      R0,[R5, #+24]
+   \   0000030A   0xF000 0x417F      AND      R1,R0,#0xFF000000
+   \   0000030E   0xF111 0x4FAC      CMN      R1,#+1442840576
+   \   00000312   0xD10C             BNE.N    ??CS5463_AC_INIT_12
+    671          	    buf[0]=PULSE_RATE;                    
+   \   00000314   0x210C             MOVS     R1,#+12
+   \   00000316   0xF88D 0x1000      STRB     R1,[SP, #+0]
+    672              	buf[1]=(configsfr_AC_RD.P_rate&0xFF0000)>>16;
+   \   0000031A   0x0C01             LSRS     R1,R0,#+16
+   \   0000031C   0x7071             STRB     R1,[R6, #+1]
+    673          		buf[2]=(configsfr_AC_RD.P_rate&0xFF00)>>8;
+   \   0000031E   0x0A01             LSRS     R1,R0,#+8
+   \   00000320   0x70B1             STRB     R1,[R6, #+2]
+    674          		buf[3]=configsfr_AC_RD.P_rate&0xFF;
+   \   00000322   0x70F0             STRB     R0,[R6, #+3]
+    675                  //默认设置，1秒钟计算一次           
+    676          	    SPI_CS5463_AC_Write(buf,4);
+   \   00000324   0x2104             MOVS     R1,#+4
+   \   00000326   0x4668             MOV      R0,SP
+   \   00000328   0x.... 0x....      BL       SPI_CS5463_AC_Write
+   \   0000032C   0xE007             B.N      ??CS5463_AC_INIT_13
+    677              } else {
+    678          		configsfr_AC.P_rate = PULSE_RATE_DATA_AC; 
+   \                     ??CS5463_AC_INIT_12: (+1)
+   \   0000032E   0x.... 0x....      LDR.W    R1,??DataTable27_4  ;; 0x27818
+   \   00000332   0x.... 0x....      LDR.W    R0,??DataTable27_5
+   \   00000336   0x6181             STR      R1,[R0, #+24]
+    679                  //脉冲速率设置，约为10Hz
+    680          		SPI_CS5463_AC_WriteRegister(PULSE_RATE , PULSE_RATE_DATA_AC);
+   \   00000338   0x200C             MOVS     R0,#+12
+   \   0000033A   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    681          	}
+    682                  
+    683          	//设置操作模式，E2为电能方向、E3为无功电能
+    684          	SPI_CS5463_AC_WriteRegister(MODE , 0x000000); 					
+   \                     ??CS5463_AC_INIT_13: (+1)
+   \   0000033E   0x2100             MOVS     R1,#+0
+   \   00000340   0x2024             MOVS     R0,#+36
+   \   00000342   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    685              //写寄存器1页
+    686          	SPI_CS5463_AC_WriteRegister(PAGE , PAGE_1);	
+   \   00000346   0x2101             MOVS     R1,#+1
+   \   00000348   0x203E             MOVS     R0,#+62
+   \   0000034A   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    687              //设置脉冲宽度，5ms					
+    688          	SPI_CS5463_AC_WriteRegister(PULSE_WIDTH , 0x000014);			
+   \   0000034E   0x2114             MOVS     R1,#+20
+   \   00000350   0x2000             MOVS     R0,#+0
+   \   00000352   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    689              //恢复对寄存器0页操作
+    690          	SPI_CS5463_AC_WriteRegister(PAGE , PAGE_0);	
+   \   00000356   0x2100             MOVS     R1,#+0
+   \   00000358   0x203E             MOVS     R0,#+62
+   \   0000035A   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    691              //状态寄存器（读）
+    692          	STATUS_VALUE = SPI_CS5463_AC_ReadRegister_INT32(STATUS);	    
+   \   0000035E   0x201E             MOVS     R0,#+30
+   \   00000360   0x.... 0x....      BL       SPI_CS5463_AC_ReadRegister_INT32
+    693              //写状态寄存器
+    694          	SPI_CS5463_AC_WriteRegister(STATUS , STATUS_VALUE);			    
+   \   00000364   0x4601             MOV      R1,R0
+   \   00000366   0x201E             MOVS     R0,#+30
+   \   00000368   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    695              
+    696          	SPI_CS5463_AC_CS_LOW(1);	
+   \   0000036C   0x2110             MOVS     R1,#+16
+   \   0000036E   0x4620             MOV      R0,R4
+   \   00000370   0x.... 0x....      BL       GPIO_ResetBits
+   \   00000374   0x2001             MOVS     R0,#+1
+   \   00000376   0x.... 0x....      BL       Delay
+    697              //启动连续计算周期
+    698          	SPI_CS5463_AC_SendByte(CONTINUOUS_CYCLE);
+   \   0000037A   0x20E8             MOVS     R0,#+232
+   \   0000037C   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    699          	SPI_CS5463_AC_CS_HIGH(1);
+   \   00000380   0x2110             MOVS     R1,#+16
+   \   00000382   0x4620             MOV      R0,R4
+   \   00000384   0x.... 0x....      BL       GPIO_SetBits
+   \   00000388   0x2001             MOVS     R0,#+1
+   \   0000038A   0x.... 0x....      BL       Delay
+    700          }
+   \   0000038E   0xBD73             POP      {R0,R1,R4-R6,PC}  ;; return
+    701          
+    702          //4.8.10 校准顺序
+    703          //偏移量校准是否应在增益校准之前，或应反过
+    704          //来？本节将推荐合理的校准顺序。
+    705          //1． 若希望测量电压/电流和功率/能量信号中的直
+    706          //流成分，则应先进行直流偏移量校准。 若希望
+    707          //去除电压和电流信号中的直流成分（通过选择
+    708          //状态寄存器中的HPF位）， 则不需进行DC偏移
+    709          //量寄存器。 一旦选择了电压或电流的HPF，则
+    710          //功率/能量信号中的直流成分将从功率/能量结
+    711          //果中去除。
+    712          //2． 若希望将电能寄存器的准确度保持在± 0.1%
+    713          //（相对于电压/电流输入的参考校准电平）内，
+    714          //则应接下来进行交流或直流增益校准。
+    715          //3． 最后进行电压和电流通道的交流偏移量校准。
+    716          //只需将两个通道的“＋”“－”输入端接地，
+    717          //然后执行交流偏移量校准程序。
+    718          //需注意的是如果某一通道进行了直流偏移量
+    719          //校准，然后又进行了增益校准，则该通道DC偏移
+    720          //量寄存器的值需乘以一个系数， 它等于该通道的新
+    721          //的增益寄存器的值。 例如电压通道直流偏移量校准
+    722          //后电压通道DC偏移量寄存器的值位0x0001AC＝
+    723          //0.0000510（ d）， 假设电压通道增益寄存器的值在
+    724          //执行直流偏移量校准过程中为缺省值1.000 … ，则
+    725          //交流和直流增益校准后， 电压通道增益寄存器的值
+    726          //变为0x4020A3＝ 1.0019920（ d）， 则电压通道DC
+    727          //偏移量寄存器的值为0x0001AD=0.0000511(d)，等
+    728          //于1.0019920× 0.0000510。
+    729          
+
+   \                                 In section .text, align 2, keep-with-next
+    730          void CS5463_AC_Adjust(MODBUS_CH  *pch, uint8_t mode)						//5463校准
+    731          {
+   \                     CS5463_AC_Adjust: (+1)
+   \   00000000   0xE92D 0x4DFC      PUSH     {R2-R8,R10,R11,LR}
+   \   00000004   0x4604             MOV      R4,R0
+   \   00000006   0x460D             MOV      R5,R1
+    732          	uint32_t i;
+    733          	uint8_t temp[4];
+    734          	uint8_t clear_buf[4] = {0};
+   \   00000008   0xA801             ADD      R0,SP,#+4
+   \   0000000A   0x2100             MOVS     R1,#+0
+   \   0000000C   0x6001             STR      R1,[R0, #+0]
+    735              //uint8_t cnts = CYCLE_COUNT_DATA_AC / 4000 + 1;
+    736              
+    737          	float x;
+    738              
+    739              /***********************************************
+    740              * 描述： 
+    741              */
+    742              SPI_CS5463_AC_SendByte(SYNC1);
+   \   0000000E   0x20FF             MOVS     R0,#+255
+   \   00000010   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    743          	SPI_CS5463_AC_SendByte(SYNC1);
+   \   00000014   0x20FF             MOVS     R0,#+255
+   \   00000016   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    744          	SPI_CS5463_AC_SendByte(SYNC1);
+   \   0000001A   0x20FF             MOVS     R0,#+255
+   \   0000001C   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    745          	SPI_CS5463_AC_SendByte(SYNC0);
+   \   00000020   0x20FE             MOVS     R0,#+254
+   \   00000022   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    746              //清转DRDY标志位
+    747           	SPI_CS5463_AC_ClearDrdy();
+   \   00000026   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    748              //等待DRDY标志位置位 
+    749           	SPI_CS5463_AC_WaitDrdy();  
+   \   0000002A   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+    750              //发送停止计数，中止A/D转换命令
+    751              SPI_CS5463_AC_SendCommand(STOP);
+   \   0000002E   0x20A0             MOVS     R0,#+160
+   \   00000030   0x.... 0x....      BL       SPI_CS5463_AC_SendCommand
+    752              
+    753              /***********************************************
+    754              * 描述： 
+    755              */
+    756              //清转DRDY标志位
+    757           	SPI_CS5463_AC_ClearDrdy();
+   \   00000034   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    758              /***********************************************
+    759              * 描述： 电流  交流偏置校准
+    760              */
+    761              switch(mode) {
+   \   00000038   0x2DAA             CMP      R5,#+170
+   \   0000003A   0xF000 0x8173      BEQ.W    ??CS5463_AC_Adjust_0
+   \   0000003E   0x2DC0             CMP      R5,#+192
+   \   00000040   0xF000 0x818F      BEQ.W    ??CS5463_AC_Adjust_1
+   \   00000044   0x2DC9             CMP      R5,#+201
+   \   00000046   0xD03D             BEQ.N    ??CS5463_AC_Adjust_2
+   \   00000048   0x2DCB             CMP      R5,#+203
+   \   0000004A   0xF000 0x8133      BEQ.W    ??CS5463_AC_Adjust_3
+   \   0000004E   0x2DCC             CMP      R5,#+204
+   \   00000050   0xF000 0x814C      BEQ.W    ??CS5463_AC_Adjust_4
+   \   00000054   0x2DCD             CMP      R5,#+205
+   \   00000056   0xF000 0x8089      BEQ.W    ??CS5463_AC_Adjust_5
+   \   0000005A   0x2DCE             CMP      R5,#+206
+   \   0000005C   0xF000 0x80EA      BEQ.W    ??CS5463_AC_Adjust_6
+   \   00000060   0x2DD1             CMP      R5,#+209
+   \   00000062   0xD005             BEQ.N    ??CS5463_AC_Adjust_7
+   \   00000064   0x2DD5             CMP      R5,#+213
+   \   00000066   0xD057             BEQ.N    ??CS5463_AC_Adjust_8
+   \   00000068   0x2DD6             CMP      R5,#+214
+   \   0000006A   0xF000 0x80A7      BEQ.W    ??CS5463_AC_Adjust_9
+   \   0000006E   0xE23F             B.N      ??CS5463_AC_Adjust_10
+    762                  /***********************************************
+    763                  * 描述： 直流电压零点校准：
+    764                  *        周期计数器(N默认为4000) + 30 个AD转换周期
+    765                  *        在4.096MHz频率下约为1秒钟
+    766                  *        N越大，精度越高，
+    767                  */
+    768              case VDCOFFC:
+    769          	 	SPI_CS5463_AC_ClearDrdy(); 
+   \                     ??CS5463_AC_Adjust_7: (+1)
+   \   00000070   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    770                  //电压通道直流偏 
+    771                  SPI_CS5463_AC_WriteRegister(VDCOFF , 0x000000);
+   \   00000074   0x2100             MOVS     R1,#+0
+   \   00000076   0x2006             MOVS     R0,#+6
+   \   00000078   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    772                  //写校准命令寄存器
+    773             		SPI_CS5463_AC_SendCommand(VDCOFFC);
+   \   0000007C   0x20D1             MOVS     R0,#+209
+   \   0000007E   0x.... 0x....      BL       SPI_CS5463_AC_SendCommand
+    774              	for(i=0;i<50000000;i++);
+   \   00000082   0x2000             MOVS     R0,#+0
+   \   00000084   0x.... 0x....      LDR.W    R1,??DataTable27_6  ;; 0x2faf080
+   \   00000088   0xE000             B.N      ??CS5463_AC_Adjust_11
+   \                     ??CS5463_AC_Adjust_12: (+1)
+   \   0000008A   0x1C40             ADDS     R0,R0,#+1
+   \                     ??CS5463_AC_Adjust_11: (+1)
+   \   0000008C   0x4288             CMP      R0,R1
+   \   0000008E   0xD3FC             BCC.N    ??CS5463_AC_Adjust_12
+    775          		SPI_CS5463_AC_WaitDrdy();     									//等待校准完成
+   \   00000090   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+    776              	configsfr_AC.Vdcoff = SPI_CS5463_AC_ReadRegister_INT32(VDCOFF)|0xAA000000;	//读Idcoff 寄存器
+   \   00000094   0x.... 0x....      LDR.W    R5,??DataTable27_5
+   \   00000098   0x2006             MOVS     R0,#+6
+   \   0000009A   0x.... 0x....      BL       SPI_CS5463_AC_ReadRegister_INT32
+   \   0000009E   0xF040 0x402A      ORR      R0,R0,#0xAA000000
+   \   000000A2   0x6068             STR      R0,[R5, #+4]
+    777              	TO_Arayy(temp , configsfr_AC.Vdcoff);
+   \   000000A4   0x6869             LDR      R1,[R5, #+4]
+   \   000000A6   0x4668             MOV      R0,SP
+   \   000000A8   0x.... 0x....      BL       TO_Arayy
+    778          		WriteFM24CL64(32, temp, 4);
+   \   000000AC   0x2204             MOVS     R2,#+4
+   \   000000AE   0x4669             MOV      R1,SP
+   \   000000B0   0x2020             MOVS     R0,#+32
+   \   000000B2   0x.... 0x....      BL       WriteFM24CL64
+    779          		uartprintf(pch,"\r\n 直流电压偏移 = %x\n", configsfr_AC.Vdcoff);
+   \   000000B6   0x686A             LDR      R2,[R5, #+4]
+   \   000000B8   0x.... 0x....      ADR.W    R1,?_1
+   \   000000BC   0x4620             MOV      R0,R4
+   \   000000BE   0x.... 0x....      BL       uartprintf
+    780          		break;    
+   \   000000C2   0xE215             B.N      ??CS5463_AC_Adjust_10
+    781                  /***********************************************
+    782                  * 描述： 直流电流零点校准：
+    783                  *        周期计数器(N默认为4000) + 30 个AD转换周期
+    784                  *        在4.096MHz频率下约为1秒钟
+    785                  *        N越大，精度越高，
+    786                  */
+    787              case IDCOFFC:
+    788          	 	SPI_CS5463_AC_ClearDrdy();
+   \                     ??CS5463_AC_Adjust_2: (+1)
+   \   000000C4   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    789              	SPI_CS5463_AC_WriteRegister(IDCOFF , 0x000000);				    //电压增益校准寄存器**
+   \   000000C8   0x2100             MOVS     R1,#+0
+   \   000000CA   0x2002             MOVS     R0,#+2
+   \   000000CC   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    790          		SPI_CS5463_AC_SendCommand(IDCOFFC);								//写校准命令寄存器
+   \   000000D0   0x20C9             MOVS     R0,#+201
+   \   000000D2   0x.... 0x....      BL       SPI_CS5463_AC_SendCommand
+    791          		for(i=0;i<50000000;i++);
+   \   000000D6   0x2000             MOVS     R0,#+0
+   \   000000D8   0x.... 0x....      LDR.W    R1,??DataTable27_6  ;; 0x2faf080
+   \   000000DC   0xE000             B.N      ??CS5463_AC_Adjust_13
+   \                     ??CS5463_AC_Adjust_14: (+1)
+   \   000000DE   0x1C40             ADDS     R0,R0,#+1
+   \                     ??CS5463_AC_Adjust_13: (+1)
+   \   000000E0   0x4288             CMP      R0,R1
+   \   000000E2   0xD3FC             BCC.N    ??CS5463_AC_Adjust_14
+    792              	SPI_CS5463_AC_WaitDrdy();     									//等待校准完成 										
+   \   000000E4   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+    793              	configsfr_AC.Idcoff = SPI_CS5463_AC_ReadRegister_INT32(IDCOFF)|0xAA000000;	//读Idcoff 寄存器
+   \   000000E8   0x.... 0x....      LDR.W    R5,??DataTable27_5
+   \   000000EC   0x2002             MOVS     R0,#+2
+   \   000000EE   0x.... 0x....      BL       SPI_CS5463_AC_ReadRegister_INT32
+   \   000000F2   0xF040 0x402A      ORR      R0,R0,#0xAA000000
+   \   000000F6   0x6028             STR      R0,[R5, #+0]
+    794              	TO_Arayy(temp , configsfr_AC.Idcoff);
+   \   000000F8   0x6829             LDR      R1,[R5, #+0]
+   \   000000FA   0x4668             MOV      R0,SP
+   \   000000FC   0x.... 0x....      BL       TO_Arayy
+    795          		WriteFM24CL64(36, temp, 4);
+   \   00000100   0x2204             MOVS     R2,#+4
+   \   00000102   0x4669             MOV      R1,SP
+   \   00000104   0x2024             MOVS     R0,#+36
+   \   00000106   0x.... 0x....      BL       WriteFM24CL64
+    796          		uartprintf(pch,"\r\n 直流电流偏移 = %x\n", configsfr_AC.Idcoff);
+   \   0000010A   0x682A             LDR      R2,[R5, #+0]
+   \   0000010C   0x.... 0x....      ADR.W    R1,?_2
+   \   00000110   0x4620             MOV      R0,R4
+   \   00000112   0x.... 0x....      BL       uartprintf
+    797          		break;
+   \   00000116   0xE1EB             B.N      ??CS5463_AC_Adjust_10
+    798                  /***********************************************
+    799                  * 描述： 交流电压零点校准：
+    800                  *        6 * 周期计数器(N默认为4000) + 30 个AD转换周期
+    801                  *        在4.096MHz频率下约为6秒钟
+    802                  *        N越大，精度越高，
+    803                  */
+    804          	case VACOFFC:
+    805          //		SPI_CS5463_AC_ClearDrdy(); 
+    806          //        //电压增益校准寄存器
+    807          //        SPI_CS5463_AC_WriteRegister(VACOFF , 0x000000);
+    808          //        //写校准命令寄存器
+    809          //    	SPI_CS5463_AC_SendCommand(VACOFFC);	
+    810          //		uartprintf(pch,"\r\n 交流电压零点校准中...\n");
+    811          //        //30个AD转换等待
+    812          //        //BSP_OS_TimeDly(OS_TICKS_PER_SEC / 10);          
+    813                  
+    814                  SPI_CS5463_AC_ClearDrdy();    
+   \                     ??CS5463_AC_Adjust_8: (+1)
+   \   00000118   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    815                  SPI_CS5463_AC_WriteRegister(VACOFF , 0x000000); 				//μ??1??ò?D￡×???′??÷** 
+   \   0000011C   0x2100             MOVS     R1,#+0
+   \   0000011E   0x2022             MOVS     R0,#+34
+   \   00000120   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    816              	SPI_CS5463_AC_SendCommand(VACOFFC);								//D′D￡×??üá???′??÷
+   \   00000124   0x20D5             MOVS     R0,#+213
+   \   00000126   0x.... 0x....      BL       SPI_CS5463_AC_SendCommand
+    817              	for(i=0;i<100000000;i++);
+   \   0000012A   0x2000             MOVS     R0,#+0
+   \   0000012C   0x.... 0x....      LDR.W    R1,??DataTable27_7  ;; 0x5f5e100
+   \   00000130   0xE000             B.N      ??CS5463_AC_Adjust_15
+   \                     ??CS5463_AC_Adjust_16: (+1)
+   \   00000132   0x1C40             ADDS     R0,R0,#+1
+   \                     ??CS5463_AC_Adjust_15: (+1)
+   \   00000134   0x4288             CMP      R0,R1
+   \   00000136   0xD3FC             BCC.N    ??CS5463_AC_Adjust_16
+    818          		SPI_CS5463_AC_WaitDrdy();     									//μè′yD￡×?íê3é
+   \   00000138   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+    819          		configsfr_AC.Vacoff = SPI_CS5463_AC_ReadRegister_INT32(VACOFF)|0xAA000000; //?áIdcoff ??′??÷
+   \   0000013C   0x.... 0x....      LDR.W    R5,??DataTable27_5
+   \   00000140   0x2022             MOVS     R0,#+34
+   \   00000142   0x.... 0x....      BL       SPI_CS5463_AC_ReadRegister_INT32
+   \   00000146   0xF040 0x402A      ORR      R0,R0,#0xAA000000
+   \   0000014A   0x60E8             STR      R0,[R5, #+12]
+    820              	TO_Arayy(temp , configsfr_AC.Vacoff);
+   \   0000014C   0x68E9             LDR      R1,[R5, #+12]
+   \   0000014E   0x4668             MOV      R0,SP
+   \   00000150   0x.... 0x....      BL       TO_Arayy
+    821          		WriteFM24CL64(40, temp, 4);
+   \   00000154   0x2204             MOVS     R2,#+4
+   \   00000156   0x4669             MOV      R1,SP
+   \   00000158   0x2028             MOVS     R0,#+40
+   \   0000015A   0x.... 0x....      BL       WriteFM24CL64
+    822          		uartprintf(pch,"\r\n 交流电压偏移 = %x\n", configsfr_AC.Vacoff);       
+   \   0000015E   0x68EA             LDR      R2,[R5, #+12]
+   \   00000160   0x.... 0x....      ADR.W    R1,?_3
+   \   00000164   0x4620             MOV      R0,R4
+   \   00000166   0x.... 0x....      BL       uartprintf
+    823                  
+    824          //        /***********************************************
+    825          //        * 描述： 等待校准结束
+    826          //        */
+    827          //        cnts = 10 * CYCLE_COUNT_DATA_AC / 4000 + 1;
+    828          //    	for(i=0;i<cnts;i++) {
+    829          //            uprintf("acvo%4d", i);
+    830          //            BSP_OS_TimeDly(OS_TICKS_PER_SEC);
+    831          //            //SPI_CS5463_AC_WaitDrdy(); 
+    832          //            if( TRUE == SPI_CS5463_AC_GetDrdy() );//break;
+    833          //        }
+    834          //        //读Idcoff 寄存器
+    835          //		configsfr_AC.Vacoff = SPI_CS5463_AC_ReadRegister_INT32(VACOFF)|0xAA000000; 
+    836          //    	TO_Arayy(temp , configsfr_AC.Vacoff);
+    837          //        //保存校准值
+    838          //		WriteFM24CL64(40, temp, 4);
+    839          //        //打印校准值
+    840          //		uartprintf(pch,"\r\n 交流电压偏移 = %x\n", configsfr_AC.Vacoff);
+    841          //        uprintf("acvo%4d", configsfr_AC.Vacoff & ~0xAA000000);
+    842          //        BSP_OS_TimeDly(OS_TICKS_PER_SEC);
+    843          		break;
+   \   0000016A   0xE1C1             B.N      ??CS5463_AC_Adjust_10
+    844                  /***********************************************
+    845                  * 描述： 交流电流零点校准：
+    846                  *        6 * 周期计数器(N默认为4000) + 30 个AD转换周期
+    847                  *        在4.096MHz频率下约为6秒钟
+    848                  *        N越大，精度越高，
+    849                  */
+    850          	case IACOFFC:
+    851                  SPI_CS5463_AC_ClearDrdy();    
+   \                     ??CS5463_AC_Adjust_5: (+1)
+   \   0000016C   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    852                  SPI_CS5463_AC_WriteRegister(IACOFF , 0x000000); 				//μ??1??ò?D￡×???′??÷** 
+   \   00000170   0x2100             MOVS     R1,#+0
+   \   00000172   0x2020             MOVS     R0,#+32
+   \   00000174   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    853            		SPI_CS5463_AC_SendCommand(IACOFFC);								//D′D￡×??üá???′??÷
+   \   00000178   0x20CD             MOVS     R0,#+205
+   \   0000017A   0x.... 0x....      BL       SPI_CS5463_AC_SendCommand
+    854              	for(i=0;i<100000000;i++);
+   \   0000017E   0x2000             MOVS     R0,#+0
+   \   00000180   0x....             LDR.N    R1,??DataTable27_7  ;; 0x5f5e100
+   \   00000182   0xE000             B.N      ??CS5463_AC_Adjust_17
+   \                     ??CS5463_AC_Adjust_18: (+1)
+   \   00000184   0x1C40             ADDS     R0,R0,#+1
+   \                     ??CS5463_AC_Adjust_17: (+1)
+   \   00000186   0x4288             CMP      R0,R1
+   \   00000188   0xD3FC             BCC.N    ??CS5463_AC_Adjust_18
+    855          		SPI_CS5463_AC_WaitDrdy();     									//μè′yD￡×?íê3é
+   \   0000018A   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+    856          		configsfr_AC.Iacoff = SPI_CS5463_AC_ReadRegister_INT32(IACOFF)|0xAA000000;	//?áIacoff ??′??÷
+   \   0000018E   0x....             LDR.N    R5,??DataTable27_5
+   \   00000190   0x2020             MOVS     R0,#+32
+   \   00000192   0x.... 0x....      BL       SPI_CS5463_AC_ReadRegister_INT32
+   \   00000196   0xF040 0x402A      ORR      R0,R0,#0xAA000000
+   \   0000019A   0x60A8             STR      R0,[R5, #+8]
+    857              	TO_Arayy(temp , configsfr_AC.Iacoff);
+   \   0000019C   0x68A9             LDR      R1,[R5, #+8]
+   \   0000019E   0x4668             MOV      R0,SP
+   \   000001A0   0x.... 0x....      BL       TO_Arayy
+    858          		WriteFM24CL64(44, temp, 4);
+   \   000001A4   0x2204             MOVS     R2,#+4
+   \   000001A6   0x4669             MOV      R1,SP
+   \   000001A8   0x202C             MOVS     R0,#+44
+   \   000001AA   0x.... 0x....      BL       WriteFM24CL64
+    859          		uartprintf(pch,"\r\n 交流电流偏移 = %x\n", configsfr_AC.Iacoff);
+   \   000001AE   0x68AA             LDR      R2,[R5, #+8]
+   \   000001B0   0x.... 0x....      ADR.W    R1,?_4
+   \   000001B4   0x4620             MOV      R0,R4
+   \   000001B6   0x.... 0x....      BL       uartprintf
+    860                  break;
+   \   000001BA   0xE199             B.N      ??CS5463_AC_Adjust_10
+    861          //	 	SPI_CS5463_AC_ClearDrdy();    
+    862          //        //电压增益校准寄存器**
+    863          //        SPI_CS5463_AC_WriteRegister(IACOFF , 0x000000);
+    864          //        //写校准命令寄存器
+    865          //  		SPI_CS5463_AC_SendCommand(IACOFFC);	
+    866          //		uartprintf(pch,"\r\n 交流电流零点校准中...\n");
+    867          //        //30个AD转换等待
+    868          //        BSP_OS_TimeDly(OS_TICKS_PER_SEC / 10);        
+    869          //        /***********************************************
+    870          //        * 描述： 等待校准结束
+    871          //        */
+    872          //        cnts = 10 * CYCLE_COUNT_DATA_AC / 4000 + 1;
+    873          //    	for(i=0;i<cnts;i++) {
+    874          //            uprintf("acao%4d", i);
+    875          //            BSP_OS_TimeDly(OS_TICKS_PER_SEC);
+    876          //            //SPI_CS5463_AC_WaitDrdy(); 
+    877          //            if( TRUE == SPI_CS5463_AC_GetDrdy() ) ;//break;
+    878          //        }
+    879          //        //读Iacoff 寄存器
+    880          //		configsfr_AC.Iacoff = SPI_CS5463_AC_ReadRegister_INT32(IACOFF)|0xAA000000;
+    881          //    	TO_Arayy(temp , configsfr_AC.Iacoff);
+    882          //        //保存校准值
+    883          //		WriteFM24CL64(44, temp, 4);
+    884          //        //打印校准值
+    885          //		uartprintf(pch,"\r\n 交流电流偏移 = %x\n", configsfr_AC.Iacoff);
+    886          //        uprintf("acao%4d", configsfr_AC.Iacoff & ~0xAA000000);
+    887          //        BSP_OS_TimeDly(OS_TICKS_PER_SEC);
+    888          //		break;
+    889                  /***********************************************
+    890                  * 描述： 电压增益校准
+    891                  */
+    892          	case VACGAINC:
+    893                	SPI_CS5463_AC_WriteRegister(VG , 0x400000); 					//μ??1??ò?D￡×???′??÷** 
+   \                     ??CS5463_AC_Adjust_9: (+1)
+   \   000001BC   0xF44F 0x0180      MOV      R1,#+4194304
+   \   000001C0   0x2008             MOVS     R0,#+8
+   \   000001C2   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    894          		SPI_CS5463_AC_SendCommand(VACGAINC);								//D′D￡×??üá???′??÷
+   \   000001C6   0x20D6             MOVS     R0,#+214
+   \   000001C8   0x.... 0x....      BL       SPI_CS5463_AC_SendCommand
+    895              	for(i=0;i<50000000;i++);
+   \   000001CC   0x2000             MOVS     R0,#+0
+   \   000001CE   0x....             LDR.N    R1,??DataTable27_6  ;; 0x2faf080
+   \   000001D0   0xE000             B.N      ??CS5463_AC_Adjust_19
+   \                     ??CS5463_AC_Adjust_20: (+1)
+   \   000001D2   0x1C40             ADDS     R0,R0,#+1
+   \                     ??CS5463_AC_Adjust_19: (+1)
+   \   000001D4   0x4288             CMP      R0,R1
+   \   000001D6   0xD3FC             BCC.N    ??CS5463_AC_Adjust_20
+    896          		SPI_CS5463_AC_WaitDrdy();     									  //μè′yD￡×?íê3é
+   \   000001D8   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+    897          		configsfr_AC.Vgain = SPI_CS5463_AC_ReadRegister_INT32(VG)|0xAA000000; //?áIgain ??′??÷
+   \   000001DC   0x....             LDR.N    R5,??DataTable27_5
+   \   000001DE   0x2008             MOVS     R0,#+8
+   \   000001E0   0x.... 0x....      BL       SPI_CS5463_AC_ReadRegister_INT32
+   \   000001E4   0xF040 0x402A      ORR      R0,R0,#0xAA000000
+   \   000001E8   0x6168             STR      R0,[R5, #+20]
+    898          		TO_Arayy(temp , configsfr_AC.Vgain);
+   \   000001EA   0x6969             LDR      R1,[R5, #+20]
+   \   000001EC   0x4668             MOV      R0,SP
+   \   000001EE   0x.... 0x....      BL       TO_Arayy
+    899          		WriteFM24CL64(48, temp, 4);
+   \   000001F2   0x2204             MOVS     R2,#+4
+   \   000001F4   0x4669             MOV      R1,SP
+   \   000001F6   0x2030             MOVS     R0,#+48
+   \   000001F8   0x.... 0x....      BL       WriteFM24CL64
+    900          		SPI_CS5463_AC_ClearDrdy();
+   \   000001FC   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    901          		SPI_CS5463_AC_SendByte(CONTINUOUS_CYCLE);
+   \   00000200   0x20E8             MOVS     R0,#+232
+   \   00000202   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    902          		SPI_CS5463_AC_WaitDrdy();
+   \   00000206   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+    903          		x = SPI_CS5463_AC_Read_VIrms_FLOAT(VRMS);
+   \   0000020A   0x2018             MOVS     R0,#+24
+   \   0000020C   0x.... 0x....      BL       SPI_CS5463_AC_Read_VIrms_FLOAT
+   \   00000210   0x4606             MOV      R6,R0
+    904          		uartprintf(pch,"\r\n 交流电压增益 = %x\n", configsfr_AC.Vgain);
+   \   00000212   0x696A             LDR      R2,[R5, #+20]
+   \   00000214   0x.... 0x....      ADR.W    R1,?_5
+   \   00000218   0x4620             MOV      R0,R4
+   \   0000021A   0x.... 0x....      BL       uartprintf
+    905          		uartprintf(pch,"\r\n 交流电压有效值 = %f\n", x);
+   \   0000021E   0x4630             MOV      R0,R6
+   \   00000220   0x.... 0x....      BL       __aeabi_f2d
+   \   00000224   0x4602             MOV      R2,R0
+   \   00000226   0x460B             MOV      R3,R1
+   \   00000228   0x.... 0x....      ADR.W    R1,?_6
+   \   0000022C   0x4620             MOV      R0,R4
+   \   0000022E   0x.... 0x....      BL       uartprintf
+    906                  break;
+   \   00000232   0xE15D             B.N      ??CS5463_AC_Adjust_10
+    907          //        //电压增益校准寄存器恢复默认值，即1.0倍增益
+    908          //      	SPI_CS5463_AC_WriteRegister(VG , 0x400000);
+    909          //        //写校准命令寄存器
+    910          //		SPI_CS5463_AC_SendCommand(VACGAINC);
+    911          //		uartprintf(pch,"\r\n 交流电压增益校准中...\n");
+    912          //        //30个AD转换等待
+    913          //        BSP_OS_TimeDly(OS_TICKS_PER_SEC / 10);        
+    914          //        /***********************************************
+    915          //        * 描述： 等待校准结束
+    916          //        */
+    917          //        cnts = 10 * CYCLE_COUNT_DATA_AC / 4000 + 1;
+    918          //    	for(i=0;i<cnts;i++) {
+    919          //            uprintf("acvv%4d", i);
+    920          //            BSP_OS_TimeDly(OS_TICKS_PER_SEC);
+    921          //            //SPI_CS5463_AC_WaitDrdy(); 
+    922          //            if( TRUE == SPI_CS5463_AC_GetDrdy() );//break;
+    923          //        }
+    924          //        //读Igain 寄存器
+    925          //		configsfr_AC.Vgain = SPI_CS5463_AC_ReadRegister_INT32(VG)|0xAA000000; 
+    926          //		TO_Arayy(temp , configsfr_AC.Vgain);
+    927          //        //保存校准值
+    928          //		WriteFM24CL64(48, temp, 4);
+    929          //        //清转DRDY标志位
+    930          //		SPI_CS5463_AC_ClearDrdy();
+    931          //        //启动连续计算周期
+    932          //		SPI_CS5463_AC_SendByte(CONTINUOUS_CYCLE);
+    933          //        //等待转换完成
+    934          //		SPI_CS5463_AC_WaitDrdy();
+    935          //        //读取电压有效值
+    936          //		x = SPI_CS5463_AC_Read_VIrms_FLOAT(VRMS);
+    937          //		uartprintf(pch,"\r\n 交流电压增益 = %x\n", configsfr_AC.Vgain);
+    938          //		uartprintf(pch,"\r\n 交流电压有效值 = %f\n", x);
+    939          //		break;
+    940                  /***********************************************
+    941                  * 描述： 电流增益校准
+    942                  */
+    943          	case IACGAINC:SPI_CS5463_AC_ClearDrdy();    
+   \                     ??CS5463_AC_Adjust_6: (+1)
+   \   00000234   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    944                	SPI_CS5463_AC_ClearDrdy();    
+   \   00000238   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    945          	    SPI_CS5463_AC_WriteRegister(IG , 0x400000); 					//μ?á÷??ò?D￡×???′??÷** 
+   \   0000023C   0xF44F 0x0180      MOV      R1,#+4194304
+   \   00000240   0x2004             MOVS     R0,#+4
+   \   00000242   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+    946              	SPI_CS5463_AC_SendCommand(IACGAINC);								//D′D￡×??üá???′??÷
+   \   00000246   0x20CE             MOVS     R0,#+206
+   \   00000248   0x.... 0x....      BL       SPI_CS5463_AC_SendCommand
+    947              	for(i=0;i<50000000;i++);
+   \   0000024C   0x2000             MOVS     R0,#+0
+   \   0000024E   0x....             LDR.N    R1,??DataTable27_6  ;; 0x2faf080
+   \   00000250   0xE000             B.N      ??CS5463_AC_Adjust_21
+   \                     ??CS5463_AC_Adjust_22: (+1)
+   \   00000252   0x1C40             ADDS     R0,R0,#+1
+   \                     ??CS5463_AC_Adjust_21: (+1)
+   \   00000254   0x4288             CMP      R0,R1
+   \   00000256   0xD3FC             BCC.N    ??CS5463_AC_Adjust_22
+    948          		SPI_CS5463_AC_WaitDrdy();     									  //μè′yD￡×?íê3é
+   \   00000258   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+    949          		configsfr_AC.Igain = SPI_CS5463_AC_ReadRegister_INT32(IG)|0xAA000000; //?áIgain ??′??÷
+   \   0000025C   0x....             LDR.N    R5,??DataTable27_5
+   \   0000025E   0x2004             MOVS     R0,#+4
+   \   00000260   0x.... 0x....      BL       SPI_CS5463_AC_ReadRegister_INT32
+   \   00000264   0xF040 0x402A      ORR      R0,R0,#0xAA000000
+   \   00000268   0x6128             STR      R0,[R5, #+16]
+    950          		TO_Arayy(temp , configsfr_AC.Igain);
+   \   0000026A   0x6929             LDR      R1,[R5, #+16]
+   \   0000026C   0x4668             MOV      R0,SP
+   \   0000026E   0x.... 0x....      BL       TO_Arayy
+    951          		WriteFM24CL64(52, temp, 4);
+   \   00000272   0x2204             MOVS     R2,#+4
+   \   00000274   0x4669             MOV      R1,SP
+   \   00000276   0x2034             MOVS     R0,#+52
+   \   00000278   0x.... 0x....      BL       WriteFM24CL64
+    952          		SPI_CS5463_AC_ClearDrdy();
+   \   0000027C   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    953          		SPI_CS5463_AC_SendByte(CONTINUOUS_CYCLE);
+   \   00000280   0x20E8             MOVS     R0,#+232
+   \   00000282   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+    954          		SPI_CS5463_AC_WaitDrdy();
+   \   00000286   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+    955          		x = SPI_CS5463_AC_Read_VIrms_FLOAT(IRMS);
+   \   0000028A   0x2016             MOVS     R0,#+22
+   \   0000028C   0x.... 0x....      BL       SPI_CS5463_AC_Read_VIrms_FLOAT
+   \   00000290   0x4606             MOV      R6,R0
+    956          		uartprintf(pch,"\r\n 交流电流增益 = %x\n", configsfr_AC.Igain);
+   \   00000292   0x692A             LDR      R2,[R5, #+16]
+   \   00000294   0x.... 0x....      ADR.W    R1,?_7
+   \   00000298   0x4620             MOV      R0,R4
+   \   0000029A   0x.... 0x....      BL       uartprintf
+    957          		uartprintf(pch,"\r\n 交流电流有效值 = %f\n", x);
+   \   0000029E   0x4630             MOV      R0,R6
+   \   000002A0   0x.... 0x....      BL       __aeabi_f2d
+   \   000002A4   0x4602             MOV      R2,R0
+   \   000002A6   0x460B             MOV      R3,R1
+   \   000002A8   0x.... 0x....      ADR.W    R1,?_8
+   \   000002AC   0x4620             MOV      R0,R4
+   \   000002AE   0x.... 0x....      BL       uartprintf
+    958                  break;
+   \   000002B2   0xE11D             B.N      ??CS5463_AC_Adjust_10
+    959          //        //电流增益校准寄存器恢复默认值，即1.0倍增益
+    960          //	    SPI_CS5463_AC_WriteRegister(IG , 0x400000);
+    961          //        //写校准命令寄存器
+    962          //    	SPI_CS5463_AC_SendCommand(IACGAINC);
+    963          //		uartprintf(pch,"\r\n 交流电流增益校准中...\n");
+    964          //        //30个AD转换等待
+    965          //        BSP_OS_TimeDly(OS_TICKS_PER_SEC / 10);        
+    966          //        /***********************************************
+    967          //        * 描述： 等待校准结束
+    968          //        */
+    969          //        cnts = 10 * CYCLE_COUNT_DATA_AC / 4000 + 1;
+    970          //    	for(i=0;i<cnts;i++) {
+    971          //            uprintf("acav%4d", i);
+    972          //            BSP_OS_TimeDly(OS_TICKS_PER_SEC);
+    973          //            //SPI_CS5463_AC_WaitDrdy(); 
+    974          //            if( TRUE == SPI_CS5463_AC_GetDrdy() );//break;
+    975          //        }//等待校准完成
+    976          //		configsfr_AC.Igain = SPI_CS5463_AC_ReadRegister_INT32(IG)|0xAA000000; //读Igain 寄存器
+    977          //		TO_Arayy(temp , configsfr_AC.Igain);
+    978          //		WriteFM24CL64(52, temp, 4);
+    979          //        //清转DRDY标志位
+    980          //		SPI_CS5463_AC_ClearDrdy();
+    981          //        //启动连续计算周期
+    982          //		SPI_CS5463_AC_SendByte(CONTINUOUS_CYCLE);
+    983          //        //等待转换完成
+    984          //		SPI_CS5463_AC_WaitDrdy();
+    985          //        //读取电流有效值
+    986          //		x = SPI_CS5463_AC_Read_VIrms_FLOAT(IRMS);
+    987          //		uartprintf(pch,"\r\n 交流电流增益 = %x\n", configsfr_AC.Igain);
+    988          //		uartprintf(pch,"\r\n 交流电流有效值 = %f\n", x);
+    989          //		break;
+    990                  /***********************************************
+    991                  * 描述： 
+    992                  */
+    993          	case P_rate_ADD:
+    994          		configsfr_AC.P_rate += 50;                      //脉冲速率加5
+    995          		configsfr_AC.P_rate |=0xAA000000;
+   \                     ??CS5463_AC_Adjust_3: (+1)
+   \   000002B4   0x....             LDR.N    R5,??DataTable27_5
+   \   000002B6   0x69A8             LDR      R0,[R5, #+24]
+   \   000002B8   0x3032             ADDS     R0,R0,#+50
+   \   000002BA   0xF040 0x412A      ORR      R1,R0,#0xAA000000
+   \   000002BE   0x61A9             STR      R1,[R5, #+24]
+    996          		TO_Arayy(temp , configsfr_AC.P_rate);
+   \   000002C0   0x4668             MOV      R0,SP
+   \   000002C2   0x.... 0x....      BL       TO_Arayy
+    997          		WriteFM24CL64(56, temp, 4);
+   \   000002C6   0x2204             MOVS     R2,#+4
+   \   000002C8   0x4669             MOV      R1,SP
+   \   000002CA   0x2038             MOVS     R0,#+56
+   \   000002CC   0x.... 0x....      BL       WriteFM24CL64
+    998          		SPI_CS5463_AC_ClearDrdy();
+   \   000002D0   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+    999          		SPI_CS5463_AC_SendByte(CONTINUOUS_CYCLE);
+   \   000002D4   0x20E8             MOVS     R0,#+232
+   \   000002D6   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+   1000          		SPI_CS5463_AC_WaitDrdy();
+   \   000002DA   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+   1001          		uartprintf(pch,"\r\n 脉冲速率设置 = %x\n", configsfr_AC.P_rate);
+   \   000002DE   0x69AA             LDR      R2,[R5, #+24]
+   \   000002E0   0x.... 0x....      ADR.W    R1,?_9
+   \   000002E4   0x4620             MOV      R0,R4
+   \   000002E6   0x.... 0x....      BL       uartprintf
+   1002          		break;
+   \   000002EA   0xE101             B.N      ??CS5463_AC_Adjust_10
+   1003                  /***********************************************
+   1004                  * 描述： 
+   1005                  */
+   1006          	case P_rate_SUB:
+   1007          		configsfr_AC.P_rate -= 50;                      //脉冲速率减5
+   1008          		configsfr_AC.P_rate |=0xAA000000;
+   \                     ??CS5463_AC_Adjust_4: (+1)
+   \   000002EC   0x....             LDR.N    R5,??DataTable27_5
+   \   000002EE   0x69A8             LDR      R0,[R5, #+24]
+   \   000002F0   0x3832             SUBS     R0,R0,#+50
+   \   000002F2   0xF040 0x412A      ORR      R1,R0,#0xAA000000
+   \   000002F6   0x61A9             STR      R1,[R5, #+24]
+   1009          		TO_Arayy(temp , configsfr_AC.P_rate);
+   \   000002F8   0x4668             MOV      R0,SP
+   \   000002FA   0x.... 0x....      BL       TO_Arayy
+   1010          		WriteFM24CL64(56, temp, 4);
+   \   000002FE   0x2204             MOVS     R2,#+4
+   \   00000300   0x4669             MOV      R1,SP
+   \   00000302   0x2038             MOVS     R0,#+56
+   \   00000304   0x.... 0x....      BL       WriteFM24CL64
+   1011          		SPI_CS5463_AC_ClearDrdy();
+   \   00000308   0x.... 0x....      BL       SPI_CS5463_AC_ClearDrdy
+   1012          		SPI_CS5463_AC_SendByte(CONTINUOUS_CYCLE);
+   \   0000030C   0x20E8             MOVS     R0,#+232
+   \   0000030E   0x.... 0x....      BL       SPI_CS5463_AC_SendByte
+   1013          		SPI_CS5463_AC_WaitDrdy();
+   \   00000312   0x.... 0x....      BL       SPI_CS5463_AC_WaitDrdy
+   1014          		uartprintf(pch,"\r\n 脉冲速率设置 = %x\n", configsfr_AC.P_rate);
+   \   00000316   0x69AA             LDR      R2,[R5, #+24]
+   \   00000318   0x.... 0x....      ADR.W    R1,?_9
+   \   0000031C   0x4620             MOV      R0,R4
+   \   0000031E   0x.... 0x....      BL       uartprintf
+   1015          		break;
+   \   00000322   0xE0E5             B.N      ??CS5463_AC_Adjust_10
+   1016                  /***********************************************
+   1017                  * 描述： 
+   1018                  */
+   1019              case P_rate_DEL:
+   1020          	  	WriteFM24CL64(56, clear_buf, 4);
+   \                     ??CS5463_AC_Adjust_0: (+1)
+   \   00000324   0x2204             MOVS     R2,#+4
+   \   00000326   0xA901             ADD      R1,SP,#+4
+   \   00000328   0x2038             MOVS     R0,#+56
+   \   0000032A   0x.... 0x....      BL       WriteFM24CL64
+   1021          		ReadFM24CL64(56, temp,4);
+   \   0000032E   0x2204             MOVS     R2,#+4
+   \   00000330   0x4669             MOV      R1,SP
+   \   00000332   0x2038             MOVS     R0,#+56
+   \   00000334   0x.... 0x....      BL       ReadFM24CL64
+   1022          		configsfr_AC_RD.P_rate =  temp[3]<<24 |  temp[2]<<16 | temp[1]<<8 | temp[0];
+   \   00000338   0x....             LDR.N    R0,??DataTable27_3
+   \   0000033A   0x466E             MOV      R6,SP
+   \   0000033C   0x78F1             LDRB     R1,[R6, #+3]
+   \   0000033E   0x78B2             LDRB     R2,[R6, #+2]
+   \   00000340   0x0412             LSLS     R2,R2,#+16
+   \   00000342   0xEA42 0x6101      ORR      R1,R2,R1, LSL #+24
+   \   00000346   0x7872             LDRB     R2,[R6, #+1]
+   \   00000348   0xEA41 0x2102      ORR      R1,R1,R2, LSL #+8
+   \   0000034C   0xF89D 0x2000      LDRB     R2,[SP, #+0]
+   \   00000350   0x4311             ORRS     R1,R2,R1
+   \   00000352   0x6181             STR      R1,[R0, #+24]
+   1023          		uartprintf(pch,"\r\n 脉冲速率设置 = %x\n", configsfr_AC_RD.P_rate);
+   \   00000354   0x6982             LDR      R2,[R0, #+24]
+   \   00000356   0x.... 0x....      ADR.W    R1,?_9
+   \   0000035A   0x4620             MOV      R0,R4
+   \   0000035C   0x.... 0x....      BL       uartprintf
+   1024          		break;
+   \   00000360   0xE0C6             B.N      ??CS5463_AC_Adjust_10
+   1025                  /***********************************************
+   1026                  * 描述： 
+   1027                  */
+   1028              case P_rate_SET: {
+   1029                  float x = (float)((pch->RxFrameData[4] & 0x0f)) * 0.1
+   1030                          + (float)((pch->RxFrameData[5] >> 4) & 0x0f) * 0.01
+   1031                          + (float)((pch->RxFrameData[5] >> 0) & 0x0f) * 0.001
+   1032                          + (float)((pch->RxFrameData[6] >> 4) & 0x0f) * 0.0001
+   1033                          + (float)((pch->RxFrameData[6] >> 0) & 0x0f) * 0.00001
+   1034                          + (float)((pch->RxFrameData[7] >> 4) & 0x0f) * 0.000001
+   1035                          + (float)((pch->RxFrameData[7] >> 0) & 0x0f) * 0.0000001
+   1036                          + (float)((pch->RxFrameData[8] >> 4) & 0x0f) * 0.00000001
+   1037                          + (float)((pch->RxFrameData[8] >> 0) & 0x0f) * 0.000000001;
+   1038                  
+   1039          		configsfr_AC.P_rate = (uint32_t)(x * 0x800000); 
+   \                     ??CS5463_AC_Adjust_1: (+1)
+   \   00000362   0xF504 0x7012      ADD      R0,R4,#+584
+   \   00000366   0xF890 0x8004      LDRB     R8,[R0, #+4]
+   \   0000036A   0x78C5             LDRB     R5,[R0, #+3]
+   \   0000036C   0x7886             LDRB     R6,[R0, #+2]
+   \   0000036E   0x7847             LDRB     R7,[R0, #+1]
+   \   00000370   0x7800             LDRB     R0,[R0, #+0]
+   \   00000372   0xF000 0x000F      AND      R0,R0,#0xF
+   \   00000376   0x.... 0x....      BL       __aeabi_i2f
+   \   0000037A   0x.... 0x....      BL       __aeabi_f2d
+   \   0000037E   0x....             LDR.N    R2,??DataTable27_8  ;; 0x9999999a
+   \   00000380   0x....             LDR.N    R3,??DataTable27_9  ;; 0x3fb99999
+   \   00000382   0x.... 0x....      BL       __aeabi_dmul
+   \   00000386   0x4682             MOV      R10,R0
+   \   00000388   0x468B             MOV      R11,R1
+   \   0000038A   0x4638             MOV      R0,R7
+   \   0000038C   0x0900             LSRS     R0,R0,#+4
+   \   0000038E   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000392   0x.... 0x....      BL       __aeabi_f2d
+   \   00000396   0x....             LDR.N    R2,??DataTable27_10  ;; 0x47ae147b
+   \   00000398   0x....             LDR.N    R3,??DataTable27_11  ;; 0x3f847ae1
+   \   0000039A   0x.... 0x....      BL       __aeabi_dmul
+   \   0000039E   0x4652             MOV      R2,R10
+   \   000003A0   0x465B             MOV      R3,R11
+   \   000003A2   0x.... 0x....      BL       __aeabi_dadd
+   \   000003A6   0x4682             MOV      R10,R0
+   \   000003A8   0x468B             MOV      R11,R1
+   \   000003AA   0xF007 0x000F      AND      R0,R7,#0xF
+   \   000003AE   0x.... 0x....      BL       __aeabi_i2f
+   \   000003B2   0x.... 0x....      BL       __aeabi_f2d
+   \   000003B6   0x....             LDR.N    R2,??DataTable27_12  ;; 0xd2f1a9fc
+   \   000003B8   0x....             LDR.N    R3,??DataTable27_13  ;; 0x3f50624d
+   \   000003BA   0x.... 0x....      BL       __aeabi_dmul
+   \   000003BE   0x4652             MOV      R2,R10
+   \   000003C0   0x465B             MOV      R3,R11
+   \   000003C2   0x.... 0x....      BL       __aeabi_dadd
+   \   000003C6   0x4682             MOV      R10,R0
+   \   000003C8   0x468B             MOV      R11,R1
+   \   000003CA   0x4630             MOV      R0,R6
+   \   000003CC   0x0900             LSRS     R0,R0,#+4
+   \   000003CE   0x.... 0x....      BL       __aeabi_ui2f
+   \   000003D2   0x.... 0x....      BL       __aeabi_f2d
+   \   000003D6   0x....             LDR.N    R2,??DataTable27_14  ;; 0xeb1c432d
+   \   000003D8   0x....             LDR.N    R3,??DataTable27_15  ;; 0x3f1a36e2
+   \   000003DA   0x.... 0x....      BL       __aeabi_dmul
+   \   000003DE   0x4652             MOV      R2,R10
+   \   000003E0   0x465B             MOV      R3,R11
+   \   000003E2   0x.... 0x....      BL       __aeabi_dadd
+   \   000003E6   0x4682             MOV      R10,R0
+   \   000003E8   0x468B             MOV      R11,R1
+   \   000003EA   0xF006 0x000F      AND      R0,R6,#0xF
+   \   000003EE   0x.... 0x....      BL       __aeabi_i2f
+   \   000003F2   0x.... 0x....      BL       __aeabi_f2d
+   \   000003F6   0x....             LDR.N    R2,??DataTable27_16  ;; 0x88e368f1
+   \   000003F8   0x....             LDR.N    R3,??DataTable27_17  ;; 0x3ee4f8b5
+   \   000003FA   0x.... 0x....      BL       __aeabi_dmul
+   \   000003FE   0x4652             MOV      R2,R10
+   \   00000400   0x465B             MOV      R3,R11
+   \   00000402   0x.... 0x....      BL       __aeabi_dadd
+   \   00000406   0x4606             MOV      R6,R0
+   \   00000408   0x460F             MOV      R7,R1
+   \   0000040A   0x4628             MOV      R0,R5
+   \   0000040C   0x0900             LSRS     R0,R0,#+4
+   \   0000040E   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000412   0x.... 0x....      BL       __aeabi_f2d
+   \   00000416   0x....             LDR.N    R2,??DataTable27_18  ;; 0xa0b5ed8d
+   \   00000418   0x....             LDR.N    R3,??DataTable27_19  ;; 0x3eb0c6f7
+   \   0000041A   0x.... 0x....      BL       __aeabi_dmul
+   \   0000041E   0x4632             MOV      R2,R6
+   \   00000420   0x463B             MOV      R3,R7
+   \   00000422   0x.... 0x....      BL       __aeabi_dadd
+   \   00000426   0x4606             MOV      R6,R0
+   \   00000428   0x460F             MOV      R7,R1
+   \   0000042A   0xF005 0x000F      AND      R0,R5,#0xF
+   \   0000042E   0x.... 0x....      BL       __aeabi_i2f
+   \   00000432   0x.... 0x....      BL       __aeabi_f2d
+   \   00000436   0x....             LDR.N    R2,??DataTable27_20  ;; 0x9abcaf48
+   \   00000438   0x....             LDR.N    R3,??DataTable27_21  ;; 0x3e7ad7f2
+   \   0000043A   0x.... 0x....      BL       __aeabi_dmul
+   \   0000043E   0x4632             MOV      R2,R6
+   \   00000440   0x463B             MOV      R3,R7
+   \   00000442   0x.... 0x....      BL       __aeabi_dadd
+   \   00000446   0x4606             MOV      R6,R0
+   \   00000448   0x460F             MOV      R7,R1
+   \   0000044A   0x4640             MOV      R0,R8
+   \   0000044C   0x0900             LSRS     R0,R0,#+4
+   \   0000044E   0x.... 0x....      BL       __aeabi_ui2f
+   \   00000452   0x.... 0x....      BL       __aeabi_f2d
+   \   00000456   0x....             LDR.N    R2,??DataTable27_22  ;; 0xe2308c3a
+   \   00000458   0x....             LDR.N    R3,??DataTable27_23  ;; 0x3e45798e
+   \   0000045A   0x.... 0x....      BL       __aeabi_dmul
+   \   0000045E   0x4632             MOV      R2,R6
+   \   00000460   0x463B             MOV      R3,R7
+   \   00000462   0x.... 0x....      BL       __aeabi_dadd
+   \   00000466   0x4606             MOV      R6,R0
+   \   00000468   0x460F             MOV      R7,R1
+   \   0000046A   0xF008 0x000F      AND      R0,R8,#0xF
+   \   0000046E   0x.... 0x....      BL       __aeabi_i2f
+   \   00000472   0x.... 0x....      BL       __aeabi_f2d
+   \   00000476   0x....             LDR.N    R2,??DataTable27_24  ;; 0xe826d695
+   \   00000478   0x....             LDR.N    R3,??DataTable27_25  ;; 0x3e112e0b
+   \   0000047A   0x.... 0x....      BL       __aeabi_dmul
+   \   0000047E   0x4632             MOV      R2,R6
+   \   00000480   0x463B             MOV      R3,R7
+   \   00000482   0x.... 0x....      BL       __aeabi_dadd
+   \   00000486   0x.... 0x....      BL       __aeabi_d2f
+   \   0000048A   0xF04F 0x4196      MOV      R1,#+1258291200
+   \   0000048E   0x.... 0x....      BL       __aeabi_fmul
+   \   00000492   0x.... 0x....      BL       __aeabi_f2uiz
+   \   00000496   0x....             LDR.N    R5,??DataTable27_5
+   \   00000498   0x61A8             STR      R0,[R5, #+24]
+   1040                  //脉冲速率设置
+   1041          		SPI_CS5463_AC_WriteRegister(PULSE_RATE , configsfr_AC.P_rate);
+   \   0000049A   0x4601             MOV      R1,R0
+   \   0000049C   0x200C             MOVS     R0,#+12
+   \   0000049E   0x.... 0x....      BL       SPI_CS5463_AC_WriteRegister
+   1042                  //configsfr_AC.P_rate | 0xAA000000;
+   1043                  
+   1044                  
+   1045          	    temp[3]=0XAA;                    
+   \   000004A2   0x466E             MOV      R6,SP
+   \   000004A4   0x20AA             MOVS     R0,#+170
+   \   000004A6   0x70F0             STRB     R0,[R6, #+3]
+   1046              	temp[2]=(configsfr_AC.P_rate&0xFF0000)>>16;
+   \   000004A8   0x69A8             LDR      R0,[R5, #+24]
+   \   000004AA   0x0C01             LSRS     R1,R0,#+16
+   \   000004AC   0x70B1             STRB     R1,[R6, #+2]
+   1047          		temp[1]=(configsfr_AC.P_rate&0xFF00)>>8;
+   \   000004AE   0x0A01             LSRS     R1,R0,#+8
+   \   000004B0   0x7071             STRB     R1,[R6, #+1]
+   1048          		temp[0]=configsfr_AC.P_rate&0xFF;  
+   \   000004B2   0xF88D 0x0000      STRB     R0,[SP, #+0]
+   1049                  
+   1050          	  	WriteFM24CL64(56, temp, 4);
+   \   000004B6   0x2204             MOVS     R2,#+4
+   \   000004B8   0x4669             MOV      R1,SP
+   \   000004BA   0x2038             MOVS     R0,#+56
+   \   000004BC   0x.... 0x....      BL       WriteFM24CL64
+   1051          		ReadFM24CL64(56, temp,4);
+   \   000004C0   0x2204             MOVS     R2,#+4
+   \   000004C2   0x4669             MOV      R1,SP
+   \   000004C4   0x2038             MOVS     R0,#+56
+   \   000004C6   0x.... 0x....      BL       ReadFM24CL64
+   1052          		configsfr_AC_RD.P_rate =  temp[3]<<24 |  temp[2]<<16 | temp[1]<<8 | temp[0];
+   \   000004CA   0x....             LDR.N    R0,??DataTable27_3
+   \   000004CC   0x78F1             LDRB     R1,[R6, #+3]
+   \   000004CE   0x78B2             LDRB     R2,[R6, #+2]
+   \   000004D0   0x0412             LSLS     R2,R2,#+16
+   \   000004D2   0xEA42 0x6101      ORR      R1,R2,R1, LSL #+24
+   \   000004D6   0x7872             LDRB     R2,[R6, #+1]
+   \   000004D8   0xEA41 0x2102      ORR      R1,R1,R2, LSL #+8
+   \   000004DC   0xF89D 0x2000      LDRB     R2,[SP, #+0]
+   \   000004E0   0x4311             ORRS     R1,R2,R1
+   \   000004E2   0x6181             STR      R1,[R0, #+24]
+   1053          		uartprintf(pch,"\r\n 脉冲速率设置 = %x\n", configsfr_AC_RD.P_rate);
+   \   000004E4   0x6982             LDR      R2,[R0, #+24]
+   \   000004E6   0x.... 0x....      ADR.W    R1,?_9
+   \   000004EA   0x4620             MOV      R0,R4
+   \   000004EC   0x.... 0x....      BL       uartprintf
+   1054                  }break;
+   1055          	default:
+   1056          		break;
+   1057          	}
+   1058              
+   1059              /***********************************************
+   1060              * 描述： 启动测量
+   1061              */
+   1062          	CS5463_AC_INIT();
+   \                     ??CS5463_AC_Adjust_10: (+1)
+   \   000004F0   0x.... 0x....      BL       CS5463_AC_INIT
+   1063          }
+   \   000004F4   0xE8BD 0x8DF3      POP      {R0,R1,R4-R8,R10,R11,PC}  ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27:
+   \   00000000   0x40011800         DC32     0x40011800
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_1:
+   \   00000000   0xBF800000         DC32     0xbf800000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_2:
+   \   00000000   0x........         DC32     CS5463Sts
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_3:
+   \   00000000   0x........         DC32     configsfr_AC_RD
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_4:
+   \   00000000   0x00027818         DC32     0x27818
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_5:
+   \   00000000   0x........         DC32     configsfr_AC
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_6:
+   \   00000000   0x02FAF080         DC32     0x2faf080
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_7:
+   \   00000000   0x05F5E100         DC32     0x5f5e100
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_8:
+   \   00000000   0x9999999A         DC32     0x9999999a
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_9:
+   \   00000000   0x3FB99999         DC32     0x3fb99999
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_10:
+   \   00000000   0x47AE147B         DC32     0x47ae147b
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_11:
+   \   00000000   0x3F847AE1         DC32     0x3f847ae1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_12:
+   \   00000000   0xD2F1A9FC         DC32     0xd2f1a9fc
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_13:
+   \   00000000   0x3F50624D         DC32     0x3f50624d
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_14:
+   \   00000000   0xEB1C432D         DC32     0xeb1c432d
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_15:
+   \   00000000   0x3F1A36E2         DC32     0x3f1a36e2
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_16:
+   \   00000000   0x88E368F1         DC32     0x88e368f1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_17:
+   \   00000000   0x3EE4F8B5         DC32     0x3ee4f8b5
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_18:
+   \   00000000   0xA0B5ED8D         DC32     0xa0b5ed8d
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_19:
+   \   00000000   0x3EB0C6F7         DC32     0x3eb0c6f7
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_20:
+   \   00000000   0x9ABCAF48         DC32     0x9abcaf48
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_21:
+   \   00000000   0x3E7AD7F2         DC32     0x3e7ad7f2
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_22:
+   \   00000000   0xE2308C3A         DC32     0xe2308c3a
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_23:
+   \   00000000   0x3E45798E         DC32     0x3e45798e
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_24:
+   \   00000000   0xE826D695         DC32     0xe826d695
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable27_25:
+   \   00000000   0x3E112E0B         DC32     0x3e112e0b
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x0D 0x0A          DC8 "\015\012 \326\261\301\367\265\347\321\271\306\253\322\306 = %x\012"
+   \              0x20 0xD6    
+   \              0xB1 0xC1    
+   \              0xF7 0xB5    
+   \              0xE7 0xD1    
+   \              0xB9 0xC6    
+   \              0xAB 0xD2    
+   \              0xC6 0x20    
+   \              0x3D 0x20    
+   \              0x25 0x78    
+   \              0x0A 0x00    
+   \   00000016   0x00 0x00          DC8 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_2:
+   \   00000000   0x0D 0x0A          DC8 "\015\012 \326\261\301\367\265\347\301\367\306\253\322\306 = %x\012"
+   \              0x20 0xD6    
+   \              0xB1 0xC1    
+   \              0xF7 0xB5    
+   \              0xE7 0xC1    
+   \              0xF7 0xC6    
+   \              0xAB 0xD2    
+   \              0xC6 0x20    
+   \              0x3D 0x20    
+   \              0x25 0x78    
+   \              0x0A 0x00    
+   \   00000016   0x00 0x00          DC8 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_3:
+   \   00000000   0x0D 0x0A          DC8 "\015\012 \275\273\301\367\265\347\321\271\306\253\322\306 = %x\012"
+   \              0x20 0xBD    
+   \              0xBB 0xC1    
+   \              0xF7 0xB5    
+   \              0xE7 0xD1    
+   \              0xB9 0xC6    
+   \              0xAB 0xD2    
+   \              0xC6 0x20    
+   \              0x3D 0x20    
+   \              0x25 0x78    
+   \              0x0A 0x00    
+   \   00000016   0x00 0x00          DC8 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_4:
+   \   00000000   0x0D 0x0A          DC8 "\015\012 \275\273\301\367\265\347\301\367\306\253\322\306 = %x\012"
+   \              0x20 0xBD    
+   \              0xBB 0xC1    
+   \              0xF7 0xB5    
+   \              0xE7 0xC1    
+   \              0xF7 0xC6    
+   \              0xAB 0xD2    
+   \              0xC6 0x20    
+   \              0x3D 0x20    
+   \              0x25 0x78    
+   \              0x0A 0x00    
+   \   00000016   0x00 0x00          DC8 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_5:
+   \   00000000   0x0D 0x0A          DC8 "\015\012 \275\273\301\367\265\347\321\271\324\366\322\346 = %x\012"
+   \              0x20 0xBD    
+   \              0xBB 0xC1    
+   \              0xF7 0xB5    
+   \              0xE7 0xD1    
+   \              0xB9 0xD4    
+   \              0xF6 0xD2    
+   \              0xE6 0x20    
+   \              0x3D 0x20    
+   \              0x25 0x78    
+   \              0x0A 0x00    
+   \   00000016   0x00 0x00          DC8 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_6:
+   \   00000000   0x0D 0x0A          DC8 "\015\012 \275\273\301\367\265\347\321\271\323\320\320\247\326\265 = %f\012"
+   \              0x20 0xBD    
+   \              0xBB 0xC1    
+   \              0xF7 0xB5    
+   \              0xE7 0xD1    
+   \              0xB9 0xD3    
+   \              0xD0 0xD0    
+   \              0xA7 0xD6    
+   \              0xB5 0x20    
+   \              0x3D 0x20    
+   \              0x25 0x66    
+   \              0x0A 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_7:
+   \   00000000   0x0D 0x0A          DC8 "\015\012 \275\273\301\367\265\347\301\367\324\366\322\346 = %x\012"
+   \              0x20 0xBD    
+   \              0xBB 0xC1    
+   \              0xF7 0xB5    
+   \              0xE7 0xC1    
+   \              0xF7 0xD4    
+   \              0xF6 0xD2    
+   \              0xE6 0x20    
+   \              0x3D 0x20    
+   \              0x25 0x78    
+   \              0x0A 0x00    
+   \   00000016   0x00 0x00          DC8 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_8:
+   \   00000000   0x0D 0x0A          DC8 "\015\012 \275\273\301\367\265\347\301\367\323\320\320\247\326\265 = %f\012"
+   \              0x20 0xBD    
+   \              0xBB 0xC1    
+   \              0xF7 0xB5    
+   \              0xE7 0xC1    
+   \              0xF7 0xD3    
+   \              0xD0 0xD0    
+   \              0xA7 0xD6    
+   \              0xB5 0x20    
+   \              0x3D 0x20    
+   \              0x25 0x66    
+   \              0x0A 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_9:
+   \   00000000   0x0D 0x0A          DC8 "\015\012 \302\366\263\345\313\331\302\312\311\350\326\303 = %x\012"
+   \              0x20 0xC2    
+   \              0xF6 0xB3    
+   \              0xE5 0xCB    
+   \              0xD9 0xC2    
+   \              0xCA 0xC9    
+   \              0xE8 0xD6    
+   \              0xC3 0x20    
+   \              0x3D 0x20    
+   \              0x25 0x78    
+   \              0x0A 0x00    
+   \   00000016   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x00 0x00          DC8 0, 0, 0, 0
+   \              0x00 0x00    
+   1064          
+   1065          /******************* (C) COPYRIGHT 2010 www.armjishu.com *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      40   CS5463_AC_Adjust
+        40   -> CS5463_AC_INIT
+        40   -> ReadFM24CL64
+        40   -> SPI_CS5463_AC_ClearDrdy
+        40   -> SPI_CS5463_AC_ReadRegister_INT32
+        40   -> SPI_CS5463_AC_Read_VIrms_FLOAT
+        40   -> SPI_CS5463_AC_SendByte
+        40   -> SPI_CS5463_AC_SendCommand
+        40   -> SPI_CS5463_AC_WaitDrdy
+        40   -> SPI_CS5463_AC_WriteRegister
+        40   -> TO_Arayy
+        40   -> WriteFM24CL64
+        40   -> __aeabi_d2f
+        40   -> __aeabi_dadd
+        40   -> __aeabi_dmul
+        40   -> __aeabi_f2d
+        40   -> __aeabi_f2uiz
+        40   -> __aeabi_fmul
+        40   -> __aeabi_i2f
+        40   -> __aeabi_ui2f
+        40   -> uartprintf
+      24   CS5463_AC_INIT
+        24   -> Delay
+        24   -> GPIO_ResetBits
+        24   -> GPIO_SetBits
+        24   -> ReadFM24CL64
+        24   -> SPI_CS5463_AC_ReadRegister_INT32
+        24   -> SPI_CS5463_AC_SendByte
+        24   -> SPI_CS5463_AC_Write
+        24   -> SPI_CS5463_AC_WriteRegister
+      16   SPI_AC_INIT
+        16   -> Delay
+        16   -> GPIO_Init
+        16   -> GPIO_SetBits
+        16   -> RCC_APB2PeriphClockCmd
+       8   SPI_CS5463_AC_ClearDrdy
+         8   -> SPI_CS5463_AC_ReadRegister_INT32
+         8   -> SPI_CS5463_AC_WriteRegister
+       8   SPI_CS5463_AC_GetDrdy
+         8   -> SPI_CS5463_AC_ReadRegister_INT32
+      24   SPI_CS5463_AC_Read
+         0   -> Delay
+        24   -> Delay
+        24   -> GPIO_ResetBits
+        24   -> GPIO_SetBits
+        24   -> SPI_CS5463_AC_ReadByte
+        24   -> SPI_CS5463_AC_SendByte
+      24   SPI_CS5463_AC_ReadByte
+        24   -> Delay
+        24   -> GPIO_ReadInputDataBit
+        24   -> GPIO_ResetBits
+        24   -> GPIO_SetBits
+      24   SPI_CS5463_AC_ReadRegister_INT32
+        24   -> Delay
+        24   -> GPIO_ResetBits
+        24   -> GPIO_SetBits
+        24   -> SPI_CS5463_AC_ReadByte
+        24   -> SPI_CS5463_AC_SendByte
+      24   SPI_CS5463_AC_Read_Else_FLOAT
+        24   -> Delay
+        24   -> GPIO_ResetBits
+        24   -> GPIO_SetBits
+        24   -> SPI_CS5463_AC_ReadByte
+        24   -> SPI_CS5463_AC_SendByte
+         0   -> __aeabi_fadd
+        24   -> __aeabi_fadd
+        24   -> __aeabi_fmul
+        24   -> __aeabi_i2f
+        24   -> __aeabi_ui2f
+      24   SPI_CS5463_AC_Read_Temp_FLOAT
+        24   -> Delay
+        24   -> GPIO_ResetBits
+        24   -> GPIO_SetBits
+        24   -> SPI_CS5463_AC_ReadByte
+        24   -> SPI_CS5463_AC_SendByte
+         0   -> __aeabi_fadd
+        24   -> __aeabi_fadd
+        24   -> __aeabi_fmul
+        24   -> __aeabi_i2f
+        24   -> __aeabi_ui2f
+      24   SPI_CS5463_AC_Read_VIgain_FLOAT
+        24   -> Delay
+        24   -> GPIO_ResetBits
+        24   -> GPIO_SetBits
+        24   -> SPI_CS5463_AC_ReadByte
+        24   -> SPI_CS5463_AC_SendByte
+         0   -> __aeabi_fadd
+        24   -> __aeabi_fadd
+        24   -> __aeabi_fmul
+        24   -> __aeabi_i2f
+        24   -> __aeabi_ui2f
+      24   SPI_CS5463_AC_Read_VIrms_FLOAT
+        24   -> Delay
+        24   -> GPIO_ResetBits
+        24   -> GPIO_SetBits
+        24   -> SPI_CS5463_AC_ReadByte
+        24   -> SPI_CS5463_AC_SendByte
+         0   -> __aeabi_fadd
+        24   -> __aeabi_fadd
+        24   -> __aeabi_fmul
+        24   -> __aeabi_ui2f
+       8   SPI_CS5463_AC_SLEEP
+         0   -> Delay
+         8   -> Delay
+         8   -> GPIO_ResetBits
+         8   -> GPIO_SetBits
+         8   -> SPI_CS5463_AC_SendCommand
+       8   SPI_CS5463_AC_SOFT_RESET
+         0   -> Delay
+         8   -> Delay
+         8   -> GPIO_ResetBits
+         8   -> GPIO_SetBits
+         8   -> SPI_CS5463_AC_SendCommand
+      16   SPI_CS5463_AC_SendByte
+        16   -> Delay
+        16   -> GPIO_ResetBits
+        16   -> GPIO_SetBits
+      16   SPI_CS5463_AC_SendCommand
+         0   -> Delay
+        16   -> Delay
+        16   -> GPIO_ResetBits
+        16   -> GPIO_SetBits
+        16   -> SPI_CS5463_AC_SendByte
+       8   SPI_CS5463_AC_WAIT
+         0   -> Delay
+         8   -> Delay
+         8   -> GPIO_ResetBits
+         8   -> GPIO_SetBits
+         8   -> SPI_CS5463_AC_SendCommand
+       0   SPI_CS5463_AC_WaitDrdy
+         0   -> SPI_CS5463_AC_ReadRegister_INT32
+      24   SPI_CS5463_AC_Write
+         0   -> Delay
+        24   -> Delay
+        24   -> GPIO_ResetBits
+        24   -> GPIO_SetBits
+        24   -> SPI_CS5463_AC_SendByte
+       8   SPI_CS5463_AC_WriteRegister
+         8   -> SPI_CS5463_AC_Write
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable27
+       4  ??DataTable27_1
+       4  ??DataTable27_10
+       4  ??DataTable27_11
+       4  ??DataTable27_12
+       4  ??DataTable27_13
+       4  ??DataTable27_14
+       4  ??DataTable27_15
+       4  ??DataTable27_16
+       4  ??DataTable27_17
+       4  ??DataTable27_18
+       4  ??DataTable27_19
+       4  ??DataTable27_2
+       4  ??DataTable27_20
+       4  ??DataTable27_21
+       4  ??DataTable27_22
+       4  ??DataTable27_23
+       4  ??DataTable27_24
+       4  ??DataTable27_25
+       4  ??DataTable27_3
+       4  ??DataTable27_4
+       4  ??DataTable27_5
+       4  ??DataTable27_6
+       4  ??DataTable27_7
+       4  ??DataTable27_8
+       4  ??DataTable27_9
+       4  ?_0
+      24  ?_1
+      24  ?_2
+      24  ?_3
+      24  ?_4
+      24  ?_5
+      24  ?_6
+      24  ?_7
+      24  ?_8
+      24  ?_9
+       4  CS5463Sts
+    1272  CS5463_AC_Adjust
+     912  CS5463_AC_INIT
+     138  SPI_AC_INIT
+      26  SPI_CS5463_AC_ClearDrdy
+      26  SPI_CS5463_AC_GetDrdy
+      84  SPI_CS5463_AC_Read
+      96  SPI_CS5463_AC_ReadByte
+      76  SPI_CS5463_AC_ReadRegister_INT32
+     154  SPI_CS5463_AC_Read_Else_FLOAT
+     128  SPI_CS5463_AC_Read_Temp_FLOAT
+     146  SPI_CS5463_AC_Read_VIgain_FLOAT
+     128  SPI_CS5463_AC_Read_VIrms_FLOAT
+      44  SPI_CS5463_AC_SLEEP
+      44  SPI_CS5463_AC_SOFT_RESET
+      78  SPI_CS5463_AC_SendByte
+      46  SPI_CS5463_AC_SendCommand
+      44  SPI_CS5463_AC_WAIT
+       4  SPI_CS5463_AC_WaitDrdy
+      74  SPI_CS5463_AC_Write
+      32  SPI_CS5463_AC_WriteRegister
+     160  configsfr_AC
+     160  configsfr_AC_RD
+       4  sx
+       4  y
+
+ 
+   332 bytes in section .bss
+     4 bytes in section .rodata
+ 3 872 bytes in section .text
+ 
+ 3 872 bytes of CODE  memory
+     4 bytes of CONST memory
+   332 bytes of DATA  memory
+
+Errors: none
+Warnings: 1

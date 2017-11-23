@@ -1,0 +1,310 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       16/Nov/2017  10:19:59
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_dataconversion.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_dataconversion.c -D
+#        USE_STDPERIPH_DRIVER -D _STM32F10X_HD -D STM32F10X_CL -D DEBUG -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\bsp_dataconversion.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\bsp_dataconversion.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_dataconversion.c
+      1          /*******************************************************************************
+      2           *   Filename:       bsp_dataconversion.c
+      3           *   Revised:        All copyrights reserved to wumingshen.
+      4           *   Revision:       v1.0
+      5           *   Writer:	     wumingshen.
+      6           *
+      7           *   Description:    各种数据转换函数
+      8           *
+      9           *
+     10           *
+     11           *   Notes:
+     12           *     				 E-mail:shenchangwei945@163.com
+     13           *
+     14           *******************************************************************************/
+     15          #include "bsp_dataconversion.h"
+     16          
+     17          //============================================================================//
+     18          
+     19          /*******************************************************************************
+     20           * 名    称： bcd2Hex
+     21           * 功    能： BCD码转16进制
+     22           * 入口参数：
+     23           * 出口参数： 无
+     24           * 作　 　者： 无名沈
+     25           * 创建日期： 2009-01-08
+     26           * 修    改：
+     27           * 修改日期：
+     28           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     29          BYTE Bcd2Hex(BYTE val)
+     30          {
+     31              return ((val&0x0f)+(val >> 4)*10);
+   \                     Bcd2Hex: (+1)
+   \   00000000   0xF000 0x010F      AND      R1,R0,#0xF
+   \   00000004   0x0900             LSRS     R0,R0,#+4
+   \   00000006   0xEB00 0x0280      ADD      R2,R0,R0, LSL #+2
+   \   0000000A   0xEB01 0x0042      ADD      R0,R1,R2, LSL #+1
+   \   0000000E   0xB2C0             UXTB     R0,R0
+   \   00000010   0x4770             BX       LR               ;; return
+     32          }
+     33          
+     34          /*******************************************************************************
+     35           * 名    称： hex2Bcd
+     36           * 功    能： 16进制转BCD码
+     37           * 入口参数：
+     38           * 出口参数： 无
+     39           * 作　 　者： 无名沈
+     40           * 创建日期： 2009-01-08
+     41           * 修    改：
+     42           * 修改日期：
+     43           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     44          BYTE Hex2Bcd(BYTE val)
+     45          {
+     46              return ((val / 10) << 4) + val % 10;
+   \                     Hex2Bcd: (+1)
+   \   00000000   0x210A             MOVS     R1,#+10
+   \   00000002   0xFB90 0xF1F1      SDIV     R1,R0,R1
+   \   00000006   0xEB01 0x0241      ADD      R2,R1,R1, LSL #+1
+   \   0000000A   0xEB00 0x0042      ADD      R0,R0,R2, LSL #+1
+   \   0000000E   0xB2C0             UXTB     R0,R0
+   \   00000010   0x4770             BX       LR               ;; return
+     47          }
+     48          
+     49          /*******************************************************************************
+     50          * 名    称： ChartoInt
+     51          * 功    能： 将字符转换成整型
+     52          * 入口参数： chr：字符串指针 ； lenth：字符串的长度
+     53          * 出口参数： 转换之后的整型数
+     54          * 作　 　者： Snlion-LL
+     55          * 创建日期： 2014-07-05
+     56          * 修    改：
+     57          * 修改日期：
+     58          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     59          int ChartoInt(u8*chr,u8 lenth)
+     60          {
+   \                     ChartoInt: (+1)
+   \   00000000   0xB410             PUSH     {R4}
+     61              u8 count = 0;
+   \   00000002   0x2300             MOVS     R3,#+0
+     62              u16 value = 0;
+   \   00000004   0x461A             MOV      R2,R3
+     63              for(count = 0 ; count < lenth ; count++) {
+   \   00000006   0xE007             B.N      ??ChartoInt_0
+     64                  value = value*10 + (chr[count]-0x30);
+   \                     ??ChartoInt_1: (+1)
+   \   00000008   0xEB02 0x0482      ADD      R4,R2,R2, LSL #+2
+   \   0000000C   0x5C1A             LDRB     R2,[R3, R0]
+   \   0000000E   0xEB02 0x0244      ADD      R2,R2,R4, LSL #+1
+   \   00000012   0x3A30             SUBS     R2,R2,#+48
+   \   00000014   0xB292             UXTH     R2,R2
+     65              }
+   \   00000016   0x1C5B             ADDS     R3,R3,#+1
+   \                     ??ChartoInt_0: (+1)
+   \   00000018   0xB2DB             UXTB     R3,R3
+   \   0000001A   0x428B             CMP      R3,R1
+   \   0000001C   0xD3F4             BCC.N    ??ChartoInt_1
+     66              return value;
+   \   0000001E   0x4610             MOV      R0,R2
+   \   00000020   0xBC10             POP      {R4}
+   \   00000022   0x4770             BX       LR               ;; return
+     67          }
+     68          
+     69          /*******************************************************************************
+     70          * 名    称： UINTDatToStrings
+     71          * 功    能： int转String函数
+     72          * 入口参数： 需要转成字符串的整数
+     73          * 出口参数： 转换完成的字符串
+     74          * 作　 　者： Snlion-LL
+     75          * 创建日期： 2014-07-05
+     76          * 修    改：
+     77          * 修改日期：
+     78          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     79          u8 * UINTDatToStrings(u16 temp)
+     80          {
+   \                     UINTDatToStrings: (+1)
+   \   00000000   0xB53E             PUSH     {R1-R5,LR}
+   \   00000002   0x4604             MOV      R4,R0
+     81              u8 table[10] = "0123456789";
+   \   00000004   0x4668             MOV      R0,SP
+   \   00000006   0x.... 0x....      ADR.W    R1,?_0
+   \   0000000A   0x220A             MOVS     R2,#+10
+   \   0000000C   0x.... 0x....      BL       __aeabi_memcpy
+     82              static u8 ret[6] = {0,0,0,0,0,0};
+     83              u16   value = 0;
+     84              u8    DatLength = 1;
+   \   00000010   0x2101             MOVS     R1,#+1
+     85              value =  temp;
+   \   00000012   0x4620             MOV      R0,R4
+   \   00000014   0x220A             MOVS     R2,#+10
+     86              while((value / 10) > 0) {
+   \                     ??UINTDatToStrings_0: (+1)
+   \   00000016   0xFB90 0xF0F2      SDIV     R0,R0,R2
+   \   0000001A   0x2801             CMP      R0,#+1
+   \   0000001C   0xDB05             BLT.N    ??UINTDatToStrings_1
+     87                  DatLength++;
+   \   0000001E   0x1C49             ADDS     R1,R1,#+1
+     88                  value = value / 10;
+   \   00000020   0xB280             UXTH     R0,R0
+     89                  if(DatLength > 5) {
+   \   00000022   0xB2C9             UXTB     R1,R1
+   \   00000024   0x2906             CMP      R1,#+6
+   \   00000026   0xDBF6             BLT.N    ??UINTDatToStrings_0
+     90                      DatLength = 0;
+   \   00000028   0x2100             MOVS     R1,#+0
+     91                      break;
+     92                  }
+     93              }
+     94              ret[DatLength] = 0;
+   \                     ??UINTDatToStrings_1: (+1)
+   \   0000002A   0x....             LDR.N    R0,??DataTable1
+   \   0000002C   0x2200             MOVS     R2,#+0
+   \   0000002E   0x540A             STRB     R2,[R1, R0]
+     95              value =  temp;
+     96              for(u8 i = DatLength ;i > 0 ; i--) {
+   \   00000030   0xE00E             B.N      ??UINTDatToStrings_2
+     97                  ret[i-1] = table[value % 10];
+   \                     ??UINTDatToStrings_3: (+1)
+   \   00000032   0x220A             MOVS     R2,#+10
+   \   00000034   0xFB94 0xF2F2      SDIV     R2,R4,R2
+   \   00000038   0x466B             MOV      R3,SP
+   \   0000003A   0xEB02 0x0582      ADD      R5,R2,R2, LSL #+2
+   \   0000003E   0xEBA4 0x0445      SUB      R4,R4,R5, LSL #+1
+   \   00000042   0x5CE3             LDRB     R3,[R4, R3]
+   \   00000044   0x180C             ADDS     R4,R1,R0
+   \   00000046   0xF804 0x3C01      STRB     R3,[R4, #-1]
+     98                  value = value/10;
+   \   0000004A   0x4614             MOV      R4,R2
+   \   0000004C   0xB2A4             UXTH     R4,R4
+     99              }
+   \   0000004E   0x1E49             SUBS     R1,R1,#+1
+   \                     ??UINTDatToStrings_2: (+1)
+   \   00000050   0xB2C9             UXTB     R1,R1
+   \   00000052   0x2900             CMP      R1,#+0
+   \   00000054   0xD1ED             BNE.N    ??UINTDatToStrings_3
+    100              return ret;
+   \   00000056   0xBD3E             POP      {R1-R5,PC}       ;; return
+    101          }
+
+   \                                 In section .bss, align 4
+   \                     ??ret:
+   \   00000000                      DS8 8
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0x........         DC32     ??ret
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x30 0x31          DC8 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H
+   \              0x32 0x33    
+   \              0x34 0x35    
+   \              0x36 0x37    
+   \   00000008   0x38 0x39          DC8 38H, 39H
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   Bcd2Hex
+       4   ChartoInt
+       0   Hex2Bcd
+      24   UINTDatToStrings
+        24   -> __aeabi_memcpy
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+      12  ?_0
+      18  Bcd2Hex
+      36  ChartoInt
+      18  Hex2Bcd
+      88  UINTDatToStrings
+       8  ret
+
+ 
+   8 bytes in section .bss
+ 176 bytes in section .text
+ 
+ 176 bytes of CODE memory
+   8 bytes of DATA memory
+
+Errors: none
+Warnings: none

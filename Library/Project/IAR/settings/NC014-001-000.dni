@@ -1,0 +1,181 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=1848244314
+[CodeCoverage]
+Enabled=_ 0
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[JLinkDriver]
+CStepIntDis=_ 0
+[SWOTraceHWSettings]
+OverrideDefaultClocks=0
+CpuClock=72000000
+ClockAutoDetect=0
+ClockWanted=2000000
+JtagSpeed=2000000
+Prescaler=36
+TimeStampPrescIndex=0
+TimeStampPrescData=0
+PcSampCYCTAP=1
+PcSampPOSTCNT=15
+PcSampIndex=0
+DataLogMode=0
+ITMportsEnable=0
+ITMportsTermIO=0
+ITMportsLogFile=0
+ITMlogFile=$PROJ_DIR$\ITM.log
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[Interrupts]
+Enabled=1
+[MemConfig]
+Base=1
+Manual=0
+Ddf=1
+TypeViol=0
+Stop=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[Simulator]
+Freq=10000000
+MultiCoreRunAll=1
+[struct_types]
+Fmt0=CONFIGSFR-Igain	4	0
+Fmt1=CONFIGSFR-P_rate	4	0
+Fmt2=CONFIGSFR-Vgain	4	0
+Fmt3=StrEnergy-ActivePower	3	0
+Fmt4=StrEnergy-NPPower	3	0
+Fmt5=StrEnergy-PPPower	3	0
+Fmt6=StrEnergy-PQPower	3	0
+Fmt7=StrEnergy-PowerFactor	3	0
+Fmt8=StrEnergy-PrimCurr	3	0
+Fmt9=StrEnergy-ReactivePower	3	0
+Fmt10=StrNcProtocol-DstAddr	4	0
+Fmt11=StrNcProtocol-SrcAddr	4	0
+Fmt12=StrTAX_II-Rsv2	4	0
+Fmt13=_StrTax_II_Rec-BenBuKeHuo	4	0
+Fmt14=_StrTax_II_Rec-BenBuKeHuo2	4	0
+Fmt15=_StrTax_II_Rec-CheCiShuZi	4	0
+Fmt16=_StrTax_II_Rec-CheZhanHao	3	0
+Fmt17=_StrTax_II_Rec-JiCheXinHao	3	0
+Fmt18=_StrTax_II_Rec-JiCheXingHaoDi	3	0
+Fmt19=_StrTax_II_Rec-LiangShu	3	0
+Fmt20=_StrTax_II_Rec-LingWei	3	0
+Fmt21=_StrTax_II_Rec-QianYin	3	0
+Fmt22=_StrTax_II_Rec-QuDuanHao	3	0
+Fmt23=_StrTax_II_Rec-Rsv7	3	0
+Fmt24=_StrTax_II_Rec-SheZhiZhuangTai	4	0
+Fmt25=_StrTax_II_Rec-SumChk1	4	0
+Fmt26=_StrTax_II_Rec-TeZhengMa	4	0
+Fmt27=_StrTax_II_Rec-XiangHou	3	0
+Fmt28=_StrTax_II_Rec-XiangQian	3	0
+Fmt29=_StrTax_II_Rec-ZhiDong	3	0
+[array_types]
+Fmt0=CPU_INT08U[11]	3	0
+Fmt1=CPU_INT08U[256]	4	0
+[watch_formats]
+Fmt0={W}1:BSP_CPU_ClkFreq_MHz	3	0
+Fmt1={W}1:STATUS_VALUE	4	0
+Fmt2={W}1:head	4	0
+Fmt3={W}1:ret	4	0
+Fmt4={W}1:sx.x	4	0
+Fmt5={W}1:y	4	0
+Fmt6={W}42:CS5463Sts	4	0
+[Trace2]
+Enabled=0
+ShowSource=0
+[SWOTraceWindow]
+PcSampling=0
+InterruptLogs=0
+ForcedTimeStamps=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[PowerLog]
+Title_0=I0
+Symbol_0=0 4 1
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+LiveEnabled=0
+LiveFile=PowerLogLive.log
+[DataLog]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+SumEnabled=0
+ShowTimeSum=1
+[EventLog]
+Title_0=Ch3
+Symbol_0=0 4 1
+Title_1=Ch2
+Symbol_1=0 4 1
+Title_2=Ch1
+Symbol_2=0 4 1
+Title_3=Ch0
+Symbol_3=0 4 1
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+SumEnabled=0
+ShowTimeSum=1
+SumSortOrder=0
+[InterruptLog]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+SumEnabled=0
+ShowTimeSum=1
+SumSortOrder=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[CallStackStripe]
+ShowTiming=1
+[PowerProbe]
+Frequency=10000
+Probe0=I0
+ProbeSetup0=2 1 1 2 0 0
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\User\app_tax.c}.147.17" 0 0 1 "" 0 "" 0
+Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\IAR\cstartup.c}.253.5" 0 0 1 "" 0 "" 0
+Bp2=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\IAR\cstartup.c}.221.9" 0 0 1 "" 0 "" 0
+Bp3=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\IAR\cstartup.c}.281.9" 0 0 1 "" 0 "" 0
+Bp4=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\IAR\cstartup.c}.306.9" 0 0 1 "" 0 "" 0
+Bp5=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\IAR\cstartup.c}.331.9" 0 0 1 "" 0 "" 0
+Bp6=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\IAR\cstartup.c}.356.9" 0 0 1 "" 0 "" 0
+Bp7=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\IAR\cstartup.c}.380.1" 0 0 1 "" 0 "" 0
+Bp8=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Tasks\app_task_mater.c}.1026.2" 0 0 1 "" 0 "" 0
+Count=9
+[Aliases]
+Count=0
+SuppressDialog=0

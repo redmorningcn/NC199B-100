@@ -1,0 +1,2317 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:23
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Source\MBM_CORE.C
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Source\MBM_CORE.C -D
+#        USE_STDPERIPH_DRIVER -D _STM32F10X_HD -D STM32F10X_CL -D DEBUG -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\MBM_CORE.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\MBM_CORE.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Source\MBM_CORE.C
+      1          /*
+      2          *********************************************************************************************************
+      3          *                                              uC/Modbus
+      4          *                                       The Embedded Modbus Stack
+      5          *
+      6          *                          (c) Copyright 2003-2009; Micrium, Inc.; Weston, FL
+      7          *
+      8          *               All rights reserved.  Protected by international copyright laws.
+      9          *               Knowledge of the source code may NOT be used to develop a similar product.
+     10          *               Please help us continue to provide the Embedded community with the finest
+     11          *               software available.  Your honesty is greatly appreciated.
+     12          *********************************************************************************************************
+     13          */
+     14          
+     15          /*
+     16          *********************************************************************************************************
+     17          *
+     18          *                                     uC/MODBUS SLAVE COMMAND PROCESSOR
+     19          *
+     20          * Filename      : mbm_core.c
+     21          * Version       : V2.12
+     22          * Programmer(s) : JJL
+     23          *********************************************************************************************************
+     24          * Note(s)       :
+     25          *********************************************************************************************************
+     26          */
+     27          
+     28          /*
+     29          *********************************************************************************************************
+     30          *                                             INCLUDE FILES
+     31          *********************************************************************************************************
+     32          */
+     33          
+     34          #define  MBM_MODULE
+     35          #include <includes.h>
+     36          #include <global.h>
+     37          #include <aes.h>
+     38          
+     39          //#include <diagcounter.h>
+     40          /*
+     41          *********************************************************************************************************
+     42          *                                                MACROS
+     43          *********************************************************************************************************
+     44          */
+     45          #define  MBM_FCXX_ADDR          (pch->RxFrameData[0])
+     46          #define  MBM_FCXX_CODE          (pch->RxFrameData[1])
+     47          #define  MBM_TX_FCXX_ADDR       (pch->TxFrameData[0])
+     48          #define  MBM_TX_FCXX_CODE       (pch->TxFrameData[1])
+     49          #define  MBM_RX_FCXX_ADDR       (pch->RxFrameData[0])
+     50          #define  MBM_RX_FCXX_CODE       (pch->RxFrameData[1])
+     51          
+     52          /***********************************************
+     53          * 描述：接收帧数据格式，代码：MODBUS_FC01_COIL_RD
+     54          */
+     55          #define  MBM_RX_FC01_DATA_COIL      (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+     56          #define  MBM_RX_FC01_DATA_COIL_H     (pch->RxFrameData[4])
+     57          #define  MBM_RX_FC01_DATA_COIL_L     (pch->RxFrameData[5])
+     58          #define  MBM_TX_FC01_DATA_COIL      (((CPU_INT16U)pch->TxFrameData[4] << 8) + (CPU_INT16U)pch->TxFrameData[5])
+     59          #define  MBM_TX_FC01_DATA_COIL_H     (pch->TxFrameData[4])
+     60          #define  MBM_TX_FC01_DATA_COIL_L     (pch->TxFrameData[5])
+     61          #define  MBM_RX_FC01_DATA(i)         (pch->RxFrameData[3 + i])
+     62          #define  MBM_RX_FC01_NBYTE           (pch->RxFrameData[2])
+     63          
+     64          /***********************************************
+     65          * 描述：接收帧数据格式，代码：MODBUS_FC02_DI_RD
+     66          */
+     67          /***********************************************
+     68          * 描述：接收帧数据格式，代码：MODBUS_FC03_HOLDING_REG_RD
+     69          */
+     70          #define  MBM_TX_FC03_REG      (((CPU_INT16U)pch->TxFrameData[2] << 8) + (CPU_INT16U)pch->TxFrameData[3])
+     71          #define  MBM_TX_FC03_REG_H      (pch->TxFrameData[2])
+     72          #define  MBM_TX_FC03_REG_L      (pch->RxFrameData[3])
+     73          #define  MBM_TX_FC03_NREG     (((CPU_INT16U)pch->TxFrameData[4] << 8) + (CPU_INT16U)pch->TxFrameData[5])
+     74          #define  MBM_TX_FC03_NREG_H     (pch->TxFrameData[4])
+     75          #define  MBM_TX_FC03_NREG_L     (pch->TxFrameData[5])
+     76          #define  MBM_TX_FC03_CRC      (((CPU_INT16U)pch->TxFrameData[6] << 8) + (CPU_INT16U)pch->TxFrameData[7])
+     77          #define  MBM_TX_FC03_CRC_H      (pch->TxFrameData[6])
+     78          #define  MBM_TX_FC03_CRC_L      (pch->TxFrameData[7])
+     79          
+     80          
+     81          #define  MBM_RX_FC03_NBYTE      (pch->RxFrameData[2])
+     82          #define  MBM_RX_FC03_DATA(i)  (((CPU_INT16U)pch->RxFrameData[3 + i * 2] << 8) + (CPU_INT16U)pch->RxFrameData[4 + i * 2])
+     83          #define  MBM_RX_FC03_DATA_H(i)  (pch->RxFrameData[3 + i * 2])
+     84          #define  MBM_RX_FC03_DATA_L(i)  (pch->RxFrameData[4 + i * 2])
+     85          
+     86          #define  MBM_RX_FC03_IDX_NBYTE  2
+     87          #define  MBM_RX_FC03_IDX_DATA   3
+     88          #define  MBM_RX_FC03_IDX_DATA_H 3
+     89          #define  MBM_RX_FC03_IDX_DATA_L 4
+     90          
+     91          /***********************************************
+     92          * 描述：接收帧数据格式，代码：MODBUS_FC04_IN_REG_RD
+     93          */
+     94          /***********************************************
+     95          * 描述：接收帧数据格式，代码：MODBUS_FC05_COIL_WR
+     96          */
+     97          #define  MBM_RX_FC05_COIL         (((CPU_INT16U)pch->RxFrameData[2] << 8) + (CPU_INT16U)pch->RxFrameData[3])
+     98          #define  MBM_RX_FC05_COIL_H         (pch->RxFrameData[2])
+     99          #define  MBM_RX_FC05_COIL_L         (pch->RxFrameData[3])
+    100          #define  MBM_RX_FC05_COIL_DATA    (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+    101          #define  MBM_RX_FC05_COIL_DATA_H    (pch->RxFrameData[4])
+    102          #define  MBM_RX_FC05_COIL_DATA_L    (pch->RxFrameData[5])
+    103          #define  MBM_RX_FC05_COIL_CRC     (((CPU_INT16U)pch->RxFrameData[6] << 8) + (CPU_INT16U)pch->RxFrameData[7])
+    104          #define  MBM_RX_FC05_COIL_CRC_H     (pch->RxFrameData[6])
+    105          #define  MBM_RX_FC05_COIL_CRC_L     (pch->RxFrameData[7])
+    106          /***********************************************
+    107          * 描述：接收帧数据格式，代码：MODBUS_FC06_HOLDING_REG_WR
+    108          */
+    109          #define  MBM_TX_FC06_REG      (((CPU_INT16U)pch->TxFrameData[2] << 8) + (CPU_INT16U)pch->TxFrameData[3])
+    110          #define  MBM_TX_FC06_REG_H      (pch->TxFrameData[2])
+    111          #define  MBM_TX_FC06_REG_L      (pch->RxFrameData[3])
+    112          #define  MBM_TX_FC06_DATA     (((CPU_INT16U)pch->TxFrameData[4] << 8) + (CPU_INT16U)pch->TxFrameData[5])
+    113          #define  MBM_TX_FC06_DATA_H     (pch->TxFrameData[4])
+    114          #define  MBM_TX_FC06_DATA_L     (pch->TxFrameData[5])
+    115          #define  MBM_TX_FC06_CRC      (((CPU_INT16U)pch->TxFrameData[6] << 8) + (CPU_INT16U)pch->TxFrameData[7])
+    116          #define  MBM_TX_FC06_CRC_H      (pch->TxFrameData[6])
+    117          #define  MBM_TX_FC06_CRC_L      (pch->TxFrameData[7])
+    118          
+    119          #define  MBM_RX_FC06_REG      (((CPU_INT16U)pch->RxFrameData[2] << 8) + (CPU_INT16U)pch->RxFrameData[3])
+    120          #define  MBM_RX_FC06_REG_H      (pch->RxFrameData[2])
+    121          #define  MBM_RX_FC06_REG_L      (pch->RxFrameData[3])
+    122          #define  MBM_RX_FC06_DATA     (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+    123          #define  MBM_RX_FC06_DATA_H     (pch->RxFrameData[4])
+    124          #define  MBM_RX_FC06_DATA_L     (pch->RxFrameData[5])
+    125          #define  MBM_RX_FC06_CRC      (((CPU_INT16U)pch->RxFrameData[6] << 8) + (CPU_INT16U)pch->RxFrameData[7])
+    126          #define  MBM_RX_FC06_CRC_H      (pch->RxFrameData[6])
+    127          #define  MBM_RX_FC06_CRC_L      (pch->RxFrameData[7])
+    128          
+    129          /***********************************************
+    130          * 描述：接收帧数据格式，代码：MODBUS_FC08_LOOPBACK
+    131          */
+    132          /***********************************************
+    133          * 描述：接收帧数据格式，代码：MODBUS_FC15_COIL_WR_MULTIPLE
+    134          */
+    135          #define  MBM_RX_FC15_COIL      (((CPU_INT16U)pch->RxFrameData[2] << 8) + (CPU_INT16U)pch->RxFrameData[3])
+    136          #define  MBM_RX_FC15_COIL_H      (pch->RxFrameData[2])
+    137          #define  MBM_RX_FC15_COIL_L      (pch->RxFrameData[3])
+    138          #define  MBM_RX_FC15_COIL_DATA (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+    139          #define  MBM_RX_FC15_COIL_DATA_H (pch->RxFrameData[4])
+    140          #define  MBM_RX_FC15_COIL_DATA_L (pch->RxFrameData[5])
+    141          #define  MBM_RX_FC15_COIL_BYTES  (pch->RxFrameData[6])
+    142          
+    143          /***********************************************
+    144          * 描述：接收帧数据格式，代码：MODBUS_FC16_HOLDING_REG_WR_MULTIPLE
+    145          */
+    146          #define  MBM_TX_FC16_REG      (((CPU_INT16U)pch->TxFrameData[2] << 8) + (CPU_INT16U)pch->TxFrameData[3])
+    147          #define  MBM_TX_FC16_REG_H      (pch->TxFrameData[2])
+    148          #define  MBM_TX_FC16_REG_L      (pch->RxFrameData[3])
+    149          #define  MBM_TX_FC16_NREG     (((CPU_INT16U)pch->TxFrameData[4] << 8) + (CPU_INT16U)pch->TxFrameData[5])
+    150          #define  MBM_TX_FC16_NREG_H     (pch->TxFrameData[4])
+    151          #define  MBM_TX_FC16_NREG_L     (pch->TxFrameData[5])
+    152          #define  MBM_TX_FC16_NBYTE      (pch->TxFrameData[6])
+    153          #define  MBM_TX_FC16_DATA_IDX   7
+    154          
+    155          #define  MBM_TX_FC16_DATA(i)  (((CPU_INT16U)pch->TxFrameData[7 + i * 2] << 8) + (CPU_INT16U)pch->TxFrameData[8 + i * 2])
+    156          #define  MBM_TX_FC16_DATA_H(i)  (pch->TxFrameData[7 + i * 2])
+    157          #define  MBM_TX_FC16_DATA_L(i)  (pch->TxFrameData[8 + i * 2])
+    158          
+    159          #define  MBM_RX_FC16_REG      (((CPU_INT16U)pch->RxFrameData[2] << 8) + (CPU_INT16U)pch->RxFrameData[3])
+    160          #define  MBM_RX_FC16_REG_H      (pch->RxFrameData[2])
+    161          #define  MBM_RX_FC16_REG_L      (pch->RxFrameData[3])
+    162          #define  MBM_RX_FC16_NREG     (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+    163          #define  MBM_RX_FC16_NREG_H     (pch->RxFrameData[4])
+    164          #define  MBM_RX_FC16_NREG_L     (pch->RxFrameData[5])
+    165          #define  MBM_RX_FC16_CRC      (((CPU_INT16U)pch->RxFrameData[6] << 8) + (CPU_INT16U)pch->RxFrameData[7])
+    166          #define  MBM_RX_FC16_CRC_H      (pch->RxFrameData[6])
+    167          #define  MBM_RX_FC16_CRC_L      (pch->RxFrameData[7])
+    168          
+    169          /***********************************************
+    170          * 描述：接收帧数据格式，代码：MODBUS_FC20_FILE_RD
+    171          */
+    172          /***********************************************
+    173          * 描述：接收帧数据格式，代码：MODBUS_FC21_FILE_WR
+    174          */
+    175          
+    176          
+    177          #define  MBM_TX_FRAME_DATA      (pch->TxFrameData[2])
+    178          
+    179          #define  MBM_RX_DATA_START     (((CPU_INT16U)pch->RxFrameData[2] << 8) + (CPU_INT16U)pch->RxFrameData[3])
+    180          #define  MBM_RX_DATA_START_H    (pch->RxFrameData[2])
+    181          #define  MBM_RX_DATA_START_L    (pch->RxFrameData[3])
+    182          
+    183          #define  MBM_RX_DATA_POINTS    (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+    184          #define  MBM_RX_DATA_POINTS_H   (pch->RxFrameData[4])
+    185          #define  MBM_RX_DATA_POINTS_L   (pch->RxFrameData[5])
+    186          
+    187          #define  MBM_RX_DATA_COIL      (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+    188          #define  MBM_RX_DATA_COIL_H     (pch->RxFrameData[4])
+    189          #define  MBM_RX_DATA_COIL_L     (pch->RxFrameData[5])
+    190          
+    191          #define  MBM_RX_DATA_REG       (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+    192          #define  MBM_RX_DATA_REG_H      (pch->RxFrameData[4])
+    193          #define  MBM_RX_DATA_REG_L      (pch->RxFrameData[5])
+    194          
+    195          #define  MBM_RX_DIAG_CODE      (((CPU_INT16U)pch->RxFrameData[2] << 8) + (CPU_INT16U)pch->RxFrameData[3])
+    196          #define  MBM_RX_DIAG_CODE_H     (pch->RxFrameData[2])
+    197          #define  MBM_RX_DIAG_CODE_L     (pch->RxFrameData[3])
+    198          #define  MBM_RX_DIAG_DATA      (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+    199          #define  MBM_RX_DIAG_DATA_H     (pch->RxFrameData[4])
+    200          #define  MBM_RX_DIAG_DATA_L     (pch->RxFrameData[5])
+    201          
+    202          #define  MBM_RX_FRAME          (&pch->RxFrame)
+    203          #define  MBM_RX_FRAME_ADDR      (pch->RxFrameData[0])
+    204          #define  MBM_RX_FRAME_FC        (pch->RxFrameData[1])
+    205          #define  MBM_RX_FRAME_DATA      (pch->RxFrameData[2])
+    206          #define  MBM_RX_FRAME_NBYTES    (pch->RxFrameNDataBytes)
+    207          
+    208          
+    209          #define  MBM_TX_DATA_START_H    (pch->TxFrameData[2])
+    210          #define  MBM_TX_DATA_START_L    (pch->TxFrameData[3])
+    211          
+    212          #define  MBM_TX_DATA_POINTS_H   (pch->TxFrameData[4])
+    213          #define  MBM_TX_DATA_POINTS_L   (pch->TxFrameData[5])
+    214          
+    215          #define  MBM_TX_DATA_COIL_H     (pch->TxFrameData[4])
+    216          #define  MBM_TX_DATA_COIL_L     (pch->TxFrameData[5])
+    217          
+    218          #define  MBM_TX_DATA_REG_H      (pch->TxFrameData[4])
+    219          #define  MBM_TX_DATA_REG_L      (pch->TxFrameData[5])
+    220          
+    221          #define  MBM_TX_DIAG_CODE_H     (pch->TxFrameData[2])
+    222          #define  MBM_TX_DIAG_CODE_L     (pch->TxFrameData[3])
+    223          #define  MBM_TX_DIAG_DATA_H     (pch->TxFrameData[4])
+    224          #define  MBM_TX_DIAG_DATA_L     (pch->TxFrameData[5])
+    225          
+    226          
+    227          #define  MBM_TX_FRAME          (&pch->TxFrame)
+    228          #define  MBM_TX_FRAME_ADDR      (pch->TxFrameData[0])
+    229          #define  MBM_TX_FRAME_FC        (pch->TxFrameData[1])
+    230          #define  MBM_TX_FRAME_DATA      (pch->TxFrameData[2])
+    231          #define  MBM_TX_FRAME_NBYTES    (pch->TxFrameNDataBytes)
+    232          
+    233          //SE Added defines from this point forward
+    234          #define  MBM_FC100_DATA_BYTES    (5u)
+    235          
+    236          /*$PAGE*/
+    237          /*
+    238          *********************************************************************************************************
+    239          *                                    LOCAL FUNCTION PROTOTYPES
+    240          *********************************************************************************************************
+    241          */
+    242          
+    243          /*$PAGE*/
+    244          /*
+    245          *********************************************************************************************************
+    246          *                                           MBM_FCxx_Handler()
+    247          *
+    248          * Description : This is the main processing function for MODBUS commands.  The message integrity is
+    249          *               verified, and if valid, the function requested is processed.  Unimplemented functions
+    250          *               will generate an Illegal Function Exception Response code (01).
+    251          *
+    252          * Argument(s) : pch      Is a pointer to the Modbus channel's data structure.
+    253          *
+    254          * Return(s)   : none.
+    255          *
+    256          * Caller(s)   : MBM_ASCII_Task()
+    257          *               MBM_RTU_Task
+    258          *
+    259          * Note(s)     : none.
+    260          *********************************************************************************************************
+    261          */
+    262          
+    263          #if (MODBUS_CFG_MASTER_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    264          CPU_BOOLEAN  MBM_FCxx_Handler (MODBUS_CH  *pch)
+    265          {
+   \                     MBM_FCxx_Handler: (+1)
+   \   00000000   0xB430             PUSH     {R4,R5}
+    266              CPU_BOOLEAN   send_reply;
+    267          
+    268              if (MBM_RX_FRAME_ADDR == pch->NodeAddr) {
+   \   00000002   0x1C42             ADDS     R2,R0,#+1
+   \   00000004   0xF500 0x7311      ADD      R3,R0,#+580
+   \   00000008   0x781C             LDRB     R4,[R3, #+0]
+   \   0000000A   0x79D5             LDRB     R5,[R2, #+7]
+   \   0000000C   0x42AC             CMP      R4,R5
+   \   0000000E   0xD12E             BNE.N    ??MBM_FCxx_Handler_0
+    269          
+    270                  switch (MBM_RX_FRAME_FC) {
+   \   00000010   0x785B             LDRB     R3,[R3, #+1]
+   \   00000012   0x2B01             CMP      R3,#+1
+   \   00000014   0xD02B             BEQ.N    ??MBM_FCxx_Handler_0
+   \   00000016   0x2B03             CMP      R3,#+3
+   \   00000018   0xD029             BEQ.N    ??MBM_FCxx_Handler_0
+   \   0000001A   0x2B05             CMP      R3,#+5
+   \   0000001C   0xD00C             BEQ.N    ??MBM_FCxx_Handler_1
+   \   0000001E   0x2B06             CMP      R3,#+6
+   \   00000020   0xD00F             BEQ.N    ??MBM_FCxx_Handler_2
+   \   00000022   0x2B08             CMP      R3,#+8
+   \   00000024   0xD023             BEQ.N    ??MBM_FCxx_Handler_0
+   \   00000026   0x2B0F             CMP      R3,#+15
+   \   00000028   0xD010             BEQ.N    ??MBM_FCxx_Handler_3
+   \   0000002A   0x2B10             CMP      R3,#+16
+   \   0000002C   0xD013             BEQ.N    ??MBM_FCxx_Handler_4
+   \   0000002E   0x2B14             CMP      R3,#+20
+   \   00000030   0xD01D             BEQ.N    ??MBM_FCxx_Handler_0
+   \   00000032   0x2B15             CMP      R3,#+21
+   \   00000034   0xD014             BEQ.N    ??MBM_FCxx_Handler_5
+   \   00000036   0xE018             B.N      ??MBM_FCxx_Handler_6
+    271          #if (MODBUS_CFG_FC01_EN == DEF_ENABLED)
+    272                      case MODBUS_FC01_COIL_RD:
+    273                           break;
+    274          #endif
+    275          
+    276          #if (MODBUS_CFG_FC02_EN == DEF_ENABLED)
+    277                      case MODBUS_FC02_DI_RD:
+    278                           break;
+    279          #endif
+    280          
+    281          #if (MODBUS_CFG_FC03_EN == DEF_ENABLED)
+    282                      case MODBUS_FC03_HOLDING_REG_RD:
+    283                           break;
+    284          #endif
+    285          
+    286          #if (MODBUS_CFG_FC04_EN == DEF_ENABLED)
+    287                      case MODBUS_FC04_IN_REG_RD:
+    288                           break;
+    289          #endif
+    290          
+    291          #if (MODBUS_CFG_FC05_EN == DEF_ENABLED)
+    292                      case MODBUS_FC05_COIL_WR:
+    293                           if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBM_FCxx_Handler_1: (+1)
+   \   00000038   0x7810             LDRB     R0,[R2, #+0]
+   \   0000003A   0x2801             CMP      R0,#+1
+   \   0000003C   0xD017             BEQ.N    ??MBM_FCxx_Handler_0
+    294                           } else {
+    295                               send_reply  = DEF_FALSE;
+   \   0000003E   0x2100             MOVS     R1,#+0
+   \   00000040   0xE015             B.N      ??MBM_FCxx_Handler_0
+    296                           }
+    297                           break;
+    298          #endif
+    299          
+    300          #if (MODBUS_CFG_FC06_EN == DEF_ENABLED)
+    301                      case MODBUS_FC06_HOLDING_REG_WR:
+    302                           if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBM_FCxx_Handler_2: (+1)
+   \   00000042   0x7810             LDRB     R0,[R2, #+0]
+   \   00000044   0x2801             CMP      R0,#+1
+   \   00000046   0xD012             BEQ.N    ??MBM_FCxx_Handler_0
+    303                           } else {
+    304                               send_reply  = DEF_FALSE;
+   \   00000048   0x2100             MOVS     R1,#+0
+   \   0000004A   0xE010             B.N      ??MBM_FCxx_Handler_0
+    305                           }
+    306                           break;
+    307          #endif
+    308          
+    309          #if (MODBUS_CFG_FC08_EN == DEF_ENABLED)
+    310                      case MODBUS_FC08_LOOPBACK:
+    311                           break;
+    312          #endif
+    313          
+    314          #if (MODBUS_CFG_FC15_EN == DEF_ENABLED)
+    315                      case MODBUS_FC15_COIL_WR_MULTIPLE:
+    316                           if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBM_FCxx_Handler_3: (+1)
+   \   0000004C   0x7810             LDRB     R0,[R2, #+0]
+   \   0000004E   0x2801             CMP      R0,#+1
+   \   00000050   0xD00D             BEQ.N    ??MBM_FCxx_Handler_0
+    317                           } else {
+    318                               send_reply  = DEF_FALSE;
+   \   00000052   0x2100             MOVS     R1,#+0
+   \   00000054   0xE00B             B.N      ??MBM_FCxx_Handler_0
+    319                           }
+    320                           break;
+    321          #endif
+    322          
+    323          #if (MODBUS_CFG_FC16_EN == DEF_ENABLED)
+    324                      case MODBUS_FC16_HOLDING_REG_WR_MULTIPLE:
+    325                           if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBM_FCxx_Handler_4: (+1)
+   \   00000056   0x7810             LDRB     R0,[R2, #+0]
+   \   00000058   0x2801             CMP      R0,#+1
+   \   0000005A   0xD008             BEQ.N    ??MBM_FCxx_Handler_0
+    326                           } else {
+    327                               send_reply  = DEF_FALSE;
+   \   0000005C   0x2100             MOVS     R1,#+0
+   \   0000005E   0xE006             B.N      ??MBM_FCxx_Handler_0
+    328                           }
+    329                           break;
+    330          #endif
+    331          
+    332          #if (MODBUS_CFG_FC20_EN == DEF_ENABLED)
+    333                      case MODBUS_FC20_FILE_RD:
+    334                           break;
+    335          #endif
+    336          
+    337          #if (MODBUS_CFG_FC21_EN == DEF_ENABLED)
+    338                      case MODBUS_FC21_FILE_WR:
+    339                           if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBM_FCxx_Handler_5: (+1)
+   \   00000060   0x7810             LDRB     R0,[R2, #+0]
+   \   00000062   0x2801             CMP      R0,#+1
+   \   00000064   0xD003             BEQ.N    ??MBM_FCxx_Handler_0
+    340                           } else {
+    341                               send_reply = DEF_FALSE;
+   \   00000066   0x2100             MOVS     R1,#+0
+   \   00000068   0xE001             B.N      ??MBM_FCxx_Handler_0
+    342                           }
+    343                           break;
+    344          #endif
+    345          
+    346          #if MODBUS_FC43_EN > 0 // Read Device ID
+    347                     case MODBUS_FC43_READ_DEV_ID:
+    348                      break;
+    349          #endif
+    350          
+    351          #if MODBUS_FC100_EN > 0 // Scattered Read
+    352                      case MODBUS_FC100_SCATTERED_READ:
+    353                      break;
+    354          #endif
+    355          
+    356                      default:
+    357                           pch->Err   = MODBUS_ERR_ILLEGAL_FC;
+   \                     ??MBM_FCxx_Handler_6: (+1)
+   \   0000006A   0x2101             MOVS     R1,#+1
+   \   0000006C   0x82C1             STRH     R1,[R0, #+22]
+    358                           send_reply = DEF_TRUE;
+    359                           break;
+    360                  }
+    361              } else {
+    362              }
+    363          
+    364              return (send_reply);
+   \                     ??MBM_FCxx_Handler_0: (+1)
+   \   0000006E   0x4608             MOV      R0,R1
+   \   00000070   0xB2C0             UXTB     R0,R0
+   \   00000072   0xBC30             POP      {R4,R5}
+   \   00000074   0x4770             BX       LR               ;; return
+    365          }
+    366          #endif
+    367          /*$PAGE*/
+    368          /*
+    369          *********************************************************************************************************
+    370          *                                           MBM_TxCmd()
+    371          *
+    372          * Description : This is the main processing function for MODBUS commands.  The message integrity is
+    373          *               verified, and if valid, the function requested is processed.  Unimplemented functions
+    374          *               will generate an Illegal Function Exception Response code (01).
+    375          *
+    376          * Argument(s) : pch      Is a pointer to the Modbus channel's data structure.
+    377          *
+    378          * Return(s)   : none.
+    379          *
+    380          * Caller(s)   : MBM_FCxx_xx()
+    381          *
+    382          * Note(s)     : none.
+    383          *********************************************************************************************************
+    384          */
+    385          #if (MODBUS_CFG_MASTER_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    386          void MBM_TxCmd(MODBUS_CH *pch)
+    387          {
+    388          #if (MODBUS_CFG_RTU_EN == DEF_ENABLED)
+    389              MB_RTU_Tx (pch);
+   \                     MBM_TxCmd: (+1)
+   \   00000000   0x.... 0x....      B.W      MB_RTU_Tx
+    390          #endif
+    391          #if (MODBUS_CFG_ASCII_EN == DEF_ENABLED)
+    392              MB_ASCII_Tx(pch);
+    393          #endif
+    394          }
+    395          #endif
+    396          
+    397          /*$PAGE*/
+    398          /*
+    399          *********************************************************************************************************
+    400          *                                           MBM_RxReply()
+    401          *
+    402          * Description : This is the main processing function for MODBUS commands.  The message integrity is
+    403          *               verified, and if valid, the function requested is processed.  Unimplemented functions
+    404          *               will generate an Illegal Function Exception Response code (01).
+    405          *
+    406          * Argument(s) : pch      Is a pointer to the Modbus channel's data structure.
+    407          *
+    408          * Return(s)   : none.
+    409          *
+    410          * Caller(s)   : MBM_FCxx_xx
+    411          *
+    412          * Note(s)     : none.
+    413          *********************************************************************************************************
+    414          */
+    415          #if (MODBUS_CFG_MASTER_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    416          CPU_BOOLEAN MBM_RxReply(MODBUS_CH *pch )
+    417          {
+    418          #if (MODBUS_CFG_RTU_EN == DEF_ENABLED)
+    419              return MB_RTU_Rx(pch);
+   \                     MBM_RxReply: (+1)
+   \   00000000   0x.... 0x....      B.W      MB_RTU_Rx
+    420          
+    421          #endif
+    422          #if (MODBUS_CFG_ASCII_EN == DEF_ENABLED)
+    423              return MB_ASCII_Rx(pch);
+    424          #endif
+    425          }
+    426          #endif
+    427          
+    428          
+    429          /*$PAGE*/
+    430          /*
+    431          *********************************************************************************************************
+    432          *                                           MBS_FC01_CoilRd()
+    433          *
+    434          * Description : Responds to a request to read the status of any number of coils.
+    435          *
+    436          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+    437          *
+    438          * Return(s)   : DEF_TRUE      If a response needs to be sent
+    439          *               DEF_FALSE     If not
+    440          *
+    441          * Caller(s)   : MBS_FCxx_Handler()
+    442          *
+    443          * Note(s)     : none
+    444          *********************************************************************************************************
+    445          */
+    446          
+    447          #if (MODBUS_CFG_MASTER_EN == DEF_ENABLED)
+    448          #if (MODBUS_CFG_FC01_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    449          CPU_INT16U  MBM_FC01_CoilRd          (MODBUS_CH   *pch,
+    450                                                CPU_INT08U   slave_node,
+    451                                                CPU_INT16U   slave_addr,
+    452                                                CPU_INT08U  *p_coil_tbl,
+    453                                                CPU_INT16U   nbr_coils)
+    454          {
+   \                     MBM_FC01_CoilRd: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   \   00000004   0x460F             MOV      R7,R1
+   \   00000006   0x4616             MOV      R6,R2
+   \   00000008   0x461D             MOV      R5,R3
+    455              CPU_INT16U      nbr_bytes;
+    456              CPU_INT08U     *ptx_data;
+    457              CPU_INT16U      err;
+    458              CPU_BOOLEAN     ok;
+    459              CPU_INT16U      calc_crc;
+    460          
+    461              MB_OS_TxWait(pch,&err);
+   \   0000000A   0x4669             MOV      R1,SP
+   \   0000000C   0x.... 0x....      BL       MB_OS_TxWait
+    462              if ( err != MODBUS_ERR_NONE )
+   \   00000010   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD001             BEQ.N    ??MBM_FC01_CoilRd_0
+    463                  return 0;
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0xBDF2             POP      {R1,R4-R7,PC}
+    464              ptx_data    = &(pch->TxFrameData[0]);
+   \                     ??MBM_FC01_CoilRd_0: (+1)
+   \   0000001C   0xF204 0x324E      ADDW     R2,R4,#+846
+    465              pch->TxFrameNDataBytes  = 4;
+   \   00000020   0xF204 0x434E      ADDW     R3,R4,#+1102
+   \   00000024   0x2004             MOVS     R0,#+4
+   \   00000026   0x8018             STRH     R0,[R3, #+0]
+    466          
+    467             *ptx_data++ = slave_node;
+   \   00000028   0x7017             STRB     R7,[R2, #+0]
+    468             *ptx_data++ = MODBUS_FC01_COIL_RD;
+   \   0000002A   0x2001             MOVS     R0,#+1
+   \   0000002C   0x7050             STRB     R0,[R2, #+1]
+    469             *ptx_data++ = HI_INT16U(slave_addr);
+   \   0000002E   0x4630             MOV      R0,R6
+   \   00000030   0x0A00             LSRS     R0,R0,#+8
+   \   00000032   0x7090             STRB     R0,[R2, #+2]
+    470             *ptx_data++ = LO_INT16U(slave_addr);
+   \   00000034   0x70D6             STRB     R6,[R2, #+3]
+   \   00000036   0x9906             LDR      R1,[SP, #+24]
+    471             *ptx_data++ = HI_INT16U(nbr_coils);
+   \   00000038   0x4608             MOV      R0,R1
+   \   0000003A   0x0A00             LSRS     R0,R0,#+8
+   \   0000003C   0x7110             STRB     R0,[R2, #+4]
+    472             *ptx_data++ = LO_INT16U(nbr_coils);
+   \   0000003E   0x7151             STRB     R1,[R2, #+5]
+    473              nbr_bytes  = 0;
+   \   00000040   0x2600             MOVS     R6,#+0
+    474          
+    475              /***********************************************
+    476              * 描述： 发送
+    477              */
+    478              INT08S  retrys  = pch->Retrys;
+   \   00000042   0x7918             LDRB     R0,[R3, #+4]
+   \   00000044   0x08C7             LSRS     R7,R0,#+3
+    479              do {
+    480                MBM_TxCmd(pch);
+   \                     ??MBM_FC01_CoilRd_1: (+1)
+   \   00000046   0x4620             MOV      R0,R4
+   \   00000048   0x.... 0x....      BL       MBM_TxCmd
+    481                MB_OS_RxWait(pch,&err);
+   \   0000004C   0x4669             MOV      R1,SP
+   \   0000004E   0x4620             MOV      R0,R4
+   \   00000050   0x.... 0x....      BL       MB_OS_RxWait
+    482              } while ( ( err == MODBUS_ERR_TIMED_OUT ) && --retrys  );
+   \   00000054   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000058   0xF640 0x31B8      MOVW     R1,#+3000
+   \   0000005C   0x4288             CMP      R0,R1
+   \   0000005E   0xD103             BNE.N    ??MBM_FC01_CoilRd_2
+   \   00000060   0x1E7F             SUBS     R7,R7,#+1
+   \   00000062   0xB2FF             UXTB     R7,R7
+   \   00000064   0x2F00             CMP      R7,#+0
+   \   00000066   0xD1EE             BNE.N    ??MBM_FC01_CoilRd_1
+    483          
+    484              if ( err == MODBUS_ERR_NONE ) {
+   \                     ??MBM_FC01_CoilRd_2: (+1)
+   \   00000068   0x2800             CMP      R0,#+0
+   \   0000006A   0xD12C             BNE.N    ??MBM_FC01_CoilRd_3
+    485                  ok = MBM_RxReply(pch);
+    486                  if ( DEF_TRUE == ok ) {
+   \   0000006C   0x4620             MOV      R0,R4
+   \   0000006E   0x.... 0x....      BL       MBM_RxReply
+   \   00000072   0x2801             CMP      R0,#+1
+   \   00000074   0xD12C             BNE.N    ??MBM_FC01_CoilRd_4
+    487                      calc_crc = MB_RTU_RxCalcCRC(pch);          /* Do our own calculation of the CRC.                              */
+   \   00000076   0x4620             MOV      R0,R4
+   \   00000078   0x.... 0x....      BL       MB_RTU_RxCalcCRC
+    488                      if (calc_crc != pch->RxFrameCRC) {         /* If the calculated CRC does not match the CRC received,          */
+   \   0000007C   0xF104 0x011E      ADD      R1,R4,#+30
+   \   00000080   0xF8B4 0x2346      LDRH     R2,[R4, #+838]
+   \   00000084   0x4290             CMP      R0,R2
+   \   00000086   0xD003             BEQ.N    ??MBM_FC01_CoilRd_5
+    489                        /***********************************************
+    490                        * 描述： 校验错误
+    491                        */
+    492                        pch->StatCRCErrCtr++;                    /* then the frame was not received properly.                       */
+   \   00000088   0x8848             LDRH     R0,[R1, #+2]
+   \   0000008A   0x1C40             ADDS     R0,R0,#+1
+   \   0000008C   0x8048             STRH     R0,[R1, #+2]
+   \   0000008E   0xE01F             B.N      ??MBM_FC01_CoilRd_4
+    493                      } else if (MBM_RX_FCXX_CODE == 0X81) {
+   \                     ??MBM_FC01_CoilRd_5: (+1)
+   \   00000090   0xF204 0x2045      ADDW     R0,R4,#+581
+   \   00000094   0x7802             LDRB     R2,[R0, #+0]
+   \   00000096   0x2A81             CMP      R2,#+129
+   \   00000098   0xD103             BNE.N    ??MBM_FC01_CoilRd_6
+    494                        pch->StatExceptCtr++;
+   \   0000009A   0x8888             LDRH     R0,[R1, #+4]
+   \   0000009C   0x1C40             ADDS     R0,R0,#+1
+   \   0000009E   0x8088             STRH     R0,[R1, #+4]
+    495                        /***********************************************
+    496                        * 描述： 其他错误
+    497                        //功能码03H： 读寄存器值错误响应
+    498                        //第1字节	    ADR      	：	从机地址码（=001～254）
+    499                        //第2字节　   83H			：	读寄存器值出错
+    500                        //第3字节　   信息码		：	见信息码表
+    501                        //第4、5字节	CRC			：	从字节1到3的CRC16校验和
+    502                        //数息码	    表示意义
+    503                        //01H	        非法的功能号
+    504                        //02H	        非法的数据地址
+    505                        //03H	        非法的数据值
+    506                        //04H	        CRC16校验错
+    507                        //05H	        接收正确
+    508                        //06H	        接收错误
+    509                        //07	        参数错误
+    510                        */
+    511                        nbr_bytes  = 0;
+   \   000000A0   0xE016             B.N      ??MBM_FC01_CoilRd_4
+    512                      } else {
+    513                        pch->StatMsgCtr++;
+   \                     ??MBM_FC01_CoilRd_6: (+1)
+   \   000000A2   0x880A             LDRH     R2,[R1, #+0]
+   \   000000A4   0x1C52             ADDS     R2,R2,#+1
+   \   000000A6   0x800A             STRH     R2,[R1, #+0]
+    514          #if MBM_STAT_CTR_AUTO_CLR_EN        == DEF_ENABLED
+    515                        pch->StatNoRespCtr    = 0;
+   \   000000A8   0x4632             MOV      R2,R6
+   \   000000AA   0x810A             STRH     R2,[R1, #+8]
+    516                        pch->StatCRCErrCtr    = 0;
+   \   000000AC   0x804A             STRH     R2,[R1, #+2]
+    517                        pch->StatExceptCtr    = 0;
+   \   000000AE   0x808A             STRH     R2,[R1, #+4]
+    518          #endif
+    519                        /***********************************************
+    520                        * 描述： 接收正确,且输入指针与数据指针不相等
+    521                        */
+    522                        nbr_bytes        = MBM_RX_FC01_NBYTE;
+   \   000000B0   0x7846             LDRB     R6,[R0, #+1]
+    523                        INT08U    idx    = 0;
+   \   000000B2   0x4610             MOV      R0,R2
+    524                        while(idx < nbr_bytes) {
+   \                     ??MBM_FC01_CoilRd_7: (+1)
+   \   000000B4   0x42B0             CMP      R0,R6
+   \   000000B6   0xDA0B             BGE.N    ??MBM_FC01_CoilRd_4
+    525                          p_coil_tbl[idx]    = MBM_RX_FC01_DATA(idx);
+   \   000000B8   0x1901             ADDS     R1,R0,R4
+   \   000000BA   0xF891 0x1247      LDRB     R1,[R1, #+583]
+   \   000000BE   0x5541             STRB     R1,[R0, R5]
+    526                          idx++;
+   \   000000C0   0x1C40             ADDS     R0,R0,#+1
+   \   000000C2   0xB2C0             UXTB     R0,R0
+   \   000000C4   0xE7F6             B.N      ??MBM_FC01_CoilRd_7
+    527                        }
+    528                      }
+    529                  }
+    530              } else {
+    531                  pch->StatNoRespCtr++;
+   \                     ??MBM_FC01_CoilRd_3: (+1)
+   \   000000C6   0xF104 0x011E      ADD      R1,R4,#+30
+   \   000000CA   0x8908             LDRH     R0,[R1, #+8]
+   \   000000CC   0x1C40             ADDS     R0,R0,#+1
+   \   000000CE   0x8108             STRH     R0,[R1, #+8]
+    532              }
+    533          
+    534              pch->RxBufByteCtr = 0;
+   \                     ??MBM_FC01_CoilRd_4: (+1)
+   \   000000D0   0x2000             MOVS     R0,#+0
+   \   000000D2   0xF104 0x011E      ADD      R1,R4,#+30
+   \   000000D6   0x8248             STRH     R0,[R1, #+18]
+    535              pch->RxBufPtr     = &pch->RxBuf[0];
+   \   000000D8   0xF104 0x0038      ADD      R0,R4,#+56
+   \   000000DC   0x6360             STR      R0,[R4, #+52]
+    536          
+    537              MB_OS_TxOver(pch);
+   \   000000DE   0x4620             MOV      R0,R4
+   \   000000E0   0x.... 0x....      BL       MB_OS_TxOver
+    538          
+    539              return nbr_bytes;
+   \   000000E4   0x4630             MOV      R0,R6
+   \   000000E6   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    540          }
+    541          #endif
+    542          #endif
+    543          
+    544          /*$PAGE*/
+    545          /*
+    546          *********************************************************************************************************
+    547          *                                           MBS_FC05_CoilWr()
+    548          *
+    549          * Description : Responds to a request to force a coil to a specified state.
+    550          *
+    551          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+    552          *
+    553          * Return(s)   : DEF_TRUE      If a response needs to be sent
+    554          *               DEF_FALSE     If not
+    555          *
+    556          * Caller(s)   : MBS_FCxx_Handler()
+    557          *
+    558          * Note(s)     : none
+    559          *********************************************************************************************************
+    560          */
+    561          
+    562          #if (MODBUS_CFG_MASTER_EN == DEF_ENABLED)
+    563          #if (MODBUS_CFG_FC05_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    564          CPU_INT16U  MBM_FC05_CoilWr          (MODBUS_CH   *pch,
+    565                                                CPU_INT08U   slave_node,
+    566                                                CPU_INT16U   slave_addr,
+    567                                                CPU_BOOLEAN  coil_val)
+    568          {
+   \                     MBM_FC05_CoilWr: (+1)
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0xB082             SUB      SP,SP,#+8
+   \   00000006   0x4604             MOV      R4,R0
+   \   00000008   0x460F             MOV      R7,R1
+   \   0000000A   0x4616             MOV      R6,R2
+   \   0000000C   0x461D             MOV      R5,R3
+    569          
+    570              CPU_INT08U     *ptx_data;
+    571              CPU_INT16U      err;
+    572              CPU_BOOLEAN     ok;
+    573              CPU_INT16U      calc_crc;
+    574              CPU_INT32U      timeout;
+    575          
+    576          
+    577              MB_OS_TxWait(pch,&err);
+   \   0000000E   0x4669             MOV      R1,SP
+   \   00000010   0x.... 0x....      BL       MB_OS_TxWait
+    578              if ( err != MODBUS_ERR_NONE )
+   \   00000014   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD001             BEQ.N    ??MBM_FC05_CoilWr_0
+    579                  return 0;
+   \   0000001C   0x2000             MOVS     R0,#+0
+   \   0000001E   0xE079             B.N      ??MBM_FC05_CoilWr_1
+    580              ptx_data  = &(pch->TxFrameData[0]);
+   \                     ??MBM_FC05_CoilWr_0: (+1)
+   \   00000020   0xF204 0x314E      ADDW     R1,R4,#+846
+    581          
+    582             *ptx_data++ = slave_node;
+   \   00000024   0x700F             STRB     R7,[R1, #+0]
+    583             *ptx_data++ = MODBUS_FC05_COIL_WR;
+   \   00000026   0x2005             MOVS     R0,#+5
+   \   00000028   0x7048             STRB     R0,[R1, #+1]
+    584             *ptx_data++ = HI_INT16U(slave_addr);
+   \   0000002A   0x4630             MOV      R0,R6
+   \   0000002C   0x0A00             LSRS     R0,R0,#+8
+   \   0000002E   0x7088             STRB     R0,[R1, #+2]
+    585             *ptx_data++ = LO_INT16U(slave_addr);
+   \   00000030   0x70CE             STRB     R6,[R1, #+3]
+    586             *ptx_data++ = (coil_val) ? 0xff : 0x00;
+   \   00000032   0x1D08             ADDS     R0,R1,#+4
+   \   00000034   0x1C41             ADDS     R1,R0,#+1
+   \   00000036   0x2D00             CMP      R5,#+0
+   \   00000038   0xD001             BEQ.N    ??MBM_FC05_CoilWr_2
+   \   0000003A   0x22FF             MOVS     R2,#+255
+   \   0000003C   0xE000             B.N      ??MBM_FC05_CoilWr_3
+   \                     ??MBM_FC05_CoilWr_2: (+1)
+   \   0000003E   0x2200             MOVS     R2,#+0
+   \                     ??MBM_FC05_CoilWr_3: (+1)
+   \   00000040   0x7002             STRB     R2,[R0, #+0]
+    587             *ptx_data++ = 0x00;
+   \   00000042   0x2000             MOVS     R0,#+0
+   \   00000044   0x7008             STRB     R0,[R1, #+0]
+    588              pch->TxFrameNDataBytes  = 4;
+   \   00000046   0xF204 0x484E      ADDW     R8,R4,#+1102
+   \   0000004A   0x2004             MOVS     R0,#+4
+   \   0000004C   0xF8A8 0x0000      STRH     R0,[R8, #+0]
+    589          
+    590              coil_val   = 0;
+   \   00000050   0x2500             MOVS     R5,#+0
+    591          
+    592              timeout = pch->RxTimeout;
+   \   00000052   0xF104 0x0628      ADD      R6,R4,#+40
+   \   00000056   0x6837             LDR      R7,[R6, #+0]
+    593              MB_MasterTimeoutSet(pch, 300u);                    // 设置MODBUS主机超时为500ms
+   \   00000058   0xF44F 0x7196      MOV      R1,#+300
+   \   0000005C   0x4620             MOV      R0,R4
+   \   0000005E   0x.... 0x....      BL       MB_MasterTimeoutSet
+    594              /***********************************************
+    595              * 描述： 发送
+    596              */
+    597              INT08S  retrys  = pch->Retrys;
+   \   00000062   0xF898 0x0004      LDRB     R0,[R8, #+4]
+   \   00000066   0xEA4F 0x08D0      LSR      R8,R0,#+3
+    598              do {
+    599                MBM_TxCmd(pch);
+   \                     ??MBM_FC05_CoilWr_4: (+1)
+   \   0000006A   0x4620             MOV      R0,R4
+   \   0000006C   0x.... 0x....      BL       MBM_TxCmd
+    600                MB_OS_RxWait(pch,&err);
+   \   00000070   0x4669             MOV      R1,SP
+   \   00000072   0x4620             MOV      R0,R4
+   \   00000074   0x.... 0x....      BL       MB_OS_RxWait
+    601              } while ( ( err == MODBUS_ERR_TIMED_OUT ) && --retrys  );
+   \   00000078   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   0000007C   0xF640 0x31B8      MOVW     R1,#+3000
+   \   00000080   0x4288             CMP      R0,R1
+   \   00000082   0xD106             BNE.N    ??MBM_FC05_CoilWr_5
+   \   00000084   0xF1A8 0x0801      SUB      R8,R8,#+1
+   \   00000088   0xFA5F 0xF888      UXTB     R8,R8
+   \   0000008C   0xF1B8 0x0F00      CMP      R8,#+0
+   \   00000090   0xD1EB             BNE.N    ??MBM_FC05_CoilWr_4
+    602          
+    603              MB_MasterTimeoutSet(pch, timeout);                // 设置MODBUS主机超时为500ms
+   \                     ??MBM_FC05_CoilWr_5: (+1)
+   \   00000092   0x4639             MOV      R1,R7
+   \   00000094   0x4620             MOV      R0,R4
+   \   00000096   0x.... 0x....      BL       MB_MasterTimeoutSet
+    604          
+    605              if ( err == MODBUS_ERR_NONE ) {
+   \   0000009A   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   0000009E   0x2800             CMP      R0,#+0
+   \   000000A0   0xD12A             BNE.N    ??MBM_FC05_CoilWr_6
+    606                  ok = MBM_RxReply(pch);
+    607                  if ( DEF_TRUE == ok ) {
+   \   000000A2   0x4620             MOV      R0,R4
+   \   000000A4   0x.... 0x....      BL       MBM_RxReply
+   \   000000A8   0x2801             CMP      R0,#+1
+   \   000000AA   0xD12A             BNE.N    ??MBM_FC05_CoilWr_7
+    608                      calc_crc = MB_RTU_RxCalcCRC(pch);          /* Do our own calculation of the CRC.                              */
+   \   000000AC   0x4620             MOV      R0,R4
+   \   000000AE   0x.... 0x....      BL       MB_RTU_RxCalcCRC
+    609                      if (calc_crc != pch->RxFrameCRC) {         /* If the calculated CRC does not match the CRC received,          */
+   \   000000B2   0xF104 0x011E      ADD      R1,R4,#+30
+   \   000000B6   0xF8B4 0x2346      LDRH     R2,[R4, #+838]
+   \   000000BA   0x4290             CMP      R0,R2
+   \   000000BC   0xD003             BEQ.N    ??MBM_FC05_CoilWr_8
+    610                        /***********************************************
+    611                        * 描述： 校验错误
+    612                        */
+    613                        pch->StatCRCErrCtr++;                    /* then the frame was not received properly.                       */
+   \   000000BE   0x8848             LDRH     R0,[R1, #+2]
+   \   000000C0   0x1C40             ADDS     R0,R0,#+1
+   \   000000C2   0x8048             STRH     R0,[R1, #+2]
+   \   000000C4   0xE01D             B.N      ??MBM_FC05_CoilWr_7
+    614                      } else if (MBM_RX_FCXX_CODE == 0X85) {
+   \                     ??MBM_FC05_CoilWr_8: (+1)
+   \   000000C6   0xF204 0x2045      ADDW     R0,R4,#+581
+   \   000000CA   0x7802             LDRB     R2,[R0, #+0]
+   \   000000CC   0x2A85             CMP      R2,#+133
+   \   000000CE   0xD107             BNE.N    ??MBM_FC05_CoilWr_9
+    615                        pch->StatExceptCtr++;
+   \   000000D0   0x888A             LDRH     R2,[R1, #+4]
+   \   000000D2   0x1C52             ADDS     R2,R2,#+1
+   \   000000D4   0x808A             STRH     R2,[R1, #+4]
+    616                        /***********************************************
+    617                        * 描述： 其他错误
+    618                        //功能码06H： 写单个寄存器值
+    619                        //第1字节	    ADR      		：从机地址码（=001～254）
+    620                        //第2字节　   86H			    ：写寄存器值出错功能码
+    621                        //第3字节　   错误数息码		：	见信息码表
+    622                        //第4、5字节	CRC			    ：	从字节1到3的CRC16校验和
+    623                        //数息码	    表示意义
+    624                        //01H	        非法的功能号
+    625                        //02H	        非法的数据地址
+    626                        //03H	        非法的数据值
+    627                        //04H	        CRC16校验错
+    628                        //05H	        接收正确
+    629                        //06H	        接收错误
+    630                        //07	        参数错误
+    631                        */
+    632                        coil_val   = (MBM_RX_FC05_COIL_DATA_H) ? 1 : 0;
+   \   000000D6   0x78C0             LDRB     R0,[R0, #+3]
+   \   000000D8   0x2800             CMP      R0,#+0
+   \   000000DA   0xD012             BEQ.N    ??MBM_FC05_CoilWr_7
+   \   000000DC   0x2501             MOVS     R5,#+1
+   \   000000DE   0xE010             B.N      ??MBM_FC05_CoilWr_7
+    633                      } else {
+    634                        pch->StatMsgCtr++;
+   \                     ??MBM_FC05_CoilWr_9: (+1)
+   \   000000E0   0x880A             LDRH     R2,[R1, #+0]
+   \   000000E2   0x1C52             ADDS     R2,R2,#+1
+   \   000000E4   0x800A             STRH     R2,[R1, #+0]
+    635          #if MBM_STAT_CTR_AUTO_CLR_EN        == DEF_ENABLED
+    636                        pch->StatNoRespCtr    = 0;
+   \   000000E6   0x462A             MOV      R2,R5
+   \   000000E8   0x810A             STRH     R2,[R1, #+8]
+    637                        pch->StatCRCErrCtr    = 0;
+   \   000000EA   0x804A             STRH     R2,[R1, #+2]
+    638                        pch->StatExceptCtr    = 0;
+   \   000000EC   0x808A             STRH     R2,[R1, #+4]
+    639          #endif
+    640                        /***********************************************
+    641                        * 描述： 接收正确
+    642                        */
+    643                        coil_val = (MBM_RX_FC05_COIL_DATA_H) ? 1 : 0;
+   \   000000EE   0x78C0             LDRB     R0,[R0, #+3]
+   \   000000F0   0x2800             CMP      R0,#+0
+   \   000000F2   0xD006             BEQ.N    ??MBM_FC05_CoilWr_7
+   \   000000F4   0x2501             MOVS     R5,#+1
+   \   000000F6   0xE004             B.N      ??MBM_FC05_CoilWr_7
+    644                      }
+    645                  }
+    646              } else {
+    647                  pch->StatNoRespCtr++;
+   \                     ??MBM_FC05_CoilWr_6: (+1)
+   \   000000F8   0xF104 0x011E      ADD      R1,R4,#+30
+   \   000000FC   0x8908             LDRH     R0,[R1, #+8]
+   \   000000FE   0x1C40             ADDS     R0,R0,#+1
+   \   00000100   0x8108             STRH     R0,[R1, #+8]
+    648              }
+    649          
+    650              pch->RxBufByteCtr = 0;
+   \                     ??MBM_FC05_CoilWr_7: (+1)
+   \   00000102   0x2000             MOVS     R0,#+0
+   \   00000104   0x8130             STRH     R0,[R6, #+8]
+    651              pch->RxBufPtr     = &pch->RxBuf[0];
+   \   00000106   0xF104 0x0038      ADD      R0,R4,#+56
+   \   0000010A   0x60F0             STR      R0,[R6, #+12]
+    652          
+    653              MB_OS_TxOver(pch);
+   \   0000010C   0x4620             MOV      R0,R4
+   \   0000010E   0x.... 0x....      BL       MB_OS_TxOver
+    654          
+    655              return coil_val;
+   \   00000112   0x4628             MOV      R0,R5
+   \                     ??MBM_FC05_CoilWr_1: (+1)
+   \   00000114   0xE8BD 0x81F6      POP      {R1,R2,R4-R8,PC}  ;; return
+    656          }
+    657          #endif
+    658          #endif
+    659          
+    660          
+    661          /*$PAGE*/
+    662          /*
+    663          *********************************************************************************************************
+    664          *                                           MBM_FC03_HoldingRegRd()
+    665          *
+    666          * Description : This is the main processing function for MODBUS commands.  The message integrity is
+    667          *               verified, and if valid, the function requested is processed.  Unimplemented functions
+    668          *               will generate an Illegal Function Exception Response code (01).
+    669          *
+    670          * Argument(s) : pch      Is a pointer to the Modbus channel's data structure.
+    671          *
+    672          * Return(s)   : none.
+    673          *
+    674          * Caller(s)   : Application
+    675          *
+    676          * Note(s)     : none.
+    677          *********************************************************************************************************
+    678          */
+    679          
+    680          #if (MODBUS_CFG_MASTER_EN == DEF_ENABLED)   && \
+    681              (MODBUS_CFG_RTU_EN == DEF_ENABLED)      && \
+    682              (MODBUS_CFG_FC03_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    683          CPU_INT16U  MBM_FC03_HoldingRegRd    (MODBUS_CH   *pch,
+    684                                                CPU_INT08U   slave_node,
+    685                                                CPU_INT16U   slave_addr,
+    686                                                CPU_INT16U  *p_reg_tbl,
+    687                                                CPU_INT16U   nbr_regs)
+    688          {
+   \                     MBM_FC03_HoldingRegRd: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4605             MOV      R5,R0
+   \   00000004   0x460F             MOV      R7,R1
+   \   00000006   0x4614             MOV      R4,R2
+   \   00000008   0x461E             MOV      R6,R3
+    689              CPU_INT08U     *ptx_data;
+    690              CPU_INT16U      err;
+    691              CPU_BOOLEAN     ok;
+    692              CPU_INT16U      calc_crc;
+    693          
+    694              MB_OS_TxWait(pch,&err);
+   \   0000000A   0x4669             MOV      R1,SP
+   \   0000000C   0x.... 0x....      BL       MB_OS_TxWait
+    695              if ( err != MODBUS_ERR_NONE )
+   \   00000010   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD001             BEQ.N    ??MBM_FC03_HoldingRegRd_0
+    696                  return 0;
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0xBDF2             POP      {R1,R4-R7,PC}
+    697              ptx_data    = &(pch->TxFrameData[0]);
+   \                     ??MBM_FC03_HoldingRegRd_0: (+1)
+   \   0000001C   0xF205 0x314E      ADDW     R1,R5,#+846
+    698              pch->TxFrameNDataBytes  = 4;
+   \   00000020   0xF205 0x424E      ADDW     R2,R5,#+1102
+   \   00000024   0x2004             MOVS     R0,#+4
+   \   00000026   0x8010             STRH     R0,[R2, #+0]
+    699          
+    700             *ptx_data++ = slave_node;
+   \   00000028   0x700F             STRB     R7,[R1, #+0]
+    701             *ptx_data++ = MODBUS_FC03_HOLDING_REG_RD;
+   \   0000002A   0x2003             MOVS     R0,#+3
+   \   0000002C   0x7048             STRB     R0,[R1, #+1]
+    702             *ptx_data++ = HI_INT16U(slave_addr);
+   \   0000002E   0x4620             MOV      R0,R4
+   \   00000030   0x0A00             LSRS     R0,R0,#+8
+   \   00000032   0x7088             STRB     R0,[R1, #+2]
+    703             *ptx_data++ = LO_INT16U(slave_addr);
+   \   00000034   0x70CC             STRB     R4,[R1, #+3]
+   \   00000036   0x9C06             LDR      R4,[SP, #+24]
+    704             *ptx_data++ = HI_INT16U(nbr_regs);
+   \   00000038   0x4620             MOV      R0,R4
+   \   0000003A   0x0A00             LSRS     R0,R0,#+8
+   \   0000003C   0x7108             STRB     R0,[R1, #+4]
+    705             *ptx_data++ = LO_INT16U(nbr_regs);
+   \   0000003E   0x714C             STRB     R4,[R1, #+5]
+    706              nbr_regs    = 0;
+   \   00000040   0x2400             MOVS     R4,#+0
+    707          
+    708              /***********************************************
+    709              * 描述： 发送
+    710              */
+    711              INT08S  retrys  = pch->Retrys;
+   \   00000042   0x7910             LDRB     R0,[R2, #+4]
+   \   00000044   0x08C7             LSRS     R7,R0,#+3
+    712              do {
+    713                MBM_TxCmd(pch);
+   \                     ??MBM_FC03_HoldingRegRd_1: (+1)
+   \   00000046   0x4628             MOV      R0,R5
+   \   00000048   0x.... 0x....      BL       MBM_TxCmd
+    714                MB_OS_RxWait(pch,&err);
+   \   0000004C   0x4669             MOV      R1,SP
+   \   0000004E   0x4628             MOV      R0,R5
+   \   00000050   0x.... 0x....      BL       MB_OS_RxWait
+    715              } while ( ( err == MODBUS_ERR_TIMED_OUT ) && --retrys  );
+   \   00000054   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000058   0xF640 0x31B8      MOVW     R1,#+3000
+   \   0000005C   0x4288             CMP      R0,R1
+   \   0000005E   0xD103             BNE.N    ??MBM_FC03_HoldingRegRd_2
+   \   00000060   0x1E7F             SUBS     R7,R7,#+1
+   \   00000062   0xB2FF             UXTB     R7,R7
+   \   00000064   0x2F00             CMP      R7,#+0
+   \   00000066   0xD1EE             BNE.N    ??MBM_FC03_HoldingRegRd_1
+    716          
+    717              if ( err == MODBUS_ERR_NONE ) {
+   \                     ??MBM_FC03_HoldingRegRd_2: (+1)
+   \   00000068   0x2800             CMP      R0,#+0
+   \   0000006A   0xD133             BNE.N    ??MBM_FC03_HoldingRegRd_3
+    718                  ok = MBM_RxReply(pch);
+    719                  if ( DEF_TRUE == ok ) {
+   \   0000006C   0x4628             MOV      R0,R5
+   \   0000006E   0x.... 0x....      BL       MBM_RxReply
+   \   00000072   0x2801             CMP      R0,#+1
+   \   00000074   0xD133             BNE.N    ??MBM_FC03_HoldingRegRd_4
+    720                      calc_crc = MB_RTU_RxCalcCRC(pch);          /* Do our own calculation of the CRC.                              */
+   \   00000076   0x4628             MOV      R0,R5
+   \   00000078   0x.... 0x....      BL       MB_RTU_RxCalcCRC
+    721                      if (calc_crc != pch->RxFrameCRC) {         /* If the calculated CRC does not match the CRC received,          */
+   \   0000007C   0xF105 0x011E      ADD      R1,R5,#+30
+   \   00000080   0xF8B5 0x2346      LDRH     R2,[R5, #+838]
+   \   00000084   0x4290             CMP      R0,R2
+   \   00000086   0xD003             BEQ.N    ??MBM_FC03_HoldingRegRd_5
+    722                        /***********************************************
+    723                        * 描述： 校验错误
+    724                        */
+    725                        pch->StatCRCErrCtr++;                    /* then the frame was not received properly.                       */
+   \   00000088   0x8848             LDRH     R0,[R1, #+2]
+   \   0000008A   0x1C40             ADDS     R0,R0,#+1
+   \   0000008C   0x8048             STRH     R0,[R1, #+2]
+   \   0000008E   0xE026             B.N      ??MBM_FC03_HoldingRegRd_4
+    726                      } else if (MBM_RX_FCXX_CODE == 0X83) {
+   \                     ??MBM_FC03_HoldingRegRd_5: (+1)
+   \   00000090   0xF205 0x2045      ADDW     R0,R5,#+581
+   \   00000094   0x7802             LDRB     R2,[R0, #+0]
+   \   00000096   0x2A83             CMP      R2,#+131
+   \   00000098   0xD103             BNE.N    ??MBM_FC03_HoldingRegRd_6
+    727                        pch->StatExceptCtr++;
+   \   0000009A   0x8888             LDRH     R0,[R1, #+4]
+   \   0000009C   0x1C40             ADDS     R0,R0,#+1
+   \   0000009E   0x8088             STRH     R0,[R1, #+4]
+    728                        /***********************************************
+    729                        * 描述： 其他错误
+    730                        //功能码03H： 读寄存器值错误响应
+    731                        //第1字节	    ADR      	：	从机地址码（=001～254）
+    732                        //第2字节　   83H			：	读寄存器值出错
+    733                        //第3字节　   信息码		：	见信息码表
+    734                        //第4、5字节	CRC			：	从字节1到3的CRC16校验和
+    735                        //数息码	    表示意义
+    736                        //01H	        非法的功能号
+    737                        //02H	        非法的数据地址
+    738                        //03H	        非法的数据值
+    739                        //04H	        CRC16校验错
+    740                        //05H	        接收正确
+    741                        //06H	        接收错误
+    742                        //07	        参数错误
+    743                        */
+    744                        nbr_regs  = 0;
+   \   000000A0   0xE01D             B.N      ??MBM_FC03_HoldingRegRd_4
+    745                      } else {
+    746                        pch->StatMsgCtr++;
+   \                     ??MBM_FC03_HoldingRegRd_6: (+1)
+   \   000000A2   0x880A             LDRH     R2,[R1, #+0]
+   \   000000A4   0x1C52             ADDS     R2,R2,#+1
+   \   000000A6   0x800A             STRH     R2,[R1, #+0]
+    747          #if MBM_STAT_CTR_AUTO_CLR_EN        == DEF_ENABLED
+    748                        pch->StatNoRespCtr    = 0;
+   \   000000A8   0x4622             MOV      R2,R4
+   \   000000AA   0x810A             STRH     R2,[R1, #+8]
+    749                        pch->StatCRCErrCtr    = 0;
+   \   000000AC   0x804A             STRH     R2,[R1, #+2]
+    750                        pch->StatExceptCtr    = 0;
+   \   000000AE   0x808A             STRH     R2,[R1, #+4]
+    751          #endif
+    752                        /***********************************************
+    753                        * 描述： 接收正确,且输入指针与数据指针不相等
+    754                        */
+    755                        nbr_regs        = MBM_RX_FC03_NBYTE / 2;
+   \   000000B0   0x7840             LDRB     R0,[R0, #+1]
+   \   000000B2   0x0844             LSRS     R4,R0,#+1
+    756                        INT08U    idx    = 0;
+   \   000000B4   0x4610             MOV      R0,R2
+    757                        while(idx < nbr_regs) {
+   \                     ??MBM_FC03_HoldingRegRd_7: (+1)
+   \   000000B6   0x42A0             CMP      R0,R4
+   \   000000B8   0xDA11             BGE.N    ??MBM_FC03_HoldingRegRd_4
+    758                          p_reg_tbl[idx]    = MBM_RX_FC03_DATA(idx);
+   \   000000BA   0xEB05 0x0140      ADD      R1,R5,R0, LSL #+1
+   \   000000BE   0xF201 0x2147      ADDW     R1,R1,#+583
+   \   000000C2   0x780A             LDRB     R2,[R1, #+0]
+   \   000000C4   0x7849             LDRB     R1,[R1, #+1]
+   \   000000C6   0xEB01 0x2102      ADD      R1,R1,R2, LSL #+8
+   \   000000CA   0xF826 0x1010      STRH     R1,[R6, R0, LSL #+1]
+    759                          idx++;
+   \   000000CE   0x1C40             ADDS     R0,R0,#+1
+   \   000000D0   0xB2C0             UXTB     R0,R0
+   \   000000D2   0xE7F0             B.N      ??MBM_FC03_HoldingRegRd_7
+    760                        }
+    761                      }
+    762                  }
+    763              } else {
+    764                  pch->StatNoRespCtr++;
+   \                     ??MBM_FC03_HoldingRegRd_3: (+1)
+   \   000000D4   0xF105 0x011E      ADD      R1,R5,#+30
+   \   000000D8   0x8908             LDRH     R0,[R1, #+8]
+   \   000000DA   0x1C40             ADDS     R0,R0,#+1
+   \   000000DC   0x8108             STRH     R0,[R1, #+8]
+    765              }
+    766          
+    767              pch->RxBufByteCtr = 0;
+   \                     ??MBM_FC03_HoldingRegRd_4: (+1)
+   \   000000DE   0x2000             MOVS     R0,#+0
+   \   000000E0   0xF105 0x011E      ADD      R1,R5,#+30
+   \   000000E4   0x8248             STRH     R0,[R1, #+18]
+    768              pch->RxBufPtr     = &pch->RxBuf[0];
+   \   000000E6   0xF105 0x0038      ADD      R0,R5,#+56
+   \   000000EA   0x6368             STR      R0,[R5, #+52]
+    769          
+    770              MB_OS_TxOver(pch);
+   \   000000EC   0x4628             MOV      R0,R5
+   \   000000EE   0x.... 0x....      BL       MB_OS_TxOver
+    771          
+    772              return nbr_regs;
+   \   000000F2   0x4620             MOV      R0,R4
+   \   000000F4   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    773          }
+    774          #endif
+    775          
+    776          /*$PAGE*/
+    777          /*
+    778          *********************************************************************************************************
+    779          *                                           MBM_FC06_HoldingRegWr()
+    780          *
+    781          * Description : This is the main processing function for MODBUS commands.  The message integrity is
+    782          *               verified, and if valid, the function requested is processed.  Unimplemented functions
+    783          *               will generate an Illegal Function Exception Response code (01).
+    784          *
+    785          * Argument(s) : pch      Is a pointer to the Modbus channel's data structure.
+    786          *
+    787          * Return(s)   : none.
+    788          *
+    789          * Caller(s)   : Application
+    790          *
+    791          * Note(s)     : none.
+    792          *********************************************************************************************************
+    793          */
+    794          #if (MODBUS_CFG_MASTER_EN == DEF_ENABLED)   && \
+    795              (MODBUS_CFG_RTU_EN == DEF_ENABLED)      && \
+    796              (MODBUS_CFG_FC06_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    797          CPU_INT16U  MBM_FC06_HoldingRegWr (  MODBUS_CH   *pch,
+    798                                               CPU_INT08U   slave_node,
+    799                                               CPU_INT16U   slave_addr,
+    800                                               CPU_INT16U   reg_val)
+    801          {
+   \                     MBM_FC06_HoldingRegWr: (+1)
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0xB082             SUB      SP,SP,#+8
+   \   00000006   0x4604             MOV      R4,R0
+   \   00000008   0x460F             MOV      R7,R1
+   \   0000000A   0x4616             MOV      R6,R2
+   \   0000000C   0x461D             MOV      R5,R3
+    802              CPU_INT08U     *ptx_data;
+    803              CPU_INT16U      err;
+    804              CPU_BOOLEAN     ok;
+    805              CPU_INT16U      calc_crc;
+    806              CPU_INT32U      timeout;
+    807          
+    808          
+    809              MB_OS_TxWait(pch,&err);
+   \   0000000E   0x4669             MOV      R1,SP
+   \   00000010   0x.... 0x....      BL       MB_OS_TxWait
+    810              if ( err != MODBUS_ERR_NONE )
+   \   00000014   0x43E8             MVNS     R0,R5
+   \   00000016   0xF8BD 0x1000      LDRH     R1,[SP, #+0]
+   \   0000001A   0x2900             CMP      R1,#+0
+   \   0000001C   0xD001             BEQ.N    ??MBM_FC06_HoldingRegWr_0
+    811                  return (reg_val    = ~reg_val);                 // 取反，防止数据为0时相等
+   \   0000001E   0xB280             UXTH     R0,R0
+   \   00000020   0xE071             B.N      ??MBM_FC06_HoldingRegWr_1
+    812              ptx_data  = &(pch->TxFrameData[0]);
+   \                     ??MBM_FC06_HoldingRegWr_0: (+1)
+   \   00000022   0xF204 0x324E      ADDW     R2,R4,#+846
+    813          
+    814             *ptx_data++ = slave_node;
+   \   00000026   0x7017             STRB     R7,[R2, #+0]
+    815             *ptx_data++ = MODBUS_FC06_HOLDING_REG_WR;
+   \   00000028   0x2106             MOVS     R1,#+6
+   \   0000002A   0x7051             STRB     R1,[R2, #+1]
+    816             *ptx_data++ = HI_INT16U(slave_addr);
+   \   0000002C   0x4631             MOV      R1,R6
+   \   0000002E   0x0A09             LSRS     R1,R1,#+8
+   \   00000030   0x7091             STRB     R1,[R2, #+2]
+    817             *ptx_data++ = LO_INT16U(slave_addr);
+   \   00000032   0x70D6             STRB     R6,[R2, #+3]
+    818             *ptx_data++ = HI_INT16U(reg_val);
+   \   00000034   0x4629             MOV      R1,R5
+   \   00000036   0x0A09             LSRS     R1,R1,#+8
+   \   00000038   0x7111             STRB     R1,[R2, #+4]
+    819             *ptx_data++ = LO_INT16U(reg_val);
+   \   0000003A   0x7155             STRB     R5,[R2, #+5]
+    820              reg_val    = ~reg_val;                              // 取反，防止数据为0时相等
+   \   0000003C   0x4605             MOV      R5,R0
+    821              pch->TxFrameNDataBytes  = 4;
+   \   0000003E   0xF204 0x484E      ADDW     R8,R4,#+1102
+   \   00000042   0x2004             MOVS     R0,#+4
+   \   00000044   0xF8A8 0x0000      STRH     R0,[R8, #+0]
+    822          
+    823              timeout = pch->RxTimeout;
+   \   00000048   0xF104 0x0628      ADD      R6,R4,#+40
+   \   0000004C   0x6837             LDR      R7,[R6, #+0]
+    824              MB_MasterTimeoutSet(pch, 300u);                     // 设置MODBUS主机超时为500ms
+   \   0000004E   0xF44F 0x7196      MOV      R1,#+300
+   \   00000052   0x4620             MOV      R0,R4
+   \   00000054   0x.... 0x....      BL       MB_MasterTimeoutSet
+    825          
+    826              /***********************************************
+    827              * 描述： 发送
+    828              */
+    829              INT08S  retrys  = pch->Retrys;
+   \   00000058   0xF898 0x0004      LDRB     R0,[R8, #+4]
+   \   0000005C   0xEA4F 0x08D0      LSR      R8,R0,#+3
+    830              do {
+    831                MBM_TxCmd(pch);
+   \                     ??MBM_FC06_HoldingRegWr_2: (+1)
+   \   00000060   0x4620             MOV      R0,R4
+   \   00000062   0x.... 0x....      BL       MBM_TxCmd
+    832                MB_OS_RxWait(pch,&err);
+   \   00000066   0x4669             MOV      R1,SP
+   \   00000068   0x4620             MOV      R0,R4
+   \   0000006A   0x.... 0x....      BL       MB_OS_RxWait
+    833              } while ( ( err == MODBUS_ERR_TIMED_OUT ) && --retrys  );
+   \   0000006E   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000072   0xF640 0x31B8      MOVW     R1,#+3000
+   \   00000076   0x4288             CMP      R0,R1
+   \   00000078   0xD106             BNE.N    ??MBM_FC06_HoldingRegWr_3
+   \   0000007A   0xF1A8 0x0801      SUB      R8,R8,#+1
+   \   0000007E   0xFA5F 0xF888      UXTB     R8,R8
+   \   00000082   0xF1B8 0x0F00      CMP      R8,#+0
+   \   00000086   0xD1EB             BNE.N    ??MBM_FC06_HoldingRegWr_2
+    834          
+    835              MB_MasterTimeoutSet(pch, timeout);                // 设置MODBUS主机超时为500ms
+   \                     ??MBM_FC06_HoldingRegWr_3: (+1)
+   \   00000088   0x4639             MOV      R1,R7
+   \   0000008A   0x4620             MOV      R0,R4
+   \   0000008C   0x.... 0x....      BL       MB_MasterTimeoutSet
+    836          
+    837              if ( err == MODBUS_ERR_NONE ) {
+   \   00000090   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000094   0x2800             CMP      R0,#+0
+   \   00000096   0xD127             BNE.N    ??MBM_FC06_HoldingRegWr_4
+    838                  ok = MBM_RxReply(pch);
+    839                  if ( DEF_TRUE == ok ) {
+   \   00000098   0x4620             MOV      R0,R4
+   \   0000009A   0x.... 0x....      BL       MBM_RxReply
+   \   0000009E   0x2801             CMP      R0,#+1
+   \   000000A0   0xD127             BNE.N    ??MBM_FC06_HoldingRegWr_5
+    840                      calc_crc = MB_RTU_RxCalcCRC(pch);          /* Do our own calculation of the CRC.                              */
+   \   000000A2   0x4620             MOV      R0,R4
+   \   000000A4   0x.... 0x....      BL       MB_RTU_RxCalcCRC
+    841                      if (calc_crc != pch->RxFrameCRC) {         /* If the calculated CRC does not match the CRC received,          */
+   \   000000A8   0xF104 0x011E      ADD      R1,R4,#+30
+   \   000000AC   0xF8B4 0x2346      LDRH     R2,[R4, #+838]
+   \   000000B0   0x4290             CMP      R0,R2
+   \   000000B2   0xD003             BEQ.N    ??MBM_FC06_HoldingRegWr_6
+    842                        /***********************************************
+    843                        * 描述： 校验错误
+    844                        */
+    845                        pch->StatCRCErrCtr++;                    /* then the frame was not received properly.                       */
+   \   000000B4   0x8848             LDRH     R0,[R1, #+2]
+   \   000000B6   0x1C40             ADDS     R0,R0,#+1
+   \   000000B8   0x8048             STRH     R0,[R1, #+2]
+   \   000000BA   0xE01A             B.N      ??MBM_FC06_HoldingRegWr_5
+    846                      } else if (MBM_RX_FCXX_CODE == 0X86) {
+   \                     ??MBM_FC06_HoldingRegWr_6: (+1)
+   \   000000BC   0xF204 0x2045      ADDW     R0,R4,#+581
+   \   000000C0   0x7802             LDRB     R2,[R0, #+0]
+   \   000000C2   0x2A86             CMP      R2,#+134
+   \   000000C4   0xD104             BNE.N    ??MBM_FC06_HoldingRegWr_7
+    847                        pch->StatExceptCtr++;
+   \   000000C6   0x8888             LDRH     R0,[R1, #+4]
+   \   000000C8   0x1C40             ADDS     R0,R0,#+1
+   \   000000CA   0x8088             STRH     R0,[R1, #+4]
+    848                        /***********************************************
+    849                        * 描述： 其他错误
+    850                        //功能码06H： 写单个寄存器值
+    851                        //第1字节	    ADR      		：从机地址码（=001～254）
+    852                        //第2字节　   86H			    ：写寄存器值出错功能码
+    853                        //第3字节　   错误数息码		：	见信息码表
+    854                        //第4、5字节	CRC			    ：	从字节1到3的CRC16校验和
+    855                        //数息码	    表示意义
+    856                        //01H	        非法的功能号
+    857                        //02H	        非法的数据地址
+    858                        //03H	        非法的数据值
+    859                        //04H	        CRC16校验错
+    860                        //05H	        接收正确
+    861                        //06H	        接收错误
+    862                        //07	        参数错误
+    863                        */
+    864                        reg_val   = 0;
+   \   000000CC   0x2500             MOVS     R5,#+0
+   \   000000CE   0xE010             B.N      ??MBM_FC06_HoldingRegWr_5
+    865                      } else {
+    866                        pch->StatMsgCtr++;
+   \                     ??MBM_FC06_HoldingRegWr_7: (+1)
+   \   000000D0   0x880A             LDRH     R2,[R1, #+0]
+   \   000000D2   0x1C52             ADDS     R2,R2,#+1
+   \   000000D4   0x800A             STRH     R2,[R1, #+0]
+    867          #if MBM_STAT_CTR_AUTO_CLR_EN        == DEF_ENABLED
+    868                        pch->StatNoRespCtr    = 0;
+   \   000000D6   0x2200             MOVS     R2,#+0
+   \   000000D8   0x810A             STRH     R2,[R1, #+8]
+    869                        pch->StatCRCErrCtr    = 0;
+   \   000000DA   0x804A             STRH     R2,[R1, #+2]
+    870                        pch->StatExceptCtr    = 0;
+   \   000000DC   0x808A             STRH     R2,[R1, #+4]
+    871          #endif
+    872                        /***********************************************
+    873                        * 描述： 接收正确
+    874                        */
+    875                        reg_val = MBM_RX_FC06_DATA;
+   \   000000DE   0x78C1             LDRB     R1,[R0, #+3]
+   \   000000E0   0x7900             LDRB     R0,[R0, #+4]
+   \   000000E2   0xEB00 0x2501      ADD      R5,R0,R1, LSL #+8
+   \   000000E6   0xE004             B.N      ??MBM_FC06_HoldingRegWr_5
+    876                      }
+    877                  }
+    878              } else {
+    879                  pch->StatNoRespCtr++;
+   \                     ??MBM_FC06_HoldingRegWr_4: (+1)
+   \   000000E8   0xF104 0x011E      ADD      R1,R4,#+30
+   \   000000EC   0x8908             LDRH     R0,[R1, #+8]
+   \   000000EE   0x1C40             ADDS     R0,R0,#+1
+   \   000000F0   0x8108             STRH     R0,[R1, #+8]
+    880              }
+    881          
+    882              pch->RxBufByteCtr = 0;
+   \                     ??MBM_FC06_HoldingRegWr_5: (+1)
+   \   000000F2   0x2000             MOVS     R0,#+0
+   \   000000F4   0x8130             STRH     R0,[R6, #+8]
+    883              pch->RxBufPtr     = &pch->RxBuf[0];
+   \   000000F6   0xF104 0x0038      ADD      R0,R4,#+56
+   \   000000FA   0x60F0             STR      R0,[R6, #+12]
+    884          
+    885              MB_OS_TxOver(pch);
+   \   000000FC   0x4620             MOV      R0,R4
+   \   000000FE   0x.... 0x....      BL       MB_OS_TxOver
+    886          
+    887              return reg_val;
+   \   00000102   0x4628             MOV      R0,R5
+   \   00000104   0xB280             UXTH     R0,R0
+   \                     ??MBM_FC06_HoldingRegWr_1: (+1)
+   \   00000106   0xE8BD 0x81F6      POP      {R1,R2,R4-R8,PC}  ;; return
+    888          }
+    889          #endif
+    890          /*$PAGE*/
+    891          /*
+    892          *********************************************************************************************************
+    893          *                                       MBS_FC15_CoilWrMultiple()
+    894          *
+    895          * Description : Processes the MODBUS "Force Multiple COILS" command and writes the COIL states.
+    896          *
+    897          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+    898          *
+    899          * Return(s)   : DEF_TRUE      If a response needs to be sent
+    900          *               DEF_FALSE     If not
+    901          *
+    902          * Caller(s)   : MBS_FCxx_Handler()
+    903          *
+    904          * Note(s)     : none
+    905          *********************************************************************************************************
+    906          */
+    907          
+    908          #if (MODBUS_CFG_MASTER_EN == DEF_ENABLED)
+    909          #if (MODBUS_CFG_FC15_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    910          CPU_INT16U  MBM_FC15_CoilWr          (MODBUS_CH   *pch,
+    911                                                CPU_INT08U   slave_node,
+    912                                                CPU_INT16U   slave_addr,
+    913                                                CPU_INT08U  *p_coil_tbl,
+    914                                                CPU_INT16U   nbr_coils)
+    915          {
+   \                     MBM_FC15_CoilWr: (+1)
+   \   00000000   0xE92D 0x47F0      PUSH     {R4-R10,LR}
+   \   00000004   0xB082             SUB      SP,SP,#+8
+   \   00000006   0x4606             MOV      R6,R0
+   \   00000008   0x4688             MOV      R8,R1
+   \   0000000A   0x4617             MOV      R7,R2
+   \   0000000C   0x4699             MOV      R9,R3
+   \   0000000E   0x9C0A             LDR      R4,[SP, #+40]
+    916              CPU_INT16U      nbr_bytes       = (nbr_coils - 1) / 8 + 1;    /* Get the byte count for the data.                         */
+   \   00000010   0x1E60             SUBS     R0,R4,#+1
+   \   00000012   0x1081             ASRS     R1,R0,#+2
+   \   00000014   0xEB00 0x7051      ADD      R0,R0,R1, LSR #+29
+   \   00000018   0x10C0             ASRS     R0,R0,#+3
+   \   0000001A   0x1C45             ADDS     R5,R0,#+1
+    917              CPU_INT08U     *ptx_data;
+    918              CPU_INT16U      err;
+    919              CPU_BOOLEAN     ok;
+    920              CPU_INT16U      calc_crc;
+    921              CPU_INT16U      ctr             = nbr_bytes;
+   \   0000001C   0x46AA             MOV      R10,R5
+    922          
+    923              if ( nbr_coils == 0 )
+   \   0000001E   0x2C00             CMP      R4,#+0
+   \   00000020   0xD007             BEQ.N    ??MBM_FC15_CoilWr_0
+    924                return 0;
+    925              /***************************************************
+    926              * 描述：
+    927              */
+    928              MB_OS_TxWait(pch,&err);
+   \   00000022   0x4669             MOV      R1,SP
+   \   00000024   0x4630             MOV      R0,R6
+   \   00000026   0x.... 0x....      BL       MB_OS_TxWait
+    929              if ( err != MODBUS_ERR_NONE )
+   \   0000002A   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   0000002E   0x2800             CMP      R0,#+0
+   \   00000030   0xD001             BEQ.N    ??MBM_FC15_CoilWr_1
+    930                  return 0;
+   \                     ??MBM_FC15_CoilWr_0: (+1)
+   \   00000032   0x2000             MOVS     R0,#+0
+   \   00000034   0xE08B             B.N      ??MBM_FC15_CoilWr_2
+    931          
+    932              ptx_data    = &(pch->TxFrameData[MBM_TX_FC16_DATA_IDX]);
+   \                     ??MBM_FC15_CoilWr_1: (+1)
+   \   00000036   0xF206 0x3255      ADDW     R2,R6,#+853
+   \   0000003A   0x4610             MOV      R0,R2
+    933              /***************************************************
+    934              * 描述： 如果输入数组与数据数组是同一数组，且是从第0个数据开始
+    935              */
+    936              if ( (CPU_INT08U *)p_coil_tbl == &(pch->TxFrameData[0]) ) {
+   \   0000003C   0xF206 0x314E      ADDW     R1,R6,#+846
+   \   00000040   0x4589             CMP      R9,R1
+   \   00000042   0xD111             BNE.N    ??MBM_FC15_CoilWr_3
+    937                ptx_data  += nbr_bytes + MBM_TX_FC16_DATA_IDX-1;                          // 指向数据的最后一个元素
+   \   00000044   0xB2AD             UXTH     R5,R5
+   \   00000046   0x1828             ADDS     R0,R5,R0
+   \   00000048   0x1D80             ADDS     R0,R0,#+6
+    938                p_coil_tbl += nbr_bytes-1;                              // 指向最后一个寄存器
+   \   0000004A   0xEB05 0x0209      ADD      R2,R5,R9
+   \   0000004E   0xF1A2 0x0901      SUB      R9,R2,#+1
+    939          
+    940                while(ctr--) {
+   \                     ??MBM_FC15_CoilWr_4: (+1)
+   \   00000052   0x4652             MOV      R2,R10
+   \   00000054   0xF1A2 0x0A01      SUB      R10,R2,#+1
+   \   00000058   0xB292             UXTH     R2,R2
+   \   0000005A   0x2A00             CMP      R2,#+0
+   \   0000005C   0xD01B             BEQ.N    ??MBM_FC15_CoilWr_5
+    941                 *ptx_data--      = *p_coil_tbl--;
+   \   0000005E   0xF819 0x2901      LDRB     R2,[R9], #-1
+   \   00000062   0xF800 0x2901      STRB     R2,[R0], #-1
+   \   00000066   0xE7F4             B.N      ??MBM_FC15_CoilWr_4
+    942                }
+    943              /***************************************************
+    944              * 描述： 如果输入指针不是当前通道的数据帧的第7个元素，则拷贝元素到数据帧数组
+    945              */
+    946              } else if ( (CPU_INT08U *)p_coil_tbl == &(pch->TxFrameData[MBM_TX_FC16_DATA_IDX]) ) {
+   \                     ??MBM_FC15_CoilWr_3: (+1)
+   \   00000068   0x4591             CMP      R9,R2
+   \   0000006A   0xD10E             BNE.N    ??MBM_FC15_CoilWr_6
+    947                while(ctr--) {
+   \                     ??MBM_FC15_CoilWr_7: (+1)
+   \   0000006C   0x4652             MOV      R2,R10
+   \   0000006E   0xF1A2 0x0A01      SUB      R10,R2,#+1
+   \   00000072   0xB292             UXTH     R2,R2
+   \   00000074   0x2A00             CMP      R2,#+0
+   \   00000076   0xD00E             BEQ.N    ??MBM_FC15_CoilWr_5
+    948                 *ptx_data++      = *p_coil_tbl++;
+   \   00000078   0xF819 0x2B01      LDRB     R2,[R9], #+1
+   \   0000007C   0xF800 0x2B01      STRB     R2,[R0], #+1
+   \   00000080   0xE7F4             B.N      ??MBM_FC15_CoilWr_7
+    949                }
+    950              } else {
+    951                while(ctr--) {
+    952                 *ptx_data++      = *p_coil_tbl++;
+   \                     ??MBM_FC15_CoilWr_8: (+1)
+   \   00000082   0xF819 0x2B01      LDRB     R2,[R9], #+1
+   \   00000086   0xF800 0x2B01      STRB     R2,[R0], #+1
+    953                }
+   \                     ??MBM_FC15_CoilWr_6: (+1)
+   \   0000008A   0x4652             MOV      R2,R10
+   \   0000008C   0xF1A2 0x0A01      SUB      R10,R2,#+1
+   \   00000090   0xB292             UXTH     R2,R2
+   \   00000092   0x2A00             CMP      R2,#+0
+   \   00000094   0xD1F5             BNE.N    ??MBM_FC15_CoilWr_8
+    954              }
+    955          
+    956              ptx_data    = &(pch->TxFrameData[0]);
+    957              /***************************************************
+    958              * 描述：
+    959              */
+    960             *ptx_data++ = slave_node;
+   \                     ??MBM_FC15_CoilWr_5: (+1)
+   \   00000096   0xF881 0x8000      STRB     R8,[R1, #+0]
+    961             *ptx_data++ = MODBUS_FC15_COIL_WR_MULTIPLE;
+   \   0000009A   0x200F             MOVS     R0,#+15
+   \   0000009C   0x7048             STRB     R0,[R1, #+1]
+    962             *ptx_data++ = HI_INT16U(slave_addr);
+   \   0000009E   0x4638             MOV      R0,R7
+   \   000000A0   0x0A00             LSRS     R0,R0,#+8
+   \   000000A2   0x7088             STRB     R0,[R1, #+2]
+    963             *ptx_data++ = LO_INT16U(slave_addr);
+   \   000000A4   0x70CF             STRB     R7,[R1, #+3]
+    964             *ptx_data++ = HI_INT16U(nbr_coils);
+   \   000000A6   0x4620             MOV      R0,R4
+   \   000000A8   0x0A00             LSRS     R0,R0,#+8
+   \   000000AA   0x7108             STRB     R0,[R1, #+4]
+    965             *ptx_data++ = LO_INT16U(nbr_coils);
+   \   000000AC   0x714C             STRB     R4,[R1, #+5]
+    966              pch->TxFrameNDataBytes  = 5 + nbr_bytes;
+   \   000000AE   0x1D68             ADDS     R0,R5,#+5
+   \   000000B0   0xF206 0x424E      ADDW     R2,R6,#+1102
+   \   000000B4   0x8010             STRH     R0,[R2, #+0]
+    967             *ptx_data++ = pch->TxFrameNDataBytes - 5;
+   \   000000B6   0x1F40             SUBS     R0,R0,#+5
+   \   000000B8   0x7188             STRB     R0,[R1, #+6]
+    968          
+    969              nbr_bytes    = 0;
+   \   000000BA   0x2500             MOVS     R5,#+0
+    970          
+    971              /***********************************************
+    972              * 描述： 发送
+    973              */
+    974              INT08S  retrys  = pch->Retrys;
+   \   000000BC   0x7910             LDRB     R0,[R2, #+4]
+   \   000000BE   0x08C4             LSRS     R4,R0,#+3
+    975              do {
+    976                MBM_TxCmd(pch);
+   \                     ??MBM_FC15_CoilWr_9: (+1)
+   \   000000C0   0x4630             MOV      R0,R6
+   \   000000C2   0x.... 0x....      BL       MBM_TxCmd
+    977                MB_OS_RxWait(pch,&err);
+   \   000000C6   0x4669             MOV      R1,SP
+   \   000000C8   0x4630             MOV      R0,R6
+   \   000000CA   0x.... 0x....      BL       MB_OS_RxWait
+    978              } while ( ( err == MODBUS_ERR_TIMED_OUT ) && --retrys  );
+   \   000000CE   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   000000D2   0xF640 0x31B8      MOVW     R1,#+3000
+   \   000000D6   0x4288             CMP      R0,R1
+   \   000000D8   0xD103             BNE.N    ??MBM_FC15_CoilWr_10
+   \   000000DA   0x1E64             SUBS     R4,R4,#+1
+   \   000000DC   0xB2E4             UXTB     R4,R4
+   \   000000DE   0x2C00             CMP      R4,#+0
+   \   000000E0   0xD1EE             BNE.N    ??MBM_FC15_CoilWr_9
+    979          
+    980              /***************************************************
+    981              * 描述：
+    982              */
+    983              if ( err == MODBUS_ERR_NONE ) {
+   \                     ??MBM_FC15_CoilWr_10: (+1)
+   \   000000E2   0x2800             CMP      R0,#+0
+   \   000000E4   0xD123             BNE.N    ??MBM_FC15_CoilWr_11
+    984                  ok = MBM_RxReply(pch);
+    985                  if ( DEF_TRUE == ok ) {
+   \   000000E6   0x4630             MOV      R0,R6
+   \   000000E8   0x.... 0x....      BL       MBM_RxReply
+   \   000000EC   0x2801             CMP      R0,#+1
+   \   000000EE   0xD123             BNE.N    ??MBM_FC15_CoilWr_12
+    986                      calc_crc = MB_RTU_RxCalcCRC(pch);          /* Do our own calculation of the CRC.                              */
+   \   000000F0   0x4630             MOV      R0,R6
+   \   000000F2   0x.... 0x....      BL       MB_RTU_RxCalcCRC
+    987                      if (calc_crc != pch->RxFrameCRC) {         /* If the calculated CRC does not match the CRC received,          */
+   \   000000F6   0xF106 0x011E      ADD      R1,R6,#+30
+   \   000000FA   0xF8B6 0x2346      LDRH     R2,[R6, #+838]
+   \   000000FE   0x4290             CMP      R0,R2
+   \   00000100   0xD003             BEQ.N    ??MBM_FC15_CoilWr_13
+    988                        /***********************************************
+    989                        * 描述： 校验错误
+    990                        */
+    991                        pch->StatCRCErrCtr++;                    /* then the frame was not received properly.                       */
+   \   00000102   0x8848             LDRH     R0,[R1, #+2]
+   \   00000104   0x1C40             ADDS     R0,R0,#+1
+   \   00000106   0x8048             STRH     R0,[R1, #+2]
+   \   00000108   0xE016             B.N      ??MBM_FC15_CoilWr_12
+    992                      } else if (MBM_RX_FCXX_CODE == 0X8F) {
+   \                     ??MBM_FC15_CoilWr_13: (+1)
+   \   0000010A   0xF206 0x2045      ADDW     R0,R6,#+581
+   \   0000010E   0x7802             LDRB     R2,[R0, #+0]
+   \   00000110   0x2A8F             CMP      R2,#+143
+   \   00000112   0xD103             BNE.N    ??MBM_FC15_CoilWr_14
+    993                          pch->StatExceptCtr++;
+   \   00000114   0x8888             LDRH     R0,[R1, #+4]
+   \   00000116   0x1C40             ADDS     R0,R0,#+1
+   \   00000118   0x8088             STRH     R0,[R1, #+4]
+    994                        /***********************************************
+    995                        * 描述： 其他错误
+    996                        //功能码10H： 连续写多个寄存器值
+    997                        //第1字节	    ADR      		：	从机地址码（=001～254）
+    998                        //第2字节　   90H			    ：　写寄存器值出错
+    999                        //第3字节　   错误信息码		：	见信息码表
+   1000                        //第4、5字节	CRC			    ：	从字节1到3的CRC16校验和
+   1001                        //数息码	    表示意义
+   1002                        //01H	        非法的功能号
+   1003                        //02H	        非法的数据地址
+   1004                        //03H	        非法的数据值
+   1005                        //04H	        CRC16校验错
+   1006                        //05H	        接收正确
+   1007                        //06H	        接收错误
+   1008                        //07	        参数错误
+   1009                        */
+   1010                        nbr_bytes = 0;
+   \   0000011A   0xE00D             B.N      ??MBM_FC15_CoilWr_12
+   1011                      } else {
+   1012                        pch->StatMsgCtr++;
+   \                     ??MBM_FC15_CoilWr_14: (+1)
+   \   0000011C   0x880A             LDRH     R2,[R1, #+0]
+   \   0000011E   0x1C52             ADDS     R2,R2,#+1
+   \   00000120   0x800A             STRH     R2,[R1, #+0]
+   1013          #if MBM_STAT_CTR_AUTO_CLR_EN        == DEF_ENABLED
+   1014                        pch->StatNoRespCtr    = 0;
+   \   00000122   0x462A             MOV      R2,R5
+   \   00000124   0x810A             STRH     R2,[R1, #+8]
+   1015                        pch->StatCRCErrCtr    = 0;
+   \   00000126   0x804A             STRH     R2,[R1, #+2]
+   1016                        pch->StatExceptCtr    = 0;
+   \   00000128   0x808A             STRH     R2,[R1, #+4]
+   1017          #endif
+   1018                        /***********************************************
+   1019                        * 描述： 接收正确
+   1020                        */
+   1021                        nbr_bytes = MBM_RX_FC15_COIL_BYTES;
+   \   0000012A   0x7945             LDRB     R5,[R0, #+5]
+   \   0000012C   0xE004             B.N      ??MBM_FC15_CoilWr_12
+   1022                      }
+   1023                  }
+   1024              } else {
+   1025                  pch->StatNoRespCtr++;
+   \                     ??MBM_FC15_CoilWr_11: (+1)
+   \   0000012E   0xF106 0x011E      ADD      R1,R6,#+30
+   \   00000132   0x8908             LDRH     R0,[R1, #+8]
+   \   00000134   0x1C40             ADDS     R0,R0,#+1
+   \   00000136   0x8108             STRH     R0,[R1, #+8]
+   1026              }
+   1027          
+   1028              pch->RxBufByteCtr = 0;
+   \                     ??MBM_FC15_CoilWr_12: (+1)
+   \   00000138   0x2000             MOVS     R0,#+0
+   \   0000013A   0xF106 0x011E      ADD      R1,R6,#+30
+   \   0000013E   0x8248             STRH     R0,[R1, #+18]
+   1029              pch->RxBufPtr     = &pch->RxBuf[0];
+   \   00000140   0xF106 0x0038      ADD      R0,R6,#+56
+   \   00000144   0x6370             STR      R0,[R6, #+52]
+   1030          
+   1031              MB_OS_TxOver(pch);
+   \   00000146   0x4630             MOV      R0,R6
+   \   00000148   0x.... 0x....      BL       MB_OS_TxOver
+   1032          
+   1033              return nbr_bytes;
+   \   0000014C   0x4628             MOV      R0,R5
+   \                     ??MBM_FC15_CoilWr_2: (+1)
+   \   0000014E   0xE8BD 0x87F6      POP      {R1,R2,R4-R10,PC}  ;; return
+   1034          }
+   1035          #endif
+   1036          #endif
+   1037          
+   1038          /*$PAGE*/
+   1039          /*
+   1040          *********************************************************************************************************
+   1041          *                                           MBM_FC16_HoldingRegWrN()
+   1042          *
+   1043          * Description : This is the main processing function for MODBUS commands.  The message integrity is
+   1044          *               verified, and if valid, the function requested is processed.  Unimplemented functions
+   1045          *               will generate an Illegal Function Exception Response code (01).
+   1046          *
+   1047          * Argument(s) : pch      Is a pointer to the Modbus channel's data structure.
+   1048          *
+   1049          * Return(s)   : none.
+   1050          *
+   1051          * Caller(s)   : Application
+   1052          *
+   1053          * Note(s)     : none.
+   1054          *********************************************************************************************************
+   1055          */
+   1056          #if (MODBUS_CFG_MASTER_EN == DEF_ENABLED)   && \
+   1057              (MODBUS_CFG_RTU_EN == DEF_ENABLED)      && \
+   1058              (MODBUS_CFG_FC16_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+   1059          CPU_INT16U  MBM_FC16_HoldingRegWrN   (MODBUS_CH   *pch,
+   1060                                                CPU_INT08U   slave_node,
+   1061                                                CPU_INT16U   slave_addr,
+   1062                                                CPU_INT16U  *p_reg_tbl,
+   1063                                                CPU_INT16U   nbr_regs)
+   1064          {
+   \                     MBM_FC16_HoldingRegWrN: (+1)
+   \   00000000   0xE92D 0x43F8      PUSH     {R3-R9,LR}
+   \   00000004   0x4605             MOV      R5,R0
+   \   00000006   0x460F             MOV      R7,R1
+   \   00000008   0x4616             MOV      R6,R2
+   \   0000000A   0x4698             MOV      R8,R3
+   \   0000000C   0x9C08             LDR      R4,[SP, #+32]
+   1065              CPU_INT08U     *ptx_data;
+   1066              CPU_INT16U      err;
+   1067              CPU_BOOLEAN     ok;
+   1068              CPU_INT16U      calc_crc;
+   1069              CPU_INT16U      temp;
+   1070              CPU_INT16U      ctr         = nbr_regs;
+   \   0000000E   0x46A1             MOV      R9,R4
+   1071          
+   1072              if ( nbr_regs == 0 )
+   \   00000010   0x2C00             CMP      R4,#+0
+   \   00000012   0xD006             BEQ.N    ??MBM_FC16_HoldingRegWrN_0
+   1073                return 0;
+   1074              /***************************************************
+   1075              * 描述：
+   1076              */
+   1077              MB_OS_TxWait(pch,&err);
+   \   00000014   0x4669             MOV      R1,SP
+   \   00000016   0x.... 0x....      BL       MB_OS_TxWait
+   1078              if ( err != MODBUS_ERR_NONE )
+   \   0000001A   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   0000001E   0x2800             CMP      R0,#+0
+   \   00000020   0xD001             BEQ.N    ??MBM_FC16_HoldingRegWrN_1
+   1079                  return 0;
+   \                     ??MBM_FC16_HoldingRegWrN_0: (+1)
+   \   00000022   0x2000             MOVS     R0,#+0
+   \   00000024   0xE09B             B.N      ??MBM_FC16_HoldingRegWrN_2
+   1080          
+   1081              ptx_data    = &(pch->TxFrameData[MBM_TX_FC16_DATA_IDX]);
+   \                     ??MBM_FC16_HoldingRegWrN_1: (+1)
+   \   00000026   0xF205 0x3255      ADDW     R2,R5,#+853
+   \   0000002A   0x4610             MOV      R0,R2
+   1082              /***************************************************
+   1083              * 描述： 如果输入数组与数据数组是同一数组，且是从第0个数据开始
+   1084              */
+   1085              if ( (CPU_INT08U *)p_reg_tbl == &(pch->TxFrameData[0]) ) {
+   \   0000002C   0xF205 0x314E      ADDW     R1,R5,#+846
+   \   00000030   0x4588             CMP      R8,R1
+   \   00000032   0xD116             BNE.N    ??MBM_FC16_HoldingRegWrN_3
+   1086                ptx_data  += nbr_regs * 2 + MBM_TX_FC16_DATA_IDX-1;   // 指向数据的最后一个元素
+   \   00000034   0xEB00 0x0044      ADD      R0,R0,R4, LSL #+1
+   \   00000038   0x1D80             ADDS     R0,R0,#+6
+   1087                p_reg_tbl += nbr_regs-1;                              // 指向最后一个寄存器
+   \   0000003A   0xEB08 0x0244      ADD      R2,R8,R4, LSL #+1
+   \   0000003E   0xF1A2 0x0802      SUB      R8,R2,#+2
+   1088          
+   1089                while(ctr--) {
+   \                     ??MBM_FC16_HoldingRegWrN_4: (+1)
+   \   00000042   0x464A             MOV      R2,R9
+   \   00000044   0xF1A2 0x0901      SUB      R9,R2,#+1
+   \   00000048   0xB292             UXTH     R2,R2
+   \   0000004A   0x2A00             CMP      R2,#+0
+   \   0000004C   0xD026             BEQ.N    ??MBM_FC16_HoldingRegWrN_5
+   1090                 *ptx_data--      = LO_INT16U(*p_reg_tbl);
+   \   0000004E   0xF8B8 0x2000      LDRH     R2,[R8, #+0]
+   \   00000052   0xF800 0x2901      STRB     R2,[R0], #-1
+   1091                 *ptx_data--      = HI_INT16U(*p_reg_tbl);
+   \   00000056   0xF838 0x2902      LDRH     R2,[R8], #-2
+   \   0000005A   0x0A12             LSRS     R2,R2,#+8
+   \   0000005C   0xF800 0x2901      STRB     R2,[R0], #-1
+   1092                  p_reg_tbl--;
+   \   00000060   0xE7EF             B.N      ??MBM_FC16_HoldingRegWrN_4
+   1093                }
+   1094              /***************************************************
+   1095              * 描述： 如果输入指针不是当前通道的数据帧的第7个元素，则拷贝元素到数据帧数组
+   1096              */
+   1097              } else if ( (CPU_INT08U *)p_reg_tbl == &(pch->TxFrameData[MBM_TX_FC16_DATA_IDX]) ) {
+   \                     ??MBM_FC16_HoldingRegWrN_3: (+1)
+   \   00000062   0x4590             CMP      R8,R2
+   \   00000064   0xD114             BNE.N    ??MBM_FC16_HoldingRegWrN_6
+   1098                while(ctr--) {
+   \                     ??MBM_FC16_HoldingRegWrN_7: (+1)
+   \   00000066   0x464A             MOV      R2,R9
+   \   00000068   0xF1A2 0x0901      SUB      R9,R2,#+1
+   \   0000006C   0xB292             UXTH     R2,R2
+   \   0000006E   0x2A00             CMP      R2,#+0
+   \   00000070   0xD014             BEQ.N    ??MBM_FC16_HoldingRegWrN_5
+   1099                  temp            = *p_reg_tbl;
+   \   00000072   0xF838 0x2B02      LDRH     R2,[R8], #+2
+   1100                 *ptx_data++      = HI_INT16U(temp);
+   \   00000076   0x1213             ASRS     R3,R2,#+8
+   \   00000078   0xF800 0x3B01      STRB     R3,[R0], #+1
+   1101                 *ptx_data++      = LO_INT16U(temp);
+   \   0000007C   0xF800 0x2B01      STRB     R2,[R0], #+1
+   1102                  p_reg_tbl++;
+   \   00000080   0xE7F1             B.N      ??MBM_FC16_HoldingRegWrN_7
+   1103                }
+   1104              } else {
+   1105                while(ctr--) {
+   1106                  temp            = *p_reg_tbl;
+   \                     ??MBM_FC16_HoldingRegWrN_8: (+1)
+   \   00000082   0xF838 0x2B02      LDRH     R2,[R8], #+2
+   1107                 *ptx_data++      = LO_INT16U(temp);
+   \   00000086   0xF800 0x2B01      STRB     R2,[R0], #+1
+   1108                 *ptx_data++      = HI_INT16U(temp);
+   \   0000008A   0x1212             ASRS     R2,R2,#+8
+   \   0000008C   0xF800 0x2B01      STRB     R2,[R0], #+1
+   1109                  p_reg_tbl++;
+   1110                }
+   \                     ??MBM_FC16_HoldingRegWrN_6: (+1)
+   \   00000090   0x464A             MOV      R2,R9
+   \   00000092   0xF1A2 0x0901      SUB      R9,R2,#+1
+   \   00000096   0xB292             UXTH     R2,R2
+   \   00000098   0x2A00             CMP      R2,#+0
+   \   0000009A   0xD1F2             BNE.N    ??MBM_FC16_HoldingRegWrN_8
+   1111              }
+   1112          
+   1113              ptx_data    = &(pch->TxFrameData[0]);
+   1114              /***************************************************
+   1115              * 描述：
+   1116              */
+   1117             *ptx_data++ = slave_node;
+   \                     ??MBM_FC16_HoldingRegWrN_5: (+1)
+   \   0000009C   0x700F             STRB     R7,[R1, #+0]
+   1118             *ptx_data++ = MODBUS_FC16_HOLDING_REG_WR_MULTIPLE;
+   \   0000009E   0x2010             MOVS     R0,#+16
+   \   000000A0   0x7048             STRB     R0,[R1, #+1]
+   1119             *ptx_data++ = HI_INT16U(slave_addr);
+   \   000000A2   0x4630             MOV      R0,R6
+   \   000000A4   0x0A00             LSRS     R0,R0,#+8
+   \   000000A6   0x7088             STRB     R0,[R1, #+2]
+   1120             *ptx_data++ = LO_INT16U(slave_addr);
+   \   000000A8   0x70CE             STRB     R6,[R1, #+3]
+   1121             *ptx_data++ = HI_INT16U(nbr_regs);
+   \   000000AA   0x4620             MOV      R0,R4
+   \   000000AC   0x0A00             LSRS     R0,R0,#+8
+   \   000000AE   0x7108             STRB     R0,[R1, #+4]
+   1122             *ptx_data++ = LO_INT16U(nbr_regs);
+   \   000000B0   0x714C             STRB     R4,[R1, #+5]
+   1123              pch->TxFrameNDataBytes  = 5 + nbr_regs * 2;
+   \   000000B2   0xF205 0x404E      ADDW     R0,R5,#+1102
+   \   000000B6   0x0062             LSLS     R2,R4,#+1
+   \   000000B8   0x1D52             ADDS     R2,R2,#+5
+   \   000000BA   0x8002             STRH     R2,[R0, #+0]
+   1124             *ptx_data++ = pch->TxFrameNDataBytes - 5;
+   \   000000BC   0x8802             LDRH     R2,[R0, #+0]
+   \   000000BE   0x1F52             SUBS     R2,R2,#+5
+   \   000000C0   0x718A             STRB     R2,[R1, #+6]
+   1125          
+   1126              nbr_regs    = 0;
+   \   000000C2   0x2400             MOVS     R4,#+0
+   1127          
+   1128              /***********************************************
+   1129              * 描述： 发送
+   1130              */
+   1131              INT08S  retrys  = pch->Retrys;
+   \   000000C4   0x7900             LDRB     R0,[R0, #+4]
+   \   000000C6   0x08C6             LSRS     R6,R0,#+3
+   1132              do {
+   1133                MBM_TxCmd(pch);
+   \                     ??MBM_FC16_HoldingRegWrN_9: (+1)
+   \   000000C8   0x4628             MOV      R0,R5
+   \   000000CA   0x.... 0x....      BL       MBM_TxCmd
+   1134                MB_OS_RxWait(pch,&err);
+   \   000000CE   0x4669             MOV      R1,SP
+   \   000000D0   0x4628             MOV      R0,R5
+   \   000000D2   0x.... 0x....      BL       MB_OS_RxWait
+   1135              } while ( ( err == MODBUS_ERR_TIMED_OUT ) && --retrys  );
+   \   000000D6   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   000000DA   0xF640 0x31B8      MOVW     R1,#+3000
+   \   000000DE   0x4288             CMP      R0,R1
+   \   000000E0   0xD103             BNE.N    ??MBM_FC16_HoldingRegWrN_10
+   \   000000E2   0x1E76             SUBS     R6,R6,#+1
+   \   000000E4   0xB2F6             UXTB     R6,R6
+   \   000000E6   0x2E00             CMP      R6,#+0
+   \   000000E8   0xD1EE             BNE.N    ??MBM_FC16_HoldingRegWrN_9
+   1136          
+   1137              /***************************************************
+   1138              * 描述：
+   1139              */
+   1140              if ( err == MODBUS_ERR_NONE ) {
+   \                     ??MBM_FC16_HoldingRegWrN_10: (+1)
+   \   000000EA   0x2800             CMP      R0,#+0
+   \   000000EC   0xD126             BNE.N    ??MBM_FC16_HoldingRegWrN_11
+   1141                  ok = MBM_RxReply(pch);
+   1142                  if ( DEF_TRUE == ok ) {
+   \   000000EE   0x4628             MOV      R0,R5
+   \   000000F0   0x.... 0x....      BL       MBM_RxReply
+   \   000000F4   0x2801             CMP      R0,#+1
+   \   000000F6   0xD126             BNE.N    ??MBM_FC16_HoldingRegWrN_12
+   1143                      calc_crc = MB_RTU_RxCalcCRC(pch);          /* Do our own calculation of the CRC.                              */
+   \   000000F8   0x4628             MOV      R0,R5
+   \   000000FA   0x.... 0x....      BL       MB_RTU_RxCalcCRC
+   1144                      if (calc_crc != pch->RxFrameCRC) {         /* If the calculated CRC does not match the CRC received,          */
+   \   000000FE   0xF105 0x011E      ADD      R1,R5,#+30
+   \   00000102   0xF8B5 0x2346      LDRH     R2,[R5, #+838]
+   \   00000106   0x4290             CMP      R0,R2
+   \   00000108   0xD003             BEQ.N    ??MBM_FC16_HoldingRegWrN_13
+   1145                        /***********************************************
+   1146                        * 描述： 校验错误
+   1147                        */
+   1148                        pch->StatCRCErrCtr++;                    /* then the frame was not received properly.                       */
+   \   0000010A   0x8848             LDRH     R0,[R1, #+2]
+   \   0000010C   0x1C40             ADDS     R0,R0,#+1
+   \   0000010E   0x8048             STRH     R0,[R1, #+2]
+   \   00000110   0xE019             B.N      ??MBM_FC16_HoldingRegWrN_12
+   1149                      } else if (MBM_RX_FCXX_CODE == 0X90) {
+   \                     ??MBM_FC16_HoldingRegWrN_13: (+1)
+   \   00000112   0xF205 0x2045      ADDW     R0,R5,#+581
+   \   00000116   0x7802             LDRB     R2,[R0, #+0]
+   \   00000118   0x2A90             CMP      R2,#+144
+   \   0000011A   0xD103             BNE.N    ??MBM_FC16_HoldingRegWrN_14
+   1150                          pch->StatExceptCtr++;
+   \   0000011C   0x8888             LDRH     R0,[R1, #+4]
+   \   0000011E   0x1C40             ADDS     R0,R0,#+1
+   \   00000120   0x8088             STRH     R0,[R1, #+4]
+   1151                        /***********************************************
+   1152                        * 描述： 其他错误
+   1153                        //功能码10H： 连续写多个寄存器值
+   1154                        //第1字节	    ADR      		：	从机地址码（=001～254）
+   1155                        //第2字节　   90H			    ：　写寄存器值出错
+   1156                        //第3字节　   错误信息码		：	见信息码表
+   1157                        //第4、5字节	CRC			    ：	从字节1到3的CRC16校验和
+   1158                        //数息码	    表示意义
+   1159                        //01H	        非法的功能号
+   1160                        //02H	        非法的数据地址
+   1161                        //03H	        非法的数据值
+   1162                        //04H	        CRC16校验错
+   1163                        //05H	        接收正确
+   1164                        //06H	        接收错误
+   1165                        //07	        参数错误
+   1166                        */
+   1167                        nbr_regs = 0;
+   \   00000122   0xE010             B.N      ??MBM_FC16_HoldingRegWrN_12
+   1168                      } else {
+   1169                        pch->StatMsgCtr++;
+   \                     ??MBM_FC16_HoldingRegWrN_14: (+1)
+   \   00000124   0x880A             LDRH     R2,[R1, #+0]
+   \   00000126   0x1C52             ADDS     R2,R2,#+1
+   \   00000128   0x800A             STRH     R2,[R1, #+0]
+   1170          #if MBM_STAT_CTR_AUTO_CLR_EN        == DEF_ENABLED
+   1171                        pch->StatNoRespCtr    = 0;
+   \   0000012A   0x4622             MOV      R2,R4
+   \   0000012C   0x810A             STRH     R2,[R1, #+8]
+   1172                        pch->StatCRCErrCtr    = 0;
+   \   0000012E   0x804A             STRH     R2,[R1, #+2]
+   1173                        pch->StatExceptCtr    = 0;
+   \   00000130   0x808A             STRH     R2,[R1, #+4]
+   1174          #endif
+   1175                        /***********************************************
+   1176                        * 描述： 接收正确
+   1177                        */
+   1178                        nbr_regs = MBM_RX_FC16_NREG;
+   \   00000132   0x78C1             LDRB     R1,[R0, #+3]
+   \   00000134   0x7900             LDRB     R0,[R0, #+4]
+   \   00000136   0xEB00 0x2401      ADD      R4,R0,R1, LSL #+8
+   \   0000013A   0xE004             B.N      ??MBM_FC16_HoldingRegWrN_12
+   1179                      }
+   1180                  }
+   1181              } else {
+   1182                  pch->StatNoRespCtr++;
+   \                     ??MBM_FC16_HoldingRegWrN_11: (+1)
+   \   0000013C   0xF105 0x011E      ADD      R1,R5,#+30
+   \   00000140   0x8908             LDRH     R0,[R1, #+8]
+   \   00000142   0x1C40             ADDS     R0,R0,#+1
+   \   00000144   0x8108             STRH     R0,[R1, #+8]
+   1183              }
+   1184          
+   1185              pch->RxBufByteCtr = 0;
+   \                     ??MBM_FC16_HoldingRegWrN_12: (+1)
+   \   00000146   0x2000             MOVS     R0,#+0
+   \   00000148   0xF105 0x011E      ADD      R1,R5,#+30
+   \   0000014C   0x8248             STRH     R0,[R1, #+18]
+   1186              pch->RxBufPtr     = &pch->RxBuf[0];
+   \   0000014E   0xF105 0x0038      ADD      R0,R5,#+56
+   \   00000152   0x6368             STR      R0,[R5, #+52]
+   1187          
+   1188              MB_OS_TxOver(pch);
+   \   00000154   0x4628             MOV      R0,R5
+   \   00000156   0x.... 0x....      BL       MB_OS_TxOver
+   1189          
+   1190              return nbr_regs;
+   \   0000015A   0x4620             MOV      R0,R4
+   \   0000015C   0xB280             UXTH     R0,R0
+   \                     ??MBM_FC16_HoldingRegWrN_2: (+1)
+   \   0000015E   0xE8BD 0x83F2      POP      {R1,R4-R9,PC}    ;; return
+   1191          }
+   1192          #endif
+   1193          
+   1194          /*$PAGE*/
+   1195          /*
+   1196          *********************************************************************************************************
+   1197          *                                           MBM_FCU_HoldingRegWrN()
+   1198          *
+   1199          * Description : This is the main processing function for MODBUS commands.  The message integrity is
+   1200          *               verified, and if valid, the function requested is processed.  Unimplemented functions
+   1201          *               will generate an Illegal Function Exception Response code (01).
+   1202          *
+   1203          * Argument(s) : pch      Is a pointer to the Modbus channel's data structure.
+   1204          *
+   1205          * Return(s)   : none.
+   1206          *
+   1207          * Caller(s)   : Application
+   1208          *
+   1209          * Note(s)     : none.
+   1210          *********************************************************************************************************
+   1211          */
+   1212          
+   1213          #if (MODBUS_CFG_MASTER_EN == DEF_ENABLED)   && \
+   1214              (MODBUS_CFG_RTU_EN == DEF_ENABLED)      && \
+   1215              (MODBUS_CFG_FCU_EN == DEF_ENABLED)
+   1216          CPU_INT16U  MBM_FCU_HoldingRegWrN(  MODBUS_CH   *pch,
+   1217                                              CPU_INT08U   slave_node,
+   1218                                              CPU_INT08U   fc,
+   1219                                              CPU_INT16U   block,
+   1220                                              CPU_INT16U   blocks,
+   1221                                              CPU_INT16U  *p_reg_tbl,
+   1222                                              CPU_INT16U   nbr_regs)
+   1223          {
+   1224              CPU_INT08U     *ptx_data;
+   1225              CPU_INT16U      err;
+   1226              CPU_BOOLEAN     ok;
+   1227              CPU_INT16U      calc_crc;
+   1228          
+   1229          
+   1230              MB_OS_TxWait(pch,&err);
+   1231              if ( err != MODBUS_ERR_NONE )
+   1232                  return 0;
+   1233              ptx_data    = &(pch->TxFrameData[0]);
+   1234          
+   1235             *ptx_data++ = slave_node;                        // 地址
+   1236             *ptx_data++ = fc;                                // 写文件
+   1237          
+   1238             *ptx_data++ = HI_INT16U(block);                  // 当前块
+   1239             *ptx_data++ = LO_INT16U(block);
+   1240          
+   1241             *ptx_data++ = HI_INT16U(blocks);                 // 总块数
+   1242             *ptx_data++ = LO_INT16U(blocks);
+   1243             *ptx_data++ = HI_INT16U(nbr_regs);
+   1244             *ptx_data++ = LO_INT16U(nbr_regs);
+   1245          
+   1246              pch->TxFrameNDataBytes  = 7 + nbr_regs * 2;
+   1247          
+   1248              while(nbr_regs--) {
+   1249               *ptx_data++   = HI_INT16U(*p_reg_tbl);
+   1250               *ptx_data++   = LO_INT16U(*p_reg_tbl);
+   1251                p_reg_tbl++;
+   1252              }
+   1253              nbr_regs    = 0;
+   1254          
+   1255              /***********************************************
+   1256              * 描述： 发送
+   1257              */
+   1258              INT08S  retrys  = pch->Retrys;
+   1259              do {
+   1260                MBM_TxCmd(pch);
+   1261                MB_OS_RxWait(pch,&err);
+   1262              } while ( ( err == MODBUS_ERR_TIMED_OUT ) && --retrys  );
+   1263          
+   1264              if ( err == MODBUS_ERR_NONE ) {
+   1265                  ok = MBM_RxReply(pch);
+   1266                  if ( DEF_TRUE == ok ) {
+   1267                      calc_crc = MB_RTU_RxCalcCRC(pch);          /* Do our own calculation of the CRC.                              */
+   1268                      if (calc_crc != pch->RxFrameCRC) {         /* If the calculated CRC does not match the CRC received,          */
+   1269                        /***********************************************
+   1270                        * 描述： 校验错误
+   1271                        */
+   1272                        pch->StatCRCErrCtr++;                    /* then the frame was not received properly.                       */
+   1273                      } else if (MBM_RX_FCXX_CODE == (fc | 0x80)) {
+   1274                          pch->StatExceptCtr++;
+   1275                        /***********************************************
+   1276                        * 描述： 其他错误
+   1277                        //功能码10H： 连续写多个寄存器值
+   1278                        //第1字节	    ADR      		：	从机地址码（=001～254）
+   1279                        //第2字节　   90H			    ：　写寄存器值出错
+   1280                        //第3字节　   错误信息码		：	见信息码表
+   1281                        //第4、5字节	CRC			    ：	从字节1到3的CRC16校验和
+   1282                        //数息码	    表示意义
+   1283                        //01H	        非法的功能号
+   1284                        //02H	        非法的数据地址
+   1285                        //03H	        非法的数据值
+   1286                        //04H	        CRC16校验错
+   1287                        //05H	        接收正确
+   1288                        //06H	        接收错误
+   1289                        //07	        参数错误
+   1290                        */
+   1291                        nbr_regs = 0;
+   1292                      } else {
+   1293                        pch->StatMsgCtr++;
+   1294          #if MBM_STAT_CTR_AUTO_CLR_EN        == DEF_ENABLED
+   1295                        pch->StatNoRespCtr    = 0;
+   1296                        pch->StatCRCErrCtr    = 0;
+   1297                        pch->StatExceptCtr    = 0;
+   1298          #endif
+   1299                        /***********************************************
+   1300                        * 描述： 接收正确
+   1301                        */
+   1302                        nbr_regs = MBM_RX_FC16_NREG;
+   1303                      }
+   1304                  }
+   1305              } else {
+   1306                  pch->StatNoRespCtr++;
+   1307              }
+   1308          
+   1309              pch->RxBufByteCtr = 0;
+   1310              pch->RxBufPtr     = &pch->RxBuf[0];
+   1311          
+   1312              MB_OS_TxOver(pch);
+   1313          
+   1314              return nbr_regs;
+   1315          }
+   1316          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   MBM_FC01_CoilRd
+        24   -> MBM_RxReply
+        24   -> MBM_TxCmd
+        24   -> MB_OS_RxWait
+        24   -> MB_OS_TxOver
+        24   -> MB_OS_TxWait
+        24   -> MB_RTU_RxCalcCRC
+      24   MBM_FC03_HoldingRegRd
+        24   -> MBM_RxReply
+        24   -> MBM_TxCmd
+        24   -> MB_OS_RxWait
+        24   -> MB_OS_TxOver
+        24   -> MB_OS_TxWait
+        24   -> MB_RTU_RxCalcCRC
+      32   MBM_FC05_CoilWr
+        32   -> MBM_RxReply
+        32   -> MBM_TxCmd
+        32   -> MB_MasterTimeoutSet
+        32   -> MB_OS_RxWait
+        32   -> MB_OS_TxOver
+        32   -> MB_OS_TxWait
+        32   -> MB_RTU_RxCalcCRC
+      32   MBM_FC06_HoldingRegWr
+        32   -> MBM_RxReply
+        32   -> MBM_TxCmd
+        32   -> MB_MasterTimeoutSet
+        32   -> MB_OS_RxWait
+        32   -> MB_OS_TxOver
+        32   -> MB_OS_TxWait
+        32   -> MB_RTU_RxCalcCRC
+      40   MBM_FC15_CoilWr
+        40   -> MBM_RxReply
+        40   -> MBM_TxCmd
+        40   -> MB_OS_RxWait
+        40   -> MB_OS_TxOver
+        40   -> MB_OS_TxWait
+        40   -> MB_RTU_RxCalcCRC
+      32   MBM_FC16_HoldingRegWrN
+        32   -> MBM_RxReply
+        32   -> MBM_TxCmd
+        32   -> MB_OS_RxWait
+        32   -> MB_OS_TxOver
+        32   -> MB_OS_TxWait
+        32   -> MB_RTU_RxCalcCRC
+       8   MBM_FCxx_Handler
+       0   MBM_RxReply
+         0   -> MB_RTU_Rx
+       0   MBM_TxCmd
+         0   -> MB_RTU_Tx
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+     232  MBM_FC01_CoilRd
+     246  MBM_FC03_HoldingRegRd
+     280  MBM_FC05_CoilWr
+     266  MBM_FC06_HoldingRegWr
+     338  MBM_FC15_CoilWr
+     354  MBM_FC16_HoldingRegWrN
+     118  MBM_FCxx_Handler
+       4  MBM_RxReply
+       4  MBM_TxCmd
+
+ 
+ 1 842 bytes in section .text
+ 
+ 1 842 bytes of CODE memory
+
+Errors: none
+Warnings: none

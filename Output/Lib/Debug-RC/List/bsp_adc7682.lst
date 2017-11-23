@@ -1,0 +1,722 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       16/Nov/2017  10:19:59
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_adc7682.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_adc7682.c -D
+#        USE_STDPERIPH_DRIVER -D _STM32F10X_HD -D STM32F10X_CL -D DEBUG -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\bsp_adc7682.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\bsp_adc7682.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_adc7682.c
+      1          /*******************************************************************************
+      2          *   Filename:       bsp_key.c
+      3          *   Revised:        All copyrights reserved to Roger.
+      4          *   Date:           2015-08-11
+      5          *   Revision:       v1.0
+      6          *   Writer:	        wumingshen.
+      7          *
+      8          *   Description:    按键驱动模块
+      9          *                   可以识别长按，短按，双击，旋转编码器的操作。
+     10          *
+     11          *
+     12          *   Notes:
+     13          *
+     14          *   All copyrights reserved to wumingshen
+     15          *******************************************************************************/
+     16          
+     17          /*******************************************************************************
+     18          * INCLUDES
+     19          */
+     20          #include <includes.h>
+     21          #include <global.h>
+     22          #include <app_lib.h>
+     23          
+     24          #include "bsp_adc7682.h"
+     25          
+     26          #define BSP_KEY_MODULE_EN 1
+     27          #if BSP_KEY_MODULE_EN > 0
+     28          /*******************************************************************************
+     29           * CONSTANTS
+     30           */
+     31          
+     32          /*******************************************************************************
+     33           * MACROS
+     34           */
+     35          /***********************************************
+     36          * 描述： IO,时钟等定义
+     37          */
+     38          #define SPI_SCK_PIN           GPIO_Pin_9             /* PC.09 */
+     39          #define SPI_SCK_PIN_NUM       9          
+     40          #define SPI_SCK_GPIO_PORT     GPIOC
+     41          #define SPI_SCK_GPIO_CLK      RCC_APB2Periph_GPIOC
+     42          
+     43          #define SPI_MISO_PIN          GPIO_Pin_6             /* PA.06 */
+     44          #define SPI_MISO_PIN_NUM      6 
+     45          #define SPI_MISO_GPIO_PORT    GPIOA
+     46          #define SPI_MISO_GPIO_CLK     RCC_APB2Periph_GPIOA
+     47          
+     48          #define SPI_MOSI_PIN          GPIO_Pin_7             /* PC.07 */
+     49          #define SPI_MOSI_PIN_NUM      7 
+     50          #define SPI_MOSI_GPIO_PORT    GPIOC
+     51          #define SPI_MOSI_GPIO_CLK     RCC_APB2Periph_GPIOC
+     52          
+     53          #define SPI_CS_PIN            GPIO_Pin_8             /* PC.08 */
+     54          #define SPI_CS_PIN_NUM        8 
+     55          #define SPI_CS_GPIO_PORT      GPIOC
+     56          #define SPI_CS_GPIO_CLK       RCC_APB2Periph_GPIOC
+     57          
+     58          /***********************************************
+     59          * 描述： IO操作定义
+     60          */
+     61          #define SPI_CS_LOW()     	  GPIO_ResetBits(SPI_CS_GPIO_PORT, SPI_CS_PIN)
+     62          #define SPI_CS_HIGH()    	  GPIO_SetBits(SPI_CS_GPIO_PORT, SPI_CS_PIN)
+     63          
+     64          #define SPI_SCK_LOW()    	  GPIO_ResetBits(SPI_SCK_GPIO_PORT,SPI_SCK_PIN)
+     65          #define SPI_SCK_HIGH()   	  GPIO_SetBits(SPI_SCK_GPIO_PORT,SPI_SCK_PIN)
+     66          
+     67          #define SPI_MISO_LOW()   	  GPIO_ResetBits(SPI_MISO_GPIO_PORT,SPI_MISO_PIN)
+     68          #define SPI_MISO_HIGH()  	  GPIO_SetBits(SPI_MISO_GPIO_PORT,SPI_MISO_PIN)
+     69          
+     70          #define SPI_MOSI_LOW()        GPIO_ResetBits(SPI_MOSI_GPIO_PORT,SPI_MOSI_PIN)
+     71          #define SPI_MOSI_HIGH()       GPIO_SetBits(SPI_MOSI_GPIO_PORT,SPI_MOSI_PIN)
+     72          
+     73          /*******************************************************************************
+     74           * TYPEDEFS
+     75           */
+     76          
+     77          /*******************************************************************************
+     78           * LOCAL VARIABLES
+     79           */
+     80          
+     81          /*******************************************************************************
+     82           * GLOBAL VARIABLES
+     83           */
+     84          
+     85          /*******************************************************************************
+     86           * LOCAL FUNCTIONS
+     87           */
+     88          
+     89          /*******************************************************************************
+     90           * GLOBAL FUNCTIONS
+     91           */
+     92          
+     93          /*******************************************************************************
+     94           * EXTERN VARIABLES
+     95           */
+     96          
+     97          /*******************************************************************************
+     98           * EXTERN FUNCTIONS
+     99           */
+    100          
+    101          /*******************************************************************************
+    102          * 名    称： SPI_GpioInit
+    103          * 功    能： ADC GPIO初始化
+    104          * 入口参数： 无
+    105          * 出口参数： 无
+    106          * 作　　者： wumingshen.
+    107          * 创建日期： 2015-12-07
+    108          * 修    改：
+    109          * 修改日期：
+    110          * 备    注：
+    111          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    112          static void SPI_GpioInit(void)
+    113          {
+   \                     SPI_GpioInit: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+    114              GPIO_InitTypeDef GPIO_InitStructure;
+    115          
+    116              RCC_APB2PeriphClockCmd(SPI_CS_GPIO_CLK | SPI_MOSI_GPIO_CLK |
+    117                                   SPI_MISO_GPIO_CLK | SPI_SCK_GPIO_CLK, ENABLE);
+   \   00000004   0x2101             MOVS     R1,#+1
+   \   00000006   0x2014             MOVS     R0,#+20
+   \   00000008   0x.... 0x....      BL       RCC_APB2PeriphClockCmd
+    118          
+    119              /*!< Configure SPI pins: SCK */
+    120              GPIO_InitStructure.GPIO_Pin = SPI_SCK_PIN;
+   \   0000000C   0xF44F 0x7000      MOV      R0,#+512
+   \   00000010   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    121              GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+   \   00000014   0x2003             MOVS     R0,#+3
+   \   00000016   0xF88D 0x0002      STRB     R0,[SP, #+2]
+    122              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+   \   0000001A   0x2010             MOVS     R0,#+16
+   \   0000001C   0xF88D 0x0003      STRB     R0,[SP, #+3]
+    123              GPIO_Init(SPI_SCK_GPIO_PORT, &GPIO_InitStructure);
+   \   00000020   0x....             LDR.N    R4,??DataTable3  ;; 0x40011000
+   \   00000022   0x4669             MOV      R1,SP
+   \   00000024   0x4620             MOV      R0,R4
+   \   00000026   0x.... 0x....      BL       GPIO_Init
+    124          
+    125              /*!< Configure SPI pins: MOSI */
+    126              GPIO_InitStructure.GPIO_Pin = SPI_MOSI_PIN;			//speed和mode无需修改，故无重新赋值
+   \   0000002A   0x2080             MOVS     R0,#+128
+   \   0000002C   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    127              GPIO_Init(SPI_MOSI_GPIO_PORT, &GPIO_InitStructure);
+   \   00000030   0x4669             MOV      R1,SP
+   \   00000032   0x4620             MOV      R0,R4
+   \   00000034   0x.... 0x....      BL       GPIO_Init
+    128          
+    129              /*!< Configure SPI pins: MISO */
+    130              GPIO_InitStructure.GPIO_Pin = SPI_MISO_PIN;
+   \   00000038   0x2040             MOVS     R0,#+64
+   \   0000003A   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    131              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;          //GPIO_Mode_IPU;
+   \   0000003E   0x2004             MOVS     R0,#+4
+   \   00000040   0xF88D 0x0003      STRB     R0,[SP, #+3]
+    132              GPIO_Init(SPI_MISO_GPIO_PORT, &GPIO_InitStructure);
+   \   00000044   0x4669             MOV      R1,SP
+   \   00000046   0x....             LDR.N    R0,??DataTable3_1  ;; 0x40010800
+   \   00000048   0x.... 0x....      BL       GPIO_Init
+    133          
+    134              /*!< Configure SPI pin: Chip CS pin */
+    135              GPIO_InitStructure.GPIO_Pin = SPI_CS_PIN;
+   \   0000004C   0xF44F 0x7080      MOV      R0,#+256
+   \   00000050   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    136              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+   \   00000054   0x2010             MOVS     R0,#+16
+   \   00000056   0xF88D 0x0003      STRB     R0,[SP, #+3]
+    137              GPIO_Init(SPI_CS_GPIO_PORT, &GPIO_InitStructure);
+   \   0000005A   0x4669             MOV      R1,SP
+   \   0000005C   0x4620             MOV      R0,R4
+   \   0000005E   0x.... 0x....      BL       GPIO_Init
+    138          
+    139              SPI_CS_HIGH();
+   \   00000062   0xF44F 0x7180      MOV      R1,#+256
+   \   00000066   0x4620             MOV      R0,R4
+   \   00000068   0x.... 0x....      BL       GPIO_SetBits
+    140          }
+   \   0000006C   0xBD13             POP      {R0,R1,R4,PC}    ;; return
+    141          
+    142          /*******************************************************************************
+    143          * 名    称： SPI_SendByte
+    144          * 功    能： 通过SPI总线发送一个字节数据(同时接收一个字节数据)
+    145          * 入口参数： 要写入的一个字节数据
+    146          * 出口参数： 在发数据时，MISO信号线上接收的一个字节
+    147          * 作　　者： wumingshen.
+    148          * 创建日期： 2015-12-07
+    149          * 修    改：
+    150          * 修改日期：
+    151          * 备    注：
+    152          *******************************************************************************/
+    153          //static void SPI_SendByte(uint8_t byte)
+    154          //{
+    155          //    uint8_t i;
+    156          //    
+    157          //    /***********************************************
+    158          //    * 描述： 
+    159          //    */
+    160          //    for(i=0;i<8;i++) {		
+    161          //		SPI_SCK_LOW();
+    162          //		Delay_Nus(10);
+    163          //		if(byte & 0x80)
+    164          //			SPI_MOSI_HIGH();
+    165          //		else
+    166          //			SPI_MOSI_LOW();
+    167          //		byte = byte << 1;
+    168          //		Delay_Nus(5);
+    169          //		SPI_SCK_HIGH();
+    170          //		Delay_Nus(10);
+    171          //	}
+    172          //}	
+    173          
+    174          /*******************************************************************************
+    175          * 名    称： SPI_ReadByte
+    176          * 功    能： 读取一个字节，未包含发送读命令和起始地址
+    177          * 入口参数： 无
+    178          * 出口参数： 从目标读取的一个字节
+    179          * 作　　者： wumingshen.
+    180          * 创建日期： 2015-12-07
+    181          * 修    改：
+    182          * 修改日期：
+    183          * 备    注：
+    184          *******************************************************************************/
+    185          //static uint8_t SPI_ReadByte(uint8_t Command)
+    186          //{
+    187          //    uint8_t i ,result = 0x00;
+    188          //	unsigned char SDI;
+    189          //    /***********************************************
+    190          //    * 描述： 
+    191          //    */
+    192          //	for(i=0;i<8;i++) {
+    193          //		SPI_SCK_LOW();
+    194          //		Delay_Nus(2);
+    195          //		if (Command & 0x80) {
+    196          //			SPI_MOSI_HIGH();
+    197          //		} else {
+    198          //			SPI_MOSI_LOW();
+    199          //        }
+    200          //        
+    201          //		Command = Command << 1;
+    202          //		SPI_SCK_HIGH();
+    203          //		Delay_Nus(2);
+    204          //		SDI =  GPIO_ReadInputDataBit(SPI_MISO_GPIO_PORT, SPI_MISO_PIN);
+    205          //		result = result << 1;
+    206          //        
+    207          //		if(SDI)
+    208          //			result = result | 0x01;
+    209          //	}
+    210          //    
+    211          //	return result;
+    212          //}
+    213          
+    214          /*******************************************************************************
+    215          * 名    称： SPI_SendCommand
+    216          * 功    能： 通过SPI总线发送一个字节命令
+    217          * 入口参数： 要写入的一个字节命令
+    218          * 出口参数： 无
+    219          * 作　　者： wumingshen.
+    220          * 创建日期： 2015-12-07
+    221          * 修    改：
+    222          * 修改日期：
+    223          * 备    注：
+    224          *******************************************************************************/
+    225          //static void SPI_SendCommand(uint8_t Command)
+    226          //{
+    227          //	SPI_CS_LOW();
+    228          //	Delay_Nus(5);
+    229          //	SPI_SendByte(Command);
+    230          //	SPI_CS_HIGH();
+    231          //	Delay_Nus(5);
+    232          //}
+    233          
+    234          /*******************************************************************************
+    235          * 名    称： AD7682_spi
+    236          * 功    能： reg寄存器内容,data转换数据
+    237          * 入口参数： 无
+    238          * 出口参数： 无
+    239          * 作　　者： wumingshen.
+    240          * 创建日期： 2015-12-07
+    241          * 修    改：
+    242          * 修改日期：
+    243          * 备    注：
+    244          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    245          static uint16_t AD7682_spi(uint8_t ch)
+    246          {
+   \                     AD7682_spi: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    247          	uint16_t    reg     = 0;
+    248          	uint16_t    data    = 0;
+   \   00000004   0x2500             MOVS     R5,#+0
+    249          	uint8_t     i       = 0;
+   \   00000006   0x462E             MOV      R6,R5
+    250          	u8          SDI     = 0;
+    251          	
+    252              /***********************************************
+    253              * 描述： 
+    254              */
+    255          	SPI_CS_LOW();
+   \   00000008   0x....             LDR.N    R7,??DataTable3  ;; 0x40011000
+   \   0000000A   0xF44F 0x7180      MOV      R1,#+256
+   \   0000000E   0x4638             MOV      R0,R7
+   \   00000010   0x.... 0x....      BL       GPIO_ResetBits
+    256          	Delay_Nus(2);
+   \   00000014   0x2002             MOVS     R0,#+2
+   \   00000016   0x.... 0x....      BL       Delay_Nus
+    257          	SPI_CS_HIGH();
+   \   0000001A   0xF44F 0x7180      MOV      R1,#+256
+   \   0000001E   0x4638             MOV      R0,R7
+   \   00000020   0x.... 0x....      BL       GPIO_SetBits
+    258          	Delay_Nus(2);
+   \   00000024   0x2002             MOVS     R0,#+2
+   \   00000026   0x.... 0x....      BL       Delay_Nus
+    259          	SPI_CS_LOW();
+   \   0000002A   0xF44F 0x7180      MOV      R1,#+256
+   \   0000002E   0x4638             MOV      R0,R7
+   \   00000030   0x.... 0x....      BL       GPIO_ResetBits
+    260              
+    261              /***********************************************
+    262              * 描述： 7682配置寄存器
+    263              *        13  12   11   10   9   8   7   6  5   4   3   2   1   0
+    264                       CFG INCC INCC INCC INx INx INx BW REF REF REF SEQ SEQ RB
+    265              */
+    266              reg = (1 <<13)                                  // 1    = 覆盖寄存器的内容
+    267                  | (6 <<10)                                  // 110  = 单极性；INx以COM=GND±0.1V为参考
+    268                  | (ch<<7)                                   // 1XX  = 采集通道选择
+    269                  | (0 <<6)                                   // 0    = 1/4带宽（62.5K）；1   = 全带宽
+    270                  | (2 <<3)                                   // 010  = 外部基准，温度传感器使能
+    271                  | (0 <<1)                                   // 00   = 禁用序列器
+    272                  | (1 <<0);                                  // 1    = 不回读配置内容
+    273              //reg = b1 110 100 0 010 00 1
+    274          	//reg = (ch<<7)|0x3811;
+    275          	reg <<=2;                                       //寄存器只用到了14位，所以要先移出高两位	
+   \   00000034   0x01E0             LSLS     R0,R4,#+7
+   \   00000036   0xF440 0x5060      ORR      R0,R0,#0x3800
+   \   0000003A   0xF040 0x0011      ORR      R0,R0,#0x11
+   \   0000003E   0x0084             LSLS     R4,R0,#+2
+    276          	Delay_Nus(2);
+   \   00000040   0x2002             MOVS     R0,#+2
+   \   00000042   0x.... 0x....      BL       Delay_Nus
+    277          	
+    278              /***********************************************
+    279              * 描述： 
+    280              */
+    281          	for(i = 0; i < 16; i++) {
+   \   00000046   0xE021             B.N      ??AD7682_spi_0
+    282          		if(reg & 0x8000)   
+    283                      SPI_MOSI_HIGH();
+    284          		else               
+    285                      SPI_MOSI_LOW();
+   \                     ??AD7682_spi_1: (+1)
+   \   00000048   0x2180             MOVS     R1,#+128
+   \   0000004A   0x4638             MOV      R0,R7
+   \   0000004C   0x.... 0x....      BL       GPIO_ResetBits
+    286          		
+    287          		Delay_Nus(2);
+   \                     ??AD7682_spi_2: (+1)
+   \   00000050   0x2002             MOVS     R0,#+2
+   \   00000052   0x.... 0x....      BL       Delay_Nus
+    288          		SPI_SCK_LOW();
+   \   00000056   0xF44F 0x7100      MOV      R1,#+512
+   \   0000005A   0x4638             MOV      R0,R7
+   \   0000005C   0x.... 0x....      BL       GPIO_ResetBits
+    289          		Delay_Nus(2);
+   \   00000060   0x2002             MOVS     R0,#+2
+   \   00000062   0x.... 0x....      BL       Delay_Nus
+    290          		reg <<=1;
+   \   00000066   0x0064             LSLS     R4,R4,#+1
+    291          		SPI_SCK_HIGH();
+   \   00000068   0xF44F 0x7100      MOV      R1,#+512
+   \   0000006C   0x4638             MOV      R0,R7
+   \   0000006E   0x.... 0x....      BL       GPIO_SetBits
+    292          		data <<=1;
+   \   00000072   0x006D             LSLS     R5,R5,#+1
+    293          		Delay_Nus(1);
+   \   00000074   0x2001             MOVS     R0,#+1
+   \   00000076   0x.... 0x....      BL       Delay_Nus
+    294          		SDI = GPIO_ReadInputDataBit(SPI_MISO_GPIO_PORT,  SPI_MISO_PIN); 
+    295          		if(SDI)      
+   \   0000007A   0x2140             MOVS     R1,#+64
+   \   0000007C   0x....             LDR.N    R0,??DataTable3_1  ;; 0x40010800
+   \   0000007E   0x.... 0x....      BL       GPIO_ReadInputDataBit
+   \   00000082   0x2800             CMP      R0,#+0
+   \   00000084   0xD001             BEQ.N    ??AD7682_spi_3
+    296          			data = data | 0x01;	
+   \   00000086   0xF045 0x0501      ORR      R5,R5,#0x1
+   \                     ??AD7682_spi_3: (+1)
+   \   0000008A   0x1C76             ADDS     R6,R6,#+1
+   \                     ??AD7682_spi_0: (+1)
+   \   0000008C   0x2E10             CMP      R6,#+16
+   \   0000008E   0xDA06             BGE.N    ??AD7682_spi_4
+   \   00000090   0x0420             LSLS     R0,R4,#+16
+   \   00000092   0xD5D9             BPL.N    ??AD7682_spi_1
+   \   00000094   0x2180             MOVS     R1,#+128
+   \   00000096   0x4638             MOV      R0,R7
+   \   00000098   0x.... 0x....      BL       GPIO_SetBits
+   \   0000009C   0xE7D8             B.N      ??AD7682_spi_2
+    297          	}
+    298              
+    299              /***********************************************
+    300              * 描述： 
+    301              */
+    302          	Delay_Nus(2);
+   \                     ??AD7682_spi_4: (+1)
+   \   0000009E   0x2002             MOVS     R0,#+2
+   \   000000A0   0x.... 0x....      BL       Delay_Nus
+    303          	SPI_SCK_LOW();
+   \   000000A4   0xF44F 0x7100      MOV      R1,#+512
+   \   000000A8   0x4638             MOV      R0,R7
+   \   000000AA   0x.... 0x....      BL       GPIO_ResetBits
+    304          	Delay_Nus(2);
+   \   000000AE   0x2002             MOVS     R0,#+2
+   \   000000B0   0x.... 0x....      BL       Delay_Nus
+    305          	SPI_CS_HIGH();
+   \   000000B4   0xF44F 0x7180      MOV      R1,#+256
+   \   000000B8   0x4638             MOV      R0,R7
+   \   000000BA   0x.... 0x....      BL       GPIO_SetBits
+    306          	return (data);
+   \   000000BE   0x4628             MOV      R0,R5
+   \   000000C0   0xB280             UXTH     R0,R0
+   \   000000C2   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    307          }
+    308          
+    309          /*******************************************************************************
+    310          * 名    称： BSP_ADCInit
+    311          * 功    能： ADC7682初始化
+    312          * 入口参数： 无
+    313          * 出口参数： 无
+    314          * 作　　者： wumingshen.
+    315          * 创建日期： 2015-12-07
+    316          * 修    改：
+    317          * 修改日期：
+    318          * 备    注：
+    319          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    320          void BSP_ADCInit( void )
+    321          {
+   \                     BSP_ADCInit: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    322          	SPI_GpioInit(); 
+   \   00000002   0x.... 0x....      BL       SPI_GpioInit
+    323              
+    324          	SPI_CS_HIGH();
+   \   00000006   0x....             LDR.N    R4,??DataTable3  ;; 0x40011000
+   \   00000008   0xF44F 0x7180      MOV      R1,#+256
+   \   0000000C   0x4620             MOV      R0,R4
+   \   0000000E   0x.... 0x....      BL       GPIO_SetBits
+    325          	SPI_MISO_HIGH();
+   \   00000012   0x2140             MOVS     R1,#+64
+   \   00000014   0x....             LDR.N    R0,??DataTable3_1  ;; 0x40010800
+   \   00000016   0x.... 0x....      BL       GPIO_SetBits
+    326          	SPI_SCK_HIGH();
+   \   0000001A   0xF44F 0x7100      MOV      R1,#+512
+   \   0000001E   0x4620             MOV      R0,R4
+   \   00000020   0x.... 0x....      BL       GPIO_SetBits
+    327              
+    328          	Delay_Nus(30);
+   \   00000024   0x201E             MOVS     R0,#+30
+   \   00000026   0x.... 0x....      BL       Delay_Nus
+    329          	AD7682_spi(0);
+   \   0000002A   0x2000             MOVS     R0,#+0
+   \   0000002C   0x.... 0x....      BL       AD7682_spi
+    330          	AD7682_spi(0); 
+   \   00000030   0x2000             MOVS     R0,#+0
+   \   00000032   0xE8BD 0x4010      POP      {R4,LR}
+   \   00000036   0x....             B.N      AD7682_spi
+    331          }
+    332          
+    333          
+    334          /*******************************************************************************
+    335          * 名    称： Get_ADC_10times_Value
+    336          * 功    能： 采样 ch 选择通道  前三次采集无效。 采集10次，去掉最大值和最小值
+    337          * 入口参数： ch - 通道序号（0~3）
+    338          * 出口参数： 无
+    339          * 作　　者： wumingshen.
+    340          * 创建日期： 2015-12-07
+    341          * 修    改：
+    342          * 修改日期：
+    343          * 备    注：
+    344          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    345           uint16_t BSP_ADCGetValue(uint8_t ch)
+    346          {
+   \                     BSP_ADCGetValue: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB0E5             SUB      SP,SP,#+404
+   \   00000004   0x4605             MOV      R5,R0
+    347          #define SAMPLE_TIMES            100
+    348          #define FILTER_LEN              10
+    349          #if (FILTER_LEN * 2 + 1) > SAMPLE_TIMES
+    350          #error  "FILTER_LEN 太大，过滤参数太多"
+    351          #endif
+    352          	uint16_t      x;    
+    353          	long       sum             = 0;
+   \   00000006   0x2400             MOVS     R4,#+0
+    354              
+    355              uint16_t      buf[SAMPLE_TIMES];
+    356              uint16_t      After[SAMPLE_TIMES];
+    357              /***********************************************
+    358              * 描述： 参数过虑
+    359              */
+    360              if ( ch > 3 )
+   \   00000008   0x2D04             CMP      R5,#+4
+   \   0000000A   0xDB01             BLT.N    ??BSP_ADCGetValue_0
+    361                  return  0;
+   \   0000000C   0x4620             MOV      R0,R4
+   \   0000000E   0xE027             B.N      ??BSP_ADCGetValue_1
+    362              
+    363              /***********************************************
+    364              * 描述： 丢掉前前一次采样值 
+    365              */
+    366          	AD7682_spi(ch);
+   \                     ??BSP_ADCGetValue_0: (+1)
+   \   00000010   0x.... 0x....      BL       AD7682_spi
+    367          	
+    368              /***********************************************
+    369              * 描述： 开始采集
+    370              */
+    371          	for(u8 i = 0; i < SAMPLE_TIMES; i++) {
+   \   00000014   0x4626             MOV      R6,R4
+   \   00000016   0xE006             B.N      ??BSP_ADCGetValue_2
+    372          		buf[i]      = AD7682_spi(ch);
+   \                     ??BSP_ADCGetValue_3: (+1)
+   \   00000018   0x4628             MOV      R0,R5
+   \   0000001A   0x.... 0x....      BL       AD7682_spi
+   \   0000001E   0xA932             ADD      R1,SP,#+200
+   \   00000020   0xF821 0x0017      STRH     R0,[R1, R7, LSL #+1]
+    373          	}
+   \   00000024   0x1C76             ADDS     R6,R6,#+1
+   \                     ??BSP_ADCGetValue_2: (+1)
+   \   00000026   0xB2F6             UXTB     R6,R6
+   \   00000028   0x4637             MOV      R7,R6
+   \   0000002A   0x2F64             CMP      R7,#+100
+   \   0000002C   0xDBF4             BLT.N    ??BSP_ADCGetValue_3
+    374              
+    375              /***********************************************
+    376              * 描述： 一次滤波：排序
+    377              */
+    378              App_BubbleAscendingArray(buf, SAMPLE_TIMES, After);
+   \   0000002E   0x466A             MOV      R2,SP
+   \   00000030   0x2164             MOVS     R1,#+100
+   \   00000032   0xA832             ADD      R0,SP,#+200
+   \   00000034   0x.... 0x....      BL       App_BubbleAscendingArray
+    379              u16 *p  = After;
+    380              
+    381              /***********************************************
+    382              * 描述： 一次滤波：排序
+    383              */
+    384              for(u8 i = FILTER_LEN; i < SAMPLE_TIMES - FILTER_LEN;i++) {
+   \   00000038   0x200A             MOVS     R0,#+10
+   \   0000003A   0x466A             MOV      R2,SP
+   \   0000003C   0xE003             B.N      ??BSP_ADCGetValue_4
+    385                  sum += p[i];
+   \                     ??BSP_ADCGetValue_5: (+1)
+   \   0000003E   0xF832 0x1011      LDRH     R1,[R2, R1, LSL #+1]
+   \   00000042   0x190C             ADDS     R4,R1,R4
+    386              }
+   \   00000044   0x1C40             ADDS     R0,R0,#+1
+   \                     ??BSP_ADCGetValue_4: (+1)
+   \   00000046   0xB2C0             UXTB     R0,R0
+   \   00000048   0x4601             MOV      R1,R0
+   \   0000004A   0x295A             CMP      R1,#+90
+   \   0000004C   0xDBF7             BLT.N    ??BSP_ADCGetValue_5
+    387              
+    388              x = (uint16_t)(sum/(float)(SAMPLE_TIMES - FILTER_LEN*2));
+    389              
+    390          	return (x);
+   \   0000004E   0x4620             MOV      R0,R4
+   \   00000050   0x.... 0x....      BL       __aeabi_i2f
+   \   00000054   0x....             LDR.N    R1,??DataTable3_2  ;; 0x42a00000
+   \   00000056   0x.... 0x....      BL       __aeabi_fdiv
+   \   0000005A   0x.... 0x....      BL       __aeabi_f2iz
+   \   0000005E   0xB280             UXTH     R0,R0
+   \                     ??BSP_ADCGetValue_1: (+1)
+   \   00000060   0xB065             ADD      SP,SP,#+404
+   \   00000062   0xBDF0             POP      {R4-R7,PC}       ;; return
+    391          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3:
+   \   00000000   0x40011000         DC32     0x40011000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \   00000000   0x40010800         DC32     0x40010800
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_2:
+   \   00000000   0x42A00000         DC32     0x42a00000
+    392          
+    393          /*******************************************************************************
+    394          * 				                end of file                                    *
+    395          *******************************************************************************/
+    396          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   AD7682_spi
+        24   -> Delay_Nus
+        24   -> GPIO_ReadInputDataBit
+        24   -> GPIO_ResetBits
+        24   -> GPIO_SetBits
+     424   BSP_ADCGetValue
+       424   -> AD7682_spi
+       424   -> App_BubbleAscendingArray
+       424   -> __aeabi_f2iz
+       424   -> __aeabi_fdiv
+       424   -> __aeabi_i2f
+       8   BSP_ADCInit
+         0   -> AD7682_spi
+         8   -> AD7682_spi
+         8   -> Delay_Nus
+         8   -> GPIO_SetBits
+         8   -> SPI_GpioInit
+      16   SPI_GpioInit
+        16   -> GPIO_Init
+        16   -> GPIO_SetBits
+        16   -> RCC_APB2PeriphClockCmd
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+     196  AD7682_spi
+     100  BSP_ADCGetValue
+      56  BSP_ADCInit
+     110  SPI_GpioInit
+
+ 
+ 474 bytes in section .text
+ 
+ 474 bytes of CODE memory
+
+Errors: none
+Warnings: none

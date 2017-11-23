@@ -1,0 +1,436 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       17/Nov/2017  11:33:10
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\BSP\Driver\DS3231.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\DS3231.c -D
+#        USE_STDPERIPH_DRIVER -D _STM32F10X_HD -D STM32F10X_CL -D DEBUG -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\DS3231.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\DS3231.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\Driver\DS3231.c
+      1          
+      2          #include    "stm32f10x.h"
+      3          #include	"I2C_CLK.h"
+      4          #include	"DS3231.h"
+      5          #include    <stdio.h>
+      6          #include    "Display.h"
+      7          #include    "DELAY.h"
+      8          #include    "POWER_MACRO.h"
+      9          #include  <includes.h>
+     10          
+     11          
+     12          #define     DS3231_ADDR     		0xD0
+     13          
+     14          #define     DS3231_SEC      		0x00
+     15          #define     DS3231_MIN      		0x01
+     16          #define     DS3231_HOUR     		0x02
+     17          #define     DS3231_DAT      		0x03	  //日期
+     18          #define     DS3231_DAY     		    0x04
+     19          #define     DS3231_MONTH    		0x05
+     20          #define     DS3231_YEAR     		0x06
+     21          
+     22          #define     DS3231_CONTROL      	0x0E
+     23          #define     DS3231_STATUS       	0x0F
+     24          #define     DS3231_AGING_OFFSET     0x10
+     25          #define     DS3231_TEMP_MSB     	0x11
+     26          #define     DS3231_TEMP_LSB     	0x12
+     27          
+     28          #define     RCC_GPIO_RST_CLK        RCC_APB2Periph_GPIOB
+     29          #define     RST_CLK                 GPIO_Pin_0
+     30          #define     GPIO_RST_CLK_PORT       GPIOB
+     31          
+     32          
+     33          /***********************************************
+     34          * 描述： OS接口
+     35          */
+     36          #if UCOS_EN     == DEF_ENABLED
+     37              #if OS_VERSION > 30000U
+     38              static  OS_SEM                   Bsp_Sem;    // 信号量
+     39              #else
+     40              static  OS_EVENT                *Bsp_Sem;    // 信号量
+     41              #endif
+     42          #endif
+     43              
+     44              
+     45          #if (UCOS_EN     == DEF_ENABLED)
+     46          /*******************************************************************************
+     47          * 名    称： EEP_WaitEvent
+     48          * 功    能： 等待信号量
+     49          * 入口参数： 无
+     50          * 出口参数：  0（操作有误），1（操作成功）
+     51          * 作　 　者： 无名沈
+     52          * 创建日期： 2015-08-18
+     53          * 修    改：
+     54          * 修改日期：
+     55          * 备    注： 仅在使用UCOS操作系统时使用
+     56          *******************************************************************************/
+     57          static uint8_t EEP_WaitEvent(void)
+     58          {
+     59              /***********************************************
+     60              * 描述： OS接口
+     61              */
+     62          
+     63          #if OS_VERSION > 30000U
+     64              return BSP_OS_SemWait(&Bsp_Sem,0);           // 等待信号量
+     65          #else
+     66              uint8_t       err;
+     67              OSSemPend(Bsp_Sem,0,&err);                   // 等待信号量
+     68              if ( err = OS_ERR_NONE )
+     69                return TRUE;
+     70              else
+     71                return FALSE;
+     72          #endif
+     73          }
+     74          
+     75          /*******************************************************************************
+     76          * 名    称： EEP_SendEvent
+     77          * 功    能： 释放信号量
+     78          * 入口参数： 无
+     79          * 出口参数： 无
+     80          * 作　 　者： 无名沈
+     81          * 创建日期： 2015-08-18
+     82          * 修    改：
+     83          * 修改日期：
+     84          * 备    注： 仅在使用UCOS操作系统时使用
+     85          *******************************************************************************/
+     86          static void EEP_SendEvent(void)
+     87          {
+     88              /***********************************************
+     89              * 描述： OS接口
+     90              */
+     91          #if OS_VERSION > 30000U
+     92              BSP_OS_SemPost(&Bsp_Sem);                        // 发送信号量
+     93          #else
+     94              uint8_t       err;
+     95              OSSemPost(Bsp_Sem);                              // 发送信号量
+     96          #endif
+     97          }
+     98          #endif /* end of (UCOS_EN     == DEF_ENABLED)*/
+     99          
+    100          /*******************************************************************************
+    101          * Function Name  : GPIO_RST_CLK_Configuration
+    102          * Description    : 时钟复位脚
+    103          * Input          : None
+    104          * Output         : None
+    105          * Return         : None
+    106          *******************************************************************************/
+    107          void GPIO_RST_CLK_Configuration(void)
+    108          {
+    109            GPIO_InitTypeDef  GPIO_InitStructure; 
+    110          
+    111            RCC_APB2PeriphClockCmd(RCC_GPIO_RST_CLK,ENABLE);   
+    112          
+    113            GPIO_InitStructure.GPIO_Pin =  RST_CLK;
+    114            GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+    115            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    116            GPIO_Init(GPIO_RST_CLK_PORT, &GPIO_InitStructure);
+    117          }
+    118          
+    119          
+    120          //-------------------------------------------------------------------------------------------------------
+    121          //函数名称:         uint8 BCD2HEX(uint8 Bcd)  
+    122          //功    能:         将BCD码变为二进制码
+    123          //入口参数:         BCD码数据  
+    124          //出口参数:         二进行制数
+    125          //说明：            
+    126          //--------------------------------------------------------------------------------------------------------
+    127          uint8_t BCD2HEX(uint8_t Bcd)  
+    128          {
+    129              uint8_t   Hex;
+    130              Hex = (Bcd & 0x0f) + ((Bcd>>4) & 0x0f)*10;
+    131              
+    132              return Hex;
+    133          }
+    134          
+    135          //-------------------------------------------------------------------------------------------------------
+    136          //函数名称:         uint8 BCD2HEX(uint8 Bcd)  
+    137          //功    能:         将BCD码变为二进制码
+    138          //入口参数:         BCD码数据  
+    139          //出口参数:         二进行制数
+    140          //说明：            
+    141          //--------------------------------------------------------------------------------------------------------
+    142          uint8_t HEX2BCD(uint8_t Hex)  
+    143          {
+    144              uint8_t   Bcd;
+    145              
+    146              Bcd = Hex %10 + (((Hex/10)%10)<<4);
+    147              
+    148              return Bcd;
+    149          }
+    150          
+    151          //-------------------------------------------------------------------------------------------------------
+    152          //函数名称:         ReadDS3231Byte()
+    153          //功    能:         从DS3231中读出一个字节
+    154          //入口参数:         DS3231设备号， 读取数据的地址
+    155          //出口参数:         返回读出的值
+    156          //说明：            
+    157          //--------------------------------------------------------------------------------------------------------
+    158          uint8_t ReadDS3231Byte(uint8_t addr)  
+    159          {
+    160              uint8_t   SlaveAddr;
+    161              uint8_t   Data;	
+    162              
+    163              SlaveAddr = DS3231_ADDR & (~(0x01));            //从机地址
+    164              
+    165          	Data = Single_Read(SlaveAddr , addr);
+    166              
+    167              return  Data;
+    168          }    
+    169          
+    170          //-------------------------------------------------------------------------------------------------------
+    171          //函数名称:         void WriteDS3231Byte(uint8 addr,uint8   Data)  
+    172          //功    能:         写一个字节到DS3231中
+    173          //入口参数:         addr:DS3231地址， Data:要写入的数据
+    174          //出口参数:         返回读出的值
+    175          //--------------------------------------------------------------------------------------------------------
+    176          void WriteDS3231Byte(uint8_t Addr,uint8_t Data)  
+    177          {
+    178              uint8_t   SlaveAddr;
+    179              
+    180              SlaveAddr = DS3231_ADDR & (~(0x01));            //从设备地址
+    181             
+    182              Single_Write(SlaveAddr , Addr , Data);
+    183          }      
+    184          
+    185          
+    186          //-------------------------------------------------------------------------------------------------------
+    187          //函数名称:         ReadTemp(void)  
+    188          //功    能:         从DS3231中读出温度
+    189          //入口参数:         无
+    190          //出口参数:         返回读出的温度
+    191          //说明：            
+    192          //--------------------------------------------------------------------------------------------------------
+    193          float ReadTemp(void)  
+    194          {
+    195          	float         Temp;
+    196          	uint8_t       TempMsb;
+    197          	uint8_t       TempLsb;
+    198          	
+    199          	WriteDS3231Byte(DS3231_CONTROL,0x20);
+    200          	
+    201          	TempMsb  = ReadDS3231Byte(DS3231_TEMP_MSB);      //读高位
+    202          	TempLsb  = ReadDS3231Byte(DS3231_TEMP_LSB);      //读低位
+    203          	
+    204          	//	Temp = TempMsb + TempLsb/64*0.25;
+    205          	//	Temp = Temp + 0.25;
+    206          	Temp = (float)(TempMsb) + (float)(TempLsb)/256;
+    207          	//	tem = TempMsb + TempLsb/64*0.25;
+    208          	//  printf("\r\n当前温度：tem = %d,Temp = %d,TempMsb = %d,TempLsb = %d,",tem,Temp,TempMsb,TempLsb);
+    209          	printf("\r\n时钟芯片DS3231SN当前温度：Temp = %5.2f℃,TempMsb = %d,TempLsb = %d",Temp,TempMsb,TempLsb);		
+    210          	return  Temp;
+    211          }
+    212          
+    213          //-------------------------------------------------------------------------------------------------------
+    214          //函数名称:         stcTime     ReadTime(void)  
+    215          //功    能:         写DS3231时间
+    216          //入口参数:         写时间
+    217          //出口参数:         
+    218          //--------------------------------------------------------------------------------------------------------
+    219          void    WriteTime(TIME  sTime)  
+    220          {
+    221          	uint8_t   	Sec;
+    222          	uint8_t   	Min;
+    223          	uint8_t     Hour;	
+    224          	uint8_t     Day;
+    225          	uint8_t     Month;
+    226          	uint8_t     Year;
+    227          	
+    228          #if (UCOS_EN     == DEF_ENABLED)
+    229              /***********************************************
+    230              * 描述： OS接口
+    231              */
+    232              EEP_WaitEvent();                            // 等信号量
+    233          #endif
+    234          	Sec     =   HEX2BCD(sTime.Sec);		
+    235          	Min     =   HEX2BCD(sTime.Min);		
+    236          	Hour    =   HEX2BCD(sTime.Hour);	
+    237          	Day     =   HEX2BCD(sTime.Day);		
+    238          	Month   =   HEX2BCD(sTime.Month);		
+    239          	Year    =   HEX2BCD(sTime.Year);
+    240          	
+    241          	WriteDS3231Byte(DS3231_SEC,Sec);     
+    242          	WriteDS3231Byte(DS3231_MIN,Min);        
+    243          	WriteDS3231Byte(DS3231_HOUR,Hour);
+    244          	WriteDS3231Byte(DS3231_DAY,Day);    
+    245          	WriteDS3231Byte(DS3231_MONTH,Month);  
+    246          	WriteDS3231Byte(DS3231_YEAR,Year);     
+    247          #if (UCOS_EN     == DEF_ENABLED)
+    248              EEP_SendEvent();                            // 释放信号量
+    249          #endif     
+    250          }
+    251          
+    252          //-------------------------------------------------------------------------------------------------------
+    253          //函数名称:         void    SetTime(uint8_t Year,uint8_t Month,uint8_t Day,uint8_t Hour,uint8_t Min,uint8_t Sec)   
+    254          //功    能:         设置时间
+    255          //入口参数:         
+    256          //出口参数:         
+    257          //说明：            
+    258          //--------------------------------------------------------------------------------------------------------
+    259          void SetTime(uint8_t Year,uint8_t Month,uint8_t Day,uint8_t Hour,uint8_t Min,uint8_t Sec)  
+    260          {
+    261            TIME  sTime;
+    262          
+    263            sTime.Sec   = Sec;  				
+    264            sTime.Min   = Min;  				
+    265            sTime.Hour  = Hour; 			
+    266            sTime.Day  = Day; 			
+    267            sTime.Month = Month;    			
+    268            sTime.Year  = Year;	
+    269            
+    270            WriteTime(sTime);	
+    271          }
+    272          
+    273          //-------------------------------------------------------------------------------------------------------
+    274          //函数名称:         void    InitDS3231(void)  
+    275          //功    能:         初始化DS3231设备模式
+    276          //入口参数:         无
+    277          //出口参数:         无
+    278          //--------------------------------------------------------------------------------------------------------
+    279          void    InitDS3231(void)  
+    280          {
+    281              
+    282          	WriteDS3231Byte(DS3231_CONTROL,0);     
+    283          	
+    284          	WriteDS3231Byte(DS3231_STATUS,0);
+    285          
+    286              
+    287              /***********************************************
+    288              * 描述： OS接口
+    289              */
+    290          #if (UCOS_EN     == DEF_ENABLED)
+    291          #if OS_VERSION > 30000U
+    292              BSP_OS_SemCreate(&Bsp_Sem,1, "Bsp EepSem");      // 创建信号量
+    293          #else
+    294              Bsp_Sem     = OSSemCreate(1);                    // 创建信号量
+    295          #endif
+    296          #endif
+    297                	
+    298          }
+    299          
+    300          
+    301          void GetTime(TIME *t)
+    302          {
+    303          	uint8_t   	Sec;
+    304              uint8_t   	Min;
+    305              uint8_t     Hour;
+    306              uint8_t     Day;
+    307              uint8_t     Month;
+    308              uint8_t     Year;
+    309              	
+    310          #if (UCOS_EN     == DEF_ENABLED)
+    311              /***********************************************
+    312              * 描述： OS接口
+    313              */
+    314              EEP_WaitEvent();                            // 等信号量
+    315          #endif
+    316              Sec     = ReadDS3231Byte(DS3231_SEC); 
+    317              Min     = ReadDS3231Byte(DS3231_MIN);  
+    318              Hour    = ReadDS3231Byte(DS3231_HOUR);  
+    319              Day     = ReadDS3231Byte(DS3231_DAY); 
+    320              Month   = ReadDS3231Byte(DS3231_MONTH); 
+    321              Year    = ReadDS3231Byte(DS3231_YEAR);
+    322              	
+    323              t->Sec   = BCD2HEX(Sec); 				
+    324              t->Min   = BCD2HEX(Min); 				
+    325              t->Hour  = BCD2HEX(Hour);    			
+    326              t->Day   = BCD2HEX(Day);    			
+    327              t->Month = BCD2HEX(Month);   			
+    328              t->Year  = BCD2HEX(Year);
+    329          #if (UCOS_EN     == DEF_ENABLED)
+    330              EEP_SendEvent();                            // 释放信号量
+    331          #endif
+    332          }
+    333          
+    334          
+    335          //-------------------------------------------------------------------------------------------------------
+    336          //函数名称:         void   DisplayTime()   
+    337          //功    能:         显示时间
+    338          //入口参数:         无
+    339          //出口参数:         无
+    340          //说明：            
+    341          //--------------------------------------------------------------------------------------------------------
+    342          void DisplayTime(void)
+    343          {   
+    344          #if (UCOS_EN     == DEF_ENABLED)
+    345              /***********************************************
+    346              * 描述： OS接口
+    347              */
+    348              EEP_WaitEvent();                            // 等信号量
+    349          #endif
+    350          
+    351          	GetTime((TIME *)&recordsfr.Time[0]);
+    352          	uartprintf("\r\n 当前时间为：20%d-%d-%d  %d:%u:%d", recordsfr.Time[0], recordsfr.Time[1], recordsfr.Time[2],
+    353          	                                                recordsfr.Time[3], recordsfr.Time[4], recordsfr.Time[5]);				
+    354              
+    355          #if (UCOS_EN     == DEF_ENABLED)
+    356              EEP_SendEvent();                            // 释放信号量
+    357          #endif
+    358          }
+
+Errors: 8
+Warnings: 1

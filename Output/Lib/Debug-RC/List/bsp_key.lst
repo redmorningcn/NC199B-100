@@ -1,0 +1,665 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       16/Nov/2017  10:23:40
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_key.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_key.c -D
+#        USE_STDPERIPH_DRIVER -D _STM32F10X_HD -D STM32F10X_CL -D DEBUG -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\bsp_key.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\bsp_key.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_key.c
+      1          /*******************************************************************************
+      2          *   Filename:       bsp_key.c
+      3          *   Revised:        All copyrights reserved to Roger.
+      4          *   Date:           2015-08-11
+      5          *   Revision:       v1.0
+      6          *   Writer:	     无名.沈.
+      7          *
+      8          *   Description:    按键驱动模块
+      9          *                   可以识别长按，短按，双击，旋转编码器的操作。
+     10          *
+     11          *
+     12          *   Notes:
+     13          *
+     14          *   All copyrights reserved to 无名.沈
+     15          *******************************************************************************/
+     16          
+     17          /*******************************************************************************
+     18          * INCLUDES
+     19          */
+     20          #include <includes.h>
+     21          #include <global.h>
+     22          #include <bsp_key.h>
+     23          
+     24          #define BSP_KEY_MODULE_EN 1
+     25          #if BSP_KEY_MODULE_EN > 0
+     26          /*******************************************************************************
+     27          * CONSTANTS
+     28          */
+     29          #define KEY_SPEED_FAST			5
+     30          #define KEY_SPEED_MIDDLE		200
+     31          #define KEY_SPEED_SLOW			600
+     32          
+     33          
+
+   \                                 In section .data, align 4
+     34          StrKeyEvt Key = {
+   \                     Key:
+   \   00000000   0x00000000         DC32 0H
+   \   00000004   0x00 0x01          DC8 0, 1
+   \   00000006   0xE000 0x0258      DC16 57344, 600
+   \   0000000A   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+     35              NULL,                           // *pkey
+     36              KEY_MENU_HOME,                  // menu
+     37              1,                              // lock
+     38              KEY_EVT_NULL,                   // evt
+     39              0,                              // step
+     40              0,                              // mode
+     41              KEY_VAL_NULL,                   // val
+     42              KEY_SPEED_SLOW,                 // cnt
+     43              0,
+     44              0,
+     45              {0}
+     46          };
+     47          
+     48          //============================================================================//
+     49          
+     50          
+     51          
+     52          /*******************************************************************************
+     53          * 名    称： KEY_Init
+     54          * 功    能： 按键引脚初始化
+     55          * 入口参数： 无
+     56          * 出口参数： 无
+     57          * 作　 　者： 无名沈.
+     58          * 创建日期： 2015-06-25
+     59          * 修    改：
+     60          * 修改日期：
+     61          * 备    注：
+     62          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     63          void KEY_Init( void )
+     64          {
+   \                     KEY_Init: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     65              GPIO_InitTypeDef GPIO_InitStructure;
+     66          
+     67              /* Enable GPIOB clocks */
+     68              RCC_APB2PeriphClockCmd(KEY_PORT_RCC,ENABLE);
+   \   00000002   0x2101             MOVS     R1,#+1
+   \   00000004   0x2008             MOVS     R0,#+8
+   \   00000006   0x.... 0x....      BL       RCC_APB2PeriphClockCmd
+     69          
+     70              /* Set PC.0 ~ PC.6 GPIO_Mode_IPU*/
+     71              GPIO_InitStructure.GPIO_Pin     = KEY_GPIO_PWR
+     72                                              | KEY_GPIO_NRELOAD
+     73                                              | KEY_GPIO_NRESET;
+   \   0000000A   0xF44F 0x4060      MOV      R0,#+57344
+   \   0000000E   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+     74          
+     75              GPIO_InitStructure.GPIO_Speed   = GPIO_Speed_2MHz;
+   \   00000012   0x2002             MOVS     R0,#+2
+   \   00000014   0xF88D 0x0002      STRB     R0,[SP, #+2]
+     76              GPIO_InitStructure.GPIO_Mode    = GPIO_Mode_IPU;
+   \   00000018   0x2048             MOVS     R0,#+72
+   \   0000001A   0xF88D 0x0003      STRB     R0,[SP, #+3]
+     77              GPIO_Init(KEY_PORT, &GPIO_InitStructure);
+   \   0000001E   0x4669             MOV      R1,SP
+   \   00000020   0x....             LDR.N    R0,??DataTable3  ;; 0x40010c00
+   \   00000022   0x.... 0x....      BL       GPIO_Init
+     78          
+     79              /* Set PA.11 ~ PA.12 GPIO_Mode_IPU*/
+     80          //    GPIO_InitStructure.GPIO_Pin = KEY_GPIO_BMA    | KEY_GPIO_BMB;
+     81          //    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+     82          //    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+     83          //    GPIO_Init(GPIOA, &GPIO_InitStructure);
+     84          }
+   \   00000026   0xBD01             POP      {R0,PC}          ;; return
+     85          
+     86          
+     87          /*******************************************************************************
+     88          * 名    称： KEY_Init
+     89          * 功    能： 按键引脚初始化
+     90          * 入口参数： key ；按键的所有对应事件
+     91          * 出口参数： 0、无按键；1、有按钮事件；2、无
+     92          * 作　 　者： 无名.沈.
+     93          * 创建日期： 2015-06-25
+     94          * 修    改：
+     95          * 修改日期：
+     96          * 备    注：
+     97          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     98          uint8_t KEY_GetKey( StrKeyEvt *key )
+     99          {
+   \                     KEY_GetKey: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    100              static  INT16S  speed   = KEY_SPEED_SLOW;
+    101              INT16U          keys;
+    102          
+    103              /***********************************************
+    104              * 描述：检测旋转编码器（优先级最高）
+    105              */
+    106          //    if( KEY_GetEncodingKey(key) )
+    107          //        return TRUE;
+    108              /***********************************************
+    109              * 描述：按钮按住
+    110              */
+    111              keys = KEY_KEYS;                                // 初始化键值
+    112          
+    113              /***********************************************
+    114              * 描述：有键按下或按住
+    115              */
+    116              if ( ( keys & GPIO_ReadInputData(KEY_PORT) ) != keys ) {
+   \   00000004   0x....             LDR.N    R5,??DataTable3  ;; 0x40010c00
+   \   00000006   0x4628             MOV      R0,R5
+   \   00000008   0x.... 0x....      BL       GPIO_ReadInputData
+   \   0000000C   0xF400 0x4060      AND      R0,R0,#0xE000
+   \   00000010   0xF5B0 0x4F60      CMP      R0,#+57344
+   \   00000014   0xD03E             BEQ.N    ??KEY_GetKey_0
+    117          //#if ( OSAL_EN == DEF_ENABLED )
+    118          //        static INT08U   flag    = 0;
+    119          //        flag    = ~flag;
+    120          //        if ( flag ) {
+    121          //            osal_start_timerRl( OS_TASK_ID_KEY,
+    122          //                                (1<<0),
+    123          //                                5);
+    124          //        } else {
+    125          //#else
+    126                  BSP_OS_TimeDly(5);                               // 延时一下
+   \   00000016   0x2005             MOVS     R0,#+5
+   \   00000018   0x.... 0x....      BL       BSP_OS_TimeDly
+    127          //#endif
+    128                  if ( ( keys & GPIO_ReadInputData(KEY_PORT) ) != keys ) {        // 依然有键按下
+   \   0000001C   0x4628             MOV      R0,R5
+   \   0000001E   0x.... 0x....      BL       GPIO_ReadInputData
+   \   00000022   0xF400 0x4060      AND      R0,R0,#0xE000
+   \   00000026   0xF5B0 0x4F60      CMP      R0,#+57344
+   \   0000002A   0xD036             BEQ.N    ??KEY_GetKey_1
+    129                      keys    = GPIO_ReadInputData(KEY_PORT);                     // 读取键值
+   \   0000002C   0x4628             MOV      R0,R5
+   \   0000002E   0x.... 0x....      BL       GPIO_ReadInputData
+    130                      keys   &= KEY_KEYS;
+   \   00000032   0xF400 0x4060      AND      R0,R0,#0xE000
+    131                      key->val= keys;
+   \   00000036   0x80E0             STRH     R0,[R4, #+6]
+   \   00000038   0x7961             LDRB     R1,[R4, #+5]
+   \   0000003A   0xF3C1 0x0181      UBFX     R1,R1,#+2,#+2
+   \   0000003E   0x2900             CMP      R1,#+0
+   \   00000040   0xD001             BEQ.N    ??KEY_GetKey_2
+   \   00000042   0x2902             CMP      R1,#+2
+   \   00000044   0xD10D             BNE.N    ??KEY_GetKey_3
+    132                      /***********************************************
+    133                      * 描述：按下
+    134                      */
+    135                      if ( ( key->evt == KEY_EVT_NULL ) ||
+    136                          ( key->evt == KEY_EVT_UP ) ) {
+    137                              key->val	= keys;
+   \                     ??KEY_GetKey_2: (+1)
+   \   00000046   0x80E0             STRH     R0,[R4, #+6]
+    138                              key->evt	= KEY_EVT_DOWN;
+   \   00000048   0x7960             LDRB     R0,[R4, #+5]
+   \   0000004A   0xF000 0x00F3      AND      R0,R0,#0xF3
+   \   0000004E   0xF040 0x0004      ORR      R0,R0,#0x4
+   \   00000052   0x7160             STRB     R0,[R4, #+5]
+    139                              key->cnt	= KEY_SPEED_SLOW;
+   \   00000054   0xF44F 0x7016      MOV      R0,#+600
+   \   00000058   0x8120             STRH     R0,[R4, #+8]
+    140                              speed       = KEY_SPEED_SLOW;
+   \   0000005A   0x....             LDR.N    R1,??DataTable3_1
+   \   0000005C   0x8008             STRH     R0,[R1, #+0]
+    141                              //UartPutString( (CHAR*)"\r\n按下" );
+    142                              return	KEY_STATUS_EVENT;
+   \   0000005E   0x2001             MOVS     R0,#+1
+   \   00000060   0xBD32             POP      {R1,R4,R5,PC}
+    143                          }
+    144          
+    145                      /***********************************************
+    146                      * 描述：按住
+    147                      */
+    148                      if ( --key->cnt == 0 ) {
+   \                     ??KEY_GetKey_3: (+1)
+   \   00000062   0x8920             LDRH     R0,[R4, #+8]
+   \   00000064   0x1E40             SUBS     R0,R0,#+1
+   \   00000066   0x8120             STRH     R0,[R4, #+8]
+   \   00000068   0xB280             UXTH     R0,R0
+   \   0000006A   0x2800             CMP      R0,#+0
+   \   0000006C   0xD110             BNE.N    ??KEY_GetKey_4
+    149                          speed   -= 10;
+   \   0000006E   0x....             LDR.N    R0,??DataTable3_1
+   \   00000070   0x8801             LDRH     R1,[R0, #+0]
+   \   00000072   0x390A             SUBS     R1,R1,#+10
+   \   00000074   0x8001             STRH     R1,[R0, #+0]
+    150                          if ( speed <= KEY_SPEED_FAST ) {
+   \   00000076   0xB209             SXTH     R1,R1
+   \   00000078   0x2906             CMP      R1,#+6
+   \   0000007A   0xDA01             BGE.N    ??KEY_GetKey_5
+    151                              speed   = KEY_SPEED_FAST;
+   \   0000007C   0x2105             MOVS     R1,#+5
+   \   0000007E   0x8001             STRH     R1,[R0, #+0]
+    152                          }
+    153          
+    154                          key->cnt = speed;
+   \                     ??KEY_GetKey_5: (+1)
+   \   00000080   0x8800             LDRH     R0,[R0, #+0]
+   \   00000082   0x8120             STRH     R0,[R4, #+8]
+    155                          //UartPutString( COMM_PORT_MSG,"\r\n按住" );
+    156                          key->evt	= KEY_EVT_PRESSED;
+   \   00000084   0x7960             LDRB     R0,[R4, #+5]
+   \   00000086   0xF040 0x000C      ORR      R0,R0,#0xC
+   \   0000008A   0x7160             STRB     R0,[R4, #+5]
+    157                          return KEY_STATUS_EVENT;
+   \   0000008C   0x2001             MOVS     R0,#+1
+   \   0000008E   0xBD32             POP      {R1,R4,R5,PC}
+    158                      }
+    159                      return KEY_STATUS_PRESSED;
+   \                     ??KEY_GetKey_4: (+1)
+   \   00000090   0x2002             MOVS     R0,#+2
+   \   00000092   0xBD32             POP      {R1,R4,R5,PC}
+    160                  }
+    161          //#if ( OSAL_EN == DEF_ENABLED )
+    162          //        }
+    163          //#else
+    164          //#endif
+    165              } else {
+    166          //#if ( OSAL_EN == DEF_ENABLED )
+    167          //        osal_start_timerRl( OS_TASK_ID_KEY,
+    168          //                            (1<<0),
+    169          //                            5);
+    170          //#else
+    171                  BSP_OS_TimeDly(5);                               // 延时一下
+   \                     ??KEY_GetKey_0: (+1)
+   \   00000094   0x2005             MOVS     R0,#+5
+   \   00000096   0x.... 0x....      BL       BSP_OS_TimeDly
+    172          //#endif
+    173              }
+    174          
+    175              /***********************************************
+    176              * 描述：松开
+    177              */
+    178              if ( key->evt == KEY_EVT_DOWN || key->evt == KEY_EVT_PRESSED ) {
+   \                     ??KEY_GetKey_1: (+1)
+   \   0000009A   0x7960             LDRB     R0,[R4, #+5]
+   \   0000009C   0xF3C0 0x0181      UBFX     R1,R0,#+2,#+2
+   \   000000A0   0x2901             CMP      R1,#+1
+   \   000000A2   0xD001             BEQ.N    ??KEY_GetKey_6
+   \   000000A4   0x2903             CMP      R1,#+3
+   \   000000A6   0xD109             BNE.N    ??KEY_GetKey_7
+    179                  key->evt	= KEY_EVT_UP;
+   \                     ??KEY_GetKey_6: (+1)
+   \   000000A8   0xF000 0x00F3      AND      R0,R0,#0xF3
+   \   000000AC   0xF040 0x0008      ORR      R0,R0,#0x8
+   \   000000B0   0x7160             STRB     R0,[R4, #+5]
+    180                  key->cnt	= KEY_SPEED_SLOW;
+   \   000000B2   0xF44F 0x7016      MOV      R0,#+600
+   \   000000B6   0x8120             STRH     R0,[R4, #+8]
+    181                  //UartPutString( (CHAR*)"\r\n松开" );
+    182                  return KEY_STATUS_EVENT;
+   \   000000B8   0x2001             MOVS     R0,#+1
+   \   000000BA   0xBD32             POP      {R1,R4,R5,PC}
+    183                  /***********************************************
+    184                  * 描述：没有按键
+    185                  */
+    186              } else {
+    187                  key->val	= KEY_VAL_NULL;
+   \                     ??KEY_GetKey_7: (+1)
+   \   000000BC   0xF44F 0x4060      MOV      R0,#+57344
+   \   000000C0   0x80E0             STRH     R0,[R4, #+6]
+    188                  key->evt	= KEY_EVT_NULL;
+   \   000000C2   0x7960             LDRB     R0,[R4, #+5]
+   \   000000C4   0xF000 0x00F3      AND      R0,R0,#0xF3
+   \   000000C8   0x7160             STRB     R0,[R4, #+5]
+    189                  key->cnt	= KEY_SPEED_SLOW;
+   \   000000CA   0xF44F 0x7016      MOV      R0,#+600
+   \   000000CE   0x8120             STRH     R0,[R4, #+8]
+    190                  return KEY_STATUS_NULL;
+   \   000000D0   0x2000             MOVS     R0,#+0
+   \   000000D2   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    191              }
+    192          }
+
+   \                                 In section .data, align 2
+   \                     ??speed:
+   \   00000000   0x0258             DC16 600
+    193          
+    194          
+    195          /*******************************************************************************
+    196          研究了好阵子的编码开关程序，发现中断法，扫描法都无法很好地去抖。
+    197          后来在网上看到下面这种处理方式，经验证是最可靠地，非常好地避免了抖动问题。
+    198          不妨设旋转编码器的输出波形如下
+    199          ______        ______        ______        ______
+    200          正转时:  A相   ___|      |______|      |______|      |______|
+    201          
+    202          ______        ______        ______        ___
+    203          B相   ______|      |______|      |______|      |______|
+    204          
+    205          低位为A相         01  11 10  00 01  11 10  00 01  11 10  00 01  11
+    206          ______        ______        ______        ___
+    207          反转时:  A相   ______|      |______|      |______|      |______|
+    208          ______        ______        ______        ______
+    209          B相   ___|      |______|      |______|      |______|
+    210          低位为A相         10 11  01  00 10  11 01  00 10  11 01  00 10  11
+    211          
+    212          A相接在某端口上，对应检测代码为　if((REG32(P4SIN) & (1<<3)))  PhaseShift |= 0x01;
+    213          B相接在某端口上，对应检测代码为　if((REG32(P1SIN) & (1<<2)))  PhaseShift |= 0x02;
+    214          
+    215          PhaseShift的<1:0>两位表示当前AB两相的状态，<3:2>两位表示上一次AB两相的状态
+    216          正转时，AB相变化顺序为   01->11->10->00->01    低位为A相
+    217          因此正转时，PhaseShift的低四位值为 0111 1110 1000 0001
+    218          反转时，AB相变化顺序为   10->11->01->00->10    低位为A相
+    219          因此反转时，PhaseShift的低四位值为 1011 1101 0100 0010
+    220          *******************************************************************************/
+    221          /***********************************************
+    222          * 描述：相位代码
+    223          */
+    224          #define phase_no_move   0       // 0000 未转动
+    225          #define phase_dec      -1       // 0001 正转
+    226          #define phase_inc       1       // 0010 反转
+    227          #define phase_bad       2       // 0011 不可能
+    228          
+    229          /***********************************************
+    230          * 描述：假设正转为减，反转为加，则可得如下一表
+    231          */
+
+   \                                 In section .text, align 4, keep-with-next
+    232          const INT08S table_Phase[16]=
+   \                     table_Phase:
+   \   00000000   0x00 0xFF          DC8 0, 255, 1, 2, 1, 0, 2, 255, 255, 2, 0, 1, 2, 1, 255, 0
+   \              0x01 0x02    
+   \              0x01 0x00    
+   \              0x02 0xFF    
+   \              0xFF 0x02    
+   \              0x00 0x01    
+   \              0x02 0x01    
+   \              0xFF 0x00    
+    233          {
+    234              phase_no_move,    // 0000 未转动
+    235              phase_dec,        // 0001 正转
+    236              phase_inc,        // 0010 反转
+    237              phase_bad,        // 0011 不可能
+    238          
+    239              phase_inc,        // 0100 反转
+    240              phase_no_move,    // 0101 未转动
+    241              phase_bad,        // 0110 不可能
+    242              phase_dec,        // 0111 正转
+    243          
+    244              phase_dec,        // 1000 正转
+    245              phase_bad,        // 1001 不可能
+    246              phase_no_move,    // 1010 未转动
+    247              phase_inc,        // 1011 反转
+    248          
+    249              phase_bad,        // 1100 不可能
+    250              phase_inc,        // 1101 反转
+    251              phase_dec,        // 1110 正转
+    252              phase_no_move,    // 1111 未转动
+    253          
+    254          };
+    255          
+    256          /*******************************************************************************
+    257          * 名    称： KEY_GetEncodingKey
+    258          * 功    能： 获取旋转编码器的键值
+    259          * 入口参数： key ；按键的所有对应事件
+    260          * 出口参数： 0、无按键；1、有按钮事件；2、无
+    261          * 作　 　者： 无名.沈.
+    262          * 创建日期： 2015-06-25
+    263          * 修    改：
+    264          * 修改日期：
+    265          * 备    注：
+    266          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    267          uint8_t KEY_GetEncodingKey ( StrKeyEvt *key )
+    268          {
+   \                     KEY_GetEncodingKey: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    269              CPU_INT32U pin;
+    270          
+    271              static CPU_INT32U PhaseShift = 0;
+    272              static CPU_INT32S PhaseCount = 0;
+    273          
+    274              /***********************************************
+    275              * 描述：A相接在某端口上，对应检测代码为
+    276              */
+    277              pin = GPIO_ReadInputDataBit(KEY_PORT_BM, KEY_GPIO_BMA);
+   \   00000004   0x....             LDR.N    R6,??DataTable3  ;; 0x40010c00
+   \   00000006   0xF44F 0x5180      MOV      R1,#+4096
+   \   0000000A   0x4630             MOV      R0,R6
+   \   0000000C   0x.... 0x....      BL       GPIO_ReadInputDataBit
+    278              if (pin == 0)
+   \   00000010   0x....             LDR.N    R5,??DataTable3_2
+   \   00000012   0x2800             CMP      R0,#+0
+   \   00000014   0xD103             BNE.N    ??KEY_GetEncodingKey_0
+    279                  PhaseShift |= 0x01;
+   \   00000016   0x6828             LDR      R0,[R5, #+0]
+   \   00000018   0xF040 0x0001      ORR      R0,R0,#0x1
+   \   0000001C   0x6028             STR      R0,[R5, #+0]
+    280          
+    281              /***********************************************
+    282              * 描述：B相接在某端口上，对应检测代码为
+    283              */
+    284              pin = GPIO_ReadInputDataBit(KEY_PORT_BM, KEY_GPIO_BMB);
+   \                     ??KEY_GetEncodingKey_0: (+1)
+   \   0000001E   0xF44F 0x6100      MOV      R1,#+2048
+   \   00000022   0x4630             MOV      R0,R6
+   \   00000024   0x.... 0x....      BL       GPIO_ReadInputDataBit
+    285              if (pin == 0)
+   \   00000028   0x2800             CMP      R0,#+0
+   \   0000002A   0xD103             BNE.N    ??KEY_GetEncodingKey_1
+    286                  PhaseShift |= 0x02;
+   \   0000002C   0x6828             LDR      R0,[R5, #+0]
+   \   0000002E   0xF040 0x0002      ORR      R0,R0,#0x2
+   \   00000032   0x6028             STR      R0,[R5, #+0]
+    287          
+    288          
+    289              /***********************************************
+    290              * 描述：取低4位
+    291              */
+    292              PhaseShift &= 0x0f;
+   \                     ??KEY_GetEncodingKey_1: (+1)
+   \   00000034   0x7828             LDRB     R0,[R5, #+0]
+   \   00000036   0xF000 0x000F      AND      R0,R0,#0xF
+   \   0000003A   0x6028             STR      R0,[R5, #+0]
+    293          
+    294              /***********************************************
+    295              * 描述：根据PhaseShift的低四位值来查此表即可得转动方向
+    296              */
+    297              if(table_Phase[PhaseShift] == phase_inc)
+   \   0000003C   0x.... 0x....      ADR.W    R1,table_Phase
+   \   00000040   0x5C41             LDRB     R1,[R0, R1]
+   \   00000042   0x2901             CMP      R1,#+1
+   \   00000044   0xD102             BNE.N    ??KEY_GetEncodingKey_2
+    298                  PhaseCount++;
+   \   00000046   0x6869             LDR      R1,[R5, #+4]
+   \   00000048   0x1C49             ADDS     R1,R1,#+1
+   \   0000004A   0x6069             STR      R1,[R5, #+4]
+    299              if(table_Phase[PhaseShift] == phase_dec)
+    300                  PhaseCount--;
+    301              PhaseShift <<= 2;
+   \                     ??KEY_GetEncodingKey_2: (+1)
+   \   0000004C   0x0080             LSLS     R0,R0,#+2
+   \   0000004E   0x6028             STR      R0,[R5, #+0]
+    302              /***********************************************
+    303              * 描述：当同一方向上的转动次数为4次时，
+    304              *       才认为是一次有效的转动，达到了去抖的目的
+    305              */
+    306              if(PhaseCount > 3) {
+   \   00000050   0x6868             LDR      R0,[R5, #+4]
+   \   00000052   0x2804             CMP      R0,#+4
+   \   00000054   0xDB0B             BLT.N    ??KEY_GetEncodingKey_3
+    307                  PhaseCount -= 4;
+   \   00000056   0x1F00             SUBS     R0,R0,#+4
+   \   00000058   0x6068             STR      R0,[R5, #+4]
+    308                  key->val    = KEY_INC;
+   \   0000005A   0x20DF             MOVS     R0,#+223
+   \   0000005C   0x80E0             STRH     R0,[R4, #+6]
+    309                  key->evt    = KEY_EVT_UP;
+   \   0000005E   0x7960             LDRB     R0,[R4, #+5]
+   \   00000060   0xF000 0x00F3      AND      R0,R0,#0xF3
+   \   00000064   0xF040 0x0008      ORR      R0,R0,#0x8
+   \   00000068   0x7160             STRB     R0,[R4, #+5]
+    310                  return KEY_STATUS_EVENT;                    // phase_inc;
+   \   0000006A   0x2001             MOVS     R0,#+1
+   \   0000006C   0xBD70             POP      {R4-R6,PC}
+    311              } else if(PhaseCount < -3) {
+   \                     ??KEY_GetEncodingKey_3: (+1)
+   \   0000006E   0xF110 0x0F03      CMN      R0,#+3
+   \   00000072   0xDA0B             BGE.N    ??KEY_GetEncodingKey_4
+    312                  PhaseCount += 4;
+   \   00000074   0x1D00             ADDS     R0,R0,#+4
+   \   00000076   0x6068             STR      R0,[R5, #+4]
+    313                  key->val    = KEY_DEC;
+   \   00000078   0x20EF             MOVS     R0,#+239
+   \   0000007A   0x80E0             STRH     R0,[R4, #+6]
+    314                  key->evt    = KEY_EVT_UP;
+   \   0000007C   0x7960             LDRB     R0,[R4, #+5]
+   \   0000007E   0xF000 0x00F3      AND      R0,R0,#0xF3
+   \   00000082   0xF040 0x0008      ORR      R0,R0,#0x8
+   \   00000086   0x7160             STRB     R0,[R4, #+5]
+    315                  return KEY_STATUS_EVENT;                    // phase_dec;
+   \   00000088   0x2001             MOVS     R0,#+1
+   \   0000008A   0xBD70             POP      {R4-R6,PC}
+    316              }
+    317          
+    318              return KEY_STATUS_NULL;                         // (INT08S)(phase_no_move);
+   \                     ??KEY_GetEncodingKey_4: (+1)
+   \   0000008C   0x2000             MOVS     R0,#+0
+   \   0000008E   0xBD70             POP      {R4-R6,PC}       ;; return
+    319          }
+
+   \                                 In section .bss, align 4
+   \                     ??PhaseShift:
+   \   00000000                      DS8 4
+   \   00000004                      DS8 4
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3:
+   \   00000000   0x40010C00         DC32     0x40010c00
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \   00000000   0x........         DC32     ??speed
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_2:
+   \   00000000   0x........         DC32     ??PhaseShift
+    320          /*******************************************************************************
+    321          * 				end of file
+    322          *******************************************************************************/
+    323          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   KEY_GetEncodingKey
+        16   -> GPIO_ReadInputDataBit
+      16   KEY_GetKey
+        16   -> BSP_OS_TimeDly
+        16   -> GPIO_ReadInputData
+       8   KEY_Init
+         8   -> GPIO_Init
+         8   -> RCC_APB2PeriphClockCmd
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+     144  KEY_GetEncodingKey
+     212  KEY_GetKey
+      40  KEY_Init
+      28  Key
+       8  PhaseShift
+          PhaseCount
+       2  speed
+      16  table_Phase
+
+ 
+   8 bytes in section .bss
+  30 bytes in section .data
+ 424 bytes in section .text
+ 
+ 424 bytes of CODE memory
+  38 bytes of DATA memory
+
+Errors: none
+Warnings: 1

@@ -1,0 +1,209 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:21
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\BSP\OS\OSAL\bsp_timer.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\OS\OSAL\bsp_timer.c -D
+#        USE_STDPERIPH_DRIVER -D _STM32F10X_HD -D STM32F10X_CL -D DEBUG -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\bsp_timer.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\bsp_timer.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\OS\OSAL\bsp_timer.c
+      1          /*******************************************************************************
+      2           *   Filename:       Uart.c
+      3           *   Revised:        $Date: 2009-01-31	20:15 (Fri) $
+      4           *   Revision:       $
+      5           *	 Writer:		 Wuming Shen.
+      6           *
+      7           *   Description:    用TMR1延时中断，通过RB0输出脉冲，每隔100MS让LED闪亮，采用中断方式
+      8                      若定时器TMR1延时100MS,8位pic单片机晶振4MHZ，则指令周期Tcy=1us，计算如下：
+      9                      1.设预分频比为K，则65536*K*Tcy=100_000us，得K=1.52，要取大于此值的最小分频比，即K=2
+     10                      2.计算延时常数X,（65536-cnts）*2*Tcy=100_000us，四舍五入取整，得X=15536. cnts = 65536 - ( 1000 / TICKS_PER_SEC / TIMER1_CLK_DIV )
+     11           *
+     12           *   Notes:        
+     13           *					   
+     14           *			
+     15           *   All copyrights reserved to Wuming Shen.  现代虚拟仪器仪表研究所
+     16           *
+     17           *******************************************************************************/
+     18          
+     19          /*******************************************************************************
+     20           * INCLUDES
+     21           */
+     22          #include <global.h>
+     23          #include <includes.h>
+     24          
+     25          #include "osal_event.h"
+     26          #include "osal_timer.h"
+     27             
+     28          #define BSP_TIMER_MODULE_EN 1   
+     29          #if BSP_TIMER_MODULE_EN > 0
+     30          /*******************************************************************************
+     31           * CONSTANTS
+     32           */
+     33          
+     34          /*******************************************************************************
+     35           * MACROS
+     36           */
+     37          
+     38          /*******************************************************************************
+     39           * TYPEDEFS
+     40           */
+     41          
+     42          /*******************************************************************************
+     43           * LOCAL VARIABLES
+     44           */
+     45          
+     46          /*******************************************************************************
+     47           * GLOBAL VARIABLES
+     48           */
+     49          
+     50          /*******************************************************************************
+     51           * LOCAL FUNCTIONS
+     52           */
+     53          void        osal_timer_isr      (void);
+     54          
+     55          /*******************************************************************************
+     56           * GLOBAL FUNCTIONS
+     57           */
+     58          
+     59          /*******************************************************************************
+     60           * EXTERN VARIABLES
+     61           */
+     62          
+     63           /*******************************************************************************
+     64           * EXTERN FUNCTIONS
+     65           */
+     66           
+     67          /******************************************************************************
+     68           * @fn
+     69           *
+     70           * @brief   TIMER_INT interrupt take string
+     71           *
+     72           * @param
+     73           *
+     74           * @return
+     75           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     76          void osal_timer_isr(void )
+     77          {
+     78              /***********************************************
+     79              * 描述：时间计算
+     80              *
+     81              HAL_STimerPoll();                               // 秒定时器更新
+     82          
+     83              if ( ++SysTime.msec > ( TICKS_PER_SEC - 1 ) ) {    // 1秒钟计满
+     84                  SysTime.msec   = 0;
+     85                  HAL_MTimerPoll();                           // 分定时器更新
+     86                  
+     87                  if ( ++SysTime.sec > 59 ) {                    // 1分钟计满
+     88                      SysTime.sec    = 0;
+     89                      HAL_HTimerPoll();                       // 时定时器更新
+     90                      
+     91                      if ( ++SysTime.min > 59 ) {                // 1小时计满
+     92                          SysTime.min    = 0;
+     93                          if ( ++SysTime.hour > 23 ) {           // 1天计满
+     94                              SysTime.hour   = 0;
+     95                          }
+     96                      }
+     97                  }
+     98              }
+     99              *//***********************************************
+    100              * 描述：osal_timer_isr
+    101              */
+    102              osal_update_timers();
+   \                     osal_timer_isr: (+1)
+   \   00000000   0x.... 0x....      B.W      osalTimerUpdate
+    103          }
+    104          
+    105          /*******************************************************************************
+    106           * 				end of file                                    *
+    107           *******************************************************************************/ 
+    108          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   osal_timer_isr
+         0   -> osalTimerUpdate
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  osal_timer_isr
+
+ 
+ 4 bytes in section .text
+ 
+ 4 bytes of CODE memory
+
+Errors: none
+Warnings: none

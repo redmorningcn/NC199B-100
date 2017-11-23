@@ -1,0 +1,379 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:22
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\BSP\Driver\FM24CL64.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\FM24CL64.c -D
+#        USE_STDPERIPH_DRIVER -D _STM32F10X_HD -D STM32F10X_CL -D DEBUG -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\FM24CL64.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\FM24CL64.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\Driver\FM24CL64.c
+      1          #include    "stm32f10x.h"
+      2          #include	"I2C_CLK.h"
+      3          #include    <stdio.h>
+      4          #include    "DELAY.h"
+      5          #include	"FM24CL64.h"
+      6          
+      7          
+      8          #include  <global.h>
+      9          #include  <includes.h>
+     10          
+     11          
+     12          //铁电参数
+     13          #define		FRAM_SIZE               8192						         	//1024*8空间容量
+     14          #define		FRAM_START_ADDR	        0x0000	                                //铁电的起始地址
+     15          #define		FRAM_DIVICE_ADDR        0xa0	                                //铁电的设备地址
+     16          #define		FRAM_END_ADDR	      	(FRAM_START_ADDR + FRAM_SIZE)	
+     17          
+     18          //#define		FRMA_PROTECT			P121
+     19          //
+     20          ////------------------------------------------------------------------------
+     21          ////  名  称 ：void WriteSCL( uint8 temp )
+     22          ////  功  能 ：设置 SCL
+     23          //// 入口参数：无
+     24          //// 出口参数：无
+     25          ////------------------------------------------------------------------------
+     26          //void WriteFRAM_PROTECT(uint8 temp)
+     27          //{
+     28          //    IO1DIR_OUT(FRMA_PROTECT);    
+     29          //    IO1PIN_W(temp,FRMA_PROTECT);
+     30          //}
+     31          
+     32          #define  UCOS_EN            DEF_ENABLED
+     33          
+     34          /***********************************************
+     35          * 描述： OS接口
+     36          */
+     37          #if UCOS_EN     == DEF_ENABLED
+     38              #if OS_VERSION > 30000U
+
+   \                                 In section .bss, align 4
+     39              static  OS_SEM                   Bsp_EepSem;    // 信号量
+   \                     Bsp_EepSem:
+   \   00000000                      DS8 28
+     40              #else
+     41              static  OS_EVENT                *Bsp_EepSem;    // 信号量
+     42              #endif
+     43          #endif
+     44            
+     45              
+     46          /*******************************************************************************
+     47          * 名    称： EEP_WaitEvent
+     48          * 功    能： 等待信号量
+     49          * 入口参数： 无
+     50          * 出口参数：  0（操作有误），1（操作成功）
+     51          * 作　 　者： 无名沈
+     52          * 创建日期： 2015-08-18
+     53          * 修    改：
+     54          * 修改日期：
+     55          * 备    注： 仅在使用UCOS操作系统时使用
+     56          *******************************************************************************/
+     57          static uint8_t EEP_WaitEvent(void)
+     58          {
+     59              /***********************************************
+     60              * 描述： OS接口
+     61              */
+     62          #if OS_VERSION > 30000U
+     63              return BSP_OS_SemWait(&Bsp_EepSem,0);           // 等待信号量
+     64          #else
+     65              uint8_t       err;
+     66              OSSemPend(Bsp_EepSem,0,&err);                   // 等待信号量
+     67              if ( err = OS_ERR_NONE )
+     68                return TRUE;
+     69              else
+     70                return FALSE;
+     71          #endif
+     72          }
+     73          
+     74          
+     75          /*******************************************************************************
+     76          * 名    称： EEP_SendEvent
+     77          * 功    能： 释放信号量
+     78          * 入口参数： 无
+     79          * 出口参数： 无
+     80          * 作　 　者： 无名沈
+     81          * 创建日期： 2015-08-18
+     82          * 修    改：
+     83          * 修改日期：
+     84          * 备    注： 仅在使用UCOS操作系统时使用
+     85          *******************************************************************************/
+     86          static void EEP_SendEvent(void)
+     87          {
+     88              /***********************************************
+     89              * 描述： OS接口
+     90              */
+     91          #if OS_VERSION > 30000U
+     92              BSP_OS_SemPost(&Bsp_EepSem);                        // 发送信号量
+     93          #else
+     94              uint8_t       err;
+     95              OSSemPost(Bsp_EepSem);                              // 发送信号量
+     96          #endif
+     97          }
+     98          
+
+   \                                 In section .text, align 2, keep-with-next
+     99          void EEP_OS_Init(void)
+    100          {
+    101              /***********************************************
+    102              * 描述： OS接口
+    103              */
+    104          #if (UCOS_EN     == DEF_ENABLED)
+    105          #if OS_VERSION > 30000U
+    106              BSP_OS_SemCreate(&Bsp_EepSem,1, "Bsp EepSem");      // 创建信号量
+   \                     EEP_OS_Init: (+1)
+   \   00000000   0x.... 0x....      ADR.W    R2,?_0
+   \   00000004   0x2101             MOVS     R1,#+1
+   \   00000006   0x....             LDR.N    R0,??DataTable1
+   \   00000008   0x.... 0x....      B.W      BSP_OS_SemCreate
+    107          #else
+    108              Bsp_EepSem     = OSSemCreate(1);                    // 创建信号量
+    109          #endif
+    110          #endif
+    111          }
+    112          
+    113          ////-------------------------------------------------------------------------------------------------------
+    114          ////函数名称:         WriteFM24CL16()
+    115          ////功    能:         对FM24CL16指定地址进行写数据
+    116          ////入口参数:         ADDR:       操作地址    地址：0 ~ sizeof(FM24CL16)
+    117          ////                  *DataBuf:   数据缓冲
+    118          ////                  Len:        数据长度
+    119          ////出口参数:         无
+    120          ////说明：            
+    121          ////--------------------------------------------------------------------------------------------------------
+    122          //uint8_t WriteFM24CL64(uint16_t  Addr, uint8_t *DataBuf, uint16_t DataBufLen)            
+    123          //{
+    124          //    uint32_t  i = 0;
+    125          //    uint8_t   SlaveAddr;                                      //从机地址
+    126          //    uint16_t  AddrTemp = 0;                                   //地址缓存
+    127          //    
+    128          ////    WriteFRAM_PROTECT(0);									//关写保护
+    129          //    
+    130          //    EEP_WaitEvent();                                        // 等信号量
+    131          //    
+    132          //    AddrTemp = Addr;
+    133          //    AddrTemp += FRAM_START_ADDR;                            //计算地址
+    134          //
+    135          //    if( (uint16_t)AddrTemp + DataBufLen > FRAM_END_ADDR ) 
+    136          //    {
+    137          //        EEP_SendEvent();                                    // 释放信号量
+    138          //        return  0;                                          //地址未超阶
+    139          //    }
+    140          //        
+    141          //    SlaveAddr = FRAM_DIVICE_ADDR & (~(0x01));               //求FM24CL64设备写地址
+    142          //    
+    143          //    I2C_Start();                                             //启动IIC总线
+    144          //    
+    145          //    I2C_SendByte(SlaveAddr);                            //写FM24CL64地址
+    146          //	while(I2C_WaitAck());			  	   //等待从设备应答
+    147          // 
+    148          //    I2C_SendByte(Addr >> 8);                            //写FM24CL64高位地址
+    149          //	while(I2C_WaitAck());			  	   //等待从设备应答
+    150          //    
+    151          //    I2C_SendByte( Addr );                               //写FM24CL64低位地址
+    152          //	while(I2C_WaitAck());			  	   //等待从设备应答     
+    153          //  
+    154          //    for(i = 0; i < DataBufLen; i++)                         //发送数据
+    155          //    {
+    156          //        I2C_SendByte(DataBuf[i]);                       //写数据
+    157          //        while(I2C_WaitAck());			  	   //等待从设备应答
+    158          //    }
+    159          //    
+    160          //    I2C_Stop();                                              //停止IIC操作   
+    161          //    
+    162          //    EEP_SendEvent();                                    // 释放信号量
+    163          //    return  1;                                           //正确
+    164          //}
+    165          //
+    166          ////-------------------------------------------------------------------------------------------------------
+    167          ////函数名称:         ReadFM24CL16()
+    168          ////功    能:         读取FM24CL16指定地址进行数据
+    169          ////入口参数:         ADDR:       操作地址   地址：0 ~ sizeof(FM24CL16)
+    170          ////                  *DataBuf:   数据缓冲 
+    171          ////                  Len:        数据长度
+    172          ////出口参数:         无
+    173          ////说明：            
+    174          ////--------------------------------------------------------------------------------------------------------
+    175          //uint8_t ReadFM24CL64(uint16_t  Addr, uint8_t *DataBuf, uint16_t DataBufLen)            
+    176          //{
+    177          //    uint32_t  i = 0;
+    178          //    uint8_t   SlaveAddr;                                      //从机地址
+    179          //    uint16_t  AddrTemp;                                       //地址缓存
+    180          //    
+    181          //    //	WriteFRAM_PROTECT(0);									//关写保护
+    182          //    
+    183          //    EEP_WaitEvent();                                        // 等信号量
+    184          //    
+    185          //    AddrTemp = Addr;
+    186          //    
+    187          //    AddrTemp += FRAM_START_ADDR;                            //计算地址
+    188          //    
+    189          //    if( (uint16_t)AddrTemp + DataBufLen > FRAM_END_ADDR ) 
+    190          //    {
+    191          //        EEP_SendEvent();                                // 释放信号量
+    192          //        return  0;                                      //地址未超阶
+    193          //    }
+    194          //    
+    195          //    SlaveAddr = FRAM_DIVICE_ADDR & (~(0x01));               //求FM24CL64设备写地址
+    196          //    
+    197          //    I2C_Start();                                             //启动IIC总线
+    198          //    
+    199          //    I2C_SendByte(SlaveAddr);                            //写FM24CL64设备写地址
+    200          //	while(I2C_WaitAck());			  	   //等待从设备应答
+    201          //    
+    202          //    I2C_SendByte(Addr >> 8 );                           //写数据高位地址
+    203          //	while(I2C_WaitAck());			  	   //等待从设备应答
+    204          //    
+    205          //    I2C_SendByte( Addr );                               //写数据低位地址
+    206          //	while(I2C_WaitAck());			  	   //等待从设备应答
+    207          //    
+    208          //    SlaveAddr = (FRAM_DIVICE_ADDR)|(0x01);                  //求FM24CL64设备读地址
+    209          //    
+    210          //    I2C_Start();                                             //启动IIC总线
+    211          //    
+    212          //    I2C_SendByte(SlaveAddr);                            //写FM24CL16地址
+    213          //	while(I2C_WaitAck());			  	   //等待从设备应答
+    214          //    
+    215          //    for(i = 0; i < (DataBufLen -1); i++)                    //发送数据
+    216          //    {
+    217          //        DataBuf[i] = I2C_ReadByte();                     //写数据
+    218          //        I2C_Ack();                                     //主机应答从机
+    219          //    }
+    220          //    DataBuf[i] = I2C_ReadByte();                         //写数据
+    221          //    
+    222          //    I2C_NoAck();                                       //主机应答从机
+    223          //    
+    224          //    I2C_Stop();
+    225          //    
+    226          //    EEP_SendEvent();                                    // 释放信号量
+    227          //    return  1;                                           //正确
+    228          //}
+    229          
+
+   \                                 In section .text, align 2, keep-with-next
+    230          void TO_Arayy(uint8_t *buf , uint32_t NUM)
+    231          {
+    232          	buf[0] = NUM & 0xFF;			  
+   \                     TO_Arayy: (+1)
+   \   00000000   0x7001             STRB     R1,[R0, #+0]
+    233          	buf[1] = (NUM >> 8) & 0xFF;	   //低字节在前，高字节在后
+   \   00000002   0x0A0A             LSRS     R2,R1,#+8
+   \   00000004   0x7042             STRB     R2,[R0, #+1]
+    234          	buf[2] = (NUM >> 16) & 0xFF;
+   \   00000006   0x0C0A             LSRS     R2,R1,#+16
+   \   00000008   0x7082             STRB     R2,[R0, #+2]
+    235          	buf[3] = (NUM >> 24) & 0xFF;
+   \   0000000A   0x0E09             LSRS     R1,R1,#+24
+   \   0000000C   0x70C1             STRB     R1,[R0, #+3]
+    236          }
+   \   0000000E   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0x........         DC32     Bsp_EepSem
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x42 0x73          DC8 "Bsp EepSem"
+   \              0x70 0x20    
+   \              0x45 0x65    
+   \              0x70 0x53    
+   \              0x65 0x6D    
+   \              0x00         
+   \   0000000B   0x00               DC8 0
+    237          
+    238          
+    239          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   EEP_OS_Init
+         0   -> BSP_OS_SemCreate
+       0   TO_Arayy
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+      12  ?_0
+      28  Bsp_EepSem
+      12  EEP_OS_Init
+      16  TO_Arayy
+
+ 
+ 28 bytes in section .bss
+ 44 bytes in section .text
+ 
+ 44 bytes of CODE memory
+ 28 bytes of DATA memory
+
+Errors: none
+Warnings: 2

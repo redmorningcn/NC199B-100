@@ -1,0 +1,243 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:20
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\BSP\OS\OSAL\bsp_hal.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\OS\OSAL\bsp_hal.c -D
+#        USE_STDPERIPH_DRIVER -D _STM32F10X_HD -D STM32F10X_CL -D DEBUG -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\bsp_hal.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\bsp_hal.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\OS\OSAL\bsp_hal.c
+      1          /*******************************************************************************
+      2           *   Filename:      @bsp_hal.c
+      3           *   Revised:
+      4           *   Revision:
+      5           *   Writer:        @Wuming Shen.
+      6           *
+      7           *   Description:
+      8           *
+      9           *   Notes:
+     10           *
+     11           *
+     12           *   All copyrights reserved to Wuming Shen.
+     13           *
+     14           *******************************************************************************/
+     15          
+     16          /*******************************************************************************
+     17           * INCLUDES
+     18           */
+     19          #include <global.h>
+     20          #include <includes.h>
+     21          
+     22          #if OSAL_EVENT_EN > 0
+     23          /*******************************************************************************
+     24           * CONSTANTS
+     25           */
+     26          
+     27          /*******************************************************************************
+     28           * TYPEDEFS
+     29           */
+     30          
+     31          /*******************************************************************************
+     32           * MACROS
+     33           */
+     34          
+     35          /*******************************************************************************
+     36           * LOCAL VARIABLES
+     37           */
+     38          
+     39          /*******************************************************************************
+     40           * GLOBAL VARIABLES
+     41           */
+     42          
+     43          /*******************************************************************************
+     44           * LOCAL FUNCTIONS
+     45           */
+     46          
+     47          /*******************************************************************************
+     48           * GLOBAL FUNCTIONS
+     49           */
+     50          
+     51          /*******************************************************************************
+     52           * EXTERN VARIABLES
+     53           */
+     54          
+     55           /*******************************************************************************
+     56           * EXTERN FUNCTIONS
+     57           */
+     58          
+     59          /*******************************************************************************
+     60           * @fn      HAL_UartPoll()
+     61           *
+     62           * @brief  串口查询函数
+     63           *
+     64           * @param
+     65           *
+     66           * @return  none
+     67           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     68          void HAL_UartPoll(void)
+     69          {
+     70          //    /***********************************************
+     71          //    * 描述：串口数据接收查询
+     72          //    */
+     73          //    if(UartGui.RxEvt == TRUE ) {                        // 串口中有数据接收事件
+     74          //        /***********************************************
+     75          //        * 描述：启动接收超时定时器,每接收到一个数据，重新计时
+     76          //        */
+     77          //        osal_start_timerEx( OS_TASK_ID_UART, OS_EVT_UART1_RECV, 
+     78          //                           UartGui.RxByteTimeout );
+     79          //        UartGui.RxEvt = FALSE;                            // 事件清零
+     80          //        SetLedOnNms( BSP_LED_GUI_RXD, 5);
+     81          //    }
+     82          //    
+     83          //    /***********************************************
+     84          //    * 描述：串口数据接收查询
+     85          //    */
+     86          //    if(UartSen.RxEvt == TRUE ) {                        // 串口中有数据接收事件
+     87          //        /***********************************************
+     88          //        * 描述：启动接收超时定时器,每接收到一个数据，重新计时
+     89          //        */
+     90          //        osal_start_timerEx( OS_TASK_ID_UART, OS_EVT_UART2_RECV, 
+     91          //                           UartSen.RxByteTimeout );
+     92          //        UartSen.RxEvt = FALSE;                            // 事件清零
+     93          //        SetLedOnNms( BSP_LED_SEN_RXD, OS_TICKS_PER_SEC/50);
+     94          //    }
+     95          }
+   \                     HAL_UartPoll: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+     96          
+     97          /*******************************************************************************
+     98           * @fn      HAL_AdcPoll()
+     99           *
+    100           * @brief   
+    101           *
+    102           * @param
+    103           *
+    104           * @return  none
+    105           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    106          void HAL_AdcPoll(void)
+    107          {
+    108              /***********************************************
+    109              * 描述：Adc读取
+    110              */
+    111          }
+   \                     HAL_AdcPoll: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    112          
+    113          /*******************************************************************************
+    114           * @fn     HAL_ProcessPoll()
+    115           *
+    116           * @brief   feed watch dog
+    117           *
+    118           * @param
+    119           *
+    120           * @return  none
+    121           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    122          void HAL_ProcessPoll(void)
+    123          {
+    124            HAL_UartPoll();
+   \                     HAL_ProcessPoll: (+1)
+   \   00000000   0x....             B.N      HAL_UartPoll
+    125          }
+    126          
+    127          /*******************************************************************************
+    128           * 				end of file                                    *
+    129           *******************************************************************************/
+    130          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   HAL_AdcPoll
+       0   HAL_ProcessPoll
+         0   -> HAL_UartPoll
+       0   HAL_UartPoll
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       2  HAL_AdcPoll
+       2  HAL_ProcessPoll
+       2  HAL_UartPoll
+
+ 
+ 6 bytes in section .text
+ 
+ 6 bytes of CODE memory
+
+Errors: none
+Warnings: none

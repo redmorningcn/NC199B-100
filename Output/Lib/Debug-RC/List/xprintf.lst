@@ -1,0 +1,755 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       16/Nov/2017  10:23:48
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\BSP\Driver\xprintf.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\xprintf.c -D
+#        USE_STDPERIPH_DRIVER -D _STM32F10X_HD -D STM32F10X_CL -D DEBUG -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\List\xprintf.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-RC\Obj\xprintf.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\Driver\xprintf.c
+      1          /*------------------------------------------------------------------------/
+      2          /  Universal string handler for user console interface
+      3          /-------------------------------------------------------------------------/
+      4          /
+      5          /  Copyright (C) 2011, ChaN, all right reserved.
+      6          /
+      7          / * This software is a free software and there is NO WARRANTY.
+      8          / * No restriction on use. You can use, modify and redistribute it for
+      9          /   personal, non-profit or commercial products UNDER YOUR RESPONSIBILITY.
+     10          / * Redistributions of source code must retain the above copyright notice.
+     11          / modified by www.armjishu.com
+     12          /-------------------------------------------------------------------------*/
+     13          #include "stm32f10x.h"
+     14          #include "SZ_STM32F107VC_LIB.h"
+     15          #include "xprintf.h"
+     16          
+     17          
+     18          #if _USE_XFUNC_OUT
+     19          #include <stdarg.h>
+     20          //void (*xfunc_out)(unsigned char);	/* Pointer to the output stream */
+     21          //static char *outptr;
+     22          
+     23          #ifndef SZ_STM32_COM1_STR
+     24            #define SZ_STM32_COM1_STR                    "USART1"
+     25          #endif
+     26          
+     27          extern const uint8_t STM32F10x_STR[];
+     28          
+     29          /* Private functions ---------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+     30          void xPrintf_init(void)
+     31          {
+   \                     xPrintf_init: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xB085             SUB      SP,SP,#+20
+     32            USART_InitTypeDef USART_InitStructure;   
+     33                 
+     34            /* USARTx configured as follow:
+     35                  - BaudRate = 115200 baud  
+     36                  - Word Length = 8 Bits
+     37                  - One Stop Bit
+     38                  - No parity
+     39                  - Hardware flow control disabled (RTS and CTS signals)
+     40                  - Receive and transmit enabled
+     41            */
+     42            USART_InitStructure.USART_BaudRate = 115200;
+   \   00000004   0xF44F 0x30E1      MOV      R0,#+115200
+   \   00000008   0x9000             STR      R0,[SP, #+0]
+     43            USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+   \   0000000A   0x2000             MOVS     R0,#+0
+   \   0000000C   0x9001             STR      R0,[SP, #+4]
+     44            USART_InitStructure.USART_StopBits = USART_StopBits_1;
+     45            USART_InitStructure.USART_Parity = USART_Parity_No;
+   \   0000000E   0xF8AD 0x0008      STRH     R0,[SP, #+8]
+     46            USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+   \   00000012   0xF8AD 0x000C      STRH     R0,[SP, #+12]
+     47            USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+   \   00000016   0x200C             MOVS     R0,#+12
+   \   00000018   0xF8AD 0x000A      STRH     R0,[SP, #+10]
+     48          
+     49            __SZ_STM32_COMInit(COM1, &USART_InitStructure);
+   \   0000001C   0x4669             MOV      R1,SP
+   \   0000001E   0x2000             MOVS     R0,#+0
+   \   00000020   0x.... 0x....      BL       __SZ_STM32_COMInit
+     50            xdev_out(xUSART1_putchar);
+   \   00000024   0x....             LDR.N    R0,??DataTable0
+   \   00000026   0x....             LDR.N    R1,??DataTable0_1
+   \   00000028   0x6008             STR      R0,[R1, #+0]
+     51            xdev_in(xUSART1_getchar);  
+   \   0000002A   0x....             LDR.N    R0,??DataTable0_2
+   \   0000002C   0x....             LDR.N    R1,??DataTable0_3
+   \   0000002E   0x6008             STR      R0,[R1, #+0]
+     52            
+     53            /* Output a message on Hyperterminal using printf function */
+     54            //printf("\n\rUSART Printf Example: retarget the C library printf function to the USART\n\r");
+     55          //  xprintfCOM1("\r\n\n\n\r WWW.ARMJISHU.COM  %s xprintf configured....", SZ_STM32_COM1_STR);
+     56          //  xprintfCOM1("\n\r ############ WWW.ARMJISHU.COM! ############ ("__DATE__ " - " __TIME__ ")");
+     57          
+     58          //xprintfCOM1("%s", STM32F10x_STR);
+     59          //
+     60          //  xprintfCOM1(" WWW.ARMJISHU.COM use __STM32F10X_STDPERIPH_VERSION %d.%d.%d",
+     61          //			__STM32F10X_STDPERIPH_VERSION_MAIN,
+     62          //			__STM32F10X_STDPERIPH_VERSION_SUB1,
+     63          //			__STM32F10X_STDPERIPH_VERSION_SUB2);
+     64          //  xprintfCOM1("\n\r 产品内部Flash大小为：%dK字节！ \t www.armjishu.com",
+     65          //            *(__IO uint16_t*)(0x1FFFF7E0));
+     66            SystemCoreClockUpdate();
+   \   00000030   0x.... 0x....      BL       SystemCoreClockUpdate
+     67          //  xprintfCOM1("\n\r 系统内核时钟频率(SystemCoreClock)为：%dHz.\n\r",
+     68          //            SystemCoreClock);
+     69          }
+   \   00000034   0xB005             ADD      SP,SP,#+20
+   \   00000036   0xBD00             POP      {PC}             ;; return
+     70          
+     71          //
+     72          //unsigned char xUSART2_putchar(unsigned char ch)
+     73          //{
+     74          //  /* Place your implementation of fputc here */
+     75          //  /* e.g. write a character to the USART */
+     76          //  USART_SendData(SZ_STM32_COM2, (uint8_t) ch); /*发送一个字符函数*/ 
+     77          //
+     78          //  /* Loop until the end of transmission */
+     79          //  while (USART_GetFlagStatus(SZ_STM32_COM2, USART_FLAG_TC) == RESET)/*等待发送完成*/
+     80          //  {
+     81          //  
+     82          //  }
+     83          //  return ch;
+     84          //}
+     85          //
+     86          //unsigned char xUSART1_putchar(unsigned char ch)
+     87          //{
+     88          //  /* Place your implementation of fputc here */
+     89          //  /* e.g. write a character to the USART */
+     90          //  USART_SendData(SZ_STM32_COM1, (uint8_t) ch); /*发送一个字符函数*/ 
+     91          //
+     92          //  /* Loop until the end of transmission */
+     93          //  while (USART_GetFlagStatus(SZ_STM32_COM1, USART_FLAG_TC) == RESET)/*等待发送完成*/
+     94          //  {
+     95          //  
+     96          //  }
+     97          //  return ch;
+     98          //}
+     99          /*----------------------------------------------*/
+    100          /* Put a character                              */
+    101          /*----------------------------------------------*/
+    102          //void xputc (char c /* A character to be output */) 
+    103          //{
+    104          //	if (_CR_CRLF && c == '\n') xputc('\r');		/* CR -> CRLF */
+    105          //
+    106          //	if (outptr) {
+    107          //		*outptr++ = (unsigned char)c;
+    108          //		return;
+    109          //	}
+    110          //
+    111          //	if (xfunc_out) xfunc_out((unsigned char)c);
+    112          //}
+    113          
+    114          
+    115          
+    116          /*----------------------------------------------*/
+    117          /* Put a null-terminated string                 */
+    118          /*----------------------------------------------*/
+    119          
+    120          //void xputs (					/* Put a string to the default device */
+    121          //	const char* str				/* Pointer to the string */
+    122          //)
+    123          //{
+    124          //	while (*str)
+    125          //		xputc(*str++);
+    126          //}
+    127          //
+    128          //
+    129          //void xfputs (					/* Put a string to the specified device */
+    130          //	void(*func)(unsigned char),	/* Pointer to the output function */
+    131          //	const char*	str				/* Pointer to the string */
+    132          //)
+    133          //{
+    134          //	void (*pf)(unsigned char);
+    135          //
+    136          //
+    137          //	pf = xfunc_out;		/* Save current output device */
+    138          //	xfunc_out = func;	/* Switch output to specified device */
+    139          //	while (*str)		/* Put the string */
+    140          //		xputc(*str++);
+    141          //	xfunc_out = pf;		/* Restore output device */
+    142          //}
+    143          
+    144          
+    145          
+    146          /*----------------------------------------------*/
+    147          /* Formatted string output                      */
+    148          /*----------------------------------------------*/
+    149          /*  xprintf("%d", 1234);			"1234"
+    150              xprintf("%6d,%3d%%", -200, 5);	"  -200,  5%"
+    151              xprintf("%-6u", 100);			"100   "
+    152              xprintf("%ld", 12345678L);		"12345678"
+    153              xprintf("%04x", 0xA3);			"00a3"
+    154              xprintf("%08LX", 0x123ABC);		"00123ABC"
+    155              xprintf("%016b", 0x550F);		"0101010100001111"
+    156              xprintf("%s", "String");		"String"
+    157              xprintf("%-4s", "abc");			"abc "
+    158              xprintf("%4s", "abc");			" abc"
+    159              xprintf("%c", 'a');				"a"
+    160              xprintf("%f", 10.0);            <xprintf lacks floating point support>
+    161          */
+    162          
+    163          //static
+    164          //void xvprintf (
+    165          //	const char*	fmt,	/* Pointer to the format string */
+    166          //	va_list arp			/* Pointer to arguments */
+    167          //)
+    168          //{
+    169          //	unsigned int r, i, j, w, f;
+    170          //	unsigned long v;
+    171          //	char s[16], c, d, *p;
+    172          //
+    173          //
+    174          //	for (;;) {
+    175          //		c = *fmt++;					/* Get a char */
+    176          //		if (!c) break;				/* End of format? */
+    177          //		if (c != '%') {				/* Pass through it if not a % sequense */
+    178          //			xputc(c); continue;
+    179          //		}
+    180          //		f = 0;
+    181          //		c = *fmt++;					/* Get first char of the sequense */
+    182          //		if (c == '0') {				/* Flag: '0' padded */
+    183          //			f = 1; c = *fmt++;
+    184          //		} else {
+    185          //			if (c == '-') {			/* Flag: left justified */
+    186          //				f = 2; c = *fmt++;
+    187          //			}
+    188          //		}
+    189          //		for (w = 0; c >= '0' && c <= '9'; c = *fmt++)	/* Minimum width */
+    190          //			w = w * 10 + c - '0';
+    191          //		if (c == 'l' || c == 'L') {	/* Prefix: Size is long int */
+    192          //			f |= 4; c = *fmt++;
+    193          //		}
+    194          //		if (!c) break;				/* End of format? */
+    195          //		d = c;
+    196          //		if (d >= 'a') d -= 0x20;
+    197          //		switch (d) {				/* Type is... */
+    198          //		case 'S' :					/* String */
+    199          //			p = va_arg(arp, char*);
+    200          //			for (j = 0; p[j]; j++) ;
+    201          //			while (!(f & 2) && j++ < w) xputc(' ');
+    202          //			xputs(p);
+    203          //			while (j++ < w) xputc(' ');
+    204          //			continue;
+    205          //		case 'C' :					/* Character */
+    206          //			xputc((char)va_arg(arp, int)); continue;
+    207          //		case 'B' :					/* Binary */
+    208          //			r = 2; break;
+    209          //		case 'O' :					/* Octal */
+    210          //			r = 8; break;
+    211          //		case 'D' :					/* Signed decimal */
+    212          //		case 'U' :					/* Unsigned decimal */
+    213          //			r = 10; break;
+    214          //		case 'X' :					/* Hexdecimal */
+    215          //			r = 16; break;
+    216          //		default:					/* Unknown type (passthrough) */
+    217          //			xputc(c); continue;
+    218          //		}
+    219          //
+    220          //		/* Get an argument and put it in numeral */
+    221          //		v = (f & 4) ? va_arg(arp, long) : ((d == 'D') ? (long)va_arg(arp, int) : (long)va_arg(arp, unsigned int));
+    222          //		if (d == 'D' && (v & 0x80000000)) {
+    223          //			v = 0 - v;
+    224          //			f |= 8;
+    225          //		}
+    226          //		i = 0;
+    227          //		do {
+    228          //			d = (char)(v % r); v /= r;
+    229          //			if (d > 9) d += (c == 'x') ? 0x27 : 0x07;
+    230          //			s[i++] = d + '0';
+    231          //		} while (v && i < sizeof(s));
+    232          //		if (f & 8) s[i++] = '-';
+    233          //		j = i; d = (f & 1) ? '0' : ' ';
+    234          //		while (!(f & 2) && j++ < w) xputc(d);
+    235          //		do xputc(s[--i]); while(i);
+    236          //		while (j++ < w) xputc(' ');
+    237          //	}
+    238          //}
+    239          
+    240          
+    241          /*----------------------------------------------/
+    242          /  xprintf - Formatted string output
+    243          /----------------------------------------------*/
+    244          /*  xprintf("%d", 1234);            "1234"
+    245              xprintf("%6d,%3d%%", -200, 5);  "  -200,  5%"
+    246              xprintf("%-6u", 100);           "100   "
+    247              xprintf("%ld", 12345678L);      "12345678"
+    248              xprintf("%04x", 0xA3);          "00a3"
+    249              xprintf("%08LX", 0x123ABC);     "00123ABC"
+    250              xprintf("%016b", 0x550F);       "0101010100001111"
+    251              xprintf("%s", "String");        "String"
+    252              xprintf("%-4s", "abc");         "abc "
+    253              xprintf("%4s", "abc");          " abc"
+    254              xprintf("%c", 'a');             "a"
+    255              xprintf("%f", 10.0);            <xprintf lacks floating point support>
+    256          */
+
+   \                                 In section .text, align 2, keep-with-next
+    257          void xprintfCOM1 (			/* Put a formatted string to the default device */
+    258          	const char*	fmt,	/* Pointer to the format string */
+    259          	...					/* Optional arguments */
+    260          )
+    261          {
+   \                     xprintfCOM1: (+1)
+   \   00000000   0xB40E             PUSH     {R1-R3}
+    262          	va_list arp;
+    263          
+    264          
+    265          	va_start(arp, fmt);
+    266          //	xvprintf(fmt, arp);
+    267          	va_end(arp);
+    268          }
+   \   00000002   0xB003             ADD      SP,SP,#+12
+   \   00000004   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0x........         DC32     xUSART1_putchar
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_1:
+   \   00000000   0x........         DC32     xfunc_out
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_2:
+   \   00000000   0x........         DC32     xUSART1_getchar
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_3:
+   \   00000000   0x........         DC32     xfunc_in
+    269          
+    270          
+    271          //void xsprintfCOM1 (			/* Put a formatted string to the memory */
+    272          //	char* buff,			/* Pointer to the output buffer */
+    273          //	const char*	fmt,	/* Pointer to the format string */
+    274          //	...					/* Optional arguments */
+    275          //)
+    276          //{
+    277          //	va_list arp;
+    278          //
+    279          //
+    280          //	outptr = buff;		/* Switch destination for memory */
+    281          //
+    282          //	va_start(arp, fmt);
+    283          //	xvprintf(fmt, arp);
+    284          //	va_end(arp);
+    285          //
+    286          //	*outptr = 0;		/* Terminate output string with a \0 */
+    287          //	outptr = 0;			/* Switch destination for device */
+    288          //}
+    289          
+    290          
+    291          //void xfprintfCOM1 (					/* Put a formatted string to the specified device */
+    292          //	void(*func)(unsigned char),	/* Pointer to the output function */
+    293          //	const char*	fmt,			/* Pointer to the format string */
+    294          //	...							/* Optional arguments */
+    295          //)
+    296          //{
+    297          //	va_list arp;
+    298          //	void (*pf)(unsigned char);
+    299          //
+    300          //
+    301          //	pf = xfunc_out;		/* Save current output device */
+    302          //	xfunc_out = func;	/* Switch output to specified device */
+    303          //
+    304          //	va_start(arp, fmt);
+    305          //	xvprintf(fmt, arp);
+    306          //	va_end(arp);
+    307          //
+    308          //	xfunc_out = pf;		/* Restore output device */
+    309          //}
+    310          //
+    311          //
+    312          //
+    313          ///*----------------------------------------------*/
+    314          ///* Dump a line of binary dump                   */
+    315          ///*----------------------------------------------*/
+    316          //
+    317          //void put_dump (
+    318          //	const void* buff,		/* Pointer to the array to be dumped */
+    319          //	unsigned long addr,		/* Heading address value */
+    320          //	int len,				/* Number of items to be dumped */
+    321          //	int width				/* Size of the items (DF_CHAR, DF_SHORT, DF_LONG) */
+    322          //)
+    323          //{
+    324          //	int i;
+    325          //	const unsigned char *bp;
+    326          //	const unsigned short *sp;
+    327          //	const unsigned long *lp;
+    328          //
+    329          //
+    330          //	xprintfCOM1("%08lX ", addr);		/* address */
+    331          //
+    332          //	switch (width) {
+    333          //	case DW_CHAR:
+    334          //		bp = buff;
+    335          //		for (i = 0; i < len; i++)		/* Hexdecimal dump */
+    336          //			xprintf(" %02X", bp[i]);
+    337          //		xputc(' ');
+    338          //		for (i = 0; i < len; i++)		/* ASCII dump */
+    339          //			xputc((bp[i] >= ' ' && bp[i] <= '~') ? bp[i] : '.');
+    340          //		break;
+    341          //	case DW_SHORT:
+    342          //		sp = buff;
+    343          //		do								/* Hexdecimal dump */
+    344          //			xprintf(" %04X", *sp++);
+    345          //		while (--len);
+    346          //		break;
+    347          //	case DW_LONG:
+    348          //		lp = buff;
+    349          //		do								/* Hexdecimal dump */
+    350          //			xprintf(" %08LX", *lp++);
+    351          //		while (--len);
+    352          //		break;
+    353          //	}
+    354          //
+    355          //	xputc('\n');
+    356          //}
+    357          
+    358          #endif /* _USE_XFUNC_OUT */
+    359          
+    360          
+    361          
+    362          //#if _USE_XFUNC_IN
+    363          //unsigned char (*xfunc_in)(void);	/* Pointer to the input stream */
+    364          //
+    365          //
+    366          //unsigned char xUSART2_getchar(void)
+    367          //{
+    368          //  unsigned char key = 0;
+    369          //
+    370          //  /* Waiting for user input */
+    371          //  while (1)
+    372          //  {
+    373          //    if ( USART_GetFlagStatus(SZ_STM32_COM2, USART_FLAG_RXNE) != RESET)
+    374          //    {
+    375          //      key = (uint8_t)SZ_STM32_COM2->DR & 0xFF;
+    376          //      break;
+    377          //    }
+    378          //  }
+    379          //  return key;
+    380          //}
+    381          //
+    382          //unsigned char xUSART1_getchar(void)
+    383          //{
+    384          //  unsigned char key = 0;
+    385          //
+    386          //  /* Waiting for user input */
+    387          //  while (1)
+    388          //  {
+    389          //    if ( USART_GetFlagStatus(SZ_STM32_COM1, USART_FLAG_RXNE) != RESET)
+    390          //    {
+    391          //      key = (uint8_t)SZ_STM32_COM1->DR & 0xFF;
+    392          //      break;
+    393          //    }
+    394          //  }
+    395          //  return key;
+    396          //}
+    397          //
+    398          ///*----------------------------------------------*/
+    399          ///* Get a line from the input                    */
+    400          ///*----------------------------------------------*/
+    401          //
+    402          //int xgets (		/* 0:End of stream, 1:A line arrived */
+    403          //	char* buff,	/* Pointer to the buffer */
+    404          //	int len		/* Buffer length */
+    405          //)
+    406          //{
+    407          //	int c, i;
+    408          //
+    409          //
+    410          //	if (!xfunc_in) return 0;		/* No input function specified */
+    411          //
+    412          //	i = 0;
+    413          //	for (;;) {
+    414          //		c = xfunc_in();				/* Get a char from the incoming stream */
+    415          //		if (!c) return 0;			/* End of stream? */
+    416          //		if (c == '\r') break;		/* End of line? */
+    417          //		if (c == '\b' && i) {		/* Back space? */
+    418          //			i--;
+    419          //			if (_LINE_ECHO) xputc(c);
+    420          //			continue;
+    421          //		}
+    422          //		if (c >= ' ' && i < len - 1) {	/* Visible chars */
+    423          //			buff[i++] = c;
+    424          //			if (_LINE_ECHO) xputc(c);
+    425          //		}
+    426          //	}
+    427          //	buff[i] = 0;	/* Terminate with a \0 */
+    428          //	if (_LINE_ECHO) xputc('\n');
+    429          //	return 1;
+    430          //}
+    431          //
+    432          ///**
+    433          //  * @brief  Test to see if a key has been pressed on the HyperTerminal
+    434          //  * @param  key: The key pressed
+    435          //  * @retval 1: Correct
+    436          //  *         0: Error
+    437          //  */
+    438          //uint32_t xUSART2_ValidInput(void)
+    439          //{
+    440          //
+    441          //  if ( USART_GetFlagStatus(SZ_STM32_COM2, USART_FLAG_RXNE) != RESET)
+    442          //  {
+    443          //    return 1;
+    444          //  }
+    445          //  else
+    446          //  {
+    447          //    return 0;
+    448          //  }
+    449          //}
+    450          //
+    451          ///**
+    452          //  * @brief  Test to see if a key has been pressed on the HyperTerminal
+    453          //  * @param  key: The key pressed
+    454          //  * @retval 1: Correct
+    455          //  *         0: Error
+    456          //  */
+    457          //uint32_t xUSART1_ValidInput(void)
+    458          //{
+    459          //
+    460          //  if ( USART_GetFlagStatus(SZ_STM32_COM1, USART_FLAG_RXNE) != RESET)
+    461          //  {
+    462          //    return 1;
+    463          //  }
+    464          //  else
+    465          //  {
+    466          //    return 0;
+    467          //  }
+    468          //}
+    469          //
+    470          //uint32_t xgets_nowait (uint8_t * buffP, uint32_t length)
+    471          //{
+    472          //    static uint32_t bytes_read = 0;
+    473          //    uint8_t c = 0;
+    474          //  
+    475          //    if(xUSART2_ValidInput())
+    476          //    {
+    477          //        c = xUSART2_getchar();
+    478          //        if (c == '\r')
+    479          //        {
+    480          //          xUSART2_putchar('\n');
+    481          //          xUSART2_putchar('\r');          
+    482          //          buffP[bytes_read] = '\0';
+    483          //          bytes_read = 0;
+    484          //
+    485          //          return 1;
+    486          //        }
+    487          //
+    488          //        if (c == '\b') /* Backspace */
+    489          //        {
+    490          //          if (bytes_read > 0)
+    491          //          {
+    492          //            xUSART2_putchar('\b');
+    493          //            xUSART2_putchar(' ');
+    494          //            xUSART2_putchar('\b');
+    495          //            bytes_read--;
+    496          //          }
+    497          //          return 0;          
+    498          //        }
+    499          //        //if (bytes_read >= (CMD_STRING_SIZE))
+    500          //        if (bytes_read >= (length))
+    501          //        {
+    502          //          //printf("Command string size overflow\r\n");
+    503          //          bytes_read = 0;
+    504          //          return 0;
+    505          //        }
+    506          //        if (c >= 0x20 && c <= 0x7E)
+    507          //        {
+    508          //          buffP[bytes_read] = c;
+    509          //          bytes_read++;
+    510          //          xUSART2_putchar(c);
+    511          //        }
+    512          //    }
+    513          //    
+    514          //    return 0;
+    515          //}
+    516          //
+    517          //
+    518          //int xfgets (	/* 0:End of stream, 1:A line arrived */
+    519          //	unsigned char (*func)(void),	/* Pointer to the input stream function */
+    520          //	char* buff,	/* Pointer to the buffer */
+    521          //	int len		/* Buffer length */
+    522          //)
+    523          //{
+    524          //	unsigned char (*pf)(void);
+    525          //	int n;
+    526          //
+    527          //
+    528          //	pf = xfunc_in;			/* Save current input device */
+    529          //	xfunc_in = func;		/* Switch input to specified device */
+    530          //	n = xgets(buff, len);	/* Get a line */
+    531          //	xfunc_in = pf;			/* Restore input device */
+    532          //
+    533          //	return n;
+    534          //}
+    535          //
+    536          //
+    537          ///*----------------------------------------------*/
+    538          ///* Get a value of the string                    */
+    539          ///*----------------------------------------------*/
+    540          ///*	"123 -5   0x3ff 0b1111 0377  w "
+    541          //	    ^                           1st call returns 123 and next ptr
+    542          //	       ^                        2nd call returns -5 and next ptr
+    543          //                   ^                3rd call returns 1023 and next ptr
+    544          //                          ^         4th call returns 15 and next ptr
+    545          //                               ^    5th call returns 255 and next ptr
+    546          //                                  ^ 6th call fails and returns 0
+    547          //*/
+    548          
+    549          //int xatoi (			/* 0:Failed, 1:Successful */
+    550          //	char **str,		/* Pointer to pointer to the string */
+    551          //	long *res		/* Pointer to the valiable to store the value */
+    552          //)
+    553          //{
+    554          //	unsigned long val;
+    555          //	unsigned char c, r, s = 0;
+    556          //
+    557          //
+    558          //	*res = 0;
+    559          //
+    560          //	while ((c = **str) == ' ') (*str)++;	/* Skip leading spaces */
+    561          //
+    562          //	if (c == '-') {		/* negative? */
+    563          //		s = 1;
+    564          //		c = *(++(*str));
+    565          //	}
+    566          //
+    567          //	if (c == '0') {
+    568          //		c = *(++(*str));
+    569          //		switch (c) {
+    570          //		case 'x':		/* hexdecimal */
+    571          //			r = 16; c = *(++(*str));
+    572          //			break;
+    573          //		case 'b':		/* binary */
+    574          //			r = 2; c = *(++(*str));
+    575          //			break;
+    576          //		default:
+    577          //			if (c <= ' ') return 1;	/* single zero */
+    578          //			if (c < '0' || c > '9') return 0;	/* invalid char */
+    579          //			r = 8;		/* octal */
+    580          //		}
+    581          //	} else {
+    582          //		if (c < '0' || c > '9') return 0;	/* EOL or invalid char */
+    583          //		r = 10;			/* decimal */
+    584          //	}
+    585          //
+    586          //	val = 0;
+    587          //	while (c > ' ') {
+    588          //		if (c >= 'a') c -= 0x20;
+    589          //		c -= '0';
+    590          //		if (c >= 17) {
+    591          //			c -= 7;
+    592          //			if (c <= 9) return 0;	/* invalid char */
+    593          //		}
+    594          //		if (c >= r) return 0;		/* invalid char for current radix */
+    595          //		val = val * r + c;
+    596          //		c = *(++(*str));
+    597          //	}
+    598          //	if (s) val = 0 - val;			/* apply sign if needed */
+    599          //
+    600          //	*res = val;
+    601          //	return 1;
+    602          //}
+    603          
+    604          //#endif /* _USE_XFUNC_IN */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   xPrintf_init
+        24   -> SystemCoreClockUpdate
+        24   -> __SZ_STM32_COMInit
+      12   xprintfCOM1
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+       4  ??DataTable0_1
+       4  ??DataTable0_2
+       4  ??DataTable0_3
+      56  xPrintf_init
+       6  xprintfCOM1
+
+ 
+ 78 bytes in section .text
+ 
+ 78 bytes of CODE memory
+
+Errors: none
+Warnings: none
