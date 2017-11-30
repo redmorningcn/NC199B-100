@@ -1888,7 +1888,7 @@ static  void  MBS_RTU_Task (MODBUS_CH  *pch)
     CPU_BOOLEAN     ok;
     CPU_INT16U      calc_crc;                            /* Used for CRC                                                    */
     CPU_BOOLEAN     send_reply;
-    OS_ERR          err;
+//    OS_ERR          err;
 
     pch->StatMsgCtr++;
     if (pch->RxBufByteCtr >= MODBUS_RTU_MIN_MSG_SIZE) {
@@ -1932,13 +1932,13 @@ static  void  MBS_RTU_Task (MODBUS_CH  *pch)
                  ( pch->RxFrameTail != 0 ) ) ) {
                   //redmorningcn 20170526   
 //move1         pch->RxBufByteCnt   = pch->RxBufByteCtr;
-                                     
+                extern  CPU_BOOLEAN  NMBS_FCxx_Handler (MODBUS_CH  *pch);
                 send_reply = NMBS_FCxx_Handler(pch);
                 if (send_reply == DEF_TRUE) {
                     goto exit;
                 }              
             }
-        next:
+//        next:
 #endif
             /***********************************************
             * 描述： MODBUS RTU 从机数据处理
@@ -1971,6 +1971,7 @@ exit:
     //pch->RTU_TimeoutEn  = DEF_TRUE;                      // 重新启动超时（无名沈添加）
     //pch->RxBufByteCtr   = 0;
     //pch->RxBufPtr       = &pch->RxBuf[0];
+    return  ;
 }
 #endif
 

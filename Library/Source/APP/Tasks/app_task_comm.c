@@ -28,6 +28,7 @@
 #include <os_cfg_app.h>
 #include <bsp_timer.h>
 #include "csnc_package_deal.h"
+#include "app_chk.h"
 
 //#include <bsp_flash.h>
 //#include <iap.h>

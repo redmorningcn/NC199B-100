@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:23
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:12
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -1153,202 +1153,203 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Ports\STM32\STM32F103\IAR\MB_BSP.
     627              return;
    \   00000006   0x4770             BX       LR               ;; return
     628              
-    629              switch (pch->PortNbr) {
-    630              case 0:
-    631                  /* Transmit Data */
-    632                  USART1->DR = (c & (u16)0x01FF);
-    633                  break;
-    634                  
-    635              case 1:
-    636                  /* Transmit Data */
-    637                  USART2->DR = (c & (u16)0x01FF);
-    638                  break;
-    639                  
-    640              case 2:
-    641                  /* Transmit Data */
-    642                  USART3->DR = (c & (u16)0x01FF);
-    643                  break;
-    644                  
-    645              case 3:
-    646                  /* Transmit Data */
-    647                  UART4->DR = (c & (u16)0x01FF);
-    648                  break;
-    649              }
-    650          }
-    651          
-    652          /*$PAGE*/
-    653          /*
-    654          *********************************************************************************************************
-    655          *                                         MB_CommTxIntDis()
-    656          *
-    657          * Description : This function disables Tx interrupts.
-    658          *
-    659          * Argument(s) : pch        is a pointer to the Modbus channel
-    660          *
-    661          * Return(s)   : none.
-    662          *
-    663          * Caller(s)   : MB_CommExit()
-    664          *               MB_TxByte()
-    665          *
-    666          * Note(s)     : none.
-    667          *********************************************************************************************************
-    668          */
-    669          
+    629              switch (pch->PortNbr) 
+    630              {
+    631              case 0:
+    632                  /* Transmit Data */
+    633                  USART1->DR = (c & (u16)0x01FF);
+    634                  break;
+    635                  
+    636              case 1:
+    637                  /* Transmit Data */
+    638                  USART2->DR = (c & (u16)0x01FF);
+    639                  break;
+    640                  
+    641              case 2:
+    642                  /* Transmit Data */
+    643                  USART3->DR = (c & (u16)0x01FF);
+    644                  break;
+    645                  
+    646              case 3:
+    647                  /* Transmit Data */
+    648                  UART4->DR = (c & (u16)0x01FF);
+    649                  break;
+    650              }
+    651          }
+    652          
+    653          /*$PAGE*/
+    654          /*
+    655          *********************************************************************************************************
+    656          *                                         MB_CommTxIntDis()
+    657          *
+    658          * Description : This function disables Tx interrupts.
+    659          *
+    660          * Argument(s) : pch        is a pointer to the Modbus channel
+    661          *
+    662          * Return(s)   : none.
+    663          *
+    664          * Caller(s)   : MB_CommExit()
+    665          *               MB_TxByte()
+    666          *
+    667          * Note(s)     : none.
+    668          *********************************************************************************************************
+    669          */
+    670          
 
    \                                 In section .text, align 2, keep-with-next
-    670          void  MB_CommTxIntDis (MODBUS_CH  *pch)
-    671          {
+    671          void  MB_CommTxIntDis (MODBUS_CH  *pch)
+    672          {
    \                     MB_CommTxIntDis: (+1)
    \   00000000   0xB538             PUSH     {R3-R5,LR}
    \   00000002   0x4604             MOV      R4,R0
-    672              CPU_SR  cpu_sr = 0;
-    673          
-    674              CPU_CRITICAL_ENTER();
+    673              CPU_SR  cpu_sr = 0;
+    674          
+    675              CPU_CRITICAL_ENTER();
    \   00000004   0x.... 0x....      BL       CPU_SR_Save
    \   00000008   0x4605             MOV      R5,R0
    \   0000000A   0x.... 0x....      BL       CPU_IntDisMeasStart
-    675              USART_ITConfig(pch->USARTx, USART_IT_TC, DISABLE);
+    676              USART_ITConfig(pch->USARTx, USART_IT_TC, DISABLE);
    \   0000000E   0x2200             MOVS     R2,#+0
    \   00000010   0xF240 0x6126      MOVW     R1,#+1574
    \   00000014   0xF8D4 0x0460      LDR      R0,[R4, #+1120]
    \   00000018   0x.... 0x....      BL       USART_ITConfig
-    676              USART_ITConfig(pch->USARTx, USART_IT_TXE, DISABLE);
+    677              USART_ITConfig(pch->USARTx, USART_IT_TXE, DISABLE);
    \   0000001C   0x2200             MOVS     R2,#+0
    \   0000001E   0xF240 0x7127      MOVW     R1,#+1831
    \   00000022   0xF8D4 0x0460      LDR      R0,[R4, #+1120]
    \   00000026   0x.... 0x....      BL       USART_ITConfig
-    677              CPU_CRITICAL_EXIT();
+    678              CPU_CRITICAL_EXIT();
    \   0000002A   0x.... 0x....      BL       CPU_IntDisMeasStop
    \   0000002E   0x4628             MOV      R0,R5
    \   00000030   0xE8BD 0x4032      POP      {R1,R4,R5,LR}
    \   00000034   0x.... 0x....      B.W      CPU_SR_Restore
-    678              
-    679              return;
-    680              
-    681              switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
-    682              case 0:
-    683                  USART_ITConfig(USART1, USART_IT_TC, DISABLE);
-    684                  USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
-    685                  break;
-    686                  
-    687              case 1:
-    688                  USART_ITConfig(USART2, USART_IT_TC, DISABLE);
-    689                  USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
-    690                  break;
-    691                  
-    692              case 2:
-    693                  USART_ITConfig(USART3, USART_IT_TC, DISABLE);
-    694                  USART_ITConfig(USART3, USART_IT_TXE, DISABLE);
-    695                  break;
-    696                  
-    697              case 3:
-    698                  USART_ITConfig(UART4, USART_IT_TC, DISABLE);
-    699                  USART_ITConfig(UART4, USART_IT_TXE, DISABLE);
-    700                  break;
-    701              }
-    702              CPU_CRITICAL_EXIT();
-    703          }
-    704          
-    705          /*$PAGE*/
-    706          /*
-    707          *********************************************************************************************************
-    708          *                                         MB_CommTxIntEn()
-    709          *
-    710          * Description : This function enables Tx interrupts.
-    711          *
-    712          * Argument(s) : pch        is a pointer to the Modbus channel
-    713          *
-    714          * Return(s)   : none.
-    715          *
-    716          * Caller(s)   : MB_Tx()
-    717          *
-    718          * Note(s)     : none.
-    719          *********************************************************************************************************
-    720          */
+    679              
+    680              return;
+    681              
+    682              switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
+    683              case 0:
+    684                  USART_ITConfig(USART1, USART_IT_TC, DISABLE);
+    685                  USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
+    686                  break;
+    687                  
+    688              case 1:
+    689                  USART_ITConfig(USART2, USART_IT_TC, DISABLE);
+    690                  USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
+    691                  break;
+    692                  
+    693              case 2:
+    694                  USART_ITConfig(USART3, USART_IT_TC, DISABLE);
+    695                  USART_ITConfig(USART3, USART_IT_TXE, DISABLE);
+    696                  break;
+    697                  
+    698              case 3:
+    699                  USART_ITConfig(UART4, USART_IT_TC, DISABLE);
+    700                  USART_ITConfig(UART4, USART_IT_TXE, DISABLE);
+    701                  break;
+    702              }
+    703              CPU_CRITICAL_EXIT();
+    704          }
+    705          
+    706          /*$PAGE*/
+    707          /*
+    708          *********************************************************************************************************
+    709          *                                         MB_CommTxIntEn()
+    710          *
+    711          * Description : This function enables Tx interrupts.
+    712          *
+    713          * Argument(s) : pch        is a pointer to the Modbus channel
+    714          *
+    715          * Return(s)   : none.
+    716          *
+    717          * Caller(s)   : MB_Tx()
+    718          *
+    719          * Note(s)     : none.
+    720          *********************************************************************************************************
+    721          */
 
    \                                 In section .text, align 2, keep-with-next
-    721          void  MB_CommTxIntEn (MODBUS_CH  *pch)
-    722          {
+    722          void  MB_CommTxIntEn (MODBUS_CH  *pch)
+    723          {
    \                     MB_CommTxIntEn: (+1)
    \   00000000   0xB538             PUSH     {R3-R5,LR}
    \   00000002   0x4604             MOV      R4,R0
-    723              CPU_SR  cpu_sr = 0;
-    724          
-    725              CPU_CRITICAL_ENTER();
+    724              CPU_SR  cpu_sr = 0;
+    725          
+    726              CPU_CRITICAL_ENTER();
    \   00000004   0x.... 0x....      BL       CPU_SR_Save
    \   00000008   0x4605             MOV      R5,R0
    \   0000000A   0x.... 0x....      BL       CPU_IntDisMeasStart
-    726              USART_ITConfig(pch->USARTx, USART_IT_TC, ENABLE);
+    727              USART_ITConfig(pch->USARTx, USART_IT_TC, ENABLE);
    \   0000000E   0x2201             MOVS     R2,#+1
    \   00000010   0xF240 0x6126      MOVW     R1,#+1574
    \   00000014   0xF8D4 0x0460      LDR      R0,[R4, #+1120]
    \   00000018   0x.... 0x....      BL       USART_ITConfig
-    727              USART_ITConfig(pch->USARTx, USART_IT_TXE, ENABLE);
+    728              USART_ITConfig(pch->USARTx, USART_IT_TXE, ENABLE);
    \   0000001C   0x2201             MOVS     R2,#+1
    \   0000001E   0xF240 0x7127      MOVW     R1,#+1831
    \   00000022   0xF8D4 0x0460      LDR      R0,[R4, #+1120]
    \   00000026   0x.... 0x....      BL       USART_ITConfig
-    728              CPU_CRITICAL_EXIT();
+    729              CPU_CRITICAL_EXIT();
    \   0000002A   0x.... 0x....      BL       CPU_IntDisMeasStop
    \   0000002E   0x4628             MOV      R0,R5
    \   00000030   0xE8BD 0x4032      POP      {R1,R4,R5,LR}
    \   00000034   0x.... 0x....      B.W      CPU_SR_Restore
-    729              
-    730              return;
-    731              
-    732              switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
-    733              case 0:
-    734                  USART_ITConfig(USART1, USART_IT_TC, ENABLE);
-    735                  USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
-    736                  break;
-    737                  
-    738              case 1:
-    739                  USART_ITConfig(USART2, USART_IT_TC, ENABLE);
-    740                  USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
-    741                  break;
-    742                  
-    743              case 2:
-    744                  USART_ITConfig(USART3, USART_IT_TC, ENABLE);
-    745                  USART_ITConfig(USART3, USART_IT_TXE, ENABLE);
-    746                  break;
-    747                  
-    748              case 3:
-    749                  USART_ITConfig(UART4, USART_IT_TC, ENABLE);
-    750                  USART_ITConfig(UART4, USART_IT_TXE, ENABLE);
-    751                  break;
-    752              }
-    753              CPU_CRITICAL_EXIT();
-    754          }
-    755          
-    756          /*$PAGE*/
-    757          /*
-    758          *********************************************************************************************************
-    759          *                                           MB_RTU_TmrInit()
-    760          *
-    761          * Description : This function is called to initialize the RTU timeout timer.
-    762          *
-    763          * Argument(s) : freq          Is the frequency of the modbus RTU timer interrupt.
-    764          *
-    765          * Return(s)   : none.
-    766          *
-    767          * Caller(s)   : MB_Init().
-    768          *
-    769          * Note(s)     : none.
-    770          *********************************************************************************************************
-    771          */
-    772          #if (MODBUS_CFG_RTU_EN == DEF_ENABLED)
+    730              
+    731              return;
+    732              
+    733              switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
+    734              case 0:
+    735                  USART_ITConfig(USART1, USART_IT_TC, ENABLE);
+    736                  USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
+    737                  break;
+    738                  
+    739              case 1:
+    740                  USART_ITConfig(USART2, USART_IT_TC, ENABLE);
+    741                  USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
+    742                  break;
+    743                  
+    744              case 2:
+    745                  USART_ITConfig(USART3, USART_IT_TC, ENABLE);
+    746                  USART_ITConfig(USART3, USART_IT_TXE, ENABLE);
+    747                  break;
+    748                  
+    749              case 3:
+    750                  USART_ITConfig(UART4, USART_IT_TC, ENABLE);
+    751                  USART_ITConfig(UART4, USART_IT_TXE, ENABLE);
+    752                  break;
+    753              }
+    754              CPU_CRITICAL_EXIT();
+    755          }
+    756          
+    757          /*$PAGE*/
+    758          /*
+    759          *********************************************************************************************************
+    760          *                                           MB_RTU_TmrInit()
+    761          *
+    762          * Description : This function is called to initialize the RTU timeout timer.
+    763          *
+    764          * Argument(s) : freq          Is the frequency of the modbus RTU timer interrupt.
+    765          *
+    766          * Return(s)   : none.
+    767          *
+    768          * Caller(s)   : MB_Init().
+    769          *
+    770          * Note(s)     : none.
+    771          *********************************************************************************************************
+    772          */
+    773          #if (MODBUS_CFG_RTU_EN == DEF_ENABLED)
 
    \                                 In section .text, align 2, keep-with-next
-    773          void  MB_RTU_TmrInit (void)
-    774          {
+    774          void  MB_RTU_TmrInit (void)
+    775          {
    \                     MB_RTU_TmrInit: (+1)
    \   00000000   0xB53E             PUSH     {R1-R5,LR}
-    775              CPU_INT32U  clk_freq;
-    776              TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure; 
-    777              
-    778              clk_freq            = BSP_CPU_ClkFreq();
+    776              CPU_INT32U  clk_freq;
+    777              TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure; 
+    778              
+    779              clk_freq            = BSP_CPU_ClkFreq();
    \   00000002   0x.... 0x....      BL       BSP_CPU_ClkFreq
-    779              MB_Tmr_ReloadCnts   = clk_freq / 36000/ MB_RTU_Freq - 1;
+    780              MB_Tmr_ReloadCnts   = clk_freq / 36000/ MB_RTU_Freq - 1;
    \   00000006   0x....             LDR.N    R5,??DataTable10_12
    \   00000008   0xF648 0x41A0      MOVW     R1,#+36000
    \   0000000C   0xFBB0 0xF0F1      UDIV     R0,R0,R1
@@ -1357,184 +1358,184 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Ports\STM32\STM32F103\IAR\MB_BSP.
    \   00000014   0xFBB0 0xF0F1      UDIV     R0,R0,R1
    \   00000018   0x1E40             SUBS     R0,R0,#+1
    \   0000001A   0x6028             STR      R0,[R5, #+0]
-    780              
-    781              //预分频系数（TIM_Prescaler）  = 36000-1，这样计数器时钟为72MHz/36000 = 2kHz 
-    782              //中断计数器 （TIM_Period）    = MB_Tmr_ReloadCnts
-    783              //定时器中断频率               = clk_freq / （TIM_Prescaler + 1） / （TIM_Period + 1）
-    784              //定时器中断频率               = 72000000 / 36000 / 5 = 400Hz
-    785              
-    786              RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);            // 使能定时器时钟
+    781              
+    782              //预分频系数（TIM_Prescaler）  = 36000-1，这样计数器时钟为72MHz/36000 = 2kHz 
+    783              //中断计数器 （TIM_Period）    = MB_Tmr_ReloadCnts
+    784              //定时器中断频率               = clk_freq / （TIM_Prescaler + 1） / （TIM_Period + 1）
+    785              //定时器中断频率               = 72000000 / 36000 / 5 = 400Hz
+    786              
+    787              RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);            // 使能定时器时钟
    \   0000001C   0x2101             MOVS     R1,#+1
    \   0000001E   0x2002             MOVS     R0,#+2
    \   00000020   0x.... 0x....      BL       RCC_APB1PeriphClockCmd
-    787              TIM_DeInit(TIM3);                                               // 复位TIM3定时器
+    788              TIM_DeInit(TIM3);                                               // 复位TIM3定时器
    \   00000024   0x....             LDR.N    R4,??DataTable10_14  ;; 0x40000400
    \   00000026   0x4620             MOV      R0,R4
    \   00000028   0x.... 0x....      BL       TIM_DeInit
-    788              
-    789              /* TIM3 configuration */
-    790              TIM_TimeBaseStructure.TIM_Period        = MB_Tmr_ReloadCnts;    // 中断频率     
+    789              
+    790              /* TIM3 configuration */
+    791              TIM_TimeBaseStructure.TIM_Period        = MB_Tmr_ReloadCnts;    // 中断频率     
    \   0000002C   0x6828             LDR      R0,[R5, #+0]
    \   0000002E   0xF8AD 0x0004      STRH     R0,[SP, #+4]
-    791              TIM_TimeBaseStructure.TIM_Prescaler     = 36000 - 1;            // 分频36000       
+    792              TIM_TimeBaseStructure.TIM_Prescaler     = 36000 - 1;            // 分频36000       
    \   00000032   0xF648 0x409F      MOVW     R0,#+35999
    \   00000036   0xF8AD 0x0000      STRH     R0,[SP, #+0]
-    792              TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;         // 时钟分频  
+    793              TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;         // 时钟分频  
    \   0000003A   0x2000             MOVS     R0,#+0
    \   0000003C   0xF8AD 0x0006      STRH     R0,[SP, #+6]
-    793              TIM_TimeBaseStructure.TIM_CounterMode   = TIM_CounterMode_Up;   // 计数方向向上计数
+    794              TIM_TimeBaseStructure.TIM_CounterMode   = TIM_CounterMode_Up;   // 计数方向向上计数
    \   00000040   0xF8AD 0x0002      STRH     R0,[SP, #+2]
-    794              TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
+    795              TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
    \   00000044   0x4669             MOV      R1,SP
    \   00000046   0x4620             MOV      R0,R4
    \   00000048   0x.... 0x....      BL       TIM_TimeBaseInit
-    795              
-    796              TIM_ClearFlag(TIM3, TIM_FLAG_Update);           // 清除TIM3溢出中断标志
+    796              
+    797              TIM_ClearFlag(TIM3, TIM_FLAG_Update);           // 清除TIM3溢出中断标志
    \   0000004C   0x2101             MOVS     R1,#+1
    \   0000004E   0x4620             MOV      R0,R4
    \   00000050   0x.... 0x....      BL       TIM_ClearFlag
-    797              TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);      // TIM3溢出中断允许
+    798              TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);      // TIM3溢出中断允许
    \   00000054   0x2201             MOVS     R2,#+1
    \   00000056   0x4611             MOV      R1,R2
    \   00000058   0x4620             MOV      R0,R4
    \   0000005A   0x.... 0x....      BL       TIM_ITConfig
-    798              TIM_Cmd(TIM3, ENABLE);                          // 允许tim2计数
+    799              TIM_Cmd(TIM3, ENABLE);                          // 允许tim2计数
    \   0000005E   0x2101             MOVS     R1,#+1
    \   00000060   0x4620             MOV      R0,R4
    \   00000062   0x.... 0x....      BL       TIM_Cmd
-    799              
-    800              /***********************************************
-    801              * 描述：设置中断入口函数及中断优先级
-    802              */
-    803              BSP_IntVectSet(BSP_INT_ID_TIM3, MB_RTU_TmrISR_Handler);
+    800              
+    801              /***********************************************
+    802              * 描述：设置中断入口函数及中断优先级
+    803              */
+    804              BSP_IntVectSet(BSP_INT_ID_TIM3, MB_RTU_TmrISR_Handler);
    \   00000066   0x.... 0x....      ADR.W    R1,MB_RTU_TmrISR_Handler
    \   0000006A   0x201D             MOVS     R0,#+29
    \   0000006C   0x.... 0x....      BL       BSP_IntVectSet
-    804              BSP_IntEn(BSP_INT_ID_TIM3);
+    805              BSP_IntEn(BSP_INT_ID_TIM3);
    \   00000070   0x201D             MOVS     R0,#+29
    \   00000072   0x.... 0x....      BL       BSP_IntEn
-    805              
-    806              MB_RTU_TmrResetAll();                                     /* Reset all the RTU timers, we changed freq. */
+    806              
+    807              MB_RTU_TmrResetAll();                                     /* Reset all the RTU timers, we changed freq. */
    \   00000076   0x.... 0x....      BL       MB_RTU_TmrResetAll
-    807          }
+    808          }
    \   0000007A   0xBD37             POP      {R0-R2,R4,R5,PC}  ;; return
-    808          #endif
-    809          
-    810          /*$PAGE*/
-    811          /*
-    812          *********************************************************************************************************
-    813          *                                           MB_RTU_TmrExit()
-    814          *
-    815          * Description : This function is called to disable the RTU timeout timer.
-    816          *
-    817          * Argument(s) : none.
-    818          *
-    819          * Return(s)   : none.
-    820          *
-    821          * Caller(s)   : MB_Exit()
-    822          *
-    823          * Note(s)     : none.
-    824          *********************************************************************************************************
-    825          */
-    826          #if (MODBUS_CFG_RTU_EN == DEF_ENABLED)
+    809          #endif
+    810          
+    811          /*$PAGE*/
+    812          /*
+    813          *********************************************************************************************************
+    814          *                                           MB_RTU_TmrExit()
+    815          *
+    816          * Description : This function is called to disable the RTU timeout timer.
+    817          *
+    818          * Argument(s) : none.
+    819          *
+    820          * Return(s)   : none.
+    821          *
+    822          * Caller(s)   : MB_Exit()
+    823          *
+    824          * Note(s)     : none.
+    825          *********************************************************************************************************
+    826          */
+    827          #if (MODBUS_CFG_RTU_EN == DEF_ENABLED)
 
    \                                 In section .text, align 2, keep-with-next
-    827          void  MB_RTU_TmrExit (void)
-    828          {
+    828          void  MB_RTU_TmrExit (void)
+    829          {
    \                     MB_RTU_TmrExit: (+1)
    \   00000000   0xB580             PUSH     {R7,LR}
-    829              TIM_Cmd(TIM3,DISABLE);              //禁止计数器 
+    830              TIM_Cmd(TIM3,DISABLE);              //禁止计数器 
    \   00000002   0x2100             MOVS     R1,#+0
    \   00000004   0x....             LDR.N    R0,??DataTable10_14  ;; 0x40000400
    \   00000006   0x.... 0x....      BL       TIM_Cmd
-    830              RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, DISABLE);
+    831              RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, DISABLE);
    \   0000000A   0x2100             MOVS     R1,#+0
    \   0000000C   0x2002             MOVS     R0,#+2
    \   0000000E   0xE8BD 0x4004      POP      {R2,LR}
    \   00000012   0x.... 0x....      B.W      RCC_APB1PeriphClockCmd
-    831          }
-    832          #endif
-    833          
-    834          /*$PAGE*/
-    835          /*
-    836          *********************************************************************************************************
-    837          *                                       MB_RTU_TmrISR_Handler()
-    838          *
-    839          * Description : This function handles the case when the RTU timeout timer expires.
-    840          *
-    841          * Arguments   : none.
-    842          *
-    843          * Returns     : none.
-    844          *
-    845          * Caller(s)   : This is a ISR.
-    846          *
-    847          * Note(s)     : none.
-    848          *********************************************************************************************************
-    849          */
-    850          #if (MODBUS_CFG_RTU_EN == DEF_ENABLED)
+    832          }
+    833          #endif
+    834          
+    835          /*$PAGE*/
+    836          /*
+    837          *********************************************************************************************************
+    838          *                                       MB_RTU_TmrISR_Handler()
+    839          *
+    840          * Description : This function handles the case when the RTU timeout timer expires.
+    841          *
+    842          * Arguments   : none.
+    843          *
+    844          * Returns     : none.
+    845          *
+    846          * Caller(s)   : This is a ISR.
+    847          *
+    848          * Note(s)     : none.
+    849          *********************************************************************************************************
+    850          */
+    851          #if (MODBUS_CFG_RTU_EN == DEF_ENABLED)
 
    \                                 In section .text, align 4, keep-with-next
-    851          void  MB_RTU_TmrISR_Handler (void)
-    852          {
+    852          void  MB_RTU_TmrISR_Handler (void)
+    853          {
    \                     MB_RTU_TmrISR_Handler: (+1)
    \   00000000   0xB510             PUSH     {R4,LR}
-    853              if(TIM_GetITStatus(TIM3, TIM_IT_Update)== SET) {//检测是否发生溢出更新事件
+    854              if(TIM_GetITStatus(TIM3, TIM_IT_Update)== SET) {//检测是否发生溢出更新事件
    \   00000002   0x....             LDR.N    R4,??DataTable10_14  ;; 0x40000400
    \   00000004   0x2101             MOVS     R1,#+1
    \   00000006   0x4620             MOV      R0,R4
    \   00000008   0x.... 0x....      BL       TIM_GetITStatus
    \   0000000C   0x2801             CMP      R0,#+1
    \   0000000E   0xD10B             BNE.N    ??MB_RTU_TmrISR_Handler_0
-    854                TIM_ClearITPendingBit(TIM3 , TIM_FLAG_Update);/* Clear timer #1 interrupt                           */
+    855                TIM_ClearITPendingBit(TIM3 , TIM_FLAG_Update);/* Clear timer #1 interrupt                           */
    \   00000010   0x2101             MOVS     R1,#+1
    \   00000012   0x4620             MOV      R0,R4
    \   00000014   0x.... 0x....      BL       TIM_ClearITPendingBit
-    855                MB_RTU_TmrCtr++;                              /* Indicate that we had activities on this interrupt. */
+    856                MB_RTU_TmrCtr++;                              /* Indicate that we had activities on this interrupt. */
    \   00000018   0x....             LDR.N    R0,??DataTable10_15
    \   0000001A   0x6801             LDR      R1,[R0, #+0]
    \   0000001C   0x1C49             ADDS     R1,R1,#+1
    \   0000001E   0x6001             STR      R1,[R0, #+0]
-    856                MB_RTU_TmrUpdate();                           /* Check for RTU timers that have expired             */
+    857                MB_RTU_TmrUpdate();                           /* Check for RTU timers that have expired             */
    \   00000020   0xE8BD 0x4010      POP      {R4,LR}
    \   00000024   0x.... 0x....      B.W      MB_RTU_TmrUpdate
-    857              }
-    858          }
+    858              }
+    859          }
    \                     ??MB_RTU_TmrISR_Handler_0: (+1)
    \   00000028   0xBD10             POP      {R4,PC}          ;; return
-    859          #endif
-    860                                
+    860          #endif
+    861                                
 
    \                                 In section .text, align 2, keep-with-next
-    861          void    UARTPutString(MODBUS_CH  *pch, const char *printfbuf)              
-    862          {
+    862          void    UARTPutString(MODBUS_CH  *pch, const char *printfbuf)              
+    863          {
    \                     UARTPutString: (+1)
    \   00000000   0xB538             PUSH     {R3-R5,LR}
    \   00000002   0x4604             MOV      R4,R0
    \   00000004   0x460D             MOV      R5,R1
-    863              // USART_ITConfig(pch->USARTx, USART_IT_TC, DISABLE);
-    864              // printf((const char *)printfbuf);
-    865              // USART_ClearITPendingBit(pch->USARTx, USART_IT_TC); 
-    866              // USART_ITConfig(pch->USARTx, USART_IT_TC, ENABLE);
-    867              
-    868              int nbr_bytes   = strlen(printfbuf);
+    864              // USART_ITConfig(pch->USARTx, USART_IT_TC, DISABLE);
+    865              // printf((const char *)printfbuf);
+    866              // USART_ClearITPendingBit(pch->USARTx, USART_IT_TC); 
+    867              // USART_ITConfig(pch->USARTx, USART_IT_TC, ENABLE);
+    868              
+    869              int nbr_bytes   = strlen(printfbuf);
    \   00000006   0x4628             MOV      R0,R5
    \   00000008   0x.... 0x....      BL       strlen
-    869              
-    870              if ( (nbr_bytes > 0) && (nbr_bytes < MB_DATA_NBR_REGS * 2 ) ) {  
+    870              
+    871              if ( (nbr_bytes > 0) && (nbr_bytes < MB_DATA_NBR_REGS * 2 ) ) {  
    \   0000000C   0x1E41             SUBS     R1,R0,#+1
    \   0000000E   0x29F9             CMP      R1,#+249
    \   00000010   0xD207             BCS.N    ??UARTPutString_0
-    871                  NMB_Tx((MODBUS_CH   *)pch,
-    872                         (CPU_INT08U  *)printfbuf,
-    873                         (CPU_INT16U   )nbr_bytes);
+    872                  NMB_Tx((MODBUS_CH   *)pch,
+    873                         (CPU_INT08U  *)printfbuf,
+    874                         (CPU_INT16U   )nbr_bytes);
    \   00000012   0x4602             MOV      R2,R0
    \   00000014   0xB292             UXTH     R2,R2
    \   00000016   0x4629             MOV      R1,R5
    \   00000018   0x4620             MOV      R0,R4
    \   0000001A   0xE8BD 0x4038      POP      {R3-R5,LR}
    \   0000001E   0x.... 0x....      B.W      NMB_Tx
-    874              }
-    875          }
+    875              }
+    876          }
    \                     ??UARTPutString_0: (+1)
    \   00000022   0xBD31             POP      {R0,R4,R5,PC}    ;; return
 

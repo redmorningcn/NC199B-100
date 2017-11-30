@@ -180,11 +180,18 @@ void test_DM412_Led(void)
 {
     static  uint16   red = 0x5555,green =0xAAAA,blue =0xffff;
     
-    red     +=  0x7ff;
-    green   +=  0x7ff;
-    blue    -=  0x7ff;
+    bsp_DM412Init();
     
-    SetLedColor(0,red,green,blue);
-    SetLedColor(1,red,green,blue);
-    SetLedColor(2,red,green,blue);
+    uint8  i = 10;
+    while(i--)
+    {
+
+        red     +=  0x7ff;
+        green   +=  0x7ff;
+        blue    -=  0x7ff;
+        
+        SetLedColor(0,red,green,blue);
+        SetLedColor(1,red,green,blue);
+        SetLedColor(2,red,green,blue);
+    }
 }

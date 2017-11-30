@@ -140,7 +140,7 @@ void  App_TaskMeasureCreate(void)
  *******************************************************************************/
 static  void  AppTaskMeasure (void *p_arg)
 {
-    OS_ERR      err;
+//    OS_ERR      err;
     /***********************************************
     * 描述： 任务初始化
     */

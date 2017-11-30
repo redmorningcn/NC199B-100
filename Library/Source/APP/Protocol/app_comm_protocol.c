@@ -99,34 +99,6 @@ void	SetRecvFrameNbr(void)
 }
 
 /*******************************************************************************
-* 名    称： GetCheckSumNR
-* 功    能： 
-* 入口参数： 无
-* 出口参数： 无
-* 作　 　者： wumingshen.
-* 创建日期： 2015-12-07
-* 修    改：
-* 修改日期：
-* 备    注：
-*******************************************************************************/
-INT08U GetCheckSumNR(INT08U  Buf[], INT32U Len)
-{
-    INT32S  i;
-    INT08U   CheckSum = 0;
-    
-    for(i = 0;i < Len; i++) {
-        CheckSum += Buf[i];                         //求和
-    }
-    
-    if((unsigned char)CheckSum >= 0x80) {
-    	CheckSum = ~CheckSum + 1 +0x80;             //取反+1
-    } else {
-    	CheckSum = CheckSum;                       	//取反+1
-    }
-    return  CheckSum;
-}
-
-/*******************************************************************************
 * 名    称： CSNC_GetData
 * 功    能： 
 * 入口参数： 无

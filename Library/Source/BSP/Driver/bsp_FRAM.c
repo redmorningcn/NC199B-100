@@ -24,7 +24,7 @@
 */
 #if UCOS_EN     == DEF_ENABLED
     #if OS_VERSION > 30000U
-    static  OS_SEM			Bsp_Fram_Sem;    	//信号量
+//    static  OS_SEM			Bsp_Fram_Sem;    	//信号量
     #else
     static  OS_EVENT		*Bsp_Fram_Sem;    //信号量
     #endif

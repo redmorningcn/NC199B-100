@@ -19,8 +19,14 @@
 #define     SDA         408		//PE8
 
 
+#ifndef FALSE
 #define FALSE              1
+#endif
+
+#ifndef TRUE
 #define TRUE               0
+#endif
+
 #define Delay_Factor       5                                        		//ÑÓÊ±Òò×Ó
 
 

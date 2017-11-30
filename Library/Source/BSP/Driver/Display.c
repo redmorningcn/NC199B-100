@@ -256,7 +256,7 @@ uint8_t LedCharCode[] = {0x00,0xE5,0xE5,0xE5,0xE5,0xE5,0xE5,0xE5,0xE5,0xE5,0xE5,
 					   };     
            
 #define     LED_CHAR_NNM    16                  //数码管显示编码个数 
-#define     DISPLAY_LED_NUM 8                   //数码管个数   
+#define     DISPLAY_LED_NUM 4                   //数码管个数   
         
 //--------------------------------------------------------------------
 //void          DisplayNum (uint32_t Unmber)

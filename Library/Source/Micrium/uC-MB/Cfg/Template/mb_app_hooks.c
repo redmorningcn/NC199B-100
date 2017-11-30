@@ -105,8 +105,8 @@ CPU_INT08U  App_MB_RdNRegsHook    ( CPU_INT16U  reg_base,
     * ÃèÊö£º ¸¡µã¼Ä´æÆ÷
     */
     } else {
-        CPU_INT16U  *preg       = (CPU_INT16U *)&Ctrl.Para.buf2[0];
-        CPU_INT16U  reg         = reg_base + reg_nbr - MODBUS_CFG_FP_START_IX;
+//        CPU_INT16U  *preg       = (CPU_INT16U *)&Ctrl.Para.buf2[0];
+//        CPU_INT16U  reg         = reg_base + reg_nbr - MODBUS_CFG_FP_START_IX;
 //        CPU_INT16U  reg_max     = sizeof(UnionSenPara) / 2;
         /***********************************************
         * ÃèÊö£º »ñÈ¡Öµ
@@ -250,8 +250,8 @@ CPU_INT08U  App_MB_WrNRegsHook    ( CPU_INT16U reg_base,
 //            //*perr = MODBUS_ERR_ILLEGAL_DATA_ADDR;
 //        }
 //    }
-//    
-//    return 0;
+    
+    return 0;
 }
 
 /*$PAGE*/

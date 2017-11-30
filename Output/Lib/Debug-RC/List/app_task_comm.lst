@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:19
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:07
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -103,135 +103,136 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_comm.c
      28          #include <os_cfg_app.h>
      29          #include <bsp_timer.h>
      30          #include "csnc_package_deal.h"
-     31          
-     32          //#include <bsp_flash.h>
-     33          //#include <iap.h>
-     34          
-     35          #ifdef VSC_INCLUDE_SOURCE_FILE_NAMES
-     36          const  CPU_CHAR  *app_task_comm__c = "$Id: $";
-     37          #endif
-     38          
-     39          #define APP_TASK_COMM_EN     DEF_ENABLED
-     40          #if APP_TASK_COMM_EN == DEF_ENABLED
-     41          /*******************************************************************************
-     42          * CONSTANTS
-     43          */
-     44          
-     45          /*******************************************************************************
-     46          * MACROS
-     47          */
-     48          #define CYCLE_TIME_TICKS            (OS_TICKS_PER_SEC * 1)
-     49          
-     50          /*******************************************************************************
-     51          * TYPEDEFS
-     52          */
-     53          
+     31          #include "app_chk.h"
+     32          
+     33          //#include <bsp_flash.h>
+     34          //#include <iap.h>
+     35          
+     36          #ifdef VSC_INCLUDE_SOURCE_FILE_NAMES
+     37          const  CPU_CHAR  *app_task_comm__c = "$Id: $";
+     38          #endif
+     39          
+     40          #define APP_TASK_COMM_EN     DEF_ENABLED
+     41          #if APP_TASK_COMM_EN == DEF_ENABLED
+     42          /*******************************************************************************
+     43          * CONSTANTS
+     44          */
+     45          
+     46          /*******************************************************************************
+     47          * MACROS
+     48          */
+     49          #define CYCLE_TIME_TICKS            (OS_TICKS_PER_SEC * 1)
+     50          
+     51          /*******************************************************************************
+     52          * TYPEDEFS
+     53          */
      54          
      55          
-     56          /***********************************************
-     57          * 描述： 任务控制块（TCB）
-     58          */
+     56          
+     57          /***********************************************
+     58          * 描述： 任务控制块（TCB）
+     59          */
 
    \                                 In section .bss, align 4
-     59          static  OS_TCB   AppTaskCommTCB;
+     60          static  OS_TCB   AppTaskCommTCB;
    \                     AppTaskCommTCB:
    \   00000000                      DS8 184
    \   000000B8                      DS8 1024
-     60          
-     61          /***********************************************
-     62          * 描述： 任务堆栈（STACKS）
-     63          */
-     64          static  CPU_STK  AppTaskCommStk[ APP_TASK_COMM_STK_SIZE ];
-     65          
-     66          //StrCtrlDCB       Ctrl;
-     67          
+     61          
+     62          /***********************************************
+     63          * 描述： 任务堆栈（STACKS）
+     64          */
+     65          static  CPU_STK  AppTaskCommStk[ APP_TASK_COMM_STK_SIZE ];
+     66          
+     67          //StrCtrlDCB       Ctrl;
+     68          
 
    \                                 In section .bss, align 4
-     68          OS_Q             MTR_RxQ;
+     69          OS_Q             MTR_RxQ;
    \                     MTR_RxQ:
    \   00000000                      DS8 36
-     69          /*******************************************************************************
-     70          * LOCAL VARIABLES
-     71          */
-     72          
-     73          /*******************************************************************************
-     74          * GLOBAL VARIABLES
-     75          */
-     76          
-     77          /***********************************************
-     78          * 描述： 软定时器声明
-     79          */
+     70          /*******************************************************************************
+     71          * LOCAL VARIABLES
+     72          */
+     73          
+     74          /*******************************************************************************
+     75          * GLOBAL VARIABLES
+     76          */
+     77          
+     78          /***********************************************
+     79          * 描述： 软定时器声明
+     80          */
 
    \                                 In section .bss, align 4
-     80          OS_TMR          OSTmr1;                         //定时器1
+     81          OS_TMR          OSTmr1;                         //定时器1
    \                     OSTmr1:
    \   00000000                      DS8 44
-     81          
-     82          /***********************************************
-     83          * 描述： 软定时器回调函数
-     84          */
-     85          void            OSTmr1_callback             (OS_TMR *ptmr,void *p_arg);
-     86          CPU_BOOLEAN     APP_CSNC_CommHandler        (MODBUS_CH  *pch);
-     87          CPU_BOOLEAN     APP_MaterCommHandler        (MODBUS_CH  *pch);
-     88          
-     89          /*******************************************************************************
-     90          * LOCAL FUNCTIONS
-     91          */
-     92          static void    AppTaskComm                 (void *p_arg);
-     93          static void    APP_CommInit                (void);
-     94          INT08U          APP_CommRxDataDealCB        (MODBUS_CH  *pch);
-     95          INT08U          IAP_CommRxDataDealCB        (MODBUS_CH  *pch);
-     96          /*******************************************************************************
-     97          * GLOBAL FUNCTIONS
-     98          */
-     99          
-    100          /*******************************************************************************
-    101          * EXTERN VARIABLES
-    102          */
-    103          
-    104          /*******************************************************************************
-    105          * EXTERN FUNCTIONS
-    106          */
-    107          extern  void    app_comm_mtr(void);
-    108          extern  void    app_comm_dtu(void);
-    109          extern  void    app_comm_otr(void);
-    110          
+     82          
+     83          /***********************************************
+     84          * 描述： 软定时器回调函数
+     85          */
+     86          void            OSTmr1_callback             (OS_TMR *ptmr,void *p_arg);
+     87          CPU_BOOLEAN     APP_CSNC_CommHandler        (MODBUS_CH  *pch);
+     88          CPU_BOOLEAN     APP_MaterCommHandler        (MODBUS_CH  *pch);
+     89          
+     90          /*******************************************************************************
+     91          * LOCAL FUNCTIONS
+     92          */
+     93          static void    AppTaskComm                 (void *p_arg);
+     94          static void    APP_CommInit                (void);
+     95          INT08U          APP_CommRxDataDealCB        (MODBUS_CH  *pch);
+     96          INT08U          IAP_CommRxDataDealCB        (MODBUS_CH  *pch);
+     97          /*******************************************************************************
+     98          * GLOBAL FUNCTIONS
+     99          */
+    100          
+    101          /*******************************************************************************
+    102          * EXTERN VARIABLES
+    103          */
+    104          
+    105          /*******************************************************************************
+    106          * EXTERN FUNCTIONS
+    107          */
+    108          extern  void    app_comm_mtr(void);
+    109          extern  void    app_comm_dtu(void);
+    110          extern  void    app_comm_otr(void);
     111          
-    112          /*******************************************************************************
-    113          * 入口参数： 无
-    114          * 出口参数： 无
-    115          * 作　 　者： redmoringcn.
-    116          * 创建日期： 2017-11-17
-    117          * 修    改：
-    118          * 修改日期：
-    119          * 备    注： 任务创建函数需要在app.h文件中声明
-    120          *******************************************************************************/
+    112          
+    113          /*******************************************************************************
+    114          * 入口参数： 无
+    115          * 出口参数： 无
+    116          * 作　 　者： redmoringcn.
+    117          * 创建日期： 2017-11-17
+    118          * 修    改：
+    119          * 修改日期：
+    120          * 备    注： 任务创建函数需要在app.h文件中声明
+    121          *******************************************************************************/
 
    \                                 In section .text, align 2, keep-with-next
-    121          void  App_TaskCommCreate(void)
-    122          {
+    122          void  App_TaskCommCreate(void)
+    123          {
    \                     App_TaskCommCreate: (+1)
    \   00000000   0xB500             PUSH     {LR}
    \   00000002   0xB08B             SUB      SP,SP,#+44
-    123              OS_ERR  err;
-    124              
-    125              /***********************************************
-    126              * 描述： 任务创建
-    127              */
-    128              OSTaskCreate((OS_TCB     *)&AppTaskCommTCB,                     // 任务控制块  （当前文件中定义）
-    129                           (CPU_CHAR   *)"App Task Comm",                     // 任务名称
-    130                           (OS_TASK_PTR ) AppTaskComm,                        // 任务函数指针（当前文件中定义）
-    131                           (void       *) 0,                                  // 任务函数参数
-    132                           (OS_PRIO     ) APP_TASK_COMM_PRIO,                 // 任务优先级，不同任务优先级可以相同，0 < 优先级 < OS_CFG_PRIO_MAX - 2（app_cfg.h中定义）
-    133                           (CPU_STK    *)&AppTaskCommStk[0],                  // 任务栈顶
-    134                           (CPU_STK_SIZE) APP_TASK_COMM_STK_SIZE / 10,        // 任务栈溢出报警值
-    135                           (CPU_STK_SIZE) APP_TASK_COMM_STK_SIZE,             // 任务栈大小（CPU数据宽度 * 8 * size = 4 * 8 * size(字节)）（app_cfg.h中定义）
-    136                           (OS_MSG_QTY  ) 0u,                                 // 可以发送给任务的最大消息队列数量
-    137                           (OS_TICK     ) 0u,                                 // 相同优先级任务的轮循时间（ms），0为默认
-    138                           (void       *) 0,                                  // 是一个指向它被用作一个TCB扩展用户提供的存储器位置
-    139                           (OS_OPT      )(OS_OPT_TASK_STK_CHK |               // 允许堆栈检查该任务
-    140                                          OS_OPT_TASK_STK_CLR),               // 创建任务时堆栈清零
-    141                           (OS_ERR     *)&err);                               // 指向错误代码的指针，用于创建结果处理
+    124              OS_ERR  err;
+    125              
+    126              /***********************************************
+    127              * 描述： 任务创建
+    128              */
+    129              OSTaskCreate((OS_TCB     *)&AppTaskCommTCB,                     // 任务控制块  （当前文件中定义）
+    130                           (CPU_CHAR   *)"App Task Comm",                     // 任务名称
+    131                           (OS_TASK_PTR ) AppTaskComm,                        // 任务函数指针（当前文件中定义）
+    132                           (void       *) 0,                                  // 任务函数参数
+    133                           (OS_PRIO     ) APP_TASK_COMM_PRIO,                 // 任务优先级，不同任务优先级可以相同，0 < 优先级 < OS_CFG_PRIO_MAX - 2（app_cfg.h中定义）
+    134                           (CPU_STK    *)&AppTaskCommStk[0],                  // 任务栈顶
+    135                           (CPU_STK_SIZE) APP_TASK_COMM_STK_SIZE / 10,        // 任务栈溢出报警值
+    136                           (CPU_STK_SIZE) APP_TASK_COMM_STK_SIZE,             // 任务栈大小（CPU数据宽度 * 8 * size = 4 * 8 * size(字节)）（app_cfg.h中定义）
+    137                           (OS_MSG_QTY  ) 0u,                                 // 可以发送给任务的最大消息队列数量
+    138                           (OS_TICK     ) 0u,                                 // 相同优先级任务的轮循时间（ms），0为默认
+    139                           (void       *) 0,                                  // 是一个指向它被用作一个TCB扩展用户提供的存储器位置
+    140                           (OS_OPT      )(OS_OPT_TASK_STK_CHK |               // 允许堆栈检查该任务
+    141                                          OS_OPT_TASK_STK_CLR),               // 创建任务时堆栈清零
+    142                           (OS_ERR     *)&err);                               // 指向错误代码的指针，用于创建结果处理
    \   00000004   0x....             LDR.N    R0,??DataTable7
    \   00000006   0xA909             ADD      R1,SP,#+36
    \   00000008   0x9108             STR      R1,[SP, #+32]
@@ -253,100 +254,99 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_comm.c
    \   0000002C   0x.... 0x....      ADR.W    R2,AppTaskComm
    \   00000030   0x.... 0x....      ADR.W    R1,?_0
    \   00000034   0x.... 0x....      BL       OSTaskCreate
-    142              
-    143          }
+    143              
+    144          }
    \   00000038   0xB00B             ADD      SP,SP,#+44
    \   0000003A   0xBD00             POP      {PC}             ;; return
-    144          
-    145          /*******************************************************************************
-    146          * 名    称： AppTaskComm
-    147          * 功    能： 控制任务
-    148          * 入口参数： p_arg - 由任务创建函数传入
-    149          * 出口参数： 无
-    150          * 作　 　者： wumingshen.
-    151          * 创建日期： 2015-02-05
-    152          * 修    改：
-    153          * 修改日期：
-    154          *******************************************************************************/
+    145          
+    146          /*******************************************************************************
+    147          * 名    称： AppTaskComm
+    148          * 功    能： 控制任务
+    149          * 入口参数： p_arg - 由任务创建函数传入
+    150          * 出口参数： 无
+    151          * 作　 　者： wumingshen.
+    152          * 创建日期： 2015-02-05
+    153          * 修    改：
+    154          * 修改日期：
+    155          *******************************************************************************/
 
    \                                 In section .text, align 4, keep-with-next
-    155          static  void  AppTaskComm (void *p_arg)
-    156          {
+    156          static  void  AppTaskComm (void *p_arg)
+    157          {
    \                     AppTaskComm: (+1)
    \   00000000   0xB53E             PUSH     {R1-R5,LR}
-    157              OS_ERR      err;
-    158              
-    159              OS_TICK     dly     = CYCLE_TIME_TICKS;
-    160              //OS_TICK     ticks;
-    161              /***********************************************
-    162              * 描述： 任务初始化
-    163              */
-    164              APP_CommInit();         
+    158              OS_ERR      err;
+    159              
+    160              OS_TICK     dly     = CYCLE_TIME_TICKS;
+    161              //OS_TICK     ticks;
+    162              /***********************************************
+    163              * 描述： 任务初始化
+    164              */
+    165              APP_CommInit();         
    \   00000002   0x.... 0x....      BL       APP_CommInit
    \   00000006   0xE008             B.N      ??AppTaskComm_0
-    165              
-    166              /***********************************************
-    167              * 描述： Task body, always written as an infinite loop.
-    168              */
-    169              while (DEF_TRUE) { 
-    170                  /***********************************************
-    171                  * 描述： 本任务看门狗标志置位
-    172                  */
-    173                  OS_FlagPost(( OS_FLAG_GRP *)&WdtFlagGRP,
-    174                              ( OS_FLAGS     ) WDT_FLAG_COMM,
-    175                              ( OS_OPT       ) OS_OPT_POST_FLAG_SET,
-    176                              ( CPU_TS       ) 0,
-    177                              ( OS_ERR      *) &err);
-    178                  
-    179                  /***********************************************
-    180                  * 描述： 等待COMM的标识组
-    181                  */
-    182                  OS_FLAGS    flags = 
-    183                      OSFlagPend( ( OS_FLAG_GRP *)&Ctrl.Os.CommEvtFlagGrp,
-    184                                 ( OS_FLAGS     ) Ctrl.Os.CommEvtFlag,
-    185                                 ( OS_TICK      ) dly,
-    186                                 ( OS_OPT       ) OS_OPT_PEND_FLAG_SET_ANY,
-    187                                 ( CPU_TS      *) NULL,
-    188                                 ( OS_ERR      *)&err);
-    189                  
-    190                  //OS_ERR      terr;
-    191                  //ticks   = OSTimeGet(&terr);                        // 获取当前OSTick
-    192                  
-    193                  /***********************************************
-    194                  * 描述： 没有错误,有事件发生
-    195                  */
-    196                  if ( err == OS_ERR_NONE ) {
-    197                      OS_FLAGS    flagClr = 0;
-    198                      /***********************************************
-    199                      * 和测量某块通讯有关事件发生，调用MTR通讯处理函数
-    200                      */           
-    201                      if(     flags & COMM_EVT_FLAG_MTR_RX 
-    202                         ||   flags & COMM_EVT_FLAG_MTR_TIMEOUT ) {
-    203                             
-    204                             //调用mtr通讯处理函数,和测量模块进行通讯
-    205                             app_comm_mtr();                             
-    206                             
-    207                             if(flags & COMM_EVT_FLAG_MTR_RX) {      
-    208                                 flagClr |= COMM_EVT_FLAG_MTR_RX;         //接收到数据，清接收数据标示
-    209                             }else{
-    210                                 flagClr |= COMM_EVT_FLAG_MTR_TIMEOUT;   //超时，清接收数据标示
-    211                             }
-    212                         }
-    213                      
-    214                      /***********************************************
-    215                      * 和无线发送模块事件发生，调用DTU通讯处理函数
-    216                      */           
-    217                      else  if(   flags & COMM_EVT_FLAG_DTU_RX 
-    218                               ||  flags & COMM_EVT_FLAG_DTU_TIMEOUT ) {
-    219                                   
-    220                                   //调用DTU通讯处理函数
-    221                                   app_comm_dtu();                            
-    222                                   
-    223                                   if(flags &      COMM_EVT_FLAG_DTU_RX) {      
-    224                                       flagClr |=  COMM_EVT_FLAG_DTU_RX;        //接收到数据，清接收数据标示
-    225          
+    166              
+    167              /***********************************************
+    168              * 描述： Task body, always written as an infinite loop.
+    169              */
+    170              while (DEF_TRUE) { 
+    171                  /***********************************************
+    172                  * 描述： 本任务看门狗标志置位
+    173                  */
+    174                  OS_FlagPost(( OS_FLAG_GRP *)&WdtFlagGRP,
+    175                              ( OS_FLAGS     ) WDT_FLAG_COMM,
+    176                              ( OS_OPT       ) OS_OPT_POST_FLAG_SET,
+    177                              ( CPU_TS       ) 0,
+    178                              ( OS_ERR      *) &err);
+    179                  
+    180                  /***********************************************
+    181                  * 描述： 等待COMM的标识组
+    182                  */
+    183                  OS_FLAGS    flags = 
+    184                      OSFlagPend( ( OS_FLAG_GRP *)&Ctrl.Os.CommEvtFlagGrp,
+    185                                 ( OS_FLAGS     ) Ctrl.Os.CommEvtFlag,
+    186                                 ( OS_TICK      ) dly,
+    187                                 ( OS_OPT       ) OS_OPT_PEND_FLAG_SET_ANY,
+    188                                 ( CPU_TS      *) NULL,
+    189                                 ( OS_ERR      *)&err);
+    190                  
+    191                  //OS_ERR      terr;
+    192                  //ticks   = OSTimeGet(&terr);                        // 获取当前OSTick
+    193                  
+    194                  /***********************************************
+    195                  * 描述： 没有错误,有事件发生
+    196                  */
+    197                  if ( err == OS_ERR_NONE ) {
+    198                      OS_FLAGS    flagClr = 0;
+    199                      /***********************************************
+    200                      * 和测量某块通讯有关事件发生，调用MTR通讯处理函数
+    201                      */           
+    202                      if(     flags & COMM_EVT_FLAG_MTR_RX 
+    203                         ||   flags & COMM_EVT_FLAG_MTR_TIMEOUT ) {
+    204                             
+    205                             //调用mtr通讯处理函数,和测量模块进行通讯
+    206                             app_comm_mtr();                             
+    207                             
+    208                             if(flags & COMM_EVT_FLAG_MTR_RX) {      
+    209                                 flagClr |= COMM_EVT_FLAG_MTR_RX;         //接收到数据，清接收数据标示
+    210                             }else{
+    211                                 flagClr |= COMM_EVT_FLAG_MTR_TIMEOUT;   //超时，清接收数据标示
+    212                             }
+    213                         }
+    214                      
+    215                      /***********************************************
+    216                      * 和无线发送模块事件发生，调用DTU通讯处理函数
+    217                      */           
+    218                      else  if(   flags & COMM_EVT_FLAG_DTU_RX 
+    219                               ||  flags & COMM_EVT_FLAG_DTU_TIMEOUT ) {
+    220                                   
+    221                                   //调用DTU通讯处理函数
+    222                                   app_comm_dtu();                            
+    223                                   
+    224                                   if( flags &    COMM_EVT_FLAG_DTU_RX) {      
+    225                                       flagClr |= COMM_EVT_FLAG_DTU_RX;        //接收到数据，清接收数据标示
     226                                   }else{
-    227                                       flagClr |=  COMM_EVT_FLAG_DTU_TIMEOUT;   //接收到数据，清接收数据标示
+    227                                       flagClr |= COMM_EVT_FLAG_DTU_TIMEOUT;   //接收到数据，清接收数据标示
     228                                   }
     229                               }
     230                      
@@ -910,8 +910,8 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_comm.c
     605                  *                         数据接收地址:80
     606                  */   
     607              case 2:
-    608                  if(         SLAVE_ADDR_DTU == sCsncPara.sourceaddr 
-    609                     ||      SLAVE_ADDR_SET  == sCsncPara.sourceaddr    
+    608                  if(        SLAVE_ADDR_DTU   == sCsncPara.sourceaddr 
+    609                     ||      SLAVE_ADDR_SET   == sCsncPara.sourceaddr    
     610                         )   
    \   00000038   0xF89D 0x0008      LDRB     R0,[SP, #+8]
    \   0000003C   0x28CA             CMP      R0,#+202
@@ -1757,4 +1757,4 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_comm.c
  1 288 bytes of DATA memory
 
 Errors: none
-Warnings: 1
+Warnings: none

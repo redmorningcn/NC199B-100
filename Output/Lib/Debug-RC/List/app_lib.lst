@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:18
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:06
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -188,385 +188,369 @@ F:\iar\NC199B-100\Library\Source\APP\User\app_lib.c
    \   0000001A   0xB002             ADD      SP,SP,#+8
    \   0000001C   0x4770             BX       LR               ;; return
     102          }
-    103          /*******************************************************************************
-    104           * 名    称： App_SetParaToEep
-    105           * 功    能：
-    106           * 入口参数：
-    107           * 出口参数： 无
-    108           * 作　 　者： 无名沈
-    109           * 创建日期： 2014-03-28
-    110           * 修    改：
-    111           * 修改日期：
-    112           *******************************************************************************/
-
-   \                                 In section .text, align 2, keep-with-next
-    113          BOOL App_SetParaToEep(INT16U addr, INT08U *pbuf, INT16U len)
-    114          {
-    115              INT08U    retrys    = 3;
-    116              INT08U    ret;
-    117              INT08U    *pc;
-    118              INT08U    *pb;
-    119          //    /***********************************************
-    120          //    * 描述： 将默认参数写入EEPROM中
-    121          //    */
-    122          //    do {
-    123          //        pb  = (INT08U   *)pbuf;
-    124          //        pc  = (INT08U   *)&EepRdBuf;
-    125          //        
-    126          //        WdtReset();
-    127          //        if ( len == BSP_EEP_WriteBytes( addr, pb, len ) ) {
-    128          //            if ( len == BSP_EEP_ReadBytes( addr, pc, len ) ) {
-    129          //                ret     = 1;
-    130          //                for ( INT16U i = 0; i < len; i++ ) {
-    131          //                    if ( *pb++ != *pc++ ) {
-    132          //                        ret = 0;
-    133          //                        break;
-    134          //                    }
-    135          //                }
-    136          //                if ( ret )
-    137          //                    break;
-    138          //            }
-    139          //        }
-    140          //    } while ( --retrys );
-    141          //    
-    142          //    if ( !ret )
-    143          //        return FALSE;
-    144          //    
-    145              return TRUE;
-   \                     App_SetParaToEep: (+1)
-   \   00000000   0x2001             MOVS     R0,#+1
-   \   00000002   0x4770             BX       LR               ;; return
-    146          }
-    147          
-    148          /*******************************************************************************
-    149           * 名    称： App_SetParaToEeprom()
-    150           * 功    能： 应用参数存储到EERPOM
-    151           * 入口参数：
-    152           * 出口参数： 无
-    153           * 作　 　者：
-    154           * 创建日期：
-    155           * 修    改： 无名沈
-    156           * 修改日期： 2014-06-25
-    157           *******************************************************************************/
-
-   \                                 In section .text, align 2, keep-with-next
-    158          BOOL App_SetParaToEeprom(void)
-    159          {
-    160          //#if (STORAGE_TYPE == INTNER_FLASH )
-    161          //    Ctrl.Para.dat.RestoreSetting    = 0xA5;
-    162          //    //BSP_FlashWrite((INT32U  ) PARAM_START_ADDR + 0,
-    163          //    //          (INT16U *)Ctrl.Para.buf2,128);
-    164          //    BSP_FlashWriteBytes((u32) 0*2, (u8 *)Ctrl.Para.buf1, (u16) 128*2);
-    165          //#elif (STORAGE_TYPE == INTNER_EEPROM )
-    166          //#elif (STORAGE_TYPE == EXTERN_EEPROM )
-    167          //    INT08U    ret;
-    168          //    INT08U   *pb;
-    169          //    
-    170          //    pb    = (INT08U       *)&EepWrBuf;
-    171          //    
-    172          //    /***********************************************
-    173          //    * 描述： 将默认参数写入EEPROM中
-    174          //    */
-    175          //    pb    = (INT08U   *)Ctrl.Para.buf1;
-    176          //    ret   = App_SetParaToEep( 0, pb, 255 );
-    177          //    
-    178          //    if ( !ret )
-    179          //        return FALSE;
-    180          //    
-    181          //    /***********************************************
-    182          //    * 描述： 初始化数据标志写入EEPROM中
-    183          //    */
-    184          ////    if(!BSP_EEP_WriteByteChk(255, 0xA5)) {
-    185          ////        return FALSE;
-    186          ////    }
-    187          //    
-    188          //#endif
-    189          //    return TRUE;
-    190          }
-   \                     App_SetParaToEeprom: (+1)
-   \   00000000   0x4770             BX       LR               ;; return
-    191          
+    103          //
+    104          ///*******************************************************************************
+    105          // * 名    称： App_SetParaToEep
+    106          // * 功    能：
+    107          // * 入口参数：
+    108          // * 出口参数： 无
+    109          // * 作　 　者： 无名沈
+    110          // * 创建日期： 2014-03-28
+    111          // * 修    改：
+    112          // * 修改日期：
+    113          // *******************************************************************************/
+    114          //BOOL App_SetParaToEep(INT16U addr, INT08U *pbuf, INT16U len)
+    115          //{
+    116          //    INT08U    retrys    = 3;
+    117          //    INT08U    ret;
+    118          //    INT08U    *pc;
+    119          //    INT08U    *pb;
+    120          ////    /***********************************************
+    121          ////    * 描述： 将默认参数写入EEPROM中
+    122          ////    */
+    123          ////    do {
+    124          ////        pb  = (INT08U   *)pbuf;
+    125          ////        pc  = (INT08U   *)&EepRdBuf;
+    126          ////        
+    127          ////        WdtReset();
+    128          ////        if ( len == BSP_EEP_WriteBytes( addr, pb, len ) ) {
+    129          ////            if ( len == BSP_EEP_ReadBytes( addr, pc, len ) ) {
+    130          ////                ret     = 1;
+    131          ////                for ( INT16U i = 0; i < len; i++ ) {
+    132          ////                    if ( *pb++ != *pc++ ) {
+    133          ////                        ret = 0;
+    134          ////                        break;
+    135          ////                    }
+    136          ////                }
+    137          ////                if ( ret )
+    138          ////                    break;
+    139          ////            }
+    140          ////        }
+    141          ////    } while ( --retrys );
+    142          ////    
+    143          ////    if ( !ret )
+    144          ////        return FALSE;
+    145          ////    
+    146          //    return TRUE;
+    147          //}
+    148          //
+    149          ///*******************************************************************************
+    150          // * 名    称： App_SetParaToEeprom()
+    151          // * 功    能： 应用参数存储到EERPOM
+    152          // * 入口参数：
+    153          // * 出口参数： 无
+    154          // * 作　 　者：
+    155          // * 创建日期：
+    156          // * 修    改： 无名沈
+    157          // * 修改日期： 2014-06-25
+    158          // *******************************************************************************/
+    159          //BOOL App_SetParaToEeprom(void)
+    160          //{
+    161          ////#if (STORAGE_TYPE == INTNER_FLASH )
+    162          ////    Ctrl.Para.dat.RestoreSetting    = 0xA5;
+    163          ////    //BSP_FlashWrite((INT32U  ) PARAM_START_ADDR + 0,
+    164          ////    //          (INT16U *)Ctrl.Para.buf2,128);
+    165          ////    BSP_FlashWriteBytes((u32) 0*2, (u8 *)Ctrl.Para.buf1, (u16) 128*2);
+    166          ////#elif (STORAGE_TYPE == INTNER_EEPROM )
+    167          ////#elif (STORAGE_TYPE == EXTERN_EEPROM )
+    168          ////    INT08U    ret;
+    169          ////    INT08U   *pb;
+    170          ////    
+    171          ////    pb    = (INT08U       *)&EepWrBuf;
+    172          ////    
+    173          ////    /***********************************************
+    174          ////    * 描述： 将默认参数写入EEPROM中
+    175          ////    */
+    176          ////    pb    = (INT08U   *)Ctrl.Para.buf1;
+    177          ////    ret   = App_SetParaToEep( 0, pb, 255 );
+    178          ////    
+    179          ////    if ( !ret )
+    180          ////        return FALSE;
+    181          ////    
+    182          ////    /***********************************************
+    183          ////    * 描述： 初始化数据标志写入EEPROM中
+    184          ////    */
+    185          //////    if(!BSP_EEP_WriteByteChk(255, 0xA5)) {
+    186          //////        return FALSE;
+    187          //////    }
+    188          ////    
+    189          ////#endif
+    190          ////    return TRUE;
+    191          //}
     192          
-    193          /*******************************************************************************
-    194           * 名    称： App_SetParaToEeprom()
-    195           * 功    能： 应用参数存储到EERPOM
-    196           * 入口参数：
-    197           * 出口参数： 无
-    198           * 作　 　者：
-    199           * 创建日期：
-    200           * 修    改： 无名沈
-    201           * 修改日期： 2014-06-25
-    202           *******************************************************************************/
+    193          
+    194          /*******************************************************************************
+    195           * 名    称： App_SetParaToEeprom()
+    196           * 功    能： 应用参数存储到EERPOM
+    197           * 入口参数：
+    198           * 出口参数： 无
+    199           * 作　 　者：
+    200           * 创建日期：
+    201           * 修    改： 无名沈
+    202           * 修改日期： 2014-06-25
+    203           *******************************************************************************/
 
    \                                 In section .text, align 2, keep-with-next
-    203          BOOL App_SetParaToSensor(INT08U dev, INT32U addr, INT08U *dat, INT16U len)
-    204          {    
-    205          //    INT08U   *pb    = dat;
-    206          //    /***********************************************
-    207          //    * 描述： 参数处理
-    208          //    */
-    209          //    if ( dat == NULL ) { 
-    210          //        if ( dev == 2) { 
-    211          //            //len     = 256;
-    212          //            if ( addr < 256 ) {
-    213          //                addr    = 0;
-    214          //                pb    = (INT08U   *)Ctrl.Para.buf1;
-    215          //            } else if ( addr < 512 ) {
-    216          //                addr    = 256;
-    217          //                pb    = (INT08U   *)Ctrl.Tab.buf1;
-    218          //            }                
-    219          //        } else { 
-    220          //            addr    = 0;
-    221          //            //len     = 256;
-    222          //            Ctrl.Sen.Para.dat.ReadFlag    = 0xA5;
-    223          //            pb    = (INT08U   *)Ctrl.Sen.Para.buf1;
-    224          //        }
-    225          //    }
-    226          //    
-    227          //    /***********************************************
-    228          //    * 描述： 存在内部FLASH中
-    229          //    */
-    230          //#if (STORAGE_TYPE == INTNER_FLASH )
-    231          //    BSP_FlashWriteBytes((u32) addr, (u8 *)pb, (u16) len);
-    232          //    /***********************************************
-    233          //    * 描述： 存在内部EEPROM中
-    234          //    */
-    235          //#elif (STORAGE_TYPE == INTNER_EEPROM )
-    236          //    /***********************************************
-    237          //    * 描述： 存在外部EEPROM中
-    238          //    */
-    239          //#elif (STORAGE_TYPE == EXTERN_EEPROM )
-    240          //    
-    241              INT08U    ret   = FALSE;
-    242          //    
-    243          //    BSP_I2CSetPort(dev);                              // 切换到I2C1
-    244          //    
-    245          //    /***********************************************
-    246          //    * 描述： 将默认参数写入EEPROM中
-    247          //    */
-    248          //    ret   = App_SetParaToEep( addr, pb, len );
-    249          //    
-    250          //    if ( !ret ) {
-    251          //        goto exit;
-    252          //    }
-    253          //    
-    254          //    ret = TRUE;
-    255          //#endif
-    256          //exit:
-    257          //    BSP_I2CSetPort(2);                              // 切换到I2C1
-    258              return ret;
+    204          BOOL App_SetParaToSensor(INT08U dev, INT32U addr, INT08U *dat, INT16U len)
+    205          {    
+    206          //    INT08U   *pb    = dat;
+    207          //    /***********************************************
+    208          //    * 描述： 参数处理
+    209          //    */
+    210          //    if ( dat == NULL ) { 
+    211          //        if ( dev == 2) { 
+    212          //            //len     = 256;
+    213          //            if ( addr < 256 ) {
+    214          //                addr    = 0;
+    215          //                pb    = (INT08U   *)Ctrl.Para.buf1;
+    216          //            } else if ( addr < 512 ) {
+    217          //                addr    = 256;
+    218          //                pb    = (INT08U   *)Ctrl.Tab.buf1;
+    219          //            }                
+    220          //        } else { 
+    221          //            addr    = 0;
+    222          //            //len     = 256;
+    223          //            Ctrl.Sen.Para.dat.ReadFlag    = 0xA5;
+    224          //            pb    = (INT08U   *)Ctrl.Sen.Para.buf1;
+    225          //        }
+    226          //    }
+    227          //    
+    228          //    /***********************************************
+    229          //    * 描述： 存在内部FLASH中
+    230          //    */
+    231          //#if (STORAGE_TYPE == INTNER_FLASH )
+    232          //    BSP_FlashWriteBytes((u32) addr, (u8 *)pb, (u16) len);
+    233          //    /***********************************************
+    234          //    * 描述： 存在内部EEPROM中
+    235          //    */
+    236          //#elif (STORAGE_TYPE == INTNER_EEPROM )
+    237          //    /***********************************************
+    238          //    * 描述： 存在外部EEPROM中
+    239          //    */
+    240          //#elif (STORAGE_TYPE == EXTERN_EEPROM )
+    241          //    
+    242              INT08U    ret   = FALSE;
+    243          //    
+    244          //    BSP_I2CSetPort(dev);                              // 切换到I2C1
+    245          //    
+    246          //    /***********************************************
+    247          //    * 描述： 将默认参数写入EEPROM中
+    248          //    */
+    249          //    ret   = App_SetParaToEep( addr, pb, len );
+    250          //    
+    251          //    if ( !ret ) {
+    252          //        goto exit;
+    253          //    }
+    254          //    
+    255          //    ret = TRUE;
+    256          //#endif
+    257          //exit:
+    258          //    BSP_I2CSetPort(2);                              // 切换到I2C1
+    259              return ret;
    \                     App_SetParaToSensor: (+1)
    \   00000000   0x2000             MOVS     R0,#+0
    \   00000002   0x4770             BX       LR               ;; return
-    259          }
-    260          
-    261          extern  const StrParaRange MbsParaRange[];
-    262          /*******************************************************************************
-    263           * 名    称： App_GetParaFromEeprom()
-    264           * 功    能： 应用参数读取到RAM
-    265           * 入口参数：
-    266           * 出口参数： 无
-    267           * 作　 　者：
-    268           * 创建日期：
-    269           * 修    改： 无名沈
-    270           * 修改日期： 2014-06-25
-    271           *******************************************************************************/
+    260          }
+    261          //
+    262          //extern  const StrParaRange MbsParaRange[];
+    263          ///*******************************************************************************
+    264          // * 名    称： App_GetParaFromEeprom()
+    265          // * 功    能： 应用参数读取到RAM
+    266          // * 入口参数：
+    267          // * 出口参数： 无
+    268          // * 作　 　者：
+    269          // * 创建日期：
+    270          // * 修    改： 无名沈
+    271          // * 修改日期： 2014-06-25
+    272          // *******************************************************************************/
+    273          //BOOL App_GetParaFromEeprom(void)
+    274          //{    
+    275          ////#if (STORAGE_TYPE == INTNER_FLASH )    
+    276          ////    INT08U   *pb = (INT08U   *)&EepWrBuf;
+    277          ////    //BSP_FlashRead((INT32U  ) PARAM_START_ADDR + 0,
+    278          ////    //          (INT16U *)pu,127);
+    279          ////    BSP_FlashReadBytes((u32) 0*2, (u8 *)pb, (u16) 127*2);
+    280          ////#elif (STORAGE_TYPE == INTNER_EEPROM )
+    281          ////#elif (STORAGE_TYPE == EXTERN_EEPROM )
+    282          ////    INT08U   *pb = (INT08U   *)&EepWrBuf;
+    283          ////    /***********************************************
+    284          ////    * 描述： 已经配置过了，非首次初始化，则读取参数到RAM
+    285          ////    */
+    286          ////    /***********************************************
+    287          ////    * 描述： 读取MODBUS参数
+    288          ////    */
+    289          ////    
+    290          ////    INT08U  retrys  = 5;
+    291          ////    INT16U  len = 254;
+    292          ////    do {
+    293          ////        WdtReset();
+    294          //////        if ( len == BSP_EEP_ReadBytes(0,(INT08U *)pb, len) ) {            
+    295          //////            for ( INT08U i = 0; i < len; i++, pb++ ) {
+    296          //////                Ctrl.Para.buf1[i] = *pb;
+    297          //////            }
+    298          //////            return TRUE;
+    299          //////            //break;
+    300          //////        }
+    301          ////#ifdef APP_LIBRARY
+    302          ////        Delay_Nms( 10 );
+    303          ////#else
+    304          ////        BSP_OS_TimeDly(10);
+    305          ////#endif
+    306          ////    } while( --retrys );
+    307          ////    
+    308          ////    if ( !retrys )
+    309          ////        return FALSE;
+    310          ////#endif
+    311          ////    /***********************************************
+    312          ////    * 描述： 缓冲区参数定入MODBUS参数
+    313          ////    */
+    314          ////    StrParaRange *prag    = Ctrl.Prge;
+    315          ////    
+    316          ////#if ( PARA_TYPE == PARA_TYPE_INT16U )
+    317          ////    INT16U  *pu = (INT16U*)pb;
+    318          ////    for ( INT08U i = 0; i < 127; i++, pu++,prag++ ) {
+    319          ////        if ( ( (INT16U)*pu >= prag->Min ) &&
+    320          ////            ( (INT16U)*pu <= prag->Max ) ) {
+    321          ////            Ctrl.Para.buf2[i] = *pu;
+    322          ////        }
+    323          ////    }
+    324          ////#elif ( PARA_TYPE == PARA_TYPE_INT16S )
+    325          ////    INT16S  *ps = (INT16S*)pb;
+    326          ////    for ( INT08U i = 0; i < 127; i++, ps++,prag++ ) {
+    327          ////        if ( ( (INT16S)*ps >= prag->Min ) &&
+    328          ////            ( (INT16S)*ps <= prag->Max ) ) {
+    329          ////            Ctrl.Para.buf2[i] = *ps;
+    330          ////        }
+    331          ////    }
+    332          ////#elif ( PARA_TYPE == PARA_TYPE_INT08U )
+    333          ////    for ( INT08U i = 0; i < 254; i++, pb++,prag++ ) {
+    334          ////        if ( ( (INT08U)*pb >= prag->Min ) &&
+    335          ////            ( (INT08U)*pb <= prag->Max ) ) {
+    336          ////            Ctrl.Para.buf1[i] = *pb;
+    337          ////        }
+    338          ////    }
+    339          ////#else
+    340          ////    for ( INT08U i = 0; i < 254; i++, pb++,prag++ ) {
+    341          ////        if ( ( (INT08S)*pb >= prag->Min ) &&
+    342          ////            ( (INT08S)*pb <= prag->Max ) ) {
+    343          ////            Ctrl.Para.buf1[i] = *pb;
+    344          ////        }
+    345          ////    }
+    346          ////#endif
+    347          ////    return TRUE;
+    348          //}
+    349          //
+    350          ///*******************************************************************************
+    351          // * 名    称：
+    352          // * 功    能：
+    353          // * 入口参数：
+    354          // * 出口参数： 无
+    355          // * 作　 　者： 无名沈
+    356          // * 创建日期： 2014-03-28
+    357          // * 修    改：
+    358          // * 修改日期：
+    359          // *******************************************************************************/
+    360          //BOOL App_PraInit(void)
+    361          //{
+    362          //    extern const StrCtrlPara    MbsParaAtrIdx;
+    363          //    
+    364          ////    Ctrl.Prge               = (StrParaRange *)MbsParaRange;
+    365          ////    //Ctrl.Key                = (StrKeyEvt *)&Key;
+    366          ////    Ctrl.Para.dat.idx       = &MbsParaAtrIdx;
+    367          ////    BSP_I2CSetPort(1);
+    368          ////#if (STORAGE_TYPE == INTNER_FLASH ) 
+    369          ////    BSP_FlashReadBytes((u32) 0*2, (u8 *)EepWrBuf.buf1, (u16) 128*2);
+    370          ////    INT16U dat = EepWrBuf.buf2[127];    
+    371          ////#elif (STORAGE_TYPE == INTNER_EEPROM )
+    372          ////#elif (STORAGE_TYPE == EXTERN_EEPROM )
+    373          ////    INT08U  dat     = 0;
+    374          ////    INT08U  retrys  = 10;
+    375          ////    BSP_EEP_Init();
+    376          ////    
+    377          ////    //if ( FALSE == BSP_EEP_Init())
+    378          ////    //    goto exit;                                 // 初始化存储器
+    379          ////    /***********************************************
+    380          ////    * 描述：读取初始化地址上的值
+    381          ////    */
+    382          ////    do {
+    383          ////        WdtReset();
+    384          ////        if ( TRUE == BSP_EEP_ReadByte(255, &dat))
+    385          ////            break;
+    386          ////#ifdef APP_LIBRARY
+    387          ////        Delay_Nms( 10 );
+    388          ////#else
+    389          ////        BSP_OS_TimeDly(10);
+    390          ////#endif
+    391          ////    } while( --retrys );
+    392          ////#endif
+    393          ////    WdtReset();
+    394          ////    /***********************************************
+    395          ////    * 描述：跟默认值比较
+    396          ////    */
+    397          ////    if(dat == 0xA5) {
+    398          ////        dat = App_GetParaFromEeprom();                  // 已经初始化，读取参数
+    399          ////        Ctrl.Sys.FirstPwrFlag       = FALSE;
+    400          ////        /***********************************************
+    401          ////        * 描述：没有初始化，保存默念值
+    402          ////        */
+    403          ////    } else { 
+    404          ////        dat = App_SetParaToEeprom();                    // 未初始化，保存默认参数
+    405          ////        Ctrl.Sys.FirstPwrFlag       = TRUE;
+    406          ////    }
+    407          ////           
+    408          ////    WdtReset();
+    409          ////    /***********************************************
+    410          ////    * 描述： 切换到显示模块存储器
+    411          ////    */
+    412          ////    //BSP_I2CSetPort(2);                              // 切换到I2C1
+    413          ////    return (BOOL)dat;
+    414          //}
+    415          
+    416          /*******************************************************************************
+    417           * 				                    延时函数                                   *
+    418           *******************************************************************************/
+    419          /*******************************************************************************
+    420          * 名    称： Delay_Nus()
+    421          * 功    能： 延时大概1us
+    422          * 入口参数： dly		延时参数，值越大，延时越久
+    423          * 出口参数： 无
+    424          * 作　 　者： 无名沈
+    425          * 创建日期： 2009-01-03
+    426          * 修    改：
+    427          * 修改日期：
+    428          *******************************************************************************/
 
    \                                 In section .text, align 2, keep-with-next
-    272          BOOL App_GetParaFromEeprom(void)
-    273          {    
-    274          //#if (STORAGE_TYPE == INTNER_FLASH )    
-    275          //    INT08U   *pb = (INT08U   *)&EepWrBuf;
-    276          //    //BSP_FlashRead((INT32U  ) PARAM_START_ADDR + 0,
-    277          //    //          (INT16U *)pu,127);
-    278          //    BSP_FlashReadBytes((u32) 0*2, (u8 *)pb, (u16) 127*2);
-    279          //#elif (STORAGE_TYPE == INTNER_EEPROM )
-    280          //#elif (STORAGE_TYPE == EXTERN_EEPROM )
-    281          //    INT08U   *pb = (INT08U   *)&EepWrBuf;
-    282          //    /***********************************************
-    283          //    * 描述： 已经配置过了，非首次初始化，则读取参数到RAM
-    284          //    */
-    285          //    /***********************************************
-    286          //    * 描述： 读取MODBUS参数
-    287          //    */
-    288          //    
-    289          //    INT08U  retrys  = 5;
-    290          //    INT16U  len = 254;
-    291          //    do {
-    292          //        WdtReset();
-    293          ////        if ( len == BSP_EEP_ReadBytes(0,(INT08U *)pb, len) ) {            
-    294          ////            for ( INT08U i = 0; i < len; i++, pb++ ) {
-    295          ////                Ctrl.Para.buf1[i] = *pb;
-    296          ////            }
-    297          ////            return TRUE;
-    298          ////            //break;
-    299          ////        }
-    300          //#ifdef APP_LIBRARY
-    301          //        Delay_Nms( 10 );
-    302          //#else
-    303          //        BSP_OS_TimeDly(10);
-    304          //#endif
-    305          //    } while( --retrys );
-    306          //    
-    307          //    if ( !retrys )
-    308          //        return FALSE;
-    309          //#endif
-    310          //    /***********************************************
-    311          //    * 描述： 缓冲区参数定入MODBUS参数
-    312          //    */
-    313          //    StrParaRange *prag    = Ctrl.Prge;
-    314          //    
-    315          //#if ( PARA_TYPE == PARA_TYPE_INT16U )
-    316          //    INT16U  *pu = (INT16U*)pb;
-    317          //    for ( INT08U i = 0; i < 127; i++, pu++,prag++ ) {
-    318          //        if ( ( (INT16U)*pu >= prag->Min ) &&
-    319          //            ( (INT16U)*pu <= prag->Max ) ) {
-    320          //            Ctrl.Para.buf2[i] = *pu;
-    321          //        }
-    322          //    }
-    323          //#elif ( PARA_TYPE == PARA_TYPE_INT16S )
-    324          //    INT16S  *ps = (INT16S*)pb;
-    325          //    for ( INT08U i = 0; i < 127; i++, ps++,prag++ ) {
-    326          //        if ( ( (INT16S)*ps >= prag->Min ) &&
-    327          //            ( (INT16S)*ps <= prag->Max ) ) {
-    328          //            Ctrl.Para.buf2[i] = *ps;
-    329          //        }
-    330          //    }
-    331          //#elif ( PARA_TYPE == PARA_TYPE_INT08U )
-    332          //    for ( INT08U i = 0; i < 254; i++, pb++,prag++ ) {
-    333          //        if ( ( (INT08U)*pb >= prag->Min ) &&
-    334          //            ( (INT08U)*pb <= prag->Max ) ) {
-    335          //            Ctrl.Para.buf1[i] = *pb;
-    336          //        }
-    337          //    }
-    338          //#else
-    339          //    for ( INT08U i = 0; i < 254; i++, pb++,prag++ ) {
-    340          //        if ( ( (INT08S)*pb >= prag->Min ) &&
-    341          //            ( (INT08S)*pb <= prag->Max ) ) {
-    342          //            Ctrl.Para.buf1[i] = *pb;
-    343          //        }
-    344          //    }
-    345          //#endif
-    346          //    return TRUE;
-    347          }
-   \                     App_GetParaFromEeprom: (+1)
-   \   00000000   0x4770             BX       LR               ;; return
-    348          
-    349          /*******************************************************************************
-    350           * 名    称：
-    351           * 功    能：
-    352           * 入口参数：
-    353           * 出口参数： 无
-    354           * 作　 　者： 无名沈
-    355           * 创建日期： 2014-03-28
-    356           * 修    改：
-    357           * 修改日期：
-    358           *******************************************************************************/
-
-   \                                 In section .text, align 2, keep-with-next
-    359          BOOL App_PraInit(void)
-    360          {
-    361              extern const StrCtrlPara    MbsParaAtrIdx;
-    362              
-    363          //    Ctrl.Prge               = (StrParaRange *)MbsParaRange;
-    364          //    //Ctrl.Key                = (StrKeyEvt *)&Key;
-    365          //    Ctrl.Para.dat.idx       = &MbsParaAtrIdx;
-    366          //    BSP_I2CSetPort(1);
-    367          //#if (STORAGE_TYPE == INTNER_FLASH ) 
-    368          //    BSP_FlashReadBytes((u32) 0*2, (u8 *)EepWrBuf.buf1, (u16) 128*2);
-    369          //    INT16U dat = EepWrBuf.buf2[127];    
-    370          //#elif (STORAGE_TYPE == INTNER_EEPROM )
-    371          //#elif (STORAGE_TYPE == EXTERN_EEPROM )
-    372          //    INT08U  dat     = 0;
-    373          //    INT08U  retrys  = 10;
-    374          //    BSP_EEP_Init();
-    375          //    
-    376          //    //if ( FALSE == BSP_EEP_Init())
-    377          //    //    goto exit;                                 // 初始化存储器
-    378          //    /***********************************************
-    379          //    * 描述：读取初始化地址上的值
-    380          //    */
-    381          //    do {
-    382          //        WdtReset();
-    383          //        if ( TRUE == BSP_EEP_ReadByte(255, &dat))
-    384          //            break;
-    385          //#ifdef APP_LIBRARY
-    386          //        Delay_Nms( 10 );
-    387          //#else
-    388          //        BSP_OS_TimeDly(10);
-    389          //#endif
-    390          //    } while( --retrys );
-    391          //#endif
-    392          //    WdtReset();
-    393          //    /***********************************************
-    394          //    * 描述：跟默认值比较
-    395          //    */
-    396          //    if(dat == 0xA5) {
-    397          //        dat = App_GetParaFromEeprom();                  // 已经初始化，读取参数
-    398          //        Ctrl.Sys.FirstPwrFlag       = FALSE;
-    399          //        /***********************************************
-    400          //        * 描述：没有初始化，保存默念值
-    401          //        */
-    402          //    } else { 
-    403          //        dat = App_SetParaToEeprom();                    // 未初始化，保存默认参数
-    404          //        Ctrl.Sys.FirstPwrFlag       = TRUE;
-    405          //    }
-    406          //           
-    407          //    WdtReset();
-    408          //    /***********************************************
-    409          //    * 描述： 切换到显示模块存储器
-    410          //    */
-    411          //    //BSP_I2CSetPort(2);                              // 切换到I2C1
-    412          //    return (BOOL)dat;
-    413          }
-   \                     App_PraInit: (+1)
-   \   00000000   0x4770             BX       LR               ;; return
-    414          
-    415          /*******************************************************************************
-    416           * 				                    延时函数                                   *
-    417           *******************************************************************************/
-    418          /*******************************************************************************
-    419          * 名    称： Delay_Nus()
-    420          * 功    能： 延时大概1us
-    421          * 入口参数： dly		延时参数，值越大，延时越久
-    422          * 出口参数： 无
-    423          * 作　 　者： 无名沈
-    424          * 创建日期： 2009-01-03
-    425          * 修    改：
-    426          * 修改日期：
-    427          *******************************************************************************/
-
-   \                                 In section .text, align 2, keep-with-next
-    428          OPTIMIZE_NONE void  Delay_Nus( INT32U  dly )
-    429          {
-    430              /***********************************************
-    431              * 描述：定时器初始化
-    432              *       72000000次循环  = 6.9999999583333333333333333333333秒
-    433              *       一次循环 = 6.9999999583333333333333333333333 / 72000000
-    434              *       = 97.222221643518518518518518518519 ns
-    435              *       ~= 0.1 us
-    436              *       延时1us  dly  = 9
-    437              *       dly = 0时，循环一次
-    438              *
-    439              while(dly--);
-    440              *//***********************************************
-    441              * 描述：定时器初始化
-    442              *       1000000次循环  = 1027.7778611111111111111111111111ms
-    443              *       平均一次循环 = 1.02777786111111111111111111111us
-    444              *       dly = 1时，= 1.1111111111111111111111111111111us
-    445              *       dly = 2时  = 2.1388888888888888888888888888889us
-    446              *       dly 每增加1 增加-1.0277777777777777777777777777778us
-    447              */
-    448              INT32U  i;
-    449          
-    450              while(dly--) {
+    429          OPTIMIZE_NONE void  Delay_Nus( INT32U  dly )
+    430          {
+    431              /***********************************************
+    432              * 描述：定时器初始化
+    433              *       72000000次循环  = 6.9999999583333333333333333333333秒
+    434              *       一次循环 = 6.9999999583333333333333333333333 / 72000000
+    435              *       = 97.222221643518518518518518518519 ns
+    436              *       ~= 0.1 us
+    437              *       延时1us  dly  = 9
+    438              *       dly = 0时，循环一次
+    439              *
+    440              while(dly--);
+    441              *//***********************************************
+    442              * 描述：定时器初始化
+    443              *       1000000次循环  = 1027.7778611111111111111111111111ms
+    444              *       平均一次循环 = 1.02777786111111111111111111111us
+    445              *       dly = 1时，= 1.1111111111111111111111111111111us
+    446              *       dly = 2时  = 2.1388888888888888888888888888889us
+    447              *       dly 每增加1 增加-1.0277777777777777777777777777778us
+    448              */
+    449              INT32U  i;
+    450          
+    451              while(dly--) {
    \                     Delay_Nus: (+1)
    \                     ??Delay_Nus_0: (+1)
    \   00000000   0x0002             MOVS     R2,R0
    \   00000002   0x1E50             SUBS     R0,R2,#+1
    \   00000004   0x2A00             CMP      R2,#+0
    \   00000006   0xD005             BEQ.N    ??Delay_Nus_1
-    451                  for(i=0; i<7; i++);             // clk = 72000000 1027.7778611111111111111111111111
+    452                  for(i=0; i<7; i++);             // clk = 72000000 1027.7778611111111111111111111111
    \   00000008   0x2200             MOVS     R2,#+0
    \   0000000A   0x0011             MOVS     R1,R2
    \                     ??Delay_Nus_2: (+1)
@@ -574,49 +558,49 @@ F:\iar\NC199B-100\Library\Source\APP\User\app_lib.c
    \   0000000E   0xD2F7             BCS.N    ??Delay_Nus_0
    \   00000010   0x1C49             ADDS     R1,R1,#+1
    \   00000012   0xE7FB             B.N      ??Delay_Nus_2
-    452              }
-    453          }
+    453              }
+    454          }
    \                     ??Delay_Nus_1: (+1)
    \   00000014   0x4770             BX       LR               ;; return
-    454          
-    455          /*******************************************************************************
-    456          * 名    称： Delay_Nms()
-    457          * 功    能： 延时大概1ms
-    458          * 入口参数： dly		延时参数，值越大，延时越久
-    459          * 出口参数： 无
-    460          * 作　 　者： 无名沈
-    461          * 创建日期： 2009-01-03
-    462          * 修    改：
-    463          * 修改日期：
-    464          *******************************************************************************/
+    455          
+    456          /*******************************************************************************
+    457          * 名    称： Delay_Nms()
+    458          * 功    能： 延时大概1ms
+    459          * 入口参数： dly		延时参数，值越大，延时越久
+    460          * 出口参数： 无
+    461          * 作　 　者： 无名沈
+    462          * 创建日期： 2009-01-03
+    463          * 修    改：
+    464          * 修改日期：
+    465          *******************************************************************************/
 
    \                                 In section .text, align 2, keep-with-next
-    465          OPTIMIZE_NONE void  Delay_Nms( INT32U  dly )
-    466          {
+    466          OPTIMIZE_NONE void  Delay_Nms( INT32U  dly )
+    467          {
    \                     Delay_Nms: (+1)
    \   00000000   0xB5F8             PUSH     {R3-R7,LR}
    \   00000002   0x0004             MOVS     R4,R0
-    467          #if UCOS_II_EN > 0
-    468              OSTimeDly(dly);
-    469          #else
-    470              CPU_INT32U  hclk_freq;
-    471              CPU_INT32U  cnts;
-    472              INT32U      i;
-    473          
-    474              hclk_freq   = BSP_CPU_ClkFreq();            // hclk_freq = 72000000时dly 1000 接近1秒
+    468          #if UCOS_II_EN > 0
+    469              OSTimeDly(dly);
+    470          #else
+    471              CPU_INT32U  hclk_freq;
+    472              CPU_INT32U  cnts;
+    473              INT32U      i;
+    474          
+    475              hclk_freq   = BSP_CPU_ClkFreq();            // hclk_freq = 72000000时dly 1000 接近1秒
    \   00000004   0x.... 0x....      BL       BSP_CPU_ClkFreq
    \   00000008   0x0005             MOVS     R5,R0
-    475              cnts        = hclk_freq / 9000;
+    476              cnts        = hclk_freq / 9000;
    \   0000000A   0xF242 0x3028      MOVW     R0,#+9000
    \   0000000E   0xFBB5 0xF0F0      UDIV     R0,R5,R0
    \   00000012   0x0006             MOVS     R6,R0
-    476              //WdtReset();
-    477          
-    478              for( ; dly > 0; dly-- ) {
+    477              //WdtReset();
+    478          
+    479              for( ; dly > 0; dly-- ) {
    \                     ??Delay_Nms_0: (+1)
    \   00000014   0x2C00             CMP      R4,#+0
    \   00000016   0xD007             BEQ.N    ??Delay_Nms_1
-    479                  for(i=0; i<cnts; i++);
+    480                  for(i=0; i<cnts; i++);
    \   00000018   0x2000             MOVS     R0,#+0
    \   0000001A   0x0007             MOVS     R7,R0
    \                     ??Delay_Nms_2: (+1)
@@ -624,64 +608,60 @@ F:\iar\NC199B-100\Library\Source\APP\User\app_lib.c
    \   0000001E   0xD201             BCS.N    ??Delay_Nms_3
    \   00000020   0x1C7F             ADDS     R7,R7,#+1
    \   00000022   0xE7FB             B.N      ??Delay_Nms_2
-    480              }
+    481              }
    \                     ??Delay_Nms_3: (+1)
    \   00000024   0x1E64             SUBS     R4,R4,#+1
    \   00000026   0xE7F5             B.N      ??Delay_Nms_0
-    481          #endif
-    482          }
+    482          #endif
+    483          }
    \                     ??Delay_Nms_1: (+1)
    \   00000028   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
-    483          
-    484          /*******************************************************************************
-    485          * 名    称：Delay_Ns()
-    486          * 功    能：延时大概1s
-    487          * 入口参数：dly		延时参数，值越大，延时越久
-    488          * 出口参数：无
-    489          * 作　 　者：无名沈
-    490          * 创建日期：2009-01-03
-    491          * 修    改：
-    492          * 修改日期：
-    493          *******************************************************************************/
+    484          
+    485          /*******************************************************************************
+    486          * 名    称：Delay_Ns()
+    487          * 功    能：延时大概1s
+    488          * 入口参数：dly		延时参数，值越大，延时越久
+    489          * 出口参数：无
+    490          * 作　 　者：无名沈
+    491          * 创建日期：2009-01-03
+    492          * 修    改：
+    493          * 修改日期：
+    494          *******************************************************************************/
 
    \                                 In section .text, align 2, keep-with-next
-    494          OPTIMIZE_NONE void  Delay_Ns( INT32U  dly )
-    495          {
+    495          OPTIMIZE_NONE void  Delay_Ns( INT32U  dly )
+    496          {
    \                     Delay_Ns: (+1)
    \   00000000   0xB510             PUSH     {R4,LR}
    \   00000002   0x0004             MOVS     R4,R0
-    496          #if UCOS_II_EN > 0
-    497              OSTimeDlyHMSM(dly/3600,dly/60%60,dly%3600,0);
-    498          #else
-    499              for( ; dly > 0; dly--) {
+    497          #if UCOS_II_EN > 0
+    498              OSTimeDlyHMSM(dly/3600,dly/60%60,dly%3600,0);
+    499          #else
+    500              for( ; dly > 0; dly--) {
    \                     ??Delay_Ns_0: (+1)
    \   00000004   0x2C00             CMP      R4,#+0
    \   00000006   0xD005             BEQ.N    ??Delay_Ns_1
-    500                  //WdtReset();
-    501                  Delay_Nms( 950 );
+    501                  //WdtReset();
+    502                  Delay_Nms( 950 );
    \   00000008   0xF240 0x30B6      MOVW     R0,#+950
    \   0000000C   0x.... 0x....      BL       Delay_Nms
-    502              }
+    503              }
    \   00000010   0x1E64             SUBS     R4,R4,#+1
    \   00000012   0xE7F7             B.N      ??Delay_Ns_0
-    503          #endif
-    504          }
+    504          #endif
+    505          }
    \                     ??Delay_Ns_1: (+1)
    \   00000014   0xBD10             POP      {R4,PC}          ;; return
-    505          
-    506          /*******************************************************************************
-    507           * 				                    end of file                                *
-    508           *******************************************************************************/
-    509          #endif
+    506          
+    507          /*******************************************************************************
+    508           * 				                    end of file                                *
+    509           *******************************************************************************/
+    510          #endif
 
    Maximum stack usage in bytes:
 
    .cstack Function
    ------- --------
-       0   App_GetParaFromEeprom
-       0   App_PraInit
-       0   App_SetParaToEep
-       0   App_SetParaToEeprom
        0   App_SetParaToSensor
       24   Delay_Nms
         24   -> BSP_CPU_ClkFreq
@@ -695,10 +675,6 @@ F:\iar\NC199B-100\Library\Source\APP\User\app_lib.c
 
    Bytes  Function/Label
    -----  --------------
-       2  App_GetParaFromEeprom
-       2  App_PraInit
-       4  App_SetParaToEep
-       2  App_SetParaToEeprom
        4  App_SetParaToSensor
       42  Delay_Nms
       22  Delay_Ns
@@ -706,9 +682,9 @@ F:\iar\NC199B-100\Library\Source\APP\User\app_lib.c
       30  SWAP_INT16U
 
  
- 130 bytes in section .text
+ 120 bytes in section .text
  
- 130 bytes of CODE memory
+ 120 bytes of CODE memory
 
 Errors: none
-Warnings: 7
+Warnings: none

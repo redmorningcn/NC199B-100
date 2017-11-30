@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  14:07:49
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:07
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -154,7 +154,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_measure.c
      73           */
      74          static  void    AppTaskMeasure          (void *p_arg);
      75          static  void    APP_MeasureInit         (void);
-     76            void    StartAirMeasure         (void);
+     76          void            StartAirMeasure         (void);
      77          
      78          //static  void    MeasureValueHandle      (StrCtrlDCB *dcb);
      79          
@@ -254,7 +254,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_measure.c
     142          {
    \                     AppTaskMeasure: (+1)
    \   00000000   0xB580             PUSH     {R7,LR}
-    143              OS_ERR      err;
+    143          //    OS_ERR      err;
     144              /***********************************************
     145              * 描述： 任务初始化
     146              */
@@ -567,4 +567,4 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_measure.c
  696 bytes of DATA memory
 
 Errors: none
-Warnings: 1
+Warnings: none

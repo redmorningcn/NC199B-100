@@ -11572,6 +11572,12 @@
     </group>
     <group>
       <name>IAP</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\Source\APP\Iap\boot.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\Source\APP\Iap\iap_flash.c</name>
+      </file>
     </group>
     <group>
       <name>OS</name>
@@ -11628,6 +11634,12 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\..\Source\APP\Tasks\app_task_osal_tmr.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\Source\APP\Iap\IAP_program_mcu.C</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\Source\APP\Iap\IAP_program_mcu.h</name>
       </file>
     </group>
     <group>

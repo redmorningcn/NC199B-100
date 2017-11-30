@@ -63,7 +63,13 @@ typedef __packed struct _stcFlshRec     //¶¨ÒåÊı¾İ¼ÇÂ¼Êı¾İ½á¹¹£¨20171116 »ú³µÑ¹Ë
     stcAirQuality       sAir              ;//¿ÕÆøÖÊÁ¿       28
     uint8               RunSys            ;//ÔËĞĞ×´Ì¬       1£¨·§ÃÅÃÅ´ò¿ª£¬¿ªÊ¼²âÊÔ£¬µÈµÈ£©      
     uint8				Recv[8]          ;//Ô¤Áô                               
-    uint16				ErrCode           ;//¹ÊÕÏ´úÂë       2                  
+    //uint16				ErrCode           ;//¹ÊÕÏ´úÂë       2 
+    struct _ErrCode {
+        uint16      MtrCommErr          : 1;    // Ö÷»ú¹ÊÕÏ
+        uint16      Res                 : 15;   // D11~D06£º·Ö
+    } ErrCode;                                          // 04 Ê±¼ä    
+    
+    
     uint8				Air_Hum_Grade     ;//Êª¶ÈµÈ¼¶       1                  
     uint8				Air_Voc_Grade     ;//VOCµÈ¼¶        1                   
     uint8               Air_Dust_Grade    ;//·Û³¾µÈ¼¶       1    

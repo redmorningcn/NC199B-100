@@ -83,8 +83,8 @@ CPU_INT08U  BSP_CPU_ClkFreq_MHz;
 *********************************************************************************************************
 */
 static  void  BSP_GpioInit   (void);
-static  void  BSP_LED_Init   (void);
-static  void  BSP_StatusInit (void);
+//static  void  BSP_LED_Init   (void);
+//static  void  BSP_StatusInit (void);
 
 /*
 *********************************************************************************************************
@@ -376,7 +376,7 @@ CPU_INT32U  BSP_CPU_ClkFreq (void)
 * Note(s)     : none.
 *********************************************************************************************************
 */
-static  void  BSP_LED_Init (void)
+void  BSP_LED_Init (void)
 {
     GPIO_InitTypeDef  gpio_init;
         
@@ -600,7 +600,7 @@ void BSP_LED_Flash( CPU_INT08U led, CPU_INT16U cnt, CPU_INT32U cycle, CPU_INT32U
 *********************************************************************************************************
 */
 
-static  void  BSP_StatusInit (void)
+void  BSP_StatusInit (void)
 {
     GPIO_InitTypeDef  GPIO_InitStructure;
     

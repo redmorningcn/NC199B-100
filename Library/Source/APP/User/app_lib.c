@@ -100,94 +100,95 @@ INT16U SWAP_INT16U(INT16U value)
 
 	return tmp_value;
 }
-/*******************************************************************************
- * 名    称： App_SetParaToEep
- * 功    能：
- * 入口参数：
- * 出口参数： 无
- * 作　 　者： 无名沈
- * 创建日期： 2014-03-28
- * 修    改：
- * 修改日期：
- *******************************************************************************/
-BOOL App_SetParaToEep(INT16U addr, INT08U *pbuf, INT16U len)
-{
-    INT08U    retrys    = 3;
-    INT08U    ret;
-    INT08U    *pc;
-    INT08U    *pb;
-//    /***********************************************
-//    * 描述： 将默认参数写入EEPROM中
-//    */
-//    do {
-//        pb  = (INT08U   *)pbuf;
-//        pc  = (INT08U   *)&EepRdBuf;
-//        
-//        WdtReset();
-//        if ( len == BSP_EEP_WriteBytes( addr, pb, len ) ) {
-//            if ( len == BSP_EEP_ReadBytes( addr, pc, len ) ) {
-//                ret     = 1;
-//                for ( INT16U i = 0; i < len; i++ ) {
-//                    if ( *pb++ != *pc++ ) {
-//                        ret = 0;
-//                        break;
-//                    }
-//                }
-//                if ( ret )
-//                    break;
-//            }
-//        }
-//    } while ( --retrys );
-//    
-//    if ( !ret )
-//        return FALSE;
-//    
-    return TRUE;
-}
-
-/*******************************************************************************
- * 名    称： App_SetParaToEeprom()
- * 功    能： 应用参数存储到EERPOM
- * 入口参数：
- * 出口参数： 无
- * 作　 　者：
- * 创建日期：
- * 修    改： 无名沈
- * 修改日期： 2014-06-25
- *******************************************************************************/
-BOOL App_SetParaToEeprom(void)
-{
-//#if (STORAGE_TYPE == INTNER_FLASH )
-//    Ctrl.Para.dat.RestoreSetting    = 0xA5;
-//    //BSP_FlashWrite((INT32U  ) PARAM_START_ADDR + 0,
-//    //          (INT16U *)Ctrl.Para.buf2,128);
-//    BSP_FlashWriteBytes((u32) 0*2, (u8 *)Ctrl.Para.buf1, (u16) 128*2);
-//#elif (STORAGE_TYPE == INTNER_EEPROM )
-//#elif (STORAGE_TYPE == EXTERN_EEPROM )
+//
+///*******************************************************************************
+// * 名    称： App_SetParaToEep
+// * 功    能：
+// * 入口参数：
+// * 出口参数： 无
+// * 作　 　者： 无名沈
+// * 创建日期： 2014-03-28
+// * 修    改：
+// * 修改日期：
+// *******************************************************************************/
+//BOOL App_SetParaToEep(INT16U addr, INT08U *pbuf, INT16U len)
+//{
+//    INT08U    retrys    = 3;
 //    INT08U    ret;
-//    INT08U   *pb;
-//    
-//    pb    = (INT08U       *)&EepWrBuf;
-//    
-//    /***********************************************
-//    * 描述： 将默认参数写入EEPROM中
-//    */
-//    pb    = (INT08U   *)Ctrl.Para.buf1;
-//    ret   = App_SetParaToEep( 0, pb, 255 );
-//    
-//    if ( !ret )
-//        return FALSE;
-//    
-//    /***********************************************
-//    * 描述： 初始化数据标志写入EEPROM中
-//    */
-////    if(!BSP_EEP_WriteByteChk(255, 0xA5)) {
+//    INT08U    *pc;
+//    INT08U    *pb;
+////    /***********************************************
+////    * 描述： 将默认参数写入EEPROM中
+////    */
+////    do {
+////        pb  = (INT08U   *)pbuf;
+////        pc  = (INT08U   *)&EepRdBuf;
+////        
+////        WdtReset();
+////        if ( len == BSP_EEP_WriteBytes( addr, pb, len ) ) {
+////            if ( len == BSP_EEP_ReadBytes( addr, pc, len ) ) {
+////                ret     = 1;
+////                for ( INT16U i = 0; i < len; i++ ) {
+////                    if ( *pb++ != *pc++ ) {
+////                        ret = 0;
+////                        break;
+////                    }
+////                }
+////                if ( ret )
+////                    break;
+////            }
+////        }
+////    } while ( --retrys );
+////    
+////    if ( !ret )
 ////        return FALSE;
-////    }
-//    
-//#endif
+////    
 //    return TRUE;
-}
+//}
+//
+///*******************************************************************************
+// * 名    称： App_SetParaToEeprom()
+// * 功    能： 应用参数存储到EERPOM
+// * 入口参数：
+// * 出口参数： 无
+// * 作　 　者：
+// * 创建日期：
+// * 修    改： 无名沈
+// * 修改日期： 2014-06-25
+// *******************************************************************************/
+//BOOL App_SetParaToEeprom(void)
+//{
+////#if (STORAGE_TYPE == INTNER_FLASH )
+////    Ctrl.Para.dat.RestoreSetting    = 0xA5;
+////    //BSP_FlashWrite((INT32U  ) PARAM_START_ADDR + 0,
+////    //          (INT16U *)Ctrl.Para.buf2,128);
+////    BSP_FlashWriteBytes((u32) 0*2, (u8 *)Ctrl.Para.buf1, (u16) 128*2);
+////#elif (STORAGE_TYPE == INTNER_EEPROM )
+////#elif (STORAGE_TYPE == EXTERN_EEPROM )
+////    INT08U    ret;
+////    INT08U   *pb;
+////    
+////    pb    = (INT08U       *)&EepWrBuf;
+////    
+////    /***********************************************
+////    * 描述： 将默认参数写入EEPROM中
+////    */
+////    pb    = (INT08U   *)Ctrl.Para.buf1;
+////    ret   = App_SetParaToEep( 0, pb, 255 );
+////    
+////    if ( !ret )
+////        return FALSE;
+////    
+////    /***********************************************
+////    * 描述： 初始化数据标志写入EEPROM中
+////    */
+//////    if(!BSP_EEP_WriteByteChk(255, 0xA5)) {
+//////        return FALSE;
+//////    }
+////    
+////#endif
+////    return TRUE;
+//}
 
 
 /*******************************************************************************
@@ -257,160 +258,160 @@ BOOL App_SetParaToSensor(INT08U dev, INT32U addr, INT08U *dat, INT16U len)
 //    BSP_I2CSetPort(2);                              // 切换到I2C1
     return ret;
 }
-
-extern  const StrParaRange MbsParaRange[];
-/*******************************************************************************
- * 名    称： App_GetParaFromEeprom()
- * 功    能： 应用参数读取到RAM
- * 入口参数：
- * 出口参数： 无
- * 作　 　者：
- * 创建日期：
- * 修    改： 无名沈
- * 修改日期： 2014-06-25
- *******************************************************************************/
-BOOL App_GetParaFromEeprom(void)
-{    
-//#if (STORAGE_TYPE == INTNER_FLASH )    
-//    INT08U   *pb = (INT08U   *)&EepWrBuf;
-//    //BSP_FlashRead((INT32U  ) PARAM_START_ADDR + 0,
-//    //          (INT16U *)pu,127);
-//    BSP_FlashReadBytes((u32) 0*2, (u8 *)pb, (u16) 127*2);
-//#elif (STORAGE_TYPE == INTNER_EEPROM )
-//#elif (STORAGE_TYPE == EXTERN_EEPROM )
-//    INT08U   *pb = (INT08U   *)&EepWrBuf;
-//    /***********************************************
-//    * 描述： 已经配置过了，非首次初始化，则读取参数到RAM
-//    */
-//    /***********************************************
-//    * 描述： 读取MODBUS参数
-//    */
-//    
-//    INT08U  retrys  = 5;
-//    INT16U  len = 254;
-//    do {
-//        WdtReset();
-////        if ( len == BSP_EEP_ReadBytes(0,(INT08U *)pb, len) ) {            
-////            for ( INT08U i = 0; i < len; i++, pb++ ) {
-////                Ctrl.Para.buf1[i] = *pb;
-////            }
-////            return TRUE;
-////            //break;
+//
+//extern  const StrParaRange MbsParaRange[];
+///*******************************************************************************
+// * 名    称： App_GetParaFromEeprom()
+// * 功    能： 应用参数读取到RAM
+// * 入口参数：
+// * 出口参数： 无
+// * 作　 　者：
+// * 创建日期：
+// * 修    改： 无名沈
+// * 修改日期： 2014-06-25
+// *******************************************************************************/
+//BOOL App_GetParaFromEeprom(void)
+//{    
+////#if (STORAGE_TYPE == INTNER_FLASH )    
+////    INT08U   *pb = (INT08U   *)&EepWrBuf;
+////    //BSP_FlashRead((INT32U  ) PARAM_START_ADDR + 0,
+////    //          (INT16U *)pu,127);
+////    BSP_FlashReadBytes((u32) 0*2, (u8 *)pb, (u16) 127*2);
+////#elif (STORAGE_TYPE == INTNER_EEPROM )
+////#elif (STORAGE_TYPE == EXTERN_EEPROM )
+////    INT08U   *pb = (INT08U   *)&EepWrBuf;
+////    /***********************************************
+////    * 描述： 已经配置过了，非首次初始化，则读取参数到RAM
+////    */
+////    /***********************************************
+////    * 描述： 读取MODBUS参数
+////    */
+////    
+////    INT08U  retrys  = 5;
+////    INT16U  len = 254;
+////    do {
+////        WdtReset();
+//////        if ( len == BSP_EEP_ReadBytes(0,(INT08U *)pb, len) ) {            
+//////            for ( INT08U i = 0; i < len; i++, pb++ ) {
+//////                Ctrl.Para.buf1[i] = *pb;
+//////            }
+//////            return TRUE;
+//////            //break;
+//////        }
+////#ifdef APP_LIBRARY
+////        Delay_Nms( 10 );
+////#else
+////        BSP_OS_TimeDly(10);
+////#endif
+////    } while( --retrys );
+////    
+////    if ( !retrys )
+////        return FALSE;
+////#endif
+////    /***********************************************
+////    * 描述： 缓冲区参数定入MODBUS参数
+////    */
+////    StrParaRange *prag    = Ctrl.Prge;
+////    
+////#if ( PARA_TYPE == PARA_TYPE_INT16U )
+////    INT16U  *pu = (INT16U*)pb;
+////    for ( INT08U i = 0; i < 127; i++, pu++,prag++ ) {
+////        if ( ( (INT16U)*pu >= prag->Min ) &&
+////            ( (INT16U)*pu <= prag->Max ) ) {
+////            Ctrl.Para.buf2[i] = *pu;
 ////        }
-//#ifdef APP_LIBRARY
-//        Delay_Nms( 10 );
-//#else
-//        BSP_OS_TimeDly(10);
-//#endif
-//    } while( --retrys );
+////    }
+////#elif ( PARA_TYPE == PARA_TYPE_INT16S )
+////    INT16S  *ps = (INT16S*)pb;
+////    for ( INT08U i = 0; i < 127; i++, ps++,prag++ ) {
+////        if ( ( (INT16S)*ps >= prag->Min ) &&
+////            ( (INT16S)*ps <= prag->Max ) ) {
+////            Ctrl.Para.buf2[i] = *ps;
+////        }
+////    }
+////#elif ( PARA_TYPE == PARA_TYPE_INT08U )
+////    for ( INT08U i = 0; i < 254; i++, pb++,prag++ ) {
+////        if ( ( (INT08U)*pb >= prag->Min ) &&
+////            ( (INT08U)*pb <= prag->Max ) ) {
+////            Ctrl.Para.buf1[i] = *pb;
+////        }
+////    }
+////#else
+////    for ( INT08U i = 0; i < 254; i++, pb++,prag++ ) {
+////        if ( ( (INT08S)*pb >= prag->Min ) &&
+////            ( (INT08S)*pb <= prag->Max ) ) {
+////            Ctrl.Para.buf1[i] = *pb;
+////        }
+////    }
+////#endif
+////    return TRUE;
+//}
+//
+///*******************************************************************************
+// * 名    称：
+// * 功    能：
+// * 入口参数：
+// * 出口参数： 无
+// * 作　 　者： 无名沈
+// * 创建日期： 2014-03-28
+// * 修    改：
+// * 修改日期：
+// *******************************************************************************/
+//BOOL App_PraInit(void)
+//{
+//    extern const StrCtrlPara    MbsParaAtrIdx;
 //    
-//    if ( !retrys )
-//        return FALSE;
-//#endif
-//    /***********************************************
-//    * 描述： 缓冲区参数定入MODBUS参数
-//    */
-//    StrParaRange *prag    = Ctrl.Prge;
-//    
-//#if ( PARA_TYPE == PARA_TYPE_INT16U )
-//    INT16U  *pu = (INT16U*)pb;
-//    for ( INT08U i = 0; i < 127; i++, pu++,prag++ ) {
-//        if ( ( (INT16U)*pu >= prag->Min ) &&
-//            ( (INT16U)*pu <= prag->Max ) ) {
-//            Ctrl.Para.buf2[i] = *pu;
-//        }
-//    }
-//#elif ( PARA_TYPE == PARA_TYPE_INT16S )
-//    INT16S  *ps = (INT16S*)pb;
-//    for ( INT08U i = 0; i < 127; i++, ps++,prag++ ) {
-//        if ( ( (INT16S)*ps >= prag->Min ) &&
-//            ( (INT16S)*ps <= prag->Max ) ) {
-//            Ctrl.Para.buf2[i] = *ps;
-//        }
-//    }
-//#elif ( PARA_TYPE == PARA_TYPE_INT08U )
-//    for ( INT08U i = 0; i < 254; i++, pb++,prag++ ) {
-//        if ( ( (INT08U)*pb >= prag->Min ) &&
-//            ( (INT08U)*pb <= prag->Max ) ) {
-//            Ctrl.Para.buf1[i] = *pb;
-//        }
-//    }
-//#else
-//    for ( INT08U i = 0; i < 254; i++, pb++,prag++ ) {
-//        if ( ( (INT08S)*pb >= prag->Min ) &&
-//            ( (INT08S)*pb <= prag->Max ) ) {
-//            Ctrl.Para.buf1[i] = *pb;
-//        }
-//    }
-//#endif
-//    return TRUE;
-}
-
-/*******************************************************************************
- * 名    称：
- * 功    能：
- * 入口参数：
- * 出口参数： 无
- * 作　 　者： 无名沈
- * 创建日期： 2014-03-28
- * 修    改：
- * 修改日期：
- *******************************************************************************/
-BOOL App_PraInit(void)
-{
-    extern const StrCtrlPara    MbsParaAtrIdx;
-    
-//    Ctrl.Prge               = (StrParaRange *)MbsParaRange;
-//    //Ctrl.Key                = (StrKeyEvt *)&Key;
-//    Ctrl.Para.dat.idx       = &MbsParaAtrIdx;
-//    BSP_I2CSetPort(1);
-//#if (STORAGE_TYPE == INTNER_FLASH ) 
-//    BSP_FlashReadBytes((u32) 0*2, (u8 *)EepWrBuf.buf1, (u16) 128*2);
-//    INT16U dat = EepWrBuf.buf2[127];    
-//#elif (STORAGE_TYPE == INTNER_EEPROM )
-//#elif (STORAGE_TYPE == EXTERN_EEPROM )
-//    INT08U  dat     = 0;
-//    INT08U  retrys  = 10;
-//    BSP_EEP_Init();
-//    
-//    //if ( FALSE == BSP_EEP_Init())
-//    //    goto exit;                                 // 初始化存储器
-//    /***********************************************
-//    * 描述：读取初始化地址上的值
-//    */
-//    do {
-//        WdtReset();
-//        if ( TRUE == BSP_EEP_ReadByte(255, &dat))
-//            break;
-//#ifdef APP_LIBRARY
-//        Delay_Nms( 10 );
-//#else
-//        BSP_OS_TimeDly(10);
-//#endif
-//    } while( --retrys );
-//#endif
-//    WdtReset();
-//    /***********************************************
-//    * 描述：跟默认值比较
-//    */
-//    if(dat == 0xA5) {
-//        dat = App_GetParaFromEeprom();                  // 已经初始化，读取参数
-//        Ctrl.Sys.FirstPwrFlag       = FALSE;
-//        /***********************************************
-//        * 描述：没有初始化，保存默念值
-//        */
-//    } else { 
-//        dat = App_SetParaToEeprom();                    // 未初始化，保存默认参数
-//        Ctrl.Sys.FirstPwrFlag       = TRUE;
-//    }
-//           
-//    WdtReset();
-//    /***********************************************
-//    * 描述： 切换到显示模块存储器
-//    */
-//    //BSP_I2CSetPort(2);                              // 切换到I2C1
-//    return (BOOL)dat;
-}
+////    Ctrl.Prge               = (StrParaRange *)MbsParaRange;
+////    //Ctrl.Key                = (StrKeyEvt *)&Key;
+////    Ctrl.Para.dat.idx       = &MbsParaAtrIdx;
+////    BSP_I2CSetPort(1);
+////#if (STORAGE_TYPE == INTNER_FLASH ) 
+////    BSP_FlashReadBytes((u32) 0*2, (u8 *)EepWrBuf.buf1, (u16) 128*2);
+////    INT16U dat = EepWrBuf.buf2[127];    
+////#elif (STORAGE_TYPE == INTNER_EEPROM )
+////#elif (STORAGE_TYPE == EXTERN_EEPROM )
+////    INT08U  dat     = 0;
+////    INT08U  retrys  = 10;
+////    BSP_EEP_Init();
+////    
+////    //if ( FALSE == BSP_EEP_Init())
+////    //    goto exit;                                 // 初始化存储器
+////    /***********************************************
+////    * 描述：读取初始化地址上的值
+////    */
+////    do {
+////        WdtReset();
+////        if ( TRUE == BSP_EEP_ReadByte(255, &dat))
+////            break;
+////#ifdef APP_LIBRARY
+////        Delay_Nms( 10 );
+////#else
+////        BSP_OS_TimeDly(10);
+////#endif
+////    } while( --retrys );
+////#endif
+////    WdtReset();
+////    /***********************************************
+////    * 描述：跟默认值比较
+////    */
+////    if(dat == 0xA5) {
+////        dat = App_GetParaFromEeprom();                  // 已经初始化，读取参数
+////        Ctrl.Sys.FirstPwrFlag       = FALSE;
+////        /***********************************************
+////        * 描述：没有初始化，保存默念值
+////        */
+////    } else { 
+////        dat = App_SetParaToEeprom();                    // 未初始化，保存默认参数
+////        Ctrl.Sys.FirstPwrFlag       = TRUE;
+////    }
+////           
+////    WdtReset();
+////    /***********************************************
+////    * 描述： 切换到显示模块存储器
+////    */
+////    //BSP_I2CSetPort(2);                              // 切换到I2C1
+////    return (BOOL)dat;
+//}
 
 /*******************************************************************************
  * 				                    延时函数                                   *

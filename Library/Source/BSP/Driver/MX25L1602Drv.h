@@ -29,8 +29,8 @@
 #include <bsp_gpio.h>
 
 
-#define INT32U   uint32_t
-#define INT16U   uint16_t
+//#define INT32U   uint32_t
+//#define INT16U   uint16_t
 #define INT8U    uint8_t
 
 
@@ -40,8 +40,8 @@
 #define  FLSH_MAX_SIZE     			0x00800000      //8M
 
 /*
- * 定义操作MX25L1602所需的数据 
- */
+* 定义操作MX25L1602所需的数据 
+*/
 enum PARAMETER_TYPE {Invalid};                                          /* 定义1个常量,代表无效参数     */
 enum OptResult{ERROR_0,OK};
 
@@ -52,10 +52,10 @@ typedef enum IDTYPE{Manu_ID,Dev_ID,Jedec_ID} idtype;
 #define SEC_MAX        2048                                              /* 定义最大扇区号               */
 #define SEC_SIZE       0x1000                                           /* 扇区大小                     */
 /* 
- * 宏,用于定义SPI_CS的片选引脚
- */
+* 宏,用于定义SPI_CS的片选引脚
+*/
 #define SPI_CS        (1 << 16)                                          /* P0.2口为25VF016B的片选，     */
-                                                                        /* 该脚为低时，SST25VF016B被使能*/
+/* 该脚为低时，SST25VF016B被使能*/
 
 
 /*********************************************************************************************************
@@ -111,6 +111,15 @@ extern   INT8U MX25L1602_WR(INT32U Dst,INT8U* SndbufPt,INT32U NByte);
 ** 输出参数:操作成功则返回OK,失败则返回ERROR_0
 *********************************************************************************************************/
 extern  INT8U MX25L1602_Erase(INT32U sec1, INT32U sec2);
+
+
+extern  uint8 ReadFlsh(uint32 Addr,uint8 *buf,uint32 Len);
+
+extern  INT8U	WriteFlsh(INT32U Dst, uint8 * sFlshRec, INT32U NByte);
+
+extern  void	InitFlashIO(void);
+
+extern  uint8 JudgeFlashIDErrFlg(void)   ;
 
 
 #endif

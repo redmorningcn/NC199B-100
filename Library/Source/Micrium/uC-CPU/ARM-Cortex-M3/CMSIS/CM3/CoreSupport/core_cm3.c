@@ -504,7 +504,7 @@ void __set_MSP(uint32_t topOfMainStack)
  *
  * @return BasePriority
  *
- * Return the content of the base priority register
+ * Return the tent of the base priority register
  */
 uint32_t __get_BASEPRI(void)
 {

@@ -715,11 +715,16 @@ void  OSStart (OS_ERR  *p_err)
     if (OSRunning == OS_STATE_OS_STOPPED) {
         OSPrioHighRdy   = OS_PrioGetHighest();              /* Find the highest priority                              */
         OSPrioCur       = OSPrioHighRdy;
+       
         OSTCBHighRdyPtr = OSRdyList[OSPrioHighRdy].HeadPtr;
         OSTCBCurPtr     = OSTCBHighRdyPtr;
+        
         OSRunning       = OS_STATE_OS_RUNNING;
+       
         OSStartHighRdy();                                   /* Execute target specific code to start task             */
-       *p_err           = OS_ERR_FATAL_RETURN;              /* OSStart() is not supposed to return                    */
+
+
+        *p_err           = OS_ERR_FATAL_RETURN;              /* OSStart() is not supposed to return                    */
     } else {
        *p_err           = OS_ERR_OS_RUNNING;                /* OS is already running                                  */
     }

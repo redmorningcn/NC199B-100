@@ -22,8 +22,8 @@
 #include   "MX25L1602Drv.h"
 #include   "includes.h"
 /*
- * 移植本软件包时需要修改以下的函数或宏 
- */
+* 移植本软件包时需要修改以下的函数或宏 
+*/
 //#define     CE_Low()    LPC_GPIO0->FIOCLR |= SPI_CS;
 //#define     CE_High()   LPC_GPIO0->FIOSET |= SPI_CS;
 
@@ -35,9 +35,9 @@ void nop(void)
 	{ 
 		i--; 
 	} 
-//    #if DEBUG_MODEL_DISENABLE > 0 
-//        WDT_Feed();                                               /* Determine CPU capacity                               */
-//    #endif
+    //    #if DEBUG_MODEL_DISENABLE > 0 
+    //        WDT_Feed();                                               /* Determine CPU capacity                               */
+    //    #endif
 }
 
 extern	void WriteSoftSpiCSF(uint8 temp);
@@ -87,40 +87,6 @@ void WriteSCKF(uint8 temp)
 	if(temp)		
 	{
 		GPIO_SetOrClearValue(SCKF,1);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 	}
 	else
 	{
@@ -138,7 +104,7 @@ void WriteSCKF(uint8 temp)
 uint8 ReadSCKF(void)
 {
 	uint8 temp;
-
+    
 	temp = 	GPIO_ReadIoVal(SCKF);
 	nop();
 	return temp;
@@ -161,7 +127,7 @@ void WriteMOSIF(uint8 temp)
 		GPIO_SetOrClearValue(MOSIF,0);		
 	}	
 	nop();		
-
+    
 }
 
 //------------------------------------------------------------------------
@@ -195,7 +161,7 @@ void WriteMISOF(uint8 temp)
 	{
 		GPIO_SetOrClearValue(MISOF,0);		
 	}
-		
+    
 	nop();		
 }
 
@@ -208,9 +174,9 @@ void WriteMISOF(uint8 temp)
 uint8 ReadMISOF(void)
 {
 	uint8 temp;
-
+    
 	temp = 	GPIO_ReadIoVal(MISOF);
-
+    
 	nop();
 	return temp;
 }
@@ -231,7 +197,7 @@ void WriteSoftSpiCSF(uint8 temp)
 	{
 		GPIO_SetOrClearValue(SOFT_SPI_CSF,0);		
 	}	
-
+    
 	nop();		
 }
 
@@ -250,24 +216,24 @@ uint8 SendOrRecByte_SPIF(uint8 ch)
     {
 		temp=ch&0x80;
     	ch=ch<<1;
-      if(temp)
-      {
-      	WriteMOSIF( 1 );	
-
-      	WriteSCKF ( 0 );
-
-      	WriteSCKF ( 1 );	        	
-      }
-      else
-      {
-      	WriteMOSIF( 0 );	
-
-        WriteSCKF ( 0 );
-          
-      	WriteSCKF ( 1 );
-      }
-      
-      ch |= ReadMISOF();
+        if(temp)
+        {
+            WriteMOSIF( 1 );	
+            
+            WriteSCKF ( 0 );
+            
+            WriteSCKF ( 1 );	        	
+        }
+        else
+        {
+            WriteMOSIF( 0 );	
+            
+            WriteSCKF ( 0 );
+            
+            WriteSCKF ( 1 );
+        }
+        
+        ch |= ReadMISOF();
     }
     
     return	ch;
@@ -292,7 +258,7 @@ uint8	RecByte_SPIF(void)
 *********************************************************************************************************/
 void  SPIInit (void)
 {
-
+    
 }
 
 /*********************************************************************************************************
@@ -317,7 +283,7 @@ INT8U Get_Byte (void)
 {
 	return	RecByte_SPIF();
 }
- 
+
 /*********************************************************************************************************
 ** 用户接口层
 ** 以下函数在移植时无需修改
@@ -334,20 +300,20 @@ INT8U Get_Byte (void)
 **********************************************************************************************************/
 INT8U MX25L1602_RD(INT32U Dst, INT32U NByte,INT8U* RcvBufPt)
 {
-      INT32U i = 0;
-      if ((Dst+NByte > MAX_ADDR)||(NByte == 0))  return (ERROR_0);            /*  检查入口参数                */
-      
-      CE_Low();
-      Send_Byte(0x0B);                                                      /* 发送读命令                   */
-      Send_Byte(((Dst & 0xFFFFFF) >> 16));                                  /* 发送地址信息:该地址为3个字节 */
-      Send_Byte(((Dst & 0xFFFF) >> 8));
-      Send_Byte(Dst & 0xFF);
-      Send_Byte(0xFF);                                                      /* 发送一个哑字节以读取数据     */
-      for (i = 0; i < NByte; i++) {
+    INT32U i = 0;
+    if ((Dst+NByte > MAX_ADDR)||(NByte == 0))  return (ERROR_0);            /*  检查入口参数                */
+    
+    CE_Low();
+    Send_Byte(0x0B);                                                      /* 发送读命令                   */
+    Send_Byte(((Dst & 0xFFFFFF) >> 16));                                  /* 发送地址信息:该地址为3个字节 */
+    Send_Byte(((Dst & 0xFFFF) >> 8));
+    Send_Byte(Dst & 0xFF);
+    Send_Byte(0xFF);                                                      /* 发送一个哑字节以读取数据     */
+    for (i = 0; i < NByte; i++) {
         RcvBufPt[i] = Get_Byte();
-      }
-      CE_High();
-      return (OK);
+    }
+    CE_High();
+    return (OK);
 }
 
 /*********************************************************************************************************
@@ -361,8 +327,8 @@ INT8U MX25L1602_RD(INT32U Dst, INT32U NByte,INT8U* RcvBufPt)
 *********************************************************************************************************/
 INT8U MX25L1602_RdID(idtype IDType, INT32U* RcvbufPt)
 {
-      INT32U temp = 0;
-      if (IDType == Jedec_ID) {
+    INT32U temp = 0;
+    if (IDType == Jedec_ID) {
         CE_Low();
         Send_Byte(0x9F);                                                    /* 发送读JEDEC ID命令(9Fh)      */
         temp = (temp | Get_Byte()) << 8;                                    /* 接收数据                     */
@@ -371,9 +337,9 @@ INT8U MX25L1602_RdID(idtype IDType, INT32U* RcvbufPt)
         CE_High();
         *RcvbufPt = temp;
         return (OK);
-      }
+    }
     
-      if ((IDType == Manu_ID) || (IDType == Dev_ID) ) {
+    if ((IDType == Manu_ID) || (IDType == Dev_ID) ) {
         CE_Low();
         Send_Byte(0x90);                                                    /* 发送读ID命令 (90h or ABh)    */
         Send_Byte(0x00);                                                    /* 发送地址                     */
@@ -383,9 +349,9 @@ INT8U MX25L1602_RdID(idtype IDType, INT32U* RcvbufPt)
         CE_High();
         *RcvbufPt = temp;
         return (OK);
-      } else {
+    } else {
         return (ERROR_0);
-      }
+    }
 }
 
 /*********************************************************************************************************
@@ -400,38 +366,38 @@ INT8U MX25L1602_RdID(idtype IDType, INT32U* RcvbufPt)
 *********************************************************************************************************/
 INT8U MX25L1602_WR(INT32U Dst, INT8U* SndbufPt, INT32U NByte)
 {
-      INT32U temp = 0,i = 0,StatRgVal = 0;
-      if (( (Dst+NByte-1 > MAX_ADDR)||(NByte == 0) )) {
+    INT32U temp = 0,i = 0,StatRgVal = 0;
+    if (( (Dst+NByte-1 > MAX_ADDR)||(NByte == 0) )) {
         return (ERROR_0);                                                     /*  检查入口参数                */
-      }
-      CE_Low();
-      Send_Byte(0x05);                                                      /* 发送读状态寄存器命令         */
-      temp = Get_Byte();                                                    /* 保存读得的状态寄存器值       */
-      CE_High();
+    }
+    CE_Low();
+    Send_Byte(0x05);                                                      /* 发送读状态寄存器命令         */
+    temp = Get_Byte();                                                    /* 保存读得的状态寄存器值       */
+    CE_High();
     
-      CE_Low();
-     Send_Byte(0x50);                                                      /* 使状态寄存器可写             */
-//         Send_Byte(0x06);                                                    /* 发送写使能命令               */
-      CE_High();
-      CE_Low();
-      Send_Byte(0x01);                                                      /* 发送写状态寄存器指令         */
-      Send_Byte(0);                                                         /* 清0BPx位，使Flash芯片全区可写*/
-      CE_High();
+    CE_Low();
+    Send_Byte(0x50);                                                      /* 使状态寄存器可写             */
+    //         Send_Byte(0x06);                                                    /* 发送写使能命令               */
+    CE_High();
+    CE_Low();
+    Send_Byte(0x01);                                                      /* 发送写状态寄存器指令         */
+    Send_Byte(0);                                                         /* 清0BPx位，使Flash芯片全区可写*/
+    CE_High();
     
-      for(i = 0; i < NByte; i++) {
-////新增20131126  跨块擦除扇
-//		printfcom0(" %d,%d, ",Dst+i,Dst+i % 4096);
+    for(i = 0; i < NByte; i++) {
+        ////新增20131126  跨块擦除扇
+        //		printfcom0(" %d,%d, ",Dst+i,Dst+i % 4096);
 		if((Dst+i) % 4096 == 0)
 		{
 			MX25L1602_Erase((Dst+i)/4096,(Dst+i)/4096);
 			//printfcom0("\r\n EraseEraseEraseErase");
 		}
-//////		
- 
+        //////		
+        
         CE_Low();
         Send_Byte(0x06);                                                    /* 发送写使能命令               */
         CE_High();
-    
+        
         CE_Low();
         Send_Byte(0x02);                                                    /* 发送字节数据烧写命令         */
         Send_Byte((((Dst+i) & 0xFFFFFF) >> 16));                            /* 发送3个字节的地址信息        */
@@ -439,28 +405,28 @@ INT8U MX25L1602_WR(INT32U Dst, INT8U* SndbufPt, INT32U NByte)
         Send_Byte((Dst+i) & 0xFF);
         Send_Byte(SndbufPt[i]);                                             /* 发送被烧写的数据             */
         CE_High();
-    
+        
         do {
-          CE_Low();
-          Send_Byte(0x05);                                                  /* 发送读状态寄存器命令         */
-          StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值       */
-          CE_High();
+            CE_Low();
+            Send_Byte(0x05);                                                  /* 发送读状态寄存器命令         */
+            StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值       */
+            CE_High();
         } while (StatRgVal == 0x03);                                        /* 一直等待，直到芯片空闲       */
-      }
+    }
     
-      CE_Low();
-      Send_Byte(0x06);                                                      /* 发送写使能命令               */
-      CE_High();
+    CE_Low();
+    Send_Byte(0x06);                                                      /* 发送写使能命令               */
+    CE_High();
     
-      CE_Low();
-      Send_Byte(0x50);                                                      /* 使状态寄存器可写             */
-      CE_High();
-      CE_Low();
-      Send_Byte(0x01);                                                      /* 发送写状态寄存器指令         */
-      Send_Byte(temp);                                                      /* 恢复状态寄存器设置信息       */
-      CE_High();
+    CE_Low();
+    Send_Byte(0x50);                                                      /* 使状态寄存器可写             */
+    CE_High();
+    CE_Low();
+    Send_Byte(0x01);                                                      /* 发送写状态寄存器指令         */
+    Send_Byte(temp);                                                      /* 恢复状态寄存器设置信息       */
+    CE_High();
     
-      return (OK);
+    return (OK);
 }
 
 /*********************************************************************************************************
@@ -473,154 +439,154 @@ INT8U MX25L1602_WR(INT32U Dst, INT8U* SndbufPt, INT32U NByte)
 *********************************************************************************************************/
 INT8U MX25L1602_Erase(INT32U sec1, INT32U sec2)
 {
-  INT8U  temp1 = 0,temp2 = 0,StatRgVal = 0;
-  INT32U SecnHdAddr = 0;
-  INT32U no_SecsToEr = 0;                                               /* 要擦除的扇区数目             */
-  INT32U CurSecToEr = 0;                                                /* 当前要擦除的扇区号           */
-
-  /*
-   *  检查入口参数
-   */
-  if ((sec1 > SEC_MAX)||(sec2 > SEC_MAX)) {
-    return (ERROR_0);
-  }
-
-  CE_Low();
-  Send_Byte(0x05);                                                     /* 发送读状态寄存器命令          */
-  temp1 = Get_Byte();                                                  /* 保存读得的状态寄存器值        */
-  CE_High();
-
-  CE_Low();
-//  Send_Byte(0x50);                                                     /* 使状态寄存器可写              */
-
-  Send_Byte(0x06);
-  CE_High();
-
-  CE_Low();
-  Send_Byte(0x01);                                                     /* 发送写状态寄存器指令          */
-  Send_Byte(0);                                                        /* 清0BPx位，使Flash芯片全区可写 */
-  CE_High();
-
-  CE_Low();
-  Send_Byte(0x06);                                                      /* 发送写使能命令               */
-  CE_High();
-
-  /*
-   * 如果用户输入的起始扇区号大于终止扇区号，则在内部作出调整
-   */
-  if (sec1 > sec2)
-  {
-    temp2 = sec1;
-    sec1  = sec2;
-    sec2  = temp2;
-  }
-  /*
-   * 若起止扇区号相等则擦除单个扇区
-   */
-  if (sec1 == sec2)
-  {
-    SecnHdAddr = SEC_SIZE * sec1;                                       /* 计算扇区的起始地址           */
+    INT8U  temp1 = 0,temp2 = 0,StatRgVal = 0;
+    INT32U SecnHdAddr = 0;
+    INT32U no_SecsToEr = 0;                                               /* 要擦除的扇区数目             */
+    INT32U CurSecToEr = 0;                                                /* 当前要擦除的扇区号           */
+    
+    /*
+    *  检查入口参数
+    */
+    if ((sec1 > SEC_MAX)||(sec2 > SEC_MAX)) {
+        return (ERROR_0);
+    }
+    
     CE_Low();
-    Send_Byte(0x20);                                                    /* 发送扇区擦除指令             */
-    Send_Byte(((SecnHdAddr & 0xFFFFFF) >> 16));                         /* 发送3个字节的地址信息        */
-    Send_Byte(((SecnHdAddr & 0xFFFF) >> 8));
-    Send_Byte(SecnHdAddr & 0xFF);
+    Send_Byte(0x05);                                                     /* 发送读状态寄存器命令          */
+    temp1 = Get_Byte();                                                  /* 保存读得的状态寄存器值        */
     CE_High();
-    do {
-      CE_Low();
-      Send_Byte(0x05);                                                  /* 发送读状态寄存器命令        */
-      StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值      */
-      CE_High();
-    } while (StatRgVal & 0x01);                                         /* 一直等待，直到芯片空闲      */
+    
+    CE_Low();
+    //  Send_Byte(0x50);                                                     /* 使状态寄存器可写              */
+    
+    Send_Byte(0x06);
+    CE_High();
+    
+    CE_Low();
+    Send_Byte(0x01);                                                     /* 发送写状态寄存器指令          */
+    Send_Byte(0);                                                        /* 清0BPx位，使Flash芯片全区可写 */
+    CE_High();
+    
+    CE_Low();
+    Send_Byte(0x06);                                                      /* 发送写使能命令               */
+    CE_High();
+    
+    /*
+    * 如果用户输入的起始扇区号大于终止扇区号，则在内部作出调整
+    */
+    if (sec1 > sec2)
+    {
+        temp2 = sec1;
+        sec1  = sec2;
+        sec2  = temp2;
+    }
+    /*
+    * 若起止扇区号相等则擦除单个扇区
+    */
+    if (sec1 == sec2)
+    {
+        SecnHdAddr = SEC_SIZE * sec1;                                       /* 计算扇区的起始地址           */
+        CE_Low();
+        Send_Byte(0x20);                                                    /* 发送扇区擦除指令             */
+        Send_Byte(((SecnHdAddr & 0xFFFFFF) >> 16));                         /* 发送3个字节的地址信息        */
+        Send_Byte(((SecnHdAddr & 0xFFFF) >> 8));
+        Send_Byte(SecnHdAddr & 0xFF);
+        CE_High();
+        do {
+            CE_Low();
+            Send_Byte(0x05);                                                  /* 发送读状态寄存器命令        */
+            StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值      */
+            CE_High();
+        } while (StatRgVal & 0x01);                                         /* 一直等待，直到芯片空闲      */
+        return (OK);
+    }
+    
+    /*
+    * 根据起始扇区和终止扇区间距调用最快速的擦除功能
+    */
+    
+    if (sec2 - sec1 == SEC_MAX) {
+        CE_Low();
+        Send_Byte(0x60);                                                    /* 发送芯片擦除指令(60h or C7h) */
+        CE_High();
+        do {
+            CE_Low();
+            Send_Byte(0x05);                                                  /* 发送读状态寄存器命令         */
+            StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值       */
+            CE_High();
+        } while (StatRgVal & 0x01);                                         /* 一直等待，直到芯片空闲       */
+        return (OK);
+    }
+    
+    no_SecsToEr = sec2 - sec1 +1;                                         /* 获取要擦除的扇区数目         */
+    CurSecToEr  = sec1;                                                   /* 从起始扇区开始擦除           */
+    
+    /*
+    * 若两个扇区之间的间隔够大，则采取16扇区擦除算法
+    */
+    while (no_SecsToEr >= 16)
+    {
+        CE_Low();
+        Send_Byte(0x06);                                                     /* 发送允许写命令              */
+        CE_High();
+        
+        SecnHdAddr = SEC_SIZE * CurSecToEr;                                  /* 计算扇区的起始地址          */
+        CE_Low();
+        Send_Byte(0xD8);                                                     /* 发送64KB块擦除指令          */
+        Send_Byte(((SecnHdAddr & 0xFFFFFF) >> 16));                          /* 发送3个字节的地址信息       */
+        Send_Byte(((SecnHdAddr & 0xFFFF) >> 8));
+        Send_Byte(SecnHdAddr & 0xFF);
+        CE_High();
+        do {
+            CE_Low();
+            Send_Byte(0x05);                                                  /* 发送读状态寄存器命令        */
+            StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值      */
+            CE_High();
+        } while (StatRgVal & 0x01);                                         /* 一直等待，直到芯片空闲      */
+        CurSecToEr  += 16;                                                  /* 计算擦除了16个扇区后和擦除区*/
+        /* 域相邻的待擦除扇区号        */
+        no_SecsToEr -=  16;                                                 /* 对需擦除的扇区总数作出调整  */
+    }
+    
+    /*
+    * 采用扇区擦除算法擦除剩余的扇区
+    */
+    while (no_SecsToEr >= 1) {
+        CE_Low();
+        Send_Byte(0x06);                                                   /* 发送允许写命令              */
+        CE_High();
+        
+        SecnHdAddr = SEC_SIZE * CurSecToEr;                                /* 计算扇区的起始地址          */
+        CE_Low();
+        Send_Byte(0x20);                                                   /* 发送扇区擦除指令            */
+        Send_Byte(((SecnHdAddr & 0xFFFFFF) >> 16));                        /* 发送3个字节的地址信息       */
+        Send_Byte(((SecnHdAddr & 0xFFFF) >> 8));
+        Send_Byte(SecnHdAddr & 0xFF);
+        CE_High();
+        do {
+            CE_Low();
+            Send_Byte(0x05);                                                 /* 发送读状态寄存器命令        */
+            StatRgVal = Get_Byte();                                          /* 保存读得的状态寄存器值      */
+            CE_High();
+        } while (StatRgVal & 0x01 );                                       /* 一直等待，直到芯片空闲      */
+        CurSecToEr  += 1;
+        no_SecsToEr -=  1;
+    }
+    /*
+    * 擦除结束,恢复状态寄存器信息
+    */
+    CE_Low();
+    Send_Byte(0x06);                                                    /* 发送写使能命令               */
+    CE_High();
+    
+    CE_Low();
+    Send_Byte(0x50);                                                    /* 使状态寄存器可写             */
+    CE_High();
+    CE_Low();
+    Send_Byte(0x01);                                                    /* 发送写状态寄存器指令         */
+    Send_Byte(temp1);                                                   /* 恢复状态寄存器设置信息       */
+    CE_High();
     return (OK);
-  }
-
-  /*
-   * 根据起始扇区和终止扇区间距调用最快速的擦除功能
-   */
-
-  if (sec2 - sec1 == SEC_MAX) {
-    CE_Low();
-    Send_Byte(0x60);                                                    /* 发送芯片擦除指令(60h or C7h) */
-    CE_High();
-    do {
-      CE_Low();
-      Send_Byte(0x05);                                                  /* 发送读状态寄存器命令         */
-      StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值       */
-      CE_High();
-    } while (StatRgVal & 0x01);                                         /* 一直等待，直到芯片空闲       */
-    return (OK);
-  }
-
-  no_SecsToEr = sec2 - sec1 +1;                                         /* 获取要擦除的扇区数目         */
-  CurSecToEr  = sec1;                                                   /* 从起始扇区开始擦除           */
-
-  /*
-   * 若两个扇区之间的间隔够大，则采取16扇区擦除算法
-   */
-  while (no_SecsToEr >= 16)
-  {
-    CE_Low();
-    Send_Byte(0x06);                                                     /* 发送允许写命令              */
-    CE_High();
-
-    SecnHdAddr = SEC_SIZE * CurSecToEr;                                  /* 计算扇区的起始地址          */
-    CE_Low();
-    Send_Byte(0xD8);                                                     /* 发送64KB块擦除指令          */
-    Send_Byte(((SecnHdAddr & 0xFFFFFF) >> 16));                          /* 发送3个字节的地址信息       */
-    Send_Byte(((SecnHdAddr & 0xFFFF) >> 8));
-    Send_Byte(SecnHdAddr & 0xFF);
-    CE_High();
-    do {
-      CE_Low();
-      Send_Byte(0x05);                                                  /* 发送读状态寄存器命令        */
-      StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值      */
-      CE_High();
-    } while (StatRgVal & 0x01);                                         /* 一直等待，直到芯片空闲      */
-    CurSecToEr  += 16;                                                  /* 计算擦除了16个扇区后和擦除区*/
-                                                                        /* 域相邻的待擦除扇区号        */
-    no_SecsToEr -=  16;                                                 /* 对需擦除的扇区总数作出调整  */
-  }
-
-  /*
-   * 采用扇区擦除算法擦除剩余的扇区
-   */
-  while (no_SecsToEr >= 1) {
-    CE_Low();
-    Send_Byte(0x06);                                                   /* 发送允许写命令              */
-    CE_High();
-
-    SecnHdAddr = SEC_SIZE * CurSecToEr;                                /* 计算扇区的起始地址          */
-    CE_Low();
-    Send_Byte(0x20);                                                   /* 发送扇区擦除指令            */
-    Send_Byte(((SecnHdAddr & 0xFFFFFF) >> 16));                        /* 发送3个字节的地址信息       */
-    Send_Byte(((SecnHdAddr & 0xFFFF) >> 8));
-    Send_Byte(SecnHdAddr & 0xFF);
-    CE_High();
-    do {
-      CE_Low();
-      Send_Byte(0x05);                                                 /* 发送读状态寄存器命令        */
-      StatRgVal = Get_Byte();                                          /* 保存读得的状态寄存器值      */
-      CE_High();
-    } while (StatRgVal & 0x01 );                                       /* 一直等待，直到芯片空闲      */
-    CurSecToEr  += 1;
-    no_SecsToEr -=  1;
-  }
-  /*
-   * 擦除结束,恢复状态寄存器信息
-   */
-  CE_Low();
-  Send_Byte(0x06);                                                    /* 发送写使能命令               */
-  CE_High();
-
-  CE_Low();
-  Send_Byte(0x50);                                                    /* 使状态寄存器可写             */
-  CE_High();
-  CE_Low();
-  Send_Byte(0x01);                                                    /* 发送写状态寄存器指令         */
-  Send_Byte(temp1);                                                   /* 恢复状态寄存器设置信息       */
-  CE_High();
-  return (OK);
 }
 
 #define		FLSH_ERR  36
@@ -628,11 +594,11 @@ uint8	flsherrflg = 0xff;
 uint8 JudgeFlashIDErrFlg(void)   
 {
 	uint32_t 	GulChipID = 0;
-
+    
 	//if(GetSysTime() %100*30==1 || GetSysTime() < 60*100)
 	{
-	    MX25L1602_RdID(Jedec_ID, &GulChipID);		                        /* 单步运行到此处时,在IAR里查看 */
-
+	    MX25L1602_RdID(Jedec_ID, (INT32U*)&GulChipID);		                        /* 单步运行到此处时,在IAR里查看 */
+        
 	    GulChipID &= ~0xFF000000;                                           /* 仅保留低24位数据             */            
 	    if (GulChipID != 0x00C22017)//c22015 
 		{
@@ -643,7 +609,7 @@ uint8 JudgeFlashIDErrFlg(void)
 			flsherrflg = 0xff;
 		}
 	}
-
+    
 	return 	flsherrflg;
 }
 

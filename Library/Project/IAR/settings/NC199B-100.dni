@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=271249945
+Checksum=-1691081657
 [CodeCoverage]
 Enabled=_ 0
 [Stack]
@@ -55,8 +55,8 @@ ITMlogFile=$PROJ_DIR$\ITM.log
 [struct_types]
 Fmt0=StrCtrlPara-SoftWareID	4	0
 Fmt1=stcFlshRec-ErrCode	4	0
-Fmt2=stcLocoId-Num	4	0
-Fmt3=stcLocoId-Type	4	0
+Fmt2=stcLocoId-Num	3	0
+Fmt3=stcLocoId-Type	3	0
 Fmt4=stcProductInfo-ID	4	0
 Fmt5=stcProductInfo-Type	4	0
 Fmt6=stcRecNumMgr-Back	4	0
@@ -127,15 +127,14 @@ Bp4=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1"
 Bp5=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1" 0 0 1 "" 0 "" 0
 Bp6=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.5" 0 0 1 "" 0 "" 0
 Bp7=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MBS_CORE.C}.1977.1" 0 0 1 "" 0 "" 0
-Bp8=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 主板\Software\APP\comm\app_comm_dtu_otr_deal.c}.285.9" 0 0 1 "" 0 "" 0
-Bp9=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 主板\Software\APP\comm\app_comm_dtu_otr_deal.c}.306.9" 0 0 1 "" 0 "" 0
-Bp10=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\User\app.c}.214.5" 0 0 1 "" 0 "" 0
-Bp11=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\User\app.c}.410.5" 0 0 1 "" 0 "" 0
-Bp12=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.675.3" 0 0 1 "" 0 "" 0
-Bp13=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.671.7" 0 0 1 "" 0 "" 0
-Bp14=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.672.7" 0 0 1 "" 0 "" 0
-Bp15=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.666.18" 0 0 1 "" 0 "" 0
-Count=16
+Bp8=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 主板\Software\APP\comm\app_comm_dtu_otr_deal.c}.306.9" 0 0 1 "" 0 "" 0
+Bp9=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
+Bp10=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
+Bp11=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
+Bp12=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
+Bp13=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\bsp_wdt.c}.54.9" 0 0 1 "" 0 "" 0
+Bp14=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 主板\Software\APP\comm\app_comm_dtu_otr_deal.c}.333.11" 0 0 1 "" 0 "" 0
+Count=15
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

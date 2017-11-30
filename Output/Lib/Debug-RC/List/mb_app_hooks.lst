@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:22
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:12
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -234,8 +234,8 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Cfg\Template\mb_app_hooks.c
     105              * ÃèÊö£º ¸¡µã¼Ä´æÆ÷
     106              */
     107              } else {
-    108                  CPU_INT16U  *preg       = (CPU_INT16U *)&Ctrl.Para.buf2[0];
-    109                  CPU_INT16U  reg         = reg_base + reg_nbr - MODBUS_CFG_FP_START_IX;
+    108          //        CPU_INT16U  *preg       = (CPU_INT16U *)&Ctrl.Para.buf2[0];
+    109          //        CPU_INT16U  reg         = reg_base + reg_nbr - MODBUS_CFG_FP_START_IX;
     110          //        CPU_INT16U  reg_max     = sizeof(UnionSenPara) / 2;
     111                  /***********************************************
     112                  * ÃèÊö£º »ñÈ¡Öµ
@@ -385,11 +385,12 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Cfg\Template\mb_app_hooks.c
     250          //            //*perr = MODBUS_ERR_ILLEGAL_DATA_ADDR;
     251          //        }
     252          //    }
-    253          //    
-    254          //    return 0;
-    255          }
+    253              
+    254              return 0;
    \                     App_MB_WrNRegsHook: (+1)
-   \   00000000   0x4770             BX       LR               ;; return
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+    255          }
     256          
     257          /*$PAGE*/
     258          /*
@@ -439,12 +440,12 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Cfg\Template\mb_app_hooks.c
      114  App_MB_RdNRegsHook
        2  App_MB_SetAllHooks
        2  App_MB_TimeTickHook
-       2  App_MB_WrNRegsHook
+       4  App_MB_WrNRegsHook
 
  
- 124 bytes in section .text
+ 126 bytes in section .text
  
- 124 bytes of CODE memory
+ 126 bytes of CODE memory
 
 Errors: none
-Warnings: 3
+Warnings: none

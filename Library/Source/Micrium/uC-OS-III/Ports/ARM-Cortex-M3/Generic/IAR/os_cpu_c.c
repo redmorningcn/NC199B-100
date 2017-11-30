@@ -342,6 +342,8 @@ void  OSTimeTickHook (void)
 }
 
 
+unsigned int     g_systimes = 0;
+
 /*$PAGE*/
 /*
 *********************************************************************************************************
@@ -360,7 +362,8 @@ void  OS_CPU_SysTickHandler (void)
 {
     CPU_SR_ALLOC();
 
-
+    g_systimes++;
+    
     CPU_CRITICAL_ENTER();
     OSIntNestingCtr++;                                      /* Tell uC/OS-III that we are starting an ISR             */
     CPU_CRITICAL_EXIT();
@@ -369,6 +372,8 @@ void  OS_CPU_SysTickHandler (void)
 
     OSIntExit();                                            /* Tell uC/OS-III that we are leaving the ISR             */
 }
+
+
 
 
 /*$PAGE*/

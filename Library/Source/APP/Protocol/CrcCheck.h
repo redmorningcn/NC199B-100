@@ -10,7 +10,7 @@
 // 入口参数：  
 // 出口参数：   
 //----------------------------------------------------------------------------
-extern uint8_t GetCheckSum(uint8_t *Buf, uint32_t Len);
+//extern uint8_t GetCheckSum(uint8_t *Buf, uint32_t Len);
 
 extern	uint16_t GetCrc16Check(uint8_t *Buf, uint16_t Len);
     

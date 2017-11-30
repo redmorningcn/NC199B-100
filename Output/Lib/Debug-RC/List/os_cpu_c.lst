@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       20/Nov/2017  11:24:24
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       29/Nov/2017  20:20:53
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -573,102 +573,115 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\I
    \   0000000A   0x4770             BX       LR               ;; return
     343          
     344          
-    345          /*$PAGE*/
-    346          /*
-    347          *********************************************************************************************************
-    348          *                                          SYS TICK HANDLER
-    349          *
-    350          * Description: Handle the system tick (SysTick) interrupt, which is used to generate the uC/OS-II tick
-    351          *              interrupt.
-    352          *
-    353          * Arguments  : None.
+
+   \                                 In section .bss, align 4
+    345          unsigned int     g_systimes = 0;
+   \                     g_systimes:
+   \   00000000                      DS8 4
+    346          
+    347          /*$PAGE*/
+    348          /*
+    349          *********************************************************************************************************
+    350          *                                          SYS TICK HANDLER
+    351          *
+    352          * Description: Handle the system tick (SysTick) interrupt, which is used to generate the uC/OS-II tick
+    353          *              interrupt.
     354          *
-    355          * Note(s)    : 1) This function MUST be placed on entry 15 of the Cortex-M3 vector table.
-    356          *********************************************************************************************************
-    357          */
-    358          
+    355          * Arguments  : None.
+    356          *
+    357          * Note(s)    : 1) This function MUST be placed on entry 15 of the Cortex-M3 vector table.
+    358          *********************************************************************************************************
+    359          */
+    360          
 
    \                                 In section .text, align 2, keep-with-next
-    359          void  OS_CPU_SysTickHandler (void)
-    360          {
+    361          void  OS_CPU_SysTickHandler (void)
+    362          {
    \                     OS_CPU_SysTickHandler: (+1)
    \   00000000   0xB510             PUSH     {R4,LR}
-    361              CPU_SR_ALLOC();
-    362          
-    363          
-    364              CPU_CRITICAL_ENTER();
-   \   00000002   0x.... 0x....      BL       CPU_SR_Save
-   \   00000006   0x4604             MOV      R4,R0
-   \   00000008   0x.... 0x....      BL       CPU_IntDisMeasStart
-    365              OSIntNestingCtr++;                                      /* Tell uC/OS-III that we are starting an ISR             */
-   \   0000000C   0x....             LDR.N    R0,??DataTable10_13
-   \   0000000E   0x7801             LDRB     R1,[R0, #+0]
-   \   00000010   0x1C49             ADDS     R1,R1,#+1
-   \   00000012   0x7001             STRB     R1,[R0, #+0]
-    366              CPU_CRITICAL_EXIT();
-   \   00000014   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   00000018   0x4620             MOV      R0,R4
-   \   0000001A   0x.... 0x....      BL       CPU_SR_Restore
-    367          
-    368              OSTimeTick();                                           /* Call uC/OS-III's OSTimeTick()                          */
-   \   0000001E   0x.... 0x....      BL       OSTimeTick
-    369          
-    370              OSIntExit();                                            /* Tell uC/OS-III that we are leaving the ISR             */
-   \   00000022   0xE8BD 0x4010      POP      {R4,LR}
-   \   00000026   0x.... 0x....      B.W      OSIntExit
-    371          }
+    363              CPU_SR_ALLOC();
+    364          
+    365              g_systimes++;
+   \   00000002   0x....             LDR.N    R0,??DataTable10_13
+   \   00000004   0x6801             LDR      R1,[R0, #+0]
+   \   00000006   0x1C49             ADDS     R1,R1,#+1
+   \   00000008   0x6001             STR      R1,[R0, #+0]
+    366              
+    367              CPU_CRITICAL_ENTER();
+   \   0000000A   0x.... 0x....      BL       CPU_SR_Save
+   \   0000000E   0x4604             MOV      R4,R0
+   \   00000010   0x.... 0x....      BL       CPU_IntDisMeasStart
+    368              OSIntNestingCtr++;                                      /* Tell uC/OS-III that we are starting an ISR             */
+   \   00000014   0x....             LDR.N    R0,??DataTable10_14
+   \   00000016   0x7801             LDRB     R1,[R0, #+0]
+   \   00000018   0x1C49             ADDS     R1,R1,#+1
+   \   0000001A   0x7001             STRB     R1,[R0, #+0]
+    369              CPU_CRITICAL_EXIT();
+   \   0000001C   0x.... 0x....      BL       CPU_IntDisMeasStop
+   \   00000020   0x4620             MOV      R0,R4
+   \   00000022   0x.... 0x....      BL       CPU_SR_Restore
+    370          
+    371              OSTimeTick();                                           /* Call uC/OS-III's OSTimeTick()                          */
+   \   00000026   0x.... 0x....      BL       OSTimeTick
     372          
-    373          
-    374          /*$PAGE*/
-    375          /*
-    376          *********************************************************************************************************
-    377          *                                         INITIALIZE SYS TICK
-    378          *
-    379          * Description: Initialize the SysTick.
-    380          *
-    381          * Arguments  : cnts         Number of SysTick counts between two OS tick interrupts.
-    382          *
-    383          * Note(s)    : 1) This function MUST be called after OSStart() & after processor initialization.
-    384          *********************************************************************************************************
-    385          */
-    386          
+    373              OSIntExit();                                            /* Tell uC/OS-III that we are leaving the ISR             */
+   \   0000002A   0xE8BD 0x4010      POP      {R4,LR}
+   \   0000002E   0x.... 0x....      B.W      OSIntExit
+    374          }
+    375          
+    376          
+    377          
+    378          
+    379          /*$PAGE*/
+    380          /*
+    381          *********************************************************************************************************
+    382          *                                         INITIALIZE SYS TICK
+    383          *
+    384          * Description: Initialize the SysTick.
+    385          *
+    386          * Arguments  : cnts         Number of SysTick counts between two OS tick interrupts.
+    387          *
+    388          * Note(s)    : 1) This function MUST be called after OSStart() & after processor initialization.
+    389          *********************************************************************************************************
+    390          */
+    391          
 
    \                                 In section .text, align 2, keep-with-next
-    387          void  OS_CPU_SysTickInit (CPU_INT32U  cnts)
-    388          {
-    389              CPU_INT32U  prio;
-    390          
-    391          
-    392              CPU_REG_NVIC_ST_RELOAD = cnts - 1u;
+    392          void  OS_CPU_SysTickInit (CPU_INT32U  cnts)
+    393          {
+    394              CPU_INT32U  prio;
+    395          
+    396          
+    397              CPU_REG_NVIC_ST_RELOAD = cnts - 1u;
    \                     OS_CPU_SysTickInit: (+1)
-   \   00000000   0x....             LDR.N    R1,??DataTable10_14  ;; 0xe000e010
+   \   00000000   0x....             LDR.N    R1,??DataTable10_15  ;; 0xe000e010
    \   00000002   0x1E40             SUBS     R0,R0,#+1
    \   00000004   0x6048             STR      R0,[R1, #+4]
-    393          
-    394                                                                      /* Set SysTick handler prio.                              */
-    395              prio  = CPU_REG_NVIC_SHPRI3;
-   \   00000006   0x....             LDR.N    R0,??DataTable10_15  ;; 0xe000ed20
-   \   00000008   0x6802             LDR      R2,[R0, #+0]
-    396              prio &= DEF_BIT_FIELD(24, 0);
-    397              prio |= DEF_BIT_MASK(OS_CPU_CFG_SYSTICK_PRIO, 24);
     398          
-    399              CPU_REG_NVIC_SHPRI3 = prio;
+    399                                                                      /* Set SysTick handler prio.                              */
+    400              prio  = CPU_REG_NVIC_SHPRI3;
+   \   00000006   0x....             LDR.N    R0,??DataTable10_16  ;; 0xe000ed20
+   \   00000008   0x6802             LDR      R2,[R0, #+0]
+    401              prio &= DEF_BIT_FIELD(24, 0);
+    402              prio |= DEF_BIT_MASK(OS_CPU_CFG_SYSTICK_PRIO, 24);
+    403          
+    404              CPU_REG_NVIC_SHPRI3 = prio;
    \   0000000A   0x0212             LSLS     R2,R2,#+8
    \   0000000C   0x0A12             LSRS     R2,R2,#+8
    \   0000000E   0x6002             STR      R2,[R0, #+0]
-    400          
-    401                                                                      /* Enable timer.                                          */
-    402              CPU_REG_NVIC_ST_CTRL |= CPU_REG_NVIC_ST_CTRL_CLKSOURCE |
-    403                                      CPU_REG_NVIC_ST_CTRL_ENABLE;
+    405          
+    406                                                                      /* Enable timer.                                          */
+    407              CPU_REG_NVIC_ST_CTRL |= CPU_REG_NVIC_ST_CTRL_CLKSOURCE |
+    408                                      CPU_REG_NVIC_ST_CTRL_ENABLE;
    \   00000010   0x6808             LDR      R0,[R1, #+0]
    \   00000012   0xF040 0x0005      ORR      R0,R0,#0x5
    \   00000016   0x6008             STR      R0,[R1, #+0]
-    404                                                                      /* Enable timer interrupt.                                */
-    405              CPU_REG_NVIC_ST_CTRL |= CPU_REG_NVIC_ST_CTRL_TICKINT;
+    409                                                                      /* Enable timer interrupt.                                */
+    410              CPU_REG_NVIC_ST_CTRL |= CPU_REG_NVIC_ST_CTRL_TICKINT;
    \   00000018   0x6808             LDR      R0,[R1, #+0]
    \   0000001A   0xF040 0x0002      ORR      R0,R0,#0x2
    \   0000001E   0x6008             STR      R0,[R1, #+0]
-    406          }
+    411          }
    \   00000020   0x4770             BX       LR               ;; return
 
    \                                 In section .text, align 4, keep-with-next
@@ -725,16 +738,20 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\I
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable10_13:
-   \   00000000   0x........         DC32     OSIntNestingCtr
+   \   00000000   0x........         DC32     g_systimes
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable10_14:
-   \   00000000   0xE000E010         DC32     0xe000e010
+   \   00000000   0x........         DC32     OSIntNestingCtr
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable10_15:
+   \   00000000   0xE000E010         DC32     0xe000e010
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10_16:
    \   00000000   0xE000ED20         DC32     0xe000ed20
-    407          
+    412          
 
    Maximum stack usage in bytes:
 
@@ -779,6 +796,7 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\I
        4  ??DataTable10_13
        4  ??DataTable10_14
        4  ??DataTable10_15
+       4  ??DataTable10_16
        4  ??DataTable10_2
        4  ??DataTable10_3
        4  ??DataTable10_4
@@ -797,15 +815,16 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\I
       74  OSTaskSwHook
       12  OSTimeTickHook
        4  OS_CPU_ExceptStkBase
-      42  OS_CPU_SysTickHandler
+      50  OS_CPU_SysTickHandler
       34  OS_CPU_SysTickInit
+       4  g_systimes
 
  
-   4 bytes in section .bss
- 434 bytes in section .text
+   8 bytes in section .bss
+ 446 bytes in section .text
  
- 434 bytes of CODE memory
-   4 bytes of DATA memory
+ 446 bytes of CODE memory
+   8 bytes of DATA memory
 
 Errors: none
 Warnings: none

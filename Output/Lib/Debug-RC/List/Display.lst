@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:22
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:11
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -519,7 +519,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
     256          					   };     
     257                     
     258          #define     LED_CHAR_NNM    16                  //数码管显示编码个数 
-    259          #define     DISPLAY_LED_NUM 8                   //数码管个数   
+    259          #define     DISPLAY_LED_NUM 4                   //数码管个数   
     260                  
     261          //--------------------------------------------------------------------
     262          //void          DisplayNum (uint32_t Unmber)
@@ -536,7 +536,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
    \   00000002   0xB083             SUB      SP,SP,#+12
    \   00000004   0x4604             MOV      R4,R0
     269              unsigned char i  = DISPLAY_LED_NUM;
-   \   00000006   0x2508             MOVS     R5,#+8
+   \   00000006   0x2504             MOVS     R5,#+4
     270          	unsigned char digit[8] = {Digit0,Digit1,Digit2,Digit3,Digit4,Digit5,Digit6,Digit7};
    \   00000008   0x4668             MOV      R0,SP
    \   0000000A   0x.... 0x....      ADR.W    R1,?_0
@@ -602,7 +602,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
    \   00000002   0xB083             SUB      SP,SP,#+12
    \   00000004   0x4604             MOV      R4,R0
     295              unsigned char i  = DISPLAY_LED_NUM;
-   \   00000006   0x2508             MOVS     R5,#+8
+   \   00000006   0x2504             MOVS     R5,#+4
     296          	unsigned char digit[8] = {Digit0,Digit1,Digit2,Digit3,Digit4,Digit5,Digit6,Digit7};
    \   00000008   0x4668             MOV      R0,SP
    \   0000000A   0x.... 0x....      ADR.W    R1,?_1
@@ -664,7 +664,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
    \                     DisplayNumWithDot: (+1)
    \   00000000   0xB57C             PUSH     {R2-R6,LR}
     321              unsigned char i  = DISPLAY_LED_NUM;
-   \   00000002   0x2408             MOVS     R4,#+8
+   \   00000002   0x2404             MOVS     R4,#+4
     322          	unsigned char digit[8] = {Digit0,Digit1,Digit2,Digit3,Digit4,Digit5,Digit6,Digit7};
    \   00000004   0x4669             MOV      R1,SP
    \   00000006   0x.... 0x....      ADR.W    R2,?_2
@@ -753,7 +753,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
    \   0000001C   0x1C6D             ADDS     R5,R5,#+1
     357              }	
    \                     ??DisplayString_0: (+1)
-   \   0000001E   0x2D08             CMP      R5,#+8
+   \   0000001E   0x2D04             CMP      R5,#+4
    \   00000020   0xDBF7             BLT.N    ??DisplayString_1
     358          	
     359          	i = 0;
@@ -779,7 +779,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
     367          //			SentByteTo7219(digit[i],LedCharCode[CharTemp]);  	//从高位到低位显示       
     368          		}   
    \                     ??DisplayString_2: (+1)
-   \   0000003C   0x2D08             CMP      R5,#+8
+   \   0000003C   0x2D04             CMP      R5,#+4
    \   0000003E   0xDA1D             BGE.N    ??DisplayString_4
    \   00000040   0x4620             MOV      R0,R4
    \   00000042   0x.... 0x....      BL       strlen
@@ -791,7 +791,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
    \   00000050   0x.... 0x....      BL       strlen
    \   00000054   0x4669             MOV      R1,SP
    \   00000056   0x1B49             SUBS     R1,R1,R5
-   \   00000058   0x7A0E             LDRB     R6,[R1, #+8]
+   \   00000058   0x790E             LDRB     R6,[R1, #+4]
    \   0000005A   0x1B40             SUBS     R0,R0,R5
    \   0000005C   0x5D00             LDRB     R0,[R0, R4]
    \   0000005E   0x2820             CMP      R0,#+32
@@ -857,7 +857,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
    \   0000001C   0x1C6D             ADDS     R5,R5,#+1
     398              }	
    \                     ??DisplayString_WithDot_0: (+1)
-   \   0000001E   0x2D08             CMP      R5,#+8
+   \   0000001E   0x2D04             CMP      R5,#+4
    \   00000020   0xDBF7             BLT.N    ??DisplayString_WithDot_1
     399          	
     400          	i = 0;
@@ -887,7 +887,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
     410          //				SentByteTo7219(digit[i],LedCharCode[CharTemp]);  	//从高位到低位显示       
     411          			}   
    \                     ??DisplayString_WithDot_2: (+1)
-   \   00000042   0x2D08             CMP      R5,#+8
+   \   00000042   0x2D04             CMP      R5,#+4
    \   00000044   0xDA41             BGE.N    ??DisplayString_WithDot_4
    \   00000046   0x4620             MOV      R0,R4
    \   00000048   0x.... 0x....      BL       strlen
@@ -897,7 +897,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
    \   00000052   0xB2ED             UXTB     R5,R5
    \   00000054   0x4668             MOV      R0,SP
    \   00000056   0x1B40             SUBS     R0,R0,R5
-   \   00000058   0x7A06             LDRB     R6,[R0, #+8]
+   \   00000058   0x7906             LDRB     R6,[R0, #+4]
    \   0000005A   0x2D04             CMP      R5,#+4
    \   0000005C   0x4620             MOV      R0,R4
    \   0000005E   0xD115             BNE.N    ??DisplayString_WithDot_5
@@ -1012,7 +1012,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
    \   0000001C   0x1C6D             ADDS     R5,R5,#+1
     456              }	
    \                     ??DisplayABC_2_0: (+1)
-   \   0000001E   0x2D08             CMP      R5,#+8
+   \   0000001E   0x2D04             CMP      R5,#+4
    \   00000020   0xDBF7             BLT.N    ??DisplayABC_2_1
     457          	
     458          	i = 0;
@@ -1038,7 +1038,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
     466          //			SentByteTo7219(digit[i],LedCharCode[CharTemp]);  	//从高位到低位显示       
     467          		}   
    \                     ??DisplayABC_2_2: (+1)
-   \   0000003C   0x2D08             CMP      R5,#+8
+   \   0000003C   0x2D04             CMP      R5,#+4
    \   0000003E   0xDA1E             BGE.N    ??DisplayABC_2_4
    \   00000040   0x4620             MOV      R0,R4
    \   00000042   0x.... 0x....      BL       strlen
@@ -1139,7 +1139,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
    \   00000042   0x462F             MOV      R7,R5
    \   00000044   0x2F0C             CMP      R7,#+12
    \   00000046   0xDA01             BGE.N    ??MovDisplayChar_3
-   \   00000048   0x2608             MOVS     R6,#+8
+   \   00000048   0x2604             MOVS     R6,#+4
    \   0000004A   0xE7E9             B.N      ??MovDisplayChar_2
     503          	}
     504          }
@@ -1341,4 +1341,4 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\Display.c
    116 bytes of DATA memory
 
 Errors: none
-Warnings: 1
+Warnings: none

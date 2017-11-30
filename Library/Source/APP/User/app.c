@@ -89,7 +89,7 @@ static  void        AppObjCreate            (void);
 /***********************************************
 * 描述： 函数申明
 */
-static  void        App_Init                (void);
+//static  void        App_Init                (void);
 static  void        AppTaskStart            (void *p_arg);
 /***********************************************
 * 描述： 软定时器回调函数
@@ -126,6 +126,10 @@ int main (void)
     * 描述： 第一个调用函数，可以不返回
     */
     App_Main();
+    
+    ////20171128
+    BSP_Init();
+    
 #if DEBUG_SIM != DEF_ENABLED
 //#if !defined (LIBRARY)
     /***********************************************
@@ -141,7 +145,11 @@ int main (void)
     */
     OSInit(&err);
 
+    //dog
+    IWDG_ReloadCounter();
+
     
+    //test_DM412_Led();
     /***********************************************
     * 描述： 创建起始任务
     */
@@ -160,9 +168,13 @@ int main (void)
                                 OS_OPT_TASK_STK_CLR),           // 创建任务时堆栈清零
                  (OS_ERR     *)&err);                           // 指向错误代码的指针，用于创建结果处理
 
+  
     /***********************************************
     * 描述： 启动 uC/OS-III
     */
+    //NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0X10000);
+    SCB->VTOR = (NVIC_VectTab_FLASH | 0X10000);
+        
     OSStart(&err);
 }
 
@@ -189,9 +201,12 @@ static  void  AppTaskStart (void *p_arg)
     OS_ERR      err;
     INT32U      ticks;
     INT32S      dly;
-    INT16U  	TimeOutCnt     = 0;                 //看门狗超时计数器
+//    INT16U  	TimeOutCnt     = 0;                 //看门狗超时计数器
     uint8_t     ReadRTCTimeCnt = 0;
    (void)p_arg;
+
+   
+    //test_DM412_Led();
 
     /***********************************************
     * 描述： 设置STM32的系统时钟，I/O口设置，定时器等
@@ -243,6 +258,7 @@ static  void  AppTaskStart (void *p_arg)
 //    Ctrl.Com.pack   = &ComPackCtrl[0];
 //    Ctrl.Dtu.pack   = &ComPackCtrl[1];
     
+    
     App_TaskCommCreate();
     
     App_TaskMeasureCreate();
@@ -250,7 +266,7 @@ static  void  AppTaskStart (void *p_arg)
     * 描述： 喂狗
     */
     WdtReset();
-    
+
     /***********************************************
     * 描述： 估算在没有运行任务时CPU的能力
     */
@@ -299,7 +315,8 @@ static  void  AppTaskStart (void *p_arg)
         * 描述： 喂狗
         */
         WdtReset();
-               
+        IWDG_ReloadCounter();
+        
         /***********************************************************************
         * 描述： 独立看门狗标志组检查， 判断是否所有任务已喂狗
         */
@@ -311,7 +328,7 @@ static  void  AppTaskStart (void *p_arg)
                    ( OS_ERR      *)&err);
         
         if(err == OS_ERR_NONE) {                                //所有任务已喂狗
-            TimeOutCnt = 0;                                     //超时计数器清零
+            //TimeOutCnt = 0;                                     //超时计数器清零
             BSP_LED_Flash( 1, 1, 40, 40);
             OS_FlagPost ((OS_FLAG_GRP *)&WdtFlagGRP,            //清零所有标志
                          (OS_FLAGS     ) WdtFlags,
@@ -350,44 +367,46 @@ static  void  AppTaskStart (void *p_arg)
         OSTimeDly(dly, OS_OPT_TIME_DLY, &err);
     }
 }
-/*******************************************************************************
- * 名    称： App_Init
- * 功    能： 用户应用初始化
- * 入口参数： 无
- * 出口参数： 无
- * 作　 　者： 无名沈.
- * 创建日期： 2015-03-19
- * 修    改：
- * 修改日期：
- *******************************************************************************/
-static void App_Init(void)
-{
-    /********************************************************************
-    * 描述： 初始化EEPROM
-    */
-    App_PraInit();
-    WdtReset();
-    Ctrl.Para.dat.Password  = 0; 
-    /********************************************************************
-    * 描述： 在发布RELEASE版本时，给FLASH加上读保护
-    */
-#ifndef DEBUG
-    /***********************************************
-    * 描述：Flash写保护和读保护，增加保护后，
-    *       需使用JFLASH擦出芯片才可以进行下次下载与仿真。
-    */
-    if( FLASH_GetReadOutProtectionStatus() != SET ){
-        FLASH_Unlock();
-        FLASH_ReadOutProtection(ENABLE);
-        FLASH_Lock();
-    }
-    /***********************************************
-    * 描述：Flash写保护和读保护，增加保护后，
-    *       需使用JFLASH擦出芯片才可以进行下次下载与仿真。
-    */
-#endif
-}
 
+//
+///*******************************************************************************
+// * 名    称： App_Init
+// * 功    能： 用户应用初始化
+// * 入口参数： 无
+// * 出口参数： 无
+// * 作　 　者： 无名沈.
+// * 创建日期： 2015-03-19
+// * 修    改：
+// * 修改日期：
+// *******************************************************************************/
+//static void App_Init(void)
+//{
+//    /********************************************************************
+//    * 描述： 初始化EEPROM
+//    */
+//    App_PraInit();
+//    WdtReset();
+//    Ctrl.Para.dat.Password  = 0; 
+//    /********************************************************************
+//    * 描述： 在发布RELEASE版本时，给FLASH加上读保护
+//    */
+//#ifndef DEBUG
+//    /***********************************************
+//    * 描述：Flash写保护和读保护，增加保护后，
+//    *       需使用JFLASH擦出芯片才可以进行下次下载与仿真。
+//    */
+//    if( FLASH_GetReadOutProtectionStatus() != SET ){
+//        FLASH_Unlock();
+//        FLASH_ReadOutProtection(ENABLE);
+//        FLASH_Lock();
+//    }
+//    /***********************************************
+//    * 描述：Flash写保护和读保护，增加保护后，
+//    *       需使用JFLASH擦出芯片才可以进行下次下载与仿真。
+//    */
+//#endif
+//}
+//
 /*
 ********************************************************************************
 *                                      CREATE APPLICATION EVENTS

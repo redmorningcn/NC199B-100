@@ -134,6 +134,14 @@ void	            SetSendFrameNbr      (void);
 //                                          unsigned char  *DataBuf,
 //                                          unsigned short  DataLen);
 
+void	CSNC_SendData(	MODBUS_CH *pch,
+                        INT08U  SourceAddr,
+						INT08U  DistAddr,
+                        INT08U  SendFrameNum,
+						INT08U  SendCode,                       
+						INT08U *DataBuf,
+						INT16U  DataLen);
+
 char	            CSNC_WrDataRsp      ( MODBUS_CH *pch,
                                           unsigned char   SourceAddr,
                                           unsigned char   DistAddr,

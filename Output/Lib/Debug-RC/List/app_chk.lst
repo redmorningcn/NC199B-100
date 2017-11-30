@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:18
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:05
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -1400,14 +1400,93 @@ F:\iar\NC199B-100\Library\Source\APP\Protocol\app_chk.c
    \   0000002A   0xBC10             POP      {R4}
    \   0000002C   0x4770             BX       LR               ;; return
     439          }
-    440          /*******************************************************************************
-    441           * 				end of file
-    442           *******************************************************************************/
+    440          
+    441          
+    442          /*******************************************************************************
+    443          * 名    称： GetCheckSumNR
+    444          * 功    能： 
+    445          * 入口参数： 无
+    446          * 出口参数： 无
+    447          * 作　 　者： wumingshen.
+    448          * 创建日期： 2015-12-07
+    449          * 修    改：
+    450          * 修改日期：
+    451          * 备    注：
+    452          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    453          INT08U GetCheckSumNR(INT08U  Buf[], INT32U Len)
+    454          {
+   \                     GetCheckSumNR: (+1)
+   \   00000000   0xB410             PUSH     {R4}
+    455              INT32S  i;
+    456              INT08U   CheckSum = 0;
+   \   00000002   0x2200             MOVS     R2,#+0
+    457              
+    458              for(i = 0;i < Len; i++) {
+   \   00000004   0x4613             MOV      R3,R2
+   \   00000006   0xE003             B.N      ??GetCheckSumNR_0
+    459                  CheckSum += Buf[i];                         //求和
+   \                     ??GetCheckSumNR_1: (+1)
+   \   00000008   0x5C1C             LDRB     R4,[R3, R0]
+   \   0000000A   0x18A2             ADDS     R2,R4,R2
+   \   0000000C   0xB2D2             UXTB     R2,R2
+    460              }
+   \   0000000E   0x1C5B             ADDS     R3,R3,#+1
+   \                     ??GetCheckSumNR_0: (+1)
+   \   00000010   0x428B             CMP      R3,R1
+   \   00000012   0xD3F9             BCC.N    ??GetCheckSumNR_1
+    461              
+    462              if((unsigned char)CheckSum >= 0x80) {
+   \   00000014   0x4610             MOV      R0,R2
+   \   00000016   0x2880             CMP      R0,#+128
+   \   00000018   0xDB03             BLT.N    ??GetCheckSumNR_2
+    463              	CheckSum = ~CheckSum + 1 +0x80;             //取反+1
+   \   0000001A   0x43D0             MVNS     R0,R2
+   \   0000001C   0xF1A0 0x027F      SUB      R2,R0,#+127
+   \   00000020   0xB2D2             UXTB     R2,R2
+    464              } else {
+    465              	CheckSum = CheckSum;                       	//取反+1
+    466              }
+    467              return  CheckSum;
+   \                     ??GetCheckSumNR_2: (+1)
+   \   00000022   0x4610             MOV      R0,R2
+   \   00000024   0xBC10             POP      {R4}
+   \   00000026   0x4770             BX       LR               ;; return
+    468          }
+    469          
+    470          
+    471          ////extern	void	NOP(void);
+    472          ////----------------------------------------------------------------------------
+    473          //// 名    称：   uint16 GetCRC16(uint8 *Buf, uint16 Len)
+    474          //// 功    能：   取CRC16校验和
+    475          //// 入口参数：  
+    476          //// 出口参数：   
+    477          ////----------------------------------------------------------------------------
+    478          //uint8 GetCheckSum(uint8  Buf[], uint32 Len)
+    479          //{
+    480          //    uint32  i;
+    481          //    uint8   CheckSum = 0;
+    482          //    
+    483          //    for(i = 0;i < Len; i++)
+    484          //    {
+    485          //        CheckSum += Buf[i];                             //?óoí
+    486          //    }
+    487          //    
+    488          //    CheckSum = ~CheckSum + 1;                           //è?·′+1
+    489          //    
+    490          //    return  CheckSum;
+    491          //}
+    492          
+    493          /*******************************************************************************
+    494           * 				end of file
+    495           *******************************************************************************/
 
    Maximum stack usage in bytes:
 
    .cstack Function
    ------- --------
+       4   GetCheckSumNR
        8   GetCrc16Check
        8   GetCrc16Chk1
       12   GetCrc16Chk2
@@ -1427,6 +1506,7 @@ F:\iar\NC199B-100\Library\Source\APP\Protocol\app_chk.c
      256  APP_AUCH_CRC_LO
      512  APP_CRC16_TAB
      512  APP_SD_CRC16_TAB
+      40  GetCheckSumNR
       46  GetCrc16Check
       46  GetCrc16Chk1
       44  GetCrc16Chk2
@@ -1439,9 +1519,9 @@ F:\iar\NC199B-100\Library\Source\APP\Protocol\app_chk.c
      512  sd_crc16_table
 
  
- 2 408 bytes in section .text
+ 2 448 bytes in section .text
  
- 2 408 bytes of CODE memory
+ 2 448 bytes of CODE memory
 
 Errors: none
 Warnings: none

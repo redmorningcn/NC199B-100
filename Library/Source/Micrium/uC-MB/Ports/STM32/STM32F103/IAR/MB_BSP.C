@@ -626,7 +626,8 @@ void  MB_CommTx1 (MODBUS_CH  *pch,
     pch->USARTx->DR = (c & (u16)0x01FF);
     return;
     
-    switch (pch->PortNbr) {
+    switch (pch->PortNbr) 
+    {
     case 0:
         /* Transmit Data */
         USART1->DR = (c & (u16)0x01FF);

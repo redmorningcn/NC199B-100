@@ -67,6 +67,10 @@ extern "C" {
  uint8_t            GetSumXorChk            (uint8_t *buf, uint16_t len);
  uint16_t           GetSum16Chk             (uint8_t *buf, uint16_t len);
  uint16_t           GetSum16XorChk          (uint8_t *buf, uint16_t len);
+ uint16_t           GetCrc16Check           (uint8_t *buf, uint16_t len);
+ INT08U             GetCheckSumNR           (INT08U  Buf[], INT32U Len);
+INT08U              GetCheckSum             (INT08U  Buf[], INT32U Len);
+
  
 /*******************************************************************************
  * EXTERN VARIABLES

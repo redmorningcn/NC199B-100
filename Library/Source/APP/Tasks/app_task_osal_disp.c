@@ -154,7 +154,7 @@ osalEvt  TaskDispEvtProcess(osalTid task_id, osalEvt task_event)
             static  uint32   times   = 0;
             static  uint8   disflg  = 0;
 
-            stcTime         sTime;
+//            stcTime         sTime;
 
             /***********************************************
             * 描述： 根据显示模式显示

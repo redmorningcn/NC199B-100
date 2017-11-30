@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:22
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:11
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -103,10 +103,10 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_wdt.c
      28          
      29          // 0:禁止；1：外部看门狗；2：内部看门狗；3：同时使用内部和外部看门狗;
 
-   \                                 In section .bss, align 1
-     30          INT08U BSP_WdtMode  = 0;
+   \                                 In section .data, align 1
+     30          INT08U BSP_WdtMode  = 2;
    \                     BSP_WdtMode:
-   \   00000000                      DS8 1
+   \   00000000   0x02               DC8 2
      31          
      32          /*******************************************************************************
      33          * 名    称： BSP_WdtRst
@@ -421,7 +421,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_wdt.c
        1  BSP_WdtMode
 
  
-   1 byte  in section .bss
+   1 byte  in section .data
  306 bytes in section .text
  
  306 bytes of CODE memory

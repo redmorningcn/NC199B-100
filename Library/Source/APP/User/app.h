@@ -161,17 +161,19 @@ extern OS_FLAGS         BeepFlags;
 /******************************************************
 * 描述： 任务创建申明，每个单独的创建任务请在此处声明
 */
-void    App_TaskSampleCreate        (void);
-void    App_TaskWifiCreate          (void);
+//void    App_TaskSampleCreate        (void);
+//void    App_TaskWifiCreate          (void);
 void    App_TaskCommCreate          (void);
-void    App_TaskSensorCreate        (void);
-void    App_TaskMaterCreate         (void);
-void    App_TaskDtuCreate           (void);
-void    App_TaskKeyCreate           (void);
-void    App_TaskControlCreate       (void);
-void    App_TaskBeepCreate          (void);
+//void    App_TaskSensorCreate        (void);
+//void    App_TaskMaterCreate         (void);
+//void    App_TaskDtuCreate           (void);
+//void    App_TaskKeyCreate           (void);
+//void    App_TaskControlCreate       (void);
+//void    App_TaskBeepCreate          (void);
 void    App_TaskOsalCreate          (void);
-void    App_TaskDispCreate          (void);
+//void    App_TaskDispCreate          (void);
+void    App_TaskMeasureCreate       (void);
+
 
 /*******************************************************************************
  * EXTERN VARIABLES

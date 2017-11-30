@@ -19,6 +19,8 @@
 #define  SNL_APP_SOURCE
 #include <app.h>
 #include <iap.h>
+#include <bsp_FRAM.h>
+
 
 #ifdef VSC_INCLUDE_SOURCE_FILE_NAMES
 const  CPU_CHAR  *main__c = "$Id: $";
@@ -68,7 +70,7 @@ const  CPU_CHAR  *main__c = "$Id: $";
 void    app_init_sctrl(void)
 {
     Ctrl.Para.dat.Password      =   6237;
-//    Ctrl.Para.dat.SoftWareID    =   1705;   //年月，版本
+    Ctrl.Para.dat.SoftWareID    =   0101;   //年月，版本
     
 
 //   	FRAM_StoreRunPara((stcRunPara *) &Ctrl.sRunPara);
@@ -160,29 +162,32 @@ void    app_init_sctrl(void)
     * 描述： 重新设置应用程序中断向量表，如果没有BOOTLOADER
     *        NVIC_VectTab_FLASH_OFFSET = 0
     */
-#if defined     (IMAGE_A)
-    /***********************************************
-    * 描述： 程序A
-    */
-    NVIC_SetVectorTable(NVIC_VectTab_FLASH, FLASH_APP_ADDR_A-FLASH_BOOT_ADDR);
-    IAP_SetStatus(IAP_STS_SUCCEED); 
-#elif defined   (IMAGE_B)
-    /***********************************************
-    * 描述： 程序B
-    */
-    NVIC_SetVectorTable(NVIC_VectTab_FLASH, FLASH_APP_ADDR_B-FLASH_BOOT_ADDR);
-    IAP_SetStatus(IAP_STS_SUCCEED); 
-#else
-    /***********************************************
-    * 描述： 程序
-    */
-    NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0X0000);
-#endif
- 
+//#if defined     (IMAGE_A)
+//    /***********************************************
+//    * 描述： 程序A
+//    */
+//    NVIC_SetVectorTable(NVIC_VectTab_FLASH, FLASH_APP_ADDR_A-FLASH_BOOT_ADDR);
+//    IAP_SetStatus(IAP_STS_SUCCEED); 
+//#elif defined   (IMAGE_B)
+//    /***********************************************
+//    * 描述： 程序B
+//    */
+//    NVIC_SetVectorTable(NVIC_VectTab_FLASH, FLASH_APP_ADDR_B-FLASH_BOOT_ADDR);
+//    IAP_SetStatus(IAP_STS_SUCCEED); 
+//#else
+//    /***********************************************
+//    * 描述： 程序
+//    */
+//    NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0X0000);
+//#endif
+// 
     
     //iap  
     NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0X10000);
 
+    
+    //CPU_IntEn();
+    //BSP_IntEn();
     //init  ctrl
     app_init_sctrl();
  }

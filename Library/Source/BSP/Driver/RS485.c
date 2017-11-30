@@ -701,305 +701,305 @@ int xatoi (			/* 0:Failed, 1:Successful */
 }
 
 #endif /* _USE_XFUNC_IN */
-
-/*----------------------------------------------------------------------------
-名    称：   RecData
-功    能：   接
-入口参数：   无
-出口参数：   无
----------------------------------------------------------------------------- */
-uint8_t  RecData(uint8_t  *RecBuf,uint8_t  RecLen,uint8_t  *DataBuf,uint8_t  DataLen)
-{
-    uint16_t	i,j,k;
-    uint8_t		Tmp;
-    uint16_t	RecCRC16,Check16;
-    uint8_t		HostCode,CodeType;
-	
-	uint16_t	RecDataLen;
-	uint16_t	ReCopyTime;
-	uint8_t		IDNum;
-    
-  	ReCopyTime = 0;
-	for(j = 0;j < RecLen -1 - ReCopyTime ;j++ )											//去7d5c
-	{
-		if(	RecBuf[j] 	== HDLC_CODE0   					
-           && 	((RecBuf[j+1]) == HDLC_CODE1)
-               )
-		{
-			RecBuf[j] = FRAM_HERD0;														//7c
-			for(k = j+1;k < RecLen-1; k++)
-			{
-				Tmp	 = RecBuf[k+1];
-				
-				RecBuf[k] = Tmp;
-			}
-			ReCopyTime++;
-		}
-		
-		if(	RecBuf[j] 	== HDLC_CODE0   												//去7d5e
-           && 	((RecBuf[j+1]) == HDLC_CODE2)
-               )
-		{
-			RecBuf[j] = FRAM_END0;														//7e
-			for(k = j+1;k < RecLen-1; k++)
-			{
-				Tmp	 = RecBuf[k+1];
-				
-				RecBuf[k] = Tmp;
-			}
-			ReCopyTime++;			
-		}
-		
-		if(	RecBuf[j] 	== HDLC_CODE0   												//去7d5d
-           && 	((RecBuf[j+1]) == HDLC_CODE3)
-               )
-		{
-			RecBuf[j] = HDLC_CODE0;														//7d
-			for(k = j+1;k < RecLen; k++)
-			{
-				Tmp	 = RecBuf[k+1];
-				
-				RecBuf[k] = Tmp;
-			}
-			ReCopyTime++;
-		}					
-	}
-	
-    for(i = 0; i < RecLen - 10;i++)												       //循环遍历
-    {
-		if(		((RecBuf[i+0]) == FRAM_HERD0)  				//报头
-           &&	((RecBuf[i+1]) == HOST_ID) 
-               &&	((RecBuf[i+2]) == DEVICE_ID0)  	 
-                   )											
-		{				
-			RecDataLen  = RecBuf[i+3];
-			RecDataLen  += RecBuf[i+4]*256;
-			
-			DataLen    =  RecDataLen;
-			HostCode   =  RecBuf[i+5];
-			IDNum	   =  RecBuf[i+6];
-			CodeType   =  RecBuf[i+8];
-			
-			if(		(	HostCode 	!= HOST_CODE_FLG) 
-               ||	(   IDNum       != ID_NUM   )
-                   ||  (   CodeType       != CODE_TYPE   )
-                       )
-            {	
-			 	i = i + 8;															//地址不对或帧尾错误，跳过此帧
-			 	continue;
-            }			
-            
-			RecCRC16 = ((uint16_t)RecBuf[i+5+RecDataLen]) *256 + RecBuf[i+6+RecDataLen];	//校验	
-            
-			Check16 = GetCrc16Check(&RecBuf[i+5],DataLen);	
-			
-			if(		RecCRC16  ==	Check16 		
-               )
-			{
-                memcpy(DataBuf,&RecBuf[i+5],DataLen);				//数据拷贝
-                
-                return	1;
-			}
-		}
-	}
-   	
-   	DataLen = 0;
-    return	0;
-}
-
-#define		ENERGY_DATA_LEN	40
-#define		ATHER_DATA_LEN	4
-void	Sendrs485(uint8_t	*DataBuf,uint32_t	DataLen,uint8_t	CheckNum)
-{
-	uint8_t		SndBuf[100] = {0};
-	uint8_t		SndBufTmp[100] = {0};
-	uint16_t	Crc16;
-	uint16_t	AddHeadNum;
-	uint16_t	i;
-	uint8_t		ByteStation;
-    
-	static	uint8_t		Test = 0x02;
-    
-	ByteStation = 0;
-	SndBuf[ByteStation++] = FRAM_HERD0;
-	SndBuf[ByteStation++] = DEVICE_ID0;
-	SndBuf[ByteStation++] = HOST_ID;	 
-	SndBuf[ByteStation++] = ENERGY_DATA_LEN+ATHER_DATA_LEN;	
-	SndBuf[ByteStation++] = 0;	
-	SndBuf[ByteStation++] = DEVICE_CODE_FLG;	
-	SndBuf[ByteStation++] = ID_NUM;
-	
-	memcpy(&SndBuf[ByteStation],DataBuf,DataLen);
-	
-	SndBuf[ByteStation+DataLen+0] = Test;			//数据备用起始位置(电能量标志位)
-	SndBuf[ByteStation+DataLen+1] = CheckNum;
-	
-	Crc16 = GetCrc16Check(&SndBuf[1+4],2+DataLen+2);//帧头（1）+帧长度前包字节（4）
-	
-    
-	SndBuf[ByteStation+DataLen+3] = Crc16;
-	SndBuf[ByteStation+DataLen+2] = Crc16>>8;
-	
-    //////////////////////////////////////////////////////////
-	SndBufTmp[0] = SndBuf[0];						//准备数据发送
-    
-	AddHeadNum = 0;
-	for(i = 1; i< ByteStation+DataLen+4;i++ )				//数据，补移位 FRAM_HERD0
-	{
-		
-		if(SndBuf[i] == FRAM_HERD0)					//7c
-		{
-			SndBufTmp[i+AddHeadNum] = HDLC_CODE0;
-			AddHeadNum++;
-			SndBufTmp[i+AddHeadNum] = HDLC_CODE1;
-		}
-		else if(SndBuf[i] == FRAM_END0)				//7e
-		{
-			SndBufTmp[i+AddHeadNum] = HDLC_CODE0;
-			AddHeadNum++;
-			SndBufTmp[i+AddHeadNum] = HDLC_CODE2;
-		}
-		else if(SndBuf[i] == HDLC_CODE0)			//7d		
-		{
-			SndBufTmp[i+AddHeadNum] = HDLC_CODE0;
-			AddHeadNum++;
-			SndBufTmp[i+AddHeadNum] = HDLC_CODE3;
-		}	
-		else
-		{
-			SndBufTmp[i+AddHeadNum] = SndBuf[i];
-		}
-	}
-    
-	SndBufTmp[ByteStation+DataLen+4 +AddHeadNum] = FRAM_END0;
-	
-    RS485_SET_TX_Mode();	
-    RS485_SET_TX_Mode();		
-	SendCOM2(SndBufTmp,ByteStation+DataLen+4 +AddHeadNum + 1);  // 数据标号+1=数据长度
-	RS485_SET_RX_Mode();			
-}
-
-
-#define		BUF_LEN		256
-
-uint8_t	g_NoRs485ComFlg = 0;
-/*----------------------------------------------------------------------------
-名    称：   void  RecTAX2Info(void)
-功    能：   接收TAX2信息。
-入口参数：   无
-出口参数：   无
----------------------------------------------------------------------------- */
-void  RecRs485(void)
-{
-	static	uint8_t		RecBuf[BUF_LEN] = {0};								//接收缓冲区
-	static	uint8_t		DataBuf[BUF_LEN/2] = {0};								//
-	static	uint8_t		SendEnergyBuf[ENERGY_DATA_LEN] = {0};		
-    
-	static uint8_t	    LifeInfo = 0;
-	uint8_t		        HostCodeFlg;		
-	uint8_t		        CodeType;	
-	uint8_t		        IDNum;	
-	    
-	uint32_t	        RecLen;		
-	uint32_t	        DataLen;
-	
-	uint32_t            S_VOLTAGE;
-	uint32_t            S_CURRENT;
-	int32_t             S_FREQ;
-	int32_t             S_FACTOR;
-    
-    
-	if( GetFramRecEndFlg() == 1)								//有新的帧尾，进行数据处理
-	{
-		printf("\n\r  有新的帧尾，进行数据处理\n");	
-		RecLen 	= ReadRs485Data(RecBuf);
-		
-		ClearFramRecEndFlg();									//清标志，可重新取数
-		
-		if(!RecData(RecBuf,RecLen,DataBuf,DataLen))	{			//接受数据
-            printf("\r\n RS485数据接收失败!");
-		} else {
-			printf("\r\n RS485数据接收成功!");
-            
-			//////////////////////////////对数据解析
-			HostCodeFlg = DataBuf[0];			   //源地址标识
-			IDNum		= DataBuf[1];			   //目的地址标识
-			LifeInfo 	= DataBuf[2];			   //动态识别码
-			CodeType 	= DataBuf[3];			   //命令类型
-			
-			if(	HostCodeFlg == HOST_CODE_FLG 			
-                &&	IDNum	== ID_NUM						
-                &&	CodeType== CODE_TYPE ) {			
-				printf("\r\n 请求数据发送!");
-				g_DipDisVal[0] =  AC.PPpower_NUM & 0xFF;			   //将电量数据转存到缓冲区
-				g_DipDisVal[1] = (AC.PPpower_NUM >> 8) & 0xFF;	   //低字节在前，高字节在后
-				g_DipDisVal[2] = (AC.PPpower_NUM >> 16) & 0xFF;
-				g_DipDisVal[3] = (AC.PPpower_NUM >> 24) & 0xFF;
-                
-				g_DipDisVal[4] =  AC.NPpower_NUM & 0xFF;			   //将电量数据转存到缓冲区
-				g_DipDisVal[5] = (AC.NPpower_NUM >> 8) & 0xFF;	   //低字节在前，高字节在后
-				g_DipDisVal[6] = (AC.NPpower_NUM >> 16) & 0xFF;
-				g_DipDisVal[7] = (AC.NPpower_NUM >> 24) & 0xFF;
-                
-				g_DipDisVal[8] =   AC.PQpower_NUM & 0xFF;			   //将电量数据转存到缓冲区
-				g_DipDisVal[9] =  (AC.PQpower_NUM >> 8) & 0xFF;	   //低字节在前，高字节在后
-				g_DipDisVal[10] = (AC.PQpower_NUM >> 16) & 0xFF;
-				g_DipDisVal[11] = (AC.PQpower_NUM >> 24) & 0xFF;
-                
-				g_DipDisVal[12] =  AC.NQpower_NUM & 0xFF;			   //将电量数据转存到缓冲区
-				g_DipDisVal[13] = (AC.NQpower_NUM >> 8) & 0xFF;	   //低字节在前，高字节在后
-				g_DipDisVal[14] = (AC.NQpower_NUM >> 16) & 0xFF;
-				g_DipDisVal[15] = (AC.NQpower_NUM >> 24) & 0xFF;
-                
-				S_VOLTAGE = AC.U_RMS * 1000;
-				if(S_VOLTAGE < 200)
-					S_VOLTAGE = 0;
-				g_DipDisVal[16] =  S_VOLTAGE & 0xFF;			   //将电量数据转存到缓冲区
-				g_DipDisVal[17] = (S_VOLTAGE >> 8) & 0xFF;	       //低字节在前，高字节在后
-				g_DipDisVal[18] = (S_VOLTAGE >> 16) & 0xFF;
-				g_DipDisVal[19] = (S_VOLTAGE >> 24) & 0xFF;
-                
-				S_CURRENT = AC.I_RMS * 1000;
-				if(S_CURRENT < 100)
-					S_CURRENT = 0;
-				g_DipDisVal[20] =  S_CURRENT & 0xFF;			   //将电量数据转存到缓冲区
-				g_DipDisVal[21] = (S_CURRENT >> 8) & 0xFF;	   //低字节在前，高字节在后
-				g_DipDisVal[22] = (S_CURRENT >> 16) & 0xFF;
-				g_DipDisVal[23] = (S_CURRENT >> 24) & 0xFF;
-                
-				S_FREQ = AC.Power_Freq * 1000;
-				g_DipDisVal[24] =  S_FREQ & 0xFF;			//将频率数据转存到缓冲区
-				g_DipDisVal[25] = (S_FREQ >> 8) & 0xFF;	   //低字节在前，高字节在后
-				g_DipDisVal[26] = (S_FREQ >> 16) & 0xFF;
-				g_DipDisVal[27] = (S_FREQ >> 24) & 0xFF;
-                
-				S_FACTOR = AC.Power_Factor * 1000;
-				g_DipDisVal[28] =  S_FACTOR & 0xFF;			   //将电量数据转存到缓冲区
-				g_DipDisVal[29] = (S_FACTOR >> 8) & 0xFF;	   //低字节在前，高字节在后
-				g_DipDisVal[30] = (S_FACTOR >> 16) & 0xFF;
-				g_DipDisVal[31] = (S_FACTOR >> 24) & 0xFF;
-                
-				g_DipDisVal[32] =  AC.ACTIVE_POWER & 0xFF;			   //将电量数据转存到缓冲区
-				g_DipDisVal[33] = (AC.ACTIVE_POWER >> 8) & 0xFF;	   //低字节在前，高字节在后
-				g_DipDisVal[34] = (AC.ACTIVE_POWER >> 16) & 0xFF;
-				g_DipDisVal[35] = (AC.ACTIVE_POWER >> 24) & 0xFF;
-                
-				g_DipDisVal[36] =  AC.REACTIVE_POWER & 0xFF;			   //将电量数据转存到缓冲区
-				g_DipDisVal[37] = (AC.REACTIVE_POWER >> 8) & 0xFF;	   //低字节在前，高字节在后
-				g_DipDisVal[38] = (AC.REACTIVE_POWER >> 16) & 0xFF;
-				g_DipDisVal[39] = (AC.REACTIVE_POWER >> 24) & 0xFF;
-				
-				memcpy(&SendEnergyBuf[0],(uint8_t *)&g_DipDisVal,sizeof(g_DipDisVal));
-				
-				Sendrs485(SendEnergyBuf,sizeof(SendEnergyBuf),LifeInfo);	//发送数据			
-				
-				g_NoRs485ComFlg = 0;								//置通讯标志	通讯成功 
-			}
-            
-		}
-        
-	}
-}
+//
+///*----------------------------------------------------------------------------
+//名    称：   RecData
+//功    能：   接
+//入口参数：   无
+//出口参数：   无
+//---------------------------------------------------------------------------- */
+//uint8_t  RecData(uint8_t  *RecBuf,uint8_t  RecLen,uint8_t  *DataBuf,uint8_t  DataLen)
+//{
+//    uint16_t	i,j,k;
+//    uint8_t		Tmp;
+//    uint16_t	RecCRC16,Check16;
+//    uint8_t		HostCode,CodeType;
+//	
+//	uint16_t	RecDataLen;
+//	uint16_t	ReCopyTime;
+//	uint8_t		IDNum;
+//    
+//  	ReCopyTime = 0;
+//	for(j = 0;j < RecLen -1 - ReCopyTime ;j++ )											//去7d5c
+//	{
+//		if(	RecBuf[j] 	== HDLC_CODE0   					
+//           && 	((RecBuf[j+1]) == HDLC_CODE1)
+//               )
+//		{
+//			RecBuf[j] = FRAM_HERD0;														//7c
+//			for(k = j+1;k < RecLen-1; k++)
+//			{
+//				Tmp	 = RecBuf[k+1];
+//				
+//				RecBuf[k] = Tmp;
+//			}
+//			ReCopyTime++;
+//		}
+//		
+//		if(	RecBuf[j] 	== HDLC_CODE0   												//去7d5e
+//           && 	((RecBuf[j+1]) == HDLC_CODE2)
+//               )
+//		{
+//			RecBuf[j] = FRAM_END0;														//7e
+//			for(k = j+1;k < RecLen-1; k++)
+//			{
+//				Tmp	 = RecBuf[k+1];
+//				
+//				RecBuf[k] = Tmp;
+//			}
+//			ReCopyTime++;			
+//		}
+//		
+//		if(	RecBuf[j] 	== HDLC_CODE0   												//去7d5d
+//           && 	((RecBuf[j+1]) == HDLC_CODE3)
+//               )
+//		{
+//			RecBuf[j] = HDLC_CODE0;														//7d
+//			for(k = j+1;k < RecLen; k++)
+//			{
+//				Tmp	 = RecBuf[k+1];
+//				
+//				RecBuf[k] = Tmp;
+//			}
+//			ReCopyTime++;
+//		}					
+//	}
+//	
+//    for(i = 0; i < RecLen - 10;i++)												       //循环遍历
+//    {
+//		if(		((RecBuf[i+0]) == FRAM_HERD0)  				//报头
+//           &&	((RecBuf[i+1]) == HOST_ID) 
+//               &&	((RecBuf[i+2]) == DEVICE_ID0)  	 
+//                   )											
+//		{				
+//			RecDataLen  = RecBuf[i+3];
+//			RecDataLen  += RecBuf[i+4]*256;
+//			
+//			DataLen    =  RecDataLen;
+//			HostCode   =  RecBuf[i+5];
+//			IDNum	   =  RecBuf[i+6];
+//			CodeType   =  RecBuf[i+8];
+//			
+//			if(		(	HostCode 	!= HOST_CODE_FLG) 
+//               ||	(   IDNum       != ID_NUM   )
+//                   ||  (   CodeType       != CODE_TYPE   )
+//                       )
+//            {	
+//			 	i = i + 8;															//地址不对或帧尾错误，跳过此帧
+//			 	continue;
+//            }			
+//            
+//			RecCRC16 = ((uint16_t)RecBuf[i+5+RecDataLen]) *256 + RecBuf[i+6+RecDataLen];	//校验	
+//            
+//			Check16 = GetCrc16Check(&RecBuf[i+5],DataLen);	
+//			
+//			if(		RecCRC16  ==	Check16 		
+//               )
+//			{
+//                memcpy(DataBuf,&RecBuf[i+5],DataLen);				//数据拷贝
+//                
+//                return	1;
+//			}
+//		}
+//	}
+//   	
+//   	DataLen = 0;
+//    return	0;
+//}
+//
+//#define		ENERGY_DATA_LEN	40
+//#define		ATHER_DATA_LEN	4
+//void	Sendrs485(uint8_t	*DataBuf,uint32_t	DataLen,uint8_t	CheckNum)
+//{
+//	uint8_t		SndBuf[100] = {0};
+//	uint8_t		SndBufTmp[100] = {0};
+//	uint16_t	Crc16;
+//	uint16_t	AddHeadNum;
+//	uint16_t	i;
+//	uint8_t		ByteStation;
+//    
+//	static	uint8_t		Test = 0x02;
+//    
+//	ByteStation = 0;
+//	SndBuf[ByteStation++] = FRAM_HERD0;
+//	SndBuf[ByteStation++] = DEVICE_ID0;
+//	SndBuf[ByteStation++] = HOST_ID;	 
+//	SndBuf[ByteStation++] = ENERGY_DATA_LEN+ATHER_DATA_LEN;	
+//	SndBuf[ByteStation++] = 0;	
+//	SndBuf[ByteStation++] = DEVICE_CODE_FLG;	
+//	SndBuf[ByteStation++] = ID_NUM;
+//	
+//	memcpy(&SndBuf[ByteStation],DataBuf,DataLen);
+//	
+//	SndBuf[ByteStation+DataLen+0] = Test;			//数据备用起始位置(电能量标志位)
+//	SndBuf[ByteStation+DataLen+1] = CheckNum;
+//	
+//	Crc16 = GetCrc16Check(&SndBuf[1+4],2+DataLen+2);//帧头（1）+帧长度前包字节（4）
+//	
+//    
+//	SndBuf[ByteStation+DataLen+3] = Crc16;
+//	SndBuf[ByteStation+DataLen+2] = Crc16>>8;
+//	
+//    //////////////////////////////////////////////////////////
+//	SndBufTmp[0] = SndBuf[0];						//准备数据发送
+//    
+//	AddHeadNum = 0;
+//	for(i = 1; i< ByteStation+DataLen+4;i++ )				//数据，补移位 FRAM_HERD0
+//	{
+//		
+//		if(SndBuf[i] == FRAM_HERD0)					//7c
+//		{
+//			SndBufTmp[i+AddHeadNum] = HDLC_CODE0;
+//			AddHeadNum++;
+//			SndBufTmp[i+AddHeadNum] = HDLC_CODE1;
+//		}
+//		else if(SndBuf[i] == FRAM_END0)				//7e
+//		{
+//			SndBufTmp[i+AddHeadNum] = HDLC_CODE0;
+//			AddHeadNum++;
+//			SndBufTmp[i+AddHeadNum] = HDLC_CODE2;
+//		}
+//		else if(SndBuf[i] == HDLC_CODE0)			//7d		
+//		{
+//			SndBufTmp[i+AddHeadNum] = HDLC_CODE0;
+//			AddHeadNum++;
+//			SndBufTmp[i+AddHeadNum] = HDLC_CODE3;
+//		}	
+//		else
+//		{
+//			SndBufTmp[i+AddHeadNum] = SndBuf[i];
+//		}
+//	}
+//    
+//	SndBufTmp[ByteStation+DataLen+4 +AddHeadNum] = FRAM_END0;
+//	
+//    RS485_SET_TX_Mode();	
+//    RS485_SET_TX_Mode();		
+//	SendCOM2(SndBufTmp,ByteStation+DataLen+4 +AddHeadNum + 1);  // 数据标号+1=数据长度
+//	RS485_SET_RX_Mode();			
+//}
+//
+//
+//#define		BUF_LEN		256
+//
+//uint8_t	g_NoRs485ComFlg = 0;
+///*----------------------------------------------------------------------------
+//名    称：   void  RecTAX2Info(void)
+//功    能：   接收TAX2信息。
+//入口参数：   无
+//出口参数：   无
+//---------------------------------------------------------------------------- */
+//void  RecRs485(void)
+//{
+//	static	uint8_t		RecBuf[BUF_LEN] = {0};								//接收缓冲区
+//	static	uint8_t		DataBuf[BUF_LEN/2] = {0};								//
+//	static	uint8_t		SendEnergyBuf[ENERGY_DATA_LEN] = {0};		
+//    
+//	static uint8_t	    LifeInfo = 0;
+//	uint8_t		        HostCodeFlg;		
+//	uint8_t		        CodeType;	
+//	uint8_t		        IDNum;	
+//	    
+//	uint32_t	        RecLen;		
+//	uint32_t	        DataLen = 250;
+//	
+//	uint32_t            S_VOLTAGE;
+//	uint32_t            S_CURRENT;
+//	int32_t             S_FREQ;
+//	int32_t             S_FACTOR;
+//    
+//    
+//	if( GetFramRecEndFlg() == 1)								//有新的帧尾，进行数据处理
+//	{
+//		printf("\n\r  有新的帧尾，进行数据处理\n");	
+//		RecLen 	= ReadRs485Data(RecBuf);
+//		
+//		ClearFramRecEndFlg();									//清标志，可重新取数
+//		
+//		if(!RecData(RecBuf,RecLen,DataBuf,DataLen))	{			//接受数据
+//            printf("\r\n RS485数据接收失败!");
+//		} else {
+//			printf("\r\n RS485数据接收成功!");
+//            
+//			//////////////////////////////对数据解析
+//			HostCodeFlg = DataBuf[0];			   //源地址标识
+//			IDNum		= DataBuf[1];			   //目的地址标识
+//			LifeInfo 	= DataBuf[2];			   //动态识别码
+//			CodeType 	= DataBuf[3];			   //命令类型
+//			
+//			if(	HostCodeFlg == HOST_CODE_FLG 			
+//                &&	IDNum	== ID_NUM						
+//                &&	CodeType== CODE_TYPE ) {			
+//				printf("\r\n 请求数据发送!");
+//				g_DipDisVal[0] =  AC.PPpower_NUM & 0xFF;			   //将电量数据转存到缓冲区
+//				g_DipDisVal[1] = (AC.PPpower_NUM >> 8) & 0xFF;	   //低字节在前，高字节在后
+//				g_DipDisVal[2] = (AC.PPpower_NUM >> 16) & 0xFF;
+//				g_DipDisVal[3] = (AC.PPpower_NUM >> 24) & 0xFF;
+//                
+//				g_DipDisVal[4] =  AC.NPpower_NUM & 0xFF;			   //将电量数据转存到缓冲区
+//				g_DipDisVal[5] = (AC.NPpower_NUM >> 8) & 0xFF;	   //低字节在前，高字节在后
+//				g_DipDisVal[6] = (AC.NPpower_NUM >> 16) & 0xFF;
+//				g_DipDisVal[7] = (AC.NPpower_NUM >> 24) & 0xFF;
+//                
+//				g_DipDisVal[8] =   AC.PQpower_NUM & 0xFF;			   //将电量数据转存到缓冲区
+//				g_DipDisVal[9] =  (AC.PQpower_NUM >> 8) & 0xFF;	   //低字节在前，高字节在后
+//				g_DipDisVal[10] = (AC.PQpower_NUM >> 16) & 0xFF;
+//				g_DipDisVal[11] = (AC.PQpower_NUM >> 24) & 0xFF;
+//                
+//				g_DipDisVal[12] =  AC.NQpower_NUM & 0xFF;			   //将电量数据转存到缓冲区
+//				g_DipDisVal[13] = (AC.NQpower_NUM >> 8) & 0xFF;	   //低字节在前，高字节在后
+//				g_DipDisVal[14] = (AC.NQpower_NUM >> 16) & 0xFF;
+//				g_DipDisVal[15] = (AC.NQpower_NUM >> 24) & 0xFF;
+//                
+//				S_VOLTAGE = AC.U_RMS * 1000;
+//				if(S_VOLTAGE < 200)
+//					S_VOLTAGE = 0;
+//				g_DipDisVal[16] =  S_VOLTAGE & 0xFF;			   //将电量数据转存到缓冲区
+//				g_DipDisVal[17] = (S_VOLTAGE >> 8) & 0xFF;	       //低字节在前，高字节在后
+//				g_DipDisVal[18] = (S_VOLTAGE >> 16) & 0xFF;
+//				g_DipDisVal[19] = (S_VOLTAGE >> 24) & 0xFF;
+//                
+//				S_CURRENT = AC.I_RMS * 1000;
+//				if(S_CURRENT < 100)
+//					S_CURRENT = 0;
+//				g_DipDisVal[20] =  S_CURRENT & 0xFF;			   //将电量数据转存到缓冲区
+//				g_DipDisVal[21] = (S_CURRENT >> 8) & 0xFF;	   //低字节在前，高字节在后
+//				g_DipDisVal[22] = (S_CURRENT >> 16) & 0xFF;
+//				g_DipDisVal[23] = (S_CURRENT >> 24) & 0xFF;
+//                
+//				S_FREQ = AC.Power_Freq * 1000;
+//				g_DipDisVal[24] =  S_FREQ & 0xFF;			//将频率数据转存到缓冲区
+//				g_DipDisVal[25] = (S_FREQ >> 8) & 0xFF;	   //低字节在前，高字节在后
+//				g_DipDisVal[26] = (S_FREQ >> 16) & 0xFF;
+//				g_DipDisVal[27] = (S_FREQ >> 24) & 0xFF;
+//                
+//				S_FACTOR = AC.Power_Factor * 1000;
+//				g_DipDisVal[28] =  S_FACTOR & 0xFF;			   //将电量数据转存到缓冲区
+//				g_DipDisVal[29] = (S_FACTOR >> 8) & 0xFF;	   //低字节在前，高字节在后
+//				g_DipDisVal[30] = (S_FACTOR >> 16) & 0xFF;
+//				g_DipDisVal[31] = (S_FACTOR >> 24) & 0xFF;
+//                
+//				g_DipDisVal[32] =  AC.ACTIVE_POWER & 0xFF;			   //将电量数据转存到缓冲区
+//				g_DipDisVal[33] = (AC.ACTIVE_POWER >> 8) & 0xFF;	   //低字节在前，高字节在后
+//				g_DipDisVal[34] = (AC.ACTIVE_POWER >> 16) & 0xFF;
+//				g_DipDisVal[35] = (AC.ACTIVE_POWER >> 24) & 0xFF;
+//                
+//				g_DipDisVal[36] =  AC.REACTIVE_POWER & 0xFF;			   //将电量数据转存到缓冲区
+//				g_DipDisVal[37] = (AC.REACTIVE_POWER >> 8) & 0xFF;	   //低字节在前，高字节在后
+//				g_DipDisVal[38] = (AC.REACTIVE_POWER >> 16) & 0xFF;
+//				g_DipDisVal[39] = (AC.REACTIVE_POWER >> 24) & 0xFF;
+//				
+//				memcpy(&SendEnergyBuf[0],(uint8_t *)&g_DipDisVal,sizeof(g_DipDisVal));
+//				
+//				Sendrs485(SendEnergyBuf,sizeof(SendEnergyBuf),LifeInfo);	//发送数据			
+//				
+//				g_NoRs485ComFlg = 0;								//置通讯标志	通讯成功 
+//			}
+//            
+//		}
+//        
+//	}
+//}
 
 
 

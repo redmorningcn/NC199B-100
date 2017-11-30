@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:19
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:07
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -246,7 +246,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_disp.c
     154                      static  uint32   times   = 0;
     155                      static  uint8   disflg  = 0;
     156          
-    157                      stcTime         sTime;
+    157          //            stcTime         sTime;
     158          
     159                      /***********************************************
     160                      * 描述： 根据显示模式显示
@@ -818,4 +818,4 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_disp.c
    8 bytes of DATA  memory
 
 Errors: none
-Warnings: 1
+Warnings: none

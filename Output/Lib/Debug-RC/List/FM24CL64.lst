@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       23/Nov/2017  13:36:22
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:11
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -133,13 +133,19 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\FM24CL64.c
      54          * 修改日期：
      55          * 备    注： 仅在使用UCOS操作系统时使用
      56          *******************************************************************************/
-     57          static uint8_t EEP_WaitEvent(void)
+
+   \                                 In section .text, align 2, keep-with-next
+     57          uint8_t EEP_WaitEvent(void)
      58          {
      59              /***********************************************
      60              * 描述： OS接口
      61              */
      62          #if OS_VERSION > 30000U
      63              return BSP_OS_SemWait(&Bsp_EepSem,0);           // 等待信号量
+   \                     EEP_WaitEvent: (+1)
+   \   00000000   0x2100             MOVS     R1,#+0
+   \   00000002   0x....             LDR.N    R0,??DataTable3
+   \   00000004   0x.... 0x....      B.W      BSP_OS_SemWait
      64          #else
      65              uint8_t       err;
      66              OSSemPend(Bsp_EepSem,0,&err);                   // 等待信号量
@@ -162,13 +168,18 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\FM24CL64.c
      83          * 修改日期：
      84          * 备    注： 仅在使用UCOS操作系统时使用
      85          *******************************************************************************/
-     86          static void EEP_SendEvent(void)
+
+   \                                 In section .text, align 2, keep-with-next
+     86          void EEP_SendEvent(void)
      87          {
      88              /***********************************************
      89              * 描述： OS接口
      90              */
      91          #if OS_VERSION > 30000U
      92              BSP_OS_SemPost(&Bsp_EepSem);                        // 发送信号量
+   \                     EEP_SendEvent: (+1)
+   \   00000000   0x....             LDR.N    R0,??DataTable3
+   \   00000002   0x.... 0x....      B.W      BSP_OS_SemPost
      93          #else
      94              uint8_t       err;
      95              OSSemPost(Bsp_EepSem);                              // 发送信号量
@@ -188,7 +199,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\FM24CL64.c
    \                     EEP_OS_Init: (+1)
    \   00000000   0x.... 0x....      ADR.W    R2,?_0
    \   00000004   0x2101             MOVS     R1,#+1
-   \   00000006   0x....             LDR.N    R0,??DataTable1
+   \   00000006   0x....             LDR.N    R0,??DataTable3
    \   00000008   0x.... 0x....      B.W      BSP_OS_SemCreate
     107          #else
     108              Bsp_EepSem     = OSSemCreate(1);                    // 创建信号量
@@ -333,7 +344,7 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\FM24CL64.c
    \   0000000E   0x4770             BX       LR               ;; return
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1:
+   \                     ??DataTable3:
    \   00000000   0x........         DC32     Bsp_EepSem
 
    \                                 In section .text, align 4, keep-with-next
@@ -355,6 +366,10 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\FM24CL64.c
    ------- --------
        0   EEP_OS_Init
          0   -> BSP_OS_SemCreate
+       0   EEP_SendEvent
+         0   -> BSP_OS_SemPost
+       0   EEP_WaitEvent
+         0   -> BSP_OS_SemWait
        0   TO_Arayy
 
 
@@ -362,18 +377,20 @@ F:\iar\NC199B-100\Library\Source\BSP\Driver\FM24CL64.c
 
    Bytes  Function/Label
    -----  --------------
-       4  ??DataTable1
+       4  ??DataTable3
       12  ?_0
       28  Bsp_EepSem
       12  EEP_OS_Init
+       6  EEP_SendEvent
+       8  EEP_WaitEvent
       16  TO_Arayy
 
  
  28 bytes in section .bss
- 44 bytes in section .text
+ 58 bytes in section .text
  
- 44 bytes of CODE memory
+ 58 bytes of CODE memory
  28 bytes of DATA memory
 
 Errors: none
-Warnings: 2
+Warnings: none

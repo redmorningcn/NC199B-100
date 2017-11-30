@@ -4,6 +4,8 @@
 
 #include  "csnc_package_deal.h"
 #include  "CrcCheck.h"
+#include  "app_chk.h"
+#include  "string.h"
 
 
 //数据打包，根据stcCsnrProtocolPara信息，将数据打包成CNSR数据
