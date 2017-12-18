@@ -312,7 +312,7 @@ osalEvt  TaskDispEvtProcess(osalTid task_id, osalEvt task_event)
         exit:            
             osal_start_timerEx( OS_TASK_ID_DISP,
                                 OS_EVT_DISP_TICKS,
-                                500);
+                                800);                           //0.8sœ‘ æ“ª¥Œ
             return ( task_event ^ OS_EVT_DISP_TICKS );
         }
     return  task_event;
