@@ -274,7 +274,6 @@ void   BSP_OS_TimeDly (CPU_INT32U  dly_ms)
         sec = 0u;
     }
 
-
     OSTimeDlyHMSM((CPU_INT16U) 0u,
                   (CPU_INT16U) 0u,
                   (CPU_INT16U) sec,

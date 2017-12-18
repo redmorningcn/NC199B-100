@@ -158,7 +158,7 @@ static  void  AppTaskComm (void *p_arg)
     OS_ERR      err;
     
     OS_TICK     dly     = CYCLE_TIME_TICKS;
-    //OS_TICK     ticks;
+    OS_TICK     ticks;
     /***********************************************
     * 描述： 任务初始化
     */
@@ -177,19 +177,20 @@ static  void  AppTaskComm (void *p_arg)
                     ( CPU_TS       ) 0,
                     ( OS_ERR      *) &err);
         
+        OS_ERR      terr;
+        
+        ticks   = OSTimeGet(&terr);                        // 获取当前OSTick
         /***********************************************
         * 描述： 等待COMM的标识组
         */
         OS_FLAGS    flags = 
-            OSFlagPend( ( OS_FLAG_GRP *)&Ctrl.Os.CommEvtFlagGrp,
-                       ( OS_FLAGS     ) Ctrl.Os.CommEvtFlag,
-                       ( OS_TICK      ) dly,
-                       ( OS_OPT       ) OS_OPT_PEND_FLAG_SET_ANY,
-                       ( CPU_TS      *) NULL,
-                       ( OS_ERR      *)&err);
+        OSFlagPend( ( OS_FLAG_GRP *)&Ctrl.Os.CommEvtFlagGrp,
+                   ( OS_FLAGS     ) Ctrl.Os.CommEvtFlag,
+                   ( OS_TICK      ) dly,
+                   ( OS_OPT       ) OS_OPT_PEND_FLAG_SET_ANY,
+                   ( CPU_TS      *) NULL,
+                   ( OS_ERR      *)&err);
         
-        //OS_ERR      terr;
-        //ticks   = OSTimeGet(&terr);                        // 获取当前OSTick
         
         /***********************************************
         * 描述： 没有错误,有事件发生
@@ -199,62 +200,31 @@ static  void  AppTaskComm (void *p_arg)
             /***********************************************
             * 和测量某块通讯有关事件发生，调用MTR通讯处理函数
             */           
-            if(     flags & COMM_EVT_FLAG_MTR_RX 
-               ||   flags & COMM_EVT_FLAG_MTR_TIMEOUT ) {
-                   
-                   //调用mtr通讯处理函数,和测量模块进行通讯
-                   app_comm_mtr();                             
-                   
-                   if(flags & COMM_EVT_FLAG_MTR_RX) {      
-                       flagClr |= COMM_EVT_FLAG_MTR_RX;         //接收到数据，清接收数据标示
-                   }else{
-                       flagClr |= COMM_EVT_FLAG_MTR_TIMEOUT;   //超时，清接收数据标示
-                   }
-               }
+            if(   flags & COMM_EVT_FLAG_MTR_TIMEOUT ) {
+                
+                Ctrl.Para.dat.sRunPara.SysSta.mtrsend = 1;
+                app_comm_mtr();                             
+                
+                flagClr |= COMM_EVT_FLAG_MTR_TIMEOUT;   //超时，清接收数据标示
+            }
             
             /***********************************************
             * 和无线发送模块事件发生，调用DTU通讯处理函数
             */           
-            else  if(   flags & COMM_EVT_FLAG_DTU_RX 
-                     ||  flags & COMM_EVT_FLAG_DTU_TIMEOUT ) {
-                         
-                         //调用DTU通讯处理函数
-                         app_comm_dtu();                            
-                         
-                         if( flags &    COMM_EVT_FLAG_DTU_RX) {      
-                             flagClr |= COMM_EVT_FLAG_DTU_RX;        //接收到数据，清接收数据标示
-                         }else{
-                             flagClr |= COMM_EVT_FLAG_DTU_TIMEOUT;   //接收到数据，清接收数据标示
-                         }
-                     }
+            //else  
+            if(    flags & COMM_EVT_FLAG_DTU_RX 
+               ||  flags & COMM_EVT_FLAG_DTU_TIMEOUT ) {
+                   
+                   //调用DTU通讯处理函数
+                   app_comm_dtu();                            
+                   
+                   if( flags &    COMM_EVT_FLAG_DTU_RX) {      
+                       flagClr |= COMM_EVT_FLAG_DTU_RX;        //接收到数据，清接收数据标示
+                   }else{
+                       flagClr |= COMM_EVT_FLAG_DTU_TIMEOUT;   //接收到数据，清接收数据标示
+                   }
+               }
             
-            /***********************************************
-            * 和IC模块事件发生，调用OTR通讯处理函数
-            */           
-            else if(    flags & COMM_EVT_FLAG_OTR_RX 
-                    ||  flags & COMM_EVT_FLAG_OTR_TIMEOUT ) {
-                        
-                        //调用DTU通讯处理函数
-                        //app_comm_otr();                             
-                        
-                        if(flags &      COMM_EVT_FLAG_OTR_RX) {      
-                            flagClr |=  COMM_EVT_FLAG_OTR_RX;        //接收到数据，清接收数据标示
-                        }else{
-                            flagClr |=  COMM_EVT_FLAG_OTR_TIMEOUT;   //接收到数据，清接收数据标示
-                        }
-                    }
-            else if(    flags & COMM_EVT_FLAG_TAX_RX 
-                    ||  flags & COMM_EVT_FLAG_TAX_TIMEOUT ) {
-            
-                        //调用DTU通讯处理函数
-                        //app_comm_tax();                             
-                        
-                        if(flags &      COMM_EVT_FLAG_TAX_RX) {      
-                            flagClr |=  COMM_EVT_FLAG_TAX_RX;        //接收到数据，清接收数据标示
-                        }else{
-                            flagClr |=  COMM_EVT_FLAG_TAX_TIMEOUT;   //接收到数据，清接收数据标示
-                        }
-                    }
             /***********************************************
             * 描述： 清除标志
             */
@@ -429,14 +399,16 @@ void APP_CommInit(void)
                  ( OS_FLAGS      )0,
                  ( OS_ERR       *)&err);
     
-    Ctrl.Os.CommEvtFlag= COMM_EVT_FLAG_MTR_RX        // MTR 接收事件
-        + COMM_EVT_FLAG_DTU_RX          // DTU 接收事件
-            + COMM_EVT_FLAG_OTR_RX        // OTR 接收事件
+    Ctrl.Os.CommEvtFlag= 
+        //COMM_EVT_FLAG_MTR_RX        // MTR 接收事件
+         COMM_EVT_FLAG_DTU_RX          // DTU 接收事件
+        //    + COMM_EVT_FLAG_OTR_RX        // OTR 接收事件
                 + COMM_EVT_FLAG_MTR_TIMEOUT   // MTR 操作超时，定时发送使用
                     + COMM_EVT_FLAG_DTU_TIMEOUT   // DTU 操作超时，定时发送使用
-                        + COMM_EVT_FLAG_OTR_TIMEOUT  // OTR 操作超时，定时发送使用   
-                            + COMM_EVT_FLAG_TAX_RX   // TAX 操作超时，定时发送使用
-                                + COMM_EVT_FLAG_TAX_TIMEOUT;  // TAX 操作超时，定时发送使用  
+       //                 + COMM_EVT_FLAG_OTR_TIMEOUT  // OTR 操作超时，定时发送使用   
+        //                    + COMM_EVT_FLAG_TAX_RX   // TAX 操作超时，定时发送使用
+        //                        + COMM_EVT_FLAG_TAX_TIMEOUT;  // TAX 操作超时，定时发送使用  
+                                    ;
     
     /***********************************************
     * 描述： 初始化MODBUS通信
@@ -449,6 +421,8 @@ void APP_CommInit(void)
     */
     WdtFlags |= WDT_FLAG_COMM;
 }
+
+uint8       g_recbuf[256];
 
 /*******************************************************************************
 * 名    称： APP_CommRxDataDealCB
@@ -507,9 +481,8 @@ INT08U APP_CommRxDataDealCB(MODBUS_CH  *pch)
     stcCsncProtocolPara sCsncPara;      //csns結構
     sCsncPara.destaddr = 0;             //地址赋值
     
-    uint8       buf[256];
     uint8       flg; 
-    sCsncPara.databuf = buf;
+    sCsncPara.databuf = g_recbuf;
     sCsncPara.rxtxbuf = (uint8 *)pch->RxFrameData;
     sCsncPara.rxtxlen = pch->RxBufByteCnt;
     flg = DataUnpack_CSNC(&sCsncPara);   
@@ -628,14 +601,14 @@ INT08U APP_CommRxDataDealCB(MODBUS_CH  *pch)
                 //OS_CRITICAL_ENTER();
                 //memcpy( (INT08U *)&Ctrl.Dtu.RxCtrl.Code, (INT08U *)&pch->RxFrameData[DataPos], 4);        //功能码
                 //memcpy( (INT08U *)&Ctrl.Dtu.Rd.Buf[0],   (INT08U *)&pch->RxFrameData[DataPos+4], Len-4 );   //数据区
-                memcpy( (INT08U *)&Ctrl.Dtu.RxCtrl.DataCode, buf, 4);        //功能码
-                memcpy( (INT08U *)&Ctrl.Dtu.Rd.Buf[0],   (INT08U *)&buf[4], sCsncPara.datalen-4 );   //数据区
+                memcpy( (INT08U *)&Ctrl.Dtu.RxCtrl.DataCode, g_recbuf, 4);        //功能码
+                memcpy( (INT08U *)&Ctrl.Dtu.Rd.Buf[0],   (INT08U *)&g_recbuf[4], sCsncPara.datalen-4 );   //数据区
 
                 //OS_CRITICAL_EXIT();                    
             }
             else        //V2.0协议操作  //将数据拷贝数据区，在根据协议解析   
             {
-                memcpy( (INT08U *)&Ctrl.Dtu.Rd.Buf[0],   (INT08U *)&buf[0], sCsncPara.datalen );
+                memcpy( (INT08U *)&Ctrl.Dtu.Rd.Buf[0],   (INT08U *)&g_recbuf[0], sCsncPara.datalen );
             }
             /***********************************************
             * 描述： UART3连接状态描述

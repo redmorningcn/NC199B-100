@@ -107,7 +107,10 @@ typedef struct _stcRunPara_
         uint8      StartMeasure         : 1;        // D2：=1:开始测量；=0:无；
         uint8      EndMeasure           : 1;        // D3：=1:结束测量；=0:无；
         uint8      Store                : 1;        // D4：=1:数据保存；=0:无；
-        uint8      Rsv                  : 3;        // D7~D5：预留
+        uint8      mtrsim               : 1;        //debug use
+        uint8      mtrsend              : 1;        //debug use
+
+        uint8      Rsv                  : 1;        // D7~D5：预留
     } SysSta;                                       // 系统运行状态
     
 	uint8		StoreType;                  // 1   	    系统运行状态

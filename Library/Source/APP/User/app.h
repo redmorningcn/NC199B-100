@@ -147,8 +147,8 @@ extern OS_FLAGS         BeepFlags;
 //IC卡地址
 #define     SLAVE_ADDR_OTR      0xC1
 #define     SLAVE_ADDR_SET      0xC2
-//统计模块地址     
-#define     MASTE_ADDR_HOST     0x80
+//空检模块地址     
+#define     MASTE_ADDR_HOST     0x82
 
 //#endif
 /*******************************************************************************

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:12
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       13/Dec/2017  10:41:21
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -126,34 +126,35 @@ F:\iar\NC199B-100\Library\Source\APP\Iap\iap_flash.c
    \   0000000A   0x2704             MOVS     R7,#+4
      39          	u32 addrx=0;
      40          	u32 endaddr=0;	
-     41            if(WriteAddr<STM32_FLASH_BASE||WriteAddr%4)return;	//非法地址
+     41            if(WriteAddr<STM32_FLASH_BASE||WriteAddr%4)
    \   0000000C   0xF1B4 0x6F00      CMP      R4,#+134217728
    \   00000010   0xD32C             BCC.N    ??STMFLASH_Write_0
    \   00000012   0xF014 0x0F03      TST      R4,#0x3
    \   00000016   0xD129             BNE.N    ??STMFLASH_Write_0
-     42          	FLASH_Unlock();									//解锁 
+     42                return;	//非法地址
+     43          	FLASH_Unlock();									//解锁 
    \   00000018   0x.... 0x....      BL       FLASH_Unlock
-     43            //FLASH_DataCacheCmd(DISABLE);//FLASH擦除期间,必须禁止数据缓存
-     44           		
-     45          	addrx=WriteAddr;				//写入的起始地址
+     44            //FLASH_DataCacheCmd(DISABLE);//FLASH擦除期间,必须禁止数据缓存
+     45           		
+     46          	addrx=WriteAddr;				//写入的起始地址
    \   0000001C   0x46A0             MOV      R8,R4
-     46          	endaddr=WriteAddr+NumToWrite*4;	//写入的结束地址
+     47          	endaddr=WriteAddr+NumToWrite*4;	//写入的结束地址
    \   0000001E   0xEB04 0x0686      ADD      R6,R4,R6, LSL #+2
-     47              
-     48          	if(addrx<0X1FFF0000)			//只有主存储区,才需要执行擦除操作!!
+     48              
+     49          	if(addrx<0X1FFF0000)			//只有主存储区,才需要执行擦除操作!!
    \   00000022   0x....             LDR.N    R0,??DataTable1  ;; 0x1fff0000
    \   00000024   0x4580             CMP      R8,R0
    \   00000026   0xD210             BCS.N    ??STMFLASH_Write_1
    \   00000028   0xE001             B.N      ??STMFLASH_Write_2
-     49          	{
-     50          		while(addrx<endaddr)		//扫清一切障碍.(对非FFFFFFFF的地方,先擦除)
-     51          		{
-     52          			if(STMFLASH_ReadWord(addrx)!=0XFFFFFFFF)//有非0XFFFFFFFF的地方,要擦除这个扇区
-     53          			{   
-     54          				//status=FLASH_EraseSector(STMFLASH_GetFlashSector(addrx),VoltageRange_3);//VCC=2.7~3.6V之间!!
-     55          				status = FLASH_ErasePage(addrx);
-     56                          if(status!=FLASH_COMPLETE)break;	//发生错误了
-     57          			}else addrx+=4;
+     50          	{
+     51          		while(addrx<endaddr)		//扫清一切障碍.(对非FFFFFFFF的地方,先擦除)
+     52          		{
+     53          			if(STMFLASH_ReadWord(addrx)!=0XFFFFFFFF)//有非0XFFFFFFFF的地方,要擦除这个扇区
+     54          			{   
+     55          				//status=FLASH_EraseSector(STMFLASH_GetFlashSector(addrx),VoltageRange_3);//VCC=2.7~3.6V之间!!
+     56          				status = FLASH_ErasePage(addrx);
+     57                          if(status!=FLASH_COMPLETE)break;	//发生错误了
+     58          			}else addrx+=4;
    \                     ??STMFLASH_Write_3: (+1)
    \   0000002A   0xF108 0x0804      ADD      R8,R8,#+4
    \                     ??STMFLASH_Write_2: (+1)
@@ -168,25 +169,25 @@ F:\iar\NC199B-100\Library\Source\APP\Iap\iap_flash.c
    \   00000044   0x4607             MOV      R7,R0
    \   00000046   0x2F04             CMP      R7,#+4
    \   00000048   0xD0F1             BEQ.N    ??STMFLASH_Write_2
-     58          		} 
-     59          	}
-     60              
-     61          	if(status==FLASH_COMPLETE)
+     59          		} 
+     60          	}
+     61              
+     62          	if(status==FLASH_COMPLETE)
    \                     ??STMFLASH_Write_1: (+1)
    \   0000004A   0x2F04             CMP      R7,#+4
    \   0000004C   0xD10A             BNE.N    ??STMFLASH_Write_4
    \   0000004E   0xE001             B.N      ??STMFLASH_Write_5
-     62          	{
-     63          		while(WriteAddr<endaddr)//写数据
-     64          		{
-     65          			if(FLASH_ProgramWord(WriteAddr,*pBuffer)!=FLASH_COMPLETE)//写入数据
-     66          			{ 
-     67          				break;	//写入异常
-     68          			}
-     69          			WriteAddr+=4;
+     63          	{
+     64          		while(WriteAddr<endaddr)//写数据
+     65          		{
+     66          			if(FLASH_ProgramWord(WriteAddr,*pBuffer)!=FLASH_COMPLETE)//写入数据
+     67          			{ 
+     68          				break;	//写入异常
+     69          			}
+     70          			WriteAddr+=4;
    \                     ??STMFLASH_Write_6: (+1)
    \   00000050   0x1D24             ADDS     R4,R4,#+4
-     70          			pBuffer++;
+     71          			pBuffer++;
    \   00000052   0x1D2D             ADDS     R5,R5,#+4
    \                     ??STMFLASH_Write_5: (+1)
    \   00000054   0x42B4             CMP      R4,R6
@@ -196,82 +197,82 @@ F:\iar\NC199B-100\Library\Source\APP\Iap\iap_flash.c
    \   0000005C   0x.... 0x....      BL       FLASH_ProgramWord
    \   00000060   0x2804             CMP      R0,#+4
    \   00000062   0xD0F5             BEQ.N    ??STMFLASH_Write_6
-     71          		} 
-     72          	}
-     73           // FLASH_DataCacheCmd(ENABLE);	//FLASH擦除结束,开启数据缓存
-     74          	FLASH_Lock();//上锁
+     72          		} 
+     73          	}
+     74           // FLASH_DataCacheCmd(ENABLE);	//FLASH擦除结束,开启数据缓存
+     75          	FLASH_Lock();//上锁
    \                     ??STMFLASH_Write_4: (+1)
    \   00000064   0xE8BD 0x41F0      POP      {R4-R8,LR}
    \   00000068   0x.... 0x....      B.W      FLASH_Lock
    \                     ??STMFLASH_Write_0: (+1)
    \   0000006C   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
-     75          } 
-     76          
-     77          //从指定地址开始读出指定长度的数据
-     78          //ReadAddr:起始地址
-     79          //pBuffer:数据指针
-     80          //NumToRead:字(4位)数
+     76          } 
+     77          
+     78          //从指定地址开始读出指定长度的数据
+     79          //ReadAddr:起始地址
+     80          //pBuffer:数据指针
+     81          //NumToRead:字(4位)数
 
    \                                 In section .text, align 2, keep-with-next
-     81          void STMFLASH_Read(u32 ReadAddr,u32 *pBuffer,u32 NumToRead)   	
-     82          {
+     82          void STMFLASH_Read(u32 ReadAddr,u32 *pBuffer,u32 NumToRead)   	
+     83          {
    \                     STMFLASH_Read: (+1)
    \   00000000   0xB5F8             PUSH     {R3-R7,LR}
    \   00000002   0x4604             MOV      R4,R0
    \   00000004   0x460D             MOV      R5,R1
    \   00000006   0x4616             MOV      R6,R2
-     83          	u32 i;
-     84          	for(i=0;i<NumToRead;i++)
+     84          	u32 i;
+     85          	for(i=0;i<NumToRead;i++)
    \   00000008   0x2700             MOVS     R7,#+0
    \   0000000A   0xE006             B.N      ??STMFLASH_Read_0
-     85          	{
-     86          		pBuffer[i]=STMFLASH_ReadWord(ReadAddr);//读取4个字节.
+     86          	{
+     87          		pBuffer[i]=STMFLASH_ReadWord(ReadAddr);//读取4个字节.
    \                     ??STMFLASH_Read_1: (+1)
    \   0000000C   0x4620             MOV      R0,R4
    \   0000000E   0x.... 0x....      BL       STMFLASH_ReadWord
    \   00000012   0xF845 0x0027      STR      R0,[R5, R7, LSL #+2]
-     87          		ReadAddr+=4;//偏移4个字节.	
+     88          		ReadAddr+=4;//偏移4个字节.	
    \   00000016   0x1D24             ADDS     R4,R4,#+4
-     88          	}
+     89          	}
    \   00000018   0x1C7F             ADDS     R7,R7,#+1
    \                     ??STMFLASH_Read_0: (+1)
    \   0000001A   0x42B7             CMP      R7,R6
    \   0000001C   0xD3F6             BCC.N    ??STMFLASH_Read_1
-     89          }
+     90          }
    \   0000001E   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
-     90          
      91          
+     92          
 
    \                                 In section .bss, align 4
-     92          u32 iapbuf[512]; 	//2K字节缓存  
+     93          u32 iapbuf[512]; 	//2K字节缓存  
    \                     iapbuf:
    \   00000000                      DS8 2048
-     93          //appxaddr:应用程序的起始地址
-     94          //appbuf:应用程序CODE.
-     95          //appsize:应用程序大小(字节).
+     94          //appxaddr:应用程序的起始地址
+     95          //appbuf:应用程序CODE.
+     96          //appsize:应用程序大小(字节).
 
    \                                 In section .text, align 2, keep-with-next
-     96          void iap_write_appbin(u32 appxaddr,u8 *appbuf,u32 appsize)
-     97          {
+     97          void iap_write_appbin(u32 appxaddr,u8 *appbuf,u32 appsize)
+     98          {
    \                     iap_write_appbin: (+1)
    \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
    \   00000004   0x4607             MOV      R7,R0
    \   00000006   0x4688             MOV      R8,R1
    \   00000008   0x4614             MOV      R4,R2
-     98          	u32 t;
-     99          	u16 i=0;
+     99          	u32 t;
+    100          	u16 i=0;
    \   0000000A   0x2500             MOVS     R5,#+0
-    100          	u32 temp;
-    101          	u32 fwaddr=appxaddr;//当前写入的地址
-    102          	u8 *dfu=appbuf;
-    103          	for(t=0;t<appsize;t+=4)
+    101          	u32 temp;
+    102          	u32 fwaddr=appxaddr;//当前写入的地址
+    103          	u8 *dfu=appbuf;
+    104          	for(t=0;t<appsize;t+=4)
    \   0000000C   0x462E             MOV      R6,R5
    \   0000000E   0xE020             B.N      ??iap_write_appbin_0
-    104          	{						   
-    105          		temp =(u32)dfu[3]<<24;   
-    106          		temp|=(u32)dfu[2]<<16;    
-    107          		temp|=(u32)dfu[1]<<8;
-    108          		temp|=(u32)dfu[0];	  
+    105          	{						   
+    106          		temp =(u32)dfu[3]<<24;   
+    107          		temp|=(u32)dfu[2]<<16;    
+    108          		temp|=(u32)dfu[1]<<8;
+    109          		temp|=(u32)dfu[0];	  
    \                     ??iap_write_appbin_1: (+1)
    \   00000010   0xF898 0x0003      LDRB     R0,[R8, #+3]
    \   00000014   0xF898 0x1002      LDRB     R1,[R8, #+2]
@@ -281,33 +282,33 @@ F:\iar\NC199B-100\Library\Source\APP\Iap\iap_flash.c
    \   00000022   0xEA40 0x2001      ORR      R0,R0,R1, LSL #+8
    \   00000026   0xF898 0x1000      LDRB     R1,[R8, #+0]
    \   0000002A   0x4308             ORRS     R0,R1,R0
-    109          		dfu +=4;//偏移4个字节
+    110          		dfu +=4;//偏移4个字节
    \   0000002C   0xF108 0x0804      ADD      R8,R8,#+4
-    110          		iapbuf[i++]=temp;	    
+    111          		iapbuf[i++]=temp;	    
    \   00000030   0x....             LDR.N    R1,??DataTable1_1
    \   00000032   0xF841 0x0025      STR      R0,[R1, R5, LSL #+2]
    \   00000036   0x1C6D             ADDS     R5,R5,#+1
-    111          		if( i==512 )
+    112          		if( i==512 )
    \   00000038   0xB2AD             UXTH     R5,R5
    \   0000003A   0xF5B5 0x7F00      CMP      R5,#+512
    \   0000003E   0xD107             BNE.N    ??iap_write_appbin_2
-    112          		{
-    113          			i=0; 
+    113          		{
+    114          			i=0; 
    \   00000040   0x2500             MOVS     R5,#+0
-    114          			STMFLASH_Write(fwaddr,iapbuf,512);
+    115          			STMFLASH_Write(fwaddr,iapbuf,512);
    \   00000042   0xF44F 0x7200      MOV      R2,#+512
    \   00000046   0x4638             MOV      R0,R7
    \   00000048   0x.... 0x....      BL       STMFLASH_Write
-    115          			fwaddr+=2048;//偏移2048  512*4=2048
+    116          			fwaddr+=2048;//偏移2048  512*4=2048
    \   0000004C   0xF507 0x6700      ADD      R7,R7,#+2048
-    116          		}
-    117          	} 
+    117          		}
+    118          	} 
    \                     ??iap_write_appbin_2: (+1)
    \   00000050   0x1D36             ADDS     R6,R6,#+4
    \                     ??iap_write_appbin_0: (+1)
    \   00000052   0x42A6             CMP      R6,R4
    \   00000054   0xD3DC             BCC.N    ??iap_write_appbin_1
-    118          	if(i)STMFLASH_Write(fwaddr,iapbuf,i);//将最后的一些内容字节写进去.  
+    119          	if(i)STMFLASH_Write(fwaddr,iapbuf,i);//将最后的一些内容字节写进去.  
    \   00000056   0x2D00             CMP      R5,#+0
    \   00000058   0xD005             BEQ.N    ??iap_write_appbin_3
    \   0000005A   0x462A             MOV      R2,R5
@@ -315,7 +316,7 @@ F:\iar\NC199B-100\Library\Source\APP\Iap\iap_flash.c
    \   0000005E   0x4638             MOV      R0,R7
    \   00000060   0xE8BD 0x41F0      POP      {R4-R8,LR}
    \   00000064   0x....             B.N      STMFLASH_Write
-    119          }
+    120          }
    \                     ??iap_write_appbin_3: (+1)
    \   00000066   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
 

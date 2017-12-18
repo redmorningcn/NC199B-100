@@ -90,7 +90,7 @@ void osalTimerInit( void )
         osalTimer[idx].task_id      = 0;
         osalTimer[idx].event_flag   = 0;
         osalTimer[idx].timeout      = 0;
-        osalTimer[idx].reload      = 0;
+        osalTimer[idx].reload       = 0;
     }
 #endif
     timerHead   = (void *)NULL;

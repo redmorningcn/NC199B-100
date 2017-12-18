@@ -96,14 +96,14 @@ static  void    AppTaskLed           (void *p_arg);
 /*******************************************************************************/
 //red
 #define     RGB_LED_COLOR_RED       0xffff,0x0000,0x0000
-#define     RGB_LED_COLOR_BLUE      0x0000,0xffff,0x0000
-#define     RGB_LED_COLOR_GREEN     0x0000,0x0000,0xffff
+#define     RGB_LED_COLOR_GREEN     0x0000,0xffff,0x0000
+#define     RGB_LED_COLOR_BLUE      0x0000,0x0000,0xffff
 #define     RGB_LED_COLOR_WHITE     0xffff,0xffff,0xffff
 
 //led
 #define     HUM_LED         0
-#define     OIL_LED         1
-#define     DUST_LED        2
+#define     DUST_LED        1
+#define     OIL_LED         2
 
 #define     GOOD_GRADE      0
 #define     NORMAL_GRADE    1
@@ -239,6 +239,8 @@ osalEvt  TaskLedEvtProcess(osalTid task_id, osalEvt task_event)
                                 100);
             return ( task_event ^ OS_EVT_LED_TICKS );
         }
+        
+        
         
         return  task_event;
 }

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:07
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       13/Dec/2017  10:45:30
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -139,7 +139,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
      63          /***********************************************
      64          * 描述： 任务控制块（TCB）
      65          */
-     66          static  OS_TCB   AppTaskStoreTCB;
+     66          //static  OS_TCB   AppTaskStoreTCB;
      67          
      68          /***********************************************
      69          * 描述： 任务堆栈（STACKS）
@@ -217,7 +217,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
     130          
     131              // 	计算数据记录地址
     132              uint32  FlshAddr = GetRecNumAddr( Ctrl.Para.dat.sRecNumMgr.Current );	
-   \   00000004   0x....             LDR.N    R4,??DataTable1
+   \   00000004   0x....             LDR.N    R4,??DataTable2
    \   00000006   0x1D25             ADDS     R5,R4,#+4
    \   00000008   0x682E             LDR      R6,[R5, #+0]
    \   0000000A   0x4630             MOV      R0,R6
@@ -463,7 +463,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
     249                  
     250                                          //读Ctrl 
     251              FRAM_ReadRecNumMgr((stcRecNumMgr  *)&Ctrl.Para.dat.sRecNumMgr);         //读记录号
-   \   00000012   0x....             LDR.N    R4,??DataTable1
+   \   00000012   0x....             LDR.N    R4,??DataTable2
    \   00000014   0x1D20             ADDS     R0,R4,#+4
    \   00000016   0x.... 0x....      BL       FRAM_ReadRecNumMgr
     252              FRAM_ReadProductInfo((stcProductInfo  *)&Ctrl.Para.dat.sProductInfo);   //读产品编号
@@ -537,33 +537,37 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
     296          
     297              if( task_event & OS_EVT_STORE_TICKS ) {
    \   00000004   0x07E0             LSLS     R0,R4,#+31
-   \   00000006   0xD50A             BPL.N    ??TaskStoreEvtProcess_0
+   \   00000006   0xD509             BPL.N    ??TaskStoreEvtProcess_0
     298          
     299                  StoreData();            //保存数据记录
    \   00000008   0x.... 0x....      BL       StoreData
     300                  
     301                  osal_start_timerEx( OS_TASK_ID_STORE,
     302                                      OS_EVT_STORE_TICKS,
-    303                                      1000*60);
-   \   0000000C   0xF64E 0x2260      MOVW     R2,#+60000
-   \   00000010   0x2101             MOVS     R1,#+1
-   \   00000012   0x2004             MOVS     R0,#+4
-   \   00000014   0x.... 0x....      BL       osal_start_timerEx
+    303                                      1000*120);
+   \   0000000C   0x....             LDR.N    R2,??DataTable2_1  ;; 0x1d4c0
+   \   0000000E   0x2101             MOVS     R1,#+1
+   \   00000010   0x2004             MOVS     R0,#+4
+   \   00000012   0x.... 0x....      BL       osal_start_timerEx
     304                                      //1000);
     305                  return ( task_event ^ OS_EVT_STORE_TICKS );
-   \   00000018   0xF084 0x0001      EOR      R0,R4,#0x1
-   \   0000001C   0xBD10             POP      {R4,PC}
+   \   00000016   0xF084 0x0001      EOR      R0,R4,#0x1
+   \   0000001A   0xBD10             POP      {R4,PC}
     306              }
     307              
-    308              return 0;
+    308              return  task_event;
    \                     ??TaskStoreEvtProcess_0: (+1)
-   \   0000001E   0x2000             MOVS     R0,#+0
-   \   00000020   0xBD10             POP      {R4,PC}          ;; return
+   \   0000001C   0x4620             MOV      R0,R4
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
     309          }
 
    \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable1:
+   \                     ??DataTable2:
    \   00000000   0x........         DC32     Ctrl
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0x0001D4C0         DC32     0x1d4c0
     310          
     311          
     312          
@@ -612,18 +616,19 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
 
    Bytes  Function/Label
    -----  --------------
-       4  ??DataTable1
+       4  ??DataTable2
+       4  ??DataTable2_1
       62  BSP_StoreInit
        8  GetRecNumAddr
       28  ReadFlshRec
      354  StoreData
       22  TaskInitStore
-      34  TaskStoreEvtProcess
+      32  TaskStoreEvtProcess
 
  
- 512 bytes in section .text
+ 514 bytes in section .text
  
- 512 bytes of CODE memory
+ 514 bytes of CODE memory
 
 Errors: none
 Warnings: none

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:12
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       13/Dec/2017  10:41:22
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -1153,28 +1153,28 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Ports\STM32\STM32F103\IAR\MB_BSP.
     627              return;
    \   00000006   0x4770             BX       LR               ;; return
     628              
-    629              switch (pch->PortNbr) 
-    630              {
-    631              case 0:
-    632                  /* Transmit Data */
-    633                  USART1->DR = (c & (u16)0x01FF);
-    634                  break;
-    635                  
-    636              case 1:
-    637                  /* Transmit Data */
-    638                  USART2->DR = (c & (u16)0x01FF);
-    639                  break;
-    640                  
-    641              case 2:
-    642                  /* Transmit Data */
-    643                  USART3->DR = (c & (u16)0x01FF);
-    644                  break;
-    645                  
-    646              case 3:
-    647                  /* Transmit Data */
-    648                  UART4->DR = (c & (u16)0x01FF);
-    649                  break;
-    650              }
+    629          //    switch (pch->PortNbr) 
+    630          //    {
+    631          //    case 0:
+    632          //        /* Transmit Data */
+    633          //        USART1->DR = (c & (u16)0x01FF);
+    634          //        break;
+    635          //        
+    636          //    case 1:
+    637          //        /* Transmit Data */
+    638          //        USART2->DR = (c & (u16)0x01FF);
+    639          //        break;
+    640          //        
+    641          //    case 2:
+    642          //        /* Transmit Data */
+    643          //        USART3->DR = (c & (u16)0x01FF);
+    644          //        break;
+    645          //        
+    646          //    case 3:
+    647          //        /* Transmit Data */
+    648          //        UART4->DR = (c & (u16)0x01FF);
+    649          //        break;
+    650          //    }
     651          }
     652          
     653          /*$PAGE*/
@@ -1225,29 +1225,29 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Ports\STM32\STM32F103\IAR\MB_BSP.
    \   00000034   0x.... 0x....      B.W      CPU_SR_Restore
     679              
     680              return;
-    681              
-    682              switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
-    683              case 0:
-    684                  USART_ITConfig(USART1, USART_IT_TC, DISABLE);
-    685                  USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
-    686                  break;
-    687                  
-    688              case 1:
-    689                  USART_ITConfig(USART2, USART_IT_TC, DISABLE);
-    690                  USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
-    691                  break;
-    692                  
-    693              case 2:
-    694                  USART_ITConfig(USART3, USART_IT_TC, DISABLE);
-    695                  USART_ITConfig(USART3, USART_IT_TXE, DISABLE);
-    696                  break;
-    697                  
-    698              case 3:
-    699                  USART_ITConfig(UART4, USART_IT_TC, DISABLE);
-    700                  USART_ITConfig(UART4, USART_IT_TXE, DISABLE);
-    701                  break;
-    702              }
-    703              CPU_CRITICAL_EXIT();
+    681          //    
+    682          //    switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
+    683          //    case 0:
+    684          //        USART_ITConfig(USART1, USART_IT_TC, DISABLE);
+    685          //        USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
+    686          //        break;
+    687          //        
+    688          //    case 1:
+    689          //        USART_ITConfig(USART2, USART_IT_TC, DISABLE);
+    690          //        USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
+    691          //        break;
+    692          //        
+    693          //    case 2:
+    694          //        USART_ITConfig(USART3, USART_IT_TC, DISABLE);
+    695          //        USART_ITConfig(USART3, USART_IT_TXE, DISABLE);
+    696          //        break;
+    697          //        
+    698          //    case 3:
+    699          //        USART_ITConfig(UART4, USART_IT_TC, DISABLE);
+    700          //        USART_ITConfig(UART4, USART_IT_TXE, DISABLE);
+    701          //        break;
+    702          //    }
+    703          //    CPU_CRITICAL_EXIT();
     704          }
     705          
     706          /*$PAGE*/
@@ -1297,28 +1297,28 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Ports\STM32\STM32F103\IAR\MB_BSP.
     730              
     731              return;
     732              
-    733              switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
-    734              case 0:
-    735                  USART_ITConfig(USART1, USART_IT_TC, ENABLE);
-    736                  USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
-    737                  break;
-    738                  
-    739              case 1:
-    740                  USART_ITConfig(USART2, USART_IT_TC, ENABLE);
-    741                  USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
-    742                  break;
-    743                  
-    744              case 2:
-    745                  USART_ITConfig(USART3, USART_IT_TC, ENABLE);
-    746                  USART_ITConfig(USART3, USART_IT_TXE, ENABLE);
-    747                  break;
-    748                  
-    749              case 3:
-    750                  USART_ITConfig(UART4, USART_IT_TC, ENABLE);
-    751                  USART_ITConfig(UART4, USART_IT_TXE, ENABLE);
-    752                  break;
-    753              }
-    754              CPU_CRITICAL_EXIT();
+    733          //    switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
+    734          //    case 0:
+    735          //        USART_ITConfig(USART1, USART_IT_TC, ENABLE);
+    736          //        USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
+    737          //        break;
+    738          //        
+    739          //    case 1:
+    740          //        USART_ITConfig(USART2, USART_IT_TC, ENABLE);
+    741          //        USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
+    742          //        break;
+    743          //        
+    744          //    case 2:
+    745          //        USART_ITConfig(USART3, USART_IT_TC, ENABLE);
+    746          //        USART_ITConfig(USART3, USART_IT_TXE, ENABLE);
+    747          //        break;
+    748          //        
+    749          //    case 3:
+    750          //        USART_ITConfig(UART4, USART_IT_TC, ENABLE);
+    751          //        USART_ITConfig(UART4, USART_IT_TXE, ENABLE);
+    752          //        break;
+    753          //    }
+    754          //    CPU_CRITICAL_EXIT();
     755          }
     756          
     757          /*$PAGE*/
@@ -1733,4 +1733,4 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Ports\STM32\STM32F103\IAR\MB_BSP.
     24 bytes of DATA memory
 
 Errors: none
-Warnings: 3
+Warnings: none

@@ -113,25 +113,29 @@ osalEvt  TaskTmrEvtProcess(osalTid task_id, osalEvt task_event)
                  (OS_OPT       ) OS_OPT_POST_FLAG_SET,
                  (CPU_TS       ) 0,
                  (OS_ERR      *) &err);    
-  
+    
+//    Ctrl.Para.dat.sRunPara.SysSta.Rsv = 1;
+    
     /***************************************************************************
     * 描述： 统计模块和测量某块通讯定时器，统计装置定时发送数据查询指令，超时发送
     COMM_EVT_FLAG_MTR_TIMEOUT 标示。定时500ms通讯一次。
     */
-    if( task_event & OS_EVT_TMR_MTR ) {     
-        OS_FlagPost(( OS_FLAG_GRP *)&Ctrl.Os.CommEvtFlagGrp,
-                    ( OS_FLAGS     ) COMM_EVT_FLAG_MTR_TIMEOUT,
-                    ( OS_OPT       ) OS_OPT_POST_FLAG_SET,
-                    ( CPU_TS       ) 0,
-                    ( OS_ERR      *) &err);        
-
-
-           osal_start_timerEx(  OS_TASK_ID_TMR,     //计数器重新开始
-                        OS_EVT_TMR_MTR,
-                        OS_TICKS_PER_SEC);        
-            
-        return ( task_event ^ OS_EVT_TMR_MTR );
-    }
+//    if( task_event & OS_EVT_TMR_MTR ) {     
+//        OS_FlagPost(( OS_FLAG_GRP *)&Ctrl.Os.CommEvtFlagGrp,
+//                    ( OS_FLAGS     ) COMM_EVT_FLAG_MTR_TIMEOUT,
+//                    ( OS_OPT       ) OS_OPT_POST_FLAG_SET,
+//                    ( CPU_TS       ) 0,
+//                    ( OS_ERR      *) &err);        
+//
+//        
+//        Ctrl.Para.dat.sRunPara.SysSta.mtrsim =  1;
+//
+//        osal_start_timerEx(  OS_TASK_ID_TMR,     //计数器重新开始
+//                    OS_EVT_TMR_MTR,
+//                    OS_TICKS_PER_SEC);        
+//            
+//        return ( task_event ^ OS_EVT_TMR_MTR );
+//    }
     
     /***************************************************************************
     * 描述： 统计模块和无线发送模块通讯定时器，
@@ -146,7 +150,7 @@ osalEvt  TaskTmrEvtProcess(osalTid task_id, osalEvt task_event)
     
          osal_start_timerEx(  OS_TASK_ID_TMR,     //计数器重新开始
                               OS_EVT_TMR_DTU,
-                              OS_TICKS_PER_SEC*15); 
+                              OS_TICKS_PER_SEC*10); 
         
        return ( task_event ^ OS_EVT_TMR_DTU );
     }
@@ -155,19 +159,19 @@ osalEvt  TaskTmrEvtProcess(osalTid task_id, osalEvt task_event)
     * 描述： 统计模块和无线发送模块通讯定时器，
     COMM_EVT_FLAG_DTU_TIMEOUT 标示。
     */
-    if( task_event & OS_EVT_TMR_OTR ) {        
-        OS_FlagPost(( OS_FLAG_GRP *)&Ctrl.Os.CommEvtFlagGrp,
-                    ( OS_FLAGS     ) COMM_EVT_FLAG_OTR_TIMEOUT,
-                    ( OS_OPT       ) OS_OPT_POST_FLAG_SET,
-                    ( CPU_TS       ) 0,
-                    ( OS_ERR      *) &err);        
-
-         osal_start_timerEx(  OS_TASK_ID_TMR,     //计数器重新开始
-                      OS_EVT_TMR_OTR,
-                      OS_TICKS_PER_SEC*3);                             
-
-        return ( task_event ^ OS_EVT_TMR_OTR );
-    }
+//    if( task_event & OS_EVT_TMR_OTR ) {        
+//        OS_FlagPost(( OS_FLAG_GRP *)&Ctrl.Os.CommEvtFlagGrp,
+//                    ( OS_FLAGS     ) COMM_EVT_FLAG_OTR_TIMEOUT,
+//                    ( OS_OPT       ) OS_OPT_POST_FLAG_SET,
+//                    ( CPU_TS       ) 0,
+//                    ( OS_ERR      *) &err);        
+//
+//         osal_start_timerEx(  OS_TASK_ID_TMR,     //计数器重新开始
+//                      OS_EVT_TMR_OTR,
+//                      OS_TICKS_PER_SEC*3);                             
+//
+//        return ( task_event ^ OS_EVT_TMR_OTR );
+//    }
     
 //    /***************************************************************************
 //    * 描述： 超时操作 TAX 
@@ -192,27 +196,27 @@ osalEvt  TaskTmrEvtProcess(osalTid task_id, osalEvt task_event)
     * 描述： 统计模块和无线发送模块通讯定时器，
     COMM_EVT_FLAG_DTU_TIMEOUT 标示。
     */
-    if( task_event & OS_EVT_TMR_SEC ) {        
-            Ctrl.Dtu.ConnectTimeOut++;
-            Ctrl.Mtr.ConnectTimeOut++;
-//            Ctrl.Otr.ConnectTimeOut++;
-            
-            if( Ctrl.Dtu.ConnectTimeOut > 1)
-                Ctrl.Dtu.ConnectFlag = 0;
-            
-            if( Ctrl.Mtr.ConnectTimeOut > 1)
-                Ctrl.Mtr.ConnectFlag = 0;
-            
-//            if( Ctrl.Otr.ConnectTimeOut > 1)
-//                Ctrl.Otr.ConnectFlag = 0;
-
-            osal_start_timerEx(  OS_TASK_ID_TMR,     //计数器重新开始
-                    OS_EVT_TMR_SEC,
-                    OS_TICKS_PER_SEC);        
-            
-        return ( task_event ^ OS_EVT_TMR_SEC );
-    }
-    return 0;
+//    if( task_event & OS_EVT_TMR_SEC ) {        
+//            Ctrl.Dtu.ConnectTimeOut++;
+//            Ctrl.Mtr.ConnectTimeOut++;
+////            Ctrl.Otr.ConnectTimeOut++;
+//            
+//            if( Ctrl.Dtu.ConnectTimeOut > 1)
+//                Ctrl.Dtu.ConnectFlag = 0;
+//            
+//            if( Ctrl.Mtr.ConnectTimeOut > 1)
+//                Ctrl.Mtr.ConnectFlag = 0;
+//            
+////            if( Ctrl.Otr.ConnectTimeOut > 1)
+////                Ctrl.Otr.ConnectFlag = 0;
+//
+//            osal_start_timerEx(  OS_TASK_ID_TMR,     //计数器重新开始
+//                    OS_EVT_TMR_SEC,
+//                    OS_TICKS_PER_SEC);        
+//            
+//        return ( task_event ^ OS_EVT_TMR_SEC );
+//    }
+    return  task_event;
 }
 
 /*******************************************************************************
@@ -237,10 +241,10 @@ void TaskInitTmr(void)
     /*************************************************
     * 描述：启动事件查询
     */
-    osal_start_timerEx( OS_TASK_ID_TMR, OS_EVT_TMR_SEC,OS_TICKS_PER_SEC);   
-    osal_start_timerEx( OS_TASK_ID_TMR, OS_EVT_TMR_MTR,OS_TICKS_PER_SEC*1 ); 
+//    osal_start_timerEx( OS_TASK_ID_TMR, OS_EVT_TMR_SEC,OS_TICKS_PER_SEC);   
+//    osal_start_timerEx( OS_TASK_ID_TMR, OS_EVT_TMR_MTR,OS_TICKS_PER_SEC*1 ); 
     osal_start_timerEx( OS_TASK_ID_TMR, OS_EVT_TMR_DTU,OS_TICKS_PER_SEC*2 ); 
-    osal_start_timerEx( OS_TASK_ID_TMR, OS_EVT_TMR_OTR,OS_TICKS_PER_SEC*10);
+//    osal_start_timerEx( OS_TASK_ID_TMR, OS_EVT_TMR_OTR,OS_TICKS_PER_SEC*10);
 
 }
 

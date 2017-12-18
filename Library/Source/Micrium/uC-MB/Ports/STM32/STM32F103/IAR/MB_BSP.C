@@ -626,28 +626,28 @@ void  MB_CommTx1 (MODBUS_CH  *pch,
     pch->USARTx->DR = (c & (u16)0x01FF);
     return;
     
-    switch (pch->PortNbr) 
-    {
-    case 0:
-        /* Transmit Data */
-        USART1->DR = (c & (u16)0x01FF);
-        break;
-        
-    case 1:
-        /* Transmit Data */
-        USART2->DR = (c & (u16)0x01FF);
-        break;
-        
-    case 2:
-        /* Transmit Data */
-        USART3->DR = (c & (u16)0x01FF);
-        break;
-        
-    case 3:
-        /* Transmit Data */
-        UART4->DR = (c & (u16)0x01FF);
-        break;
-    }
+//    switch (pch->PortNbr) 
+//    {
+//    case 0:
+//        /* Transmit Data */
+//        USART1->DR = (c & (u16)0x01FF);
+//        break;
+//        
+//    case 1:
+//        /* Transmit Data */
+//        USART2->DR = (c & (u16)0x01FF);
+//        break;
+//        
+//    case 2:
+//        /* Transmit Data */
+//        USART3->DR = (c & (u16)0x01FF);
+//        break;
+//        
+//    case 3:
+//        /* Transmit Data */
+//        UART4->DR = (c & (u16)0x01FF);
+//        break;
+//    }
 }
 
 /*$PAGE*/
@@ -678,29 +678,29 @@ void  MB_CommTxIntDis (MODBUS_CH  *pch)
     CPU_CRITICAL_EXIT();
     
     return;
-    
-    switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
-    case 0:
-        USART_ITConfig(USART1, USART_IT_TC, DISABLE);
-        USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
-        break;
-        
-    case 1:
-        USART_ITConfig(USART2, USART_IT_TC, DISABLE);
-        USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
-        break;
-        
-    case 2:
-        USART_ITConfig(USART3, USART_IT_TC, DISABLE);
-        USART_ITConfig(USART3, USART_IT_TXE, DISABLE);
-        break;
-        
-    case 3:
-        USART_ITConfig(UART4, USART_IT_TC, DISABLE);
-        USART_ITConfig(UART4, USART_IT_TXE, DISABLE);
-        break;
-    }
-    CPU_CRITICAL_EXIT();
+//    
+//    switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
+//    case 0:
+//        USART_ITConfig(USART1, USART_IT_TC, DISABLE);
+//        USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
+//        break;
+//        
+//    case 1:
+//        USART_ITConfig(USART2, USART_IT_TC, DISABLE);
+//        USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
+//        break;
+//        
+//    case 2:
+//        USART_ITConfig(USART3, USART_IT_TC, DISABLE);
+//        USART_ITConfig(USART3, USART_IT_TXE, DISABLE);
+//        break;
+//        
+//    case 3:
+//        USART_ITConfig(UART4, USART_IT_TC, DISABLE);
+//        USART_ITConfig(UART4, USART_IT_TXE, DISABLE);
+//        break;
+//    }
+//    CPU_CRITICAL_EXIT();
 }
 
 /*$PAGE*/
@@ -730,28 +730,28 @@ void  MB_CommTxIntEn (MODBUS_CH  *pch)
     
     return;
     
-    switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
-    case 0:
-        USART_ITConfig(USART1, USART_IT_TC, ENABLE);
-        USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
-        break;
-        
-    case 1:
-        USART_ITConfig(USART2, USART_IT_TC, ENABLE);
-        USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
-        break;
-        
-    case 2:
-        USART_ITConfig(USART3, USART_IT_TC, ENABLE);
-        USART_ITConfig(USART3, USART_IT_TXE, ENABLE);
-        break;
-        
-    case 3:
-        USART_ITConfig(UART4, USART_IT_TC, ENABLE);
-        USART_ITConfig(UART4, USART_IT_TXE, ENABLE);
-        break;
-    }
-    CPU_CRITICAL_EXIT();
+//    switch (pch->PortNbr) {                       /* Just enable the receiver interrupt                */
+//    case 0:
+//        USART_ITConfig(USART1, USART_IT_TC, ENABLE);
+//        USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
+//        break;
+//        
+//    case 1:
+//        USART_ITConfig(USART2, USART_IT_TC, ENABLE);
+//        USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
+//        break;
+//        
+//    case 2:
+//        USART_ITConfig(USART3, USART_IT_TC, ENABLE);
+//        USART_ITConfig(USART3, USART_IT_TXE, ENABLE);
+//        break;
+//        
+//    case 3:
+//        USART_ITConfig(UART4, USART_IT_TC, ENABLE);
+//        USART_ITConfig(UART4, USART_IT_TXE, ENABLE);
+//        break;
+//    }
+//    CPU_CRITICAL_EXIT();
 }
 
 /*$PAGE*/

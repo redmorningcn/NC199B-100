@@ -89,18 +89,22 @@ extern "C" {
 /*******************************************************************************
 * 描述： OSAL任务优先级定义
 */
-#define	OS_TASK_PRO_TMR                 (OS_TASK_PRIO_HIGHEST - 0)
-#define	OS_TASK_PRO_DISP                (OS_TASK_PRIO_HIGHEST - 1)
-#define	OS_TASK_PRO_LED                 (OS_TASK_PRIO_HIGHEST - 6)
+#define	OS_TASK_PRO_TMR                 (OS_TASK_PRIO_HIGHEST - 1)
+#define	OS_TASK_PRO_DISP                (OS_TASK_PRIO_HIGHEST - 2)
+#define	OS_TASK_PRO_LED                 (OS_TASK_PRIO_HIGHEST - 3)
 #define	OS_TASK_PRO_STORE               (OS_TASK_PRIO_HIGHEST - 4)
+#define	OS_TASK_PRO_MTRSEND             (OS_TASK_PRIO_HIGHEST - 5)
+
 
 /***************************************************
 * 描述： OSAL任务ID定义
 */
-#define OS_TASK_ID_TMR                  0x00
-#define OS_TASK_ID_DISP                 0x01
-#define OS_TASK_ID_LED		            0x06
+#define OS_TASK_ID_TMR                  0x01
+#define OS_TASK_ID_DISP                 0x02
+#define OS_TASK_ID_LED		            0x03
 #define OS_TASK_ID_STORE		        0x04
+#define OS_TASK_ID_MTRSNED		        0x05
+
     
 /*******************************************************************************
 * 描述： OSAL事件定义
@@ -176,6 +180,18 @@ extern "C" {
 #define OS_EVT_DISP_5                    0X00000020
 #define OS_EVT_DISP_6                    0X00000040
 #define OS_EVT_DISP_7                    0X00000080
+    
+/***************************************************
+* 描述： OSAL事件定义：MTRSEND任务事件
+*/
+#define OS_EVT_MTRSEND_TICKS                0X00000001
+#define OS_EVT_MTRSEND_INIT                 0X00000002
+#define OS_EVT_MTRSEND_2                    0X00000004
+#define OS_EVT_MTRSEND_3                    0X00000008
+#define OS_EVT_MTRSEND_4                    0X00000010
+#define OS_EVT_MTRSEND_5                    0X00000020
+#define OS_EVT_MTRSEND_6                    0X00000040
+#define OS_EVT_MTRSEND_7                    0X00000080    
 
 
 #define COMM_EVT_FLAG_MTR_RX                (1 << 0)	// MTR 接收事件
@@ -452,6 +468,7 @@ void        TaskInitTmr                 ( void );
 void        TaskInitDisp                ( void );
 void        TaskInitLed                 ( void );
 void        TaskInitStore               ( void );
+void        TaskInitMtrSend             ( void );
 
 
 /***************************************************
@@ -464,6 +481,7 @@ osalEvt     TaskTmrEvtProcess           (osalTid task_id, osalEvt task_event);
 osalEvt     TaskDispEvtProcess          (osalTid task_id, osalEvt task_event);
 osalEvt     TaskLedEvtProcess           (osalTid task_id, osalEvt task_event);
 osalEvt     TaskStoreEvtProcess         (osalTid task_id, osalEvt task_event);
+osalEvt     TaskMtrSendEvtProcess       (osalTid task_id, osalEvt task_event);
 
 
 

@@ -38,7 +38,8 @@ void STMFLASH_Write(u32 WriteAddr,u32 *pBuffer,u32 NumToWrite)
   FLASH_Status status = FLASH_COMPLETE;
 	u32 addrx=0;
 	u32 endaddr=0;	
-  if(WriteAddr<STM32_FLASH_BASE||WriteAddr%4)return;	//非法地址
+  if(WriteAddr<STM32_FLASH_BASE||WriteAddr%4)
+      return;	//非法地址
 	FLASH_Unlock();									//解锁 
   //FLASH_DataCacheCmd(DISABLE);//FLASH擦除期间,必须禁止数据缓存
  		

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       30/Nov/2017  10:06:07
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       13/Dec/2017  10:41:15
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -172,14 +172,14 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
      96          /*******************************************************************************/
      97          //red
      98          #define     RGB_LED_COLOR_RED       0xffff,0x0000,0x0000
-     99          #define     RGB_LED_COLOR_BLUE      0x0000,0xffff,0x0000
-    100          #define     RGB_LED_COLOR_GREEN     0x0000,0x0000,0xffff
+     99          #define     RGB_LED_COLOR_GREEN     0x0000,0xffff,0x0000
+    100          #define     RGB_LED_COLOR_BLUE      0x0000,0x0000,0xffff
     101          #define     RGB_LED_COLOR_WHITE     0xffff,0xffff,0xffff
     102          
     103          //led
     104          #define     HUM_LED         0
-    105          #define     OIL_LED         1
-    106          #define     DUST_LED        2
+    105          #define     DUST_LED        1
+    106          #define     OIL_LED         2
     107          
     108          #define     GOOD_GRADE      0
     109          #define     NORMAL_GRADE    1
@@ -285,9 +285,9 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
    \   00000040   0x2D03             CMP      R5,#+3
    \   00000042   0xDA21             BGE.N    ??TaskLedEvtProcess_3
     174                                          SetLedColor(i,RGB_LED_COLOR_GREEN); break;
-   \   00000044   0xF64F 0x73FF      MOVW     R3,#+65535
-   \   00000048   0x2200             MOVS     R2,#+0
-   \   0000004A   0x4611             MOV      R1,R2
+   \   00000044   0x2300             MOVS     R3,#+0
+   \   00000046   0xF64F 0x72FF      MOVW     R2,#+65535
+   \   0000004A   0x4619             MOV      R1,R3
    \   0000004C   0x4628             MOV      R0,R5
    \   0000004E   0x.... 0x....      BL       SetLedColor
    \   00000052   0x1C6D             ADDS     R5,R5,#+1
@@ -300,9 +300,9 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
    \   00000058   0x2D03             CMP      R5,#+3
    \   0000005A   0xDA15             BGE.N    ??TaskLedEvtProcess_3
     177                                          SetLedColor(i,RGB_LED_COLOR_BLUE);  break;
-   \   0000005C   0x2300             MOVS     R3,#+0
-   \   0000005E   0xF64F 0x72FF      MOVW     R2,#+65535
-   \   00000062   0x4619             MOV      R1,R3
+   \   0000005C   0xF64F 0x73FF      MOVW     R3,#+65535
+   \   00000060   0x2200             MOVS     R2,#+0
+   \   00000062   0x4611             MOV      R1,R2
    \   00000064   0x4628             MOV      R0,R5
    \   00000066   0x.... 0x....      BL       SetLedColor
    \   0000006A   0x1C6D             ADDS     R5,R5,#+1
@@ -332,7 +332,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
    \                     ??TaskLedEvtProcess_3: (+1)
    \   00000088   0xF44F 0x7216      MOV      R2,#+600
    \   0000008C   0x2101             MOVS     R1,#+1
-   \   0000008E   0x2006             MOVS     R0,#+6
+   \   0000008E   0x2003             MOVS     R0,#+3
    \   00000090   0x.... 0x....      BL       osal_start_timerEx
     186                          return ( task_event ^ OS_EVT_LED_TICKS );
    \   00000094   0xF084 0x0001      EOR      R0,R4,#0x1
@@ -358,9 +358,9 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
     196                          case NORMAL_GRADE:
     197                              SetLedColor(HUM_LED,RGB_LED_COLOR_GREEN);   break;
    \                     ??TaskLedEvtProcess_13: (+1)
-   \   000000AC   0x4633             MOV      R3,R6
-   \   000000AE   0x2200             MOVS     R2,#+0
-   \   000000B0   0x4611             MOV      R1,R2
+   \   000000AC   0x2300             MOVS     R3,#+0
+   \   000000AE   0x4632             MOV      R2,R6
+   \   000000B0   0x4619             MOV      R1,R3
    \   000000B2   0x4608             MOV      R0,R1
    \   000000B4   0x.... 0x....      BL       SetLedColor
    \   000000B8   0xE00C             B.N      ??TaskLedEvtProcess_16
@@ -376,9 +376,9 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
     200                          default:       
     201                              SetLedColor(HUM_LED,RGB_LED_COLOR_BLUE);    break;
    \                     ??TaskLedEvtProcess_15: (+1)
-   \   000000C8   0x2300             MOVS     R3,#+0
-   \   000000CA   0x4632             MOV      R2,R6
-   \   000000CC   0x4619             MOV      R1,R3
+   \   000000C8   0x4633             MOV      R3,R6
+   \   000000CA   0x2200             MOVS     R2,#+0
+   \   000000CC   0x4611             MOV      R1,R2
    \   000000CE   0x4608             MOV      R0,R1
    \   000000D0   0x.... 0x....      BL       SetLedColor
     202                      }
@@ -400,10 +400,10 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
     211                          case NORMAL_GRADE:
     212                              SetLedColor(OIL_LED,RGB_LED_COLOR_GREEN);   break;
    \                     ??TaskLedEvtProcess_17: (+1)
-   \   000000E0   0x4633             MOV      R3,R6
-   \   000000E2   0x2200             MOVS     R2,#+0
-   \   000000E4   0x4611             MOV      R1,R2
-   \   000000E6   0x2001             MOVS     R0,#+1
+   \   000000E0   0x2300             MOVS     R3,#+0
+   \   000000E2   0x4632             MOV      R2,R6
+   \   000000E4   0x4619             MOV      R1,R3
+   \   000000E6   0x2002             MOVS     R0,#+2
    \   000000E8   0x.... 0x....      BL       SetLedColor
    \   000000EC   0xE00C             B.N      ??TaskLedEvtProcess_20
     213                          case BAD_GRADE:
@@ -412,16 +412,16 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
    \   000000EE   0x2300             MOVS     R3,#+0
    \   000000F0   0x461A             MOV      R2,R3
    \   000000F2   0x4631             MOV      R1,R6
-   \   000000F4   0x2001             MOVS     R0,#+1
+   \   000000F4   0x2002             MOVS     R0,#+2
    \   000000F6   0x.... 0x....      BL       SetLedColor
    \   000000FA   0xE005             B.N      ??TaskLedEvtProcess_20
     215                          default:       
     216                              SetLedColor(OIL_LED,RGB_LED_COLOR_BLUE);    break;
    \                     ??TaskLedEvtProcess_19: (+1)
-   \   000000FC   0x2300             MOVS     R3,#+0
-   \   000000FE   0x4632             MOV      R2,R6
-   \   00000100   0x4619             MOV      R1,R3
-   \   00000102   0x2001             MOVS     R0,#+1
+   \   000000FC   0x4633             MOV      R3,R6
+   \   000000FE   0x2200             MOVS     R2,#+0
+   \   00000100   0x4611             MOV      R1,R2
+   \   00000102   0x2002             MOVS     R0,#+2
    \   00000104   0x.... 0x....      BL       SetLedColor
     217                      }
     218                         
@@ -442,10 +442,10 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
     226                          case NORMAL_GRADE:
     227                              SetLedColor(DUST_LED,RGB_LED_COLOR_GREEN);   break;
    \                     ??TaskLedEvtProcess_21: (+1)
-   \   00000114   0x4633             MOV      R3,R6
-   \   00000116   0x2200             MOVS     R2,#+0
-   \   00000118   0x4611             MOV      R1,R2
-   \   0000011A   0x2002             MOVS     R0,#+2
+   \   00000114   0x2300             MOVS     R3,#+0
+   \   00000116   0x4632             MOV      R2,R6
+   \   00000118   0x4619             MOV      R1,R3
+   \   0000011A   0x2001             MOVS     R0,#+1
    \   0000011C   0x.... 0x....      BL       SetLedColor
    \   00000120   0xE00C             B.N      ??TaskLedEvtProcess_24
     228                          case BAD_GRADE:
@@ -454,16 +454,16 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
    \   00000122   0x2300             MOVS     R3,#+0
    \   00000124   0x461A             MOV      R2,R3
    \   00000126   0x4631             MOV      R1,R6
-   \   00000128   0x2002             MOVS     R0,#+2
+   \   00000128   0x2001             MOVS     R0,#+1
    \   0000012A   0x.... 0x....      BL       SetLedColor
    \   0000012E   0xE005             B.N      ??TaskLedEvtProcess_24
     230                          default:       
     231                              SetLedColor(DUST_LED,RGB_LED_COLOR_BLUE);    break;
    \                     ??TaskLedEvtProcess_23: (+1)
-   \   00000130   0x2300             MOVS     R3,#+0
-   \   00000132   0x4632             MOV      R2,R6
-   \   00000134   0x4619             MOV      R1,R3
-   \   00000136   0x2002             MOVS     R0,#+2
+   \   00000130   0x4633             MOV      R3,R6
+   \   00000132   0x2200             MOVS     R2,#+0
+   \   00000134   0x4611             MOV      R1,R2
+   \   00000136   0x2001             MOVS     R0,#+1
    \   00000138   0x.... 0x....      BL       SetLedColor
     232                      }            
     233                      
@@ -476,63 +476,65 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
    \                     ??TaskLedEvtProcess_24: (+1)
    \   0000013C   0x2264             MOVS     R2,#+100
    \   0000013E   0x2101             MOVS     R1,#+1
-   \   00000140   0x2006             MOVS     R0,#+6
+   \   00000140   0x2003             MOVS     R0,#+3
    \   00000142   0x.... 0x....      BL       osal_start_timerEx
     240                      return ( task_event ^ OS_EVT_LED_TICKS );
    \   00000146   0xF084 0x0001      EOR      R0,R4,#0x1
    \   0000014A   0xBD70             POP      {R4-R6,PC}
     241                  }
     242                  
-    243                  return  task_event;
+    243                  
+    244                  
+    245                  return  task_event;
    \                     ??TaskLedEvtProcess_1: (+1)
    \   0000014C   0x4620             MOV      R0,R4
    \   0000014E   0xBD70             POP      {R4-R6,PC}       ;; return
-    244          }
+    246          }
 
    \                                 In section .bss, align 1
    \                     ??mode:
    \   00000000                      DS8 1
-    245          
-    246          
-    247          /*******************************************************************************
-    248           * 名    称：APP_LedInit
-    249           * 功    能：任务初始化
-    250           * 入口参数：无
-    251           * 出口参数：无
-    252           * 作　 　者：redmorningcn.
-    253           * 创建日期：2017-05-15
-    254           * 修    改：
-    255           * 修改日期：
-    256           *******************************************************************************/
+    247          
+    248          
+    249          /*******************************************************************************
+    250           * 名    称：APP_LedInit
+    251           * 功    能：任务初始化
+    252           * 入口参数：无
+    253           * 出口参数：无
+    254           * 作　 　者：redmorningcn.
+    255           * 创建日期：2017-05-15
+    256           * 修    改：
+    257           * 修改日期：
+    258           *******************************************************************************/
 
    \                                 In section .text, align 2, keep-with-next
-    257          void TaskInitLed(void)
-    258          {    
+    259          void TaskInitLed(void)
+    260          {    
    \                     TaskInitLed: (+1)
    \   00000000   0xB580             PUSH     {R7,LR}
-    259              /***********************************************
-    260              * 描述： 初始化本任务用到的相关硬件
-    261              */
-    262              bsp_DM412Init();            //DM412初始化
+    261              /***********************************************
+    262              * 描述： 初始化本任务用到的相关硬件
+    263              */
+    264              bsp_DM412Init();            //DM412初始化
    \   00000002   0x.... 0x....      BL       bsp_DM412Init
-    263                  
-    264              /***********************************************
-    265              * 描述： 在看门狗标志组注册本任务的看门狗标志
-    266              */
-    267              //WdtFlags |= WDT_FLAG_LED;
-    268              /*************************************************
-    269              * 描述：启动事件查询
-    270              */
-    271          
-    272              osal_start_timerEx( OS_TASK_ID_LED,
-    273                                  OS_EVT_LED_TICKS,
-    274                                  1000);
+    265                  
+    266              /***********************************************
+    267              * 描述： 在看门狗标志组注册本任务的看门狗标志
+    268              */
+    269              //WdtFlags |= WDT_FLAG_LED;
+    270              /*************************************************
+    271              * 描述：启动事件查询
+    272              */
+    273          
+    274              osal_start_timerEx( OS_TASK_ID_LED,
+    275                                  OS_EVT_LED_TICKS,
+    276                                  1000);
    \   00000006   0xF44F 0x727A      MOV      R2,#+1000
    \   0000000A   0x2101             MOVS     R1,#+1
-   \   0000000C   0x2006             MOVS     R0,#+6
+   \   0000000C   0x2003             MOVS     R0,#+3
    \   0000000E   0xE8BD 0x4008      POP      {R3,LR}
    \   00000012   0x.... 0x....      B.W      osal_start_timerEx
-    275          }
+    277          }
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable0:
@@ -541,11 +543,11 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_led.c
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable0_1:
    \   00000000   0x........         DC32     Ctrl+0x135
-    276          
-    277          /*******************************************************************************
-    278           * 				                    end of file                                *
-    279           *******************************************************************************/
-    280          #endif
+    278          
+    279          /*******************************************************************************
+    280           * 				                    end of file                                *
+    281           *******************************************************************************/
+    282          #endif
 
    Maximum stack usage in bytes:
 

@@ -4,8 +4,8 @@
 
 //#define	CVI	0
 
-#define	USER_APP_START_ADDR		0x00020000	
-#define	USER_APP_PRO_SIZE		0x0000FFFF	
+//#define	USER_APP_START_ADDR		0x00020000	
+//#define	USER_APP_PRO_SIZE		0x0000FFFF	
 
 #define	IAP_DATA_LEN		    128
 #define SEC_DIV_TIMENS          (IAP_WRITE_1024/IAP_DATA_LEN)
@@ -13,7 +13,18 @@
 //存放IAP参数地址
 //#define	IAP_PARA_START_ADDR     0x00070000	
 //#define	IAP_PARA_PRO_SIZE		0x00010000	
-#define	IAP_PARA_START_ADDR     0x00030000	
+//#define	IAP_PARA_START_ADDR     0x00030000	
+//#define	IAP_PARA_PRO_SIZE		0x0000FFFF	
+
+
+
+#define	USER_APP_START_ADDR		(STM32_FLASH_BASE + 0x00020000	)
+#define	USER_APP_PRO_SIZE		0x0000FFFF	
+
+//#define	USER_BACK_START_ADDR	(STM32_FLASH_BASE + 0x00020000	)
+
+#define IAP_WRITE_1024          1024
+#define	IAP_PARA_START_ADDR     (STM32_FLASH_BASE + 0x00030000)
 #define	IAP_PARA_PRO_SIZE		0x0000FFFF	
 
 
@@ -343,6 +354,8 @@ int8    IAP_PragramDeal(uint8 *databuf,char datalen)
             gsIAPPara.framenum  = 0;                        //恢复开始状态
             gsIAPPara.crc16 = GetCrc16Check((uint8 *)&gsIAPPara,sizeof(gsIAPPara)-2);
             IAP_WriteParaFlash(&gsIAPPara);
+            IAP_ReadParaFlash(&gsIAPPara);
+            
             
             break;
         case 0x04:                                          //终止升级指令

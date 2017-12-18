@@ -239,7 +239,7 @@ void  BSP_Init (void)
     GPIO_DeInit(GPIOA);
     GPIO_DeInit(GPIOB);
     GPIO_DeInit(GPIOC);
-    GPIO_DeInit(GPIOD);
+    //GPIO_DeInit(GPIOD);
     GPIO_DeInit(GPIOE);
     
     /***********************************************

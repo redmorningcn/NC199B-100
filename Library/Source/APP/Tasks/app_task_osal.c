@@ -43,7 +43,7 @@ const  CPU_CHAR  *app_task_osal__c = "$Id: $";
 /*******************************************************************************
  * MACROS
  */
-#define  OSAL_CYCLE_TIME_TICKS     (OS_CFG_TICK_RATE_HZ / 1u)
+#define  OSAL_CYCLE_TIME_TICKS     (OS_CFG_TICK_RATE_HZ / 100u)
 
 /*******************************************************************************
  * TYPEDEFS
@@ -138,8 +138,8 @@ static  void  AppTaskOsal (void *p_arg)
 {    
 #if ( OSAL_EN == DEF_ENABLED )
     OS_ERR          err;
-    INT32U          ticks;
-    static INT32S   dly     = 1;
+//    INT32U          ticks;
+    static INT32S   dly     = OSAL_CYCLE_TIME_TICKS;
     
     osalEvt         events;
     halIntState_t   cpu_sr;
@@ -172,7 +172,7 @@ static  void  AppTaskOsal (void *p_arg)
         /***********************************************
         * 描述： 得到系统当前时间
         */
-        ticks = OSTimeGet(&err);
+//        ticks = OSTimeGet(&err);
         
 #if (UCOS_EN == DEF_ENABLED ) && ( OS_VERSION > 30000U )
         BOOL    ret = BSP_OS_SemWait(&Osal_EvtSem, dly);    // 等待信号量
@@ -239,10 +239,14 @@ static  void  AppTaskOsal (void *p_arg)
         /***********************************************
         * 描述： 去除任务运行的时间，等到一个控制周期里剩余需要延时的时间
         */
-        dly   = OSAL_CYCLE_TIME_TICKS - ( OSTimeGet(&err) - ticks );
-        if ( dly  <= 0 ) {
-            dly   = 1;
-        }
+//        dly   = OSAL_CYCLE_TIME_TICKS - ( OSTimeGet(&err) - ticks );
+//        if ( dly  <= 0 ) {
+//            dly   = 1;
+//        }else if(dly > OSAL_CYCLE_TIME_TICKS)
+//        {
+//            dly   =  OSAL_CYCLE_TIME_TICKS;
+//        }       
+//        OSTimeDly(dly, OS_OPT_TIME_DLY, &err);
     }
 #else
 #endif

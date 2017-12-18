@@ -128,6 +128,8 @@ void  App_TaskMeasureCreate(void)
 
 }
 
+OS_SEM			Bsp_MeasureSem;    	//信号量
+
 /*******************************************************************************
  * 名    称： AppTaskMeasure
  * 功    能： 控制任务
@@ -146,9 +148,13 @@ static  void  AppTaskMeasure (void *p_arg)
     */
     APP_MeasureInit();
 
+    BSP_OS_SemCreate(&Bsp_MeasureSem,0, "Bsp MeasureSem");      // 创建信号量
+
     /***********************************************
     * 描述：Task body, always written as an infinite loop.
     */
+        
+        
     while (DEF_TRUE) {
 
         /***********************************************
@@ -159,14 +165,20 @@ static  void  AppTaskMeasure (void *p_arg)
 //                     (OS_OPT       ) OS_OPT_POST_FLAG_SET,
 //                     (CPU_TS       ) 0,
 //                     (OS_ERR      *) &err);
+            
         /***********************************************
-        * 描述： 当有按键事件时获取键值和按键事件
+        * 描述： 等待10min后，测试
         */
-        StartAirMeasure();
+            
+        BSP_OS_SemWait(&Bsp_MeasureSem,15*60*1000);    // 等待信号量 10min
         
-        BSP_OS_TimeDlyHMSM(0,10,0,0);       //10min
+        StartAirMeasure();
     }
 }
+
+#define DCF_OPEN    0
+#define DCF_CLOSE   1
+
 /*******************************************************************************
  * 作　　者： redmorningcn.
  * 创建日期： 2017-11-22
@@ -179,8 +191,8 @@ void        Measure_GPIO_Init(void)
     GPIO_PinselConfig(DCF_GPIO_AIR_IN,0);
     GPIO_PinselConfig(DCF_GPIO_AIR_OUT,0);
     
-    GPIO_SetOrClearValue(DCF_GPIO_AIR_IN, 0);   //关闭电磁阀
-    GPIO_SetOrClearValue(DCF_GPIO_AIR_OUT,0);   //关闭电磁阀
+    GPIO_SetOrClearValue(DCF_GPIO_AIR_IN, DCF_CLOSE);   //关闭电磁阀
+    GPIO_SetOrClearValue(DCF_GPIO_AIR_OUT,DCF_CLOSE);   //关闭电磁阀
     
     Ctrl.Para.dat.sRunPara.SysSta.OpenAir = 0;  //气路打开标识置1
     Ctrl.Para.dat.sRunPara.SysSta.CloseAir= 1;         
@@ -198,11 +210,15 @@ void    CloseAir(void)
     OS_ERR  err;
 
     ////////关闭测试
-    GPIO_SetOrClearValue(DCF_GPIO_AIR_IN,0);    //先关输入
-    OSTimeDly(500, OS_OPT_TIME_DLY, &err);      //延时0.1s
+    GPIO_SetOrClearValue(DCF_GPIO_AIR_IN,DCF_CLOSE);    //先关输入
+    //OSTimeDly(1000, OS_OPT_TIME_DLY, &err);           //延时0.1s
+    BSP_OS_TimeDly(1000);
+
     
-    GPIO_SetOrClearValue(DCF_GPIO_AIR_OUT,0);   //再关输出
-    OSTimeDly(500, OS_OPT_TIME_DLY, &err);      //延时0.5s    
+    GPIO_SetOrClearValue(DCF_GPIO_AIR_OUT,DCF_CLOSE);   //再关输出
+    //OSTimeDly(1000, OS_OPT_TIME_DLY, &err);           //延时0.5s    
+    BSP_OS_TimeDly(1000);
+
 }
 
 /*******************************************************************************
@@ -217,27 +233,34 @@ void    StartAirMeasure(void)
     OS_ERR  err;
 
     ////////启动测试
-    GPIO_SetOrClearValue(DCF_GPIO_AIR_OUT,1);   //打开输出
-    OSTimeDly(500, OS_OPT_TIME_DLY, &err);      //延时0.5s
+    GPIO_SetOrClearValue(DCF_GPIO_AIR_OUT,DCF_OPEN);   //打开输出
+    //OSTimeDly(1000, OS_OPT_TIME_DLY, &err);          //延时0.5s
+    BSP_OS_TimeDly(1000);
     
-    GPIO_SetOrClearValue(DCF_GPIO_AIR_IN,1);    //打开输出
-    OSTimeDly(100, OS_OPT_TIME_DLY, &err);      //延时0.1s
+    GPIO_SetOrClearValue(DCF_GPIO_AIR_IN,DCF_OPEN);    //打开输出
+    //OSTimeDly(1000, OS_OPT_TIME_DLY, &err);      //延时0.1s
+    BSP_OS_TimeDly(1000);
 
     Ctrl.Para.dat.sRunPara.SysSta.OpenAir = 1;  //气路打开标识置1
     Ctrl.Para.dat.sRunPara.SysSta.CloseAir= 0; 
     
-    OSTimeDly(10000, OS_OPT_TIME_DLY, &err);    //延时10s
+    //OSTimeDly(12000, OS_OPT_TIME_DLY, &err);    //延时12s
+    BSP_OS_TimeDly(12000);
+
     Ctrl.Para.dat.sRunPara.SysSta.StartMeasure = 1;
     
-    OSTimeDly(2000, OS_OPT_TIME_DLY, &err);     //延时2s    
+    //OSTimeDly(2000, OS_OPT_TIME_DLY, &err);     //延时2s  
+    BSP_OS_TimeDly(2000);
+
     //初始化定时器
     osal_start_timerEx( OS_TASK_ID_STORE,
                       OS_EVT_STORE_TICKS,
                       1);                       //置存储定时器1，马上启动存储
     Ctrl.Para.dat.sRunPara.SysSta.Store   = 1;  //可以进行数据储存（测量过程的数据）
     
-    OSTimeDly(2000, OS_OPT_TIME_DLY, &err);     //延时2s   
-    
+    //OSTimeDly(2000, OS_OPT_TIME_DLY, &err);     //延时2s   
+    BSP_OS_TimeDly(2000);
+
     CloseAir();                                 //关闭气路
       
     Ctrl.Para.dat.sRunPara.SysSta.OpenAir = 0;  //气路打开标识置1

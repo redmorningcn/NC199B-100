@@ -126,9 +126,9 @@ int main (void)
     * 描述： 第一个调用函数，可以不返回
     */
     App_Main();
-    
-    ////20171128
-    BSP_Init();
+//    
+//    ////20171128
+//    BSP_Init();
     
 #if DEBUG_SIM != DEF_ENABLED
 //#if !defined (LIBRARY)
@@ -363,6 +363,9 @@ static  void  AppTaskStart (void *p_arg)
         dly   = CYCLE_TIME_TICKS - ( OSTimeGet(&err) - ticks );
         if ( dly  <= 0 ) {
             dly   = 0;
+        }else if(dly > CYCLE_TIME_TICKS)
+        {
+            dly   =  CYCLE_TIME_TICKS;
         }
         OSTimeDly(dly, OS_OPT_TIME_DLY, &err);
     }
@@ -480,21 +483,21 @@ static  void  AppTaskCreate (void)
     /***********************************************
     * 描述： 在此处创建任务
     */
-    extern  void OS_TaskCreateHook(void);
-    OS_TaskCreateHook();
+//    extern  void OS_TaskCreateHook(void);
+//    OS_TaskCreateHook();
     
     /***********************************************
     * 描述： 在此处创建OSAL任务
     */
-#if ( OSAL_EN == DEF_ENABLED )
+//#if ( OSAL_EN == DEF_ENABLED )
     App_TaskOsalCreate();
     /***********************************************
     * 描述： 在此处创UCOS建任务
     */
-#else
-    App_TaskSensorCreate();
-    //App_TaskControlCreate();
-#endif
+//#else
+//    App_TaskSensorCreate();
+//    //App_TaskControlCreate();
+//#endif
 }
 
 /*******************************************************************************

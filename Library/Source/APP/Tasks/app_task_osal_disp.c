@@ -178,8 +178,8 @@ osalEvt  TaskDispEvtProcess(osalTid task_id, osalEvt task_event)
             */
             case 2: 
                 dis_mode++;
-                Ctrl.Para.dat.SoftWareID = 0x0101;
-                uprintf("SV.%02X",(uint8)(Ctrl.Para.dat.SoftWareID>>8));
+                Ctrl.Para.dat.SoftWareID = 0x0102;
+                uprintf("%02X.%02X.",(uint8)(Ctrl.Para.dat.SoftWareID>>8),(uint8)(Ctrl.Para.dat.SoftWareID));
                 
                 break;
             /*******************************************************************
@@ -196,21 +196,21 @@ osalEvt  TaskDispEvtProcess(osalTid task_id, osalEvt task_event)
             */
             case 4: 
                 dis_mode++;
-                uprintf("%d",Ctrl.Para.dat.sAirPara.Dust_modefy);  
+                uprintf("%d.",Ctrl.Para.dat.sAirPara.Dust_modefy);  
                 break;
             /*******************************************************************
             * 描述： 湿度修正值
             */
             case 5:  
                 dis_mode++;
-                uprintf("%d",Ctrl.Para.dat.sAirPara.Hum_modefy);  
+                uprintf("%d.",Ctrl.Para.dat.sAirPara.Hum_modefy);  
                 break;  
             /*******************************************************************
             * 描述： Voc修正值
             */
             case 6:  
                 dis_mode++;
-                uprintf("%d",Ctrl.Para.dat.sAirPara.Voc_modefy);  
+                uprintf("%d.",Ctrl.Para.dat.sAirPara.Voc_modefy);  
                 break; 
             /*******************************************************************
             * 描述： 车型车号
@@ -259,32 +259,57 @@ osalEvt  TaskDispEvtProcess(osalTid task_id, osalEvt task_event)
                 if(disflg != 0)                                 //如果有其他内容，先显示其他内容
                     break;
                     
-                switch(times++%7)                               //循环显示油水
+                switch(times++%9)                               //循环显示油水
                 {
-                    case 0:uprintf("H2o");   
-                            break;                              //显示湿度提示
-                    case 1:uprintf("%4d",Ctrl.sRec.sAir.Humidity);   
-                            break;                              //显示湿度值
+                    case 0:uprintf("T");   
+                            break;    
+                    case 1:uprintf("%4d",Ctrl.sRec.sAir.Temperature);   
+                            break;     
+                            
+                    case 2:uprintf("H2o");   
+                           break;                              //显示湿度提示
+                    case 3:uprintf("%4d",Ctrl.sRec.sAir.Humidity);   
+                           break;                              //显示湿度值
                     
-                    case 2:uprintf("o1L");   
-                            break;                              //显示油含量
-                    case 3:uprintf("%4d",Ctrl.sRec.sAir.VOCs);     
-                            break;                              //显示湿度值
+                    case 4:uprintf("o1L");   
+                           break;                              //显示油含量
+                    case 5:uprintf("%4d",Ctrl.sRec.sAir.VOCs);     
+                           break;                              //显示湿度值
 
-                    case 4:uprintf("dust");                            
-                            break;                              //显示粉尘提示
-                    case 5: uprintf("%4d",Ctrl.sRec.sAir.Dusts_2D5);   
+                    case 6:uprintf("dust");                            
+                           break;                              //显示粉尘提示
+                    case 7: uprintf("%4d",Ctrl.sRec.sAir.Dusts_2D5);   
                             break;                              //显示粉尘值  
                     
-                    case 6:                                 
-                            break;                              //有故障显示故障代码
+//                    case 8:  
+////                        if(Ctrl.Para.dat.sRunPara.SysSta.Rsv ){
+////                            Ctrl.Para.dat.sRunPara.SysSta.Rsv = 0;
+////                            uprintf("tmr");
+////
+////                        }
+////                        else if(Ctrl.Para.dat.sRunPara.SysSta.mtrsim ){
+////                            Ctrl.Para.dat.sRunPara.SysSta.mtrsim =  0;
+////                            uprintf("mtr");
+////                            
+////                            //return ( task_event ^ OS_EVT_DISP_TICKS );
+////                        }else if(Ctrl.Para.dat.sRunPara.SysSta.mtrsend)
+////                        {
+////                            Ctrl.Para.dat.sRunPara.SysSta.mtrsend =  0;
+////                            uprintf("send");
+////
+////                        }
+////                        
+////                        BSP_DispEvtProcess(); 
+////                        goto exit;
+//        
+//                        break;                              //有故障显示故障代码
                 }
                 
                 break;
             }
             
             disflg = BSP_DispEvtProcess();                      //执行显示操作，有内容显示，不赋值。否者油量赋值
-            
+        exit:            
             osal_start_timerEx( OS_TASK_ID_DISP,
                                 OS_EVT_DISP_TICKS,
                                 500);

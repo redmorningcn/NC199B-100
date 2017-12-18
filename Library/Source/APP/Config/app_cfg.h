@@ -57,12 +57,10 @@
 *                           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 *********************************************************************************************************
 */
-
-
 #define  APP_TASK_START_PRIO        (OS_CFG_PRIO_MAX - 14)  
 #define  MB_OS_CFG_RX_TASK_PRIO     (OS_CFG_PRIO_MAX - 13)  // ModBus任务的优先级（没有用到ModBus则不需要关注）
 #define  APP_TASK_WIFI_PRIO         (OS_CFG_PRIO_MAX - 12) 
-#define  APP_TASK_COMM_PRIO         (OS_CFG_PRIO_MAX - 12)  
+#define  APP_TASK_COMM_PRIO         (OS_CFG_PRIO_MAX - 14)  
 #define  APP_TASK_DTU_PRIO          (OS_CFG_PRIO_MAX - 12) 
 #define  APP_TASK_SENSOR_PRIO       (OS_CFG_PRIO_MAX - 11)  
 #define  APP_TASK_MATER_PRIO        (OS_CFG_PRIO_MAX - 11) 
@@ -85,18 +83,18 @@
 */
 
 #define  MB_OS_CFG_RX_TASK_STK_SIZE                 512u        // ModBus任务堆栈的大小
-#define  APP_TASK_START_STK_SIZE                    128u        // 给起始任务分配堆栈
-#define  APP_TASK_SAMPLE_STK_SIZE                    60u        // 例程任务堆栈大小，用户更换成自己相应的名称
+#define  APP_TASK_START_STK_SIZE                    64u        // 给起始任务分配堆栈
+#define  APP_TASK_SAMPLE_STK_SIZE                   60u        // 例程任务堆栈大小，用户更换成自己相应的名称
 #define  APP_TASK_WIFI_STK_SIZE                     128u
 #define  APP_TASK_COMM_STK_SIZE                     256u
 #define  APP_TASK_DTU_STK_SIZE                      256u
 #define  APP_TASK_SENSOR_STK_SIZE                   256u
 #define  APP_TASK_MATER_STK_SIZE                    256u
-#define  APP_TASK_KEY_STK_SIZE                      128u
+#define  APP_TASK_KEY_STK_SIZE                      64u
 #define  APP_TASK_MEASURE_STK_SIZE                  128u
 #define  APP_TASK_CONTROL_STK_SIZE                  128u
 #define  APP_TASK_BEEP_STK_SIZE                     128u
-#define  APP_TASK_OSAL_STK_SIZE                     512u
+#define  APP_TASK_OSAL_STK_SIZE                     128u
 
 
 /*

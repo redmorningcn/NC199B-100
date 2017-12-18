@@ -84,14 +84,14 @@ void    app_init_sctrl(void)
     Ctrl.Para.dat.sRunPara.StoreTime= 60;       
     Ctrl.Para.dat.sRunPara.SysReset = 0;
     
-    Ctrl.Para.dat.sAirPara.sStandard_Dust.GoodLimit     = 150;
+    Ctrl.Para.dat.sAirPara.sStandard_Dust.GoodLimit     = 200;
     Ctrl.Para.dat.sAirPara.sStandard_Dust.NormalLimit   = 500;
     
-    Ctrl.Para.dat.sAirPara.sStandard_VOC.GoodLimit      = 300;
-    Ctrl.Para.dat.sAirPara.sStandard_VOC.NormalLimit    = 1000;
+    Ctrl.Para.dat.sAirPara.sStandard_VOC.GoodLimit      = 500;
+    Ctrl.Para.dat.sAirPara.sStandard_VOC.NormalLimit    = 2000;
     
-    Ctrl.Para.dat.sAirPara.sStandard_Hum.GoodLimit      = 50;
-    Ctrl.Para.dat.sAirPara.sStandard_Hum.NormalLimit    = 70;
+    Ctrl.Para.dat.sAirPara.sStandard_Hum.GoodLimit      = 60;
+    Ctrl.Para.dat.sAirPara.sStandard_Hum.NormalLimit    = 85;
     
     Ctrl.Para.dat.sAirPara.Dust_modefy  = 0;
     Ctrl.Para.dat.sAirPara.Hum_modefy   = 0;
@@ -252,11 +252,7 @@ void    app_init_sctrl(void)
  *******************************************************************************/
  void OSAL_TaskCreateHook(void)
  {
-    osal_add_Task(TaskInitTmr,                      // 任务初始化函数指针
-                  TaskTmrEvtProcess,                // 任务事件处理函数指针
-                  OS_TASK_PRO_TMR,                  // 任务优先级
-                  OS_TASK_ID_TMR);                  // 任务ID
-    
+
     osal_add_Task(TaskInitDisp,                     // 任务初始化函数指针
                   TaskDispEvtProcess,               // 任务事件处理函数指针
                   OS_TASK_PRO_DISP,                 // 任务优先级
@@ -271,6 +267,17 @@ void    app_init_sctrl(void)
                   TaskStoreEvtProcess,              // 任务事件处理函数指针
                   OS_TASK_PRO_STORE,                // 任务优先级
                   OS_TASK_ID_STORE);                // 任务ID
+    
+    osal_add_Task(TaskInitTmr,                      // 任务初始化函数指针
+                  TaskTmrEvtProcess,                // 任务事件处理函数指针
+                  OS_TASK_PRO_TMR,                  // 任务优先级
+                  OS_TASK_ID_TMR);                  // 任务ID
+    
+    osal_add_Task(TaskInitMtrSend,                  // 任务初始化函数指针
+                  TaskMtrSendEvtProcess,            // 任务事件处理函数指针
+                  OS_TASK_PRO_MTRSEND,                  // 任务优先级
+                  OS_TASK_ID_MTRSNED);                  // 任务ID    
+    
  }
 /*******************************************************************************
  *              end of file                                                    *

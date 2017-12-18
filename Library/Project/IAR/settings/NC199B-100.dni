@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=-1691081657
+Checksum=-384303211
 [CodeCoverage]
 Enabled=_ 0
 [Stack]
@@ -53,16 +53,18 @@ ITMportsTermIO=0
 ITMportsLogFile=0
 ITMlogFile=$PROJ_DIR$\ITM.log
 [struct_types]
-Fmt0=StrCtrlPara-SoftWareID	4	0
-Fmt1=stcFlshRec-ErrCode	4	0
-Fmt2=stcLocoId-Num	3	0
-Fmt3=stcLocoId-Type	3	0
-Fmt4=stcProductInfo-ID	4	0
-Fmt5=stcProductInfo-Type	4	0
-Fmt6=stcRecNumMgr-Back	4	0
-Fmt7=stcRecNumMgr-Current	4	0
-Fmt8=stcRecNumMgr-GrsRead	4	0
-Fmt9=stcRecNumMgr-IcRead	4	0
+Fmt0=StrCtrlOS-CommEvtFlag	4	0
+Fmt1=StrCtrlPara-SoftWareID	4	0
+Fmt2=stcFlshRec-EvtType	4	0
+Fmt3=stcFlshRec-RunSys	4	0
+Fmt4=stcLocoId-Num	3	0
+Fmt5=stcLocoId-Type	3	0
+Fmt6=stcProductInfo-ID	4	0
+Fmt7=stcProductInfo-Type	4	0
+Fmt8=stcRecNumMgr-Back	4	0
+Fmt9=stcRecNumMgr-Current	4	0
+Fmt10=stcRecNumMgr-GrsRead	4	0
+Fmt11=stcRecNumMgr-IcRead	4	0
 [array_types]
 Fmt0=CPU_INT08U[256]	4	0
 [Trace1]
@@ -127,14 +129,21 @@ Bp4=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1"
 Bp5=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1" 0 0 1 "" 0 "" 0
 Bp6=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.5" 0 0 1 "" 0 "" 0
 Bp7=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MBS_CORE.C}.1977.1" 0 0 1 "" 0 "" 0
-Bp8=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 主板\Software\APP\comm\app_comm_dtu_otr_deal.c}.306.9" 0 0 1 "" 0 "" 0
+Bp8=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
 Bp9=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
 Bp10=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
 Bp11=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
-Bp12=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
-Bp13=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\bsp_wdt.c}.54.9" 0 0 1 "" 0 "" 0
-Bp14=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 主板\Software\APP\comm\app_comm_dtu_otr_deal.c}.333.11" 0 0 1 "" 0 "" 0
-Count=15
+Bp12=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\bsp_wdt.c}.54.9" 0 0 1 "" 0 "" 0
+Bp13=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 主板\Software\APP\comm\app_comm_dtu_otr_deal.c}.365.9" 0 0 1 "" 0 "" 0
+Bp14=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\IAP_program_mcu.C}.360.13" 0 0 1 "" 0 "" 0
+Bp15=_ 0 "EMUL_CODE" "0x080182A0" 0 0 1 "" 0 "" 0
+Bp16=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\IAP_program_mcu.C}.360.13" 0 0 1 "" 0 "" 0
+Bp17=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\iap_flash.c}.114.4" 0 0 1 "" 0 "" 0
+Bp18=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\iap_flash.c}.115.4" 0 0 1 "" 0 "" 0
+Bp19=_ 0 "EMUL_CODE" "0x08019E2A" 0 0 1 "" 0 "" 0
+Bp20=_ 0 "EMUL_CODE" "0x08019E4C" 0 0 1 "" 0 "" 0
+Bp21=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 主板\Software\APP\comm\app_comm_dtu_otr_deal.c}.248.9" 0 0 1 "" 0 "" 0
+Count=22
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

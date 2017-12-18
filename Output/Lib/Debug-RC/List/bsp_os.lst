@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       29/Nov/2017  20:20:47
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       13/Dec/2017  10:37:28
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -412,13 +412,12 @@ F:\iar\NC199B-100\Library\Source\BSP\OS\uCOS-III\bsp_os.c
    \   00000022   0x2200             MOVS     R2,#+0
     275              }
     276          
-    277          
-    278              OSTimeDlyHMSM((CPU_INT16U) 0u,
-    279                            (CPU_INT16U) 0u,
-    280                            (CPU_INT16U) sec,
-    281                            (CPU_INT32U) ms,
-    282                            (OS_OPT    ) OS_OPT_TIME_HMSM_STRICT,
-    283                            (OS_ERR   *)&err);
+    277              OSTimeDlyHMSM((CPU_INT16U) 0u,
+    278                            (CPU_INT16U) 0u,
+    279                            (CPU_INT16U) sec,
+    280                            (CPU_INT32U) ms,
+    281                            (OS_OPT    ) OS_OPT_TIME_HMSM_STRICT,
+    282                            (OS_ERR   *)&err);
    \                     ??BSP_OS_TimeDly_2: (+1)
    \   00000024   0xA902             ADD      R1,SP,#+8
    \   00000026   0x9101             STR      R1,[SP, #+4]
@@ -429,49 +428,49 @@ F:\iar\NC199B-100\Library\Source\BSP\OS\uCOS-III\bsp_os.c
    \   00000030   0xB292             UXTH     R2,R2
    \   00000032   0x4608             MOV      R0,R1
    \   00000034   0x.... 0x....      BL       OSTimeDlyHMSM
-    284          }
+    283          }
    \   00000038   0xBD07             POP      {R0-R2,PC}       ;; return
-    285          
-    286          /*
-    287          *********************************************************************************************************
-    288          *                                    BSP_TimeDlyMs()
-    289          *
-    290          * Description : This function delay the exceution for specifi amount of miliseconds
-    291          *
-    292          * Argument(s) : dly_ms       Delay in miliseconds
-    293          *
-    294          * Return(s)   : none.
-    295          *
-    296          * Caller(s)   : Application
-    297          *
-    298          * Note(s)     : none.
-    299          *
-    300          *********************************************************************************************************
-    301          */
-    302          
+    284          
+    285          /*
+    286          *********************************************************************************************************
+    287          *                                    BSP_TimeDlyMs()
+    288          *
+    289          * Description : This function delay the exceution for specifi amount of miliseconds
+    290          *
+    291          * Argument(s) : dly_ms       Delay in miliseconds
+    292          *
+    293          * Return(s)   : none.
+    294          *
+    295          * Caller(s)   : Application
+    296          *
+    297          * Note(s)     : none.
+    298          *
+    299          *********************************************************************************************************
+    300          */
+    301          
 
    \                                 In section .text, align 2, keep-with-next
-    303          void  BSP_OS_TimeDlyHMSM(  CPU_INT16U   hours,
-    304                                     CPU_INT16U   minutes,
-    305                                     CPU_INT16U   seconds,
-    306                                     CPU_INT32U   milli)
-    307          {
+    302          void  BSP_OS_TimeDlyHMSM(  CPU_INT16U   hours,
+    303                                     CPU_INT16U   minutes,
+    304                                     CPU_INT16U   seconds,
+    305                                     CPU_INT32U   milli)
+    306          {
    \                     BSP_OS_TimeDlyHMSM: (+1)
    \   00000000   0xB510             PUSH     {R4,LR}
    \   00000002   0xB084             SUB      SP,SP,#+16
-    308              OS_ERR      err;
-    309              OSTimeDlyHMSM((CPU_INT16U) hours,
-    310                            (CPU_INT16U) minutes,
-    311                            (CPU_INT16U) seconds,
-    312                            (CPU_INT32U) milli,
-    313                            (OS_OPT    ) OS_OPT_TIME_HMSM_STRICT,
-    314                            (OS_ERR   *)&err);
+    307              OS_ERR      err;
+    308              OSTimeDlyHMSM((CPU_INT16U) hours,
+    309                            (CPU_INT16U) minutes,
+    310                            (CPU_INT16U) seconds,
+    311                            (CPU_INT32U) milli,
+    312                            (OS_OPT    ) OS_OPT_TIME_HMSM_STRICT,
+    313                            (OS_ERR   *)&err);
    \   00000004   0xAC02             ADD      R4,SP,#+8
    \   00000006   0x9401             STR      R4,[SP, #+4]
    \   00000008   0x2400             MOVS     R4,#+0
    \   0000000A   0x9400             STR      R4,[SP, #+0]
    \   0000000C   0x.... 0x....      BL       OSTimeDlyHMSM
-    315          }
+    314          }
    \   00000010   0xBD1F             POP      {R0-R4,PC}       ;; return
 
    \                                 In section .text, align 4, keep-with-next

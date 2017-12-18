@@ -19,7 +19,7 @@
           
           
           
-        <Column0>297</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+        <Column0>205</Column0><Column1>0</Column1><Column2>36</Column2><Column3>0</Column3></ColumnWidths>
       </Workspace>
       <Disassembly>
         <col-names>
@@ -33,12 +33,12 @@
         <DisasmHistory/>
         
         
-      <ShowCodeCoverage>1</ShowCodeCoverage><ShowInstrProfiling>1</ShowInstrProfiling></Disassembly>
+      <PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><ShowCodeCoverage>1</ShowCodeCoverage><ShowInstrProfiling>1</ShowInstrProfiling></Disassembly>
       <StaticWatch>
         <expressions>
           
           
-        <item>Ctrl</item><item></item></expressions>
+        <item>Ctrl</item><item/></expressions>
         <col-names>
           
           
@@ -50,15 +50,15 @@
           
           
           
-        <item>180</item><item>150</item><item>100</item><item>136</item></col-widths>
-      </StaticWatch>
-    <Find-in-Files><ColumnWidth0>710</ColumnWidth0><ColumnWidth1>91</ColumnWidth1><ColumnWidth2>820</ColumnWidth2><ColumnWidth3>364</ColumnWidth3></Find-in-Files></Static>
+        <item>195</item><item>134</item><item>100</item><item>134</item></col-widths>
+      <PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows></StaticWatch>
+    <Find-in-Files><ColumnWidth0>710</ColumnWidth0><ColumnWidth1>91</ColumnWidth1><ColumnWidth2>820</ColumnWidth2><ColumnWidth3>364</ColumnWidth3></Find-in-Files><Select-Ambiguous-Definitions><ColumnWidth0>448</ColumnWidth0><ColumnWidth1>64</ColumnWidth1><ColumnWidth2>769</ColumnWidth2></Select-Ambiguous-Definitions></Static>
     <Windows>
       
       
       
       
-    <Wnd0>
+    <Wnd4>
         <Tabs>
           <Tab>
             <Identity>TabID-17361-26154</Identity>
@@ -72,9 +72,9 @@
             <Factory>Build</Factory>
             <Session/>
           </Tab>
-        <Tab><Identity>TabID-978-3687</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs>
+        <Tab><Identity>TabID-978-3687</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab><Tab><Identity>TabID-3285-11277</Identity><TabName>Ambiguous Definitions</TabName><Factory>Select-Ambiguous-Definitions</Factory><Session/></Tab></Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+      <SelectedTab>0</SelectedTab></Wnd4><Wnd5>
         <Tabs>
           <Tab>
             <Identity>TabID-28109-26158</Identity>
@@ -82,30 +82,11 @@
             <Factory>Workspace</Factory>
             <Session>
               
-            <NodeDict><ExpandedNode>NC199B-100</ExpandedNode><ExpandedNode>NC199B-100/APP</ExpandedNode><ExpandedNode>NC199B-100/APP/Aes</ExpandedNode><ExpandedNode>NC199B-100/APP/Config</ExpandedNode><ExpandedNode>NC199B-100/APP/OS</ExpandedNode><ExpandedNode>NC199B-100/APP/Tasks</ExpandedNode><ExpandedNode>NC199B-100/APP/Tasks/Protocol</ExpandedNode><ExpandedNode>NC199B-100/APP/User</ExpandedNode><ExpandedNode>NC199B-100/BSP</ExpandedNode><ExpandedNode>NC199B-100/BSP/Driver</ExpandedNode><ExpandedNode>NC199B-100/BSP/IAR</ExpandedNode><ExpandedNode>NC199B-100/BSP/User</ExpandedNode></NodeDict></Session>
+            <NodeDict><ExpandedNode>NC199B-100</ExpandedNode><ExpandedNode>NC199B-100/APP</ExpandedNode><ExpandedNode>NC199B-100/APP/Config</ExpandedNode><ExpandedNode>NC199B-100/APP/OS</ExpandedNode><ExpandedNode>NC199B-100/APP/Tasks</ExpandedNode><ExpandedNode>NC199B-100/APP/Tasks/Protocol</ExpandedNode><ExpandedNode>NC199B-100/APP/User</ExpandedNode><ExpandedNode>NC199B-100/BSP</ExpandedNode><ExpandedNode>NC199B-100/BSP/Driver</ExpandedNode><ExpandedNode>NC199B-100/BSP/Driver/Mater</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd1><Wnd2>
-        <Tabs>
-          <Tab>
-            <Identity>TabID-6090-26161</Identity>
-            <TabName>Disassembly</TabName>
-            <Factory>Disassembly</Factory>
-            <Session/>
-          </Tab>
-        </Tabs>
-        
-      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
-        <Tabs>
-          <Tab>
-            <Identity>TabID-25397-30284</Identity>
-            <TabName>Live Watch</TabName>
-            <Factory>StaticWatch</Factory>
-          </Tab>
-        </Tabs>
-        
-      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+      <SelectedTab>0</SelectedTab></Wnd5><Wnd6><Tabs><Tab><Identity>TabID-26934-1683</Identity><TabName>Live Watch</TabName><Factory>StaticWatch</Factory></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd6><Wnd7><Tabs><Tab><Identity>TabID-11419-6477</Identity><TabName>Disassembly</TabName><Factory>Disassembly</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd7></Windows>
     <Editor>
       
       
@@ -118,7 +99,7 @@
       
       
       
-    <Top><Row0><Sizes><Toolbar-0517CC50><key>iaridepm.enu1</key></Toolbar-0517CC50></Sizes></Row0><Row1><Sizes><Toolbar-1AAA1110><key>debuggergui.enu1</key></Toolbar-1AAA1110></Sizes></Row1><Row2><Sizes><Toolbar-1AAA1818><key>armjlink2.enu1</key></Toolbar-1AAA1818></Sizes></Row2></Top><Left><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>693</Bottom><Right>388</Right><x>-2</x><y>-2</y><xscreen>294</xscreen><yscreen>200</yscreen><sizeHorzCX>159263</sizeHorzCX><sizeHorzCY>192864</sizeHorzCY><sizeVertCX>211268</sizeVertCX><sizeVertCY>670203</sizeVertCY></Rect></Wnd1></Sizes></Row0></Left><Right><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>693</Bottom><Right>348</Right><x>-2</x><y>-2</y><xscreen>294</xscreen><yscreen>200</yscreen><sizeHorzCX>159263</sizeHorzCX><sizeHorzCY>192864</sizeHorzCY><sizeVertCX>189599</sizeVertCX><sizeVertCY>670203</sizeVertCY></Rect></Wnd2></Sizes></Row0><Row1><Sizes><Wnd3><Rect><Top>-2</Top><Left>346</Left><Bottom>693</Bottom><Right>590</Right><x>346</x><y>-2</y><xscreen>294</xscreen><yscreen>200</yscreen><sizeHorzCX>159263</sizeHorzCX><sizeHorzCY>192864</sizeHorzCY><sizeVertCX>132178</sizeVertCX><sizeVertCY>670203</sizeVertCY></Rect></Wnd3></Sizes></Row1></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>251</Bottom><Right>1848</Right><x>-2</x><y>-2</y><xscreen>1850</xscreen><yscreen>253</yscreen><sizeHorzCX>1002167</sizeHorzCX><sizeHorzCY>243973</sizeHorzCY><sizeVertCX>159263</sizeVertCX><sizeVertCY>192864</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-05CDCC50><key>iaridepm.enu1</key></Toolbar-05CDCC50></Sizes></Row0><Row1><Sizes><Toolbar-25B758F0><key>debuggergui.enu1</key></Toolbar-25B758F0></Sizes></Row1><Row2><Sizes><Toolbar-25B75C10><key>armjlink2.enu1</key></Toolbar-25B75C10></Sizes></Row2></Top><Left><Row0><Sizes><Wnd5><Rect><Top>-2</Top><Left>-2</Left><Bottom>454</Bottom><Right>278</Right><x>-2</x><y>-2</y><xscreen>985</xscreen><yscreen>152</yscreen><sizeHorzCX>755368</sizeHorzCX><sizeHorzCY>209655</sizeHorzCY><sizeVertCX>214724</sizeVertCX><sizeVertCY>628966</sizeVertCY></Rect></Wnd5></Sizes></Row0></Left><Right><Row0><Sizes><Wnd6><Rect><Top>-2</Top><Left>-2</Left><Bottom>454</Bottom><Right>432</Right><x>-2</x><y>-2</y><xscreen>435</xscreen><yscreen>210</yscreen><sizeHorzCX>333589</sizeHorzCX><sizeHorzCY>289655</sizeHorzCY><sizeVertCX>332822</sizeVertCX><sizeVertCY>628966</sizeVertCY></Rect></Wnd6></Sizes></Row0><Row1><Sizes><Wnd7><Rect><Top>-2</Top><Left>430</Left><Bottom>454</Bottom><Right>521</Right><x>430</x><y>-2</y><xscreen>435</xscreen><yscreen>210</yscreen><sizeHorzCX>333589</sizeHorzCX><sizeHorzCY>289655</sizeHorzCY><sizeVertCX>69785</sizeVertCX><sizeVertCY>628966</sizeVertCY></Rect></Wnd7></Sizes></Row1></Right><Bottom><Row0><Sizes><Wnd4><Rect><Top>-2</Top><Left>-2</Left><Bottom>178</Bottom><Right>1306</Right><x>-2</x><y>-2</y><xscreen>1308</xscreen><yscreen>180</yscreen><sizeHorzCX>1003067</sizeHorzCX><sizeHorzCY>248276</sizeHorzCY><sizeVertCX>755368</sizeVertCX><sizeVertCY>209655</sizeVertCY></Rect></Wnd4></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Project>
 

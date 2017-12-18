@@ -63,7 +63,7 @@ const  CPU_CHAR  *app_task_store__c = "$Id: $";
 /***********************************************
 * 描述： 任务控制块（TCB）
 */
-static  OS_TCB   AppTaskStoreTCB;
+//static  OS_TCB   AppTaskStoreTCB;
 
 /***********************************************
 * 描述： 任务堆栈（STACKS）
@@ -300,12 +300,12 @@ osalEvt  TaskStoreEvtProcess(osalTid task_id, osalEvt task_event)
         
         osal_start_timerEx( OS_TASK_ID_STORE,
                             OS_EVT_STORE_TICKS,
-                            1000*60);
+                            1000*120);
                             //1000);
         return ( task_event ^ OS_EVT_STORE_TICKS );
     }
     
-    return 0;
+    return  task_event;
 }
 
 
