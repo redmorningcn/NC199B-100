@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       13/Dec/2017  10:41:15
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:28
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -401,9 +401,9 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_comm.c
    \   0000005E   0x2700             MOVS     R7,#+0
    \   00000060   0x0730             LSLS     R0,R6,#+28
    \   00000062   0xD508             BPL.N    ??AppTaskComm_4
-   \   00000064   0xF894 0x0048      LDRB     R0,[R4, #+72]
+   \   00000064   0xF894 0x004C      LDRB     R0,[R4, #+76]
    \   00000068   0xF040 0x0040      ORR      R0,R0,#0x40
-   \   0000006C   0xF884 0x0048      STRB     R0,[R4, #+72]
+   \   0000006C   0xF884 0x004C      STRB     R0,[R4, #+76]
    \   00000070   0x.... 0x....      BL       app_comm_mtr
    \   00000074   0x2708             MOVS     R7,#+8
    \                     ??AppTaskComm_4: (+1)

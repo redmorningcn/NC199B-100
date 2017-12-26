@@ -74,6 +74,7 @@ typedef struct _StrAirPara {
     
     int16           Temp_modefy;        //温度修正值，用于补偿
     int16           Hum_modefy;         //湿度修正值，用于补偿
+    
     int16           Dust_modefy;        //粉尘修正值，用于补偿
     int16           Voc_modefy;         //VOC修正值 ，用于补偿          
 
@@ -88,6 +89,9 @@ typedef struct _StrAirPara {
     uint16      SetDustModefy           : 1;        // D5：=1:数据保存；=0:无；
     uint16      Rsv                     : 10;       // D6~D15：预留
     } SetFlg;    
+    
+    uint16  recv;
+    uint16  crc16;
 }stcAirPara;
 
 //
@@ -96,7 +100,7 @@ typedef struct _StrAirPara {
 __packed
 typedef struct _stcRunPara_					
 {
-	uint8		StoreTime;					// 1 		数据记录存储周期
+	uint8		StoreCycle;					// 1 		数据记录存储周期
 	uint8		RecClear;					// 1		数据记录清零，清StrRecNumMgr内容
 	uint8		SysReset;					// 1    	系统参数重置，清StrRecNumMgr + StrOilPara 	中的内容。
 	uint8		StartFlg;					// 1    	首次运行
@@ -113,11 +117,23 @@ typedef struct _stcRunPara_
         uint8      Rsv                  : 1;        // D7~D5：预留
     } SysSta;                                       // 系统运行状态
     
-	uint8		StoreType;                  // 1   	    系统运行状态
-	uint8		StoreTypeBak;               // 1   	    系统运行状态
-
-	uint8		SetBitFlg;					// 1        设置有效位指示
+	uint8		StoreType;                  // 1   	    ?μí3??DD×′ì?
+	uint8		StoreTypeBak;               // 1   	    ?μí3??DD×′ì?
+	uint8		SetBitFlg;					// 1        éè??óDD§????ê?
     
+    uint8       MeasureSecond;          //1          ???·2aê?ê±??
+    uint8       MeasureMin;             //1          ???·2aê?????ê±??
+    uint8       buf[26];
+    
+    struct __setflg {
+        uint32      StoreCycle            : 1;        // D0￡o=1:￡?
+        uint32      RecClear             : 1;        // D1￡o=1 ￡?
+        uint32      StoreType            : 1;        // D2￡o=1:￡?
+        uint32      MeasureSecond        : 1;        // D3￡o=1:￡?
+        uint32      MeasureMin           : 1;      	  // D3￡o=1:￡?
+    
+        uint32      Rsv                  : 27;        // D7~D5￡o?¤á?
+    } setflg;      	
 }stcRunPara;
 
 

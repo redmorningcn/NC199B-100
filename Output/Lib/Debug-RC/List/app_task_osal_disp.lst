@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       13/Dec/2017  16:14:32
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:28
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -557,8 +557,8 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_disp.c
     312                  exit:            
     313                      osal_start_timerEx( OS_TASK_ID_DISP,
     314                                          OS_EVT_DISP_TICKS,
-    315                                          500);
-   \   0000014E   0xF44F 0x72FA      MOV      R2,#+500
+    315                                          800);                           //0.8sœ‘ æ“ª¥Œ
+   \   0000014E   0xF44F 0x7248      MOV      R2,#+800
    \   00000152   0x2101             MOVS     R1,#+1
    \   00000154   0x2002             MOVS     R0,#+2
    \   00000156   0x.... 0x....      BL       osal_start_timerEx

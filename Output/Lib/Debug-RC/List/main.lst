@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       13/Dec/2017  10:51:12
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:33
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -159,7 +159,7 @@ F:\iar\NC199B-100\Library\Source\APP\main.c
      75          
      76          //   	FRAM_StoreRunPara((stcRunPara *) &Ctrl.sRunPara);
      77              FRAM_ReadRunPara((stcRunPara *) &Ctrl.Para.dat.sRunPara);   //读取运行参数
-   \   0000000E   0xF104 0x0544      ADD      R5,R4,#+68
+   \   0000000E   0xF104 0x0548      ADD      R5,R4,#+72
    \   00000012   0x4628             MOV      R0,R5
    \   00000014   0x.... 0x....      BL       FRAM_ReadRunPara
      78           
@@ -172,7 +172,7 @@ F:\iar\NC199B-100\Library\Source\APP\main.c
      83              Ctrl.Para.dat.sRunPara.RecClear = 0;
    \   0000001C   0x2000             MOVS     R0,#+0
    \   0000001E   0x7068             STRB     R0,[R5, #+1]
-     84              Ctrl.Para.dat.sRunPara.StoreTime= 60;       
+     84              Ctrl.Para.dat.sRunPara.StoreCycle= 60;       
    \   00000020   0x203C             MOVS     R0,#+60
    \   00000022   0x7028             STRB     R0,[R5, #+0]
      85              Ctrl.Para.dat.sRunPara.SysReset = 0;

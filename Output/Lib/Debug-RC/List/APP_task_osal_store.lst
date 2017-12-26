@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       13/Dec/2017  10:45:30
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:28
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -236,7 +236,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
    \   0000001C   0x20FF             MOVS     R0,#+255
    \   0000001E   0xF888 0x0001      STRB     R0,[R8, #+1]
     140              if(Ctrl.Para.dat.sRunPara.StartFlg)
-   \   00000022   0xF894 0x0047      LDRB     R0,[R4, #+71]
+   \   00000022   0xF894 0x004B      LDRB     R0,[R4, #+75]
    \   00000026   0x2800             CMP      R0,#+0
    \   00000028   0xD005             BEQ.N    ??StoreData_0
     141              {
@@ -245,7 +245,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
    \   0000002C   0xF888 0x0001      STRB     R0,[R8, #+1]
     143                  Ctrl.Para.dat.sRunPara.StartFlg = 0;
    \   00000030   0x2000             MOVS     R0,#+0
-   \   00000032   0xF884 0x0047      STRB     R0,[R4, #+71]
+   \   00000032   0xF884 0x004B      STRB     R0,[R4, #+75]
     144              }   
     145              
     146              sFlsh->LocoType     =   Ctrl.Para.dat.sProductInfo.sLocoId.Type  ;//机车型号       2                  
@@ -261,7 +261,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
     150              
     151              memcpy((uint8 *)&sFlsh->RunSys,(uint8 *)&Ctrl.Para.dat.sRunPara.SysSta,sizeof(sFlsh->RunSys));
    \   00000046   0x2201             MOVS     R2,#+1
-   \   00000048   0xF104 0x0148      ADD      R1,R4,#+72
+   \   00000048   0xF104 0x014C      ADD      R1,R4,#+76
    \   0000004C   0xF504 0x7095      ADD      R0,R4,#+298
    \   00000050   0x.... 0x....      BL       __aeabi_memcpy
     152              
@@ -476,7 +476,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
    \   0000002A   0xF104 0x0020      ADD      R0,R4,#+32
    \   0000002E   0x.... 0x....      BL       FRAM_ReadAirPara
     255              FRAM_ReadRunPara((stcRunPara  *)&Ctrl.Para.dat.sRunPara);               //读运行参数
-   \   00000032   0xF104 0x0044      ADD      R0,R4,#+68
+   \   00000032   0xF104 0x0048      ADD      R0,R4,#+72
    \   00000036   0xE8BD 0x4010      POP      {R4,LR}
    \   0000003A   0x.... 0x....      B.W      FRAM_ReadRunPara
     256          //    FRAM_ReadCalcModel((stcCalcModel  *)&Ctrl.sCalcModel);                //读计算模型

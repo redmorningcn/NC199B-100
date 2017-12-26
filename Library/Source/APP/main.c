@@ -81,7 +81,7 @@ void    app_init_sctrl(void)
     //Ctrl.Para.dat.sRunPara.SysSta   = 0;        
         
     Ctrl.Para.dat.sRunPara.RecClear = 0;
-    Ctrl.Para.dat.sRunPara.StoreTime= 60;       
+    Ctrl.Para.dat.sRunPara.StoreCycle= 60;       
     Ctrl.Para.dat.sRunPara.SysReset = 0;
     
     Ctrl.Para.dat.sAirPara.sStandard_Dust.GoodLimit     = 200;

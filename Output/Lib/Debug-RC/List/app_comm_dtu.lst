@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       13/Dec/2017  10:41:13
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:27
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -226,7 +226,7 @@ F:\iar\NC199B-200 主板\Software\APP\comm\app_comm_dtu.c
     143                      {
     144                          case 0:     //V1.0
     145                      
-    146                              if(Ctrl.Dtu.RxCtrl.SourceAddr == SLAVE_ADDR_DTU)       //地址等于CA，无线数据传输。
+    146                              if(Ctrl.Dtu .RxCtrl.SourceAddr == SLAVE_ADDR_DTU)       //地址等于CA，无线数据传输。
     147                              {
     148                                  comm_record_send((StrDevDtu *)&Ctrl.Dtu,i);        //数据的需要传递  dtu，明确 地址，pch等信息。
     149                              }

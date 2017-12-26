@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=-384303211
+Checksum=-1172803899
 [CodeCoverage]
 Enabled=_ 0
 [Stack]
@@ -65,6 +65,9 @@ Fmt8=stcRecNumMgr-Back	4	0
 Fmt9=stcRecNumMgr-Current	4	0
 Fmt10=stcRecNumMgr-GrsRead	4	0
 Fmt11=stcRecNumMgr-IcRead	4	0
+Fmt12=stcRunPara-MeasureMin	3	0
+Fmt13=stcRunPara-MeasureSecond	3	0
+Fmt14=stcRunPara-StoreCycle	3	0
 [array_types]
 Fmt0=CPU_INT08U[256]	4	0
 [Trace1]
@@ -128,13 +131,13 @@ Bp3=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1"
 Bp4=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1" 0 0 1 "" 0 "" 0
 Bp5=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1" 0 0 1 "" 0 "" 0
 Bp6=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.5" 0 0 1 "" 0 "" 0
-Bp7=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MBS_CORE.C}.1977.1" 0 0 1 "" 0 "" 0
+Bp7=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MBS_CORE.C}.1976.5" 0 0 1 "" 0 "" 0
 Bp8=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
 Bp9=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
 Bp10=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
 Bp11=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
 Bp12=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\bsp_wdt.c}.54.9" 0 0 1 "" 0 "" 0
-Bp13=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 Ö÷°å\Software\APP\comm\app_comm_dtu_otr_deal.c}.365.9" 0 0 1 "" 0 "" 0
+Bp13=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 Ö÷°å\Software\APP\comm\app_comm_dtu_otr_deal.c}.460.9" 0 0 1 "" 0 "" 0
 Bp14=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\IAP_program_mcu.C}.360.13" 0 0 1 "" 0 "" 0
 Bp15=_ 0 "EMUL_CODE" "0x080182A0" 0 0 1 "" 0 "" 0
 Bp16=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\IAP_program_mcu.C}.360.13" 0 0 1 "" 0 "" 0
@@ -142,8 +145,10 @@ Bp17=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\iap_flash.c}.114.4" 0 0 1
 Bp18=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\iap_flash.c}.115.4" 0 0 1 "" 0 "" 0
 Bp19=_ 0 "EMUL_CODE" "0x08019E2A" 0 0 1 "" 0 "" 0
 Bp20=_ 0 "EMUL_CODE" "0x08019E4C" 0 0 1 "" 0 "" 0
-Bp21=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 Ö÷°å\Software\APP\comm\app_comm_dtu_otr_deal.c}.248.9" 0 0 1 "" 0 "" 0
-Count=22
+Bp21=_ 0 "EMUL_CODE" "0x08004748" 0 0 1 "" 0 "" 0
+Bp22=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MBS_CORE.C}.1921.9" 0 0 1 "" 0 "" 0
+Bp23=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\OS\uCOS-III\MB_OS.C}.457.18" 0 0 1 "" 0 "" 0
+Count=24
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
