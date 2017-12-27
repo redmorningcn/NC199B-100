@@ -167,16 +167,15 @@ static  void  AppTaskComm (void *p_arg)
     /***********************************************
     * 描述： Task body, always written as an infinite loop.
     */
-    while (DEF_TRUE) { 
-        /***********************************************
+    OSRegWdtFlag( WDT_FLAG_COMM );
+        
+    while (DEF_TRUE) {
+        
+        OSSetWdtFlag( WDT_FLAG_COMM );
+            /***********************************************
         * 描述： 本任务看门狗标志置位
         */
-        OS_FlagPost(( OS_FLAG_GRP *)&WdtFlagGRP,
-                    ( OS_FLAGS     ) WDT_FLAG_COMM,
-                    ( OS_OPT       ) OS_OPT_POST_FLAG_SET,
-                    ( CPU_TS       ) 0,
-                    ( OS_ERR      *) &err);
-        
+      
         OS_ERR      terr;
         
         ticks   = OSTimeGet(&terr);                        // 获取当前OSTick
@@ -419,7 +418,9 @@ void APP_CommInit(void)
     /***********************************************
     * 描述： 在看门狗标志组注册本任务的看门狗标志
     */
-    WdtFlags |= WDT_FLAG_COMM;
+    
+    
+    //WdtFlags |= WDT_FLAG_COMM;
 }
 
 uint8       g_recbuf[256];

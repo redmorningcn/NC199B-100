@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=-1172803899
+Checksum=-1985798475
 [CodeCoverage]
 Enabled=_ 0
 [Stack]
@@ -19,17 +19,6 @@ StopOnThrow=_ 0
 ShowArgs=0
 [Disassembly]
 MixedMode=1
-[Interrupts]
-Enabled=1
-[MemConfig]
-Base=1
-Manual=0
-Ddf=1
-TypeViol=0
-Stop=1
-[Simulator]
-Freq=10000000
-MultiCoreRunAll=1
 [JLinkDriver]
 CStepIntDis=_ 0
 TraceBufferSize=0x00010000
@@ -52,24 +41,38 @@ ITMportsEnable=0
 ITMportsTermIO=0
 ITMportsLogFile=0
 ITMlogFile=$PROJ_DIR$\ITM.log
+[Interrupts]
+Enabled=1
+[MemConfig]
+Base=1
+Manual=0
+Ddf=1
+TypeViol=0
+Stop=1
+[Simulator]
+Freq=10000000
+MultiCoreRunAll=1
 [struct_types]
-Fmt0=StrCtrlOS-CommEvtFlag	4	0
-Fmt1=StrCtrlPara-SoftWareID	4	0
-Fmt2=stcFlshRec-EvtType	4	0
-Fmt3=stcFlshRec-RunSys	4	0
-Fmt4=stcLocoId-Num	3	0
-Fmt5=stcLocoId-Type	3	0
-Fmt6=stcProductInfo-ID	4	0
-Fmt7=stcProductInfo-Type	4	0
-Fmt8=stcRecNumMgr-Back	4	0
-Fmt9=stcRecNumMgr-Current	4	0
-Fmt10=stcRecNumMgr-GrsRead	4	0
-Fmt11=stcRecNumMgr-IcRead	4	0
-Fmt12=stcRunPara-MeasureMin	3	0
-Fmt13=stcRunPara-MeasureSecond	3	0
-Fmt14=stcRunPara-StoreCycle	3	0
+Fmt0=OS_FLAG_GRP-Flags	1	0
+Fmt1=StrCtrlOS-CommEvtFlag	4	0
+Fmt2=StrCtrlPara-SoftWareID	4	0
+Fmt3=stcFlshRec-EvtType	4	0
+Fmt4=stcFlshRec-RunSys	4	0
+Fmt5=stcLocoId-Num	3	0
+Fmt6=stcLocoId-Type	3	0
+Fmt7=stcProductInfo-ID	4	0
+Fmt8=stcProductInfo-Type	4	0
+Fmt9=stcRecNumMgr-Back	4	0
+Fmt10=stcRecNumMgr-Current	4	0
+Fmt11=stcRecNumMgr-GrsRead	4	0
+Fmt12=stcRecNumMgr-IcRead	4	0
+Fmt13=stcRunPara-MeasureMin	3	0
+Fmt14=stcRunPara-MeasureSecond	3	0
+Fmt15=stcRunPara-StoreCycle	3	0
 [array_types]
 Fmt0=CPU_INT08U[256]	4	0
+[watch_formats]
+Fmt0={W}42:WdtFlags	1	0
 [Trace1]
 Enabled=0
 ShowSource=1
@@ -121,34 +124,6 @@ ShowTimeLog=1
 SumEnabled=0
 ShowTimeSum=1
 SumSortOrder=0
-[Disassemble mode]
-mode=0
-[Breakpoints2]
-Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Tasks\app_task_osal_led.c}.280.5" 0 0 1 "" 0 "" 0
-Bp1=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1" 0 0 1 "" 0 "" 0
-Bp2=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1" 0 0 1 "" 0 "" 0
-Bp3=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1" 0 0 1 "" 0 "" 0
-Bp4=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1" 0 0 1 "" 0 "" 0
-Bp5=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.1" 0 0 1 "" 0 "" 0
-Bp6=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MB.C}.1047.5" 0 0 1 "" 0 "" 0
-Bp7=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MBS_CORE.C}.1976.5" 0 0 1 "" 0 "" 0
-Bp8=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
-Bp9=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
-Bp10=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
-Bp11=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\MX25L1602Drv.c}.649.1" 0 0 1 "" 0 "" 0
-Bp12=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\BSP\Driver\bsp_wdt.c}.54.9" 0 0 1 "" 0 "" 0
-Bp13=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 Ö÷°å\Software\APP\comm\app_comm_dtu_otr_deal.c}.460.9" 0 0 1 "" 0 "" 0
-Bp14=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\IAP_program_mcu.C}.360.13" 0 0 1 "" 0 "" 0
-Bp15=_ 0 "EMUL_CODE" "0x080182A0" 0 0 1 "" 0 "" 0
-Bp16=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\IAP_program_mcu.C}.360.13" 0 0 1 "" 0 "" 0
-Bp17=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\iap_flash.c}.114.4" 0 0 1 "" 0 "" 0
-Bp18=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\APP\Iap\iap_flash.c}.115.4" 0 0 1 "" 0 "" 0
-Bp19=_ 0 "EMUL_CODE" "0x08019E2A" 0 0 1 "" 0 "" 0
-Bp20=_ 0 "EMUL_CODE" "0x08019E4C" 0 0 1 "" 0 "" 0
-Bp21=_ 0 "EMUL_CODE" "0x08004748" 0 0 1 "" 0 "" 0
-Bp22=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\Source\MBS_CORE.C}.1921.9" 0 0 1 "" 0 "" 0
-Bp23=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\Source\Micrium\uC-MB\OS\uCOS-III\MB_OS.C}.457.18" 0 0 1 "" 0 "" 0
-Count=24
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -156,9 +131,6 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[Aliases]
-Count=0
-SuppressDialog=0
 [DriverProfiling]
 Enabled=0
 Mode=1
@@ -173,3 +145,11 @@ ShowTiming=1
 Frequency=10000
 Probe0=I0
 ProbeSetup0=2 1 1 2 0 0
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\..\NC199B-200 Ö÷°å\Software\APP\comm\app_comm_dtu_otr_deal.c}.298.9" 0 0 1 "" 0 "" 0
+Count=1
+[Aliases]
+Count=0
+SuppressDialog=0

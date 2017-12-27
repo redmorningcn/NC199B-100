@@ -26,6 +26,7 @@
 #include <includes.h>
 
 
+
 //#ifdef VSC_INCLUDE_SOURCE_FILE_NAMES
 //const  CPU_CHAR  *app_task_key__c = "$Id: $";
 //#endif
@@ -41,6 +42,7 @@
  */
 //该任务的控制周期   (OS_CFG_TICK_RATE_HZ)为1S
 //#define  KEY_CYCLE_TIME_TICKS     (OS_CFG_TICK_RATE_HZ * 1u)
+#define CYCLE_TIME_TICKS            (OS_TICKS_PER_SEC * 30)
 
 //进气口电磁阀  pd.3
 #define     DCF_GPIO_AIR_IN      303  
@@ -142,37 +144,62 @@ OS_SEM			Bsp_MeasureSem;    	//信号量
  *******************************************************************************/
 static  void  AppTaskMeasure (void *p_arg)
 {
-//    OS_ERR      err;
+    OS_ERR      err;
     /***********************************************
     * 描述： 任务初始化
     */
+    INT32U      ticks;
+    INT32S      dly = CYCLE_TIME_TICKS;
+
+    uint16  timeadd  = 0;
     APP_MeasureInit();
 
     BSP_OS_SemCreate(&Bsp_MeasureSem,0, "Bsp MeasureSem");      // 创建信号量
-
+    BSP_OS_SemWait(&Bsp_MeasureSem,1);
+    BSP_OS_TimeDly(5000);
     /***********************************************
     * 描述：Task body, always written as an infinite loop.
     */
-        
+    OSRegWdtFlag( WDT_FLAG_MEASURE );
         
     while (DEF_TRUE) {
-
         /***********************************************
         * 描述： 本任务看门狗标志置位
         */
-//        OS_FlagPost ((OS_FLAG_GRP *)&WdtFlagGRP,
-//                     (OS_FLAGS     ) WDT_FLAG_KEY,
-//                     (OS_OPT       ) OS_OPT_POST_FLAG_SET,
-//                     (CPU_TS       ) 0,
-//                     (OS_ERR      *) &err);
+        OSSetWdtFlag( WDT_FLAG_MEASURE );
             
+        /***********************************************
+        * 描述： 得到系统当前时间
+        */
+        ticks = OSTimeGet(&err);
         /***********************************************
         * 描述： 等待10min后，测试
         */
-            
-        BSP_OS_SemWait(&Bsp_MeasureSem,15*60*1000);    // 等待信号量 10min
+            // 等待信号量 10min
+        if(Ctrl.Para.dat.sRunPara.MeasureMin >60 || Ctrl.Para.dat.sRunPara.MeasureMin < 1)
+            Ctrl.Para.dat.sRunPara.MeasureMin = 15;
         
-        StartAirMeasure();
+ 
+        timeadd++;
+        if (     (timeadd > Ctrl.Para.dat.sRunPara.MeasureMin*2 )
+           ||   (1 == BSP_OS_SemWait(&Bsp_MeasureSem,dly)) 
+            )
+        {
+            StartAirMeasure();
+            timeadd= 0;
+        }
+        
+        
+        /***********************************************
+        * 描述： 去除任务运行的时间，等到一个控制周期里剩余需要延时的时间
+        */
+        dly   = CYCLE_TIME_TICKS - ( OSTimeGet(&err) - ticks );
+        if ( dly  <= 0 ) {
+            dly   = 1;
+        }else if(dly > CYCLE_TIME_TICKS)
+        {
+            dly   =  CYCLE_TIME_TICKS;
+        }
     }
 }
 
@@ -212,12 +239,10 @@ void    CloseAir(void)
     ////////关闭测试
     GPIO_SetOrClearValue(DCF_GPIO_AIR_IN,DCF_CLOSE);    //先关输入
     //OSTimeDly(1000, OS_OPT_TIME_DLY, &err);           //延时0.1s
-    BSP_OS_TimeDly(1000);
+    BSP_OS_TimeDly(500);
 
     
     GPIO_SetOrClearValue(DCF_GPIO_AIR_OUT,DCF_CLOSE);   //再关输出
-    //OSTimeDly(1000, OS_OPT_TIME_DLY, &err);           //延时0.5s    
-    BSP_OS_TimeDly(1000);
 
 }
 
@@ -235,22 +260,26 @@ void    StartAirMeasure(void)
     ////////启动测试
     GPIO_SetOrClearValue(DCF_GPIO_AIR_OUT,DCF_OPEN);   //打开输出
     //OSTimeDly(1000, OS_OPT_TIME_DLY, &err);          //延时0.5s
-    BSP_OS_TimeDly(1000);
+    BSP_OS_TimeDly(500);
     
     GPIO_SetOrClearValue(DCF_GPIO_AIR_IN,DCF_OPEN);    //打开输出
     //OSTimeDly(1000, OS_OPT_TIME_DLY, &err);      //延时0.1s
-    BSP_OS_TimeDly(1000);
 
     Ctrl.Para.dat.sRunPara.SysSta.OpenAir = 1;  //气路打开标识置1
     Ctrl.Para.dat.sRunPara.SysSta.CloseAir= 0; 
     
     //OSTimeDly(12000, OS_OPT_TIME_DLY, &err);    //延时12s
-    BSP_OS_TimeDly(12000);
+    //BSP_OS_TimeDly(12000);
+    if(     Ctrl.Para.dat.sRunPara.MeasureSecond >30 
+       ||   Ctrl.Para.dat.sRunPara.MeasureSecond < 1)
+    {
+        Ctrl.Para.dat.sRunPara.MeasureSecond = 3;
+    }
+    
+    BSP_OS_TimeDly(Ctrl.Para.dat.sRunPara.MeasureSecond*1000);
 
     Ctrl.Para.dat.sRunPara.SysSta.StartMeasure = 1;
     
-    //OSTimeDly(2000, OS_OPT_TIME_DLY, &err);     //延时2s  
-    BSP_OS_TimeDly(2000);
 
     //初始化定时器
     osal_start_timerEx( OS_TASK_ID_STORE,
@@ -258,8 +287,6 @@ void    StartAirMeasure(void)
                       1);                       //置存储定时器1，马上启动存储
     Ctrl.Para.dat.sRunPara.SysSta.Store   = 1;  //可以进行数据储存（测量过程的数据）
     
-    //OSTimeDly(2000, OS_OPT_TIME_DLY, &err);     //延时2s   
-    BSP_OS_TimeDly(2000);
 
     CloseAir();                                 //关闭气路
       

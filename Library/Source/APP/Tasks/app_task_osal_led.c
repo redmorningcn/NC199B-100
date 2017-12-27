@@ -126,33 +126,8 @@ osalEvt  TaskLedEvtProcess(osalTid task_id, osalEvt task_event)
 //static  void  AppTaskLed (void *p_arg)
 //#endif
 {
-//    OS_ERR      err;
-//    INT32U      ticks;
-//    INT32S      dly;
-//    CPU_SR_ALLOC();
-//    
-//    /***********************************************
-//    * 描述：Task body, always written as an infinite loop.
-//    */
-//#if ( OSAL_EN == DEF_ENABLED )
-//#else
-//    TaskInitLed();
-//    
-//    while (DEF_TRUE) {
-//#endif
-//        /***********************************************
-//        * 描述： 本任务看门狗标志置位
-//        */
-//        OS_FlagPost ((OS_FLAG_GRP *)&WdtFlagGRP,
-//                     (OS_FLAGS     ) WDT_FLAG_LED,
-//                     (OS_OPT       ) OS_OPT_POST_FLAG_SET,
-//                     (CPU_TS       ) 0,
-//                     (OS_ERR      *) &err);
-//        /***********************************************
-//        * 描述： 得到系统当前时间
-//        */
-//        ticks = OSTimeGet(&err);
-//        
+        OSSetWdtFlag( WDT_FLAG_LED );
+
 //#if ( OSAL_EN == DEF_ENABLED )
         if( task_event & OS_EVT_LED_TICKS ) {
 //#else
@@ -266,10 +241,12 @@ void TaskInitLed(void)
     /***********************************************
     * 描述： 在看门狗标志组注册本任务的看门狗标志
     */
-    //WdtFlags |= WDT_FLAG_LED;
+    OSRegWdtFlag( WDT_FLAG_LED );
+
     /*************************************************
     * 描述：启动事件查询
     */
+    
 
     osal_start_timerEx( OS_TASK_ID_LED,
                         OS_EVT_LED_TICKS,

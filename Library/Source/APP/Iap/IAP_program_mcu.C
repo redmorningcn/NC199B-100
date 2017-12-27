@@ -248,7 +248,7 @@ int8    IAP_PragramDeal(uint8 *databuf,char datalen)
             
             if(
                         sIAPParatmp.softsize == gsIAPPara.softsize  //软件大小
-                   &&   gsIAPPara.framenum                          //开始包序号不为0   
+                   &&   gsIAPPara.framenum > 20                    //开始包序号不为0  ( >20  20171226调整，防止数据位保存，而上位机认为已经保存了）  
                ) 
             {                                                       //数据未接收完成，发送当前序号
                 gsIAPPara.framenum  = sIAPParatmp.framenum;         //返回当前序号

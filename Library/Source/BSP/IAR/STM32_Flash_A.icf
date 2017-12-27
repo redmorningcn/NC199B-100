@@ -36,7 +36,7 @@
 /***********************************************
 * 描述： 定义内部FLASH地址空间
 */
-define symbol __ICFEDIT_region_ROM_start__      = 0x08014000;
+define symbol __ICFEDIT_region_ROM_start__      = 0x08010000;
 //define symbol __ICFEDIT_region_ROM_end__        = 0x0803FFFF;
 define symbol __ICFEDIT_region_ROM_end__        = 0x08027FFF;
 

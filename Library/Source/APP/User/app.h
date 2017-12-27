@@ -80,12 +80,11 @@ extern OS_FLAGS         BeepFlags;
 *        标志组是32位，一个标志组最多可添加32个标志位
 */
 #define WDT_FLAG_DTU                (1<<0)    // 0X00000001
-#define WDT_FLAG_COMM               (1<<0)    // 0X00000001
-#define WDT_FLAG_SEN                (1<<1)    // 0X00000002
-#define WDT_FLAG_TMR                (1<<2)    // 0X00000004
-#define WDT_FLAG_CTRL               (1<<3)    // 0X00000008
-#define WDT_FLAG_BEEP               (1<<4)    // 0X00000010
-#define WDT_FLAG_OSAL               (1<<5)    // 0X00000020
+#define WDT_FLAG_COMM               (1<<1)    // 0X00000001
+#define WDT_FLAG_MEASURE            (1<<2)    // 0X00000002
+#define WDT_FLAG_TMR                (1<<3)    // 0X00000004
+#define WDT_FLAG_LED                (1<<4)    // 0X00000010
+#define WDT_FLAG_STORE              (1<<5)    // 0X00000020
 #define WDT_FLAG_DISP               (1<<6)    // 0X00000040
 #define WDT_FLAG_MATER              (1<<7)    // 0X00000040
 
@@ -173,7 +172,8 @@ void    App_TaskCommCreate          (void);
 void    App_TaskOsalCreate          (void);
 //void    App_TaskDispCreate          (void);
 void    App_TaskMeasureCreate       (void);
-
+void OSRegWdtFlag( OS_FLAGS flag );
+void OSSetWdtFlag( OS_FLAGS flag );
 
 /*******************************************************************************
  * EXTERN VARIABLES

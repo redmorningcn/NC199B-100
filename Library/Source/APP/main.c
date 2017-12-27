@@ -70,34 +70,7 @@ const  CPU_CHAR  *main__c = "$Id: $";
 void    app_init_sctrl(void)
 {
     Ctrl.Para.dat.Password      =   6237;
-    Ctrl.Para.dat.SoftWareID    =   0101;   //年月，版本
-    
-
-//   	FRAM_StoreRunPara((stcRunPara *) &Ctrl.sRunPara);
-    FRAM_ReadRunPara((stcRunPara *) &Ctrl.Para.dat.sRunPara);   //读取运行参数
- 
-//开始标示    //存储时间间隔
-    Ctrl.Para.dat.sRunPara.StartFlg = 1;  
-    //Ctrl.Para.dat.sRunPara.SysSta   = 0;        
-        
-    Ctrl.Para.dat.sRunPara.RecClear = 0;
-    Ctrl.Para.dat.sRunPara.StoreCycle= 60;       
-    Ctrl.Para.dat.sRunPara.SysReset = 0;
-    
-    Ctrl.Para.dat.sAirPara.sStandard_Dust.GoodLimit     = 200;
-    Ctrl.Para.dat.sAirPara.sStandard_Dust.NormalLimit   = 500;
-    
-    Ctrl.Para.dat.sAirPara.sStandard_VOC.GoodLimit      = 500;
-    Ctrl.Para.dat.sAirPara.sStandard_VOC.NormalLimit    = 2000;
-    
-    Ctrl.Para.dat.sAirPara.sStandard_Hum.GoodLimit      = 60;
-    Ctrl.Para.dat.sAirPara.sStandard_Hum.NormalLimit    = 85;
-    
-    Ctrl.Para.dat.sAirPara.Dust_modefy  = 0;
-    Ctrl.Para.dat.sAirPara.Hum_modefy   = 0;
-    Ctrl.Para.dat.sAirPara.Voc_modefy   = 0;
-    
-    FRAM_StoreRunPara((stcRunPara *) &Ctrl.Para.dat.sRunPara);   //读取运行参数
+   
     
     
 //测量装置1 初始化    
@@ -162,29 +135,17 @@ void    app_init_sctrl(void)
     * 描述： 重新设置应用程序中断向量表，如果没有BOOTLOADER
     *        NVIC_VectTab_FLASH_OFFSET = 0
     */
-//#if defined     (IMAGE_A)
-//    /***********************************************
-//    * 描述： 程序A
-//    */
-//    NVIC_SetVectorTable(NVIC_VectTab_FLASH, FLASH_APP_ADDR_A-FLASH_BOOT_ADDR);
-//    IAP_SetStatus(IAP_STS_SUCCEED); 
-//#elif defined   (IMAGE_B)
-//    /***********************************************
-//    * 描述： 程序B
-//    */
-//    NVIC_SetVectorTable(NVIC_VectTab_FLASH, FLASH_APP_ADDR_B-FLASH_BOOT_ADDR);
-//    IAP_SetStatus(IAP_STS_SUCCEED); 
-//#else
-//    /***********************************************
-//    * 描述： 程序
-//    */
-//    NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0X0000);
-//#endif
-// 
-    
-    //iap  
+#if defined     (IMAGE_A)
+    /***********************************************
+    * 描述： 程序A
+    */
     NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0X10000);
-
+#else
+    /***********************************************
+    * 描述： 程序
+    */
+    NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0X0000);
+#endif
     
     //CPU_IntEn();
     //BSP_IntEn();

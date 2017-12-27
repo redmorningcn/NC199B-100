@@ -73,7 +73,7 @@ OS_TMR              OSTmr0;                         // 定时器1
 * 描述： 超过WdtTimeoutSec的时间还没有喂狗，系统复位。
 *        单位为 秒（S）
 */
-#define             WdtTimeoutSec           60
+#define             WdtTimeoutSec           120
 
 /*******************************************************************************
  * GLOBAL VARIABLES
@@ -145,11 +145,6 @@ int main (void)
     */
     OSInit(&err);
 
-    //dog
-    IWDG_ReloadCounter();
-
-    
-    //test_DM412_Led();
     /***********************************************
     * 描述： 创建起始任务
     */
@@ -201,13 +196,13 @@ static  void  AppTaskStart (void *p_arg)
     OS_ERR      err;
     INT32U      ticks;
     INT32S      dly;
-//    INT16U  	TimeOutCnt     = 0;                 //看门狗超时计数器
+    INT16U  	TimeOutCnt     = 0;                 //看门狗超时计数器
     uint8_t     ReadRTCTimeCnt = 0;
-   (void)p_arg;
-
-   
+    (void)p_arg;
+    
+    
     //test_DM412_Led();
-
+    
     /***********************************************
     * 描述： 设置STM32的系统时钟，I/O口设置，定时器等
     */
@@ -254,9 +249,9 @@ static  void  AppTaskStart (void *p_arg)
     //App_Init();
 #endif
     extern StrNcProtocol   ComPackCtrl[4];
-//    Ctrl.MtrPar     = &Mater;
-//    Ctrl.Com.pack   = &ComPackCtrl[0];
-//    Ctrl.Dtu.pack   = &ComPackCtrl[1];
+    //    Ctrl.MtrPar     = &Mater;
+    //    Ctrl.Com.pack   = &ComPackCtrl[0];
+    //    Ctrl.Dtu.pack   = &ComPackCtrl[1];
     
     
     App_TaskCommCreate();
@@ -266,19 +261,19 @@ static  void  AppTaskStart (void *p_arg)
     * 描述： 喂狗
     */
     WdtReset();
-
+    
     /***********************************************
     * 描述： 估算在没有运行任务时CPU的能力
     */
 #if OS_CFG_STAT_TASK_EN > 0u
     OSStatTaskCPUUsageInit(&err);                               /* Compute CPU capacity with no task running            */
 #endif
-
+    
     /***********************************************
     * 描述：用于测量禁止中断的时间
     */
     CPU_IntDisMeasMaxCurReset();
-
+    
 #if (APP_CFG_SERIAL_EN == DEF_ENABLED)
     BSP_Ser_Init(115200);                                       /* Enable Serial Interface                              */
 #endif
@@ -287,13 +282,13 @@ static  void  AppTaskStart (void *p_arg)
     * 描述： 创建对象（事件）,标志组
     */
     AppObjCreate();                                             /* Create Application Objects                           */
-
+    
     /***********************************************
     * 描述： 创建创建任务
     */
     AppTaskCreate();                                            /* Create Application Tasks                             */
-
-//    Ctrl.Com.SlaveAddr     = 0xA3;
+    
+    //    Ctrl.Com.SlaveAddr     = 0xA3;
     /***************************************************************************
     * 描述：每一个任务在创建时分配了一个喂狗标志位
     *	    每个任务在执行过和中，在未超出看门狗超时时间内
@@ -310,12 +305,11 @@ static  void  AppTaskStart (void *p_arg)
         */
         ticks = OSTimeGet(&err);
         ReadRTCTimeCnt  ++;
-
+        
         /***********************************************
         * 描述： 喂狗
         */
         WdtReset();
-        IWDG_ReloadCounter();
         
         /***********************************************************************
         * 描述： 独立看门狗标志组检查， 判断是否所有任务已喂狗
@@ -328,35 +322,72 @@ static  void  AppTaskStart (void *p_arg)
                    ( OS_ERR      *)&err);
         
         if(err == OS_ERR_NONE) {                                //所有任务已喂狗
-            //TimeOutCnt = 0;                                     //超时计数器清零
-            BSP_LED_Flash( 1, 1, 40, 40);
+            TimeOutCnt = 0;                                     //超时计数器清零
+            //BSP_LED_Flash( 1, 1, 40, 40);
             OS_FlagPost ((OS_FLAG_GRP *)&WdtFlagGRP,            //清零所有标志
                          (OS_FLAGS     ) WdtFlags,
                          (OS_OPT       ) OS_OPT_POST_FLAG_CLR,
                          (CPU_TS       ) 0,
                          (OS_ERR      *) &err);
         } else {                                                //不是所有任务都喂狗
-//            TimeOutCnt++;                                       //超时计数器加1
-//            if(TimeOutCnt > WdtTimeoutSec) {                    //喂狗超时
-//                /***********************************************
-//                * 描述： 如果程序处在升级模式
-//                */
-//                if ( ( Iap.Status != IAP_STS_DEF ) && ( Iap.Status != IAP_STS_SUCCEED ) ) {
-//                } else {
-//                    SystemReset();							    //系统重启
-//                    while(1){
-//                        /*******************************************************
-//                        * 描述： 长时间等不到某任务的看门狗标志位注册，说明有任务死了，
-//                        *        指示灯快速闪烁，进入死循环等待系统复位
-//                        */
-//                        BSP_LED_Toggle(1);
-//                        Delay_Nms(100);
-//                    };
-//                }
-//            } else {
-//                BSP_LED_Flash( 1, 1, 500, 500); 
-//            }
+            TimeOutCnt++;                                       //超时计数器加1
+            if(TimeOutCnt > WdtTimeoutSec) {                    //喂狗超时
+                /***********************************************
+                * 描述： 如果程序处在升级模式
+                */
+#if defined(RELASE)
+                SystemReset();							    //系统重启
+#else
+                while(1){
+                    TimeOutCnt++;
+                    /*******************************************************
+                    * 描述： 长时间等不到某任务的看门狗标志位注册，说明有任务死了，
+                    *        指示灯快速闪烁，进入死循环等待系统复位
+                    */
+                    //BSP_LED_Toggle(1);
+                    Delay_Nms(100);
+                    
+#define     RGB_LED_COLOR_RED       0xffff,0x0000,0x0000
+#define     RGB_LED_COLOR_GREEN     0x0000,0xffff,0x0000
+#define     RGB_LED_COLOR_BLUE      0x0000,0x0000,0xffff
+#define     RGB_LED_COLOR_WHITE     0xffff,0xffff,0xffff
+                    
+#define     HUM_LED         0
+#define     DUST_LED        1
+#define     OIL_LED         2
+                    /***********************************************
+                    * 描述： 湿度显示
+                    */
+                    switch(TimeOutCnt%3)
+                    {
+                    case 0:
+                        SetLedColor(HUM_LED,RGB_LED_COLOR_BLUE); 
+                        SetLedColor(OIL_LED,RGB_LED_COLOR_BLUE); 
+                        SetLedColor(DUST_LED,RGB_LED_COLOR_BLUE);
+                        break;
+                    case 1:
+                        SetLedColor(HUM_LED,RGB_LED_COLOR_GREEN);
+                        SetLedColor(OIL_LED,RGB_LED_COLOR_GREEN);
+                        SetLedColor(DUST_LED,RGB_LED_COLOR_GREEN);
+                        break;
+                    case 2:
+                        SetLedColor(HUM_LED,RGB_LED_COLOR_RED); 
+                        SetLedColor(OIL_LED,RGB_LED_COLOR_RED); 
+                        SetLedColor(DUST_LED,RGB_LED_COLOR_RED);
+                        break;
+                    default:       
+                        SetLedColor(HUM_LED,RGB_LED_COLOR_BLUE);
+                        SetLedColor(OIL_LED,RGB_LED_COLOR_BLUE); 
+                        SetLedColor(DUST_LED,RGB_LED_COLOR_BLUE);
+                        break;
+                    }
+                }
+#endif
+            } else {
+                //BSP_LED_Flash( 1, 1, 500, 500); 
+            }
         }
+        
         /***********************************************
         * 描述： 去除任务运行的时间，等到一个控制周期里剩余需要延时的时间
         */
@@ -498,6 +529,50 @@ static  void  AppTaskCreate (void)
 //    App_TaskSensorCreate();
 //    //App_TaskControlCreate();
 //#endif
+}
+
+
+/*******************************************************************************
+* 名    称： OSSetWdtFlag
+* 功    能： 任务喂狗
+* 入口参数： 无
+* 出口参数： 无
+* 作    者： 无名沈
+* 创建日期： 2017/11/18
+* 修    改： 
+* 修改日期： 
+* 备    注： 
+*******************************************************************************/
+void OSRegWdtFlag( OS_FLAGS flag )
+{
+    /***********************************************
+    * 描述： 在看门狗标志组注册本任务的看门狗标志
+    */
+    WdtFlags |= flag;
+}
+
+/*******************************************************************************
+* 名    称： OSSetWdtFlag
+* 功    能： 任务喂狗
+* 入口参数： 无
+* 出口参数： 无
+* 作    者： 无名沈
+* 创建日期： 2017/11/18
+* 修    改： 
+* 修改日期： 
+* 备    注： 
+*******************************************************************************/
+void OSSetWdtFlag( OS_FLAGS flag )
+{
+    OS_ERR    err;
+    
+    /***********************************************
+    * 描述： 本任务看门狗标志置位
+    */
+    OSFlagPost(( OS_FLAG_GRP  *)&WdtFlagGRP,
+                ( OS_FLAGS     ) flag,
+                ( OS_OPT       ) OS_OPT_POST_FLAG_SET,
+                ( OS_ERR      *) &err);
 }
 
 /*******************************************************************************

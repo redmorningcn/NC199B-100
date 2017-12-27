@@ -711,6 +711,15 @@ CPU_INT16U  MBM_FC03_HoldingRegRd    (MODBUS_CH   *pch,
     INT08S  retrys  = pch->Retrys;
     do {
       MBM_TxCmd(pch);
+      //redmorningcn    新增，防信号量冲突20171226
+//      uint16    delaytime; 
+//      delaytime  = (10 *(pch->TxFrameNDataBytes + 4) *1000)/pch->BaudRate ;
+//      
+//      if( delaytime  < 1 || delaytime > 100)
+//          delaytime = 5;
+//      
+//      BSP_OS_TimeDly(delaytime );
+//
       MB_OS_RxWait(pch,&err);
     } while ( ( err == MODBUS_ERR_TIMED_OUT ) && --retrys  );
 

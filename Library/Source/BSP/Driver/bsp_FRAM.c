@@ -405,7 +405,7 @@ uint8 FRAM_ReadAirPara(stcAirPara  *sAir)
         
         memcpy((uint8 *)sAir,(uint8 *)&sAirTmp,sizeof(stcAirPara));         //数据有效，退出
     }
-	
+
 	FRAM_SendEvent();
 	return	flg;
 }

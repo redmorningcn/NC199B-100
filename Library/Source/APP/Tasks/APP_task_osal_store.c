@@ -239,6 +239,8 @@ uint8	ReadFlshRec(stcFlshRec * sFlshRec,uint32	FlshRecNum)
  *******************************************************************************/
 void    BSP_StoreInit(void)
 {
+    uint16 crc16;
+    
 	InitFlashIO();              //初始化flash
     //SPI_FLASH_Init();         //初始化flash
     JudgeFlashIDErrFlg();       //flash测试
@@ -246,15 +248,39 @@ void    BSP_StoreInit(void)
     GPIO_Fram_Init();           //初始化fram
     
     InitDS3231();               //初始化时钟
-        
-                                //读Ctrl 
+    
+    OSRegWdtFlag( WDT_FLAG_STORE );
+
+    //读Ctrl 
     FRAM_ReadRecNumMgr((stcRecNumMgr  *)&Ctrl.Para.dat.sRecNumMgr);         //读记录号
     FRAM_ReadProductInfo((stcProductInfo  *)&Ctrl.Para.dat.sProductInfo);   //读产品编号
     FRAM_ReadCurRecord((stcFlshRec  *)&Ctrl.sRec);                          //读当前记录
+    
     FRAM_ReadAirPara((stcAirPara  *)&Ctrl.Para.dat.sAirPara);               //读计算参数
+    
+    crc16 = GetCrc16Check((uint8 *)&Ctrl.Para.dat.sAirPara,sizeof(stcAirPara) - 2); 
+    if(    Ctrl.Para.dat.sAirPara.crc16 != crc16
+       ||  (Ctrl.Para.dat.sAirPara.crc16  == 0 && Ctrl.Para.dat.sAirPara.sStandard_Hum.NormalLimit == 0)
+      )
+    {
+        
+        Ctrl.Para.dat.sAirPara.sStandard_Dust.GoodLimit     = 200;
+        Ctrl.Para.dat.sAirPara.sStandard_Dust.NormalLimit   = 500;
+        
+        Ctrl.Para.dat.sAirPara.sStandard_VOC.GoodLimit      = 500;
+        Ctrl.Para.dat.sAirPara.sStandard_VOC.NormalLimit    = 2000;
+        
+        Ctrl.Para.dat.sAirPara.sStandard_Hum.GoodLimit      = 60;
+        Ctrl.Para.dat.sAirPara.sStandard_Hum.NormalLimit    = 85;
+        
+        Ctrl.Para.dat.sAirPara.Dust_modefy  = 0;
+        Ctrl.Para.dat.sAirPara.Hum_modefy   = 0;
+        Ctrl.Para.dat.sAirPara.Voc_modefy   = 0;
+    }
+    
+    
     FRAM_ReadRunPara((stcRunPara  *)&Ctrl.Para.dat.sRunPara);               //读运行参数
-//    FRAM_ReadCalcModel((stcCalcModel  *)&Ctrl.sCalcModel);                //读计算模型
-
+    
 }
 
 /*******************************************************************************
@@ -272,12 +298,13 @@ void TaskInitStore(void)
 //    /***********************************************
 //    * 描述： 初始化本任务用到的相关硬件
 //    */
+    
     BSP_StoreInit();			                                //初始化Flash底层相关函数
 
 //初始化定时器
     osal_start_timerEx( OS_TASK_ID_STORE,
-                      OS_EVT_STORE_TICKS,
-                      60*1000);                                 //60秒后再存储
+                        OS_EVT_STORE_TICKS,
+                        1000);                                 //60秒后再存储
 }
 
 extern  MODBUS_CH   *g_pch; 
@@ -293,19 +320,37 @@ extern  MODBUS_CH   *g_pch;
  *******************************************************************************/
 osalEvt  TaskStoreEvtProcess(osalTid task_id, osalEvt task_event)
 {
+    static  uint16  times = 0;    
+    
+    OSSetWdtFlag( WDT_FLAG_STORE );
+    
 
     if( task_event & OS_EVT_STORE_TICKS ) {
-
-        StoreData();            //保存数据记录
         
         osal_start_timerEx( OS_TASK_ID_STORE,
-                            OS_EVT_STORE_TICKS,
-                            1000*120);
-                            //1000);
+                   OS_EVT_STORE_TICKS,
+                   1000);   
+        
+        
+        times++;
+        if(times > Ctrl.Para.dat.sRunPara.StoreCycle*60)
+        {
+            StoreData();            //保存数据记录
+            times = 0;
+        }
+        
+        if( Ctrl.Para.dat.sRunPara.MeasureMin < 1 || 
+           Ctrl.Para.dat.sRunPara.MeasureMin > 30  
+               )
+        {
+            Ctrl.Para.dat.sRunPara.MeasureMin = 2;
+        }
+        
         return ( task_event ^ OS_EVT_STORE_TICKS );
+
     }
     
-    return  task_event;
+    return  0;
 }
 
 
