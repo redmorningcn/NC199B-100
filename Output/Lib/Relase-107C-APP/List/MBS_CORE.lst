@@ -1,0 +1,3347 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  20:53:52
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Source\MBS_CORE.C
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Source\MBS_CORE.C -D
+#        USE_STDPERIPH_DRIVER -D STM32F10X_CL -D RELEASE -D IMAGE_A -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\List\MBS_CORE.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\Obj\MBS_CORE.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\Micrium\uC-MB\Source\MBS_CORE.C
+      1          /*
+      2          *********************************************************************************************************
+      3          *                                              uC/Modbus
+      4          *                                       The Embedded Modbus Stack
+      5          *
+      6          *                          (c) Copyright 2003-2009; Micrium, Inc.; Weston, FL
+      7          *
+      8          *               All rights reserved.  Protected by international copyright laws.
+      9          *               Knowledge of the source code may NOT be used to develop a similar product.
+     10          *               Please help us continue to provide the Embedded community with the finest
+     11          *               software available.  Your honesty is greatly appreciated.
+     12          *********************************************************************************************************
+     13          */
+     14          
+     15          /*
+     16          *********************************************************************************************************
+     17          *
+     18          *                                     uC/MODBUS SLAVE COMMAND PROCESSOR
+     19          *
+     20          * Filename      : mbs_core.c
+     21          * Version       : V2.12
+     22          * Programmer(s) : JJL
+     23          *********************************************************************************************************
+     24          * Note(s)       :
+     25          *********************************************************************************************************
+     26          */
+     27          // FILE MODIFIED BY SE
+     28          // added code for SE specific functions and features
+     29          
+     30          /*
+     31          *********************************************************************************************************
+     32          *                                             INCLUDE FILES
+     33          *********************************************************************************************************
+     34          */
+     35          
+     36          #define  MBS_MODULE
+     37          // Modified by SE
+     38          #include <includes.h>
+     39          #include <mb_app_hooks.h>
+     40          //#include <diagcounter.h>
+     41          /*
+     42          *********************************************************************************************************
+     43          *                                                MACROS
+     44          *********************************************************************************************************
+     45          */
+     46          
+     47          #define  MBS_RX_DATA_START     (((CPU_INT16U)pch->RxFrameData[2] << 8) + (CPU_INT16U)pch->RxFrameData[3])
+     48          #define  MBS_RX_DATA_START_H    (pch->RxFrameData[2])
+     49          #define  MBS_RX_DATA_START_L    (pch->RxFrameData[3])
+     50          
+     51          #define  MBS_RX_DATA_POINTS    (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+     52          #define  MBS_RX_DATA_POINTS_H   (pch->RxFrameData[4])
+     53          #define  MBS_RX_DATA_POINTS_L   (pch->RxFrameData[5])
+     54          
+     55          #define  MBS_RX_DATA_BYTES      (pch->RxFrameData[6])
+     56          
+     57          #define  MBS_RX_DATA_COIL      (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+     58          #define  MBS_RX_DATA_COIL_H     (pch->RxFrameData[4])
+     59          #define  MBS_RX_DATA_COIL_L     (pch->RxFrameData[5])
+     60          
+     61          #define  MBS_RX_DATA_REG       (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+     62          #define  MBS_RX_DATA_REG_H      (pch->RxFrameData[4])
+     63          #define  MBS_RX_DATA_REG_L      (pch->RxFrameData[5])
+     64          
+     65          #define  MBS_RX_DIAG_CODE      (((CPU_INT16U)pch->RxFrameData[2] << 8) + (CPU_INT16U)pch->RxFrameData[3])
+     66          #define  MBS_RX_DIAG_CODE_H     (pch->RxFrameData[2])
+     67          #define  MBS_RX_DIAG_CODE_L     (pch->RxFrameData[3])
+     68          #define  MBS_RX_DIAG_DATA      (((CPU_INT16U)pch->RxFrameData[4] << 8) + (CPU_INT16U)pch->RxFrameData[5])
+     69          #define  MBS_RX_DIAG_DATA_H     (pch->RxFrameData[4])
+     70          #define  MBS_RX_DIAG_DATA_L     (pch->RxFrameData[5])
+     71          
+     72          #define  MBS_RX_FRAME          (&pch->RxFrame)
+     73          #define  MBS_RX_FRAME_ADDR      (pch->RxFrameData[0])
+     74          #define  MBS_RX_FRAME_FC        (pch->RxFrameData[1])
+     75          #define  MBS_RX_FRAME_DATA      (pch->RxFrameData[2])
+     76          #define  MBS_RX_FRAME_NBYTES    (pch->RxFrameNDataBytes)
+     77          
+     78          
+     79          #define  MBS_TX_DATA_START_H    (pch->TxFrameData[2])
+     80          #define  MBS_TX_DATA_START_L    (pch->TxFrameData[3])
+     81          
+     82          #define  MBS_TX_DATA_POINTS_H   (pch->TxFrameData[4])
+     83          #define  MBS_TX_DATA_POINTS_L   (pch->TxFrameData[5])
+     84          
+     85          #define  MBS_TX_DATA_COIL_H     (pch->TxFrameData[4])
+     86          #define  MBS_TX_DATA_COIL_L     (pch->TxFrameData[5])
+     87          
+     88          #define  MBS_TX_DATA_REG_H      (pch->TxFrameData[4])
+     89          #define  MBS_TX_DATA_REG_L      (pch->TxFrameData[5])
+     90          
+     91          #define  MBS_TX_DIAG_CODE_H     (pch->TxFrameData[2])
+     92          #define  MBS_TX_DIAG_CODE_L     (pch->TxFrameData[3])
+     93          #define  MBS_TX_DIAG_DATA_H     (pch->TxFrameData[4])
+     94          #define  MBS_TX_DIAG_DATA_L     (pch->TxFrameData[5])
+     95          
+     96          
+     97          #define  MBS_TX_FRAME          (&pch->TxFrame)
+     98          #define  MBS_TX_FRAME_ADDR      (pch->TxFrameData[0])
+     99          #define  MBS_TX_FRAME_FC        (pch->TxFrameData[1])
+    100          #define  MBS_TX_FRAME_DATA      (pch->TxFrameData[2])
+    101          #define  MBS_TX_FRAME_NBYTES    (pch->TxFrameNDataBytes)
+    102          
+    103          //SE Added defines from this point forward
+    104          #define  MBS_FC100_DATA_BYTES    (5u)
+    105          
+    106          /*$PAGE*/
+    107          /*
+    108          *********************************************************************************************************
+    109          *                                    LOCAL FUNCTION PROTOTYPES
+    110          *********************************************************************************************************
+    111          */
+    112          
+    113          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+    114          
+    115          static  void                 MBS_ErrRespSet                (MODBUS_CH *pch, CPU_INT08U errcode);
+    116          
+    117          #if     (MODBUS_CFG_FC01_EN == DEF_ENABLED)
+    118          static  CPU_BOOLEAN          MBS_FC01_CoilRd               (MODBUS_CH *pch);
+    119          #endif
+    120          
+    121          #if     (MODBUS_CFG_FC02_EN == DEF_ENABLED)
+    122          static  CPU_BOOLEAN          MBS_FC02_DIRd                 (MODBUS_CH *pch);
+    123          #endif
+    124          
+    125          #if     (MODBUS_CFG_FC03_EN == DEF_ENABLED)
+    126          static  CPU_BOOLEAN          MBS_FC03_HoldingRegRd         (MODBUS_CH *pch);
+    127          #endif
+    128          
+    129          #if     (MODBUS_CFG_FC04_EN == DEF_ENABLED)
+    130          static  CPU_BOOLEAN          MBS_FC04_InRegRd              (MODBUS_CH *pch);
+    131          #endif
+    132          
+    133          #if     (MODBUS_CFG_FC05_EN == DEF_ENABLED)
+    134          static  CPU_BOOLEAN          MBS_FC05_CoilWr               (MODBUS_CH *pch);
+    135          #endif
+    136          
+    137          #if     (MODBUS_CFG_FC06_EN == DEF_ENABLED)
+    138          static  CPU_BOOLEAN          MBS_FC06_HoldingRegWr         (MODBUS_CH *pch);
+    139          #endif
+    140          
+    141          #if     (MODBUS_CFG_FC08_EN == DEF_ENABLED)
+    142          static  CPU_BOOLEAN          MBS_FC08_Loopback             (MODBUS_CH *pch);
+    143          #endif
+    144          
+    145          #if     (MODBUS_CFG_FC15_EN == DEF_ENABLED)
+    146          static  CPU_BOOLEAN          MBS_FC15_CoilWrMultiple       (MODBUS_CH *pch);
+    147          #endif
+    148          
+    149          #if     (MODBUS_CFG_FC16_EN == DEF_ENABLED)
+    150          static  CPU_BOOLEAN          MBS_FC16_HoldingRegWrMultiple (MODBUS_CH *pch);
+    151          #endif
+    152          
+    153          #if     (MODBUS_CFG_FC20_EN == DEF_ENABLED)
+    154          static  CPU_BOOLEAN          MBS_FC20_FileRd               (MODBUS_CH *pch);
+    155          #endif
+    156          
+    157          #if     (MODBUS_CFG_FC21_EN == DEF_ENABLED)
+    158          static  CPU_BOOLEAN          MBS_FC21_FileWr               (MODBUS_CH *pch);
+    159          #endif
+    160          
+    161          
+    162          #if     MODBUS_FC43_EN > 0
+    163          // SE added
+    164          static   CPU_BOOLEAN          MBS_FC43_readDeviceID         (MODBUS_CH  *pch);
+    165          #endif
+    166          
+    167          #if     MODBUS_FC100_EN > 0
+    168          //SE added
+    169          static   CPU_BOOLEAN          MBS_FC100_scatteredRead       (MODBUS_CH  *pch);
+    170          
+    171          #endif
+    172          
+    173          #if     (MODBUS_CFG_ASCII_EN == DEF_ENABLED)
+    174          static  void                 MBS_ASCII_Task                (MODBUS_CH   *pch);
+    175          #endif
+    176          
+    177          #if     (MODBUS_CFG_RTU_EN   == DEF_ENABLED)
+    178          static  void                 MBS_RTU_Task                  (MODBUS_CH   *pch);
+    179          #endif
+    180          
+    181          #endif
+    182          
+    183          /*$PAGE*/
+    184          /*
+    185          *********************************************************************************************************
+    186          *                                         MBM_ErrRespSet()
+    187          *
+    188          * Description : This function sets the indicated error response code into the response frame.  Then the
+    189          *               routine is called to calculate the error check value.
+    190          *
+    191          * Argument(s) : pch         Is a pointer to the Modbus channel's data structure.
+    192          *
+    193          *               errcode     An unsigned byte value containing the error code that is to be placed in the
+    194          *                           response frame.
+    195          *
+    196          * Return(s)   : none.
+    197          *
+    198          * Caller(s)   : MBM_FCxx_Handler()
+    199          *             : Modbus Slave functions
+    200          *
+    201          * Note(s)     : none.
+    202          *********************************************************************************************************
+    203          */
+    204          
+    205          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    206          static  void  MBS_ErrRespSet (MODBUS_CH  *pch,
+    207                                        CPU_INT08U  err_code)
+    208          {
+   \                     MBS_ErrRespSet: (+1)
+   \   00000000   0xB410             PUSH     {R4}
+    209              //pch->StatExceptCtr++;
+    210              COM_incDiaCtr(COM_EXCEPTIONS);
+   \   00000002   0x8C42             LDRH     R2,[R0, #+34]
+   \   00000004   0x1C52             ADDS     R2,R2,#+1
+   \   00000006   0x8442             STRH     R2,[R0, #+34]
+    211              // TODO Frame address was new from Micrium
+    212              MBS_TX_FRAME_ADDR   = MBS_RX_FRAME_ADDR;
+   \   00000008   0xF200 0x324E      ADDW     R2,R0,#+846
+   \   0000000C   0xF500 0x7311      ADD      R3,R0,#+580
+   \   00000010   0x781C             LDRB     R4,[R3, #+0]
+   \   00000012   0x7014             STRB     R4,[R2, #+0]
+    213              MBS_TX_FRAME_FC     = MBS_RX_FRAME_FC | 0x80;                /* Set the high order bit of the function code.     */
+   \   00000014   0x785B             LDRB     R3,[R3, #+1]
+   \   00000016   0xF043 0x0380      ORR      R3,R3,#0x80
+   \   0000001A   0x7053             STRB     R3,[R2, #+1]
+    214              MBS_TX_FRAME_DATA   = err_code;                              /* Set the high order bit of the function code.     */
+   \   0000001C   0x7091             STRB     R1,[R2, #+2]
+    215              MBS_TX_FRAME_NBYTES = 1;                                     /* Nbr of data bytes in exception response is 1.    */
+   \   0000001E   0x2101             MOVS     R1,#+1
+   \   00000020   0xF8A0 0x144E      STRH     R1,[R0, #+1102]
+    216          }
+   \   00000024   0xBC10             POP      {R4}
+   \   00000026   0x4770             BX       LR               ;; return
+    217          #endif
+    218          
+    219          /*$PAGE*/
+    220          /*
+    221          *********************************************************************************************************
+    222          *                                           MBS_FCxx_Handler()
+    223          *
+    224          * Description : This is the main processing function for MODBUS commands.  The message integrity is
+    225          *               verified, and if valid, the function requested is processed.  Unimplemented functions
+    226          *               will generate an Illegal Function Exception Response code (01).
+    227          *
+    228          * Argument(s) : pch      Is a pointer to the Modbus channel's data structure.
+    229          *
+    230          * Return(s)   : none.
+    231          *
+    232          * Caller(s)   : MBS_ASCII_Task()
+    233          *               MBS_RTU_Task
+    234          *
+    235          * Note(s)     : none.
+    236          *********************************************************************************************************
+    237          */
+    238          
+    239          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    240          CPU_BOOLEAN  MBS_FCxx_Handler (MODBUS_CH  *pch)
+    241          {
+   \                     MBS_FCxx_Handler: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+    242              CPU_BOOLEAN   send_reply;
+    243          
+    244          
+    245              if ((MBS_RX_FRAME_ADDR == pch->NodeAddr) ||       /* Proper node address? (i.e. Is this message for us?)   */
+    246                  (MBS_RX_FRAME_ADDR == 0) ||                   /* ... or a 'broadcast' address?                         */
+    247                  (MBS_RX_FRAME_ADDR == MB_getPseudo( ) ) ) {
+   \   00000002   0xF500 0x7411      ADD      R4,R0,#+580
+   \   00000006   0x7822             LDRB     R2,[R4, #+0]
+   \   00000008   0x1C43             ADDS     R3,R0,#+1
+   \   0000000A   0x79DD             LDRB     R5,[R3, #+7]
+   \   0000000C   0x42AA             CMP      R2,R5
+   \   0000000E   0xD008             BEQ.N    ??MBS_FCxx_Handler_0
+   \   00000010   0x2A00             CMP      R2,#+0
+   \   00000012   0xD006             BEQ.N    ??MBS_FCxx_Handler_0
+   \   00000014   0x78A5             LDRB     R5,[R4, #+2]
+   \   00000016   0x7866             LDRB     R6,[R4, #+1]
+   \   00000018   0xEB05 0x2506      ADD      R5,R5,R6, LSL #+8
+   \   0000001C   0xB2AD             UXTH     R5,R5
+   \   0000001E   0x42AA             CMP      R2,R5
+   \   00000020   0xD15B             BNE.N    ??MBS_FCxx_Handler_1
+    248                  //pch->StatSlaveMsgCtr++;
+    249                  COM_incDiaCtr(COM_PACKETSTOUNIT);
+   \                     ??MBS_FCxx_Handler_0: (+1)
+   \   00000022   0xF100 0x0116      ADD      R1,R0,#+22
+   \   00000026   0x89CA             LDRH     R2,[R1, #+14]
+   \   00000028   0x1C52             ADDS     R2,R2,#+1
+   \   0000002A   0x81CA             STRH     R2,[R1, #+14]
+    250          
+    251                  switch (MBS_RX_FRAME_FC) {                           /* Handle the function requested in the frame.           */
+   \   0000002C   0x7862             LDRB     R2,[R4, #+1]
+   \   0000002E   0x2A01             CMP      R2,#+1
+   \   00000030   0xD010             BEQ.N    ??MBS_FCxx_Handler_2
+   \   00000032   0x2A03             CMP      R2,#+3
+   \   00000034   0xD012             BEQ.N    ??MBS_FCxx_Handler_3
+   \   00000036   0x2A05             CMP      R2,#+5
+   \   00000038   0xD014             BEQ.N    ??MBS_FCxx_Handler_4
+   \   0000003A   0x2A06             CMP      R2,#+6
+   \   0000003C   0xD01B             BEQ.N    ??MBS_FCxx_Handler_5
+   \   0000003E   0x2A08             CMP      R2,#+8
+   \   00000040   0xD022             BEQ.N    ??MBS_FCxx_Handler_6
+   \   00000042   0x2A0F             CMP      R2,#+15
+   \   00000044   0xD024             BEQ.N    ??MBS_FCxx_Handler_7
+   \   00000046   0x2A10             CMP      R2,#+16
+   \   00000048   0xD02B             BEQ.N    ??MBS_FCxx_Handler_8
+   \   0000004A   0x2A14             CMP      R2,#+20
+   \   0000004C   0xD032             BEQ.N    ??MBS_FCxx_Handler_9
+   \   0000004E   0x2A15             CMP      R2,#+21
+   \   00000050   0xD034             BEQ.N    ??MBS_FCxx_Handler_10
+   \   00000052   0xE03C             B.N      ??MBS_FCxx_Handler_11
+    252          #if (MODBUS_CFG_FC01_EN == DEF_ENABLED)
+    253                      case MODBUS_FC01_COIL_RD:
+    254                           send_reply = MBS_FC01_CoilRd(pch);
+   \                     ??MBS_FCxx_Handler_2: (+1)
+   \   00000054   0x.... 0x....      BL       MBS_FC01_CoilRd
+   \   00000058   0x4601             MOV      R1,R0
+    255                           break;
+   \   0000005A   0xE03E             B.N      ??MBS_FCxx_Handler_1
+    256          #endif
+    257          
+    258          #if (MODBUS_CFG_FC02_EN == DEF_ENABLED)
+    259                      case MODBUS_FC02_DI_RD:
+    260                           send_reply = MBS_FC02_DIRd(pch);
+    261                           break;
+    262          #endif
+    263          
+    264          #if (MODBUS_CFG_FC03_EN == DEF_ENABLED)
+    265                      case MODBUS_FC03_HOLDING_REG_RD:                 /* Process read output registers command.                   */
+    266                           send_reply = MBS_FC03_HoldingRegRd(pch);
+   \                     ??MBS_FCxx_Handler_3: (+1)
+   \   0000005C   0x.... 0x....      BL       MBS_FC03_HoldingRegRd
+   \   00000060   0x4601             MOV      R1,R0
+    267                           break;
+   \   00000062   0xE03A             B.N      ??MBS_FCxx_Handler_1
+    268          #endif
+    269          
+    270          #if (MODBUS_CFG_FC04_EN == DEF_ENABLED)
+    271                      case MODBUS_FC04_IN_REG_RD:
+    272                           send_reply = MBS_FC04_InRegRd(pch);
+    273                           break;
+    274          #endif
+    275          
+    276          #if (MODBUS_CFG_FC05_EN == DEF_ENABLED)
+    277                      case MODBUS_FC05_COIL_WR:
+    278                           if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBS_FCxx_Handler_4: (+1)
+   \   00000064   0x7819             LDRB     R1,[R3, #+0]
+   \   00000066   0x2901             CMP      R1,#+1
+   \   00000068   0xD103             BNE.N    ??MBS_FCxx_Handler_12
+    279                               send_reply  = MBS_FC05_CoilWr(pch);
+   \   0000006A   0x.... 0x....      BL       MBS_FC05_CoilWr
+   \   0000006E   0x4601             MOV      R1,R0
+   \   00000070   0xE033             B.N      ??MBS_FCxx_Handler_1
+    280                           } else {
+    281                               send_reply  = DEF_FALSE;
+   \                     ??MBS_FCxx_Handler_12: (+1)
+   \   00000072   0x2100             MOVS     R1,#+0
+   \   00000074   0xE031             B.N      ??MBS_FCxx_Handler_1
+    282                           }
+    283                           break;
+    284          #endif
+    285          
+    286          #if (MODBUS_CFG_FC06_EN == DEF_ENABLED)
+    287                      case MODBUS_FC06_HOLDING_REG_WR:
+    288                           if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBS_FCxx_Handler_5: (+1)
+   \   00000076   0x7819             LDRB     R1,[R3, #+0]
+   \   00000078   0x2901             CMP      R1,#+1
+   \   0000007A   0xD103             BNE.N    ??MBS_FCxx_Handler_13
+    289                               send_reply  = MBS_FC06_HoldingRegWr(pch);
+   \   0000007C   0x.... 0x....      BL       MBS_FC06_HoldingRegWr
+   \   00000080   0x4601             MOV      R1,R0
+   \   00000082   0xE02A             B.N      ??MBS_FCxx_Handler_1
+    290                           } else {
+    291                               send_reply  = DEF_FALSE;
+   \                     ??MBS_FCxx_Handler_13: (+1)
+   \   00000084   0x2100             MOVS     R1,#+0
+   \   00000086   0xE028             B.N      ??MBS_FCxx_Handler_1
+    292                           }
+    293                           break;
+    294          #endif
+    295          
+    296          #if (MODBUS_CFG_FC08_EN == DEF_ENABLED)
+    297                      case MODBUS_FC08_LOOPBACK:
+    298                           send_reply = MBS_FC08_Loopback(pch);        /* Process loopback command.                                */
+   \                     ??MBS_FCxx_Handler_6: (+1)
+   \   00000088   0x.... 0x....      BL       MBS_FC08_Loopback
+   \   0000008C   0x4601             MOV      R1,R0
+    299                           break;
+   \   0000008E   0xE024             B.N      ??MBS_FCxx_Handler_1
+    300          #endif
+    301          
+    302          #if (MODBUS_CFG_FC15_EN == DEF_ENABLED)
+    303                      case MODBUS_FC15_COIL_WR_MULTIPLE:
+    304                           if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBS_FCxx_Handler_7: (+1)
+   \   00000090   0x7819             LDRB     R1,[R3, #+0]
+   \   00000092   0x2901             CMP      R1,#+1
+   \   00000094   0xD103             BNE.N    ??MBS_FCxx_Handler_14
+    305                               send_reply  = MBS_FC15_CoilWrMultiple(pch);
+   \   00000096   0x.... 0x....      BL       MBS_FC15_CoilWrMultiple
+   \   0000009A   0x4601             MOV      R1,R0
+   \   0000009C   0xE01D             B.N      ??MBS_FCxx_Handler_1
+    306                           } else {
+    307                               send_reply  = DEF_FALSE;
+   \                     ??MBS_FCxx_Handler_14: (+1)
+   \   0000009E   0x2100             MOVS     R1,#+0
+   \   000000A0   0xE01B             B.N      ??MBS_FCxx_Handler_1
+    308                           }
+    309                           break;
+    310          #endif
+    311          
+    312          #if (MODBUS_CFG_FC16_EN == DEF_ENABLED)
+    313                      case MODBUS_FC16_HOLDING_REG_WR_MULTIPLE:
+    314                           if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBS_FCxx_Handler_8: (+1)
+   \   000000A2   0x7819             LDRB     R1,[R3, #+0]
+   \   000000A4   0x2901             CMP      R1,#+1
+   \   000000A6   0xD103             BNE.N    ??MBS_FCxx_Handler_15
+    315                               send_reply  = MBS_FC16_HoldingRegWrMultiple(pch);
+   \   000000A8   0x.... 0x....      BL       MBS_FC16_HoldingRegWrMultiple
+   \   000000AC   0x4601             MOV      R1,R0
+   \   000000AE   0xE014             B.N      ??MBS_FCxx_Handler_1
+    316                           } else {
+    317                               send_reply  = DEF_FALSE;
+   \                     ??MBS_FCxx_Handler_15: (+1)
+   \   000000B0   0x2100             MOVS     R1,#+0
+   \   000000B2   0xE012             B.N      ??MBS_FCxx_Handler_1
+    318                           }
+    319                           break;
+    320          #endif
+    321          
+    322          #if (MODBUS_CFG_FC20_EN == DEF_ENABLED)
+    323                      case MODBUS_FC20_FILE_RD:
+    324                           send_reply  = MBS_FC20_FileRd(pch);
+   \                     ??MBS_FCxx_Handler_9: (+1)
+   \   000000B4   0x.... 0x....      BL       MBS_FC20_FileRd
+   \   000000B8   0x4601             MOV      R1,R0
+    325                           break;
+   \   000000BA   0xE00E             B.N      ??MBS_FCxx_Handler_1
+    326          #endif
+    327          
+    328          #if (MODBUS_CFG_FC21_EN == DEF_ENABLED)
+    329                      case MODBUS_FC21_FILE_WR:
+    330                           if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBS_FCxx_Handler_10: (+1)
+   \   000000BC   0x7819             LDRB     R1,[R3, #+0]
+   \   000000BE   0x2901             CMP      R1,#+1
+   \   000000C0   0xD103             BNE.N    ??MBS_FCxx_Handler_16
+    331                               send_reply = MBS_FC21_FileWr(pch);
+   \   000000C2   0x.... 0x....      BL       MBS_FC21_FileWr
+   \   000000C6   0x4601             MOV      R1,R0
+   \   000000C8   0xE007             B.N      ??MBS_FCxx_Handler_1
+    332                           } else {
+    333                               send_reply = DEF_FALSE;
+   \                     ??MBS_FCxx_Handler_16: (+1)
+   \   000000CA   0x2100             MOVS     R1,#+0
+   \   000000CC   0xE005             B.N      ??MBS_FCxx_Handler_1
+    334                           }
+    335                           break;
+    336          #endif
+    337          
+    338          #if MODBUS_FC43_EN > 0 // Read Device ID
+    339                     case MODBUS_FC43_READ_DEV_ID:
+    340                        send_reply  = MBS_FC43_readDeviceID(pch);
+    341                      break;
+    342          #endif
+    343          
+    344          #if MODBUS_FC100_EN > 0 // Scattered Read
+    345                      case MODBUS_FC100_SCATTERED_READ:
+    346                         send_reply = MBS_FC100_scatteredRead(pch);
+    347                      break;
+    348          #endif
+    349          
+    350                      default:                                         /* Function code not implemented, set error response. */
+    351                           pch->Err   = MODBUS_ERR_ILLEGAL_FC;
+   \                     ??MBS_FCxx_Handler_11: (+1)
+   \   000000CE   0x2201             MOVS     R2,#+1
+   \   000000D0   0x800A             STRH     R2,[R1, #+0]
+    352                           MBS_ErrRespSet(pch,
+    353                                          MODBUS_ERR_ILLEGAL_FC);
+   \   000000D2   0x4611             MOV      R1,R2
+   \   000000D4   0x.... 0x....      BL       MBS_ErrRespSet
+    354                           //COM_incDiaCtr(COM_ILLEGALOPCODE);
+    355                           send_reply = DEF_TRUE;
+   \   000000D8   0x2101             MOVS     R1,#+1
+    356                           break;
+    357                  }
+    358              }
+    359              else
+    360              {
+    361                 //COM_incDiaCtr( COM_PACKETSTOOTHERS );
+    362              }
+    363          
+    364              if (MBS_RX_FRAME_ADDR == 0 ||
+    365                  (MBS_RX_FRAME_ADDR == MB_getPseudo ( ) ) ) {     /* Was the command received a 'broadcast'?   */
+   \                     ??MBS_FCxx_Handler_1: (+1)
+   \   000000DA   0x7820             LDRB     R0,[R4, #+0]
+   \   000000DC   0x2800             CMP      R0,#+0
+   \   000000DE   0xD006             BEQ.N    ??MBS_FCxx_Handler_17
+   \   000000E0   0x78A2             LDRB     R2,[R4, #+2]
+   \   000000E2   0x7863             LDRB     R3,[R4, #+1]
+   \   000000E4   0xEB02 0x2203      ADD      R2,R2,R3, LSL #+8
+   \   000000E8   0xB292             UXTH     R2,R2
+   \   000000EA   0x4290             CMP      R0,R2
+   \   000000EC   0xD101             BNE.N    ??MBS_FCxx_Handler_18
+    366                  return (DEF_FALSE);                              /* Yes, don't reply                           */
+   \                     ??MBS_FCxx_Handler_17: (+1)
+   \   000000EE   0x2000             MOVS     R0,#+0
+   \   000000F0   0xBD70             POP      {R4-R6,PC}
+    367              } else {
+    368                  return (send_reply);                             /* No,  reply according to the outcome of the command    */
+   \                     ??MBS_FCxx_Handler_18: (+1)
+   \   000000F2   0x4608             MOV      R0,R1
+   \   000000F4   0xB2C0             UXTB     R0,R0
+   \   000000F6   0xBD70             POP      {R4-R6,PC}       ;; return
+    369              }
+    370          }
+    371          #endif
+    372          
+    373          /*$PAGE*/
+    374          /*
+    375          *********************************************************************************************************
+    376          *                                           MBS_FC01_CoilRd()
+    377          *
+    378          * Description : Responds to a request to read the status of any number of coils.
+    379          *
+    380          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+    381          *
+    382          * Return(s)   : DEF_TRUE      If a response needs to be sent
+    383          *               DEF_FALSE     If not
+    384          *
+    385          * Caller(s)   : MBS_FCxx_Handler()
+    386          *
+    387          * Note(s)     : none
+    388          *********************************************************************************************************
+    389          */
+    390          
+    391          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+    392          #if (MODBUS_CFG_FC01_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    393          static  CPU_BOOLEAN  MBS_FC01_CoilRd (MODBUS_CH  *pch)
+    394          {
+   \                     MBS_FC01_CoilRd: (+1)
+   \   00000000   0xE92D 0x43F8      PUSH     {R3-R9,LR}
+   \   00000004   0x4604             MOV      R4,R0
+    395              CPU_INT08U     *presp;
+    396              CPU_INT16U      coil;
+    397              CPU_BOOLEAN     coil_val;
+    398              CPU_INT16U      err;
+    399              CPU_INT16U      nbr_coils;
+    400              CPU_INT16U      nbr_bytes;
+    401              CPU_INT08U      bit_mask;
+    402              CPU_INT16U      ix;
+    403          
+    404          
+    405              if (pch->RxFrameNDataBytes != 4) {                           /* 4 data bytes for this message.                           */
+   \   00000006   0xF8B4 0x0344      LDRH     R0,[R4, #+836]
+   \   0000000A   0x2804             CMP      R0,#+4
+   \   0000000C   0xD001             BEQ.N    ??MBS_FC01_CoilRd_0
+    406                  return (DEF_FALSE);                                      /* Tell caller that we DON'T need to send a response        */
+   \   0000000E   0x2000             MOVS     R0,#+0
+   \   00000010   0xE068             B.N      ??MBS_FC01_CoilRd_1
+    407              }
+    408              coil      = MBS_RX_DATA_START;                               /* Get the starting address of the desired coils            */
+   \                     ??MBS_FC01_CoilRd_0: (+1)
+   \   00000012   0xF504 0x7011      ADD      R0,R4,#+580
+   \   00000016   0x7881             LDRB     R1,[R0, #+2]
+   \   00000018   0x78C2             LDRB     R2,[R0, #+3]
+   \   0000001A   0xEB02 0x2501      ADD      R5,R2,R1, LSL #+8
+    409              nbr_coils = MBS_RX_DATA_POINTS;                              /* Find out how many coils                                  */
+   \   0000001E   0x7901             LDRB     R1,[R0, #+4]
+   \   00000020   0x7942             LDRB     R2,[R0, #+5]
+   \   00000022   0xEB02 0x2601      ADD      R6,R2,R1, LSL #+8
+   \   00000026   0xB2B6             UXTH     R6,R6
+    410              if (nbr_coils == 0 || nbr_coils > 2000) {                    /* Make sure we don't exceed the allowed limit per request  */
+   \   00000028   0x2E00             CMP      R6,#+0
+   \   0000002A   0xD002             BEQ.N    ??MBS_FC01_CoilRd_2
+   \   0000002C   0xF5B6 0x6FFA      CMP      R6,#+2000
+   \   00000030   0xDD07             BLE.N    ??MBS_FC01_CoilRd_3
+    411                  pch->Err = MODBUS_ERR_FC01_01;
+   \                     ??MBS_FC01_CoilRd_2: (+1)
+   \   00000032   0x2065             MOVS     R0,#+101
+   \   00000034   0x82E0             STRH     R0,[R4, #+22]
+    412                  MBS_ErrRespSet(pch,
+    413                                 MODBUS_ERR_ILLEGAL_DATA_QTY);
+   \   00000036   0x2103             MOVS     R1,#+3
+   \   00000038   0x4620             MOV      R0,R4
+   \   0000003A   0x.... 0x....      BL       MBS_ErrRespSet
+    414                  return (DEF_TRUE);                                       /* Tell caller that we need to send a response              */
+   \   0000003E   0x2001             MOVS     R0,#+1
+   \   00000040   0xE050             B.N      ??MBS_FC01_CoilRd_1
+    415              }
+    416              nbr_bytes              = ((nbr_coils - 1) / 8) + 1;          /* Find #bytes needed for response.                         */
+   \                     ??MBS_FC01_CoilRd_3: (+1)
+   \   00000042   0x1E71             SUBS     R1,R6,#+1
+   \   00000044   0x108A             ASRS     R2,R1,#+2
+   \   00000046   0xEB01 0x7152      ADD      R1,R1,R2, LSR #+29
+   \   0000004A   0x10C9             ASRS     R1,R1,#+3
+   \   0000004C   0x1C49             ADDS     R1,R1,#+1
+   \   0000004E   0xB289             UXTH     R1,R1
+    417              pch->TxFrameNDataBytes = nbr_bytes + 1;                      /* Number of data bytes + byte count.                       */
+   \   00000050   0x1C4A             ADDS     R2,R1,#+1
+   \   00000052   0xF8A4 0x244E      STRH     R2,[R4, #+1102]
+    418              presp                  = &pch->TxFrameData[0];               /* Clear bytes in response                                  */
+   \   00000056   0xF204 0x374E      ADDW     R7,R4,#+846
+   \   0000005A   0x463A             MOV      R2,R7
+    419              for (ix = 0; ix < (nbr_bytes + 3); ix++) {
+   \   0000005C   0x2300             MOVS     R3,#+0
+   \   0000005E   0xE004             B.N      ??MBS_FC01_CoilRd_4
+    420                  *presp++ = 0x00;
+   \                     ??MBS_FC01_CoilRd_5: (+1)
+   \   00000060   0xF04F 0x0C00      MOV      R12,#+0
+   \   00000064   0xF802 0xCB01      STRB     R12,[R2], #+1
+    421              }
+   \   00000068   0x1C5B             ADDS     R3,R3,#+1
+   \                     ??MBS_FC01_CoilRd_4: (+1)
+   \   0000006A   0xB29B             UXTH     R3,R3
+   \   0000006C   0xF101 0x0C03      ADD      R12,R1,#+3
+   \   00000070   0x4563             CMP      R3,R12
+   \   00000072   0xDBF5             BLT.N    ??MBS_FC01_CoilRd_5
+    422              bit_mask = 0x01;                                             /* Start with bit 0 in response byte data mask.             */
+   \   00000074   0xF04F 0x0801      MOV      R8,#+1
+    423              ix       =    0;                                             /* Initialize loop counter.                                 */
+   \   00000078   0xF04F 0x0900      MOV      R9,#+0
+    424              presp    = &pch->TxFrameData[0];                             /* Reset the pointer to the start of the response           */
+    425              *presp++ = MBS_RX_FRAME_ADDR;                                /* Prepare response packet                                  */
+   \   0000007C   0x7802             LDRB     R2,[R0, #+0]
+   \   0000007E   0xF807 0x2B01      STRB     R2,[R7], #+1
+    426              *presp++ = MBS_RX_FRAME_FC;
+   \   00000082   0x7840             LDRB     R0,[R0, #+1]
+   \   00000084   0xF807 0x0B01      STRB     R0,[R7], #+1
+    427              *presp++ = (CPU_INT08U)nbr_bytes;                            /* Set number of data bytes in response message.            */
+   \   00000088   0xF807 0x1B01      STRB     R1,[R7], #+1
+   \   0000008C   0xE002             B.N      ??MBS_FC01_CoilRd_6
+    428              while (ix < nbr_coils) {                                     /* Loop through each COIL requested.                        */
+    429                  coil_val = MB_CoilRd(coil,                               /* Get the current value of the coil                        */
+    430                                       &err);
+    431                  switch (err) {
+    432                      case MODBUS_ERR_NONE:
+    433                           if (coil_val == MODBUS_COIL_ON) {               /* Only set data response bit if COIL is on.                */
+    434                               *presp |= bit_mask;
+    435                           }
+    436                           coil++;
+    437                           ix++;                                           /* Increment COIL counter.                                  */
+    438                           if ((ix % 8) == 0) {                            /* Determine if 8 data bits have been filled.               */
+    439                               bit_mask   = 0x01;                          /* Reset the data mask.                                     */
+   \                     ??MBS_FC01_CoilRd_7: (+1)
+   \   0000008E   0xF04F 0x0801      MOV      R8,#+1
+    440                               presp++;                                    /* Increment data frame index.                              */
+   \   00000092   0x1C7F             ADDS     R7,R7,#+1
+    441                           } else {                                        /* Still in same data byte, so                              */
+   \                     ??MBS_FC01_CoilRd_6: (+1)
+   \   00000094   0xFA1F 0xF989      UXTH     R9,R9
+   \   00000098   0x45B1             CMP      R9,R6
+   \   0000009A   0xDA20             BGE.N    ??MBS_FC01_CoilRd_8
+   \   0000009C   0x4669             MOV      R1,SP
+   \   0000009E   0x4628             MOV      R0,R5
+   \   000000A0   0xB280             UXTH     R0,R0
+   \   000000A2   0x.... 0x....      BL       MB_CoilRd
+   \   000000A6   0xF8BD 0x1000      LDRH     R1,[SP, #+0]
+   \   000000AA   0x2900             CMP      R1,#+0
+   \   000000AC   0xD10F             BNE.N    ??MBS_FC01_CoilRd_9
+   \   000000AE   0x2801             CMP      R0,#+1
+   \   000000B0   0xD103             BNE.N    ??MBS_FC01_CoilRd_10
+   \   000000B2   0x7838             LDRB     R0,[R7, #+0]
+   \   000000B4   0xEA48 0x0000      ORR      R0,R8,R0
+   \   000000B8   0x7038             STRB     R0,[R7, #+0]
+   \                     ??MBS_FC01_CoilRd_10: (+1)
+   \   000000BA   0x1C6D             ADDS     R5,R5,#+1
+   \   000000BC   0xF109 0x0901      ADD      R9,R9,#+1
+   \   000000C0   0x2007             MOVS     R0,#+7
+   \   000000C2   0xEA19 0x0F00      TST      R9,R0
+   \   000000C6   0xD0E2             BEQ.N    ??MBS_FC01_CoilRd_7
+    442                               bit_mask <<= 1;                             /* Shift the data mask to the next higher bit position.     */
+   \   000000C8   0xEA4F 0x0848      LSL      R8,R8,#+1
+   \   000000CC   0xE7E2             B.N      ??MBS_FC01_CoilRd_6
+    443                           }
+    444                           break;
+    445          
+    446                      case MODBUS_ERR_RANGE:
+    447                      default:
+    448                           pch->Err = MODBUS_ERR_FC01_02;
+   \                     ??MBS_FC01_CoilRd_9: (+1)
+   \   000000CE   0x2066             MOVS     R0,#+102
+   \   000000D0   0x82E0             STRH     R0,[R4, #+22]
+    449                           MBS_ErrRespSet(pch,
+    450                                          MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   \   000000D2   0x2102             MOVS     R1,#+2
+   \   000000D4   0x4620             MOV      R0,R4
+   \   000000D6   0x.... 0x....      BL       MBS_ErrRespSet
+    451                           return (DEF_TRUE);                              /* Tell caller that we need to send a response              */
+   \   000000DA   0x2001             MOVS     R0,#+1
+   \   000000DC   0xE002             B.N      ??MBS_FC01_CoilRd_1
+    452                  }
+    453              }
+    454              pch->Err = MODBUS_ERR_NONE;
+   \                     ??MBS_FC01_CoilRd_8: (+1)
+   \   000000DE   0x2000             MOVS     R0,#+0
+   \   000000E0   0x82E0             STRH     R0,[R4, #+22]
+    455              return (DEF_TRUE);                                           /* Tell caller that we need to send a response              */
+   \   000000E2   0x2001             MOVS     R0,#+1
+   \                     ??MBS_FC01_CoilRd_1: (+1)
+   \   000000E4   0xE8BD 0x83F2      POP      {R1,R4-R9,PC}    ;; return
+    456          }
+    457          #endif
+    458          #endif
+    459          
+    460          /*$PAGE*/
+    461          /*
+    462          *********************************************************************************************************
+    463          *                                            MBS_FC02_DIRd()
+    464          *
+    465          * Description : Responds to a request to read the status of any number of Discrete Inputs (DIs).
+    466          *
+    467          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+    468          *
+    469          * Return(s)   : DEF_TRUE      If a response needs to be sent
+    470          *               DEF_FALSE     If not
+    471          *
+    472          * Caller(s)   : MBS_FCxx_Handler()
+    473          *
+    474          * Note(s)     : none
+    475          *********************************************************************************************************
+    476          */
+    477          
+    478          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+    479          #if (MODBUS_CFG_FC02_EN  == DEF_ENABLED)
+    480          static  CPU_BOOLEAN  MBS_FC02_DIRd (MODBUS_CH  *pch)
+    481          {
+    482              CPU_INT08U     *presp;
+    483              CPU_INT16U      di;
+    484              CPU_BOOLEAN     di_val;
+    485              CPU_INT16U      err;
+    486              CPU_INT16U      nbr_di;
+    487              CPU_INT16U      nbr_bytes;
+    488              CPU_INT08U      bit_mask;
+    489              CPU_INT16U      ix;
+    490          
+    491          
+    492              if (pch->RxFrameNDataBytes != 4) {                           /* 4 data bytes for this message.                           */
+    493                  return (DEF_FALSE);                                      /* Tell caller that we DON'T need to send a response        */
+    494              }
+    495              di     = MBS_RX_DATA_START;                                  /* Get the starting address of the desired DIs              */
+    496              nbr_di = MBS_RX_DATA_POINTS;                                 /* Find out how many DIs                                    */
+    497              if (nbr_di == 0 || nbr_di > 2000) {                          /* Make sure we don't exceed the allowed limit per request  */
+    498                  pch->Err = MODBUS_ERR_FC02_01;
+    499                  MBS_ErrRespSet(pch,
+    500                                 MODBUS_ERR_ILLEGAL_DATA_QTY);
+    501                  return (DEF_TRUE);                                       /* Tell caller that we need to send a response              */
+    502              }
+    503              nbr_bytes             = ((nbr_di - 1) / 8) + 1;              /* Find #bytes needed for response.                         */
+    504              pch->TxFrameNDataBytes = nbr_bytes + 1;                      /* Number of data bytes + byte count.                       */
+    505              presp                 = &pch->TxFrameData[0];                /* Clear bytes in response                                  */
+    506              for (ix = 0; ix < (nbr_bytes + 3); ix++) {
+    507                  *presp++ = 0x00;
+    508              }
+    509              bit_mask = 0x01;                                             /* Start with bit 0 in response byte data mask.             */
+    510              ix       =    0;                                             /* Initialize loop counter.                                 */
+    511              presp    = &pch->TxFrameData[0];                             /* Reset the pointer to the start of the response           */
+    512              *presp++ =  MBS_RX_FRAME_ADDR;                               /* Prepare response packet                                  */
+    513              *presp++ =  MBS_RX_FRAME_FC;
+    514              *presp++ = (CPU_INT08U)nbr_bytes;                            /* Set number of data bytes in response message.            */
+    515              while (ix < nbr_di) {                                        /* Loop through each DI requested.                          */
+    516                  di_val = MB_DIRd(di,                                     /* Get the current value of the DI                          */
+    517                                   &err);
+    518                  switch (err) {
+    519                      case MODBUS_ERR_NONE:
+    520                           if (di_val == MODBUS_COIL_ON) {                 /* Only set data response bit if DI is on.                  */
+    521                               *presp |= bit_mask;
+    522                           }
+    523                           di++;
+    524                           ix++;                                           /* Increment DI counter.                                    */
+    525                           if ((ix % 8) == 0) {                            /* Determine if 8 data bits have been filled.               */
+    526                               bit_mask   = 0x01;                          /* Reset the data mask.                                     */
+    527                               presp++;                                    /* Increment data frame index.                              */
+    528                           } else {                                        /* Still in same data byte, so                              */
+    529                               bit_mask <<= 1;                             /* Shift the data mask to the next higher bit position.     */
+    530                           }
+    531                           break;
+    532          
+    533                      case MODBUS_ERR_RANGE:
+    534                      default:
+    535                           pch->Err = MODBUS_ERR_FC02_02;
+    536                           MBS_ErrRespSet(pch,
+    537                                          MODBUS_ERR_ILLEGAL_DATA_ADDR);
+    538                           return (DEF_TRUE);                              /* Tell caller that we need to send a response              */
+    539                  }
+    540              }
+    541              pch->Err = MODBUS_ERR_NONE;
+    542              return (DEF_TRUE);                                           /* Tell caller that we need to send a response              */
+    543          }
+    544          #endif
+    545          #endif
+    546          
+    547          /*$PAGE*/
+    548          /*
+    549          *********************************************************************************************************
+    550          *                                        MBS_FC03_HoldingRegRd()
+    551          *
+    552          * Description : Obtains the contents of the specified holding registers.
+    553          *
+    554          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+    555          *
+    556          * Return(s)   : DEF_TRUE      If a response needs to be sent
+    557          *               DEF_FALSE     If not
+    558          *
+    559          * Caller(s)   : MBS_FCxx_Handler()
+    560          *
+    561          * Note(s)     : none
+    562          *********************************************************************************************************
+    563          */
+    564          
+    565          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+    566          #if (MODBUS_CFG_FC03_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    567          static  CPU_BOOLEAN  MBS_FC03_HoldingRegRd (MODBUS_CH  *pch)
+    568          {
+   \                     MBS_FC03_HoldingRegRd: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+    569              CPU_INT08U    *presp;
+    570              CPU_INT16U     err;
+    571              CPU_INT16U     reg;
+    572              CPU_INT16U     nbr_regs;
+    573              CPU_INT16U     nbr_bytes;
+    574              CPU_INT16U     reg_val_16;
+    575          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+    576              CPU_INT08U     ix;
+    577              CPU_FP32       reg_val_fp;
+    578              CPU_INT08U    *pfp;
+    579          #endif
+    580          
+    581          
+    582              if (pch->RxFrameNDataBytes != 4) {                           /* Nbr of data bytes must be 4.                             */
+   \   00000004   0xF8B4 0x0344      LDRH     R0,[R4, #+836]
+   \   00000008   0x2804             CMP      R0,#+4
+   \   0000000A   0xD001             BEQ.N    ??MBS_FC03_HoldingRegRd_0
+    583                  return (DEF_FALSE);                                      /* Tell caller that we DON'T need to send a response        */
+   \   0000000C   0x2000             MOVS     R0,#+0
+   \   0000000E   0xBDF2             POP      {R1,R4-R7,PC}
+    584              }
+    585              reg       = MBS_RX_DATA_START;
+   \                     ??MBS_FC03_HoldingRegRd_0: (+1)
+   \   00000010   0xF504 0x7011      ADD      R0,R4,#+580
+   \   00000014   0x7881             LDRB     R1,[R0, #+2]
+   \   00000016   0x78C2             LDRB     R2,[R0, #+3]
+   \   00000018   0xEB02 0x2501      ADD      R5,R2,R1, LSL #+8
+    586              nbr_regs  = MBS_RX_DATA_POINTS;
+   \   0000001C   0x7901             LDRB     R1,[R0, #+4]
+   \   0000001E   0x7942             LDRB     R2,[R0, #+5]
+   \   00000020   0xEB02 0x2601      ADD      R6,R2,R1, LSL #+8
+    587          
+    588          #if SE_MODBUS_CODE > 0
+    589          
+    590              MB_DATA_holdingRegRd(pch, &err);
+    591              // will not get this error, responds with NA value if register does not exist
+    592              if(err == MODBUS_ERR_RANGE)
+    593              {
+    594                 pch->Err = MODBUS_ERR_FC03_01;
+    595                 MBS_ErrRespSet(pch, MODBUS_ERR_ILLEGAL_DATA_ADDR);
+    596                 return (DEF_TRUE);
+    597              }
+    598              pch->Err = MODBUS_ERR_NONE;
+    599              return (DEF_TRUE);
+    600          
+    601          #else // ALL SE_MODBUS_CODE code above here
+    602          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+    603              if (reg < MODBUS_CFG_FP_START_IX) {                          /* See if we want integer registers                         */
+    604                  if (nbr_regs == 0 || nbr_regs > 125) {                   /* Make sure we don't exceed the allowed limit per request  */
+    605                      pch->Err = MODBUS_ERR_FC03_03;
+    606                      MBS_ErrRespSet(pch,
+    607                                     MODBUS_ERR_ILLEGAL_DATA_QTY);
+    608                      return (DEF_TRUE);                                   /* Tell caller that we need to send a response              */
+    609                  }
+    610                  nbr_bytes = (CPU_INT08U)(nbr_regs * sizeof(CPU_INT16U)); /* Find #bytes needed for response.                         */
+    611              } else {
+    612                  if (nbr_regs == 0 || nbr_regs > 62) {                    /* Make sure we don't exceed the allowed limit per request  */
+    613                      pch->Err = MODBUS_ERR_FC03_04;
+    614                      MBS_ErrRespSet(pch,
+    615                                     MODBUS_ERR_ILLEGAL_DATA_QTY);
+    616                      return (DEF_TRUE);                                   /* Tell caller that we need to send a response              */
+    617                  }
+    618                  nbr_bytes = (CPU_INT08U)(nbr_regs * sizeof(CPU_FP32));   /* Find #bytes needed for response.                         */
+    619              }
+    620          #else
+    621              if (nbr_regs == 0 || nbr_regs > 125) {                       /* Make sure we don't exceed the allowed limit per request  */
+   \   00000024   0xB2B6             UXTH     R6,R6
+   \   00000026   0x2E00             CMP      R6,#+0
+   \   00000028   0xD001             BEQ.N    ??MBS_FC03_HoldingRegRd_1
+   \   0000002A   0x2E7E             CMP      R6,#+126
+   \   0000002C   0xDB08             BLT.N    ??MBS_FC03_HoldingRegRd_2
+    622                  pch->Err = MODBUS_ERR_FC03_03;
+   \                     ??MBS_FC03_HoldingRegRd_1: (+1)
+   \   0000002E   0xF240 0x102F      MOVW     R0,#+303
+   \   00000032   0x82E0             STRH     R0,[R4, #+22]
+    623                  MBS_ErrRespSet(pch,
+    624                                 MODBUS_ERR_ILLEGAL_DATA_QTY);
+   \   00000034   0x2103             MOVS     R1,#+3
+   \   00000036   0x4620             MOV      R0,R4
+   \   00000038   0x.... 0x....      BL       MBS_ErrRespSet
+    625                  return (DEF_TRUE);                                       /* Tell caller that we need to send a response              */
+   \   0000003C   0x2001             MOVS     R0,#+1
+   \   0000003E   0xBDF2             POP      {R1,R4-R7,PC}
+    626              }
+    627              nbr_bytes = (CPU_INT08U)(nbr_regs * sizeof(CPU_INT16U));     /* Find #bytes needed for response.                         */
+   \                     ??MBS_FC03_HoldingRegRd_2: (+1)
+   \   00000040   0x0071             LSLS     R1,R6,#+1
+   \   00000042   0xB2C9             UXTB     R1,R1
+    628          #endif
+    629              pch->TxFrameNDataBytes = nbr_bytes + 1;                      /* Number of data bytes + byte count.                       */
+   \   00000044   0x1C4A             ADDS     R2,R1,#+1
+   \   00000046   0xF8A4 0x244E      STRH     R2,[R4, #+1102]
+    630              presp                 = &pch->TxFrameData[0];                /* Reset the pointer to the start of the response           */
+   \   0000004A   0xF204 0x374E      ADDW     R7,R4,#+846
+    631              *presp++              =  MBS_RX_FRAME_ADDR;
+   \   0000004E   0x7802             LDRB     R2,[R0, #+0]
+   \   00000050   0xF807 0x2B01      STRB     R2,[R7], #+1
+    632              *presp++              =  MBS_RX_FRAME_FC;
+   \   00000054   0x7840             LDRB     R0,[R0, #+1]
+   \   00000056   0xF807 0x0B01      STRB     R0,[R7], #+1
+    633              *presp++              = (CPU_INT08U)nbr_bytes;               /* Set number of data bytes in response message             */
+   \   0000005A   0xF807 0x1B01      STRB     R1,[R7], #+1
+    634          
+    635              /***********************************************
+    636              * 描述： 读多个寄存器回调函数
+    637              */
+    638              if ( App_MB_RdNRegsHook ( (CPU_INT16U )reg,
+    639                                        (CPU_INT16U*)presp,
+    640                                        (CPU_INT16U )nbr_regs,
+    641                                         &err ) ) {
+   \   0000005E   0x466B             MOV      R3,SP
+   \   00000060   0x4632             MOV      R2,R6
+   \   00000062   0x4639             MOV      R1,R7
+   \   00000064   0x4628             MOV      R0,R5
+   \   00000066   0xB280             UXTH     R0,R0
+   \   00000068   0x.... 0x....      BL       App_MB_RdNRegsHook
+   \   0000006C   0x2800             CMP      R0,#+0
+   \   0000006E   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000072   0xD003             BEQ.N    ??MBS_FC03_HoldingRegRd_3
+    642                  if ( err != MODBUS_ERR_NONE ) {
+   \   00000074   0x2800             CMP      R0,#+0
+   \   00000076   0xD103             BNE.N    ??MBS_FC03_HoldingRegRd_4
+    643                       pch->Err = MODBUS_ERR_FC03_02;
+    644                       MBS_ErrRespSet(pch,
+    645                                      MODBUS_ERR_ILLEGAL_DATA_ADDR);
+    646                       return (DEF_TRUE);
+    647                  } else {
+    648                      nbr_regs    = 0;
+   \   00000078   0x2600             MOVS     R6,#+0
+   \   0000007A   0xE011             B.N      ??MBS_FC03_HoldingRegRd_5
+    649                  }
+    650              } else {
+    651                  if ( err != MODBUS_ERR_NONE ) {
+   \                     ??MBS_FC03_HoldingRegRd_3: (+1)
+   \   0000007C   0x2800             CMP      R0,#+0
+   \   0000007E   0xD00F             BEQ.N    ??MBS_FC03_HoldingRegRd_5
+    652                       pch->Err = MODBUS_ERR_FC03_02;
+   \                     ??MBS_FC03_HoldingRegRd_4: (+1)
+   \   00000080   0xF44F 0x7097      MOV      R0,#+302
+   \   00000084   0x82E0             STRH     R0,[R4, #+22]
+    653                       MBS_ErrRespSet(pch,
+    654                                      MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   \   00000086   0x2102             MOVS     R1,#+2
+   \   00000088   0x4620             MOV      R0,R4
+   \   0000008A   0x.... 0x....      BL       MBS_ErrRespSet
+    655                       return (DEF_TRUE);
+   \   0000008E   0x2001             MOVS     R0,#+1
+   \   00000090   0xBDF2             POP      {R1,R4-R7,PC}
+    656                  }
+    657              }
+    658          
+    659              while (nbr_regs > 0) {                                       /* Loop through each register requested.                    */
+    660                  if (reg < MODBUS_CFG_FP_START_IX) {                      /* See if we want an integer register                       */
+    661                      reg_val_16 = MB_HoldingRegRd(reg,                    /* Yes, get its value                                       */
+    662                                                   &err);
+    663                      switch (err) {
+    664                          case MODBUS_ERR_NONE:
+    665                               *presp++ = (CPU_INT08U)((reg_val_16 >> 8) & 0x00FF); /*      Get MSB first.                             */
+   \                     ??MBS_FC03_HoldingRegRd_6: (+1)
+   \   00000092   0x1201             ASRS     R1,R0,#+8
+   \   00000094   0xF807 0x1B01      STRB     R1,[R7], #+1
+    666                               *presp++ = (CPU_INT08U)(reg_val_16 & 0x00FF);        /*      Get LSB next.                              */
+   \   00000098   0xF807 0x0B01      STRB     R0,[R7], #+1
+    667                               break;
+    668          
+    669                          case MODBUS_ERR_RANGE:
+    670                          default:
+    671                               pch->Err = MODBUS_ERR_FC03_01;
+    672                               MBS_ErrRespSet(pch,
+    673                                              MODBUS_ERR_ILLEGAL_DATA_ADDR);
+    674                               return (DEF_TRUE);
+    675                      }
+    676                  } else {
+    677          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+    678                      reg_val_fp = MB_HoldingRegRdFP(reg,                  /* No,  get the value of the FP register                    */
+    679                                                     &err);
+    680                      switch (err) {
+    681                          case MODBUS_ERR_NONE:
+    682                               pfp = (CPU_INT08U *)&reg_val_fp;            /* Point to the FP register                                 */
+    683          #if (CPU_CFG_ENDIAN_TYPE == CPU_ENDIAN_TYPE_BIG)
+    684                               for (ix = 0; ix < sizeof(CPU_FP32); ix++) { /* Copy value to response buffer                            */
+    685                                   *presp++ = *pfp++;
+    686                               }
+    687          #else
+    688                               pfp += sizeof(CPU_FP32) - 1;
+    689                               for (ix = 0; ix < sizeof(CPU_FP32); ix++) {
+    690                                   *presp++ = *pfp--;
+    691                               }
+    692          #endif
+    693                               break;
+    694          
+    695                          case MODBUS_ERR_RANGE:
+    696                          default:
+    697                               pch->Err = MODBUS_ERR_FC03_02;
+    698                               MBS_ErrRespSet(pch,
+    699                                              MODBUS_ERR_ILLEGAL_DATA_ADDR);
+    700                               return (DEF_TRUE);
+    701                      }
+    702          #endif
+    703                  }
+    704                  reg++;                                                   /* Increment current register number                        */
+   \                     ??MBS_FC03_HoldingRegRd_7: (+1)
+   \   0000009C   0x1C6D             ADDS     R5,R5,#+1
+    705                  nbr_regs--;
+   \   0000009E   0x1E76             SUBS     R6,R6,#+1
+   \                     ??MBS_FC03_HoldingRegRd_5: (+1)
+   \   000000A0   0xB2B6             UXTH     R6,R6
+   \   000000A2   0x2E00             CMP      R6,#+0
+   \   000000A4   0xD015             BEQ.N    ??MBS_FC03_HoldingRegRd_8
+   \   000000A6   0xB2AD             UXTH     R5,R5
+   \   000000A8   0xF64F 0x70DC      MOVW     R0,#+65500
+   \   000000AC   0x4285             CMP      R5,R0
+   \   000000AE   0xDAF5             BGE.N    ??MBS_FC03_HoldingRegRd_7
+   \   000000B0   0x4669             MOV      R1,SP
+   \   000000B2   0x4628             MOV      R0,R5
+   \   000000B4   0x.... 0x....      BL       MB_HoldingRegRd
+   \   000000B8   0xF8BD 0x1000      LDRH     R1,[SP, #+0]
+   \   000000BC   0x2900             CMP      R1,#+0
+   \   000000BE   0xD0E8             BEQ.N    ??MBS_FC03_HoldingRegRd_6
+   \   000000C0   0xF240 0x102D      MOVW     R0,#+301
+   \   000000C4   0x82E0             STRH     R0,[R4, #+22]
+   \   000000C6   0x2102             MOVS     R1,#+2
+   \   000000C8   0x4620             MOV      R0,R4
+   \   000000CA   0x.... 0x....      BL       MBS_ErrRespSet
+   \   000000CE   0x2001             MOVS     R0,#+1
+   \   000000D0   0xBDF2             POP      {R1,R4-R7,PC}
+    706              }
+    707          #endif //SE_MODBUS_CODE
+    708              pch->Err = MODBUS_ERR_NONE;
+   \                     ??MBS_FC03_HoldingRegRd_8: (+1)
+   \   000000D2   0x2000             MOVS     R0,#+0
+   \   000000D4   0x82E0             STRH     R0,[R4, #+22]
+    709              return (DEF_TRUE);                                           /* Tell caller that we need to send a response              */
+   \   000000D6   0x2001             MOVS     R0,#+1
+   \   000000D8   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    710          }
+    711          #endif
+    712          #endif
+    713          
+    714          /*$PAGE*/
+    715          /*
+    716          *********************************************************************************************************
+    717          *                                          MBS_FC04_InRegRd()
+    718          *
+    719          * Description : Obtains the contents of the specified input registers.
+    720          *
+    721          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+    722          *
+    723          * Return(s)   : DEF_TRUE      If a response needs to be sent
+    724          *               DEF_FALSE     If not
+    725          *
+    726          * Caller(s)   : MBS_FCxx_Handler()
+    727          *
+    728          * Note(s)     : none
+    729          *********************************************************************************************************
+    730          */
+    731          
+    732          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+    733          #if (MODBUS_CFG_FC04_EN  == DEF_ENABLED)
+    734          static  CPU_BOOLEAN  MBS_FC04_InRegRd (MODBUS_CH  *pch)
+    735          {
+    736              CPU_INT08U    *presp;
+    737              CPU_INT16U     err;
+    738              CPU_INT16U     reg;
+    739              CPU_INT16U     nbr_regs;
+    740              CPU_INT16U     nbr_bytes;
+    741              CPU_INT16U     reg_val_16;
+    742          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+    743              CPU_INT08U     ix;
+    744              CPU_FP32       reg_val_fp;
+    745              CPU_INT08U    *pfp;
+    746          #endif
+    747          
+    748          
+    749              if (pch->RxFrameNDataBytes != 4) {                           /* Nbr of data bytes must be 4.                             */
+    750                  return (DEF_FALSE);                                      /* Tell caller that we DON'T need to send a response        */
+    751              }
+    752              reg       = MBS_RX_DATA_START;
+    753              nbr_regs  = MBS_RX_DATA_POINTS;
+    754          
+    755          #if SE_MODBUS_CODE > 0
+    756          
+    757              MB_DATA_inRegRd(pch, &err);
+    758          
+    759              if(err == MODBUS_ERR_RANGE)
+    760              {
+    761                 pch->Err = MODBUS_ERR_FC04_01;
+    762                 MBS_ErrRespSet(pch, MODBUS_ERR_ILLEGAL_DATA_ADDR);
+    763                 return (DEF_TRUE);
+    764              }
+    765              pch->Err = MODBUS_ERR_NONE;
+    766              return (DEF_TRUE);
+    767          
+    768          #else // ALL SE_MODBUS_CODE code above here
+    769          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+    770              if (reg < MODBUS_CFG_FP_START_IX) {                          /* See if we want integer registers                         */
+    771                  if (nbr_regs == 0 || nbr_regs > 125) {                   /* Make sure we don't exceed the allowed limit per request  */
+    772                      pch->Err = MODBUS_ERR_FC04_03;
+    773                      MBS_ErrRespSet(pch,
+    774                                     MODBUS_ERR_ILLEGAL_DATA_QTY);
+    775                      return (DEF_TRUE);                                   /* Tell caller that we need to send a response              */
+    776                  }
+    777                  nbr_bytes = (CPU_INT08U)(nbr_regs * sizeof(CPU_INT16U)); /* Find #bytes needed for response.                         */
+    778              } else {
+    779                  if (nbr_regs == 0 || nbr_regs > 62) {                    /* Make sure we don't exceed the allowed limit per request  */
+    780                      pch->Err = MODBUS_ERR_FC04_04;
+    781                      MBS_ErrRespSet(pch,
+    782                                     MODBUS_ERR_ILLEGAL_DATA_QTY);
+    783                      return (DEF_TRUE);                                   /* Tell caller that we need to send a response              */
+    784                  }
+    785                  nbr_bytes = (CPU_INT08U)(nbr_regs * sizeof(CPU_FP32));   /* Find #bytes needed for response.                         */
+    786              }
+    787          #else
+    788              if (nbr_regs == 0 || nbr_regs > 125) {                       /* Make sure we don't exceed the allowed limit per request  */
+    789                  pch->Err = MODBUS_ERR_FC04_03;
+    790                  MBS_ErrRespSet(pch,
+    791                                 MODBUS_ERR_ILLEGAL_DATA_QTY);
+    792                  return (DEF_TRUE);                                       /* Tell caller that we need to send a response              */
+    793              }
+    794              nbr_bytes = (CPU_INT08U)(nbr_regs * sizeof(CPU_INT16U));     /* Find #bytes needed for response.                         */
+    795          #endif
+    796              pch->TxFrameNDataBytes = nbr_bytes + 1;                      /* Number of data bytes + byte count.                       */
+    797              presp                 = &pch->TxFrameData[0];                /* Reset the pointer to the start of the response           */
+    798              *presp++              =  MBS_RX_FRAME_ADDR;                  /* Prepare response packet                                  */
+    799              *presp++              =  MBS_RX_FRAME_FC;
+    800              *presp++              = (CPU_INT08U)nbr_bytes;               /* Set number of data bytes in response message             */
+    801              while (nbr_regs > 0) {                                       /* Loop through each register requested.                    */
+    802                  if (reg < MODBUS_CFG_FP_START_IX) {                      /* See if we want an integer register                       */
+    803                      reg_val_16 = MB_InRegRd(reg,                         /* Yes, get its value                                       */
+    804                                              &err);
+    805                      switch (err) {
+    806                          case MODBUS_ERR_NONE:
+    807                               *presp++ = (CPU_INT08U)((reg_val_16 >> 8) & 0x00FF); /*      Get MSB first.                             */
+    808                               *presp++ = (CPU_INT08U)(reg_val_16 & 0x00FF);        /*      Get LSB next.                              */
+    809                               break;
+    810          
+    811                          case MODBUS_ERR_RANGE:
+    812                          default:
+    813                               pch->Err = MODBUS_ERR_FC04_01;
+    814                               MBS_ErrRespSet(pch,
+    815                                              MODBUS_ERR_ILLEGAL_DATA_ADDR);
+    816                               return (DEF_TRUE);
+    817                      }
+    818                  } else {
+    819          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+    820                      reg_val_fp = MB_InRegRdFP(reg,                       /* No,  get the value of the FP register                    */
+    821                                                &err);
+    822                      switch (err) {
+    823                          case MODBUS_ERR_NONE:
+    824                               pfp = (CPU_INT08U *)&reg_val_fp;            /* Point to the FP register                                 */
+    825          #if CPU_CFG_ENDIAN_TYPE == CPU_ENDIAN_TYPE_BIG
+    826                               for (ix = 0; ix < sizeof(CPU_FP32); ix++) { /* Copy value to response buffer                            */
+    827                                   *presp++ = *pfp++;
+    828                               }
+    829          #else
+    830                               pfp += sizeof(CPU_FP32) - 1;
+    831                               for (ix = 0; ix < sizeof(CPU_FP32); ix++) {
+    832                                   *presp++ = *pfp--;
+    833                               }
+    834          #endif
+    835                               break;
+    836          
+    837                          case MODBUS_ERR_RANGE:
+    838                          default:
+    839                               pch->Err = MODBUS_ERR_FC04_02;
+    840                               MBS_ErrRespSet(pch,
+    841                                              MODBUS_ERR_ILLEGAL_DATA_ADDR);
+    842                               return (DEF_TRUE);
+    843                      }
+    844          #endif
+    845                  }
+    846                  reg++;                                                   /* Increment current register number                        */
+    847                  nbr_regs--;
+    848              }
+    849          #endif //SE_MODBUS_CODE
+    850              pch->Err = MODBUS_ERR_NONE;
+    851              return (DEF_TRUE);                                           /* Tell caller that we need to send a response              */
+    852          }
+    853          #endif
+    854          #endif
+    855          
+    856          /*$PAGE*/
+    857          /*
+    858          *********************************************************************************************************
+    859          *                                           MBS_FC05_CoilWr()
+    860          *
+    861          * Description : Responds to a request to force a coil to a specified state.
+    862          *
+    863          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+    864          *
+    865          * Return(s)   : DEF_TRUE      If a response needs to be sent
+    866          *               DEF_FALSE     If not
+    867          *
+    868          * Caller(s)   : MBS_FCxx_Handler()
+    869          *
+    870          * Note(s)     : none
+    871          *********************************************************************************************************
+    872          */
+    873          
+    874          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+    875          #if (MODBUS_CFG_FC05_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    876          static  CPU_BOOLEAN  MBS_FC05_CoilWr (MODBUS_CH  *pch)
+    877          {
+   \                     MBS_FC05_CoilWr: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4605             MOV      R5,R0
+    878              CPU_INT08U     *prx_data;
+    879              CPU_INT08U     *ptx_data;
+    880              CPU_INT08U      i;
+    881              CPU_INT16U      coil;
+    882              CPU_BOOLEAN     coil_val;
+    883              CPU_INT16U      temp;
+    884              CPU_INT16U      err;
+    885          
+    886          
+    887              if (pch->RxFrameNDataBytes != 4) {                           /* Nbr of data bytes must be 4.                             */
+   \   00000004   0xF505 0x7651      ADD      R6,R5,#+836
+   \   00000008   0x8830             LDRH     R0,[R6, #+0]
+   \   0000000A   0x2804             CMP      R0,#+4
+   \   0000000C   0xD001             BEQ.N    ??MBS_FC05_CoilWr_0
+    888                  return (DEF_FALSE);                                      /* Tell caller that we DON'T need to send a response        */
+   \   0000000E   0x2000             MOVS     R0,#+0
+   \   00000010   0xBDF2             POP      {R1,R4-R7,PC}
+    889              }
+    890              coil = MBS_RX_DATA_START;                                    /* Get the desired coil number                              */
+    891              temp = MBS_RX_DATA_COIL;
+    892              if (pch->WrEn == DEF_TRUE) {
+   \                     ??MBS_FC05_CoilWr_0: (+1)
+   \   00000012   0xF505 0x7711      ADD      R7,R5,#+580
+   \   00000016   0x1D2C             ADDS     R4,R5,#+4
+   \   00000018   0x7868             LDRB     R0,[R5, #+1]
+   \   0000001A   0x2801             CMP      R0,#+1
+   \   0000001C   0xD121             BNE.N    ??MBS_FC05_CoilWr_1
+    893                  if (temp == MODBUS_COIL_OFF_CODE) {                      /* See if coil needs to be OFF?                             */
+   \   0000001E   0x7938             LDRB     R0,[R7, #+4]
+   \   00000020   0x7979             LDRB     R1,[R7, #+5]
+   \   00000022   0xEB01 0x2000      ADD      R0,R1,R0, LSL #+8
+   \   00000026   0x4601             MOV      R1,R0
+   \   00000028   0xB289             UXTH     R1,R1
+   \   0000002A   0x1E49             SUBS     R1,R1,#+1
+   \   0000002C   0x4189             SBCS     R1,R1,R1
+   \   0000002E   0x43C9             MVNS     R1,R1
+   \   00000030   0x0FC9             LSRS     R1,R1,#+31
+    894                      coil_val = 0;                                        /* Yes, Turn coil OFF                                       */
+    895                  } else {
+    896                      coil_val = 1;                                        /* No,  Turn coil ON                                        */
+    897                  }
+    898                  MB_CoilWr(coil,                                          /* Force coil                                               */
+    899                            coil_val,
+    900                            &err);
+   \   00000032   0x466A             MOV      R2,SP
+   \   00000034   0x78B8             LDRB     R0,[R7, #+2]
+   \   00000036   0x78FB             LDRB     R3,[R7, #+3]
+   \   00000038   0xEB03 0x2000      ADD      R0,R3,R0, LSL #+8
+   \   0000003C   0xB280             UXTH     R0,R0
+   \   0000003E   0x.... 0x....      BL       MB_CoilWr
+    901                  switch (err) {
+   \   00000042   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000046   0x2800             CMP      R0,#+0
+   \   00000048   0xD103             BNE.N    ??MBS_FC05_CoilWr_2
+    902                      case MODBUS_ERR_NONE:                                /* We simply echoe back with the command received           */
+    903                           pch->WrCtr++;
+   \   0000004A   0x6820             LDR      R0,[R4, #+0]
+   \   0000004C   0x1C40             ADDS     R0,R0,#+1
+   \   0000004E   0x6020             STR      R0,[R4, #+0]
+    904                           break;
+   \   00000050   0xE00E             B.N      ??MBS_FC05_CoilWr_3
+    905          
+    906                      case MODBUS_ERR_RANGE:
+    907                      default:
+    908                           pch->Err = MODBUS_ERR_FC05_01;
+   \                     ??MBS_FC05_CoilWr_2: (+1)
+   \   00000052   0xF240 0x10F5      MOVW     R0,#+501
+   \   00000056   0x8260             STRH     R0,[R4, #+18]
+    909                           MBS_ErrRespSet(pch,
+    910                                          MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   \   00000058   0x2102             MOVS     R1,#+2
+   \   0000005A   0x4628             MOV      R0,R5
+   \   0000005C   0x.... 0x....      BL       MBS_ErrRespSet
+    911                           break;
+   \   00000060   0xE006             B.N      ??MBS_FC05_CoilWr_3
+    912                  }
+    913              } else {
+    914                  pch->Err = MODBUS_ERR_FC05_02;
+   \                     ??MBS_FC05_CoilWr_1: (+1)
+   \   00000062   0xF44F 0x70FB      MOV      R0,#+502
+   \   00000066   0x8260             STRH     R0,[R4, #+18]
+    915                  MBS_ErrRespSet(pch,                                      /* Writes are not enabled                                   */
+    916                                 MODBUS_ERR_ILLEGAL_DATA_VAL);
+   \   00000068   0x2104             MOVS     R1,#+4
+   \   0000006A   0x4628             MOV      R0,R5
+   \   0000006C   0x.... 0x....      BL       MBS_ErrRespSet
+    917              }
+    918              pch->TxFrameNDataBytes = 4;
+   \                     ??MBS_FC05_CoilWr_3: (+1)
+   \   00000070   0x2004             MOVS     R0,#+4
+   \   00000072   0xF8A5 0x044E      STRH     R0,[R5, #+1102]
+    919              MBS_TX_FRAME_ADDR = MBS_RX_FRAME_ADDR;                       /* Prepare response packet                                  */
+   \   00000076   0x7838             LDRB     R0,[R7, #+0]
+   \   00000078   0x72B0             STRB     R0,[R6, #+10]
+    920              MBS_TX_FRAME_FC   = MBS_RX_FRAME_FC;
+   \   0000007A   0x7878             LDRB     R0,[R7, #+1]
+   \   0000007C   0x72F0             STRB     R0,[R6, #+11]
+    921              prx_data          = &pch->RxFrameData[2];                    /* Copy four data bytes from the receive packet             */
+   \   0000007E   0xF205 0x2046      ADDW     R0,R5,#+582
+    922              ptx_data          = &pch->TxFrameData[2];
+   \   00000082   0xF505 0x7154      ADD      R1,R5,#+848
+    923              for (i = 0; i < 4; i++) {
+   \   00000086   0x2200             MOVS     R2,#+0
+   \   00000088   0xE004             B.N      ??MBS_FC05_CoilWr_4
+    924                  *ptx_data++ = *prx_data++;
+   \                     ??MBS_FC05_CoilWr_5: (+1)
+   \   0000008A   0xF810 0x3B01      LDRB     R3,[R0], #+1
+   \   0000008E   0xF801 0x3B01      STRB     R3,[R1], #+1
+    925              }
+   \   00000092   0x1C52             ADDS     R2,R2,#+1
+   \                     ??MBS_FC05_CoilWr_4: (+1)
+   \   00000094   0x2A04             CMP      R2,#+4
+   \   00000096   0xDBF8             BLT.N    ??MBS_FC05_CoilWr_5
+    926              pch->Err = MODBUS_ERR_NONE;
+   \   00000098   0x2000             MOVS     R0,#+0
+   \   0000009A   0x8260             STRH     R0,[R4, #+18]
+    927              return (DEF_TRUE);                                           /* Tell caller that we need to send a response              */
+   \   0000009C   0x2001             MOVS     R0,#+1
+   \   0000009E   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    928          }
+    929          #endif
+    930          #endif
+    931          
+    932          /*$PAGE*/
+    933          /*
+    934          *********************************************************************************************************
+    935          *                                        MBS_FC06_HoldingRegWr()
+    936          *
+    937          * Description : Responds to a request to set a single register.
+    938          *
+    939          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+    940          *
+    941          * Return(s)   : DEF_TRUE      If a response needs to be sent
+    942          *               DEF_FALSE     If not
+    943          *
+    944          * Caller(s)   : MBS_FCxx_Handler()
+    945          *
+    946          * Note(s)     : none
+    947          *********************************************************************************************************
+    948          */
+    949          
+    950          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+    951          #if (MODBUS_CFG_FC06_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    952          static  CPU_BOOLEAN  MBS_FC06_HoldingRegWr (MODBUS_CH *pch)
+    953          {
+   \                     MBS_FC06_HoldingRegWr: (+1)
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0xB082             SUB      SP,SP,#+8
+   \   00000006   0x4605             MOV      R5,R0
+    954              CPU_INT08U    *prx_data;
+    955              CPU_INT08U    *ptx_data;
+    956              CPU_INT08U     i;
+    957              CPU_INT08U     max;
+    958              CPU_INT16U     err;
+    959              CPU_INT16U     reg;
+    960              CPU_INT16U     reg_val_16;
+    961          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+    962              CPU_FP32       reg_val_fp;
+    963              CPU_INT08U    *pfp;
+    964          #endif
+    965          
+    966          
+    967              if (pch->RxFrameNDataBytes != 4) {                           /* Nbr of data bytes must be 4.                             */
+   \   00000008   0xF505 0x7651      ADD      R6,R5,#+836
+   \   0000000C   0x8830             LDRH     R0,[R6, #+0]
+   \   0000000E   0x2804             CMP      R0,#+4
+   \   00000010   0xD001             BEQ.N    ??MBS_FC06_HoldingRegWr_0
+    968                  return (DEF_FALSE);
+   \   00000012   0x2000             MOVS     R0,#+0
+   \   00000014   0xE043             B.N      ??MBS_FC06_HoldingRegWr_1
+    969              }
+    970              pch->TxFrameNDataBytes = pch->RxFrameNDataBytes;
+   \                     ??MBS_FC06_HoldingRegWr_0: (+1)
+   \   00000016   0xF8A5 0x044E      STRH     R0,[R5, #+1102]
+    971              reg =  MBS_RX_DATA_START;
+   \   0000001A   0xF505 0x7711      ADD      R7,R5,#+580
+   \   0000001E   0x78B8             LDRB     R0,[R7, #+2]
+   \   00000020   0x78F9             LDRB     R1,[R7, #+3]
+   \   00000022   0xEB01 0x2800      ADD      R8,R1,R0, LSL #+8
+    972          #if SE_MODBUS_CODE > 0
+    973          
+    974              MB_DATA_holdingRegWr(pch, &err);
+    975          
+    976              //
+    977              if(err == MODBUS_ERR_RANGE)
+    978              {
+    979                 pch->Err = MODBUS_ERR_FC06_01;
+    980                 MBS_ErrRespSet(pch, MODBUS_ERR_ILLEGAL_DATA_ADDR);
+    981                 return (DEF_TRUE);
+    982              }
+    983          
+    984              pch->WrCtr++;
+    985              MBS_TX_FRAME_ADDR = MBS_RX_FRAME_ADDR;                       /* Prepare response packet (duplicate Rx frame)             */
+    986              MBS_TX_FRAME_FC   = MBS_RX_FRAME_FC;
+    987              prx_data          = &pch->RxFrameData[2];                    /* Copy received register address and data to response      */
+    988              ptx_data          = &pch->TxFrameData[2];
+    989          
+    990              max = sizeof(CPU_INT16U) + 2;
+    991          
+    992              for (i = 0; i < max; i++) {
+    993                  *ptx_data++ = *prx_data++;
+    994              }
+    995          
+    996          
+    997          #else // ALL SE_MODBUS_CODE code above here
+    998          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+    999              if (reg < MODBUS_CFG_FP_START_IX) {
+   1000                  reg_val_16 = MBS_RX_DATA_REG;
+   1001                  MB_HoldingRegWr(reg,                                     /* Write to integer register                                */
+   1002                                  reg_val_16,
+   1003                                  &err);
+   1004              } else {
+   1005                  prx_data = &pch->RxFrameData[4];                         /* Point to data in the received frame.                     */
+   1006                  pfp      = (CPU_INT08U *)&reg_val_fp;
+   1007          #if CPU_CFG_ENDIAN_TYPE == CPU_ENDIAN_TYPE_BIG
+   1008                  for (i = 0; i < sizeof(CPU_FP32); i++) {
+   1009                      *pfp++ = *prx_data++;
+   1010                  }
+   1011          #else
+   1012                  prx_data += sizeof(CPU_FP32) - 1;
+   1013                  for (i = 0; i < sizeof(CPU_FP32); i++) {
+   1014                      *pfp++ = *prx_data--;
+   1015                  }
+   1016          #endif
+   1017                  MB_HoldingRegWrFP(reg,                                   /* Write to floating point register                         */
+   1018                                    reg_val_fp,
+   1019                                    &err);
+   1020              }
+   1021          #else
+   1022              reg_val_16 = MBS_RX_DATA_REG;
+   1023              MB_HoldingRegWr(reg,                                         /* Write to integer register                                */
+   1024                              reg_val_16,
+   1025                              &err);
+   \   00000026   0x466A             MOV      R2,SP
+   \   00000028   0x7938             LDRB     R0,[R7, #+4]
+   \   0000002A   0x7979             LDRB     R1,[R7, #+5]
+   \   0000002C   0xEB01 0x2000      ADD      R0,R1,R0, LSL #+8
+   \   00000030   0x4601             MOV      R1,R0
+   \   00000032   0xB289             UXTH     R1,R1
+   \   00000034   0x4640             MOV      R0,R8
+   \   00000036   0xB280             UXTH     R0,R0
+   \   00000038   0x.... 0x....      BL       MB_HoldingRegWr
+   1026          #endif
+   1027              switch (err) {
+   \   0000003C   0x1D2C             ADDS     R4,R5,#+4
+   \   0000003E   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000042   0x2800             CMP      R0,#+0
+   \   00000044   0xD103             BNE.N    ??MBS_FC06_HoldingRegWr_2
+   1028                  case MODBUS_ERR_NONE:                                    /* Reply with echoe of command received                     */
+   1029                       pch->WrCtr++;
+   \   00000046   0x6820             LDR      R0,[R4, #+0]
+   \   00000048   0x1C40             ADDS     R0,R0,#+1
+   \   0000004A   0x6020             STR      R0,[R4, #+0]
+   1030                       break;
+   \   0000004C   0xE006             B.N      ??MBS_FC06_HoldingRegWr_3
+   1031          
+   1032                  case MODBUS_ERR_RANGE:
+   1033                  default:
+   1034                       pch->Err = MODBUS_ERR_FC06_01;
+   \                     ??MBS_FC06_HoldingRegWr_2: (+1)
+   \   0000004E   0xF240 0x2059      MOVW     R0,#+601
+   \   00000052   0x8260             STRH     R0,[R4, #+18]
+   1035                       MBS_ErrRespSet(pch,
+   1036                                      MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   \   00000054   0x2102             MOVS     R1,#+2
+   \   00000056   0x4628             MOV      R0,R5
+   \   00000058   0x.... 0x....      BL       MBS_ErrRespSet
+   1037                       break;
+   1038              }
+   1039              pch->TxFrameNDataBytes = 4;
+   \                     ??MBS_FC06_HoldingRegWr_3: (+1)
+   \   0000005C   0x2004             MOVS     R0,#+4
+   \   0000005E   0xF8A5 0x044E      STRH     R0,[R5, #+1102]
+   1040              MBS_TX_FRAME_ADDR = MBS_RX_FRAME_ADDR;                       /* Prepare response packet (duplicate Rx frame)             */
+   \   00000062   0x7838             LDRB     R0,[R7, #+0]
+   \   00000064   0x72B0             STRB     R0,[R6, #+10]
+   1041              MBS_TX_FRAME_FC   = MBS_RX_FRAME_FC;
+   \   00000066   0x7878             LDRB     R0,[R7, #+1]
+   \   00000068   0x72F0             STRB     R0,[R6, #+11]
+   1042              prx_data          = &pch->RxFrameData[2];                    /* Copy received register address and data to response      */
+   \   0000006A   0xF205 0x2046      ADDW     R0,R5,#+582
+   1043              ptx_data          = &pch->TxFrameData[2];
+   \   0000006E   0xF505 0x7154      ADD      R1,R5,#+848
+   1044              if (reg < MODBUS_CFG_FP_START_IX) {
+   \   00000072   0xFA1F 0xF888      UXTH     R8,R8
+   \   00000076   0xF64F 0x72DC      MOVW     R2,#+65500
+   \   0000007A   0x4590             CMP      R8,R2
+   \   0000007C   0xDA01             BGE.N    ??MBS_FC06_HoldingRegWr_4
+   1045                  max = sizeof(CPU_INT16U) + 2;
+   \   0000007E   0x2204             MOVS     R2,#+4
+   \   00000080   0xE000             B.N      ??MBS_FC06_HoldingRegWr_5
+   1046              } else {
+   1047                  max = sizeof(CPU_FP32) + 2;
+   \                     ??MBS_FC06_HoldingRegWr_4: (+1)
+   \   00000082   0x2206             MOVS     R2,#+6
+   1048              }
+   1049              for (i = 0; i < max; i++) {
+   \                     ??MBS_FC06_HoldingRegWr_5: (+1)
+   \   00000084   0x2300             MOVS     R3,#+0
+   \   00000086   0xE004             B.N      ??MBS_FC06_HoldingRegWr_6
+   1050                  *ptx_data++ = *prx_data++;
+   \                     ??MBS_FC06_HoldingRegWr_7: (+1)
+   \   00000088   0xF810 0x5B01      LDRB     R5,[R0], #+1
+   \   0000008C   0xF801 0x5B01      STRB     R5,[R1], #+1
+   1051              }
+   \   00000090   0x1C5B             ADDS     R3,R3,#+1
+   \                     ??MBS_FC06_HoldingRegWr_6: (+1)
+   \   00000092   0xB2DB             UXTB     R3,R3
+   \   00000094   0x4293             CMP      R3,R2
+   \   00000096   0xDBF7             BLT.N    ??MBS_FC06_HoldingRegWr_7
+   1052          #endif //SE_MODBUS_CODE
+   1053              pch->Err = MODBUS_ERR_NONE;
+   \   00000098   0x2000             MOVS     R0,#+0
+   \   0000009A   0x8260             STRH     R0,[R4, #+18]
+   1054              return (DEF_TRUE);
+   \   0000009C   0x2001             MOVS     R0,#+1
+   \                     ??MBS_FC06_HoldingRegWr_1: (+1)
+   \   0000009E   0xE8BD 0x81F6      POP      {R1,R2,R4-R8,PC}  ;; return
+   1055          }
+   1056          #endif
+   1057          #endif
+   1058          
+   1059          /*
+   1060          *********************************************************************************************************
+   1061          *                                           MBS_FC08_Loopback()
+   1062          *
+   1063          * Description : The LOOPBACK function contains various diagnostic codes that perform specific actions.
+   1064          *               This function processes individual diagnostic requests and formats the response message
+   1065          *               frame accordingly.  Unimplemented diagnostic codes will return an Illegal Data Value
+   1066          *               Exception Response Code (03).
+   1067          *
+   1068          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+   1069          *
+   1070          * Return(s)   : DEF_TRUE      If a response needs to be sent
+   1071          *               DEF_FALSE     If not
+   1072          *
+   1073          * Caller(s)   : MBS_FCxx_Handler()
+   1074          *
+   1075          * Note(s)     : none
+   1076          *********************************************************************************************************
+   1077          */
+   1078          
+   1079          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+   1080          #if (MODBUS_CFG_FC08_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+   1081          static  CPU_BOOLEAN  MBS_FC08_Loopback (MODBUS_CH  *pch)
+   1082          {
+   \                     MBS_FC08_Loopback: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   1083              CPU_INT16U  diagcode;
+   1084          
+   1085          
+   1086              if (pch->RxFrameNDataBytes != 4) {                           /* Nbr of data bytes must be 4.                             */
+   \   00000004   0xF504 0x7051      ADD      R0,R4,#+836
+   \   00000008   0x8801             LDRH     R1,[R0, #+0]
+   \   0000000A   0x2904             CMP      R1,#+4
+   \   0000000C   0xD001             BEQ.N    ??MBS_FC08_Loopback_0
+   1087                  return (DEF_FALSE);
+   \   0000000E   0x2000             MOVS     R0,#+0
+   \   00000010   0xBD10             POP      {R4,PC}
+   1088              }
+   1089              diagcode           = MBS_RX_DIAG_CODE;
+   \                     ??MBS_FC08_Loopback_0: (+1)
+   \   00000012   0xF504 0x7111      ADD      R1,R4,#+580
+   \   00000016   0x788A             LDRB     R2,[R1, #+2]
+   \   00000018   0x78CB             LDRB     R3,[R1, #+3]
+   \   0000001A   0xEB03 0x2202      ADD      R2,R3,R2, LSL #+8
+   1090              MBS_TX_FRAME_ADDR  = MBS_RX_FRAME_ADDR;                      /* Prepare response packet                                  */
+   \   0000001E   0x780B             LDRB     R3,[R1, #+0]
+   \   00000020   0x7283             STRB     R3,[R0, #+10]
+   1091              MBS_TX_FRAME_FC    = MBS_RX_FRAME_FC;
+   \   00000022   0x784B             LDRB     R3,[R1, #+1]
+   \   00000024   0x72C3             STRB     R3,[R0, #+11]
+   1092              MBS_TX_DIAG_CODE_H = MBS_RX_DIAG_CODE_H;
+   \   00000026   0x788B             LDRB     R3,[R1, #+2]
+   \   00000028   0x7303             STRB     R3,[R0, #+12]
+   1093              MBS_TX_DIAG_CODE_L = MBS_RX_DIAG_CODE_L;
+   \   0000002A   0x78CB             LDRB     R3,[R1, #+3]
+   \   0000002C   0x7343             STRB     R3,[R0, #+13]
+   1094              switch (diagcode) {
+   \   0000002E   0xB292             UXTH     R2,R2
+   \   00000030   0x2A00             CMP      R2,#+0
+   \   00000032   0xD00C             BEQ.N    ??MBS_FC08_Loopback_1
+   \   00000034   0x2A0A             CMP      R2,#+10
+   \   00000036   0xD011             BEQ.N    ??MBS_FC08_Loopback_2
+   \   00000038   0x2A0B             CMP      R2,#+11
+   \   0000003A   0xD015             BEQ.N    ??MBS_FC08_Loopback_3
+   \   0000003C   0x2A0C             CMP      R2,#+12
+   \   0000003E   0xD01D             BEQ.N    ??MBS_FC08_Loopback_4
+   \   00000040   0x2A0D             CMP      R2,#+13
+   \   00000042   0xD025             BEQ.N    ??MBS_FC08_Loopback_5
+   \   00000044   0x2A0E             CMP      R2,#+14
+   \   00000046   0xD02D             BEQ.N    ??MBS_FC08_Loopback_6
+   \   00000048   0x2A0F             CMP      R2,#+15
+   \   0000004A   0xD035             BEQ.N    ??MBS_FC08_Loopback_7
+   \   0000004C   0xE03E             B.N      ??MBS_FC08_Loopback_8
+   1095                  case MODBUS_FC08_LOOPBACK_QUERY:                         /* Return Query function code - no need to do anything.     */
+   1096                       MBS_TX_DIAG_DATA_H = MBS_RX_DIAG_DATA_H;
+   \                     ??MBS_FC08_Loopback_1: (+1)
+   \   0000004E   0x790A             LDRB     R2,[R1, #+4]
+   \   00000050   0x7382             STRB     R2,[R0, #+14]
+   1097                       MBS_TX_DIAG_DATA_L = MBS_RX_DIAG_DATA_L;
+   \   00000052   0x7949             LDRB     R1,[R1, #+5]
+   \   00000054   0x73C1             STRB     R1,[R0, #+15]
+   1098                       pch->Err           = MODBUS_ERR_NONE;
+   \   00000056   0x2000             MOVS     R0,#+0
+   \   00000058   0x82E0             STRH     R0,[R4, #+22]
+   1099                       break;
+   \   0000005A   0xE03E             B.N      ??MBS_FC08_Loopback_9
+   1100          
+   1101                  case MODBUS_FC08_LOOPBACK_CLR_CTR:
+   1102          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED) && \
+   1103              (MODBUS_CFG_FC08_EN  == DEF_ENABLED)
+   1104                       MBS_StatInit(pch);                                  /* Initialize the system counters, echo response back.      */
+   \                     ??MBS_FC08_Loopback_2: (+1)
+   \   0000005C   0x4620             MOV      R0,R4
+   \   0000005E   0x.... 0x....      BL       MBS_StatInit
+   1105          #endif
+   1106                       pch->Err = MODBUS_ERR_NONE;
+   \   00000062   0x2000             MOVS     R0,#+0
+   \   00000064   0x82E0             STRH     R0,[R4, #+22]
+   1107                       break;
+   \   00000066   0xE038             B.N      ??MBS_FC08_Loopback_9
+   1108          
+   1109                  case MODBUS_FC08_LOOPBACK_BUS_MSG_CTR:                   /* Return the message count in diag information field.      */
+   1110                       MBS_TX_DIAG_DATA_H = (CPU_INT08U)((pch->StatMsgCtr & 0xFF00) >> 8);
+   \                     ??MBS_FC08_Loopback_3: (+1)
+   \   00000068   0xF104 0x0116      ADD      R1,R4,#+22
+   \   0000006C   0x890A             LDRH     R2,[R1, #+8]
+   \   0000006E   0x0A12             LSRS     R2,R2,#+8
+   \   00000070   0x7382             STRB     R2,[R0, #+14]
+   1111                       MBS_TX_DIAG_DATA_L = (CPU_INT08U) (pch->StatMsgCtr & 0x00FF);
+   \   00000072   0x890A             LDRH     R2,[R1, #+8]
+   \   00000074   0x73C2             STRB     R2,[R0, #+15]
+   1112                       pch->Err           = MODBUS_ERR_NONE;
+   \   00000076   0x2000             MOVS     R0,#+0
+   \   00000078   0x8008             STRH     R0,[R1, #+0]
+   1113                       break;
+   \   0000007A   0xE02E             B.N      ??MBS_FC08_Loopback_9
+   1114          
+   1115                  case MODBUS_FC08_LOOPBACK_BUS_CRC_CTR:                   /* Return the CRC error count in diag information field.    */
+   1116                       MBS_TX_DIAG_DATA_H = (CPU_INT08U)((pch->StatCRCErrCtr & 0xFF00) >> 8);
+   \                     ??MBS_FC08_Loopback_4: (+1)
+   \   0000007C   0xF104 0x0116      ADD      R1,R4,#+22
+   \   00000080   0x894A             LDRH     R2,[R1, #+10]
+   \   00000082   0x0A12             LSRS     R2,R2,#+8
+   \   00000084   0x7382             STRB     R2,[R0, #+14]
+   1117                       MBS_TX_DIAG_DATA_L = (CPU_INT08U) (pch->StatCRCErrCtr & 0x00FF);
+   \   00000086   0x894A             LDRH     R2,[R1, #+10]
+   \   00000088   0x73C2             STRB     R2,[R0, #+15]
+   1118                       pch->Err           = MODBUS_ERR_NONE;
+   \   0000008A   0x2000             MOVS     R0,#+0
+   \   0000008C   0x8008             STRH     R0,[R1, #+0]
+   1119                       break;
+   \   0000008E   0xE024             B.N      ??MBS_FC08_Loopback_9
+   1120          
+   1121                  case MODBUS_FC08_LOOPBACK_BUS_EXCEPT_CTR:                /* Return exception count in diag information field.        */
+   1122                       MBS_TX_DIAG_DATA_H = (CPU_INT08U)((pch->StatExceptCtr & 0xFF00) >> 8);
+   \                     ??MBS_FC08_Loopback_5: (+1)
+   \   00000090   0xF104 0x0116      ADD      R1,R4,#+22
+   \   00000094   0x898A             LDRH     R2,[R1, #+12]
+   \   00000096   0x0A12             LSRS     R2,R2,#+8
+   \   00000098   0x7382             STRB     R2,[R0, #+14]
+   1123                       MBS_TX_DIAG_DATA_L = (CPU_INT08U) (pch->StatExceptCtr & 0x00FF);
+   \   0000009A   0x898A             LDRH     R2,[R1, #+12]
+   \   0000009C   0x73C2             STRB     R2,[R0, #+15]
+   1124                       pch->Err           = MODBUS_ERR_NONE;
+   \   0000009E   0x2000             MOVS     R0,#+0
+   \   000000A0   0x8008             STRH     R0,[R1, #+0]
+   1125                       break;
+   \   000000A2   0xE01A             B.N      ??MBS_FC08_Loopback_9
+   1126          
+   1127                  case MODBUS_FC08_LOOPBACK_SLAVE_MSG_CTR:                 /* Return slave message count in diag information field.    */
+   1128                       MBS_TX_DIAG_DATA_H = (CPU_INT08U)((pch->StatSlaveMsgCtr & 0xFF00) >> 8);
+   \                     ??MBS_FC08_Loopback_6: (+1)
+   \   000000A4   0xF104 0x0116      ADD      R1,R4,#+22
+   \   000000A8   0x89CA             LDRH     R2,[R1, #+14]
+   \   000000AA   0x0A12             LSRS     R2,R2,#+8
+   \   000000AC   0x7382             STRB     R2,[R0, #+14]
+   1129                       MBS_TX_DIAG_DATA_L = (CPU_INT08U) (pch->StatSlaveMsgCtr & 0x00FF);
+   \   000000AE   0x89CA             LDRH     R2,[R1, #+14]
+   \   000000B0   0x73C2             STRB     R2,[R0, #+15]
+   1130                       pch->Err           = MODBUS_ERR_NONE;
+   \   000000B2   0x2000             MOVS     R0,#+0
+   \   000000B4   0x8008             STRH     R0,[R1, #+0]
+   1131                       break;
+   \   000000B6   0xE010             B.N      ??MBS_FC08_Loopback_9
+   1132          
+   1133                  case MODBUS_FC08_LOOPBACK_SLAVE_NO_RESP_CTR:             /* Return no response count in diag information field.      */
+   1134                       MBS_TX_DIAG_DATA_H = (CPU_INT08U)((pch->StatNoRespCtr & 0xFF00) >> 8);
+   \                     ??MBS_FC08_Loopback_7: (+1)
+   \   000000B8   0xF104 0x0116      ADD      R1,R4,#+22
+   \   000000BC   0x8A0A             LDRH     R2,[R1, #+16]
+   \   000000BE   0x0A12             LSRS     R2,R2,#+8
+   \   000000C0   0x7382             STRB     R2,[R0, #+14]
+   1135                       MBS_TX_DIAG_DATA_L = (CPU_INT08U) (pch->StatNoRespCtr & 0x00FF);
+   \   000000C2   0x8A0A             LDRH     R2,[R1, #+16]
+   \   000000C4   0x73C2             STRB     R2,[R0, #+15]
+   1136                       pch->Err           = MODBUS_ERR_NONE;
+   \   000000C6   0x2000             MOVS     R0,#+0
+   \   000000C8   0x8008             STRH     R0,[R1, #+0]
+   1137                       break;
+   \   000000CA   0xE006             B.N      ??MBS_FC08_Loopback_9
+   1138          
+   1139                  default:
+   1140                       pch->Err = MODBUS_ERR_FC08_01;
+   \                     ??MBS_FC08_Loopback_8: (+1)
+   \   000000CC   0xF240 0x3021      MOVW     R0,#+801
+   \   000000D0   0x82E0             STRH     R0,[R4, #+22]
+   1141                       MBS_ErrRespSet(pch,
+   1142                                      MODBUS_ERR_ILLEGAL_DATA_VAL);
+   \   000000D2   0x2104             MOVS     R1,#+4
+   \   000000D4   0x4620             MOV      R0,R4
+   \   000000D6   0x.... 0x....      BL       MBS_ErrRespSet
+   1143                       break;
+   1144              }
+   1145              return (DEF_TRUE);                                           /* Tell caller that we need to send a response              */
+   \                     ??MBS_FC08_Loopback_9: (+1)
+   \   000000DA   0x2001             MOVS     R0,#+1
+   \   000000DC   0xBD10             POP      {R4,PC}          ;; return
+   1146          }
+   1147          #endif
+   1148          #endif
+   1149          
+   1150          /*$PAGE*/
+   1151          /*
+   1152          *********************************************************************************************************
+   1153          *                                       MBS_FC15_CoilWrMultiple()
+   1154          *
+   1155          * Description : Processes the MODBUS "Force Multiple COILS" command and writes the COIL states.
+   1156          *
+   1157          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+   1158          *
+   1159          * Return(s)   : DEF_TRUE      If a response needs to be sent
+   1160          *               DEF_FALSE     If not
+   1161          *
+   1162          * Caller(s)   : MBS_FCxx_Handler()
+   1163          *
+   1164          * Note(s)     : none
+   1165          *********************************************************************************************************
+   1166          */
+   1167          
+   1168          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+   1169          #if (MODBUS_CFG_FC15_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+   1170          static  CPU_BOOLEAN  MBS_FC15_CoilWrMultiple (MODBUS_CH  *pch)
+   1171          {
+   \                     MBS_FC15_CoilWrMultiple: (+1)
+   \   00000000   0xE92D 0x4FF8      PUSH     {R3-R11,LR}
+   \   00000004   0x4604             MOV      R4,R0
+   1172              CPU_INT16U    ix;
+   1173              CPU_INT16U    coil;
+   1174              CPU_INT16U    nbr_coils;
+   1175              CPU_INT16U    nbr_bytes;
+   1176              CPU_INT08U    data_ix;
+   1177              CPU_BOOLEAN   coil_val;
+   1178              CPU_INT08U    temp;
+   1179              CPU_INT16U    err;
+   1180          
+   1181          
+   1182              if (pch->WrEn == DEF_TRUE) {
+   \   00000006   0x7860             LDRB     R0,[R4, #+1]
+   \   00000008   0x2801             CMP      R0,#+1
+   \   0000000A   0xD16E             BNE.N    ??MBS_FC15_CoilWrMultiple_0
+   1183                  if (pch->RxFrameNDataBytes < 6) {                        /* Minimum Nbr of data bytes must be 6.                     */
+   \   0000000C   0xF504 0x7651      ADD      R6,R4,#+836
+   \   00000010   0x8830             LDRH     R0,[R6, #+0]
+   \   00000012   0x2806             CMP      R0,#+6
+   \   00000014   0xDA01             BGE.N    ??MBS_FC15_CoilWrMultiple_1
+   1184                      return (DEF_FALSE);                                  /* Tell caller that we DON'T need to send a response        */
+   \   00000016   0x2000             MOVS     R0,#+0
+   \   00000018   0xE06F             B.N      ??MBS_FC15_CoilWrMultiple_2
+   1185                  }
+   1186                  coil      = MBS_RX_DATA_START;
+   \                     ??MBS_FC15_CoilWrMultiple_1: (+1)
+   \   0000001A   0xF504 0x7711      ADD      R7,R4,#+580
+   \   0000001E   0x78B9             LDRB     R1,[R7, #+2]
+   \   00000020   0x78FA             LDRB     R2,[R7, #+3]
+   \   00000022   0xEB02 0x2801      ADD      R8,R2,R1, LSL #+8
+   \   00000026   0xFA1F 0xF888      UXTH     R8,R8
+   1187                  nbr_coils = MBS_RX_DATA_POINTS;
+   \   0000002A   0x7939             LDRB     R1,[R7, #+4]
+   \   0000002C   0x797A             LDRB     R2,[R7, #+5]
+   \   0000002E   0xEB02 0x2901      ADD      R9,R2,R1, LSL #+8
+   \   00000032   0xFA1F 0xF989      UXTH     R9,R9
+   1188                  nbr_bytes = MBS_RX_DATA_BYTES;                           /* Get the byte count for the data.                         */
+   \   00000036   0x79B9             LDRB     R1,[R7, #+6]
+   1189                  if (((((nbr_coils - 1) / 8) + 1) ==  nbr_bytes) &&       /* Be sure #bytes valid for number COILS.                   */
+   1190                      (pch->RxFrameNDataBytes  == (nbr_bytes + 5))) {
+   \   00000038   0xF1A9 0x0201      SUB      R2,R9,#+1
+   \   0000003C   0x1093             ASRS     R3,R2,#+2
+   \   0000003E   0xEB02 0x7253      ADD      R2,R2,R3, LSR #+29
+   \   00000042   0x10D2             ASRS     R2,R2,#+3
+   \   00000044   0x1C52             ADDS     R2,R2,#+1
+   \   00000046   0x428A             CMP      R2,R1
+   \   00000048   0xD146             BNE.N    ??MBS_FC15_CoilWrMultiple_3
+   \   0000004A   0x1D49             ADDS     R1,R1,#+5
+   \   0000004C   0x4288             CMP      R0,R1
+   \   0000004E   0xD143             BNE.N    ??MBS_FC15_CoilWrMultiple_3
+   1191                      ix      = 0;                                         /* Initialize COIL/loop counter variable.                   */
+   \   00000050   0xF04F 0x0B00      MOV      R11,#+0
+   1192                      data_ix = 7;                                         /* The 1st COIL data byte is 5th element in data frame.     */
+   \   00000054   0xF04F 0x0A07      MOV      R10,#+7
+   \   00000058   0xE005             B.N      ??MBS_FC15_CoilWrMultiple_4
+   1193                      while (ix < nbr_coils) {                             /* Loop through each COIL to be forced.                     */
+   1194                          if ((ix % 8) == 0) {                             /* Move to the next data byte after every eight bits.       */
+   1195                              temp = pch->RxFrameData[data_ix++];
+   1196                          }
+   1197                          if (temp & 0x01) {                               /* Get LSBit                                                */
+   1198                              coil_val = MODBUS_COIL_ON;
+   1199                          } else {
+   1200                              coil_val = MODBUS_COIL_OFF;
+   1201                          }
+   1202                          MB_CoilWr(coil + ix,
+   1203                                    coil_val,
+   1204                                    &err);
+   1205                          switch (err) {
+   1206                              case MODBUS_ERR_NONE:
+   1207                                   break;                                  /* Continue with the next coil if no error                  */
+   1208          
+   1209                              case MODBUS_ERR_RANGE:
+   1210                              default:
+   1211                                   pch->Err = MODBUS_ERR_FC15_01;
+   1212                                   MBS_ErrRespSet(pch,
+   1213                                                  MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   1214                                   return (DEF_TRUE);                      /* Tell caller that we need to send a response              */
+   1215                          }
+   1216                          temp >>= 1;                                      /* Shift the data one bit position to the right.            */
+   \                     ??MBS_FC15_CoilWrMultiple_5: (+1)
+   \   0000005A   0xB2ED             UXTB     R5,R5
+   \   0000005C   0x086D             LSRS     R5,R5,#+1
+   1217                          ix++;                                            /* Increment the COIL counter.                              */
+   \   0000005E   0xF10B 0x0B01      ADD      R11,R11,#+1
+   \   00000062   0xFA1F 0xFB8B      UXTH     R11,R11
+   \                     ??MBS_FC15_CoilWrMultiple_4: (+1)
+   \   00000066   0x45CB             CMP      R11,R9
+   \   00000068   0xDA24             BGE.N    ??MBS_FC15_CoilWrMultiple_6
+   \   0000006A   0xEA4F 0x00AB      ASR      R0,R11,#+2
+   \   0000006E   0xEB0B 0x7050      ADD      R0,R11,R0, LSR #+29
+   \   00000072   0x10C0             ASRS     R0,R0,#+3
+   \   00000074   0xEBBB 0x00C0      SUBS     R0,R11,R0, LSL #+3
+   \   00000078   0xD107             BNE.N    ??MBS_FC15_CoilWrMultiple_7
+   \   0000007A   0xFA5F 0xFA8A      UXTB     R10,R10
+   \   0000007E   0xEB0A 0x0004      ADD      R0,R10,R4
+   \   00000082   0xF890 0x5244      LDRB     R5,[R0, #+580]
+   \   00000086   0xF10A 0x0A01      ADD      R10,R10,#+1
+   \                     ??MBS_FC15_CoilWrMultiple_7: (+1)
+   \   0000008A   0x466A             MOV      R2,SP
+   \   0000008C   0xF005 0x0101      AND      R1,R5,#0x1
+   \   00000090   0xEB0B 0x0008      ADD      R0,R11,R8
+   \   00000094   0xB280             UXTH     R0,R0
+   \   00000096   0x.... 0x....      BL       MB_CoilWr
+   \   0000009A   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   0000009E   0x2800             CMP      R0,#+0
+   \   000000A0   0xD0DB             BEQ.N    ??MBS_FC15_CoilWrMultiple_5
+   \   000000A2   0xF240 0x50DD      MOVW     R0,#+1501
+   \   000000A6   0x82E0             STRH     R0,[R4, #+22]
+   \   000000A8   0x2102             MOVS     R1,#+2
+   \   000000AA   0x4620             MOV      R0,R4
+   \   000000AC   0x.... 0x....      BL       MBS_ErrRespSet
+   \   000000B0   0x2001             MOVS     R0,#+1
+   \   000000B2   0xE022             B.N      ??MBS_FC15_CoilWrMultiple_2
+   1218                      }
+   1219                  } else {
+   1220                      pch->Err = MODBUS_ERR_FC15_02;
+   1221                      MBS_ErrRespSet(pch,
+   1222                                     MODBUS_ERR_ILLEGAL_DATA_VAL);
+   1223                      return (DEF_TRUE);                                   /* Tell caller that we need to send a response              */
+   1224                  }
+   1225                  pch->TxFrameNDataBytes = 4;                              /* Don't echo the whole message back!                       */
+   \                     ??MBS_FC15_CoilWrMultiple_6: (+1)
+   \   000000B4   0x2004             MOVS     R0,#+4
+   \   000000B6   0xF8A4 0x044E      STRH     R0,[R4, #+1102]
+   1226                  MBS_TX_FRAME_ADDR      = MBS_RX_FRAME_ADDR;              /* Prepare response packet                                  */
+   \   000000BA   0x7838             LDRB     R0,[R7, #+0]
+   \   000000BC   0x72B0             STRB     R0,[R6, #+10]
+   1227                  MBS_TX_FRAME_FC        = MBS_RX_FRAME_FC;
+   \   000000BE   0x7878             LDRB     R0,[R7, #+1]
+   \   000000C0   0x72F0             STRB     R0,[R6, #+11]
+   1228                  MBS_TX_DATA_START_H    = MBS_RX_DATA_START_H;
+   \   000000C2   0x78B8             LDRB     R0,[R7, #+2]
+   \   000000C4   0x7330             STRB     R0,[R6, #+12]
+   1229                  MBS_TX_DATA_START_L    = MBS_RX_DATA_START_L;
+   \   000000C6   0x78F8             LDRB     R0,[R7, #+3]
+   \   000000C8   0x7370             STRB     R0,[R6, #+13]
+   1230                  MBS_TX_DATA_POINTS_H   = MBS_RX_DATA_POINTS_H;
+   \   000000CA   0x7938             LDRB     R0,[R7, #+4]
+   \   000000CC   0x73B0             STRB     R0,[R6, #+14]
+   1231                  MBS_TX_DATA_POINTS_L   = MBS_RX_DATA_POINTS_L;
+   \   000000CE   0x7978             LDRB     R0,[R7, #+5]
+   \   000000D0   0x73F0             STRB     R0,[R6, #+15]
+   1232                  pch->Err               = MODBUS_ERR_NONE;
+   \   000000D2   0x2000             MOVS     R0,#+0
+   \   000000D4   0x82E0             STRH     R0,[R4, #+22]
+   \   000000D6   0xE00F             B.N      ??MBS_FC15_CoilWrMultiple_8
+   \                     ??MBS_FC15_CoilWrMultiple_3: (+1)
+   \   000000D8   0xF240 0x50DE      MOVW     R0,#+1502
+   \   000000DC   0x82E0             STRH     R0,[R4, #+22]
+   \   000000DE   0x2104             MOVS     R1,#+4
+   \   000000E0   0x4620             MOV      R0,R4
+   \   000000E2   0x.... 0x....      BL       MBS_ErrRespSet
+   \   000000E6   0x2001             MOVS     R0,#+1
+   \   000000E8   0xE007             B.N      ??MBS_FC15_CoilWrMultiple_2
+   1233              } else {
+   1234                  pch->Err               = MODBUS_ERR_FC15_03;              /* Number of bytes incorrect for number of COILS.           */
+   \                     ??MBS_FC15_CoilWrMultiple_0: (+1)
+   \   000000EA   0xF240 0x50DF      MOVW     R0,#+1503
+   \   000000EE   0x82E0             STRH     R0,[R4, #+22]
+   1235                  MBS_ErrRespSet(pch,
+   1236                                 MODBUS_ERR_ILLEGAL_DATA_VAL);
+   \   000000F0   0x2104             MOVS     R1,#+4
+   \   000000F2   0x4620             MOV      R0,R4
+   \   000000F4   0x.... 0x....      BL       MBS_ErrRespSet
+   1237              }
+   1238              return (DEF_TRUE);                                            /* Tell caller that we need to send a response              */
+   \                     ??MBS_FC15_CoilWrMultiple_8: (+1)
+   \   000000F8   0x2001             MOVS     R0,#+1
+   \                     ??MBS_FC15_CoilWrMultiple_2: (+1)
+   \   000000FA   0xE8BD 0x8FF2      POP      {R1,R4-R11,PC}   ;; return
+   1239          }
+   1240          #endif
+   1241          #endif
+   1242          
+   1243          /*$PAGE*/
+   1244          /*
+   1245          *********************************************************************************************************
+   1246          *                                    MBS_FC16_HoldingRegWrMultiple()
+   1247          *
+   1248          * Description : This function is called to write to multiple holding registers.  If the address of the
+   1249          *               rquest exceeds or is equal to MODBUS_CFG_FP_START_IX, then the command would write to
+   1250          *               multiple 'floating-point' according to the 'Daniels Flow Meter' extensions.  This means
+   1251          *               that each register requested is considered as a 32-bit IEEE-754 floating-point format.
+   1252          *
+   1253          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+   1254          *
+   1255          * Return(s)   : DEF_TRUE      If a response needs to be sent
+   1256          *               DEF_FALSE     If not
+   1257          *
+   1258          * Caller(s)   : MBS_FCxx_Handler()
+   1259          *
+   1260          * Note(s)     : none
+   1261          *********************************************************************************************************
+   1262          */
+   1263          
+   1264          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+   1265          #if (MODBUS_CFG_FC16_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+   1266          static  CPU_BOOLEAN  MBS_FC16_HoldingRegWrMultiple (MODBUS_CH *pch)
+   1267          {
+   \                     MBS_FC16_HoldingRegWrMultiple: (+1)
+   \   00000000   0xE92D 0x43F8      PUSH     {R3-R9,LR}
+   \   00000004   0x4604             MOV      R4,R0
+   1268              CPU_INT08U     *prx_data;
+   1269              CPU_INT16U      err;
+   1270              CPU_INT16U      reg;
+   1271              CPU_INT16U      reg_val_16;
+   1272              CPU_INT16U      nbr_regs;
+   1273              CPU_INT16U      nbr_bytes;
+   1274              CPU_INT08U      data_size;
+   1275          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+   1276              CPU_INT08U      i;
+   1277              CPU_FP32        reg_val_fp;
+   1278              CPU_INT08U     *pfp;
+   1279          #endif
+   1280          
+   1281          
+   1282              reg       = MBS_RX_DATA_START;
+   \   00000006   0xF504 0x7511      ADD      R5,R4,#+580
+   \   0000000A   0x78A8             LDRB     R0,[R5, #+2]
+   \   0000000C   0x78E9             LDRB     R1,[R5, #+3]
+   \   0000000E   0xEB01 0x2600      ADD      R6,R1,R0, LSL #+8
+   1283              nbr_regs  = MBS_RX_DATA_POINTS;
+   \   00000012   0x7928             LDRB     R0,[R5, #+4]
+   \   00000014   0x7969             LDRB     R1,[R5, #+5]
+   \   00000016   0xEB01 0x2700      ADD      R7,R1,R0, LSL #+8
+   1284          #if SE_MODBUS_CODE > 0
+   1285          
+   1286              MB_DATA_holdingRegWrMultiple(pch, &err);
+   1287          
+   1288              switch(err)
+   1289              {
+   1290                 case MODBUS_ERR_RANGE:
+   1291                    pch->Err = MODBUS_ERR_FC16_03;
+   1292                    MBS_ErrRespSet(pch, MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   1293                    return (DEF_TRUE);
+   1294                 case MODBUS_ERR_ILLEGAL_DATA_QTY:
+   1295                    pch->Err = MODBUS_ERR_FC16_01;
+   1296                    MBS_ErrRespSet(pch, MODBUS_ERR_ILLEGAL_DATA_QTY);
+   1297                    return (DEF_TRUE);
+   1298                 case MODBUS_ERR_ILLEGAL_DATA_VAL:
+   1299                    pch->Err = MODBUS_ERR_FC16_02;
+   1300                     MBS_ErrRespSet(pch, MODBUS_ERR_ILLEGAL_DATA_VAL);
+   1301                     return (DEF_TRUE);
+   1302                 default:
+   1303                    break;
+   1304          
+   1305              }
+   1306          
+   1307          #else // ALL SE_MODBUS_CODE code above here
+   1308          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+   1309              if (reg < MODBUS_CFG_FP_START_IX) {
+   1310                  if (nbr_regs == 0 || nbr_regs > 125) {                   /* Make sure we don't exceed the allowed limit per request  */
+   1311                      pch->Err = MODBUS_ERR_FC16_04;
+   1312                      MBS_ErrRespSet(pch,
+   1313                                     MODBUS_ERR_ILLEGAL_DATA_QTY);
+   1314                      return (DEF_TRUE);                                   /* Tell caller that we need to send a response              */
+   1315                  }
+   1316                  data_size  = sizeof(CPU_INT16U);
+   1317              } else {
+   1318                  if (nbr_regs == 0 || nbr_regs > 62) {                    /* Make sure we don't exceed the allowed limit per request  */
+   1319                      pch->Err = MODBUS_ERR_FC16_05;
+   1320                      MBS_ErrRespSet(pch,
+   1321                                     MODBUS_ERR_ILLEGAL_DATA_QTY);
+   1322                      return (DEF_TRUE);                                   /* Tell caller that we need to send a response              */
+   1323                  }
+   1324                  data_size  = sizeof(CPU_FP32);
+   1325              }
+   1326          #else
+   1327              if (nbr_regs == 0 || nbr_regs > 125) {                       /* Make sure we don't exceed the allowed limit per request  */
+   \   0000001A   0xB2BF             UXTH     R7,R7
+   \   0000001C   0x2F00             CMP      R7,#+0
+   \   0000001E   0xD002             BEQ.N    ??MBS_FC16_HoldingRegWrMultiple_0
+   \   00000020   0x4638             MOV      R0,R7
+   \   00000022   0x287E             CMP      R0,#+126
+   \   00000024   0xDB09             BLT.N    ??MBS_FC16_HoldingRegWrMultiple_1
+   1328                  pch->Err = MODBUS_ERR_FC16_04;
+   \                     ??MBS_FC16_HoldingRegWrMultiple_0: (+1)
+   \   00000026   0xF240 0x6044      MOVW     R0,#+1604
+   \   0000002A   0x1D21             ADDS     R1,R4,#+4
+   \   0000002C   0x8248             STRH     R0,[R1, #+18]
+   1329                  MBS_ErrRespSet(pch,
+   1330                                 MODBUS_ERR_ILLEGAL_DATA_QTY);
+   \   0000002E   0x2103             MOVS     R1,#+3
+   \   00000030   0x4620             MOV      R0,R4
+   \   00000032   0x.... 0x....      BL       MBS_ErrRespSet
+   1331                  return (DEF_TRUE);                                       /* Tell caller that we need to send a response              */
+   \   00000036   0x2001             MOVS     R0,#+1
+   \   00000038   0xE078             B.N      ??MBS_FC16_HoldingRegWrMultiple_2
+   1332              }
+   1333              data_size  = sizeof(CPU_INT16U);
+   1334          #endif
+   1335          
+   1336              prx_data  = &pch->RxFrameData[6];                            /* Point to number of bytes in request frame                */
+   \                     ??MBS_FC16_HoldingRegWrMultiple_1: (+1)
+   \   0000003A   0xF204 0x284A      ADDW     R8,R4,#+586
+   1337              nbr_bytes = (CPU_INT16U)*prx_data++;
+   \   0000003E   0xF818 0x1B01      LDRB     R1,[R8], #+1
+   1338              if ((pch->RxFrameNDataBytes - 5) != nbr_bytes) {             /* Compare actual number of bytes to what they say.         */
+   \   00000042   0xF504 0x7951      ADD      R9,R4,#+836
+   \   00000046   0xF8B9 0x2000      LDRH     R2,[R9, #+0]
+   \   0000004A   0x1F52             SUBS     R2,R2,#+5
+   \   0000004C   0x428A             CMP      R2,R1
+   \   0000004E   0xD009             BEQ.N    ??MBS_FC16_HoldingRegWrMultiple_3
+   1339                  pch->Err = MODBUS_ERR_FC16_01;
+   \   00000050   0xF240 0x6041      MOVW     R0,#+1601
+   \   00000054   0x1D21             ADDS     R1,R4,#+4
+   \   00000056   0x8248             STRH     R0,[R1, #+18]
+   1340                  MBS_ErrRespSet(pch,
+   1341                                 MODBUS_ERR_ILLEGAL_DATA_QTY);
+   \   00000058   0x2103             MOVS     R1,#+3
+   \   0000005A   0x4620             MOV      R0,R4
+   \   0000005C   0x.... 0x....      BL       MBS_ErrRespSet
+   1342                  return (DEF_TRUE);
+   \   00000060   0x2001             MOVS     R0,#+1
+   \   00000062   0xE063             B.N      ??MBS_FC16_HoldingRegWrMultiple_2
+   1343              }
+   1344              if ((nbr_bytes / nbr_regs) != (CPU_INT16U)data_size) {
+   \                     ??MBS_FC16_HoldingRegWrMultiple_3: (+1)
+   \   00000064   0xFB91 0xF0F0      SDIV     R0,R1,R0
+   \   00000068   0x2802             CMP      R0,#+2
+   \   0000006A   0xD009             BEQ.N    ??MBS_FC16_HoldingRegWrMultiple_4
+   1345                  pch->Err = MODBUS_ERR_FC16_02;
+   \   0000006C   0xF240 0x6042      MOVW     R0,#+1602
+   \   00000070   0x1D21             ADDS     R1,R4,#+4
+   \   00000072   0x8248             STRH     R0,[R1, #+18]
+   1346                  MBS_ErrRespSet(pch,
+   1347                                 MODBUS_ERR_ILLEGAL_DATA_VAL);
+   \   00000074   0x2104             MOVS     R1,#+4
+   \   00000076   0x4620             MOV      R0,R4
+   \   00000078   0x.... 0x....      BL       MBS_ErrRespSet
+   1348                  return (DEF_TRUE);                                       /* Tell caller that we need to send a response              */
+   \   0000007C   0x2001             MOVS     R0,#+1
+   \   0000007E   0xE055             B.N      ??MBS_FC16_HoldingRegWrMultiple_2
+   1349              }
+   1350          
+   1351              /***********************************************
+   1352              * 描述： 写多个寄存器回调函数
+   1353              */
+   1354              if ( App_MB_WrNRegsHook ( (CPU_INT16U )reg,
+   1355                                        (CPU_INT16U*)prx_data,
+   1356                                        (CPU_INT16U )nbr_regs,
+   1357                                        &err ) ) {
+   \                     ??MBS_FC16_HoldingRegWrMultiple_4: (+1)
+   \   00000080   0x466B             MOV      R3,SP
+   \   00000082   0x463A             MOV      R2,R7
+   \   00000084   0x4641             MOV      R1,R8
+   \   00000086   0x4630             MOV      R0,R6
+   \   00000088   0xB280             UXTH     R0,R0
+   \   0000008A   0x.... 0x....      BL       App_MB_WrNRegsHook
+   \   0000008E   0x2800             CMP      R0,#+0
+   \   00000090   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000094   0xD003             BEQ.N    ??MBS_FC16_HoldingRegWrMultiple_5
+   1358                  if ( err != MODBUS_ERR_NONE ) {
+   \   00000096   0x2800             CMP      R0,#+0
+   \   00000098   0xD128             BNE.N    ??MBS_FC16_HoldingRegWrMultiple_6
+   1359                       pch->Err = MODBUS_ERR_FC16_03;
+   1360                       MBS_ErrRespSet(pch,
+   1361                                      MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   1362                       return (DEF_TRUE);
+   1363                  } else {
+   1364                      nbr_regs    = 0;
+   \   0000009A   0x2700             MOVS     R7,#+0
+   \   0000009C   0xE011             B.N      ??MBS_FC16_HoldingRegWrMultiple_7
+   1365                  }
+   1366              } else {
+   1367                  if ( err != MODBUS_ERR_NONE ) {
+   \                     ??MBS_FC16_HoldingRegWrMultiple_5: (+1)
+   \   0000009E   0x2800             CMP      R0,#+0
+   \   000000A0   0xD00F             BEQ.N    ??MBS_FC16_HoldingRegWrMultiple_7
+   1368                       pch->Err = MODBUS_ERR_FC03_02;
+   \   000000A2   0xF44F 0x7097      MOV      R0,#+302
+   \   000000A6   0x1D21             ADDS     R1,R4,#+4
+   \   000000A8   0x8248             STRH     R0,[R1, #+18]
+   1369                       MBS_ErrRespSet(pch,
+   1370                                      MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   \   000000AA   0x2102             MOVS     R1,#+2
+   \   000000AC   0x4620             MOV      R0,R4
+   \   000000AE   0x.... 0x....      BL       MBS_ErrRespSet
+   1371                       return (DEF_TRUE);
+   \   000000B2   0x2001             MOVS     R0,#+1
+   \   000000B4   0xE03A             B.N      ??MBS_FC16_HoldingRegWrMultiple_2
+   1372                  }
+   1373              }
+   1374          
+   1375              while (nbr_regs > 0) {
+   1376          #if (MODBUS_CFG_FP_EN == DEF_ENABLED)
+   1377                  if (reg < MODBUS_CFG_FP_START_IX) {
+   1378                      reg_val_16  = ((CPU_INT16U)*prx_data++) << 8;        /* Get MSB first.                                           */
+   1379                      reg_val_16 +=  (CPU_INT16U)*prx_data++;              /* Add in the LSB.                                          */
+   1380                      MB_HoldingRegWr(reg,
+   1381                                      reg_val_16,
+   1382                                      &err);
+   1383                  } else {
+   1384                      pfp = (CPU_INT08U *)&reg_val_fp;
+   1385          #if CPU_CFG_ENDIAN_TYPE == CPU_ENDIAN_TYPE_BIG
+   1386                      for (i = 0; i < sizeof(CPU_FP32); i++) {
+   1387                          *pfp++   = *prx_data++;
+   1388                      }
+   1389          #else
+   1390                      pfp += sizeof(CPU_FP32) - 1;
+   1391                      for (i = 0; i < sizeof(CPU_FP32); i++) {
+   1392                          *pfp--   = *prx_data++;
+   1393                      }
+   1394          #endif
+   1395                      MB_HoldingRegWrFP(reg,
+   1396                                        reg_val_fp,
+   1397                                        &err);
+   1398                  }
+   1399          #else
+   1400                  reg_val_16  = ((CPU_INT16U)*prx_data++) << 8;            /* Get MSB first.                                           */
+   1401                  reg_val_16 +=  (CPU_INT16U)*prx_data++;                  /* Add in the LSB.                                          */
+   1402                  MB_HoldingRegWr(reg,
+   1403                                  reg_val_16,
+   1404                                  &err);
+   1405          #endif
+   1406          
+   1407                  switch (err) {                                           /* See if any errors in writing the data                    */
+   1408                      case MODBUS_ERR_NONE:                                /* Reply with echoe of command received                     */
+   1409                           pch->WrCtr++;
+   \                     ??MBS_FC16_HoldingRegWrMultiple_8: (+1)
+   \   000000B6   0x1D20             ADDS     R0,R4,#+4
+   \   000000B8   0x6801             LDR      R1,[R0, #+0]
+   \   000000BA   0x1C49             ADDS     R1,R1,#+1
+   \   000000BC   0x6001             STR      R1,[R0, #+0]
+   1410                           reg++;
+   \   000000BE   0x1C76             ADDS     R6,R6,#+1
+   1411                           nbr_regs--;
+   \   000000C0   0x1E7F             SUBS     R7,R7,#+1
+   1412                           break;
+   \                     ??MBS_FC16_HoldingRegWrMultiple_7: (+1)
+   \   000000C2   0xB2BF             UXTH     R7,R7
+   \   000000C4   0x2F00             CMP      R7,#+0
+   \   000000C6   0xD01B             BEQ.N    ??MBS_FC16_HoldingRegWrMultiple_9
+   \   000000C8   0xF898 0x0000      LDRB     R0,[R8, #+0]
+   \   000000CC   0xF898 0x1001      LDRB     R1,[R8, #+1]
+   \   000000D0   0xEB01 0x2100      ADD      R1,R1,R0, LSL #+8
+   \   000000D4   0xF108 0x0802      ADD      R8,R8,#+2
+   \   000000D8   0x466A             MOV      R2,SP
+   \   000000DA   0xB289             UXTH     R1,R1
+   \   000000DC   0x4630             MOV      R0,R6
+   \   000000DE   0xB280             UXTH     R0,R0
+   \   000000E0   0x.... 0x....      BL       MB_HoldingRegWr
+   \   000000E4   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   000000E8   0x2800             CMP      R0,#+0
+   \   000000EA   0xD0E4             BEQ.N    ??MBS_FC16_HoldingRegWrMultiple_8
+   1413          
+   1414                      case MODBUS_ERR_RANGE:
+   1415                      default:
+   1416                           pch->Err = MODBUS_ERR_FC16_03;
+   \                     ??MBS_FC16_HoldingRegWrMultiple_6: (+1)
+   \   000000EC   0xF240 0x6043      MOVW     R0,#+1603
+   \   000000F0   0x1D21             ADDS     R1,R4,#+4
+   \   000000F2   0x8248             STRH     R0,[R1, #+18]
+   1417                           MBS_ErrRespSet(pch,
+   1418                                          MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   \   000000F4   0x2102             MOVS     R1,#+2
+   \   000000F6   0x4620             MOV      R0,R4
+   \   000000F8   0x.... 0x....      BL       MBS_ErrRespSet
+   1419                           return (DEF_TRUE);                              /* Tell caller that we need to send a response              */
+   \   000000FC   0x2001             MOVS     R0,#+1
+   \   000000FE   0xE015             B.N      ??MBS_FC16_HoldingRegWrMultiple_2
+   1420                  }
+   1421              }
+   1422          #endif //SE_MODBUS_CODE
+   1423              pch->TxFrameNDataBytes = 4;                                  /* Don't echo the whole message back!                       */
+   \                     ??MBS_FC16_HoldingRegWrMultiple_9: (+1)
+   \   00000100   0x2004             MOVS     R0,#+4
+   \   00000102   0xF8A4 0x044E      STRH     R0,[R4, #+1102]
+   1424              MBS_TX_FRAME_ADDR      = MBS_RX_FRAME_ADDR;                  /* Prepare response packet                                  */
+   \   00000106   0x7828             LDRB     R0,[R5, #+0]
+   \   00000108   0xF889 0x000A      STRB     R0,[R9, #+10]
+   1425              MBS_TX_FRAME_FC        = MBS_RX_FRAME_FC;
+   \   0000010C   0x7868             LDRB     R0,[R5, #+1]
+   \   0000010E   0xF889 0x000B      STRB     R0,[R9, #+11]
+   1426              MBS_TX_DATA_START_H    = MBS_RX_DATA_START_H;
+   \   00000112   0x78A8             LDRB     R0,[R5, #+2]
+   \   00000114   0xF889 0x000C      STRB     R0,[R9, #+12]
+   1427              MBS_TX_DATA_START_L    = MBS_RX_DATA_START_L;
+   \   00000118   0x78E8             LDRB     R0,[R5, #+3]
+   \   0000011A   0xF889 0x000D      STRB     R0,[R9, #+13]
+   1428              MBS_TX_DATA_POINTS_H   = MBS_RX_DATA_POINTS_H;
+   \   0000011E   0x7928             LDRB     R0,[R5, #+4]
+   \   00000120   0xF889 0x000E      STRB     R0,[R9, #+14]
+   1429              MBS_TX_DATA_POINTS_L   = MBS_RX_DATA_POINTS_L;
+   \   00000124   0x7968             LDRB     R0,[R5, #+5]
+   \   00000126   0xF889 0x000F      STRB     R0,[R9, #+15]
+   1430              return (DEF_TRUE);                                           /* Tell caller that we need to send a response              */
+   \   0000012A   0x2001             MOVS     R0,#+1
+   \                     ??MBS_FC16_HoldingRegWrMultiple_2: (+1)
+   \   0000012C   0xE8BD 0x83F2      POP      {R1,R4-R9,PC}    ;; return
+   1431          }
+   1432          #endif
+   1433          #endif
+   1434          
+   1435          /*$PAGE*/
+   1436          /*
+   1437          *********************************************************************************************************
+   1438          *                                          MBS_FC20_FileRd()
+   1439          *
+   1440          * Description : Read a record from a file.
+   1441          *
+   1442          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+   1443          *
+   1444          * Return(s)   : DEF_TRUE      If a response needs to be sent
+   1445          *               DEF_FALSE     If not
+   1446          *
+   1447          * Caller(s)   : MBS_FCxx_Handler()
+   1448          *
+   1449          * Note(s)     : (1) The current version of this software only supports ONE Sub-request at a time.
+   1450          *********************************************************************************************************
+   1451          */
+   1452          
+   1453          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+   1454          #if (MODBUS_CFG_FC20_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+   1455          static  CPU_BOOLEAN  MBS_FC20_FileRd (MODBUS_CH  *pch)
+   1456          {
+   \                     MBS_FC20_FileRd: (+1)
+   \   00000000   0xE92D 0x43F0      PUSH     {R4-R9,LR}
+   \   00000004   0xB083             SUB      SP,SP,#+12
+   \   00000006   0x4604             MOV      R4,R0
+   1457              CPU_INT08U    *presp;
+   1458              CPU_INT16U     file_nbr;
+   1459              CPU_INT16U     record_nbr;
+   1460              CPU_INT16U     record_len;
+   1461              CPU_INT16U     cmd_len;
+   1462              CPU_INT08U     cmd_type;
+   1463              CPU_INT16U     err;
+   1464              CPU_INT16U     reg_val;
+   1465              CPU_INT16U     ix;
+   1466          
+   1467          
+   1468              cmd_len = pch->RxFrameData[2];                                           /* Get the number of bytes in the command received          */
+   1469              if (cmd_len < 7 || cmd_len > 245) {                                      /* Make sure the byte count Rx'd is within expected range   */
+   \   00000008   0xF504 0x7011      ADD      R0,R4,#+580
+   \   0000000C   0x7881             LDRB     R1,[R0, #+2]
+   \   0000000E   0x1FC9             SUBS     R1,R1,#+7
+   \   00000010   0x29EF             CMP      R1,#+239
+   \   00000012   0xD308             BCC.N    ??MBS_FC20_FileRd_0
+   1470                  pch->Err = MODBUS_ERR_FC20_01;
+   \   00000014   0xF240 0x70D1      MOVW     R0,#+2001
+   \   00000018   0x82E0             STRH     R0,[R4, #+22]
+   1471                  MBS_ErrRespSet(pch,
+   1472                                 MODBUS_ERR_ILLEGAL_DATA_QTY);
+   \   0000001A   0x2103             MOVS     R1,#+3
+   \   0000001C   0x4620             MOV      R0,R4
+   \   0000001E   0x.... 0x....      BL       MBS_ErrRespSet
+   1473                  return (DEF_TRUE);                                                   /* Tell caller that we need to send a response              */
+   \   00000022   0x2001             MOVS     R0,#+1
+   \   00000024   0xE076             B.N      ??MBS_FC20_FileRd_1
+   1474              }
+   1475              cmd_type    =  pch->RxFrameData[3];                                      /* Get the reference type                                   */
+   \                     ??MBS_FC20_FileRd_0: (+1)
+   \   00000026   0x78C1             LDRB     R1,[R0, #+3]
+   1476              file_nbr    = ((CPU_INT16U)pch->RxFrameData[4] << 8)                     /* Get the file number                                      */
+   1477                          +  (CPU_INT16U)pch->RxFrameData[5];
+   \   00000028   0x7902             LDRB     R2,[R0, #+4]
+   \   0000002A   0x7943             LDRB     R3,[R0, #+5]
+   \   0000002C   0xEB03 0x2502      ADD      R5,R3,R2, LSL #+8
+   1478              record_nbr  = ((CPU_INT16U)pch->RxFrameData[6] << 8)                     /* Get the record number                                    */
+   1479                          +  (CPU_INT16U)pch->RxFrameData[7];
+   \   00000030   0x7982             LDRB     R2,[R0, #+6]
+   \   00000032   0x79C3             LDRB     R3,[R0, #+7]
+   \   00000034   0xEB03 0x2602      ADD      R6,R3,R2, LSL #+8
+   1480              record_len  = ((CPU_INT16U)pch->RxFrameData[8] << 8)                     /* Get the record length                                    */
+   1481                          +  (CPU_INT16U)pch->RxFrameData[9];
+   \   00000038   0x7A02             LDRB     R2,[R0, #+8]
+   \   0000003A   0x7A43             LDRB     R3,[R0, #+9]
+   \   0000003C   0xEB03 0x2702      ADD      R7,R3,R2, LSL #+8
+   1482              presp       = &pch->TxFrameData[0];                                      /* Point to first location in response buffer               */
+   \   00000040   0xF204 0x384E      ADDW     R8,R4,#+846
+   1483              *presp++    = MBS_RX_FRAME_ADDR;                                         /* Reply back with the node address                         */
+   \   00000044   0x7802             LDRB     R2,[R0, #+0]
+   \   00000046   0xF888 0x2000      STRB     R2,[R8, #+0]
+   1484              *presp++    = MBS_RX_FRAME_FC;                                           /* Include the function code                                */
+   \   0000004A   0x7840             LDRB     R0,[R0, #+1]
+   \   0000004C   0xF888 0x0001      STRB     R0,[R8, #+1]
+   1485              if (cmd_type == 6) {                                                     /* File type should ALWAYS be 6.                            */
+   \   00000050   0x2906             CMP      R1,#+6
+   \   00000052   0xD157             BNE.N    ??MBS_FC20_FileRd_2
+   1486                  pch->TxFrameNDataBytes = record_len * sizeof(CPU_INT16U) + 3;        /* Determine the total number of data bytes in the Tx frame */
+   \   00000054   0xB2BF             UXTH     R7,R7
+   \   00000056   0x0078             LSLS     R0,R7,#+1
+   \   00000058   0x1CC0             ADDS     R0,R0,#+3
+   \   0000005A   0xF8A4 0x044E      STRH     R0,[R4, #+1102]
+   1487                  *presp++               = (CPU_INT08U)(pch->TxFrameNDataBytes - 1);   /* Total byte count (excluding byte count)                  */
+   \   0000005E   0xF8B4 0x044E      LDRH     R0,[R4, #+1102]
+   \   00000062   0x1E40             SUBS     R0,R0,#+1
+   \   00000064   0xF888 0x0002      STRB     R0,[R8, #+2]
+   1488                  *presp++               = (CPU_INT08U)(pch->TxFrameNDataBytes - 2);   /* Sub request byte count (excluding sub-request byte cnt)  */
+   \   00000068   0xF8B4 0x044E      LDRH     R0,[R4, #+1102]
+   \   0000006C   0x1E80             SUBS     R0,R0,#+2
+   \   0000006E   0xF888 0x0003      STRB     R0,[R8, #+3]
+   1489                  *presp++               = 6;                                          /* Reference type is ALWAYS 6.                              */
+   \   00000072   0x2006             MOVS     R0,#+6
+   \   00000074   0xF888 0x0004      STRB     R0,[R8, #+4]
+   \   00000078   0xF108 0x0805      ADD      R8,R8,#+5
+   1490                  ix                     = 0;                                          /* Initialize the index into the record                     */
+   \   0000007C   0xF04F 0x0900      MOV      R9,#+0
+   \   00000080   0xE007             B.N      ??MBS_FC20_FileRd_3
+   1491                  while (record_len > 0) {
+   1492                      reg_val = MB_FileRd(file_nbr,                                    /* Get one value from the file                              */
+   1493                                          record_nbr,
+   1494                                          ix,
+   1495                                          record_len,
+   1496                                          &err);
+   1497                      switch (err) {
+   1498                          case MODBUS_ERR_NONE:
+   1499                               *presp++ = (CPU_INT08U)(reg_val >> 8);                  /* Store high byte of record data                           */
+   \                     ??MBS_FC20_FileRd_4: (+1)
+   \   00000082   0x1201             ASRS     R1,R0,#+8
+   \   00000084   0xF808 0x1B01      STRB     R1,[R8], #+1
+   1500                               *presp++ = (CPU_INT08U)(reg_val & 0x00FF);              /* Store low  byte of record data                           */
+   \   00000088   0xF808 0x0B01      STRB     R0,[R8], #+1
+   1501                               break;
+   1502          
+   1503                          case MODBUS_ERR_FILE:
+   1504                               pch->Err = MODBUS_ERR_FC20_02;
+   1505                               MBS_ErrRespSet(pch,
+   1506                                              MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   1507                               return (DEF_TRUE);                                      /* Tell caller that we need to send a response              */
+   1508          
+   1509                          case MODBUS_ERR_RECORD:
+   1510                               pch->Err = MODBUS_ERR_FC20_03;
+   1511                               MBS_ErrRespSet(pch,
+   1512                                              MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   1513                               return (DEF_TRUE);                                      /* Tell caller that we need to send a response              */
+   1514          
+   1515                          case MODBUS_ERR_IX:
+   1516                          default:
+   1517                               pch->Err = MODBUS_ERR_FC20_04;
+   1518                               MBS_ErrRespSet(pch,
+   1519                                              MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   1520                               return (DEF_TRUE);                                      /* Tell caller that we need to send a response              */
+   1521                      }
+   1522                      ix++;
+   \   0000008C   0xF109 0x0901      ADD      R9,R9,#+1
+   1523                      record_len--;
+   \   00000090   0x1E7F             SUBS     R7,R7,#+1
+   \                     ??MBS_FC20_FileRd_3: (+1)
+   \   00000092   0xB2BF             UXTH     R7,R7
+   \   00000094   0x2F00             CMP      R7,#+0
+   \   00000096   0xD031             BEQ.N    ??MBS_FC20_FileRd_5
+   \   00000098   0xA801             ADD      R0,SP,#+4
+   \   0000009A   0x9000             STR      R0,[SP, #+0]
+   \   0000009C   0x463B             MOV      R3,R7
+   \   0000009E   0xB2DB             UXTB     R3,R3
+   \   000000A0   0x464A             MOV      R2,R9
+   \   000000A2   0xB292             UXTH     R2,R2
+   \   000000A4   0x4631             MOV      R1,R6
+   \   000000A6   0xB289             UXTH     R1,R1
+   \   000000A8   0x4628             MOV      R0,R5
+   \   000000AA   0xB280             UXTH     R0,R0
+   \   000000AC   0x.... 0x....      BL       MB_FileRd
+   \   000000B0   0xF8BD 0x1004      LDRH     R1,[SP, #+4]
+   \   000000B4   0x2900             CMP      R1,#+0
+   \   000000B6   0xD0E4             BEQ.N    ??MBS_FC20_FileRd_4
+   \   000000B8   0xF640 0x72A1      MOVW     R2,#+4001
+   \   000000BC   0x1A89             SUBS     R1,R1,R2
+   \   000000BE   0xD002             BEQ.N    ??MBS_FC20_FileRd_6
+   \   000000C0   0x1E49             SUBS     R1,R1,#+1
+   \   000000C2   0xD009             BEQ.N    ??MBS_FC20_FileRd_7
+   \   000000C4   0xE011             B.N      ??MBS_FC20_FileRd_8
+   \                     ??MBS_FC20_FileRd_6: (+1)
+   \   000000C6   0xF240 0x70D2      MOVW     R0,#+2002
+   \   000000CA   0x82E0             STRH     R0,[R4, #+22]
+   \   000000CC   0x2102             MOVS     R1,#+2
+   \   000000CE   0x4620             MOV      R0,R4
+   \   000000D0   0x.... 0x....      BL       MBS_ErrRespSet
+   \   000000D4   0x2001             MOVS     R0,#+1
+   \   000000D6   0xE01D             B.N      ??MBS_FC20_FileRd_1
+   \                     ??MBS_FC20_FileRd_7: (+1)
+   \   000000D8   0xF240 0x70D3      MOVW     R0,#+2003
+   \   000000DC   0x82E0             STRH     R0,[R4, #+22]
+   \   000000DE   0x2102             MOVS     R1,#+2
+   \   000000E0   0x4620             MOV      R0,R4
+   \   000000E2   0x.... 0x....      BL       MBS_ErrRespSet
+   \   000000E6   0x2001             MOVS     R0,#+1
+   \   000000E8   0xE014             B.N      ??MBS_FC20_FileRd_1
+   \                     ??MBS_FC20_FileRd_8: (+1)
+   \   000000EA   0xF240 0x70D4      MOVW     R0,#+2004
+   \   000000EE   0x82E0             STRH     R0,[R4, #+22]
+   \   000000F0   0x2102             MOVS     R1,#+2
+   \   000000F2   0x4620             MOV      R0,R4
+   \   000000F4   0x.... 0x....      BL       MBS_ErrRespSet
+   \   000000F8   0x2001             MOVS     R0,#+1
+   \   000000FA   0xE00B             B.N      ??MBS_FC20_FileRd_1
+   1524                  }
+   1525              } else {
+   1526                  pch->Err = MODBUS_ERR_FC20_05;
+   1527                  MBS_ErrRespSet(pch,
+   1528                                 MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   1529                  return (DEF_TRUE);                                                   /* Tell caller that we need to send a response              */
+   1530              }
+   1531              pch->Err = MODBUS_ERR_NONE;
+   \                     ??MBS_FC20_FileRd_5: (+1)
+   \   000000FC   0x2000             MOVS     R0,#+0
+   \   000000FE   0x82E0             STRH     R0,[R4, #+22]
+   1532              return (DEF_TRUE);                                                       /* Tell caller that we need to send a response              */
+   \   00000100   0x2001             MOVS     R0,#+1
+   \   00000102   0xE007             B.N      ??MBS_FC20_FileRd_1
+   \                     ??MBS_FC20_FileRd_2: (+1)
+   \   00000104   0xF240 0x70D5      MOVW     R0,#+2005
+   \   00000108   0x82E0             STRH     R0,[R4, #+22]
+   \   0000010A   0x2102             MOVS     R1,#+2
+   \   0000010C   0x4620             MOV      R0,R4
+   \   0000010E   0x.... 0x....      BL       MBS_ErrRespSet
+   \   00000112   0x2001             MOVS     R0,#+1
+   \                     ??MBS_FC20_FileRd_1: (+1)
+   \   00000114   0xE8BD 0x83FE      POP      {R1-R9,PC}       ;; return
+   1533          }
+   1534          #endif
+   1535          #endif
+   1536          
+   1537          /*$PAGE*/
+   1538          /*
+   1539          *********************************************************************************************************
+   1540          *                                       MBS_FC21_FileWr()
+   1541          *
+   1542          * Description : Write a record to a file.
+   1543          *
+   1544          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+   1545          *
+   1546          * Return(s)   : DEF_TRUE      If a response needs to be sent
+   1547          *               DEF_FALSE     If not
+   1548          *
+   1549          * Caller(s)   : MBS_FCxx_Handler().
+   1550          *
+   1551          * Note(s)     : (1) The current version of this software only supports ONE Sub-request at a time.
+   1552          *********************************************************************************************************
+   1553          */
+   1554          
+   1555          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+   1556          #if (MODBUS_CFG_FC21_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+   1557          static  CPU_BOOLEAN  MBS_FC21_FileWr (MODBUS_CH  *pch)
+   1558          {
+   \                     MBS_FC21_FileWr: (+1)
+   \   00000000   0xE92D 0x47F0      PUSH     {R4-R10,LR}
+   \   00000004   0xB084             SUB      SP,SP,#+16
+   \   00000006   0x4604             MOV      R4,R0
+   1559              CPU_INT08U    *prx_data;
+   1560              CPU_INT08U    *pcmd;
+   1561              CPU_INT08U    *presp;
+   1562              CPU_INT16U     file_nbr;
+   1563              CPU_INT16U     record_nbr;
+   1564              CPU_INT16U     record_len;
+   1565              CPU_INT16U     cmd_len;
+   1566              CPU_INT08U     cmd_type;
+   1567              CPU_INT16U     err;
+   1568              CPU_INT08U     max;
+   1569              CPU_INT16U     reg_val;
+   1570              CPU_INT16U     ix;
+   1571          
+   1572          
+   1573              cmd_len = pch->RxFrameData[2];
+   1574              if (cmd_len < 7 || cmd_len > 245) {                                    /* Make sure the byte count Rx'd is within expected range   */
+   \   00000008   0xF204 0x2546      ADDW     R5,R4,#+582
+   \   0000000C   0x7828             LDRB     R0,[R5, #+0]
+   \   0000000E   0x1FC0             SUBS     R0,R0,#+7
+   \   00000010   0x28EF             CMP      R0,#+239
+   \   00000012   0xD309             BCC.N    ??MBS_FC21_FileWr_0
+   1575                  pch->Err = MODBUS_ERR_FC21_01;
+   \   00000014   0xF640 0x0035      MOVW     R0,#+2101
+   \   00000018   0x1D21             ADDS     R1,R4,#+4
+   \   0000001A   0x8248             STRH     R0,[R1, #+18]
+   1576                  MBS_ErrRespSet(pch,
+   1577                                 MODBUS_ERR_ILLEGAL_DATA_QTY);
+   \   0000001C   0x2103             MOVS     R1,#+3
+   \   0000001E   0x4620             MOV      R0,R4
+   \   00000020   0x.... 0x....      BL       MBS_ErrRespSet
+   1578                  return (DEF_TRUE);                                                 /* Tell caller that we need to send a response              */
+   \   00000024   0x2001             MOVS     R0,#+1
+   \   00000026   0xE07F             B.N      ??MBS_FC21_FileWr_1
+   1579              }
+   1580              cmd_type    =  pch->RxFrameData[3];                                    /* Get the reference type                                   */
+   1581              file_nbr    = ((CPU_INT16U)pch->RxFrameData[4] << 8)                   /* Get the file number                                      */
+   1582                          +  (CPU_INT16U)pch->RxFrameData[5];
+   \                     ??MBS_FC21_FileWr_0: (+1)
+   \   00000028   0x78A8             LDRB     R0,[R5, #+2]
+   \   0000002A   0x78E9             LDRB     R1,[R5, #+3]
+   \   0000002C   0xEB01 0x2600      ADD      R6,R1,R0, LSL #+8
+   1583              record_nbr  = ((CPU_INT16U)pch->RxFrameData[6] << 8)                   /* Get the record number                                    */
+   1584                          + (CPU_INT16U)pch->RxFrameData[7];
+   \   00000030   0x7928             LDRB     R0,[R5, #+4]
+   \   00000032   0x7969             LDRB     R1,[R5, #+5]
+   \   00000034   0xEB01 0x2700      ADD      R7,R1,R0, LSL #+8
+   1585              record_len  = ((CPU_INT16U)pch->RxFrameData[8] << 8)                   /* Get the record length                                    */
+   1586                          + (CPU_INT16U)pch->RxFrameData[9];
+   \   00000038   0x79A8             LDRB     R0,[R5, #+6]
+   \   0000003A   0x79E9             LDRB     R1,[R5, #+7]
+   \   0000003C   0xEB01 0x2A00      ADD      R10,R1,R0, LSL #+8
+   1587              prx_data    = &pch->RxFrameData[10];                                   /* Point to first data byte                                 */
+   \   00000040   0xF204 0x284E      ADDW     R8,R4,#+590
+   1588          
+   1589              if (cmd_type == 6) {                                                   /* File type should ALWAYS be 6.                            */
+   \   00000044   0x7868             LDRB     R0,[R5, #+1]
+   \   00000046   0x2806             CMP      R0,#+6
+   \   00000048   0xD14D             BNE.N    ??MBS_FC21_FileWr_2
+   1590                  ix = 0;                                                            /* Initialize the index into the record                     */
+   \   0000004A   0xF04F 0x0900      MOV      R9,#+0
+   \   0000004E   0xE007             B.N      ??MBS_FC21_FileWr_3
+   1591                  while (record_len > 0) {
+   1592                      reg_val  = ((CPU_INT16U)*prx_data++ << 8) & 0xFF00;            /* Get data to write to file                                */
+   1593                      reg_val |=  (CPU_INT16U)*prx_data++ & 0x00FF;
+   1594                      MB_FileWr(file_nbr,                                            /* Write one value to the file                              */
+   1595                                record_nbr,
+   1596                                ix,
+   1597                                record_len,
+   1598                                reg_val,
+   1599                                &err);
+   1600                      switch (err) {
+   1601                          case MODBUS_ERR_NONE:
+   1602                               pch->WrCtr++;
+   \                     ??MBS_FC21_FileWr_4: (+1)
+   \   00000050   0x1D20             ADDS     R0,R4,#+4
+   \   00000052   0x6801             LDR      R1,[R0, #+0]
+   \   00000054   0x1C49             ADDS     R1,R1,#+1
+   \   00000056   0x6001             STR      R1,[R0, #+0]
+   1603                               break;
+   1604          
+   1605                          case MODBUS_ERR_FILE:
+   1606                               pch->Err = MODBUS_ERR_FC21_02;
+   1607                               MBS_ErrRespSet(pch,
+   1608                                              MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   1609                               return (DEF_TRUE);                                    /* Tell caller that we need to send a response              */
+   1610          
+   1611                          case MODBUS_ERR_RECORD:
+   1612                               pch->Err = MODBUS_ERR_FC21_03;
+   1613                               MBS_ErrRespSet(pch,
+   1614                                              MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   1615                               return (DEF_TRUE);                                    /* Tell caller that we need to send a response              */
+   1616          
+   1617                          case MODBUS_ERR_IX:
+   1618                          default:
+   1619                               pch->Err = MODBUS_ERR_FC21_04;
+   1620                               MBS_ErrRespSet(pch,
+   1621                                              MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   1622                               return (DEF_TRUE);                                    /* Tell caller that we need to send a response              */
+   1623                      }
+   1624                      ix++;
+   \   00000058   0xF109 0x0901      ADD      R9,R9,#+1
+   1625                      record_len--;
+   \   0000005C   0xF1AA 0x0A01      SUB      R10,R10,#+1
+   \                     ??MBS_FC21_FileWr_3: (+1)
+   \   00000060   0xFA1F 0xFA8A      UXTH     R10,R10
+   \   00000064   0xF1BA 0x0F00      CMP      R10,#+0
+   \   00000068   0xD045             BEQ.N    ??MBS_FC21_FileWr_5
+   \   0000006A   0xF898 0x0000      LDRB     R0,[R8, #+0]
+   \   0000006E   0xF898 0x1001      LDRB     R1,[R8, #+1]
+   \   00000072   0xEA41 0x2000      ORR      R0,R1,R0, LSL #+8
+   \   00000076   0xF108 0x0802      ADD      R8,R8,#+2
+   \   0000007A   0xA902             ADD      R1,SP,#+8
+   \   0000007C   0x9101             STR      R1,[SP, #+4]
+   \   0000007E   0x9000             STR      R0,[SP, #+0]
+   \   00000080   0x4653             MOV      R3,R10
+   \   00000082   0xB2DB             UXTB     R3,R3
+   \   00000084   0x464A             MOV      R2,R9
+   \   00000086   0xB292             UXTH     R2,R2
+   \   00000088   0x4639             MOV      R1,R7
+   \   0000008A   0xB289             UXTH     R1,R1
+   \   0000008C   0x4630             MOV      R0,R6
+   \   0000008E   0xB280             UXTH     R0,R0
+   \   00000090   0x.... 0x....      BL       MB_FileWr
+   \   00000094   0xF8BD 0x0008      LDRH     R0,[SP, #+8]
+   \   00000098   0x2800             CMP      R0,#+0
+   \   0000009A   0xD0D9             BEQ.N    ??MBS_FC21_FileWr_4
+   \   0000009C   0xF640 0x71A1      MOVW     R1,#+4001
+   \   000000A0   0x1A40             SUBS     R0,R0,R1
+   \   000000A2   0xD002             BEQ.N    ??MBS_FC21_FileWr_6
+   \   000000A4   0x1E40             SUBS     R0,R0,#+1
+   \   000000A6   0xD00A             BEQ.N    ??MBS_FC21_FileWr_7
+   \   000000A8   0xE013             B.N      ??MBS_FC21_FileWr_8
+   \                     ??MBS_FC21_FileWr_6: (+1)
+   \   000000AA   0xF640 0x0036      MOVW     R0,#+2102
+   \   000000AE   0x1D21             ADDS     R1,R4,#+4
+   \   000000B0   0x8248             STRH     R0,[R1, #+18]
+   \   000000B2   0x2102             MOVS     R1,#+2
+   \   000000B4   0x4620             MOV      R0,R4
+   \   000000B6   0x.... 0x....      BL       MBS_ErrRespSet
+   \   000000BA   0x2001             MOVS     R0,#+1
+   \   000000BC   0xE034             B.N      ??MBS_FC21_FileWr_1
+   \                     ??MBS_FC21_FileWr_7: (+1)
+   \   000000BE   0xF640 0x0037      MOVW     R0,#+2103
+   \   000000C2   0x1D21             ADDS     R1,R4,#+4
+   \   000000C4   0x8248             STRH     R0,[R1, #+18]
+   \   000000C6   0x2102             MOVS     R1,#+2
+   \   000000C8   0x4620             MOV      R0,R4
+   \   000000CA   0x.... 0x....      BL       MBS_ErrRespSet
+   \   000000CE   0x2001             MOVS     R0,#+1
+   \   000000D0   0xE02A             B.N      ??MBS_FC21_FileWr_1
+   \                     ??MBS_FC21_FileWr_8: (+1)
+   \   000000D2   0xF640 0x0038      MOVW     R0,#+2104
+   \   000000D6   0x1D21             ADDS     R1,R4,#+4
+   \   000000D8   0x8248             STRH     R0,[R1, #+18]
+   \   000000DA   0x2102             MOVS     R1,#+2
+   \   000000DC   0x4620             MOV      R0,R4
+   \   000000DE   0x.... 0x....      BL       MBS_ErrRespSet
+   \   000000E2   0x2001             MOVS     R0,#+1
+   \   000000E4   0xE020             B.N      ??MBS_FC21_FileWr_1
+   1626                  }
+   1627              } else {
+   1628                  pch->Err = MODBUS_ERR_FC21_05;
+   \                     ??MBS_FC21_FileWr_2: (+1)
+   \   000000E6   0xF640 0x0039      MOVW     R0,#+2105
+   \   000000EA   0x1D21             ADDS     R1,R4,#+4
+   \   000000EC   0x8248             STRH     R0,[R1, #+18]
+   1629                  MBS_ErrRespSet(pch,
+   1630                                 MODBUS_ERR_ILLEGAL_DATA_ADDR);
+   \   000000EE   0x2102             MOVS     R1,#+2
+   \   000000F0   0x4620             MOV      R0,R4
+   \   000000F2   0x.... 0x....      BL       MBS_ErrRespSet
+   1631              }
+   1632              record_len = ((CPU_INT16U)pch->RxFrameData[8] << 8) + (CPU_INT16U)pch->RxFrameData[9];    /* Get the record length                 */
+   1633              pcmd       = &pch->RxFrameData[0];
+   \                     ??MBS_FC21_FileWr_5: (+1)
+   \   000000F6   0xF504 0x7011      ADD      R0,R4,#+580
+   1634              presp      = &pch->TxFrameData[0];                                     /* Point to first location in response buffer               */
+   \   000000FA   0xF204 0x314E      ADDW     R1,R4,#+846
+   1635              max        = (record_len * 2) + 9;
+   \   000000FE   0x79EA             LDRB     R2,[R5, #+7]
+   \   00000100   0x0052             LSLS     R2,R2,#+1
+   \   00000102   0x3209             ADDS     R2,R2,#+9
+   \   00000104   0xB2D2             UXTB     R2,R2
+   1636              for (ix = 0; ix < max; ix++) {                                         /* Copy the request into the transmit packet                */
+   \   00000106   0xF04F 0x0900      MOV      R9,#+0
+   \   0000010A   0xE005             B.N      ??MBS_FC21_FileWr_9
+   1637                  *presp++ = *pcmd++;
+   \                     ??MBS_FC21_FileWr_10: (+1)
+   \   0000010C   0xF810 0x3B01      LDRB     R3,[R0], #+1
+   \   00000110   0xF801 0x3B01      STRB     R3,[R1], #+1
+   1638              }
+   \   00000114   0xF109 0x0901      ADD      R9,R9,#+1
+   \                     ??MBS_FC21_FileWr_9: (+1)
+   \   00000118   0xFA1F 0xF989      UXTH     R9,R9
+   \   0000011C   0x4591             CMP      R9,R2
+   \   0000011E   0xDBF5             BLT.N    ??MBS_FC21_FileWr_10
+   1639              pch->Err = MODBUS_ERR_NONE;
+   \   00000120   0x2000             MOVS     R0,#+0
+   \   00000122   0x1D21             ADDS     R1,R4,#+4
+   \   00000124   0x8248             STRH     R0,[R1, #+18]
+   1640              return (DEF_TRUE);                                                     /* Tell caller that we need to send a response              */
+   \   00000126   0x2001             MOVS     R0,#+1
+   \                     ??MBS_FC21_FileWr_1: (+1)
+   \   00000128   0xB004             ADD      SP,SP,#+16
+   \   0000012A   0xE8BD 0x87F0      POP      {R4-R10,PC}      ;; return
+   1641          }
+   1642          #endif
+   1643          #endif
+   1644          
+   1645          
+   1646          /*******************************************************************************
+   1647          *                                      READ DEVICE ID
+   1648          *
+   1649          * Description : Obtains the contents of the devide ID registers.
+   1650          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+   1651          *
+   1652          * Return(s)   : TRUE      If a response needs to be sent
+   1653          *               FALSE     If not
+   1654          *******************************************************************************/
+   1655          
+   1656          #if MODBUS_CFG_SLAVE_EN > 0
+   1657          #if MODBUS_FC43_EN  > 0
+   1658          static  CPU_BOOLEAN  MBS_FC43_readDeviceID (MODBUS_CH  *pch)
+   1659          {
+   1660              CPU_INT08U    *presp;
+   1661              CPU_INT16U     err;
+   1662              CPU_INT16U     reg;
+   1663              CPU_INT16U     nbr_regs;
+   1664              CPU_INT16U     nbr_bytes;
+   1665              CPU_INT16U     reg_val_16;
+   1666          #if MODBUS_FP_EN > 0
+   1667              CPU_INT08U     ix;
+   1668              CPU_FP32       reg_val_fp;
+   1669              CPU_INT08U    *pfp;
+   1670          #endif
+   1671          
+   1672          /* Nbr of data bytes must be 3. */
+   1673              if (pch->RxFrameNDataBytes != 3)
+   1674              {
+   1675                  return (DEF_FALSE);
+   1676              }
+   1677          
+   1678              return(DEF_FALSE);// TODO REMOVE THIS ONCE CODE IS IMPLEMENTED
+   1679          // SE TODO implement device ID code
+   1680          
+   1681              // check for MEI type
+   1682          
+   1683              // check Object ID
+   1684          
+   1685              // validate ID category
+   1686          
+   1687              // setup reply
+   1688          
+   1689              //1st 4 byte are same as request
+   1690          
+   1691              // build packect based on id category supported
+   1692          }
+   1693          #endif
+   1694          #endif
+   1695          
+   1696          
+   1697          /*******************************************************************************
+   1698          *                                      SCATTERED READ
+   1699          *
+   1700          * Description : Obtains the contents of various registers.
+   1701          * Argument(s) : pch       Is a pointer to the Modbus channel's data structure.
+   1702          *
+   1703          * Return(s)   : TRUE      If a response needs to be sent
+   1704          *               FALSE     If not
+   1705          *******************************************************************************/
+   1706          
+   1707          #if MODBUS_CFG_SLAVE_EN > 0
+   1708          #if MODBUS_FC100_EN  > 0
+   1709          static  CPU_BOOLEAN  MBS_FC100_scatteredRead (MODBUS_CH  *pch)
+   1710          {
+   1711              CPU_INT08U    *presp;
+   1712              CPU_INT16U     err;
+   1713              CPU_INT16U     reg;
+   1714              CPU_INT16U     nbr_regs;
+   1715              CPU_INT16U     nbr_bytes;
+   1716              CPU_INT16U     reg_val_16;
+   1717          #if MODBUS_FP_EN > 0
+   1718              CPU_INT08U     ix;
+   1719              CPU_FP32       reg_val_fp;
+   1720              CPU_INT08U    *pfp;
+   1721          #endif
+   1722          
+   1723          /* Nbr of data bytes must be Query data length + 5. */
+   1724              if (pch->RxFrameNDataBytes != pch->RxFrameData[2] + MBS_FC100_DATA_BYTES )
+   1725              {
+   1726                  return (DEF_FALSE);
+   1727              }
+   1728          
+   1729              return(DEF_FALSE);// TODO REMOVE THIS ONCE CODE IS IMPLEMENTED
+   1730          
+   1731          
+   1732              // check for max number of reg
+   1733          
+   1734          
+   1735          
+   1736              // setup reply
+   1737          
+   1738              //1st 4 byte are same as request
+   1739          
+   1740              // build packect
+   1741          }
+   1742          #endif
+   1743          #endif
+   1744          
+   1745          /*$PAGE*/
+   1746          /*
+   1747          *********************************************************************************************************
+   1748          *                                            MBS_StatInit()
+   1749          *
+   1750          * Description : This function is used to initialize/reset the MODBUS statistics/communications counters.
+   1751          *
+   1752          * Argument(s) : pch      Is a pointer to the Modbus channel's data structure.
+   1753          *
+   1754          * Return(s)   : none.
+   1755          *
+   1756          * Caller(s)   : MB_Init()
+   1757          *               MBS_FC08_Loopback()
+   1758          *
+   1759          * Note(s)     : none.
+   1760          *********************************************************************************************************
+   1761          */
+   1762          
+   1763          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED) && \
+   1764              (MODBUS_CFG_FC08_EN  == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+   1765          void  MBS_StatInit (MODBUS_CH  *pch)
+   1766          {
+   1767              pch->StatMsgCtr      = 0;                       /* Initialize all MODBUS event counters.                     */
+   \                     MBS_StatInit: (+1)
+   \   00000000   0x2100             MOVS     R1,#+0
+   \   00000002   0x83C1             STRH     R1,[R0, #+30]
+   1768              pch->StatCRCErrCtr   = 0;
+   \   00000004   0x8401             STRH     R1,[R0, #+32]
+   1769              pch->StatExceptCtr   = 0;
+   \   00000006   0x8441             STRH     R1,[R0, #+34]
+   1770              pch->StatSlaveMsgCtr = 0;
+   \   00000008   0x8481             STRH     R1,[R0, #+36]
+   1771              pch->StatNoRespCtr   = 0;
+   \   0000000A   0x84C1             STRH     R1,[R0, #+38]
+   1772          }
+   \   0000000C   0x4770             BX       LR               ;; return
+   1773          #endif
+   1774          
+   1775          /*
+   1776          *********************************************************************************************************
+   1777          *                                           MBS_RxTask()
+   1778          *
+   1779          * Description : Handle either Modbus ASCII or Modbus RTU received packets.
+   1780          *
+   1781          * Argument(s) : ch       Specifies the Modbus channel that needs servicing.
+   1782          *
+   1783          * Return(s)   : none.
+   1784          *
+   1785          * Caller(s)   : MB_RxTask()
+   1786          *
+   1787          * Note(s)     : none.
+   1788          *********************************************************************************************************
+   1789          */
+   1790          
+   1791          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+   1792          void  MBS_RxTask (MODBUS_CH *pch)
+   1793          {
+   1794              if (pch != (MODBUS_CH *)0) {
+   \                     MBS_RxTask: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD003             BEQ.N    ??MBS_RxTask_0
+   1795          #if (MODBUS_CFG_ASCII_EN == DEF_ENABLED)
+   1796                  if (pch->Mode == MODBUS_MODE_ASCII) {
+   1797                      MBS_ASCII_Task(pch);
+   1798                  }
+   1799          #endif
+   1800          
+   1801          #if (MODBUS_CFG_RTU_EN == DEF_ENABLED)
+   1802                  if (pch->Mode == MODBUS_MODE_RTU) {
+   \   00000004   0x7CC1             LDRB     R1,[R0, #+19]
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD100             BNE.N    ??MBS_RxTask_0
+   1803                      MBS_RTU_Task(pch);
+   \   0000000A   0x....             B.N      MBS_RTU_Task
+   1804                  }
+   1805          #endif
+   1806              }
+   1807          }
+   \                     ??MBS_RxTask_0: (+1)
+   \   0000000C   0x4770             BX       LR               ;; return
+   1808          #endif
+   1809          
+   1810          /*$PAGE*/
+   1811          /*
+   1812          *********************************************************************************************************
+   1813          *                                           MBS_ASCII_Task()
+   1814          *
+   1815          * Description : Received a packet that should be encoded for Modbus ASCII mode.  Process request.
+   1816          *
+   1817          * Argument(s) : pch         Is a pointer to the Modbus channel's data structure.
+   1818          *
+   1819          * Return(s)   : none.
+   1820          *
+   1821          * Caller(s)   : MBS_RxTask()
+   1822          *
+   1823          * Note(s)     : none.
+   1824          *********************************************************************************************************
+   1825          */
+   1826          
+   1827          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED) && \
+   1828              (MODBUS_CFG_ASCII_EN == DEF_ENABLED)
+   1829          static  void  MBS_ASCII_Task (MODBUS_CH  *pch)
+   1830          {
+   1831              CPU_BOOLEAN   ok;
+   1832              CPU_INT16U    calc_lrc;                               /* Used for LRC                                                    */
+   1833              CPU_BOOLEAN   send_reply;
+   1834          
+   1835          
+   1836              pch->StatMsgCtr++;
+   1837              if (pch->RxBufByteCtr >= MODBUS_ASCII_MIN_MSG_SIZE) {
+   1838                  ok = MB_ASCII_Rx(pch);                            /* Extract received command from .RxBuf[] & move to .RxFrameData[] */
+   1839                  if (ok == DEF_TRUE) {
+   1840                      calc_lrc = MB_ASCII_RxCalcLRC(pch);           /* Calculate LRC on received ASCII packet                          */
+   1841                      if (calc_lrc != pch->RxFrameCRC) {            /* If sum of all data plus received LRC is not the same            */
+   1842                          //pch->StatCRCErrCtr++;                     /* then the frame was not received properly.                       */
+   1843                          //pch->StatNoRespCtr++;
+   1844                          COM_incDiaCtr(COM_BADCRC);
+   1845                          COM_incDiaCtr(COM_TIMEOUT);
+   1846                      } else {
+   1847                          send_reply = MBS_FCxx_Handler(pch);       /* Execute received command and formulate a response               */
+   1848                          if (send_reply == DEF_TRUE) {
+   1849                              MB_ASCII_Tx(pch);                     /* Send back reply.                                                */
+   1850                          } else {
+   1851                              //pch->StatNoRespCtr++;
+   1852                              COM_incDiaCtr(COM_TIMEOUT);
+   1853                          }
+   1854                      }
+   1855                  } else {
+   1856                      //pch->StatNoRespCtr++;
+   1857                      COM_incDiaCtr(COM_TIMEOUT);
+   1858                  }
+   1859              }
+   1860              pch->RxBufByteCtr = 0;
+   1861              pch->RxBufPtr     = &pch->RxBuf[0];
+   1862          }
+   1863          #endif
+   1864          
+   1865          /*$PAGE*/
+   1866          /*
+   1867          *********************************************************************************************************
+   1868          *                                            MBS_RTU_Task()
+   1869          *
+   1870          * Description : This function processes a packet received on the Modbus channel assuming that it's an RTU
+   1871          *               packet.
+   1872          *
+   1873          * Argument(s) : pch      Is a pointer to the Modbus channel's data structure.
+   1874          *
+   1875          * Return(s)   : none.
+   1876          *
+   1877          * Caller(s)   : MBS_RTU_Task().
+   1878          *
+   1879          * Note(s)     : none.
+   1880          *********************************************************************************************************
+   1881          */
+   1882          
+   1883          
+   1884          #if (MODBUS_CFG_SLAVE_EN == DEF_ENABLED) && \
+   1885              (MODBUS_CFG_RTU_EN   == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+   1886          static  void  MBS_RTU_Task (MODBUS_CH  *pch)
+   1887          {
+   \                     MBS_RTU_Task: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   1888              CPU_BOOLEAN     ok;
+   1889              CPU_INT16U      calc_crc;                            /* Used for CRC                                                    */
+   1890              CPU_BOOLEAN     send_reply;
+   1891          //    OS_ERR          err;
+   1892          
+   1893              pch->StatMsgCtr++;
+   \   00000004   0xF104 0x051C      ADD      R5,R4,#+28
+   \   00000008   0x8868             LDRH     R0,[R5, #+2]
+   \   0000000A   0x1C40             ADDS     R0,R0,#+1
+   \   0000000C   0x8068             STRH     R0,[R5, #+2]
+   1894              if (pch->RxBufByteCtr >= MODBUS_RTU_MIN_MSG_SIZE) {
+   \   0000000E   0x8AA8             LDRH     R0,[R5, #+20]
+   \   00000010   0x2804             CMP      R0,#+4
+   \   00000012   0xDB50             BLT.N    ??MBS_RTU_Task_0
+   1895          
+   1896                  CPU_SR_ALLOC();
+   1897              
+   1898                  CPU_CRITICAL_ENTER();
+   \   00000014   0x.... 0x....      BL       CPU_SR_Save
+   \   00000018   0x4606             MOV      R6,R0
+   \   0000001A   0x.... 0x....      BL       CPU_IntDisMeasStart
+   1899                  //redmorningcn  从move1位置。取数据长度。
+   1900                  pch->RxBufByteCnt   = pch->RxBufByteCtr; 
+   \   0000001E   0x8AA8             LDRH     R0,[R5, #+20]
+   \   00000020   0x82E8             STRH     R0,[R5, #+22]
+   1901                  //redmorningcn  MB_RTU_Rx 最后两字节没取完整。在此补充完整。
+   1902                  pch->RxFrameData[pch->RxBufByteCnt-2] = pch->RxBuf[pch->RxBufByteCnt-2];
+   \   00000022   0x1900             ADDS     R0,R0,R4
+   \   00000024   0xF890 0x1036      LDRB     R1,[R0, #+54]
+   \   00000028   0xF880 0x1242      STRB     R1,[R0, #+578]
+   1903                  pch->RxFrameData[pch->RxBufByteCnt-1] = pch->RxBuf[pch->RxBufByteCnt-1];
+   \   0000002C   0x8AE8             LDRH     R0,[R5, #+22]
+   \   0000002E   0x1900             ADDS     R0,R0,R4
+   \   00000030   0xF890 0x1037      LDRB     R1,[R0, #+55]
+   \   00000034   0xF880 0x1243      STRB     R1,[R0, #+579]
+   1904                  CPU_CRITICAL_EXIT();
+   \   00000038   0x.... 0x....      BL       CPU_IntDisMeasStop
+   \   0000003C   0x4630             MOV      R0,R6
+   \   0000003E   0x.... 0x....      BL       CPU_SR_Restore
+   1905          
+   1906          //         /***********************************************
+   1907          //        * 描述： 判断是否从TAX箱端口接收，TAX特殊处理。进来后直接退出。
+   1908          //        */
+   1909          //        if ( sCtrl.DevTax.pch == pch ) {
+   1910          //            send_reply = TAX_FCxx_Handler(pch);
+   1911          //             
+   1912          //            pch->RTU_TimeoutEn  = DEF_TRUE;                      // 重新启动超时（无名沈添加）
+   1913          //            pch->RxBufByteCtr   = 0;
+   1914          //            pch->RxBufPtr       = &pch->RxBuf[0];
+   1915          //            goto exit;
+   1916          //        }       
+   1917          //        
+   1918                  
+   1919                  ok = MB_RTU_Rx(pch);                           /* Extract received command from .RxBuf[] & move to .RxFrameData[] */
+   \   00000042   0x4620             MOV      R0,R4
+   \   00000044   0x.... 0x....      BL       MB_RTU_Rx
+   1920                  
+   1921                  pch->RTU_TimeoutEn  = DEF_TRUE;  
+   \   00000048   0x2101             MOVS     R1,#+1
+   \   0000004A   0x7029             STRB     R1,[R5, #+0]
+   1922                  pch->RxBufByteCtr   = 0;
+   \   0000004C   0x2100             MOVS     R1,#+0
+   \   0000004E   0x82A9             STRH     R1,[R5, #+20]
+   1923                  pch->RxBufPtr       = &pch->RxBuf[0];   
+   \   00000050   0xF104 0x0138      ADD      R1,R4,#+56
+   \   00000054   0x61A9             STR      R1,[R5, #+24]
+   1924                      
+   1925                  if (ok == DEF_TRUE) {
+   \   00000056   0x2801             CMP      R0,#+1
+   \   00000058   0xD134             BNE.N    ??MBS_RTU_Task_1
+   1926                      /***********************************************
+   1927                      * 描述： 2015/12/07增加，用于非MODBBUS通信
+   1928                      */
+   1929          #if MB_NONMODBUS_EN == DEF_ENABLED
+   1930                      if ( ( pch->NonModbusEn == DEF_ENABLED ) && 
+   1931                         ( ( pch->RxFrameHead != 0 ) || 
+   1932                           ( pch->RxFrameTail != 0 ) ) ) {
+   \   0000005A   0xF204 0x3646      ADDW     R6,R4,#+838
+   \   0000005E   0xF894 0x0452      LDRB     R0,[R4, #+1106]
+   \   00000062   0xF3C0 0x0040      UBFX     R0,R0,#+1,#+1
+   \   00000066   0x2800             CMP      R0,#+0
+   \   00000068   0xD00A             BEQ.N    ??MBS_RTU_Task_2
+   \   0000006A   0x88B0             LDRH     R0,[R6, #+4]
+   \   0000006C   0x2800             CMP      R0,#+0
+   \   0000006E   0xD102             BNE.N    ??MBS_RTU_Task_3
+   \   00000070   0x88F0             LDRH     R0,[R6, #+6]
+   \   00000072   0x2800             CMP      R0,#+0
+   \   00000074   0xD004             BEQ.N    ??MBS_RTU_Task_2
+   1933                            //redmorningcn 20170526   
+   1934          //move1         pch->RxBufByteCnt   = pch->RxBufByteCtr;
+   1935                          extern  CPU_BOOLEAN  NMBS_FCxx_Handler (MODBUS_CH  *pch);
+   1936                          send_reply = NMBS_FCxx_Handler(pch);
+   1937                          if (send_reply == DEF_TRUE) {
+   \                     ??MBS_RTU_Task_3: (+1)
+   \   00000076   0x4620             MOV      R0,R4
+   \   00000078   0x.... 0x....      BL       NMBS_FCxx_Handler
+   \   0000007C   0x2801             CMP      R0,#+1
+   \   0000007E   0xD021             BEQ.N    ??MBS_RTU_Task_1
+   1938                              goto exit;
+   1939                          }              
+   1940                      }
+   1941          //        next:
+   1942          #endif
+   1943                      /***********************************************
+   1944                      * 描述： MODBUS RTU 从机数据处理
+   1945                      */
+   1946                      calc_crc = MB_RTU_RxCalcCRC(pch);          /* Do our own calculation of the CRC.                              */
+   \                     ??MBS_RTU_Task_2: (+1)
+   \   00000080   0x4620             MOV      R0,R4
+   \   00000082   0x.... 0x....      BL       MB_RTU_RxCalcCRC
+   1947                      if (calc_crc != pch->RxFrameCRC) {         /* If the calculated CRC does not match the CRC received,          */
+   \   00000086   0x8831             LDRH     R1,[R6, #+0]
+   \   00000088   0x4288             CMP      R0,R1
+   \   0000008A   0xD006             BEQ.N    ??MBS_RTU_Task_4
+   1948                          pch->StatCRCErrCtr++;                  /* then the frame is bad.                                          */
+   \   0000008C   0x88A8             LDRH     R0,[R5, #+4]
+   \   0000008E   0x1C40             ADDS     R0,R0,#+1
+   \   00000090   0x80A8             STRH     R0,[R5, #+4]
+   1949                          pch->StatNoRespCtr++;
+   \   00000092   0x8968             LDRH     R0,[R5, #+10]
+   \   00000094   0x1C40             ADDS     R0,R0,#+1
+   \   00000096   0x8168             STRH     R0,[R5, #+10]
+   \   00000098   0xBD70             POP      {R4-R6,PC}
+   1950                          //COM_incDiaCtr(COM_BADCRC);
+   1951                          //COM_incDiaCtr(COM_TIMEOUT);
+   1952                      } else {
+   1953                          send_reply = MBS_FCxx_Handler(pch);    /* Execute received command and formulate a response               */
+   1954                          if (send_reply == DEF_TRUE) {
+   \                     ??MBS_RTU_Task_4: (+1)
+   \   0000009A   0x4620             MOV      R0,R4
+   \   0000009C   0x.... 0x....      BL       MBS_FCxx_Handler
+   \   000000A0   0x2801             CMP      R0,#+1
+   \   000000A2   0xD104             BNE.N    ??MBS_RTU_Task_5
+   1955                              MB_RTU_Tx(pch);                    /* Send back reply.                                                */
+   \   000000A4   0x4620             MOV      R0,R4
+   \   000000A6   0xE8BD 0x4070      POP      {R4-R6,LR}
+   \   000000AA   0x.... 0x....      B.W      MB_RTU_Tx
+   1956                          } else {
+   1957                              pch->StatNoRespCtr++;
+   \                     ??MBS_RTU_Task_5: (+1)
+   \   000000AE   0x8968             LDRH     R0,[R5, #+10]
+   \   000000B0   0x1C40             ADDS     R0,R0,#+1
+   \   000000B2   0x8168             STRH     R0,[R5, #+10]
+   \   000000B4   0xBD70             POP      {R4-R6,PC}
+   1958                              //COM_incDiaCtr(COM_TIMEOUT);
+   1959                          }
+   1960                      }
+   1961                  }
+   1962              }
+   1963              else
+   1964              {
+   1965                  pch->RTU_TimeoutEn  = DEF_TRUE;                      // 重新启动超时（无名沈添加）
+   \                     ??MBS_RTU_Task_0: (+1)
+   \   000000B6   0x2001             MOVS     R0,#+1
+   \   000000B8   0x7028             STRB     R0,[R5, #+0]
+   1966                  pch->RxBufByteCtr   = 0;
+   \   000000BA   0x2000             MOVS     R0,#+0
+   \   000000BC   0x82A8             STRH     R0,[R5, #+20]
+   1967                  pch->RxBufPtr       = &pch->RxBuf[0];
+   \   000000BE   0xF104 0x0038      ADD      R0,R4,#+56
+   \   000000C2   0x61A8             STR      R0,[R5, #+24]
+   1968              }
+   1969              
+   1970          exit:
+   1971              //pch->RTU_TimeoutEn  = DEF_TRUE;                      // 重新启动超时（无名沈添加）
+   1972              //pch->RxBufByteCtr   = 0;
+   1973              //pch->RxBufPtr       = &pch->RxBuf[0];
+   1974              return  ;
+   \                     ??MBS_RTU_Task_1: (+1)
+   \   000000C4   0xBD70             POP      {R4-R6,PC}       ;; return
+   1975          }
+   1976          #endif
+   1977          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   MBS_ErrRespSet
+      32   MBS_FC01_CoilRd
+        32   -> MBS_ErrRespSet
+        32   -> MB_CoilRd
+      24   MBS_FC03_HoldingRegRd
+        24   -> App_MB_RdNRegsHook
+        24   -> MBS_ErrRespSet
+        24   -> MB_HoldingRegRd
+      24   MBS_FC05_CoilWr
+        24   -> MBS_ErrRespSet
+        24   -> MB_CoilWr
+      32   MBS_FC06_HoldingRegWr
+        32   -> MBS_ErrRespSet
+        32   -> MB_HoldingRegWr
+       8   MBS_FC08_Loopback
+         8   -> MBS_ErrRespSet
+         8   -> MBS_StatInit
+      40   MBS_FC15_CoilWrMultiple
+        40   -> MBS_ErrRespSet
+        40   -> MB_CoilWr
+      32   MBS_FC16_HoldingRegWrMultiple
+        32   -> App_MB_WrNRegsHook
+        32   -> MBS_ErrRespSet
+        32   -> MB_HoldingRegWr
+      40   MBS_FC20_FileRd
+        40   -> MBS_ErrRespSet
+        40   -> MB_FileRd
+      48   MBS_FC21_FileWr
+        48   -> MBS_ErrRespSet
+        48   -> MB_FileWr
+      16   MBS_FCxx_Handler
+        16   -> MBS_ErrRespSet
+        16   -> MBS_FC01_CoilRd
+        16   -> MBS_FC03_HoldingRegRd
+        16   -> MBS_FC05_CoilWr
+        16   -> MBS_FC06_HoldingRegWr
+        16   -> MBS_FC08_Loopback
+        16   -> MBS_FC15_CoilWrMultiple
+        16   -> MBS_FC16_HoldingRegWrMultiple
+        16   -> MBS_FC20_FileRd
+        16   -> MBS_FC21_FileWr
+      16   MBS_RTU_Task
+        16   -> CPU_IntDisMeasStart
+        16   -> CPU_IntDisMeasStop
+        16   -> CPU_SR_Restore
+        16   -> CPU_SR_Save
+        16   -> MBS_FCxx_Handler
+        16   -> MB_RTU_Rx
+        16   -> MB_RTU_RxCalcCRC
+         0   -> MB_RTU_Tx
+        16   -> NMBS_FCxx_Handler
+       0   MBS_RxTask
+         0   -> MBS_RTU_Task
+       0   MBS_StatInit
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      40  MBS_ErrRespSet
+     232  MBS_FC01_CoilRd
+     218  MBS_FC03_HoldingRegRd
+     160  MBS_FC05_CoilWr
+     162  MBS_FC06_HoldingRegWr
+     222  MBS_FC08_Loopback
+     254  MBS_FC15_CoilWrMultiple
+     304  MBS_FC16_HoldingRegWrMultiple
+     280  MBS_FC20_FileRd
+     302  MBS_FC21_FileWr
+     248  MBS_FCxx_Handler
+     198  MBS_RTU_Task
+      14  MBS_RxTask
+      14  MBS_StatInit
+
+ 
+ 2 648 bytes in section .text
+ 
+ 2 648 bytes of CODE memory
+
+Errors: none
+Warnings: none

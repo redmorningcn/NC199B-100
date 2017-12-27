@@ -1,0 +1,282 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  20:53:09
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_info.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_info.c -D
+#        USE_STDPERIPH_DRIVER -D STM32F10X_CL -D DEBUG -D IMAGE_A -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\List\bsp_info.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\Obj\bsp_info.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_info.c
+      1          /*******************************************************************************
+      2           *   Filename:       bsp_info.c
+      3           *   Revised:        $Date: 2015-08-24	 $
+      4           *   Revision:       $V1.0
+      5           *	 Writer:		 wumingshen.
+      6           *
+      7           *   Description:    读取芯片唯一UID模块驱动
+      8           *
+      9           *   Notes:          每个STM32芯片在出厂时都具有一个全球唯一的ID，该ID为96位，其地址分布如下：
+     10           *                   Start Address : 0x1FFF F7E8
+     11           *                   Address offset: 0×00 U_ID(00-31)
+     12           *                   Address offset: 0×04 U_ID(32-63)
+     13           *                   Address offset: 0×08 U_ID(64-96)
+     14           *                   该ID的应用：
+     15           *
+     16           *                   ●用来作为序列号(例如USB字符序列号或者其他的终端应用)
+     17           *                   ●用来作为密码，在编写闪存时，将此唯一标识与软件加解密算法结合使用，提高代码在闪存存储器内的安全性。
+     18           *                   ●用来激活带安全机制的自举过程
+     19           *
+     20           *
+     21           *   All copyrights reserved to wumingshen.
+     22           *
+     23           *******************************************************************************/
+     24          
+     25          #define BSP_INFO_EN 1
+     26          #if BSP_INFO_EN > 0
+     27          
+     28          /*******************************************************************************
+     29           * INCLUDES
+     30           */
+     31          #include <includes.h>
+     32          #include <bsp_info.h>
+     33          #include <app.h>
+     34          
+     35          
+     36          /*******************************************************************************
+     37           * 描述： 芯片UID存储数组
+     38           */
+
+   \                                 In section .bss, align 4
+     39          StrChipInfo ChipInfo[3];
+   \                     ChipInfo:
+   \   00000000                      DS8 228
+     40          
+     41          //============================================================================//
+     42          
+     43          /*******************************************************************************
+     44          * 名    称： BSP_GetChipID
+     45          * 功    能： 获取芯片的UID
+     46          * 入口参数： 无
+     47          * 出口参数： 无
+     48          * 作　 　者： 无名沈
+     49          * 创建日期： 2014-08-18
+     50          * 修    改：
+     51          * 修改日期：
+     52          * 备    注： 96位的ID是stm32唯一身份标识，可以以8bit、16bit、32bit读取提供了大端和小端两种表示方法。
+     53          *            ID号存放在闪存存储器模块的系统存储区域，可以通过JTAG/SWD或者CPU读取。
+     54          *            它所包含的芯片识别信息在出厂时编写，用户固件或者外部设备可以读取电子签名，
+     55          *            用以自动匹配不同配置的STM32F10xxx微控制器。
+     56          *            产品唯一的身份标识的作用：
+     57          *          ● 用来作为序列号(例如USB字符序列号或者其他的终端应用)；
+     58          *          ● 用来作为密码，在编写闪存时，将此唯一标识与软件加解密算法结合使用，提高代码在闪存存储器内的安全性；
+     59          *          ● 用来激活带安全机制的自举过程；
+     60          *            96位的产品唯一身份标识所提供的参考号码对任意一个STM32微控制器，
+     61          *            在任何情况下都是唯一的。用户在何种情况下，都不能修改这个身份标识。
+     62          *            按照用户不同的用法，可以以字节(8位)为单位读取，
+     63          *            也可以以半字(16位)或者全字(32位)读取。嘿嘿，要注意大端小端模式哟~~~
+     64          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     65          uint8_t BSP_GetChipID( uint8_t devType, UnionChipId *pId )
+     66          {
+     67              switch ( devType ) {
+   \                     BSP_GetChipID: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD108             BNE.N    ??BSP_GetChipID_0
+     68                  case 0:
+     69                      pId->buf3[0] = *(vu32 *)(0X1FFFF7F0);            // 高字节
+   \   00000004   0x....             LDR.N    R0,??DataTable0  ;; 0x1ffff7e8
+   \   00000006   0x6882             LDR      R2,[R0, #+8]
+   \   00000008   0x600A             STR      R2,[R1, #+0]
+     70                      pId->buf3[1] = *(vu32 *)(0X1FFFF7EC);            //
+   \   0000000A   0x6842             LDR      R2,[R0, #+4]
+   \   0000000C   0x604A             STR      R2,[R1, #+4]
+     71                      pId->buf3[2] = *(vu32 *)(0X1FFFF7E8);            // 低字节
+   \   0000000E   0x6800             LDR      R0,[R0, #+0]
+   \   00000010   0x6088             STR      R0,[R1, #+8]
+     72                  return TRUE;
+   \   00000012   0x2001             MOVS     R0,#+1
+   \   00000014   0x4770             BX       LR
+     73                  break;
+     74                  case 1:
+     75                  case 2:
+     76                  break;
+     77              }
+     78              return FALSE;
+   \                     ??BSP_GetChipID_0: (+1)
+   \   00000016   0x2000             MOVS     R0,#+0
+   \   00000018   0x4770             BX       LR               ;; return
+     79          }
+     80          
+     81          
+     82          /*******************************************************************************
+     83          * 名    称： BSP_GetChipInfo
+     84          * 功    能： 获取芯片相关信息
+     85          * 入口参数： 无
+     86          * 出口参数： 无
+     87          * 作　 　者： 无名沈
+     88          * 创建日期： 2014-08-18
+     89          * 修    改：
+     90          * 修改日期：
+     91          * 备    注：
+     92          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     93          uint8_t BSP_GetChipInfo(uint8_t devType, StrChipInfo *pInfo)
+     94          {
+   \                     BSP_GetChipInfo: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x460C             MOV      R4,R1
+     95              //INT16U STM32_FLASH_SIZE;
+     96          
+     97              pInfo->cid[CID_BUF_LEN-1] = 0;
+   \   00000004   0xF104 0x0526      ADD      R5,R4,#+38
+   \   00000008   0x2100             MOVS     R1,#+0
+   \   0000000A   0x7029             STRB     R1,[R5, #+0]
+     98              pInfo->flash[FLASH_BUF_LEN-1] = 0;
+   \   0000000C   0x71A9             STRB     R1,[R5, #+6]
+     99              pInfo->date[DATE_BUF_LEN-1] = 0;
+   \   0000000E   0x74A9             STRB     R1,[R5, #+18]
+    100              pInfo->time[TIME_BUF_LEN-1] = 0;
+   \   00000010   0x76E9             STRB     R1,[R5, #+27]
+    101              pInfo->version[VERSION_BUF_LEN-1] = 0;
+   \   00000012   0xF884 0x104B      STRB     R1,[R4, #+75]
+    102          
+    103              if ( !BSP_GetChipID(devType, &pInfo->id) ){
+   \   00000016   0x4621             MOV      R1,R4
+   \   00000018   0x.... 0x....      BL       BSP_GetChipID
+   \   0000001C   0x2800             CMP      R0,#+0
+   \   0000001E   0xD101             BNE.N    ??BSP_GetChipInfo_0
+    104                return FALSE;
+   \   00000020   0x2000             MOVS     R0,#+0
+   \   00000022   0xBD32             POP      {R1,R4,R5,PC}
+    105              }
+    106              //STM32_FLASH_SIZE= *(INT16U*)(0x1FFFF7E0);           //闪存容量寄存器
+    107          //    usprintf(pInfo->cid,        "%08X%08X%08X",         pInfo->id.buf3[0],
+    108          //                                                        pInfo->id.buf3[1],
+    109          //                                                        pInfo->id.buf3[2]);
+    110          //    usprintf(pInfo->flash,     "%dK",                   STM32_FLASH_SIZE);
+    111          //    usprintf(pInfo->date,      ""__DATE__"");
+    112          //    usprintf(pInfo->time,      ""__TIME__"");
+    113          //    usprintf(pInfo->version,   "V%d.%d.%d",             __STM32F10X_STDPERIPH_VERSION_MAIN,              // 输出使用固件库版本号
+    114          //                                                        __STM32F10X_STDPERIPH_VERSION_SUB1,
+    115          //                                                        __STM32F10X_STDPERIPH_VERSION_SUB2);
+    116              pInfo->cid[CID_BUF_LEN-1] = 0;
+   \                     ??BSP_GetChipInfo_0: (+1)
+   \   00000024   0x2000             MOVS     R0,#+0
+   \   00000026   0x7028             STRB     R0,[R5, #+0]
+    117              pInfo->flash[FLASH_BUF_LEN-1] = 0;
+   \   00000028   0x71A8             STRB     R0,[R5, #+6]
+    118              pInfo->date[DATE_BUF_LEN-1] = 0;
+   \   0000002A   0x74A8             STRB     R0,[R5, #+18]
+    119              pInfo->time[TIME_BUF_LEN-1] = 0;
+   \   0000002C   0x76E8             STRB     R0,[R5, #+27]
+    120              pInfo->version[VERSION_BUF_LEN-1] = 0;
+   \   0000002E   0xF884 0x004B      STRB     R0,[R4, #+75]
+    121          
+    122              return TRUE;
+   \   00000032   0x2001             MOVS     R0,#+1
+   \   00000034   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    123          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0x1FFFF7E8         DC32     0x1ffff7e8
+    124          /*******************************************************************************
+    125           * 				end of file
+    126           *******************************************************************************/
+    127          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   BSP_GetChipID
+      16   BSP_GetChipInfo
+        16   -> BSP_GetChipID
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+      26  BSP_GetChipID
+      54  BSP_GetChipInfo
+     228  ChipInfo
+
+ 
+ 228 bytes in section .bss
+  84 bytes in section .text
+ 
+  84 bytes of CODE memory
+ 228 bytes of DATA memory
+
+Errors: none
+Warnings: none

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:33
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  19:00:11
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -398,15 +398,15 @@ F:\iar\NC199B-100\Library\Source\APP\Iap\IAP_program_mcu.C
     248                      
     249                      if(
     250                                  sIAPParatmp.softsize == gsIAPPara.softsize  //软件大小
-    251                             &&   gsIAPPara.framenum                          //开始包序号不为0   
+    251                             &&   gsIAPPara.framenum > 20                    //开始包序号不为0  ( >20  20171226调整，防止数据位保存，而上位机认为已经保存了）  
     252                         ) 
    \   0000005E   0x9802             LDR      R0,[SP, #+8]
    \   00000060   0x68A9             LDR      R1,[R5, #+8]
    \   00000062   0x4288             CMP      R0,R1
    \   00000064   0xD109             BNE.N    ??IAP_PragramDeal_5
    \   00000066   0x6928             LDR      R0,[R5, #+16]
-   \   00000068   0x2800             CMP      R0,#+0
-   \   0000006A   0xD006             BEQ.N    ??IAP_PragramDeal_5
+   \   00000068   0x2815             CMP      R0,#+21
+   \   0000006A   0xD306             BCC.N    ??IAP_PragramDeal_5
     253                      {                                                       //数据未接收完成，发送当前序号
     254                          gsIAPPara.framenum  = sIAPParatmp.framenum;         //返回当前序号
    \   0000006C   0x9804             LDR      R0,[SP, #+16]

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:28
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  16:48:34
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -410,8 +410,8 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_measure.c
    \   00000004   0xF44F 0x7097      MOV      R0,#+302
    \   00000008   0x.... 0x....      BL       GPIO_SetOrClearValue
     237              //OSTimeDly(1000, OS_OPT_TIME_DLY, &err);          //延时0.5s
-    238              BSP_OS_TimeDly(1000);
-   \   0000000C   0xF44F 0x707A      MOV      R0,#+1000
+    238              BSP_OS_TimeDly(500);
+   \   0000000C   0xF44F 0x70FA      MOV      R0,#+500
    \   00000010   0x.... 0x....      BL       BSP_OS_TimeDly
     239              
     240              GPIO_SetOrClearValue(DCF_GPIO_AIR_IN,DCF_OPEN);    //打开输出
@@ -419,92 +419,103 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_measure.c
    \   00000016   0xF240 0x102F      MOVW     R0,#+303
    \   0000001A   0x.... 0x....      BL       GPIO_SetOrClearValue
     241              //OSTimeDly(1000, OS_OPT_TIME_DLY, &err);      //延时0.1s
-    242              BSP_OS_TimeDly(1000);
-   \   0000001E   0xF44F 0x707A      MOV      R0,#+1000
-   \   00000022   0x.... 0x....      BL       BSP_OS_TimeDly
-    243          
-    244              Ctrl.Para.dat.sRunPara.SysSta.OpenAir = 1;  //气路打开标识置1
-    245              Ctrl.Para.dat.sRunPara.SysSta.CloseAir= 0; 
-   \   00000026   0x....             LDR.N    R4,??DataTable5_3
-   \   00000028   0xF894 0x004C      LDRB     R0,[R4, #+76]
-   \   0000002C   0xF000 0x00FD      AND      R0,R0,#0xFD
-   \   00000030   0xF040 0x0001      ORR      R0,R0,#0x1
-   \   00000034   0xF884 0x004C      STRB     R0,[R4, #+76]
-    246              
-    247              //OSTimeDly(12000, OS_OPT_TIME_DLY, &err);    //延时12s
-    248              BSP_OS_TimeDly(12000);
-   \   00000038   0xF642 0x60E0      MOVW     R0,#+12000
-   \   0000003C   0x.... 0x....      BL       BSP_OS_TimeDly
-    249          
-    250              Ctrl.Para.dat.sRunPara.SysSta.StartMeasure = 1;
-   \   00000040   0xF894 0x004C      LDRB     R0,[R4, #+76]
-   \   00000044   0xF040 0x0004      ORR      R0,R0,#0x4
-   \   00000048   0xF884 0x004C      STRB     R0,[R4, #+76]
-    251              
-    252              //OSTimeDly(2000, OS_OPT_TIME_DLY, &err);     //延时2s  
-    253              BSP_OS_TimeDly(2000);
-   \   0000004C   0xF44F 0x60FA      MOV      R0,#+2000
-   \   00000050   0x.... 0x....      BL       BSP_OS_TimeDly
-    254          
-    255              //初始化定时器
-    256              osal_start_timerEx( OS_TASK_ID_STORE,
-    257                                OS_EVT_STORE_TICKS,
-    258                                1);                       //置存储定时器1，马上启动存储
-   \   00000054   0x2201             MOVS     R2,#+1
-   \   00000056   0x4611             MOV      R1,R2
-   \   00000058   0x2004             MOVS     R0,#+4
-   \   0000005A   0x.... 0x....      BL       osal_start_timerEx
-    259              Ctrl.Para.dat.sRunPara.SysSta.Store   = 1;  //可以进行数据储存（测量过程的数据）
-   \   0000005E   0xF894 0x004C      LDRB     R0,[R4, #+76]
-   \   00000062   0xF040 0x0010      ORR      R0,R0,#0x10
-   \   00000066   0xF884 0x004C      STRB     R0,[R4, #+76]
-    260              
-    261              //OSTimeDly(2000, OS_OPT_TIME_DLY, &err);     //延时2s   
-    262              BSP_OS_TimeDly(2000);
-   \   0000006A   0xF44F 0x60FA      MOV      R0,#+2000
-   \   0000006E   0x.... 0x....      BL       BSP_OS_TimeDly
-    263          
-    264              CloseAir();                                 //关闭气路
-   \   00000072   0x.... 0x....      BL       CloseAir
-    265                
-    266              Ctrl.Para.dat.sRunPara.SysSta.OpenAir = 0;  //气路打开标识置1
-    267              Ctrl.Para.dat.sRunPara.SysSta.CloseAir= 1;     
-    268              
-    269              Ctrl.Para.dat.sRunPara.SysSta.StartMeasure = 0;
-   \   00000076   0xF894 0x004C      LDRB     R0,[R4, #+76]
-   \   0000007A   0xF000 0x00FA      AND      R0,R0,#0xFA
-   \   0000007E   0xF040 0x0002      ORR      R0,R0,#0x2
-   \   00000082   0xF884 0x004C      STRB     R0,[R4, #+76]
-    270          }
-   \   00000086   0xBD10             POP      {R4,PC}          ;; return
-    271          
-    272          
-    273          /*******************************************************************************
-    274           * 名    称： APP_MeasureInit
-    275           * 功    能： 任务初始化
-    276           * 入口参数： 无
-    277           * 出口参数： 无
-    278           * 作　　者： Roger-WY.
-    279           * 创建日期： 2015-03-28
-    280           * 修    改：
-    281           * 修改日期：
-    282           *******************************************************************************/
+    242          
+    243              Ctrl.Para.dat.sRunPara.SysSta.OpenAir = 1;  //气路打开标识置1
+    244              Ctrl.Para.dat.sRunPara.SysSta.CloseAir= 0; 
+   \   0000001E   0x....             LDR.N    R4,??DataTable5_4
+   \   00000020   0x7820             LDRB     R0,[R4, #+0]
+   \   00000022   0xF000 0x00FD      AND      R0,R0,#0xFD
+   \   00000026   0xF040 0x0001      ORR      R0,R0,#0x1
+   \   0000002A   0x7020             STRB     R0,[R4, #+0]
+    245              
+    246              //OSTimeDly(12000, OS_OPT_TIME_DLY, &err);    //延时12s
+    247              //BSP_OS_TimeDly(12000);
+    248              if(     Ctrl.Para.dat.sRunPara.MeasureSecond >30 
+    249                 ||   Ctrl.Para.dat.sRunPara.MeasureSecond < 1)
+   \   0000002C   0x7920             LDRB     R0,[R4, #+4]
+   \   0000002E   0x281F             CMP      R0,#+31
+   \   00000030   0xDA01             BGE.N    ??StartAirMeasure_0
+   \   00000032   0x2800             CMP      R0,#+0
+   \   00000034   0xD101             BNE.N    ??StartAirMeasure_1
+    250              {
+    251                  Ctrl.Para.dat.sRunPara.MeasureSecond = 3;
+   \                     ??StartAirMeasure_0: (+1)
+   \   00000036   0x2003             MOVS     R0,#+3
+   \   00000038   0x7120             STRB     R0,[R4, #+4]
+    252              }
+    253              
+    254              BSP_OS_TimeDly(Ctrl.Para.dat.sRunPara.MeasureSecond*1000);
+   \                     ??StartAirMeasure_1: (+1)
+   \   0000003A   0x7920             LDRB     R0,[R4, #+4]
+   \   0000003C   0xF44F 0x717A      MOV      R1,#+1000
+   \   00000040   0x4348             MULS     R0,R1,R0
+   \   00000042   0x.... 0x....      BL       BSP_OS_TimeDly
+    255          
+    256              Ctrl.Para.dat.sRunPara.SysSta.StartMeasure = 1;
+   \   00000046   0x7820             LDRB     R0,[R4, #+0]
+   \   00000048   0xF040 0x0004      ORR      R0,R0,#0x4
+   \   0000004C   0x7020             STRB     R0,[R4, #+0]
+    257              
+    258              //OSTimeDly(2000, OS_OPT_TIME_DLY, &err);     //延时2s  
+    259              //BSP_OS_TimeDly(2000);
+    260          
+    261              //初始化定时器
+    262              osal_start_timerEx( OS_TASK_ID_STORE,
+    263                                OS_EVT_STORE_TICKS,
+    264                                1);                       //置存储定时器1，马上启动存储
+   \   0000004E   0x2201             MOVS     R2,#+1
+   \   00000050   0x4611             MOV      R1,R2
+   \   00000052   0x2004             MOVS     R0,#+4
+   \   00000054   0x.... 0x....      BL       osal_start_timerEx
+    265              Ctrl.Para.dat.sRunPara.SysSta.Store   = 1;  //可以进行数据储存（测量过程的数据）
+   \   00000058   0x7820             LDRB     R0,[R4, #+0]
+   \   0000005A   0xF040 0x0010      ORR      R0,R0,#0x10
+   \   0000005E   0x7020             STRB     R0,[R4, #+0]
+    266              
+    267              //OSTimeDly(2000, OS_OPT_TIME_DLY, &err);     //延时2s   
+    268              //BSP_OS_TimeDly(2000);
+    269          
+    270              CloseAir();                                 //关闭气路
+   \   00000060   0x.... 0x....      BL       CloseAir
+    271                
+    272              Ctrl.Para.dat.sRunPara.SysSta.OpenAir = 0;  //气路打开标识置1
+    273              Ctrl.Para.dat.sRunPara.SysSta.CloseAir= 1;     
+    274              
+    275              Ctrl.Para.dat.sRunPara.SysSta.StartMeasure = 0;
+   \   00000064   0x7820             LDRB     R0,[R4, #+0]
+   \   00000066   0xF000 0x00FA      AND      R0,R0,#0xFA
+   \   0000006A   0xF040 0x0002      ORR      R0,R0,#0x2
+   \   0000006E   0x7020             STRB     R0,[R4, #+0]
+    276          }
+   \   00000070   0xBD10             POP      {R4,PC}          ;; return
+    277          
+    278          
+    279          /*******************************************************************************
+    280           * 名    称： APP_MeasureInit
+    281           * 功    能： 任务初始化
+    282           * 入口参数： 无
+    283           * 出口参数： 无
+    284           * 作　　者： Roger-WY.
+    285           * 创建日期： 2015-03-28
+    286           * 修    改：
+    287           * 修改日期：
+    288           *******************************************************************************/
 
    \                                 In section .text, align 2, keep-with-next
-    283          static void APP_MeasureInit(void)
-    284          {
-    285              /***********************************************
-    286              * 描述： 初始化本任务用到的相关硬件
-    287              */
-    288              Measure_GPIO_Init();            //初始化端口
+    289          static void APP_MeasureInit(void)
+    290          {
+    291              /***********************************************
+    292              * 描述： 初始化本任务用到的相关硬件
+    293              */
+    294              Measure_GPIO_Init();            //初始化端口
    \                     APP_MeasureInit: (+1)
    \   00000000   0x....             B.N      Measure_GPIO_Init
-    289          
-    290              /***********************************************
-    291              * 描述： 在看门狗标志组注册本任务的看门狗标志
-    292              */
-    293              //WdtFlags |= WDT_FLAG_KEY;
-    294          }
+    295          
+    296              /***********************************************
+    297              * 描述： 在看门狗标志组注册本任务的看门狗标志
+    298              */
+    299              //WdtFlags |= WDT_FLAG_KEY;
+    300          }
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable5:
@@ -521,6 +532,10 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_measure.c
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable5_3:
    \   00000000   0x........         DC32     Ctrl
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_4:
+   \   00000000   0x........         DC32     Ctrl+0x4C
 
    \                                 In section .text, align 4, keep-with-next
    \                     ?_0:
@@ -547,11 +562,11 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_measure.c
    \              0x65 0x6D    
    \              0x00         
    \   0000000F   0x00               DC8 0
-    295          
-    296          /*******************************************************************************
-    297           * 				end of file
-    298           *******************************************************************************/
-    299          #endif
+    301          
+    302          /*******************************************************************************
+    303           * 				end of file
+    304           *******************************************************************************/
+    305          #endif
 
    Maximum stack usage in bytes:
 
@@ -588,6 +603,7 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_measure.c
        4  ??DataTable5_1
        4  ??DataTable5_2
        4  ??DataTable5_3
+       4  ??DataTable5_4
       20  ?_0
       16  ?_1
        2  APP_MeasureInit
@@ -598,13 +614,13 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_measure.c
       28  Bsp_MeasureSem
       42  CloseAir
       62  Measure_GPIO_Init
-     136  StartAirMeasure
+     114  StartAirMeasure
 
  
  724 bytes in section .bss
- 388 bytes in section .text
+ 370 bytes in section .text
  
- 388 bytes of CODE memory
+ 370 bytes of CODE memory
  724 bytes of DATA memory
 
 Errors: none

@@ -42,7 +42,7 @@
  */
 //该任务的控制周期   (OS_CFG_TICK_RATE_HZ)为1S
 //#define  KEY_CYCLE_TIME_TICKS     (OS_CFG_TICK_RATE_HZ * 1u)
-#define CYCLE_TIME_TICKS            (OS_TICKS_PER_SEC * 30)
+#define CYCLE_TIME_TICKS_MIN            (OS_TICKS_PER_SEC * 30)
 
 //进气口电磁阀  pd.3
 #define     DCF_GPIO_AIR_IN      303  
@@ -149,7 +149,7 @@ static  void  AppTaskMeasure (void *p_arg)
     * 描述： 任务初始化
     */
     INT32U      ticks;
-    INT32S      dly = CYCLE_TIME_TICKS;
+    INT32S      dly = CYCLE_TIME_TICKS_MIN;
 
     uint16  timeadd  = 0;
     APP_MeasureInit();
@@ -193,12 +193,12 @@ static  void  AppTaskMeasure (void *p_arg)
         /***********************************************
         * 描述： 去除任务运行的时间，等到一个控制周期里剩余需要延时的时间
         */
-        dly   = CYCLE_TIME_TICKS - ( OSTimeGet(&err) - ticks );
+        dly   = CYCLE_TIME_TICKS_MIN - ( OSTimeGet(&err) - ticks );
         if ( dly  <= 0 ) {
             dly   = 1;
-        }else if(dly > CYCLE_TIME_TICKS)
+        }else if(dly > CYCLE_TIME_TICKS_MIN)
         {
-            dly   =  CYCLE_TIME_TICKS;
+            dly   =  CYCLE_TIME_TICKS_MIN;
         }
     }
 }

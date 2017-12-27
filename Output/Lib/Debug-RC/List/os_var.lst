@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:35
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:40:25
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -171,41 +171,6 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_var.c
    \                     OSRunning:
    \   00000000                      DS8 1
 
-   \                                 In section .bss, align 4
-   \   __absolute OS_INT_Q *OSIntQInPtr
-   \                     OSIntQInPtr:
-   \   00000000                      DS8 4
-
-   \                                 In section .bss, align 4
-   \   __absolute OS_INT_Q *OSIntQOutPtr
-   \                     OSIntQOutPtr:
-   \   00000000                      DS8 4
-
-   \                                 In section .bss, align 2
-   \   __absolute OS_OBJ_QTY OSIntQNbrEntries
-   \                     OSIntQNbrEntries:
-   \   00000000                      DS8 2
-
-   \                                 In section .bss, align 2
-   \   __absolute OS_OBJ_QTY OSIntQNbrEntriesMax
-   \                     OSIntQNbrEntriesMax:
-   \   00000000                      DS8 2
-
-   \                                 In section .bss, align 2
-   \   __absolute OS_OBJ_QTY OSIntQOvfCtr
-   \                     OSIntQOvfCtr:
-   \   00000000                      DS8 2
-
-   \                                 In section .bss, align 4
-   \   __absolute OS_TCB OSIntQTaskTCB
-   \                     OSIntQTaskTCB:
-   \   00000000                      DS8 184
-
-   \                                 In section .bss, align 4
-   \   __absolute CPU_TS OSIntQTaskTimeMax
-   \                     OSIntQTaskTimeMax:
-   \   00000000                      DS8 4
-
    \                                 In section .bss, align 2
    \   __absolute OS_OBJ_QTY OSFlagQty
    \                     OSFlagQty:
@@ -345,13 +310,6 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_var.c
      184  OSIdleTaskTCB
        4  OSIntDisTimeMax
        1  OSIntNestingCtr
-       4  OSIntQInPtr
-       2  OSIntQNbrEntries
-       2  OSIntQNbrEntriesMax
-       4  OSIntQOutPtr
-       2  OSIntQOvfCtr
-     184  OSIntQTaskTCB
-       4  OSIntQTaskTimeMax
       12  OSMsgPool
        1  OSPrioCur
        1  OSPrioHighRdy
@@ -386,9 +344,9 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_var.c
        4  OS_AppTimeTickHookPtr
 
  
- 1 244 bytes in section .bss
+ 1 042 bytes in section .bss
  
- 1 244 bytes of DATA memory
+ 1 042 bytes of DATA memory
 
 Errors: none
 Warnings: none

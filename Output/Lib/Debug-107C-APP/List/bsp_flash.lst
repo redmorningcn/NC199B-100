@@ -1,0 +1,955 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  20:53:08
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_flash.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_flash.c -D
+#        USE_STDPERIPH_DRIVER -D STM32F10X_CL -D DEBUG -D IMAGE_A -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\List\bsp_flash.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\Obj\bsp_flash.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\Driver\bsp_flash.c
+      1          /*******************************************************************************
+      2           *   Filename:       bsp_flash.c
+      3           *   Revised:        $Date: 2014-04-23
+      4           *   Revision:       $
+      5           *	 Writer:		 Wuming Shen.
+      6           *
+      7           *   Description:    
+      8           *
+      9           *   Notes:        
+     10           *					   
+     11           *			
+     12           *   All copyrights reserved to Wuming Shen.
+     13           *
+     14           *******************************************************************************/
+     15          
+     16          #define BSP_FLASH_MODULE_EN 1
+     17          #if BSP_FLASH_MODULE_EN > 0
+     18          /*******************************************************************************
+     19           * INCLUDES
+     20           */
+     21          #include "bsp_flash.h"
+     22          #include  <stdio.h>
+     23          #include  <string.h>
+     24          #include  <ctype.h>
+     25          #include  <stdlib.h>
+     26          #include  <stdarg.h>
+     27          
+
+   \                                 In section .bss, align 4
+     28          UnionFlashBuf   FlashBuf;
+   \                     FlashBuf:
+   \   00000000                      DS8 2048
+     29          /*******************************************************************************
+     30           * CONSTANTS
+     31           */
+     32          
+     33          /*******************************************************************************
+     34           * MACROS
+     35           */
+     36          
+     37          /*******************************************************************************
+     38           * TYPEDEFS
+     39           */
+     40          
+     41          /*******************************************************************************
+     42           * LOCAL VARIABLES
+     43           */
+     44          /***********************************************
+     45          * 描述：
+     46          */    
+     47          
+     48          /*******************************************************************************
+     49           * GLOBAL VARIABLES
+     50           */
+     51          
+     52          /*******************************************************************************
+     53           * LOCAL FUNCTIONS
+     54           */
+     55          
+     56          /*******************************************************************************
+     57           * GLOBAL FUNCTIONS
+     58           */
+     59          
+     60          /*******************************************************************************
+     61           * EXTERN VARIABLES
+     62           */
+     63          
+     64           /*******************************************************************************
+     65           * EXTERN FUNCTIONS
+     66           */
+     67           
+     68          /*******************************************************************************/
+     69          
+     70          
+     71          /*******************************************************************************
+     72           * 名    称： FlashReadHalfWord()
+     73           * 功    能： 读取指定地址的16位数据
+     74           * 入口参数：
+     75           * 出口参数： 无
+     76           * 作　　 者： 无名沈
+     77           * 创建日期： 2014-04-23
+     78           * 修    改： 
+     79           * 修改日期： 
+     80           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     81          u16  FlashReadHalfWord(u32 addr)
+     82          {
+     83          	return *(vu16 *)addr;
+   \                     FlashReadHalfWord: (+1)
+   \   00000000   0x8800             LDRH     R0,[R0, #+0]
+   \   00000002   0x4770             BX       LR               ;; return
+     84          }
+     85          
+     86          /*******************************************************************************
+     87           * 名    称： BSP_FlashRead()
+     88           * 功    能： 外部调用
+     89           * 入口参数：
+     90           * 出口参数： 无
+     91           * 作　　 者： 无名沈
+     92           * 创建日期： 2014-04-23
+     93           * 修    改： 
+     94           * 修改日期： 
+     95           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     96          void  BSP_FlashRead(u32 addr,u16 *pbuffer,u16 num)   	
+     97          {
+   \                     BSP_FlashRead: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   \   00000004   0x460D             MOV      R5,R1
+   \   00000006   0x4616             MOV      R6,R2
+     98          	u16 i;
+     99              
+    100              FLASH_Unlock();                             // 解锁
+   \   00000008   0x.... 0x....      BL       FLASH_Unlock
+    101          	for(i = 0;i < num;i++) {
+   \   0000000C   0x2700             MOVS     R7,#+0
+   \   0000000E   0xE006             B.N      ??BSP_FlashRead_0
+    102          		*pbuffer++ = FlashReadHalfWord(addr);   //读取2个字节.
+   \                     ??BSP_FlashRead_1: (+1)
+   \   00000010   0x4620             MOV      R0,R4
+   \   00000012   0x.... 0x....      BL       FlashReadHalfWord
+   \   00000016   0xF825 0x0B02      STRH     R0,[R5], #+2
+    103          		addr += 2;                              //偏移2个字节.	
+   \   0000001A   0x1CA4             ADDS     R4,R4,#+2
+    104          	}
+   \   0000001C   0x1C7F             ADDS     R7,R7,#+1
+   \                     ??BSP_FlashRead_0: (+1)
+   \   0000001E   0xB2BF             UXTH     R7,R7
+   \   00000020   0x42B7             CMP      R7,R6
+   \   00000022   0xD3F5             BCC.N    ??BSP_FlashRead_1
+    105          	FLASH_Lock();             				    // 上锁
+   \   00000024   0xE8BD 0x40F1      POP      {R0,R4-R7,LR}
+   \   00000028   0x.... 0x....      B.W      FLASH_Lock
+    106          }
+    107          
+    108          /*******************************************************************************
+    109           * 名    称： FlashRead()
+    110           * 功    能： 
+    111           * 入口参数：
+    112           * 出口参数： 无
+    113           * 作　　 者： 无名沈
+    114           * 创建日期： 2014-04-23
+    115           * 修    改： 
+    116           * 修改日期： 
+    117           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    118          void  FlashRead(u32 addr,u16 *pbuffer,u16 num)   	
+    119          {
+   \                     FlashRead: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   \   00000004   0x460D             MOV      R5,R1
+   \   00000006   0x4616             MOV      R6,R2
+    120          	u16 i;
+    121              
+    122          	for(i = 0;i < num;i++) {
+   \   00000008   0x2700             MOVS     R7,#+0
+   \   0000000A   0xE006             B.N      ??FlashRead_0
+    123          		*pbuffer++ = FlashReadHalfWord(addr);   //读取2个字节.
+   \                     ??FlashRead_1: (+1)
+   \   0000000C   0x4620             MOV      R0,R4
+   \   0000000E   0x.... 0x....      BL       FlashReadHalfWord
+   \   00000012   0xF825 0x0B02      STRH     R0,[R5], #+2
+    124          		addr += 2;                              //偏移2个字节.	
+   \   00000016   0x1CA4             ADDS     R4,R4,#+2
+    125          	}
+   \   00000018   0x1C7F             ADDS     R7,R7,#+1
+   \                     ??FlashRead_0: (+1)
+   \   0000001A   0xB2BF             UXTH     R7,R7
+   \   0000001C   0x42B7             CMP      R7,R6
+   \   0000001E   0xD3F5             BCC.N    ??FlashRead_1
+    126          }
+   \   00000020   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    127          /*******************************************************************************
+    128           * 名    称： FlashWriteNoCheck()
+    129           * 功    能： 
+    130           * 入口参数：
+    131           * 出口参数： 无
+    132           * 作　　 者： 无名沈
+    133           * 创建日期： 2014-04-23
+    134           * 修    改： 
+    135           * 修改日期： 
+    136           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    137          u8  FlashWriteNoCheck(u32 addr,u16 *pbuffer,u16 num)
+    138          {
+   \                     FlashWriteNoCheck: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   \   00000004   0x460D             MOV      R5,R1
+   \   00000006   0x4616             MOV      R6,R2
+    139          	u16 i;
+    140              
+    141          	for(i = 0;i < num;i++) {
+   \   00000008   0x2700             MOVS     R7,#+0
+   \   0000000A   0xE006             B.N      ??FlashWriteNoCheck_0
+    142          		//if ( FLASH_COMPLETE != FLASH_ProgramHalfWord (addr,pbuffer[i]) ) {
+    143                  //    return 0;
+    144                  //}
+    145                  FLASH_ProgramHalfWord (addr,pbuffer[i]);
+   \                     ??FlashWriteNoCheck_1: (+1)
+   \   0000000C   0xF835 0x1017      LDRH     R1,[R5, R7, LSL #+1]
+   \   00000010   0x4620             MOV      R0,R4
+   \   00000012   0x.... 0x....      BL       FLASH_ProgramHalfWord
+    146          		addr += 2;
+   \   00000016   0x1CA4             ADDS     R4,R4,#+2
+    147          	}
+   \   00000018   0x1C7F             ADDS     R7,R7,#+1
+   \                     ??FlashWriteNoCheck_0: (+1)
+   \   0000001A   0xB2BF             UXTH     R7,R7
+   \   0000001C   0x42B7             CMP      R7,R6
+   \   0000001E   0xD3F5             BCC.N    ??FlashWriteNoCheck_1
+    148              return 1;
+   \   00000020   0x2001             MOVS     R0,#+1
+   \   00000022   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    149          }
+    150          
+    151          /*******************************************************************************
+    152           * 名    称： FlashWrite()
+    153           * 功    能： 带擦除的写
+    154           * 入口参数：
+    155           * 出口参数： 无
+    156           * 作　　 者： 无名沈
+    157           * 创建日期： 2014-04-23
+    158           * 修    改： 
+    159           * 修改日期： 
+    160           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    161          void  BSP_FlashWrite(u32 addr,u16 *pbuffer,u16 num)
+    162          {
+   \                     BSP_FlashWrite: (+1)
+   \   00000000   0xE92D 0x4FF8      PUSH     {R3-R11,LR}
+   \   00000004   0x4604             MOV      R4,R0
+   \   00000006   0x460D             MOV      R5,R1
+   \   00000008   0x4616             MOV      R6,R2
+    163          //	u16  num_sector;  						        // 在第几页
+    164          //	u16  offset_sector;  					        // 在一页的偏移量
+    165          //	u16  num_last;    						        // 剩下的半字
+    166          //	u16  i;
+    167          //	/***********************************************
+    168          //    * 描述：
+    169          //    */
+    170          //    num_sector      = (addr - STM32_FLASH_BASE) / STM_SECTOR_SIZE;	   			// 获取第几页
+    171          //	offset_sector   = ((addr - STM32_FLASH_BASE) % STM_SECTOR_SIZE) / 2;  	    // 获取偏移量，16个字节为单位
+    172          //	num_last        = STM_SECTOR_SIZE / 2 - offset_sector;                     	// 求出剩下的半字
+    173          //	
+    174          //    FLASH_Unlock();                                 // 解锁
+    175          //	/***********************************************
+    176          //    * 描述：
+    177          //    */
+    178          //    if(num <= num_last)  
+    179          //      num_last      = num;		                    // 可以一次写完
+    180          //    /***********************************************
+    181          //    * 描述：
+    182          //    */
+    183          //	for(;;)	{									        // 开始不停的写
+    184          //		FlashRead(num_sector * STM_SECTOR_SIZE + STM32_FLASH_BASE,FlashBuf.buf2,STM_SECTOR_SIZE / 2);  // 读出一页
+    185          //		for(i = 0;i < num_last;i++) {
+    186          //			if(FlashBuf.buf2[offset_sector + i] != 0xffff) break;	
+    187          //		}
+    188          //		if(i < num_last) {						        // 需要擦除
+    189          //			FLASH_ErasePage (num_sector * STM_SECTOR_SIZE + STM32_FLASH_BASE);  // 擦除
+    190          //			for(i = 0;i < num_last;i++) {
+    191          //				FlashBuf.buf2[offset_sector + i] = pbuffer[i];	                // 把要写入的数据填入数组
+    192          //			}
+    193          //			FlashWriteNoCheck(num_sector * STM_SECTOR_SIZE + STM32_FLASH_BASE,FlashBuf.buf2,STM_SECTOR_SIZE / 2);               //写整个扇区		
+    194          //		} else {								        // 不需要擦除
+    195          //			FlashWriteNoCheck(addr,pbuffer,num_last);	// 直接将要写入的数据写入flash
+    196          //		}
+    197          //        /***********************************************
+    198          //        * 描述：
+    199          //        */
+    200          //		if(num_last == num) { 
+    201          //            break;                                      // 写完后就跳出
+    202          //		} else {                                        // 没有写完继续
+    203          //			num_sector     += 1;    				    // 页加一
+    204          //			offset_sector   = 0;  				        // 偏移为0
+    205          //			pbuffer        += num_last;
+    206          //			addr           += num_last * 2;
+    207          //			num            -= num_last;    				// 调整要写入的数量
+    208          //            
+    209          //			if(num > (STM_SECTOR_SIZE / 2))  
+    210          //                num_last = STM_SECTOR_SIZE / 2;
+    211          //			else  
+    212          //              num_last = num;   			            // 调整num_last		
+    213          //		}		
+    214          //	}
+    215          //    
+    216          //	FLASH_Lock();             					        // 上锁
+    217              
+    218          	u16  num_sector;                                    //在第几页
+    219          	u16  offset_sector;                                 //在一页的偏移量
+    220          	u16  num_last;                                      //剩下的半字
+    221          	u16  i;
+    222          	num_sector      =  (addr - STM32_FLASH_BASE) / STM_SECTOR_SIZE;	        //获取第几页
+   \   0000000A   0x0AE7             LSRS     R7,R4,#+11
+   \   0000000C   0xB2BF             UXTH     R7,R7
+    223          	offset_sector   =  ((addr - STM32_FLASH_BASE) % STM_SECTOR_SIZE) / 2;   //获取偏移量，16个字节为单位
+   \   0000000E   0xF3C4 0x0849      UBFX     R8,R4,#+1,#+10
+    224          	num_last        = 	STM_SECTOR_SIZE / 2 - offset_sector;                //求出剩下的半字
+   \   00000012   0xF5C8 0x6980      RSB      R9,R8,#+1024
+   \   00000016   0xFA1F 0xF989      UXTH     R9,R9
+    225          	FLASH_Unlock();                                     //解锁
+   \   0000001A   0x.... 0x....      BL       FLASH_Unlock
+    226          	if(num <= num_last)  num_last = num;		        //可以一次写完
+   \   0000001E   0x45B1             CMP      R9,R6
+   \   00000020   0xDB03             BLT.N    ??BSP_FlashWrite_0
+   \   00000022   0x46B1             MOV      R9,R6
+   \   00000024   0xE001             B.N      ??BSP_FlashWrite_0
+    227          	
+    228              for(;;)	{									        //开始不停的写
+    229          		FlashRead(num_sector * STM_SECTOR_SIZE + STM32_FLASH_BASE,FlashBuf.buf2,STM_SECTOR_SIZE / 2);  //读出一页
+    230          		for(i = 0;i < num_last;i++) {
+    231          			if(FlashBuf.buf2[offset_sector + i] != 0xffff) break;	
+    232          		}
+    233          		if(i < num_last) { 					//需要擦除
+    234          			FLASH_ErasePage (num_sector * STM_SECTOR_SIZE + STM32_FLASH_BASE);                      //擦除
+    235          			for(i = 0;i < num_last;i++) {
+    236          				FlashBuf.buf2[offset_sector + i] = pbuffer[i];	               //把要写入的数据填入数组
+    237          			}
+    238          			FlashWriteNoCheck(num_sector * STM_SECTOR_SIZE + STM32_FLASH_BASE,FlashBuf.buf2,STM_SECTOR_SIZE / 2);               //写整个扇区		
+    239          		} else {								    //不需要擦除
+    240          		
+    241          			FlashWriteNoCheck(addr,pbuffer,num_last);	//直接将要写入的数据写入flash
+    242          		}
+    243          		if(num_last == num)  
+    244                      break;                                  //写完后就跳出
+    245          		else  {                                     //没有写完继续
+    246          			num_sector += 1;    //页加一
+    247          			offset_sector = 0;  //偏移为0
+    248          			pbuffer += num_last;
+    249          			addr += num_last * 2;
+    250          			num -= num_last;    //调整要写入的数量
+    251          			if(num > (STM_SECTOR_SIZE / 2))  num_last = STM_SECTOR_SIZE / 2;
+   \                     ??BSP_FlashWrite_1: (+1)
+   \   00000026   0xF44F 0x6980      MOV      R9,#+1024
+   \                     ??BSP_FlashWrite_0: (+1)
+   \   0000002A   0x02F8             LSLS     R0,R7,#+11
+   \   0000002C   0xF100 0x6A00      ADD      R10,R0,#+134217728
+   \   00000030   0x.... 0x....      LDR.W    R11,??DataTable1
+   \   00000034   0xF44F 0x6280      MOV      R2,#+1024
+   \   00000038   0x4659             MOV      R1,R11
+   \   0000003A   0x4650             MOV      R0,R10
+   \   0000003C   0x.... 0x....      BL       FlashRead
+   \   00000040   0x2000             MOVS     R0,#+0
+   \   00000042   0xF64F 0x72FF      MOVW     R2,#+65535
+   \   00000046   0xE001             B.N      ??BSP_FlashWrite_2
+   \                     ??BSP_FlashWrite_3: (+1)
+   \   00000048   0x1C40             ADDS     R0,R0,#+1
+   \   0000004A   0xB280             UXTH     R0,R0
+   \                     ??BSP_FlashWrite_2: (+1)
+   \   0000004C   0x4548             CMP      R0,R9
+   \   0000004E   0xDA05             BGE.N    ??BSP_FlashWrite_4
+   \   00000050   0xEB00 0x0108      ADD      R1,R0,R8
+   \   00000054   0xF83B 0x1011      LDRH     R1,[R11, R1, LSL #+1]
+   \   00000058   0x4291             CMP      R1,R2
+   \   0000005A   0xD0F5             BEQ.N    ??BSP_FlashWrite_3
+   \                     ??BSP_FlashWrite_4: (+1)
+   \   0000005C   0x4548             CMP      R0,R9
+   \   0000005E   0xDA15             BGE.N    ??BSP_FlashWrite_5
+   \   00000060   0x4650             MOV      R0,R10
+   \   00000062   0x.... 0x....      BL       FLASH_ErasePage
+   \   00000066   0x2000             MOVS     R0,#+0
+   \   00000068   0xE007             B.N      ??BSP_FlashWrite_6
+   \                     ??BSP_FlashWrite_7: (+1)
+   \   0000006A   0xF835 0x1010      LDRH     R1,[R5, R0, LSL #+1]
+   \   0000006E   0xEB00 0x0208      ADD      R2,R0,R8
+   \   00000072   0xF82B 0x1012      STRH     R1,[R11, R2, LSL #+1]
+   \   00000076   0x1C40             ADDS     R0,R0,#+1
+   \   00000078   0xB280             UXTH     R0,R0
+   \                     ??BSP_FlashWrite_6: (+1)
+   \   0000007A   0x4548             CMP      R0,R9
+   \   0000007C   0xDBF5             BLT.N    ??BSP_FlashWrite_7
+   \   0000007E   0xF44F 0x6280      MOV      R2,#+1024
+   \   00000082   0x4659             MOV      R1,R11
+   \   00000084   0x4650             MOV      R0,R10
+   \   00000086   0x.... 0x....      BL       FlashWriteNoCheck
+   \   0000008A   0xE004             B.N      ??BSP_FlashWrite_8
+   \                     ??BSP_FlashWrite_5: (+1)
+   \   0000008C   0x464A             MOV      R2,R9
+   \   0000008E   0x4629             MOV      R1,R5
+   \   00000090   0x4620             MOV      R0,R4
+   \   00000092   0x.... 0x....      BL       FlashWriteNoCheck
+   \                     ??BSP_FlashWrite_8: (+1)
+   \   00000096   0x45B1             CMP      R9,R6
+   \   00000098   0xD103             BNE.N    ??BSP_FlashWrite_9
+    252          			else  num_last = num;   //调整num_last		
+    253          		}		
+    254          	}
+    255              
+    256          	FLASH_Lock();             //上锁
+   \   0000009A   0xE8BD 0x4FF1      POP      {R0,R4-R11,LR}
+   \   0000009E   0x.... 0x....      B.W      FLASH_Lock
+   \                     ??BSP_FlashWrite_9: (+1)
+   \   000000A2   0x1C7F             ADDS     R7,R7,#+1
+   \   000000A4   0xB2BF             UXTH     R7,R7
+   \   000000A6   0xF04F 0x0800      MOV      R8,#+0
+   \   000000AA   0xEB05 0x0549      ADD      R5,R5,R9, LSL #+1
+   \   000000AE   0xEB04 0x0449      ADD      R4,R4,R9, LSL #+1
+   \   000000B2   0xEBA6 0x0609      SUB      R6,R6,R9
+   \   000000B6   0xB2B6             UXTH     R6,R6
+   \   000000B8   0xF5B6 0x6F80      CMP      R6,#+1024
+   \   000000BC   0xDCB3             BGT.N    ??BSP_FlashWrite_1
+   \   000000BE   0x46B1             MOV      R9,R6
+   \   000000C0   0xE7B3             B.N      ??BSP_FlashWrite_0
+    257          }
+    258          
+    259          /*******************************************************************************
+    260          * 名    称： BSP_FLASH_ReadPage
+    261          * 功    能： 读一页数据，起始地址在页首
+    262          * 入口参数： addr FLASH地址  pbuf ： 读取字节的数组 len : 数组的大小
+    263          * 出口参数： 0（操作有误），1（操作成功）
+    264          * 作　 　者： wumingshen
+    265          * 创建日期： 2015-10-20
+    266          * 修    改：
+    267          * 修改日期：
+    268          * 备    注：
+    269          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    270          uint8_t BSP_FLASH_ReadPage( uint32_t addr , uint8_t *pbuf, u16 len )
+    271          {
+   \                     BSP_FLASH_ReadPage: (+1)
+   \   00000000   0xB410             PUSH     {R4}
+    272              uint16_t    size   = 0;
+   \   00000002   0x2300             MOVS     R3,#+0
+    273          
+    274              if ( len > STM_SECTOR_SIZE )
+   \   00000004   0xF5B2 0x6F00      CMP      R2,#+2048
+   \   00000008   0xDD07             BLE.N    ??BSP_FLASH_ReadPage_0
+    275                return 0;
+   \   0000000A   0x4618             MOV      R0,R3
+   \   0000000C   0xE00A             B.N      ??BSP_FLASH_ReadPage_1
+    276          
+    277              u16 *p      = (u16 *)pbuf;
+    278              
+    279              for ( ; size < len ; size += 2 ) {
+    280          		*p++     = *(vu16 *)addr;
+   \                     ??BSP_FLASH_ReadPage_2: (+1)
+   \   0000000E   0x8804             LDRH     R4,[R0, #+0]
+   \   00000010   0xF821 0x4B02      STRH     R4,[R1], #+2
+    281          		addr    += 2;	
+   \   00000014   0x1C80             ADDS     R0,R0,#+2
+    282          	}
+   \   00000016   0x1C9B             ADDS     R3,R3,#+2
+   \   00000018   0xB29B             UXTH     R3,R3
+   \                     ??BSP_FLASH_ReadPage_0: (+1)
+   \   0000001A   0x461C             MOV      R4,R3
+   \   0000001C   0x4294             CMP      R4,R2
+   \   0000001E   0xD3F6             BCC.N    ??BSP_FLASH_ReadPage_2
+    283              
+    284              return size;
+   \   00000020   0x4618             MOV      R0,R3
+   \   00000022   0xB2C0             UXTB     R0,R0
+   \                     ??BSP_FLASH_ReadPage_1: (+1)
+   \   00000024   0xBC10             POP      {R4}
+   \   00000026   0x4770             BX       LR               ;; return
+    285          }
+    286          
+    287          /*******************************************************************************
+    288          * 名    称： BSP_FLASH_WritePage
+    289          * 功    能： 写一页数据，起始地址在页首
+    290          * 入口参数： addr:  FLASH地址  pbuf: 写入字节的数组 len: 数组的大小
+    291          * 出口参数： 0（操作有误），1（操作成功）
+    292          * 作　 　者： wumingshen
+    293          * 创建日期： 2015-10-20
+    294          * 修    改：
+    295          * 修改日期：
+    296          * 备    注：
+    297          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    298          uint8_t BSP_FLASH_WritePage( uint32_t addr , uint8_t *pbuf, u16 len )
+    299          {
+   \                     BSP_FLASH_WritePage: (+1)
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0x4604             MOV      R4,R0
+   \   00000006   0x460D             MOV      R5,R1
+   \   00000008   0x4616             MOV      R6,R2
+    300              uint16_t    size   = 0;
+   \   0000000A   0x2700             MOVS     R7,#+0
+    301          
+    302              if ( len > STM_SECTOR_SIZE )
+   \   0000000C   0xF5B6 0x6F00      CMP      R6,#+2048
+   \   00000010   0xDD0C             BLE.N    ??BSP_FLASH_WritePage_0
+    303                return 0;
+   \   00000012   0x4638             MOV      R0,R7
+   \   00000014   0xE01C             B.N      ??BSP_FLASH_WritePage_1
+    304          
+    305              u16 *p      = (u16 *)pbuf;
+    306              s8  retrys;
+    307              
+    308              for ( ; size < len ; size += 2 ) {
+    309                  retrys  = 5;
+    310                  do {
+    311                      FLASH_ProgramHalfWord(addr,*(uint16_t *)p);
+    312                      if (*(uint16_t *)addr == *(uint16_t *)p) {
+    313                          break;
+    314                      } else if ( 1 == retrys ) {
+    315                          return size;
+    316                      } 
+    317                  } while ( --retrys );
+   \                     ??BSP_FLASH_WritePage_2: (+1)
+   \   00000016   0xF1A8 0x0801      SUB      R8,R8,#+1
+   \   0000001A   0xFA4F 0xF888      SXTB     R8,R8
+   \   0000001E   0xF1B8 0x0F00      CMP      R8,#+0
+   \   00000022   0xD108             BNE.N    ??BSP_FLASH_WritePage_3
+    318                  
+    319          		addr    += 2;
+   \                     ??BSP_FLASH_WritePage_4: (+1)
+   \   00000024   0x1CA4             ADDS     R4,R4,#+2
+    320                  p++;
+   \   00000026   0x1CAD             ADDS     R5,R5,#+2
+   \   00000028   0x1CBF             ADDS     R7,R7,#+2
+   \   0000002A   0xB2BF             UXTH     R7,R7
+   \                     ??BSP_FLASH_WritePage_0: (+1)
+   \   0000002C   0x4638             MOV      R0,R7
+   \   0000002E   0x42B0             CMP      R0,R6
+   \   00000030   0xD20C             BCS.N    ??BSP_FLASH_WritePage_5
+   \   00000032   0xF04F 0x0805      MOV      R8,#+5
+   \                     ??BSP_FLASH_WritePage_3: (+1)
+   \   00000036   0x8829             LDRH     R1,[R5, #+0]
+   \   00000038   0x4620             MOV      R0,R4
+   \   0000003A   0x.... 0x....      BL       FLASH_ProgramHalfWord
+   \   0000003E   0x8820             LDRH     R0,[R4, #+0]
+   \   00000040   0x8829             LDRH     R1,[R5, #+0]
+   \   00000042   0x4288             CMP      R0,R1
+   \   00000044   0xD0EE             BEQ.N    ??BSP_FLASH_WritePage_4
+   \   00000046   0xF1B8 0x0F01      CMP      R8,#+1
+   \   0000004A   0xD1E4             BNE.N    ??BSP_FLASH_WritePage_2
+    321          	}
+    322                      
+    323              return size;
+   \                     ??BSP_FLASH_WritePage_5: (+1)
+   \   0000004C   0x4638             MOV      R0,R7
+   \   0000004E   0xB2C0             UXTB     R0,R0
+   \                     ??BSP_FLASH_WritePage_1: (+1)
+   \   00000050   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
+    324          }
+    325          
+    326          /*******************************************************************************
+    327          * 名    称： BSP_FlashWriteBytes
+    328          * 功    能： 写多个字节
+    329          * 入口参数： addr： FLASH地址  pbuf ：写入字节的数组 len : 数组的大小
+    330          * 出口参数： 0（操作有误），1（操作成功）
+    331          * 作　 　者： wumingshen
+    332          * 创建日期： 2015-10-20
+    333          * 修    改：
+    334          * 修改日期：
+    335          * 备    注：
+    336          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    337          u16     BSP_FlashWriteBytes     (u32 addr, u8 *pbuf, u16 len)
+    338          {
+   \                     BSP_FlashWriteBytes: (+1)
+   \   00000000   0xE92D 0x4FF8      PUSH     {R3-R11,LR}
+   \   00000004   0x4606             MOV      R6,R0
+   \   00000006   0x460C             MOV      R4,R1
+   \   00000008   0x4615             MOV      R5,R2
+    339              uint16_t      bytes   = 0;
+   \   0000000A   0x2700             MOVS     R7,#+0
+   \   0000000C   0x19A8             ADDS     R0,R5,R6
+   \   0000000E   0xF5B0 0x4F80      CMP      R0,#+16384
+   \   00000012   0xD901             BLS.N    ??BSP_FlashWriteBytes_0
+    340              /***********************************************
+    341              * 描述： 检测地址是否会溢出，如果溢出则直接返回
+    342              */
+    343              if ( (addr + len) > (FLASH_SIZE_EEP) )
+    344                  return 0;
+   \   00000014   0x4638             MOV      R0,R7
+   \   00000016   0xE081             B.N      ??BSP_FlashWriteBytes_1
+    345          
+    346              uint16_t    copyLen;                            // 要复制的长度
+    347              uint32_t    pageAddr;
+    348              uint16_t    size    = 0;                        // 一次写入长度
+    349              u32         page    = addr / STM_SECTOR_SIZE;   // 写入地址所在页（相对）
+   \                     ??BSP_FlashWriteBytes_0: (+1)
+   \   00000018   0xEA4F 0x2AD6      LSR      R10,R6,#+11
+    350                          addr    += PARAM_START_ADDR;        // 转换成绝对地址
+   \   0000001C   0x.... 0x....      LDR.W    R11,??DataTable1_1  ;; 0x803c000
+   \   00000020   0x445E             ADD      R6,R11,R6
+    351              
+    352          	FLASH_Unlock();             				    // 上锁
+   \   00000022   0x.... 0x....      BL       FLASH_Unlock
+    353              /***********************************************
+    354              * 描述： 非页首开始，读取之前数据进行填充
+    355              */
+    356              if ( ( addr % STM_SECTOR_SIZE ) != 0 ) {
+   \   00000026   0x0570             LSLS     R0,R6,#+21
+   \   00000028   0xD02B             BEQ.N    ??BSP_FlashWriteBytes_2
+    357                  size        = STM_SECTOR_SIZE - ( addr % STM_SECTOR_SIZE );
+   \   0000002A   0x4630             MOV      R0,R6
+   \   0000002C   0x0540             LSLS     R0,R0,#+21
+   \   0000002E   0x0D40             LSRS     R0,R0,#+21
+   \   00000030   0xF5C0 0x6800      RSB      R8,R0,#+2048
+   \   00000034   0xFA1F 0xF888      UXTH     R8,R8
+    358                  copyLen     = STM_SECTOR_SIZE - size;
+   \   00000038   0xF5C8 0x6900      RSB      R9,R8,#+2048
+   \   0000003C   0xFA1F 0xF989      UXTH     R9,R9
+    359                  pageAddr    = PARAM_START_ADDR + page * STM_SECTOR_SIZE;
+   \   00000040   0xEB0B 0x2ACA      ADD      R10,R11,R10, LSL #+11
+    360                  // 读取当前页数据
+    361                  BSP_FLASH_ReadPage(pageAddr, FlashBuf.buf1, STM_SECTOR_SIZE);
+   \   00000044   0x.... 0x....      LDR.W    R11,??DataTable1
+   \   00000048   0xF44F 0x6200      MOV      R2,#+2048
+   \   0000004C   0x4659             MOV      R1,R11
+   \   0000004E   0x4650             MOV      R0,R10
+   \   00000050   0x.... 0x....      BL       BSP_FLASH_ReadPage
+    362          
+    363                  if ( size > len )
+   \   00000054   0x4545             CMP      R5,R8
+   \   00000056   0xDA00             BGE.N    ??BSP_FlashWriteBytes_3
+    364                      size = len;
+   \   00000058   0x46A8             MOV      R8,R5
+    365                  // 复制属于当前页的数据到缓冲区中
+    366                  memcpy(&FlashBuf.buf1[copyLen], pbuf, size);
+   \                     ??BSP_FlashWriteBytes_3: (+1)
+   \   0000005A   0x4642             MOV      R2,R8
+   \   0000005C   0x4621             MOV      R1,R4
+   \   0000005E   0xEB09 0x000B      ADD      R0,R9,R11
+   \   00000062   0x.... 0x....      BL       __aeabi_memcpy
+    367                  // 整页探险当前页
+    368          		FLASH_ErasePage ( pageAddr );
+   \   00000066   0x4650             MOV      R0,R10
+   \   00000068   0x.... 0x....      BL       FLASH_ErasePage
+    369                  // 将缓冲区的数据写入当前页
+    370                  BSP_FLASH_WritePage( pageAddr , FlashBuf.buf1 , STM_SECTOR_SIZE );
+   \   0000006C   0xF44F 0x6200      MOV      R2,#+2048
+   \   00000070   0x4659             MOV      R1,R11
+   \   00000072   0x4650             MOV      R0,R10
+   \   00000074   0x.... 0x....      BL       BSP_FLASH_WritePage
+    371                  // 源数据地址、写入地址、写入字节数增加size，未写数据长度减少size
+    372                  addr    += size;
+   \   00000078   0x4446             ADD      R6,R8,R6
+    373                  pbuf    += size;
+   \   0000007A   0x4444             ADD      R4,R8,R4
+    374                  bytes   += size;
+   \   0000007C   0x4647             MOV      R7,R8
+    375                  len     -= size;
+   \   0000007E   0xEBA5 0x0508      SUB      R5,R5,R8
+    376              }
+    377          
+    378              /***********************************************
+    379              * 描述： 页首开始，整页
+    380              */
+    381              size = len / STM_SECTOR_SIZE;
+   \                     ??BSP_FlashWriteBytes_2: (+1)
+   \   00000082   0x4628             MOV      R0,R5
+   \   00000084   0xB280             UXTH     R0,R0
+   \   00000086   0xEA4F 0x28D0      LSR      R8,R0,#+11
+   \   0000008A   0xE015             B.N      ??BSP_FlashWriteBytes_4
+    382              while ( size > 0 ) {
+    383                  // 探险当前页
+    384          		FLASH_ErasePage (addr);
+   \                     ??BSP_FlashWriteBytes_5: (+1)
+   \   0000008C   0x4630             MOV      R0,R6
+   \   0000008E   0x.... 0x....      BL       FLASH_ErasePage
+    385                  // 写入当前数据页
+    386                  BSP_FLASH_WritePage( addr , (u8 *)pbuf, STM_SECTOR_SIZE );
+   \   00000092   0xF44F 0x6200      MOV      R2,#+2048
+   \   00000096   0x4621             MOV      R1,R4
+   \   00000098   0x4630             MOV      R0,R6
+   \   0000009A   0x.... 0x....      BL       BSP_FLASH_WritePage
+    387                  // 源数据地址、写入地址、写入字节数增加STM_SECTOR_SIZE，未写数据长度减少STM_SECTOR_SIZE
+    388                  addr    += STM_SECTOR_SIZE;
+   \   0000009E   0xF506 0x6600      ADD      R6,R6,#+2048
+    389                  pbuf    += STM_SECTOR_SIZE;
+   \   000000A2   0xF504 0x6400      ADD      R4,R4,#+2048
+    390                  bytes   += STM_SECTOR_SIZE;
+   \   000000A6   0xF507 0x6700      ADD      R7,R7,#+2048
+   \   000000AA   0xB2BF             UXTH     R7,R7
+    391                  len     -= STM_SECTOR_SIZE;
+   \   000000AC   0xF5A5 0x6500      SUB      R5,R5,#+2048
+    392                  // 页数减1
+    393                  size    -= 1;
+   \   000000B0   0xF1A8 0x0801      SUB      R8,R8,#+1
+   \   000000B4   0xFA1F 0xF888      UXTH     R8,R8
+    394              }
+   \                     ??BSP_FlashWriteBytes_4: (+1)
+   \   000000B8   0x4640             MOV      R0,R8
+   \   000000BA   0x2800             CMP      R0,#+0
+   \   000000BC   0xD1E6             BNE.N    ??BSP_FlashWriteBytes_5
+    395          
+    396              /***********************************************
+    397              * 描述： 页首开始，不足一页
+    398              */
+    399              if ( len > 0 ) {
+   \   000000BE   0xB2AD             UXTH     R5,R5
+   \   000000C0   0x2D00             CMP      R5,#+0
+   \   000000C2   0xD028             BEQ.N    ??BSP_FlashWriteBytes_6
+    400                  size        = STM_SECTOR_SIZE - ( addr % STM_SECTOR_SIZE );
+   \   000000C4   0x4630             MOV      R0,R6
+   \   000000C6   0x0540             LSLS     R0,R0,#+21
+   \   000000C8   0x0D40             LSRS     R0,R0,#+21
+   \   000000CA   0xF5C0 0x6800      RSB      R8,R0,#+2048
+   \   000000CE   0xFA1F 0xF888      UXTH     R8,R8
+    401                  copyLen     = STM_SECTOR_SIZE - size;
+   \   000000D2   0xF5C8 0x6900      RSB      R9,R8,#+2048
+   \   000000D6   0xFA1F 0xF989      UXTH     R9,R9
+    402                  pageAddr    = addr - copyLen;
+   \   000000DA   0xEBA6 0x0A09      SUB      R10,R6,R9
+    403                  
+    404                  BSP_FLASH_ReadPage(pageAddr, FlashBuf.buf1, STM_SECTOR_SIZE);
+   \   000000DE   0x.... 0x....      LDR.W    R11,??DataTable1
+   \   000000E2   0xF44F 0x6200      MOV      R2,#+2048
+   \   000000E6   0x4659             MOV      R1,R11
+   \   000000E8   0x4650             MOV      R0,R10
+   \   000000EA   0x.... 0x....      BL       BSP_FLASH_ReadPage
+    405          
+    406                  if ( size > len )
+   \   000000EE   0x4545             CMP      R5,R8
+   \   000000F0   0xDA00             BGE.N    ??BSP_FlashWriteBytes_7
+    407                      size = len;
+   \   000000F2   0x46A8             MOV      R8,R5
+    408                  // 复制属于当前页的数据到缓冲区中
+    409                  memcpy(&FlashBuf.buf1[copyLen],pbuf,size);
+   \                     ??BSP_FlashWriteBytes_7: (+1)
+   \   000000F4   0x4642             MOV      R2,R8
+   \   000000F6   0x4621             MOV      R1,R4
+   \   000000F8   0xEB09 0x000B      ADD      R0,R9,R11
+   \   000000FC   0x.... 0x....      BL       __aeabi_memcpy
+    410          
+    411                  // 整页探险当前页
+    412          		FLASH_ErasePage (pageAddr);
+   \   00000100   0x4650             MOV      R0,R10
+   \   00000102   0x.... 0x....      BL       FLASH_ErasePage
+    413                  // 将缓冲区的数据写入当前页
+    414                  BSP_FLASH_WritePage( pageAddr , (u8 *)FlashBuf.buf1 , STM_SECTOR_SIZE );
+   \   00000106   0xF44F 0x6200      MOV      R2,#+2048
+   \   0000010A   0x4659             MOV      R1,R11
+   \   0000010C   0x4650             MOV      R0,R10
+   \   0000010E   0x.... 0x....      BL       BSP_FLASH_WritePage
+    415                  bytes   += len;
+   \   00000112   0x19EF             ADDS     R7,R5,R7
+   \   00000114   0xB2BF             UXTH     R7,R7
+    416              }
+    417          
+    418          	FLASH_Lock();             				    // 上锁
+   \                     ??BSP_FlashWriteBytes_6: (+1)
+   \   00000116   0x.... 0x....      BL       FLASH_Lock
+    419              return(bytes);
+   \   0000011A   0x4638             MOV      R0,R7
+   \                     ??BSP_FlashWriteBytes_1: (+1)
+   \   0000011C   0xE8BD 0x8FF2      POP      {R1,R4-R11,PC}   ;; return
+    420          }
+    421          
+    422          /*******************************************************************************
+    423          * 名    称： BSP_FlashReadBytes
+    424          * 功    能： 读多个字节（必须是2的倍数）
+    425          * 入口参数： addr： FLASH地址  pbuf ：写入字节的数组 len : 数组的大小（2的倍数）
+    426          * 出口参数： 0（操作有误），1（操作成功）
+    427          * 作　 　者： wumingshen
+    428          * 创建日期： 2015-10-20
+    429          * 修    改：
+    430          * 修改日期：
+    431          * 备    注：
+    432          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    433          u16     BSP_FlashReadBytes      (u32 addr, u8 *pbuf, u16 len)
+    434          { 
+   \                     BSP_FlashReadBytes: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x460C             MOV      R4,R1
+   \   00000004   0x4615             MOV      R5,R2
+    435              addr         = (PARAM_START_ADDR + addr);
+   \   00000006   0xF100 0x6600      ADD      R6,R0,#+134217728
+   \   0000000A   0xF506 0x3670      ADD      R6,R6,#+245760
+    436              
+    437          	FLASH_Unlock();             					        // 解锁
+   \   0000000E   0x.... 0x....      BL       FLASH_Unlock
+    438          
+    439              u16 *p      = (u16 *)pbuf;
+    440              u16 size    = 0;
+   \   00000012   0x2000             MOVS     R0,#+0
+   \   00000014   0xE005             B.N      ??BSP_FlashReadBytes_0
+    441              
+    442              for ( ; size < len ; size += 2 ) {
+    443          		*p++     = *(vu16 *)addr;
+   \                     ??BSP_FlashReadBytes_1: (+1)
+   \   00000016   0x8831             LDRH     R1,[R6, #+0]
+   \   00000018   0xF824 0x1B02      STRH     R1,[R4], #+2
+    444          		addr    += 2;	
+   \   0000001C   0x1CB6             ADDS     R6,R6,#+2
+    445          	}
+   \   0000001E   0x1C80             ADDS     R0,R0,#+2
+   \   00000020   0xB280             UXTH     R0,R0
+   \                     ??BSP_FlashReadBytes_0: (+1)
+   \   00000022   0x4601             MOV      R1,R0
+   \   00000024   0x42A9             CMP      R1,R5
+   \   00000026   0xD3F6             BCC.N    ??BSP_FlashReadBytes_1
+    446              
+    447          	FLASH_Lock();             					            // 上锁
+   \   00000028   0x.... 0x....      BL       FLASH_Lock
+    448              
+    449              return len;
+   \   0000002C   0x4628             MOV      R0,R5
+   \   0000002E   0xBD70             POP      {R4-R6,PC}       ;; return
+    450          } 
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0x........         DC32     FlashBuf
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \   00000000   0x0803C000         DC32     0x803c000
+    451          
+    452          /*******************************************************************************
+    453           * 				end of file
+    454           *******************************************************************************/ 
+    455          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   BSP_FLASH_ReadPage
+      24   BSP_FLASH_WritePage
+        24   -> FLASH_ProgramHalfWord
+      24   BSP_FlashRead
+         0   -> FLASH_Lock
+        24   -> FLASH_Unlock
+        24   -> FlashReadHalfWord
+      16   BSP_FlashReadBytes
+        16   -> FLASH_Lock
+        16   -> FLASH_Unlock
+      40   BSP_FlashWrite
+        40   -> FLASH_ErasePage
+         0   -> FLASH_Lock
+        40   -> FLASH_Unlock
+        40   -> FlashRead
+        40   -> FlashWriteNoCheck
+      40   BSP_FlashWriteBytes
+        40   -> BSP_FLASH_ReadPage
+        40   -> BSP_FLASH_WritePage
+        40   -> FLASH_ErasePage
+        40   -> FLASH_Lock
+        40   -> FLASH_Unlock
+        40   -> __aeabi_memcpy
+      24   FlashRead
+        24   -> FlashReadHalfWord
+       0   FlashReadHalfWord
+      24   FlashWriteNoCheck
+        24   -> FLASH_ProgramHalfWord
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+      40  BSP_FLASH_ReadPage
+      84  BSP_FLASH_WritePage
+      44  BSP_FlashRead
+      48  BSP_FlashReadBytes
+     194  BSP_FlashWrite
+     288  BSP_FlashWriteBytes
+    2048  FlashBuf
+      34  FlashRead
+       4  FlashReadHalfWord
+      36  FlashWriteNoCheck
+
+ 
+ 2 048 bytes in section .bss
+   780 bytes in section .text
+ 
+   780 bytes of CODE memory
+ 2 048 bytes of DATA memory
+
+Errors: none
+Warnings: none

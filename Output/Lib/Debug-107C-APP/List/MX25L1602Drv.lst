@@ -1,0 +1,1443 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  20:53:19
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\BSP\Driver\MX25L1602Drv.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\BSP\Driver\MX25L1602Drv.c -D
+#        USE_STDPERIPH_DRIVER -D STM32F10X_CL -D DEBUG -D IMAGE_A -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\List\MX25L1602Drv.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Debug-107C-APP\Obj\MX25L1602Drv.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\BSP\Driver\MX25L1602Drv.c
+      1          /****************************************Copyright (c)**************************************************
+      2          **                               Guangzou ZLG-MCU Development Co.,LTD.
+      3          **                                      graduate school
+      4          **                                 http://www.zlgmcu.com
+      5          **
+      6          **--------------File Info-------------------------------------------------------------------------------
+      7          ** File name:       MX25L1602.c
+      8          ** Descriptions:    SST25VF016B驱动
+      9          **
+     10          **------------------------------------------------------------------------------------------------------
+     11          ** Created by:      Litiantian
+     12          ** Created date:    2007-04-16
+     13          ** Version:         1.0
+     14          ** Descriptions:    The original version
+     15          **
+     16          **------------------------------------------------------------------------------------------------------
+     17          ** Modified by:     
+     18          ** Modified date:   
+     19          ** Version:         
+     20          ** Descriptions:    
+     21          ********************************************************************************************************/
+     22          #include   "MX25L1602Drv.h"
+     23          #include   "includes.h"
+     24          /*
+     25          * 移植本软件包时需要修改以下的函数或宏 
+     26          */
+     27          //#define     CE_Low()    LPC_GPIO0->FIOCLR |= SPI_CS;
+     28          //#define     CE_High()   LPC_GPIO0->FIOSET |= SPI_CS;
+     29          
+
+   \                                 In section .text, align 2, keep-with-next
+     30          void nop(void)
+     31          {
+     32          	uint8_t i = 10; 
+   \                     `nop`: (+1)
+   \   00000000   0x200A             MOVS     R0,#+10
+   \   00000002   0xE000             B.N      ??nop_0
+     33              
+     34          	while(i) 
+     35          	{ 
+     36          		i--; 
+   \                     ??nop_1: (+1)
+   \   00000004   0x1E40             SUBS     R0,R0,#+1
+     37          	} 
+   \                     ??nop_0: (+1)
+   \   00000006   0xB2C0             UXTB     R0,R0
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD1FB             BNE.N    ??nop_1
+     38              //    #if DEBUG_MODEL_DISENABLE > 0 
+     39              //        WDT_Feed();                                               /* Determine CPU capacity                               */
+     40              //    #endif
+     41          }
+   \   0000000C   0x4770             BX       LR               ;; return
+     42          
+     43          extern	void WriteSoftSpiCSF(uint8 temp);
+     44          
+
+   \                                 In section .text, align 2, keep-with-next
+     45          void	CE_Low(void)
+     46          {
+     47          	WriteSoftSpiCSF(0);
+   \                     CE_Low: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x....             B.N      WriteSoftSpiCSF
+     48          }
+     49          
+
+   \                                 In section .text, align 2, keep-with-next
+     50          void	CE_High(void)
+     51          {
+     52          	WriteSoftSpiCSF(1);
+   \                     CE_High: (+1)
+   \   00000000   0x2001             MOVS     R0,#+1
+   \   00000002   0x....             B.N      WriteSoftSpiCSF
+     53          }
+     54          
+     55          //#define			SCKF					204    	    //p1.20  
+     56          //#define			MISOF					203			//p1.23  
+     57          //#define			MOSIF					205			//p1.24 
+     58          //#define   		SOFT_SPI_CSF			202			//p1.22
+     59          
+     60          #define			SCKF					005         //pA5  
+     61          #define			MISOF					006			//pA6  
+     62          #define			MOSIF					007			//pA7 
+     63          #define   		SOFT_SPI_CSF			004			//pA4
+     64          
+     65          #define	uint8	uint8_t
+     66          
+
+   \                                 In section .text, align 2, keep-with-next
+     67          void	InitFlashIO(void)
+     68          {
+   \                     InitFlashIO: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     69          	GPIO_PinselConfig(MOSIF,0);	
+   \   00000002   0x2100             MOVS     R1,#+0
+   \   00000004   0x2007             MOVS     R0,#+7
+   \   00000006   0x.... 0x....      BL       GPIO_PinselConfig
+     70          	GPIO_PinselConfig(MISOF,0);
+   \   0000000A   0x2100             MOVS     R1,#+0
+   \   0000000C   0x2006             MOVS     R0,#+6
+   \   0000000E   0x.... 0x....      BL       GPIO_PinselConfig
+     71          	GPIO_PinselConfig(MISOF,0);	
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x2006             MOVS     R0,#+6
+   \   00000016   0x.... 0x....      BL       GPIO_PinselConfig
+     72          	GPIO_PinselConfig(SOFT_SPI_CSF,0);
+   \   0000001A   0x2100             MOVS     R1,#+0
+   \   0000001C   0x2004             MOVS     R0,#+4
+   \   0000001E   0x.... 0x....      BL       GPIO_PinselConfig
+     73          	GPIO_PinselConfig(MOSIF,0);
+   \   00000022   0x2100             MOVS     R1,#+0
+   \   00000024   0x2007             MOVS     R0,#+7
+   \   00000026   0x.... 0x....      BL       GPIO_PinselConfig
+     74          	GPIO_PinselConfig(SCKF,0);
+   \   0000002A   0x2100             MOVS     R1,#+0
+   \   0000002C   0x2005             MOVS     R0,#+5
+   \   0000002E   0x.... 0x....      BL       GPIO_PinselConfig
+     75          	GPIO_PinselConfig(SCKF,0);
+   \   00000032   0x2100             MOVS     R1,#+0
+   \   00000034   0x2005             MOVS     R0,#+5
+   \   00000036   0xE8BD 0x4004      POP      {R2,LR}
+   \   0000003A   0x.... 0x....      B.W      GPIO_PinselConfig
+     76          }
+     77          
+     78          //------------------------------------------------------------------------
+     79          //  名  称 ：void WriteSCKF( uint8 temp )
+     80          //  功  能 ：设置 SCKF
+     81          // 入口参数：无
+     82          // 出口参数：无
+     83          //------------------------------------------------------------------------
+
+   \                                 In section .text, align 2, keep-with-next
+     84          void WriteSCKF(uint8 temp)
+     85          {
+   \                     WriteSCKF: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     86          	
+     87          	if(temp)		
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD004             BEQ.N    ??WriteSCKF_0
+     88          	{
+     89          		GPIO_SetOrClearValue(SCKF,1);
+   \   00000006   0x2101             MOVS     R1,#+1
+   \   00000008   0x2005             MOVS     R0,#+5
+   \   0000000A   0x.... 0x....      BL       GPIO_SetOrClearValue
+   \   0000000E   0xE003             B.N      ??WriteSCKF_1
+     90          	}
+     91          	else
+     92          	{
+     93          		GPIO_SetOrClearValue(SCKF,0);		
+   \                     ??WriteSCKF_0: (+1)
+   \   00000010   0x2100             MOVS     R1,#+0
+   \   00000012   0x2005             MOVS     R0,#+5
+   \   00000014   0x.... 0x....      BL       GPIO_SetOrClearValue
+     94          	}	
+     95          	nop();	
+   \                     ??WriteSCKF_1: (+1)
+   \   00000018   0xE8BD 0x4001      POP      {R0,LR}
+   \   0000001C   0x....             B.N      `nop`
+     96          }
+     97          
+     98          //------------------------------------------------------------------------
+     99          //  名  称 ：uint8 ReadSCKF(void)
+    100          //  功  能 ：读取 SCKF 的值
+    101          // 入口参数：无
+    102          // 出口参数：无
+    103          //------------------------------------------------------------------------
+
+   \                                 In section .text, align 2, keep-with-next
+    104          uint8 ReadSCKF(void)
+    105          {
+   \                     ReadSCKF: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    106          	uint8 temp;
+    107              
+    108          	temp = 	GPIO_ReadIoVal(SCKF);
+   \   00000002   0x2005             MOVS     R0,#+5
+   \   00000004   0x.... 0x....      BL       GPIO_ReadIoVal
+   \   00000008   0x4604             MOV      R4,R0
+    109          	nop();
+   \   0000000A   0x.... 0x....      BL       `nop`
+    110          	return temp;
+   \   0000000E   0x4620             MOV      R0,R4
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+    111          }
+    112          
+    113          //------------------------------------------------------------------------
+    114          //  名  称 ：void WriteMOSIF( uint8 temp )
+    115          //  功  能 ：设置 MOSIF
+    116          // 入口参数：无
+    117          // 出口参数：无
+    118          //------------------------------------------------------------------------
+
+   \                                 In section .text, align 2, keep-with-next
+    119          void WriteMOSIF(uint8 temp)
+    120          {	
+   \                     WriteMOSIF: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    121          	if(temp)		
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD004             BEQ.N    ??WriteMOSIF_0
+    122          	{
+    123          		GPIO_SetOrClearValue(MOSIF,1);
+   \   00000006   0x2101             MOVS     R1,#+1
+   \   00000008   0x2007             MOVS     R0,#+7
+   \   0000000A   0x.... 0x....      BL       GPIO_SetOrClearValue
+   \   0000000E   0xE003             B.N      ??WriteMOSIF_1
+    124          	}
+    125          	else
+    126          	{
+    127          		GPIO_SetOrClearValue(MOSIF,0);		
+   \                     ??WriteMOSIF_0: (+1)
+   \   00000010   0x2100             MOVS     R1,#+0
+   \   00000012   0x2007             MOVS     R0,#+7
+   \   00000014   0x.... 0x....      BL       GPIO_SetOrClearValue
+    128          	}	
+    129          	nop();		
+   \                     ??WriteMOSIF_1: (+1)
+   \   00000018   0xE8BD 0x4001      POP      {R0,LR}
+   \   0000001C   0x....             B.N      `nop`
+    130              
+    131          }
+    132          
+    133          //------------------------------------------------------------------------
+    134          //  名  称 ：uint8 ReadMOSIF(void)
+    135          //  功  能 ：读取 MOSIF 的值
+    136          // 入口参数：无
+    137          // 出口参数：无
+    138          //------------------------------------------------------------------------
+
+   \                                 In section .text, align 2, keep-with-next
+    139          uint8 ReadMOSIF(void)
+    140          {
+   \                     ReadMOSIF: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    141          	uint8 temp;
+    142          	
+    143          	temp = 	GPIO_ReadIoVal(MOSIF);
+   \   00000002   0x2007             MOVS     R0,#+7
+   \   00000004   0x.... 0x....      BL       GPIO_ReadIoVal
+   \   00000008   0x4604             MOV      R4,R0
+    144          	nop();
+   \   0000000A   0x.... 0x....      BL       `nop`
+    145          	return temp;
+   \   0000000E   0x4620             MOV      R0,R4
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+    146          }
+    147          
+    148          //------------------------------------------------------------------------
+    149          //  名  称 ：void WriteMOSIF( uint8 temp )
+    150          //  功  能 ：设置 MOSIF
+    151          // 入口参数：无
+    152          // 出口参数：无
+    153          //------------------------------------------------------------------------
+
+   \                                 In section .text, align 2, keep-with-next
+    154          void WriteMISOF(uint8 temp)
+    155          {	
+   \                     WriteMISOF: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    156          	if(temp)		
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD004             BEQ.N    ??WriteMISOF_0
+    157          	{
+    158          		GPIO_SetOrClearValue(MISOF,1);
+   \   00000006   0x2101             MOVS     R1,#+1
+   \   00000008   0x2006             MOVS     R0,#+6
+   \   0000000A   0x.... 0x....      BL       GPIO_SetOrClearValue
+   \   0000000E   0xE003             B.N      ??WriteMISOF_1
+    159          	}
+    160          	else
+    161          	{
+    162          		GPIO_SetOrClearValue(MISOF,0);		
+   \                     ??WriteMISOF_0: (+1)
+   \   00000010   0x2100             MOVS     R1,#+0
+   \   00000012   0x2006             MOVS     R0,#+6
+   \   00000014   0x.... 0x....      BL       GPIO_SetOrClearValue
+    163          	}
+    164              
+    165          	nop();		
+   \                     ??WriteMISOF_1: (+1)
+   \   00000018   0xE8BD 0x4001      POP      {R0,LR}
+   \   0000001C   0x....             B.N      `nop`
+    166          }
+    167          
+    168          //------------------------------------------------------------------------
+    169          //  名  称 ：uint8 ReadMOSIF(void)
+    170          //  功  能 ：读取 MOSIF 的值
+    171          // 入口参数：无
+    172          // 出口参数：无
+    173          //------------------------------------------------------------------------
+
+   \                                 In section .text, align 2, keep-with-next
+    174          uint8 ReadMISOF(void)
+    175          {
+   \                     ReadMISOF: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    176          	uint8 temp;
+    177              
+    178          	temp = 	GPIO_ReadIoVal(MISOF);
+   \   00000002   0x2006             MOVS     R0,#+6
+   \   00000004   0x.... 0x....      BL       GPIO_ReadIoVal
+   \   00000008   0x4604             MOV      R4,R0
+    179              
+    180          	nop();
+   \   0000000A   0x.... 0x....      BL       `nop`
+    181          	return temp;
+   \   0000000E   0x4620             MOV      R0,R4
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+    182          }
+    183          
+    184          //------------------------------------------------------------------------
+    185          //  名  称 ：void WriteMOSIF( uint8 temp )
+    186          //  功  能 ：设置 MOSIF
+    187          // 入口参数：无
+    188          // 出口参数：无
+    189          //------------------------------------------------------------------------
+
+   \                                 In section .text, align 2, keep-with-next
+    190          void WriteSoftSpiCSF(uint8 temp)
+    191          {
+   \                     WriteSoftSpiCSF: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    192          	if(temp)		
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD004             BEQ.N    ??WriteSoftSpiCSF_0
+    193          	{
+    194          		GPIO_SetOrClearValue(SOFT_SPI_CSF,1);
+   \   00000006   0x2101             MOVS     R1,#+1
+   \   00000008   0x2004             MOVS     R0,#+4
+   \   0000000A   0x.... 0x....      BL       GPIO_SetOrClearValue
+   \   0000000E   0xE003             B.N      ??WriteSoftSpiCSF_1
+    195          	}
+    196          	else
+    197          	{
+    198          		GPIO_SetOrClearValue(SOFT_SPI_CSF,0);		
+   \                     ??WriteSoftSpiCSF_0: (+1)
+   \   00000010   0x2100             MOVS     R1,#+0
+   \   00000012   0x2004             MOVS     R0,#+4
+   \   00000014   0x.... 0x....      BL       GPIO_SetOrClearValue
+    199          	}	
+    200              
+    201          	nop();		
+   \                     ??WriteSoftSpiCSF_1: (+1)
+   \   00000018   0xE8BD 0x4001      POP      {R0,LR}
+   \   0000001C   0x....             B.N      `nop`
+    202          }
+    203          
+    204          //---------------------------------------------------------------------------------
+    205          //函数名称:             SentByte_SPI()
+    206          //功    能:             SPI发送一字节数据
+    207          //入口参数:             Data8
+    208          //出口参数:             无
+    209          //说    明:				以模拟SPI总线方式发送数据
+    210          //----------------------------------------------------------------------------------
+
+   \                                 In section .text, align 2, keep-with-next
+    211          uint8 SendOrRecByte_SPIF(uint8 ch)
+    212          {
+   \                     SendOrRecByte_SPIF: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+    213          	uint8 i,temp;   
+    214          	
+    215              for (i=0;i<8;i++)
+   \   00000002   0x2400             MOVS     R4,#+0
+   \   00000004   0xE00C             B.N      ??SendOrRecByte_SPIF_0
+    216              {
+    217          		temp=ch&0x80;
+    218              	ch=ch<<1;
+    219                  if(temp)
+    220                  {
+    221                      WriteMOSIF( 1 );	
+    222                      
+    223                      WriteSCKF ( 0 );
+    224                      
+    225                      WriteSCKF ( 1 );	        	
+    226                  }
+    227                  else
+    228                  {
+    229                      WriteMOSIF( 0 );	
+   \                     ??SendOrRecByte_SPIF_1: (+1)
+   \   00000006   0x2000             MOVS     R0,#+0
+   \   00000008   0x.... 0x....      BL       WriteMOSIF
+    230                      
+    231                      WriteSCKF ( 0 );
+   \   0000000C   0x2000             MOVS     R0,#+0
+   \   0000000E   0x.... 0x....      BL       WriteSCKF
+    232                      
+    233                      WriteSCKF ( 1 );
+   \   00000012   0x2001             MOVS     R0,#+1
+   \   00000014   0x.... 0x....      BL       WriteSCKF
+    234                  }
+    235                  
+    236                  ch |= ReadMISOF();
+   \                     ??SendOrRecByte_SPIF_2: (+1)
+   \   00000018   0x.... 0x....      BL       ReadMISOF
+   \   0000001C   0x4328             ORRS     R0,R0,R5
+   \   0000001E   0x1C64             ADDS     R4,R4,#+1
+   \                     ??SendOrRecByte_SPIF_0: (+1)
+   \   00000020   0x2C08             CMP      R4,#+8
+   \   00000022   0xDA0E             BGE.N    ??SendOrRecByte_SPIF_3
+   \   00000024   0xF000 0x0180      AND      R1,R0,#0x80
+   \   00000028   0x0045             LSLS     R5,R0,#+1
+   \   0000002A   0x2900             CMP      R1,#+0
+   \   0000002C   0xD0EB             BEQ.N    ??SendOrRecByte_SPIF_1
+   \   0000002E   0x2001             MOVS     R0,#+1
+   \   00000030   0x.... 0x....      BL       WriteMOSIF
+   \   00000034   0x2000             MOVS     R0,#+0
+   \   00000036   0x.... 0x....      BL       WriteSCKF
+   \   0000003A   0x2001             MOVS     R0,#+1
+   \   0000003C   0x.... 0x....      BL       WriteSCKF
+   \   00000040   0xE7EA             B.N      ??SendOrRecByte_SPIF_2
+    237              }
+    238              
+    239              return	ch;
+   \                     ??SendOrRecByte_SPIF_3: (+1)
+   \   00000042   0xB2C0             UXTB     R0,R0
+   \   00000044   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    240          }
+    241          
+
+   \                                 In section .text, align 2, keep-with-next
+    242          void	SendByte_SPIF(uint8	ch)
+    243          {
+    244          	SendOrRecByte_SPIF(ch);
+   \                     SendByte_SPIF: (+1)
+   \   00000000   0x....             B.N      SendOrRecByte_SPIF
+    245          }
+    246          
+
+   \                                 In section .text, align 2, keep-with-next
+    247          uint8	RecByte_SPIF(void)
+    248          {
+    249          	uint8		ch =0;
+    250          	return	SendOrRecByte_SPIF(ch);
+   \                     RecByte_SPIF: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x....             B.N      SendOrRecByte_SPIF
+    251          }
+    252          
+    253          /*********************************************************************************************************
+    254          ** 函数名称：SPIInit
+    255          ** 功能说明：初始化SPI
+    256          ** 输入参数：无
+    257          ** 输出参数：无
+    258          *********************************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    259          void  SPIInit (void)
+    260          {
+    261              
+    262          }
+   \                     SPIInit: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    263          
+    264          /*********************************************************************************************************
+    265          ** 函数名称: Send_Byte
+    266          ** 函数功能：SPI发送一个字节数据
+    267          ** 输入参数: data
+    268          ** 输出参数: 无
+    269          ** 返 回 值：无
+    270          *********************************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    271          void Send_Byte (INT8U data)
+    272          {
+    273          	SendByte_SPIF(data);    
+   \                     Send_Byte: (+1)
+   \   00000000   0x....             B.N      SendByte_SPIF
+    274          }
+    275          
+    276          /*********************************************************************************************************
+    277          ** 函数名称:Get_Byte
+    278          ** 函数功能:SPI接口接收一个字节数据
+    279          ** 输入参数:无
+    280          ** 输出参数:无
+    281          *********************************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    282          INT8U Get_Byte (void)
+    283          {
+    284          	return	RecByte_SPIF();
+   \                     Get_Byte: (+1)
+   \   00000000   0x....             B.N      RecByte_SPIF
+    285          }
+    286          
+    287          /*********************************************************************************************************
+    288          ** 用户接口层
+    289          ** 以下函数在移植时无需修改
+    290          *********************************************************************************************************/
+    291          /********************************************************************************************************
+    292          ** 函数名称:MX25L1602_RD
+    293          ** 函数功能:MX25L1602的读函数,可选择读ID和读数据操作
+    294          ** 输入参数:
+    295          **          INT32U Dst：目标地址,范围 0x0 - MAX_ADDR（MAX_ADDR = 0x1FFFFF）
+    296          **          INT32U NByte:  要读取的数据字节数
+    297          **          INT8U* RcvBufPt:接收缓存的指针
+    298          ** 输出参数:操作成功则返回OK,失败则返回ERROR_0
+    299          ** 特殊说明:若某功能下,某一入口参数无效,可在该入口参数处填Invalid，该参数将被忽略
+    300          **********************************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    301          INT8U MX25L1602_RD(INT32U Dst, INT32U NByte,INT8U* RcvBufPt)
+    302          {
+   \                     MX25L1602_RD: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   \   00000004   0x460D             MOV      R5,R1
+   \   00000006   0x4616             MOV      R6,R2
+    303              INT32U i = 0;
+   \   00000008   0x2700             MOVS     R7,#+0
+    304              if ((Dst+NByte > MAX_ADDR)||(NByte == 0))  return (ERROR_0);            /*  检查入口参数                */
+   \   0000000A   0x1928             ADDS     R0,R5,R4
+   \   0000000C   0xF5B0 0x0F00      CMP      R0,#+8388608
+   \   00000010   0xD201             BCS.N    ??MX25L1602_RD_0
+   \   00000012   0x2D00             CMP      R5,#+0
+   \   00000014   0xD101             BNE.N    ??MX25L1602_RD_1
+   \                     ??MX25L1602_RD_0: (+1)
+   \   00000016   0x4638             MOV      R0,R7
+   \   00000018   0xBDF2             POP      {R1,R4-R7,PC}
+    305              
+    306              CE_Low();
+   \                     ??MX25L1602_RD_1: (+1)
+   \   0000001A   0x.... 0x....      BL       CE_Low
+    307              Send_Byte(0x0B);                                                      /* 发送读命令                   */
+   \   0000001E   0x200B             MOVS     R0,#+11
+   \   00000020   0x.... 0x....      BL       Send_Byte
+    308              Send_Byte(((Dst & 0xFFFFFF) >> 16));                                  /* 发送地址信息:该地址为3个字节 */
+   \   00000024   0x0C20             LSRS     R0,R4,#+16
+   \   00000026   0xB2C0             UXTB     R0,R0
+   \   00000028   0x.... 0x....      BL       Send_Byte
+    309              Send_Byte(((Dst & 0xFFFF) >> 8));
+   \   0000002C   0x0A20             LSRS     R0,R4,#+8
+   \   0000002E   0xB2C0             UXTB     R0,R0
+   \   00000030   0x.... 0x....      BL       Send_Byte
+    310              Send_Byte(Dst & 0xFF);
+   \   00000034   0x4620             MOV      R0,R4
+   \   00000036   0xB2C0             UXTB     R0,R0
+   \   00000038   0x.... 0x....      BL       Send_Byte
+    311              Send_Byte(0xFF);                                                      /* 发送一个哑字节以读取数据     */
+   \   0000003C   0x20FF             MOVS     R0,#+255
+   \   0000003E   0x.... 0x....      BL       Send_Byte
+    312              for (i = 0; i < NByte; i++) {
+   \   00000042   0xE003             B.N      ??MX25L1602_RD_2
+    313                  RcvBufPt[i] = Get_Byte();
+   \                     ??MX25L1602_RD_3: (+1)
+   \   00000044   0x.... 0x....      BL       Get_Byte
+   \   00000048   0x55B8             STRB     R0,[R7, R6]
+    314              }
+   \   0000004A   0x1C7F             ADDS     R7,R7,#+1
+   \                     ??MX25L1602_RD_2: (+1)
+   \   0000004C   0x42AF             CMP      R7,R5
+   \   0000004E   0xD3F9             BCC.N    ??MX25L1602_RD_3
+    315              CE_High();
+   \   00000050   0x.... 0x....      BL       CE_High
+    316              return (OK);
+   \   00000054   0x2001             MOVS     R0,#+1
+   \   00000056   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    317          }
+    318          
+    319          /*********************************************************************************************************
+    320          ** 函数名称:MX25L1602_RdID
+    321          ** 函数功能:MX25L1602的读ID函数,可选择读ID和读数据操作
+    322          ** 输入参数:
+    323          **          idtype IDType:ID类型。用户可在Jedec_ID,Dev_ID,Manu_ID三者里选择
+    324          **          INT32U* RcvbufPt:存储ID变量的指针
+    325          ** 输出参数:操作成功则返回OK,失败则返回ERROR_0
+    326          ** 特殊说明:若填入的参数不符合要求，则返回ERROR_0
+    327          *********************************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    328          INT8U MX25L1602_RdID(idtype IDType, INT32U* RcvbufPt)
+    329          {
+   \                     MX25L1602_RdID: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   \   00000004   0x460D             MOV      R5,R1
+    330              INT32U temp = 0;
+    331              if (IDType == Jedec_ID) {
+   \   00000006   0x2802             CMP      R0,#+2
+   \   00000008   0xD113             BNE.N    ??MX25L1602_RdID_0
+    332                  CE_Low();
+   \   0000000A   0x.... 0x....      BL       CE_Low
+    333                  Send_Byte(0x9F);                                                    /* 发送读JEDEC ID命令(9Fh)      */
+   \   0000000E   0x209F             MOVS     R0,#+159
+   \   00000010   0x.... 0x....      BL       Send_Byte
+    334                  temp = (temp | Get_Byte()) << 8;                                    /* 接收数据                     */
+   \   00000014   0x.... 0x....      BL       Get_Byte
+   \   00000018   0x0204             LSLS     R4,R0,#+8
+    335                  temp = (temp | Get_Byte()) << 8;
+   \   0000001A   0x.... 0x....      BL       Get_Byte
+   \   0000001E   0x4320             ORRS     R0,R0,R4
+   \   00000020   0x0204             LSLS     R4,R0,#+8
+    336                  temp = (temp | Get_Byte());                                         /* 在本例中,temp的值应为0xBF2541*/
+   \   00000022   0x.... 0x....      BL       Get_Byte
+   \   00000026   0x4304             ORRS     R4,R0,R4
+    337                  CE_High();
+   \   00000028   0x.... 0x....      BL       CE_High
+    338                  *RcvbufPt = temp;
+   \   0000002C   0x602C             STR      R4,[R5, #+0]
+    339                  return (OK);
+   \   0000002E   0x2001             MOVS     R0,#+1
+   \   00000030   0xBD32             POP      {R1,R4,R5,PC}
+    340              }
+    341              
+    342              if ((IDType == Manu_ID) || (IDType == Dev_ID) ) {
+   \                     ??MX25L1602_RdID_0: (+1)
+   \   00000032   0x2C00             CMP      R4,#+0
+   \   00000034   0xD001             BEQ.N    ??MX25L1602_RdID_1
+   \   00000036   0x2801             CMP      R0,#+1
+   \   00000038   0xD115             BNE.N    ??MX25L1602_RdID_2
+    343                  CE_Low();
+   \                     ??MX25L1602_RdID_1: (+1)
+   \   0000003A   0x.... 0x....      BL       CE_Low
+    344                  Send_Byte(0x90);                                                    /* 发送读ID命令 (90h or ABh)    */
+   \   0000003E   0x2090             MOVS     R0,#+144
+   \   00000040   0x.... 0x....      BL       Send_Byte
+    345                  Send_Byte(0x00);                                                    /* 发送地址                     */
+   \   00000044   0x2000             MOVS     R0,#+0
+   \   00000046   0x.... 0x....      BL       Send_Byte
+    346                  Send_Byte(0x00);                                                    /* 发送地址                     */
+   \   0000004A   0x2000             MOVS     R0,#+0
+   \   0000004C   0x.... 0x....      BL       Send_Byte
+    347                  Send_Byte(IDType);                                                  /* 发送地址 - 不是00H就是01H    */
+   \   00000050   0x4620             MOV      R0,R4
+   \   00000052   0x.... 0x....      BL       Send_Byte
+    348                  temp = Get_Byte();                                                  /* 接收获取的数据字节           */
+   \   00000056   0x.... 0x....      BL       Get_Byte
+   \   0000005A   0x4604             MOV      R4,R0
+    349                  CE_High();
+   \   0000005C   0x.... 0x....      BL       CE_High
+    350                  *RcvbufPt = temp;
+   \   00000060   0x602C             STR      R4,[R5, #+0]
+    351                  return (OK);
+   \   00000062   0x2001             MOVS     R0,#+1
+   \   00000064   0xBD32             POP      {R1,R4,R5,PC}
+    352              } else {
+    353                  return (ERROR_0);
+   \                     ??MX25L1602_RdID_2: (+1)
+   \   00000066   0x2000             MOVS     R0,#+0
+   \   00000068   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    354              }
+    355          }
+    356          
+    357          /*********************************************************************************************************
+    358          ** 函数名称:MX25L1602_WR
+    359          ** 函数功能:MX25L1602的写函数，可写1个和多个数据到指定地址
+    360          ** 输入参数:
+    361          **          INT32U Dst：目标地址,范围 0x0 - MAX_ADDR（MAX_ADDR = 0x1FFFFF）
+    362          **          INT8U* SndbufPt:发送缓存区指针
+    363          **          INT32U NByte:要写的数据字节数
+    364          ** 输出参数:操作成功则返回OK,失败则返回ERROR_0
+    365          ** 特殊说明:若某功能下,某一入口参数无效,可在该入口参数处填Invalid，该参数将被忽略
+    366          *********************************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    367          INT8U MX25L1602_WR(INT32U Dst, INT8U* SndbufPt, INT32U NByte)
+    368          {
+   \                     MX25L1602_WR: (+1)
+   \   00000000   0xE92D 0x43F8      PUSH     {R3-R9,LR}
+   \   00000004   0x4604             MOV      R4,R0
+   \   00000006   0x460D             MOV      R5,R1
+   \   00000008   0x4616             MOV      R6,R2
+    369              INT32U temp = 0,i = 0,StatRgVal = 0;
+   \   0000000A   0x2700             MOVS     R7,#+0
+    370              if (( (Dst+NByte-1 > MAX_ADDR)||(NByte == 0) )) {
+   \   0000000C   0x1930             ADDS     R0,R6,R4
+   \   0000000E   0x1E40             SUBS     R0,R0,#+1
+   \   00000010   0xF5B0 0x0F00      CMP      R0,#+8388608
+   \   00000014   0xD201             BCS.N    ??MX25L1602_WR_0
+   \   00000016   0x2E00             CMP      R6,#+0
+   \   00000018   0xD101             BNE.N    ??MX25L1602_WR_1
+    371                  return (ERROR_0);                                                     /*  检查入口参数                */
+   \                     ??MX25L1602_WR_0: (+1)
+   \   0000001A   0x4638             MOV      R0,R7
+   \   0000001C   0xE06D             B.N      ??MX25L1602_WR_2
+    372              }
+    373              CE_Low();
+   \                     ??MX25L1602_WR_1: (+1)
+   \   0000001E   0x.... 0x....      BL       CE_Low
+    374              Send_Byte(0x05);                                                      /* 发送读状态寄存器命令         */
+   \   00000022   0x2005             MOVS     R0,#+5
+   \   00000024   0x.... 0x....      BL       Send_Byte
+    375              temp = Get_Byte();                                                    /* 保存读得的状态寄存器值       */
+   \   00000028   0x.... 0x....      BL       Get_Byte
+   \   0000002C   0x4680             MOV      R8,R0
+    376              CE_High();
+   \   0000002E   0x.... 0x....      BL       CE_High
+    377              
+    378              CE_Low();
+   \   00000032   0x.... 0x....      BL       CE_Low
+    379              Send_Byte(0x50);                                                      /* 使状态寄存器可写             */
+   \   00000036   0x2050             MOVS     R0,#+80
+   \   00000038   0x.... 0x....      BL       Send_Byte
+    380              //         Send_Byte(0x06);                                                    /* 发送写使能命令               */
+    381              CE_High();
+   \   0000003C   0x.... 0x....      BL       CE_High
+    382              CE_Low();
+   \   00000040   0x.... 0x....      BL       CE_Low
+    383              Send_Byte(0x01);                                                      /* 发送写状态寄存器指令         */
+   \   00000044   0x2001             MOVS     R0,#+1
+   \   00000046   0x.... 0x....      BL       Send_Byte
+    384              Send_Byte(0);                                                         /* 清0BPx位，使Flash芯片全区可写*/
+   \   0000004A   0x4638             MOV      R0,R7
+   \   0000004C   0x.... 0x....      BL       Send_Byte
+    385              CE_High();
+   \   00000050   0x.... 0x....      BL       CE_High
+    386              
+    387              for(i = 0; i < NByte; i++) {
+   \   00000054   0xE036             B.N      ??MX25L1602_WR_3
+    388                  ////新增20131126  跨块擦除扇
+    389                  //		printfcom0(" %d,%d, ",Dst+i,Dst+i % 4096);
+    390          		if((Dst+i) % 4096 == 0)
+   \                     ??MX25L1602_WR_4: (+1)
+   \   00000056   0xEB07 0x0904      ADD      R9,R7,R4
+   \   0000005A   0xEA5F 0x5009      LSLS     R0,R9,#+20
+   \   0000005E   0xD104             BNE.N    ??MX25L1602_WR_5
+    391          		{
+    392          			MX25L1602_Erase((Dst+i)/4096,(Dst+i)/4096);
+   \   00000060   0xEA4F 0x3019      LSR      R0,R9,#+12
+   \   00000064   0x4601             MOV      R1,R0
+   \   00000066   0x.... 0x....      BL       MX25L1602_Erase
+    393          			//printfcom0("\r\n EraseEraseEraseErase");
+    394          		}
+    395                  //////		
+    396                  
+    397                  CE_Low();
+   \                     ??MX25L1602_WR_5: (+1)
+   \   0000006A   0x.... 0x....      BL       CE_Low
+    398                  Send_Byte(0x06);                                                    /* 发送写使能命令               */
+   \   0000006E   0x2006             MOVS     R0,#+6
+   \   00000070   0x.... 0x....      BL       Send_Byte
+    399                  CE_High();
+   \   00000074   0x.... 0x....      BL       CE_High
+    400                  
+    401                  CE_Low();
+   \   00000078   0x.... 0x....      BL       CE_Low
+    402                  Send_Byte(0x02);                                                    /* 发送字节数据烧写命令         */
+   \   0000007C   0x2002             MOVS     R0,#+2
+   \   0000007E   0x.... 0x....      BL       Send_Byte
+    403                  Send_Byte((((Dst+i) & 0xFFFFFF) >> 16));                            /* 发送3个字节的地址信息        */
+   \   00000082   0xEA4F 0x4019      LSR      R0,R9,#+16
+   \   00000086   0xB2C0             UXTB     R0,R0
+   \   00000088   0x.... 0x....      BL       Send_Byte
+    404                  Send_Byte((((Dst+i) & 0xFFFF) >> 8));
+   \   0000008C   0xEA4F 0x2019      LSR      R0,R9,#+8
+   \   00000090   0xB2C0             UXTB     R0,R0
+   \   00000092   0x.... 0x....      BL       Send_Byte
+    405                  Send_Byte((Dst+i) & 0xFF);
+   \   00000096   0x1938             ADDS     R0,R7,R4
+   \   00000098   0xB2C0             UXTB     R0,R0
+   \   0000009A   0x.... 0x....      BL       Send_Byte
+    406                  Send_Byte(SndbufPt[i]);                                             /* 发送被烧写的数据             */
+   \   0000009E   0x5D78             LDRB     R0,[R7, R5]
+   \   000000A0   0x.... 0x....      BL       Send_Byte
+    407                  CE_High();
+   \   000000A4   0x.... 0x....      BL       CE_High
+    408                  
+    409                  do {
+    410                      CE_Low();
+   \                     ??MX25L1602_WR_6: (+1)
+   \   000000A8   0x.... 0x....      BL       CE_Low
+    411                      Send_Byte(0x05);                                                  /* 发送读状态寄存器命令         */
+   \   000000AC   0x2005             MOVS     R0,#+5
+   \   000000AE   0x.... 0x....      BL       Send_Byte
+    412                      StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值       */
+   \   000000B2   0x.... 0x....      BL       Get_Byte
+   \   000000B6   0x4681             MOV      R9,R0
+    413                      CE_High();
+   \   000000B8   0x.... 0x....      BL       CE_High
+    414                  } while (StatRgVal == 0x03);                                        /* 一直等待，直到芯片空闲       */
+   \   000000BC   0xF1B9 0x0F03      CMP      R9,#+3
+   \   000000C0   0xD0F2             BEQ.N    ??MX25L1602_WR_6
+    415              }
+   \   000000C2   0x1C7F             ADDS     R7,R7,#+1
+   \                     ??MX25L1602_WR_3: (+1)
+   \   000000C4   0x42B7             CMP      R7,R6
+   \   000000C6   0xD3C6             BCC.N    ??MX25L1602_WR_4
+    416              
+    417              CE_Low();
+   \   000000C8   0x.... 0x....      BL       CE_Low
+    418              Send_Byte(0x06);                                                      /* 发送写使能命令               */
+   \   000000CC   0x2006             MOVS     R0,#+6
+   \   000000CE   0x.... 0x....      BL       Send_Byte
+    419              CE_High();
+   \   000000D2   0x.... 0x....      BL       CE_High
+    420              
+    421              CE_Low();
+   \   000000D6   0x.... 0x....      BL       CE_Low
+    422              Send_Byte(0x50);                                                      /* 使状态寄存器可写             */
+   \   000000DA   0x2050             MOVS     R0,#+80
+   \   000000DC   0x.... 0x....      BL       Send_Byte
+    423              CE_High();
+   \   000000E0   0x.... 0x....      BL       CE_High
+    424              CE_Low();
+   \   000000E4   0x.... 0x....      BL       CE_Low
+    425              Send_Byte(0x01);                                                      /* 发送写状态寄存器指令         */
+   \   000000E8   0x2001             MOVS     R0,#+1
+   \   000000EA   0x.... 0x....      BL       Send_Byte
+    426              Send_Byte(temp);                                                      /* 恢复状态寄存器设置信息       */
+   \   000000EE   0x4640             MOV      R0,R8
+   \   000000F0   0x.... 0x....      BL       Send_Byte
+    427              CE_High();
+   \   000000F4   0x.... 0x....      BL       CE_High
+    428              
+    429              return (OK);
+   \   000000F8   0x2001             MOVS     R0,#+1
+   \                     ??MX25L1602_WR_2: (+1)
+   \   000000FA   0xE8BD 0x83F2      POP      {R1,R4-R9,PC}    ;; return
+    430          }
+    431          
+    432          /*********************************************************************************************************
+    433          ** 函数名称:MX25L1602_Erase
+    434          ** 函数功能:根据指定的扇区号选取最高效的算法擦除
+    435          ** 输入参数:
+    436          **          INT32U sec1：起始扇区号,范围(0~499)
+    437          **          INT32U sec2：终止扇区号,范围(0~499)
+    438          ** 输出参数:操作成功则返回OK,失败则返回ERROR_0
+    439          *********************************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    440          INT8U MX25L1602_Erase(INT32U sec1, INT32U sec2)
+    441          {
+   \                     MX25L1602_Erase: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   \   00000004   0x460E             MOV      R6,R1
+    442              INT8U  temp1 = 0,temp2 = 0,StatRgVal = 0;
+    443              INT32U SecnHdAddr = 0;
+    444              INT32U no_SecsToEr = 0;                                               /* 要擦除的扇区数目             */
+    445              INT32U CurSecToEr = 0;                                                /* 当前要擦除的扇区号           */
+    446              
+    447              /*
+    448              *  检查入口参数
+    449              */
+    450              if ((sec1 > SEC_MAX)||(sec2 > SEC_MAX)) {
+   \   00000006   0xF640 0x0001      MOVW     R0,#+2049
+   \   0000000A   0x4284             CMP      R4,R0
+   \   0000000C   0xD201             BCS.N    ??MX25L1602_Erase_0
+   \   0000000E   0x4286             CMP      R6,R0
+   \   00000010   0xD301             BCC.N    ??MX25L1602_Erase_1
+    451                  return (ERROR_0);
+   \                     ??MX25L1602_Erase_0: (+1)
+   \   00000012   0x2000             MOVS     R0,#+0
+   \   00000014   0xBDF2             POP      {R1,R4-R7,PC}
+    452              }
+    453              
+    454              CE_Low();
+   \                     ??MX25L1602_Erase_1: (+1)
+   \   00000016   0x.... 0x....      BL       CE_Low
+    455              Send_Byte(0x05);                                                     /* 发送读状态寄存器命令          */
+   \   0000001A   0x2005             MOVS     R0,#+5
+   \   0000001C   0x.... 0x....      BL       Send_Byte
+    456              temp1 = Get_Byte();                                                  /* 保存读得的状态寄存器值        */
+   \   00000020   0x.... 0x....      BL       Get_Byte
+   \   00000024   0x4605             MOV      R5,R0
+    457              CE_High();
+   \   00000026   0x.... 0x....      BL       CE_High
+    458              
+    459              CE_Low();
+   \   0000002A   0x.... 0x....      BL       CE_Low
+    460              //  Send_Byte(0x50);                                                     /* 使状态寄存器可写              */
+    461              
+    462              Send_Byte(0x06);
+   \   0000002E   0x2006             MOVS     R0,#+6
+   \   00000030   0x.... 0x....      BL       Send_Byte
+    463              CE_High();
+   \   00000034   0x.... 0x....      BL       CE_High
+    464              
+    465              CE_Low();
+   \   00000038   0x.... 0x....      BL       CE_Low
+    466              Send_Byte(0x01);                                                     /* 发送写状态寄存器指令          */
+   \   0000003C   0x2001             MOVS     R0,#+1
+   \   0000003E   0x.... 0x....      BL       Send_Byte
+    467              Send_Byte(0);                                                        /* 清0BPx位，使Flash芯片全区可写 */
+   \   00000042   0x2000             MOVS     R0,#+0
+   \   00000044   0x.... 0x....      BL       Send_Byte
+    468              CE_High();
+   \   00000048   0x.... 0x....      BL       CE_High
+    469              
+    470              CE_Low();
+   \   0000004C   0x.... 0x....      BL       CE_Low
+    471              Send_Byte(0x06);                                                      /* 发送写使能命令               */
+   \   00000050   0x2006             MOVS     R0,#+6
+   \   00000052   0x.... 0x....      BL       Send_Byte
+    472              CE_High();
+   \   00000056   0x.... 0x....      BL       CE_High
+    473              
+    474              /*
+    475              * 如果用户输入的起始扇区号大于终止扇区号，则在内部作出调整
+    476              */
+    477              if (sec1 > sec2)
+   \   0000005A   0x42A6             CMP      R6,R4
+   \   0000005C   0xD203             BCS.N    ??MX25L1602_Erase_2
+    478              {
+    479                  temp2 = sec1;
+   \   0000005E   0x4620             MOV      R0,R4
+    480                  sec1  = sec2;
+   \   00000060   0x4634             MOV      R4,R6
+    481                  sec2  = temp2;
+   \   00000062   0x4606             MOV      R6,R0
+   \   00000064   0xB2F6             UXTB     R6,R6
+    482              }
+    483              /*
+    484              * 若起止扇区号相等则擦除单个扇区
+    485              */
+    486              if (sec1 == sec2)
+   \                     ??MX25L1602_Erase_2: (+1)
+   \   00000066   0x42B4             CMP      R4,R6
+   \   00000068   0xD120             BNE.N    ??MX25L1602_Erase_3
+    487              {
+    488                  SecnHdAddr = SEC_SIZE * sec1;                                       /* 计算扇区的起始地址           */
+   \   0000006A   0x0326             LSLS     R6,R4,#+12
+    489                  CE_Low();
+   \   0000006C   0x.... 0x....      BL       CE_Low
+    490                  Send_Byte(0x20);                                                    /* 发送扇区擦除指令             */
+   \   00000070   0x2020             MOVS     R0,#+32
+   \   00000072   0x.... 0x....      BL       Send_Byte
+    491                  Send_Byte(((SecnHdAddr & 0xFFFFFF) >> 16));                         /* 发送3个字节的地址信息        */
+   \   00000076   0x0C30             LSRS     R0,R6,#+16
+   \   00000078   0xB2C0             UXTB     R0,R0
+   \   0000007A   0x.... 0x....      BL       Send_Byte
+    492                  Send_Byte(((SecnHdAddr & 0xFFFF) >> 8));
+   \   0000007E   0x0A30             LSRS     R0,R6,#+8
+   \   00000080   0xB2C0             UXTB     R0,R0
+   \   00000082   0x.... 0x....      BL       Send_Byte
+    493                  Send_Byte(SecnHdAddr & 0xFF);
+   \   00000086   0x4630             MOV      R0,R6
+   \   00000088   0xB2C0             UXTB     R0,R0
+   \   0000008A   0x.... 0x....      BL       Send_Byte
+    494                  CE_High();
+   \   0000008E   0x.... 0x....      BL       CE_High
+    495                  do {
+    496                      CE_Low();
+   \                     ??MX25L1602_Erase_4: (+1)
+   \   00000092   0x.... 0x....      BL       CE_Low
+    497                      Send_Byte(0x05);                                                  /* 发送读状态寄存器命令        */
+   \   00000096   0x2005             MOVS     R0,#+5
+   \   00000098   0x.... 0x....      BL       Send_Byte
+    498                      StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值      */
+   \   0000009C   0x.... 0x....      BL       Get_Byte
+   \   000000A0   0x4606             MOV      R6,R0
+    499                      CE_High();
+   \   000000A2   0x.... 0x....      BL       CE_High
+    500                  } while (StatRgVal & 0x01);                                         /* 一直等待，直到芯片空闲      */
+   \   000000A6   0x07F0             LSLS     R0,R6,#+31
+   \   000000A8   0xD4F3             BMI.N    ??MX25L1602_Erase_4
+   \   000000AA   0xE016             B.N      ??MX25L1602_Erase_5
+    501                  return (OK);
+    502              }
+    503              
+    504              /*
+    505              * 根据起始扇区和终止扇区间距调用最快速的擦除功能
+    506              */
+    507              
+    508              if (sec2 - sec1 == SEC_MAX) {
+   \                     ??MX25L1602_Erase_3: (+1)
+   \   000000AC   0x1B30             SUBS     R0,R6,R4
+   \   000000AE   0xF5B0 0x6F00      CMP      R0,#+2048
+   \   000000B2   0xD114             BNE.N    ??MX25L1602_Erase_6
+    509                  CE_Low();
+   \   000000B4   0x.... 0x....      BL       CE_Low
+    510                  Send_Byte(0x60);                                                    /* 发送芯片擦除指令(60h or C7h) */
+   \   000000B8   0x2060             MOVS     R0,#+96
+   \   000000BA   0x.... 0x....      BL       Send_Byte
+    511                  CE_High();
+   \   000000BE   0x.... 0x....      BL       CE_High
+    512                  do {
+    513                      CE_Low();
+   \                     ??MX25L1602_Erase_7: (+1)
+   \   000000C2   0x.... 0x....      BL       CE_Low
+    514                      Send_Byte(0x05);                                                  /* 发送读状态寄存器命令         */
+   \   000000C6   0x2005             MOVS     R0,#+5
+   \   000000C8   0x.... 0x....      BL       Send_Byte
+    515                      StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值       */
+   \   000000CC   0x.... 0x....      BL       Get_Byte
+   \   000000D0   0x4606             MOV      R6,R0
+    516                      CE_High();
+   \   000000D2   0x.... 0x....      BL       CE_High
+    517                  } while (StatRgVal & 0x01);                                         /* 一直等待，直到芯片空闲       */
+   \   000000D6   0x07F0             LSLS     R0,R6,#+31
+   \   000000D8   0xD4F3             BMI.N    ??MX25L1602_Erase_7
+    518                  return (OK);
+   \                     ??MX25L1602_Erase_5: (+1)
+   \   000000DA   0x2001             MOVS     R0,#+1
+   \   000000DC   0xBDF2             POP      {R1,R4-R7,PC}
+    519              }
+    520              
+    521              no_SecsToEr = sec2 - sec1 +1;                                         /* 获取要擦除的扇区数目         */
+   \                     ??MX25L1602_Erase_6: (+1)
+   \   000000DE   0x1C47             ADDS     R7,R0,#+1
+    522              CurSecToEr  = sec1;                                                   /* 从起始扇区开始擦除           */
+   \   000000E0   0xE028             B.N      ??MX25L1602_Erase_8
+    523              
+    524              /*
+    525              * 若两个扇区之间的间隔够大，则采取16扇区擦除算法
+    526              */
+    527              while (no_SecsToEr >= 16)
+    528              {
+    529                  CE_Low();
+   \                     ??MX25L1602_Erase_9: (+1)
+   \   000000E2   0x.... 0x....      BL       CE_Low
+    530                  Send_Byte(0x06);                                                     /* 发送允许写命令              */
+   \   000000E6   0x2006             MOVS     R0,#+6
+   \   000000E8   0x.... 0x....      BL       Send_Byte
+    531                  CE_High();
+   \   000000EC   0x.... 0x....      BL       CE_High
+    532                  
+    533                  SecnHdAddr = SEC_SIZE * CurSecToEr;                                  /* 计算扇区的起始地址          */
+   \   000000F0   0x0326             LSLS     R6,R4,#+12
+    534                  CE_Low();
+   \   000000F2   0x.... 0x....      BL       CE_Low
+    535                  Send_Byte(0xD8);                                                     /* 发送64KB块擦除指令          */
+   \   000000F6   0x20D8             MOVS     R0,#+216
+   \   000000F8   0x.... 0x....      BL       Send_Byte
+    536                  Send_Byte(((SecnHdAddr & 0xFFFFFF) >> 16));                          /* 发送3个字节的地址信息       */
+   \   000000FC   0x0C30             LSRS     R0,R6,#+16
+   \   000000FE   0xB2C0             UXTB     R0,R0
+   \   00000100   0x.... 0x....      BL       Send_Byte
+    537                  Send_Byte(((SecnHdAddr & 0xFFFF) >> 8));
+   \   00000104   0x0A30             LSRS     R0,R6,#+8
+   \   00000106   0xB2C0             UXTB     R0,R0
+   \   00000108   0x.... 0x....      BL       Send_Byte
+    538                  Send_Byte(SecnHdAddr & 0xFF);
+   \   0000010C   0x4630             MOV      R0,R6
+   \   0000010E   0xB2C0             UXTB     R0,R0
+   \   00000110   0x.... 0x....      BL       Send_Byte
+    539                  CE_High();
+   \   00000114   0x.... 0x....      BL       CE_High
+    540                  do {
+    541                      CE_Low();
+   \                     ??MX25L1602_Erase_10: (+1)
+   \   00000118   0x.... 0x....      BL       CE_Low
+    542                      Send_Byte(0x05);                                                  /* 发送读状态寄存器命令        */
+   \   0000011C   0x2005             MOVS     R0,#+5
+   \   0000011E   0x.... 0x....      BL       Send_Byte
+    543                      StatRgVal = Get_Byte();                                           /* 保存读得的状态寄存器值      */
+   \   00000122   0x.... 0x....      BL       Get_Byte
+   \   00000126   0x4606             MOV      R6,R0
+    544                      CE_High();
+   \   00000128   0x.... 0x....      BL       CE_High
+    545                  } while (StatRgVal & 0x01);                                         /* 一直等待，直到芯片空闲      */
+   \   0000012C   0x07F0             LSLS     R0,R6,#+31
+   \   0000012E   0xD4F3             BMI.N    ??MX25L1602_Erase_10
+    546                  CurSecToEr  += 16;                                                  /* 计算擦除了16个扇区后和擦除区*/
+   \   00000130   0x3410             ADDS     R4,R4,#+16
+    547                  /* 域相邻的待擦除扇区号        */
+    548                  no_SecsToEr -=  16;                                                 /* 对需擦除的扇区总数作出调整  */
+   \   00000132   0x3F10             SUBS     R7,R7,#+16
+    549              }
+   \                     ??MX25L1602_Erase_8: (+1)
+   \   00000134   0x2F10             CMP      R7,#+16
+   \   00000136   0xD2D4             BCS.N    ??MX25L1602_Erase_9
+    550              
+    551              /*
+    552              * 采用扇区擦除算法擦除剩余的扇区
+    553              */
+    554              while (no_SecsToEr >= 1) {
+   \                     ??MX25L1602_Erase_11: (+1)
+   \   00000138   0x2F00             CMP      R7,#+0
+   \   0000013A   0xD029             BEQ.N    ??MX25L1602_Erase_12
+    555                  CE_Low();
+   \   0000013C   0x.... 0x....      BL       CE_Low
+    556                  Send_Byte(0x06);                                                   /* 发送允许写命令              */
+   \   00000140   0x2006             MOVS     R0,#+6
+   \   00000142   0x.... 0x....      BL       Send_Byte
+    557                  CE_High();
+   \   00000146   0x.... 0x....      BL       CE_High
+    558                  
+    559                  SecnHdAddr = SEC_SIZE * CurSecToEr;                                /* 计算扇区的起始地址          */
+   \   0000014A   0x0326             LSLS     R6,R4,#+12
+    560                  CE_Low();
+   \   0000014C   0x.... 0x....      BL       CE_Low
+    561                  Send_Byte(0x20);                                                   /* 发送扇区擦除指令            */
+   \   00000150   0x2020             MOVS     R0,#+32
+   \   00000152   0x.... 0x....      BL       Send_Byte
+    562                  Send_Byte(((SecnHdAddr & 0xFFFFFF) >> 16));                        /* 发送3个字节的地址信息       */
+   \   00000156   0x0C30             LSRS     R0,R6,#+16
+   \   00000158   0xB2C0             UXTB     R0,R0
+   \   0000015A   0x.... 0x....      BL       Send_Byte
+    563                  Send_Byte(((SecnHdAddr & 0xFFFF) >> 8));
+   \   0000015E   0x0A30             LSRS     R0,R6,#+8
+   \   00000160   0xB2C0             UXTB     R0,R0
+   \   00000162   0x.... 0x....      BL       Send_Byte
+    564                  Send_Byte(SecnHdAddr & 0xFF);
+   \   00000166   0x4630             MOV      R0,R6
+   \   00000168   0xB2C0             UXTB     R0,R0
+   \   0000016A   0x.... 0x....      BL       Send_Byte
+    565                  CE_High();
+   \   0000016E   0x.... 0x....      BL       CE_High
+    566                  do {
+    567                      CE_Low();
+   \                     ??MX25L1602_Erase_13: (+1)
+   \   00000172   0x.... 0x....      BL       CE_Low
+    568                      Send_Byte(0x05);                                                 /* 发送读状态寄存器命令        */
+   \   00000176   0x2005             MOVS     R0,#+5
+   \   00000178   0x.... 0x....      BL       Send_Byte
+    569                      StatRgVal = Get_Byte();                                          /* 保存读得的状态寄存器值      */
+   \   0000017C   0x.... 0x....      BL       Get_Byte
+   \   00000180   0x4606             MOV      R6,R0
+    570                      CE_High();
+   \   00000182   0x.... 0x....      BL       CE_High
+    571                  } while (StatRgVal & 0x01 );                                       /* 一直等待，直到芯片空闲      */
+   \   00000186   0x07F0             LSLS     R0,R6,#+31
+   \   00000188   0xD4F3             BMI.N    ??MX25L1602_Erase_13
+    572                  CurSecToEr  += 1;
+   \   0000018A   0x1C64             ADDS     R4,R4,#+1
+    573                  no_SecsToEr -=  1;
+   \   0000018C   0x1E7F             SUBS     R7,R7,#+1
+   \   0000018E   0xE7D3             B.N      ??MX25L1602_Erase_11
+    574              }
+    575              /*
+    576              * 擦除结束,恢复状态寄存器信息
+    577              */
+    578              CE_Low();
+   \                     ??MX25L1602_Erase_12: (+1)
+   \   00000190   0x.... 0x....      BL       CE_Low
+    579              Send_Byte(0x06);                                                    /* 发送写使能命令               */
+   \   00000194   0x2006             MOVS     R0,#+6
+   \   00000196   0x.... 0x....      BL       Send_Byte
+    580              CE_High();
+   \   0000019A   0x.... 0x....      BL       CE_High
+    581              
+    582              CE_Low();
+   \   0000019E   0x.... 0x....      BL       CE_Low
+    583              Send_Byte(0x50);                                                    /* 使状态寄存器可写             */
+   \   000001A2   0x2050             MOVS     R0,#+80
+   \   000001A4   0x.... 0x....      BL       Send_Byte
+    584              CE_High();
+   \   000001A8   0x.... 0x....      BL       CE_High
+    585              CE_Low();
+   \   000001AC   0x.... 0x....      BL       CE_Low
+    586              Send_Byte(0x01);                                                    /* 发送写状态寄存器指令         */
+   \   000001B0   0x2001             MOVS     R0,#+1
+   \   000001B2   0x.... 0x....      BL       Send_Byte
+    587              Send_Byte(temp1);                                                   /* 恢复状态寄存器设置信息       */
+   \   000001B6   0x4628             MOV      R0,R5
+   \   000001B8   0x.... 0x....      BL       Send_Byte
+    588              CE_High();
+   \   000001BC   0x.... 0x....      BL       CE_High
+    589              return (OK);
+   \   000001C0   0x2001             MOVS     R0,#+1
+   \   000001C2   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    590          }
+    591          
+    592          #define		FLSH_ERR  36
+
+   \                                 In section .data, align 1
+    593          uint8	flsherrflg = 0xff;
+   \                     flsherrflg:
+   \   00000000   0xFF               DC8 255
+
+   \                                 In section .text, align 2, keep-with-next
+    594          uint8 JudgeFlashIDErrFlg(void)   
+    595          {
+   \                     JudgeFlashIDErrFlg: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    596          	uint32_t 	GulChipID = 0;
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x9000             STR      R0,[SP, #+0]
+    597              
+    598          	//if(GetSysTime() %100*30==1 || GetSysTime() < 60*100)
+    599          	{
+    600          	    MX25L1602_RdID(Jedec_ID, (INT32U*)&GulChipID);		                        /* 单步运行到此处时,在IAR里查看 */
+   \   00000006   0x4669             MOV      R1,SP
+   \   00000008   0x2002             MOVS     R0,#+2
+   \   0000000A   0x.... 0x....      BL       MX25L1602_RdID
+    601                  
+    602          	    GulChipID &= ~0xFF000000;                                           /* 仅保留低24位数据             */            
+    603          	    if (GulChipID != 0x00C22017)//c22015 
+   \   0000000E   0x....             LDR.N    R0,??DataTable0
+   \   00000010   0x9900             LDR      R1,[SP, #+0]
+   \   00000012   0x0209             LSLS     R1,R1,#+8
+   \   00000014   0x0A09             LSRS     R1,R1,#+8
+   \   00000016   0x....             LDR.N    R2,??DataTable0_1  ;; 0xc22017
+   \   00000018   0x4291             CMP      R1,R2
+   \   0000001A   0xD002             BEQ.N    ??JudgeFlashIDErrFlg_0
+    604          		{
+    605          			flsherrflg = FLSH_ERR;
+   \   0000001C   0x2124             MOVS     R1,#+36
+   \   0000001E   0x7001             STRB     R1,[R0, #+0]
+   \   00000020   0xE001             B.N      ??JudgeFlashIDErrFlg_1
+    606          	   	}
+    607          		else
+    608          		{
+    609          			flsherrflg = 0xff;
+   \                     ??JudgeFlashIDErrFlg_0: (+1)
+   \   00000022   0x21FF             MOVS     R1,#+255
+   \   00000024   0x7001             STRB     R1,[R0, #+0]
+    610          		}
+    611          	}
+    612              
+    613          	return 	flsherrflg;
+   \                     ??JudgeFlashIDErrFlg_1: (+1)
+   \   00000026   0x7800             LDRB     R0,[R0, #+0]
+   \   00000028   0xBD02             POP      {R1,PC}          ;; return
+    614          }
+    615          
+
+   \                                 In section .text, align 2, keep-with-next
+    616          uint8 ReadFlsh(uint32 Addr,uint8 *buf,uint32 Len)
+    617          {	
+   \                     ReadFlsh: (+1)
+   \   00000000   0x4613             MOV      R3,R2
+    618          	return	MX25L1602_RD(Addr, Len,(INT8U* )buf);
+   \   00000002   0x460A             MOV      R2,R1
+   \   00000004   0x4619             MOV      R1,R3
+   \   00000006   0x....             B.N      MX25L1602_RD
+    619          }
+    620          
+
+   \                                 In section .text, align 2, keep-with-next
+    621          INT8U	WriteFlsh(INT32U Dst, uint8 * sFlshRec, INT32U NByte)
+    622          {
+    623          	return	MX25L1602_WR(Dst,(INT8U*)sFlshRec,NByte);
+   \                     WriteFlsh: (+1)
+   \   00000000   0x....             B.N      MX25L1602_WR
+    624          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0x........         DC32     flsherrflg
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_1:
+   \   00000000   0x00C22017         DC32     0xc22017
+    625          
+    626          
+    627          //uint8   testbuf[256];
+    628          //
+    629          //void    TestFlsh(void)
+    630          //{
+    631          //    
+    632          //    for(uint16 i = 0; i < 256; i++)
+    633          //    {
+    634          //        testbuf[i] = i;
+    635          //    }
+    636          //    
+    637          //    WriteFlsh(0,testbuf,sizeof(testbuf));
+    638          //    ReadFlsh(0,testbuf,sizeof(testbuf));
+    639          //    return;
+    640          //
+    641          //}
+    642          
+    643          
+    644          
+    645          /*********************************************************************************************************
+    646          ** End Of File
+    647          *********************************************************************************************************/
+    648          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   CE_High
+         0   -> WriteSoftSpiCSF
+       0   CE_Low
+         0   -> WriteSoftSpiCSF
+       0   Get_Byte
+         0   -> RecByte_SPIF
+       8   InitFlashIO
+         0   -> GPIO_PinselConfig
+         8   -> GPIO_PinselConfig
+       8   JudgeFlashIDErrFlg
+         8   -> MX25L1602_RdID
+      24   MX25L1602_Erase
+        24   -> CE_High
+        24   -> CE_Low
+        24   -> Get_Byte
+        24   -> Send_Byte
+      24   MX25L1602_RD
+        24   -> CE_High
+        24   -> CE_Low
+        24   -> Get_Byte
+        24   -> Send_Byte
+      16   MX25L1602_RdID
+        16   -> CE_High
+        16   -> CE_Low
+        16   -> Get_Byte
+        16   -> Send_Byte
+      32   MX25L1602_WR
+        32   -> CE_High
+        32   -> CE_Low
+        32   -> Get_Byte
+        32   -> MX25L1602_Erase
+        32   -> Send_Byte
+       0   ReadFlsh
+         0   -> MX25L1602_RD
+       8   ReadMISOF
+         8   -> GPIO_ReadIoVal
+         8   -> nop
+       8   ReadMOSIF
+         8   -> GPIO_ReadIoVal
+         8   -> nop
+       8   ReadSCKF
+         8   -> GPIO_ReadIoVal
+         8   -> nop
+       0   RecByte_SPIF
+         0   -> SendOrRecByte_SPIF
+       0   SPIInit
+       0   SendByte_SPIF
+         0   -> SendOrRecByte_SPIF
+      16   SendOrRecByte_SPIF
+        16   -> ReadMISOF
+        16   -> WriteMOSIF
+        16   -> WriteSCKF
+       0   Send_Byte
+         0   -> SendByte_SPIF
+       0   WriteFlsh
+         0   -> MX25L1602_WR
+       8   WriteMISOF
+         8   -> GPIO_SetOrClearValue
+         0   -> nop
+       8   WriteMOSIF
+         8   -> GPIO_SetOrClearValue
+         0   -> nop
+       8   WriteSCKF
+         8   -> GPIO_SetOrClearValue
+         0   -> nop
+       8   WriteSoftSpiCSF
+         8   -> GPIO_SetOrClearValue
+         0   -> nop
+       0   nop
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+       4  ??DataTable0_1
+       4  CE_High
+       4  CE_Low
+       2  Get_Byte
+      62  InitFlashIO
+      42  JudgeFlashIDErrFlg
+     452  MX25L1602_Erase
+      88  MX25L1602_RD
+     106  MX25L1602_RdID
+     254  MX25L1602_WR
+       8  ReadFlsh
+      18  ReadMISOF
+      18  ReadMOSIF
+      18  ReadSCKF
+       4  RecByte_SPIF
+       2  SPIInit
+       2  SendByte_SPIF
+      70  SendOrRecByte_SPIF
+       2  Send_Byte
+       2  WriteFlsh
+      30  WriteMISOF
+      30  WriteMOSIF
+      30  WriteSCKF
+      30  WriteSoftSpiCSF
+       1  flsherrflg
+      14  nop
+
+ 
+     1 byte  in section .data
+ 1 300 bytes in section .text
+ 
+ 1 300 bytes of CODE memory
+     1 byte  of DATA memory
+
+Errors: none
+Warnings: none

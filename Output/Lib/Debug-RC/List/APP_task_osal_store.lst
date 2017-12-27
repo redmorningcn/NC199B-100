@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:28
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  16:56:40
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -448,148 +448,217 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
     240          void    BSP_StoreInit(void)
     241          {
    \                     BSP_StoreInit: (+1)
-   \   00000000   0xB510             PUSH     {R4,LR}
-    242          	InitFlashIO();              //初始化flash
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+    242              uint16 crc16;
+    243              
+    244          	InitFlashIO();              //初始化flash
    \   00000002   0x.... 0x....      BL       InitFlashIO
-    243              //SPI_FLASH_Init();         //初始化flash
-    244              JudgeFlashIDErrFlg();       //flash测试
+    245              //SPI_FLASH_Init();         //初始化flash
+    246              JudgeFlashIDErrFlg();       //flash测试
    \   00000006   0x.... 0x....      BL       JudgeFlashIDErrFlg
-    245              
-    246              GPIO_Fram_Init();           //初始化fram
-   \   0000000A   0x.... 0x....      BL       GPIO_Fram_Init
     247              
-    248              InitDS3231();               //初始化时钟
+    248              GPIO_Fram_Init();           //初始化fram
+   \   0000000A   0x.... 0x....      BL       GPIO_Fram_Init
+    249              
+    250              InitDS3231();               //初始化时钟
    \   0000000E   0x.... 0x....      BL       InitDS3231
-    249                  
-    250                                          //读Ctrl 
-    251              FRAM_ReadRecNumMgr((stcRecNumMgr  *)&Ctrl.Para.dat.sRecNumMgr);         //读记录号
+    251              
+    252              //读Ctrl 
+    253              FRAM_ReadRecNumMgr((stcRecNumMgr  *)&Ctrl.Para.dat.sRecNumMgr);         //读记录号
    \   00000012   0x....             LDR.N    R4,??DataTable2
    \   00000014   0x1D20             ADDS     R0,R4,#+4
    \   00000016   0x.... 0x....      BL       FRAM_ReadRecNumMgr
-    252              FRAM_ReadProductInfo((stcProductInfo  *)&Ctrl.Para.dat.sProductInfo);   //读产品编号
+    254              FRAM_ReadProductInfo((stcProductInfo  *)&Ctrl.Para.dat.sProductInfo);   //读产品编号
    \   0000001A   0xF104 0x0014      ADD      R0,R4,#+20
    \   0000001E   0x.... 0x....      BL       FRAM_ReadProductInfo
-    253              FRAM_ReadCurRecord((stcFlshRec  *)&Ctrl.sRec);                          //读当前记录
+    255              FRAM_ReadCurRecord((stcFlshRec  *)&Ctrl.sRec);                          //读当前记录
    \   00000022   0xF504 0x7080      ADD      R0,R4,#+256
    \   00000026   0x.... 0x....      BL       FRAM_ReadCurRecord
-    254              FRAM_ReadAirPara((stcAirPara  *)&Ctrl.Para.dat.sAirPara);               //读计算参数
-   \   0000002A   0xF104 0x0020      ADD      R0,R4,#+32
-   \   0000002E   0x.... 0x....      BL       FRAM_ReadAirPara
-    255              FRAM_ReadRunPara((stcRunPara  *)&Ctrl.Para.dat.sRunPara);               //读运行参数
-   \   00000032   0xF104 0x0048      ADD      R0,R4,#+72
-   \   00000036   0xE8BD 0x4010      POP      {R4,LR}
-   \   0000003A   0x.... 0x....      B.W      FRAM_ReadRunPara
-    256          //    FRAM_ReadCalcModel((stcCalcModel  *)&Ctrl.sCalcModel);                //读计算模型
-    257          
-    258          }
-    259          
-    260          /*******************************************************************************
-    261           * 名    称：  TaskInitStore
-    262           * 功    能：  任务初始化
-    263           * 入口参数： 	无
-    264           * 出口参数： 	无
-    265           * 作　 　者： 	redmornigcn
-    266           * 创建日期： 	2017-05-15
-    267           * 修    改：
-    268           * 修改日期：
-    269           *******************************************************************************/
-
-   \                                 In section .text, align 2, keep-with-next
-    270          void TaskInitStore(void)
-    271          {    
-   \                     TaskInitStore: (+1)
-   \   00000000   0xB580             PUSH     {R7,LR}
-    272          //    /***********************************************
-    273          //    * 描述： 初始化本任务用到的相关硬件
-    274          //    */
-    275              BSP_StoreInit();			                                //初始化Flash底层相关函数
-   \   00000002   0x.... 0x....      BL       BSP_StoreInit
-    276          
-    277          //初始化定时器
-    278              osal_start_timerEx( OS_TASK_ID_STORE,
-    279                                OS_EVT_STORE_TICKS,
-    280                                60*1000);                                 //60秒后再存储
-   \   00000006   0xF64E 0x2260      MOVW     R2,#+60000
-   \   0000000A   0x2101             MOVS     R1,#+1
-   \   0000000C   0x2004             MOVS     R0,#+4
-   \   0000000E   0xE8BD 0x4008      POP      {R3,LR}
-   \   00000012   0x.... 0x....      B.W      osal_start_timerEx
-    281          }
-    282          
-    283          extern  MODBUS_CH   *g_pch; 
+    256              
+    257              FRAM_ReadAirPara((stcAirPara  *)&Ctrl.Para.dat.sAirPara);               //读计算参数
+   \   0000002A   0xF104 0x0520      ADD      R5,R4,#+32
+   \   0000002E   0x4628             MOV      R0,R5
+   \   00000030   0x.... 0x....      BL       FRAM_ReadAirPara
+    258              
+    259              crc16 = GetCrc16Check((uint8 *)&Ctrl.Para.dat.sAirPara,sizeof(stcAirPara) - 2); 
+   \   00000034   0x2126             MOVS     R1,#+38
+   \   00000036   0x4628             MOV      R0,R5
+   \   00000038   0x.... 0x....      BL       GetCrc16Check
+    260              if(    Ctrl.Para.dat.sAirPara.crc16 != crc16
+    261                 ||  (Ctrl.Para.dat.sAirPara.crc16  == 0 && Ctrl.Para.dat.sAirPara.sStandard_Hum.NormalLimit == 0)
+    262                )
+   \   0000003C   0x8CE9             LDRH     R1,[R5, #+38]
+   \   0000003E   0x4281             CMP      R1,R0
+   \   00000040   0xD104             BNE.N    ??BSP_StoreInit_0
+   \   00000042   0x2900             CMP      R1,#+0
+   \   00000044   0xD113             BNE.N    ??BSP_StoreInit_1
+   \   00000046   0x8868             LDRH     R0,[R5, #+2]
+   \   00000048   0x2800             CMP      R0,#+0
+   \   0000004A   0xD110             BNE.N    ??BSP_StoreInit_1
+    263              {
+    264                  
+    265                  Ctrl.Para.dat.sAirPara.sStandard_Dust.GoodLimit     = 200;
+   \                     ??BSP_StoreInit_0: (+1)
+   \   0000004C   0x20C8             MOVS     R0,#+200
+   \   0000004E   0x8128             STRH     R0,[R5, #+8]
+    266                  Ctrl.Para.dat.sAirPara.sStandard_Dust.NormalLimit   = 500;
+   \   00000050   0xF44F 0x70FA      MOV      R0,#+500
+   \   00000054   0x8168             STRH     R0,[R5, #+10]
+    267                  
+    268                  Ctrl.Para.dat.sAirPara.sStandard_VOC.GoodLimit      = 500;
+   \   00000056   0x80A8             STRH     R0,[R5, #+4]
+    269                  Ctrl.Para.dat.sAirPara.sStandard_VOC.NormalLimit    = 2000;
+   \   00000058   0xF44F 0x60FA      MOV      R0,#+2000
+   \   0000005C   0x80E8             STRH     R0,[R5, #+6]
+    270                  
+    271                  Ctrl.Para.dat.sAirPara.sStandard_Hum.GoodLimit      = 60;
+   \   0000005E   0x203C             MOVS     R0,#+60
+   \   00000060   0x8028             STRH     R0,[R5, #+0]
+    272                  Ctrl.Para.dat.sAirPara.sStandard_Hum.NormalLimit    = 85;
+   \   00000062   0x2055             MOVS     R0,#+85
+   \   00000064   0x8068             STRH     R0,[R5, #+2]
+    273                  
+    274                  Ctrl.Para.dat.sAirPara.Dust_modefy  = 0;
+   \   00000066   0x2000             MOVS     R0,#+0
+   \   00000068   0x8228             STRH     R0,[R5, #+16]
+    275                  Ctrl.Para.dat.sAirPara.Hum_modefy   = 0;
+   \   0000006A   0x81E8             STRH     R0,[R5, #+14]
+    276                  Ctrl.Para.dat.sAirPara.Voc_modefy   = 0;
+   \   0000006C   0x8268             STRH     R0,[R5, #+18]
+    277              }
+    278              
+    279              
+    280              FRAM_ReadRunPara((stcRunPara  *)&Ctrl.Para.dat.sRunPara);               //读运行参数
+   \                     ??BSP_StoreInit_1: (+1)
+   \   0000006E   0xF104 0x0048      ADD      R0,R4,#+72
+   \   00000072   0xE8BD 0x4032      POP      {R1,R4,R5,LR}
+   \   00000076   0x.... 0x....      B.W      FRAM_ReadRunPara
+    281              
+    282          }
+    283          
     284          /*******************************************************************************
-    285           * 名    称： 		AppTaskStore
-    286           * 功    能： 		控制任务
-    287           * 入口参数： 	p_arg - 由任务创建函数传入
+    285           * 名    称：  TaskInitStore
+    286           * 功    能：  任务初始化
+    287           * 入口参数： 	无
     288           * 出口参数： 	无
-    289           * 作　 　者： 	redmorningcn.
+    289           * 作　 　者： 	redmornigcn
     290           * 创建日期： 	2017-05-15
     291           * 修    改：
     292           * 修改日期：
     293           *******************************************************************************/
 
    \                                 In section .text, align 2, keep-with-next
-    294          osalEvt  TaskStoreEvtProcess(osalTid task_id, osalEvt task_event)
-    295          {
+    294          void TaskInitStore(void)
+    295          {    
+   \                     TaskInitStore: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    296          //    /***********************************************
+    297          //    * 描述： 初始化本任务用到的相关硬件
+    298          //    */
+    299              BSP_StoreInit();			                                //初始化Flash底层相关函数
+   \   00000002   0x.... 0x....      BL       BSP_StoreInit
+    300          
+    301          //初始化定时器
+    302              osal_start_timerEx( OS_TASK_ID_STORE,
+    303                                  OS_EVT_STORE_TICKS,
+    304                                  60*1000);                                 //60秒后再存储
+   \   00000006   0xF64E 0x2260      MOVW     R2,#+60000
+   \   0000000A   0x2101             MOVS     R1,#+1
+   \   0000000C   0x2004             MOVS     R0,#+4
+   \   0000000E   0xE8BD 0x4008      POP      {R3,LR}
+   \   00000012   0x.... 0x....      B.W      osal_start_timerEx
+    305          }
+    306          
+    307          extern  MODBUS_CH   *g_pch; 
+    308          /*******************************************************************************
+    309           * 名    称： 		AppTaskStore
+    310           * 功    能： 		控制任务
+    311           * 入口参数： 	p_arg - 由任务创建函数传入
+    312           * 出口参数： 	无
+    313           * 作　 　者： 	redmorningcn.
+    314           * 创建日期： 	2017-05-15
+    315           * 修    改：
+    316           * 修改日期：
+    317           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    318          osalEvt  TaskStoreEvtProcess(osalTid task_id, osalEvt task_event)
+    319          {
    \                     TaskStoreEvtProcess: (+1)
    \   00000000   0xB510             PUSH     {R4,LR}
    \   00000002   0x460C             MOV      R4,R1
-    296          
-    297              if( task_event & OS_EVT_STORE_TICKS ) {
+    320          
+    321              if( task_event & OS_EVT_STORE_TICKS ) {
    \   00000004   0x07E0             LSLS     R0,R4,#+31
-   \   00000006   0xD509             BPL.N    ??TaskStoreEvtProcess_0
-    298          
-    299                  StoreData();            //保存数据记录
+   \   00000006   0xD518             BPL.N    ??TaskStoreEvtProcess_0
+    322          
+    323                  StoreData();            //保存数据记录
    \   00000008   0x.... 0x....      BL       StoreData
-    300                  
-    301                  osal_start_timerEx( OS_TASK_ID_STORE,
-    302                                      OS_EVT_STORE_TICKS,
-    303                                      1000*120);
-   \   0000000C   0x....             LDR.N    R2,??DataTable2_1  ;; 0x1d4c0
-   \   0000000E   0x2101             MOVS     R1,#+1
-   \   00000010   0x2004             MOVS     R0,#+4
-   \   00000012   0x.... 0x....      BL       osal_start_timerEx
-    304                                      //1000);
-    305                  return ( task_event ^ OS_EVT_STORE_TICKS );
-   \   00000016   0xF084 0x0001      EOR      R0,R4,#0x1
-   \   0000001A   0xBD10             POP      {R4,PC}
-    306              }
-    307              
-    308              return  task_event;
+    324                  
+    325                  if( Ctrl.Para.dat.sRunPara.MeasureMin < 1 || 
+    326                      Ctrl.Para.dat.sRunPara.MeasureMin > 30  
+    327                     )
+   \   0000000C   0x....             LDR.N    R0,??DataTable2
+   \   0000000E   0xF890 0x1051      LDRB     R1,[R0, #+81]
+   \   00000012   0x2900             CMP      R1,#+0
+   \   00000014   0xD001             BEQ.N    ??TaskStoreEvtProcess_1
+   \   00000016   0x291F             CMP      R1,#+31
+   \   00000018   0xDB02             BLT.N    ??TaskStoreEvtProcess_2
+    328                  {
+    329                      Ctrl.Para.dat.sRunPara.MeasureMin = 2;
+   \                     ??TaskStoreEvtProcess_1: (+1)
+   \   0000001A   0x2102             MOVS     R1,#+2
+   \   0000001C   0xF880 0x1051      STRB     R1,[R0, #+81]
+    330                  }
+    331                  
+    332                  osal_start_timerEx( OS_TASK_ID_STORE,
+    333                                OS_EVT_STORE_TICKS,
+    334                                Ctrl.Para.dat.sRunPara.MeasureMin*60*1000);   
+   \                     ??TaskStoreEvtProcess_2: (+1)
+   \   00000020   0xF890 0x0051      LDRB     R0,[R0, #+81]
+   \   00000024   0xF64E 0x2160      MOVW     R1,#+60000
+   \   00000028   0xFB01 0xF200      MUL      R2,R1,R0
+   \   0000002C   0x2101             MOVS     R1,#+1
+   \   0000002E   0x2004             MOVS     R0,#+4
+   \   00000030   0x.... 0x....      BL       osal_start_timerEx
+    335                                      //1000);
+    336                  return ( task_event ^ OS_EVT_STORE_TICKS );
+   \   00000034   0xF084 0x0001      EOR      R0,R4,#0x1
+   \   00000038   0xBD10             POP      {R4,PC}
+    337              }
+    338              
+    339              return  task_event;
    \                     ??TaskStoreEvtProcess_0: (+1)
-   \   0000001C   0x4620             MOV      R0,R4
-   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
-    309          }
+   \   0000003A   0x4620             MOV      R0,R4
+   \   0000003C   0xBD10             POP      {R4,PC}          ;; return
+    340          }
 
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable2:
    \   00000000   0x........         DC32     Ctrl
-
-   \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable2_1:
-   \   00000000   0x0001D4C0         DC32     0x1d4c0
-    310          
-    311          
-    312          
-    313          /*******************************************************************************
-    314           * 				                    end of file                                *
-    315           *******************************************************************************/
-    316          #endif
+    341          
+    342          
+    343          
+    344          /*******************************************************************************
+    345           * 				                    end of file                                *
+    346           *******************************************************************************/
+    347          #endif
 
    Maximum stack usage in bytes:
 
    .cstack Function
    ------- --------
-       8   BSP_StoreInit
-         8   -> FRAM_ReadAirPara
-         8   -> FRAM_ReadCurRecord
-         8   -> FRAM_ReadProductInfo
-         8   -> FRAM_ReadRecNumMgr
+      16   BSP_StoreInit
+        16   -> FRAM_ReadAirPara
+        16   -> FRAM_ReadCurRecord
+        16   -> FRAM_ReadProductInfo
+        16   -> FRAM_ReadRecNumMgr
          0   -> FRAM_ReadRunPara
-         8   -> GPIO_Fram_Init
-         8   -> InitDS3231
-         8   -> InitFlashIO
-         8   -> JudgeFlashIDErrFlg
+        16   -> GPIO_Fram_Init
+        16   -> GetCrc16Check
+        16   -> InitDS3231
+        16   -> InitFlashIO
+        16   -> JudgeFlashIDErrFlg
        0   GetRecNumAddr
        8   ReadFlshRec
          8   -> GetRecNumAddr
@@ -617,18 +686,17 @@ F:\iar\NC199B-100\Library\Source\APP\Tasks\APP_task_osal_store.c
    Bytes  Function/Label
    -----  --------------
        4  ??DataTable2
-       4  ??DataTable2_1
-      62  BSP_StoreInit
+     122  BSP_StoreInit
        8  GetRecNumAddr
       28  ReadFlshRec
      354  StoreData
       22  TaskInitStore
-      32  TaskStoreEvtProcess
+      62  TaskStoreEvtProcess
 
  
- 514 bytes in section .text
+ 600 bytes in section .text
  
- 514 bytes of CODE memory
+ 600 bytes of CODE memory
 
 Errors: none
 Warnings: none

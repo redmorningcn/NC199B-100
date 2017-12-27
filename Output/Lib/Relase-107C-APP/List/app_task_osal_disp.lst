@@ -1,0 +1,859 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       27/Dec/2017  09:03:08
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_disp.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_disp.c -D
+#        USE_STDPERIPH_DRIVER -D STM32F10X_CL -D RELEASE -D IMAGE_A -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\List\app_task_osal_disp.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\Obj\app_task_osal_disp.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\APP\Tasks\app_task_osal_disp.c
+      1          /*******************************************************************************
+      2           *   Filename:       app_task_disp.c
+      3           *   Revised:        All copyrights reserved to wumingshen.
+      4           *   Revision:       v1.0
+      5           *   Writer:	     wumingshen.
+      6           *
+      7           *   Description:    双击选中 disp 按 Ctrl + H, 钩选 Match the case, Replace with
+      8           *                   输入您要的名字，点击 Replace All
+      9           *                   双击选中 Disp 按 Ctrl + H, 钩选 Match the case, Replace with
+     10           *                   输入您要的名字，点击 Replace All
+     11           *                   双击选中 DISP 按 Ctrl + H, 钩选 Match the case, Replace with
+     12           *                   输入您要的名字，点击 Replace All
+     13           *                   在 app_cfg.h 中指定本任务的 优先级  （ APP_TASK_DISP_PRIO ）
+     14           *                                            和 任务堆栈（ APP_TASK_DISP_STK_SIZE ）大小
+     15           *                   在 app.h 中声明本任务的     创建函数（ void  App_TaskDispCreate(void) ）
+     16           *                                            和 看门狗标志位 （ WDTFLAG_Disp ）
+     17           *
+     18           *   Notes:
+     19           *     				E-mail: shenchangwei945@163.com
+     20           *
+     21           *******************************************************************************/
+     22          
+     23          /*******************************************************************************
+     24           * INCLUDES
+     25           */
+     26          #define  SNL_APP_SOURCE
+     27          #include <includes.h>
+     28          #include <global.h>
+     29          #include <app_ctrl.h>
+     30          #include <bsp_max7219.h>
+     31          #include <osal_timer.h>
+     32          
+     33          #ifdef VSC_INCLUDE_SOURCE_FILE_NAMES
+     34          const  CPU_CHAR  *app_task_disp__c = "$Id: $";
+     35          #endif
+     36          
+     37          #define APP_TASK_DISP_EN     DEF_ENABLED
+     38          #if APP_TASK_DISP_EN == DEF_ENABLED
+     39          /*******************************************************************************
+     40           * CONSTANTS
+     41           */
+     42          //#define CYCLE_TIME_TICKS     (OS_CFG_TICK_RATE_HZ * 2u)
+     43          
+     44          /*******************************************************************************
+     45           * MACROS
+     46           */
+     47          
+     48          /*******************************************************************************
+     49           * TYPEDEFS
+     50           */
+     51          
+     52          /*******************************************************************************
+     53           * LOCAL VARIABLES
+     54           */
+     55          
+     56          #if ( OSAL_EN == DEF_ENABLED )
+     57          #else
+     58          /***********************************************
+     59          * 描述： 任务控制块（TCB）
+     60          */
+     61          static  OS_TCB   AppTaskDispTCB;
+     62          
+     63          /***********************************************
+     64          * 描述： 任务堆栈（STACKS）
+     65          */
+     66          //static  CPU_STK  AppTaskDispStk[ APP_TASK_DISP_STK_SIZE ];
+     67          
+     68          #endif
+     69          /*******************************************************************************
+     70           * GLOBAL VARIABLES
+     71           */
+     72          /*******************************************************************************
+     73           * LOCAL FUNCTIONS
+     74           */
+     75          void    comm_mtr_err_judye(void);
+     76          
+     77               
+     78          #if ( OSAL_EN == DEF_ENABLED )
+     79          #else
+     80          static  void    AppTaskDisp           (void *p_arg);
+     81          #endif
+     82          
+     83          /*******************************************************************************
+     84           * GLOBAL FUNCTIONS
+     85           */
+     86          uint8 JudgeFlashIDErrFlg(void) ;  
+     87          
+     88          /*******************************************************************************
+     89           * EXTERN VARIABLES
+     90           */
+     91          extern stcCtrlDCB           Ctrl;
+     92          
+     93          
+     94          /*******************************************************************************/
+     95          static  uint8   dis_mode    = 0;
+     96          
+
+   \                                 In section .text, align 2, keep-with-next
+     97          void    SetDispNow(void)
+     98          {
+   \                     SetDispNow: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     99              BSP_DispEvtProcess();
+   \   00000002   0x.... 0x....      BL       BSP_DispEvtProcess
+    100              dis_mode = 13*2;
+   \   00000006   0x201A             MOVS     R0,#+26
+   \   00000008   0x....             LDR.N    R1,??DataTable12_6
+   \   0000000A   0x7008             STRB     R0,[R1, #+0]
+    101          }
+   \   0000000C   0xBD01             POP      {R0,PC}          ;; return
+    102          
+    103          
+    104          /*******************************************************************************
+    105           * 名    称： AppTaskDisp
+    106           * 功    能： 控制任务
+    107           * 入口参数： p_arg - 由任务创建函数传入
+    108           * 出口参数： 无
+    109           * 作　 　者： wumingshen.
+    110           * 创建日期： 2015-02-05
+    111           * 修    改：
+    112           * 修改日期：
+    113           *******************************************************************************/
+    114          extern  MODBUS_CH   *g_pch; 
+    115          
+    116          //#if ( OSAL_EN == DEF_ENABLED )
+
+   \                                 In section .text, align 4, keep-with-next
+    117          osalEvt  TaskDispEvtProcess(osalTid task_id, osalEvt task_event)
+    118          //#else
+    119          //static  void  AppTaskDisp (void *p_arg)
+    120          //#endif
+    121          {
+   \                     TaskDispEvtProcess: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x460C             MOV      R4,R1
+    122          /***********************************************
+    123          * 描述： Task body, always written as an infinite loop.
+    124          */
+    125          
+    126              OSSetWdtFlag( WDT_FLAG_DISP );
+   \   00000004   0x2040             MOVS     R0,#+64
+   \   00000006   0x.... 0x....      BL       OSSetWdtFlag
+    127              
+    128              if( task_event & OS_EVT_DISP_TICKS ) {
+   \   0000000A   0x07E0             LSLS     R0,R4,#+31
+   \   0000000C   0xF140 0x80AB      BPL.W    ??TaskDispEvtProcess_2
+    129                  //#else
+    130                  //#endif
+    131                  static  uint32   times   = 0;
+    132                  static  uint8   disflg  = 0;
+    133                  
+    134                  //            stcTime         sTime;
+    135                  
+    136                  /***********************************************
+    137                  * 描述： 根据显示模式显示
+    138                  */
+    139                  switch(dis_mode/2) {
+   \   00000010   0x....             LDR.N    R5,??DataTable12_6
+   \   00000012   0x7829             LDRB     R1,[R5, #+0]
+   \   00000014   0x4608             MOV      R0,R1
+   \   00000016   0x0840             LSRS     R0,R0,#+1
+   \   00000018   0x280D             CMP      R0,#+13
+   \   0000001A   0xD85B             BHI.N    ??TaskDispEvtProcess_3
+   \   0000001C   0xE8DF 0xF000      TBB      [PC, R0]
+   \                     ??TaskDispEvtProcess_0:
+   \   00000020   0x07 0x0F          DC8      0x7,0xF,0x17,0x24
+   \              0x17 0x24    
+   \   00000024   0x2B 0x34          DC8      0x2B,0x34,0x3D,0x46
+   \              0x3D 0x46    
+   \   00000028   0x4D 0x54          DC8      0x4D,0x54,0x5A,0x5A
+   \              0x5A 0x5A    
+   \   0000002C   0x5A 0x56          DC8      0x5A,0x56
+    140                      /*******************************************************************
+    141                      * 描述： 显示装置时间
+    142                      */
+    143                  case 0:         //车型
+    144                      dis_mode++;
+   \                     ??TaskDispEvtProcess_4: (+1)
+   \   0000002E   0x1C48             ADDS     R0,R1,#+1
+   \   00000030   0x7028             STRB     R0,[R5, #+0]
+    145                      uprintf("%d",Ctrl.Para.dat.sProductInfo.sLocoId.Type);  
+   \   00000032   0x....             LDR.N    R0,??DataTable12_7
+   \   00000034   0x8B41             LDRH     R1,[R0, #+26]
+   \   00000036   0x....             ADR.N    R0,??DataTable12  ;; 0x25, 0x64, 0x00, 0x00
+   \   00000038   0x.... 0x....      BL       uprintf
+    146                      break;
+   \   0000003C   0xE087             B.N      ??TaskDispEvtProcess_5
+    147                  case 1:         //车号
+    148                      dis_mode++;
+   \                     ??TaskDispEvtProcess_6: (+1)
+   \   0000003E   0x1C48             ADDS     R0,R1,#+1
+   \   00000040   0x7028             STRB     R0,[R5, #+0]
+    149                      uprintf("%d",Ctrl.Para.dat.sProductInfo.sLocoId.Num);  
+   \   00000042   0x....             LDR.N    R0,??DataTable12_7
+   \   00000044   0x8B81             LDRH     R1,[R0, #+28]
+   \   00000046   0x....             ADR.N    R0,??DataTable12  ;; 0x25, 0x64, 0x00, 0x00
+   \   00000048   0x.... 0x....      BL       uprintf
+    150                      break;
+   \   0000004C   0xE07F             B.N      ??TaskDispEvtProcess_5
+    151                      
+    152                      /*******************************************************************
+    153                      * 描述： 显示软件版本
+    154                      *        时间：开机显示一次，显示2s；
+    155                      */
+    156                  case 2: 
+    157                      dis_mode++;
+   \                     ??TaskDispEvtProcess_7: (+1)
+   \   0000004E   0x1C48             ADDS     R0,R1,#+1
+   \   00000050   0x7028             STRB     R0,[R5, #+0]
+    158                      Ctrl.Para.dat.SoftWareID = 0x0104;
+   \   00000052   0xF44F 0x7082      MOV      R0,#+260
+   \   00000056   0x....             LDR.N    R1,??DataTable12_8
+   \   00000058   0x8048             STRH     R0,[R1, #+2]
+    159                      uprintf("%02X.%02X.",(uint8)(Ctrl.Para.dat.SoftWareID>>8),(uint8)(Ctrl.Para.dat.SoftWareID));
+   \   0000005A   0x2204             MOVS     R2,#+4
+   \   0000005C   0x2101             MOVS     R1,#+1
+   \   0000005E   0x.... 0x....      ADR.W    R0,?_1
+   \   00000062   0x.... 0x....      BL       uprintf
+    160                      
+    161                      break;
+   \   00000066   0xE072             B.N      ??TaskDispEvtProcess_5
+    162                      /*******************************************************************
+    163                      * 描述： 显示硬件版本
+    164                      *        第三版硬件    
+    165                      */
+    166                  case 3: 
+    167                      dis_mode++;
+   \                     ??TaskDispEvtProcess_8: (+1)
+   \   00000068   0x1C48             ADDS     R0,R1,#+1
+   \   0000006A   0x7028             STRB     R0,[R5, #+0]
+    168                      uprintf("HV1.0");
+   \   0000006C   0x.... 0x....      ADR.W    R0,?_2
+   \   00000070   0x.... 0x....      BL       uprintf
+    169                      
+    170                      break;
+   \   00000074   0xE06B             B.N      ??TaskDispEvtProcess_5
+    171                      /*******************************************************************
+    172                      * 描述： 粉尘修正值
+    173                      */
+    174                  case 4: 
+    175                      dis_mode++;
+   \                     ??TaskDispEvtProcess_9: (+1)
+   \   00000076   0x1C48             ADDS     R0,R1,#+1
+   \   00000078   0x7028             STRB     R0,[R5, #+0]
+    176                      uprintf("%d.",Ctrl.Para.dat.sAirPara.Dust_modefy);  
+   \   0000007A   0x....             LDR.N    R0,??DataTable12_7
+   \   0000007C   0xF9B0 0x102E      LDRSH    R1,[R0, #+46]
+   \   00000080   0x....             ADR.N    R0,??DataTable12_1  ;; "%d."
+   \   00000082   0x.... 0x....      BL       uprintf
+    177                      break;
+   \   00000086   0xE062             B.N      ??TaskDispEvtProcess_5
+    178                      /*******************************************************************
+    179                      * 描述： 湿度修正值
+    180                      */
+    181                  case 5:  
+    182                      dis_mode++;
+   \                     ??TaskDispEvtProcess_10: (+1)
+   \   00000088   0x1C48             ADDS     R0,R1,#+1
+   \   0000008A   0x7028             STRB     R0,[R5, #+0]
+    183                      uprintf("%d.",Ctrl.Para.dat.sAirPara.Hum_modefy);  
+   \   0000008C   0x....             LDR.N    R0,??DataTable12_7
+   \   0000008E   0xF9B0 0x102C      LDRSH    R1,[R0, #+44]
+   \   00000092   0x....             ADR.N    R0,??DataTable12_1  ;; "%d."
+   \   00000094   0x.... 0x....      BL       uprintf
+    184                      break;  
+   \   00000098   0xE059             B.N      ??TaskDispEvtProcess_5
+    185                      /*******************************************************************
+    186                      * 描述： Voc修正值
+    187                      */
+    188                  case 6:  
+    189                      dis_mode++;
+   \                     ??TaskDispEvtProcess_11: (+1)
+   \   0000009A   0x1C48             ADDS     R0,R1,#+1
+   \   0000009C   0x7028             STRB     R0,[R5, #+0]
+    190                      uprintf("%d.",Ctrl.Para.dat.sAirPara.Voc_modefy);  
+   \   0000009E   0x....             LDR.N    R0,??DataTable12_7
+   \   000000A0   0xF9B0 0x1030      LDRSH    R1,[R0, #+48]
+   \   000000A4   0x....             ADR.N    R0,??DataTable12_1  ;; "%d."
+   \   000000A6   0x.... 0x....      BL       uprintf
+    191                      break; 
+   \   000000AA   0xE050             B.N      ??TaskDispEvtProcess_5
+    192                      /*******************************************************************
+    193                      * 描述： 车型车号
+    194                      */
+    195                  case 7:  
+    196                      dis_mode++;
+   \                     ??TaskDispEvtProcess_12: (+1)
+   \   000000AC   0x1C48             ADDS     R0,R1,#+1
+   \   000000AE   0x7028             STRB     R0,[R5, #+0]
+    197                      uprintf("      ");
+   \   000000B0   0x.... 0x....      ADR.W    R0,?_4
+   \   000000B4   0x.... 0x....      BL       uprintf
+    198                      
+    199                      break; 
+   \   000000B8   0xE049             B.N      ??TaskDispEvtProcess_5
+    200                      /*******************************************************************
+    201                      * 描述： 全灭
+    202                      */
+    203                  case 8:  
+    204                      dis_mode++;
+   \                     ??TaskDispEvtProcess_13: (+1)
+   \   000000BA   0x1C48             ADDS     R0,R1,#+1
+   \   000000BC   0x7028             STRB     R0,[R5, #+0]
+    205                      uprintf("88888888");
+   \   000000BE   0x.... 0x....      ADR.W    R0,?_5
+   \   000000C2   0x.... 0x....      BL       uprintf
+    206                      
+    207                      break;   
+   \   000000C6   0xE042             B.N      ??TaskDispEvtProcess_5
+    208                      /*******************************************************************
+    209                      * 描述： 高度值
+    210                      */
+    211                  case 9:    
+    212                      dis_mode++;
+   \                     ??TaskDispEvtProcess_14: (+1)
+   \   000000C8   0x1C48             ADDS     R0,R1,#+1
+   \   000000CA   0x7028             STRB     R0,[R5, #+0]
+    213                      
+    214                  case 13:  
+    215                      dis_mode++;
+   \                     ??TaskDispEvtProcess_15: (+1)
+   \   000000CC   0x7828             LDRB     R0,[R5, #+0]
+   \   000000CE   0x1C40             ADDS     R0,R0,#+1
+   \   000000D0   0x7028             STRB     R0,[R5, #+0]
+    216                      //不赋值，只显示
+    217                      //disflg = BSP_DispEvtProcess();  //执行显示操作，有内容显示，不赋值。否者油量赋值
+    218                      
+    219                      break;   
+   \   000000D2   0xE03C             B.N      ??TaskDispEvtProcess_5
+    220                      //            case 14:  
+    221                      //               dis_mode++;
+    222                      //                //不赋值，只显示
+    223                      //                //disflg = BSP_DispEvtProcess();  //执行显示操作，有内容显示，不赋值。否者油量赋值
+    224                      //                break;   
+    225                      //            case 15:  
+    226                      //                dis_mode++;
+    227                      //                //disflg = BSP_DispEvtProcess();  //执行显示操作，有内容显示，不赋值。否者油量赋值
+    228                      //                //不赋值，只显示
+    229                      //                times = 0;
+    230                      //                break;   
+    231                      /*******************************************************************
+    232                      * 描述： 开机后，显示油量，通讯故障判断及故障代码
+    233                      */
+    234                  default:
+    235                      
+    236                      if(disflg != 0)                                 //如果有其他内容，先显示其他内容
+   \                     ??TaskDispEvtProcess_3: (+1)
+   \   000000D4   0x7868             LDRB     R0,[R5, #+1]
+   \   000000D6   0x2800             CMP      R0,#+0
+   \   000000D8   0xD139             BNE.N    ??TaskDispEvtProcess_5
+    237                          break;
+    238                      
+    239                      switch(times++%9)                               //循环显示油水
+   \   000000DA   0x6868             LDR      R0,[R5, #+4]
+   \   000000DC   0x1C41             ADDS     R1,R0,#+1
+   \   000000DE   0x6069             STR      R1,[R5, #+4]
+   \   000000E0   0x2109             MOVS     R1,#+9
+   \   000000E2   0xFBB0 0xF1F1      UDIV     R1,R0,R1
+   \   000000E6   0xEB01 0x01C1      ADD      R1,R1,R1, LSL #+3
+   \   000000EA   0x1A40             SUBS     R0,R0,R1
+   \   000000EC   0x2807             CMP      R0,#+7
+   \   000000EE   0xD82E             BHI.N    ??TaskDispEvtProcess_5
+   \   000000F0   0xE8DF 0xF000      TBB      [PC, R0]
+   \                     ??TaskDispEvtProcess_1:
+   \   000000F4   0x04 0x08          DC8      0x4,0x8,0xF,0x13
+   \              0x0F 0x13    
+   \   000000F8   0x19 0x1D          DC8      0x19,0x1D,0x23,0x28
+   \              0x23 0x28    
+    240                      {
+    241                      case 0:uprintf("T");   
+   \                     ??TaskDispEvtProcess_16: (+1)
+   \   000000FC   0x....             ADR.N    R0,??DataTable12_2  ;; "T"
+   \   000000FE   0x.... 0x....      BL       uprintf
+    242                      break;    
+   \   00000102   0xE024             B.N      ??TaskDispEvtProcess_5
+    243                      case 1:uprintf("%4d",Ctrl.sRec.sAir.Temperature);   
+   \                     ??TaskDispEvtProcess_17: (+1)
+   \   00000104   0x....             LDR.N    R0,??DataTable12_8
+   \   00000106   0xF8B0 0x110A      LDRH     R1,[R0, #+266]
+   \   0000010A   0x....             ADR.N    R0,??DataTable12_3  ;; "%4d"
+   \   0000010C   0x.... 0x....      BL       uprintf
+    244                      break;     
+   \   00000110   0xE01D             B.N      ??TaskDispEvtProcess_5
+    245                      
+    246                      case 2:uprintf("H2o");   
+   \                     ??TaskDispEvtProcess_18: (+1)
+   \   00000112   0x....             ADR.N    R0,??DataTable12_4  ;; "H2o"
+   \   00000114   0x.... 0x....      BL       uprintf
+    247                      break;                              //显示湿度提示
+   \   00000118   0xE019             B.N      ??TaskDispEvtProcess_5
+    248                      case 3:uprintf("%4d",Ctrl.sRec.sAir.Humidity);   
+   \                     ??TaskDispEvtProcess_19: (+1)
+   \   0000011A   0x....             LDR.N    R0,??DataTable12_9
+   \   0000011C   0x8841             LDRH     R1,[R0, #+2]
+   \   0000011E   0x....             ADR.N    R0,??DataTable12_3  ;; "%4d"
+   \   00000120   0x.... 0x....      BL       uprintf
+    249                      break;                              //显示湿度值
+   \   00000124   0xE013             B.N      ??TaskDispEvtProcess_5
+    250                      
+    251                      case 4:uprintf("o1L");   
+   \                     ??TaskDispEvtProcess_20: (+1)
+   \   00000126   0x....             ADR.N    R0,??DataTable12_5  ;; "o1L"
+   \   00000128   0x.... 0x....      BL       uprintf
+    252                      break;                              //显示油含量
+   \   0000012C   0xE00F             B.N      ??TaskDispEvtProcess_5
+    253                      case 5:uprintf("%4d",Ctrl.sRec.sAir.VOCs);     
+   \                     ??TaskDispEvtProcess_21: (+1)
+   \   0000012E   0x....             LDR.N    R0,??DataTable12_9
+   \   00000130   0x8881             LDRH     R1,[R0, #+4]
+   \   00000132   0x....             ADR.N    R0,??DataTable12_3  ;; "%4d"
+   \   00000134   0x.... 0x....      BL       uprintf
+    254                      break;                              //显示湿度值
+   \   00000138   0xE009             B.N      ??TaskDispEvtProcess_5
+    255                      
+    256                      case 6:uprintf("dust");                            
+   \                     ??TaskDispEvtProcess_22: (+1)
+   \   0000013A   0x.... 0x....      ADR.W    R0,?_10
+   \   0000013E   0x.... 0x....      BL       uprintf
+    257                      break;                              //显示粉尘提示
+   \   00000142   0xE004             B.N      ??TaskDispEvtProcess_5
+    258                      case 7: uprintf("%4d",Ctrl.sRec.sAir.PM2D5_S);   
+   \                     ??TaskDispEvtProcess_23: (+1)
+   \   00000144   0x....             LDR.N    R0,??DataTable12_9
+   \   00000146   0x89C1             LDRH     R1,[R0, #+14]
+   \   00000148   0x....             ADR.N    R0,??DataTable12_3  ;; "%4d"
+   \   0000014A   0x.... 0x....      BL       uprintf
+    259                      break;                              //显示粉尘值  
+    260                      
+    261                      //                    case 8:  
+    262                      ////                        if(Ctrl.Para.dat.sRunPara.SysSta.Rsv ){
+    263                      ////                            Ctrl.Para.dat.sRunPara.SysSta.Rsv = 0;
+    264                      ////                            uprintf("tmr");
+    265                      ////
+    266                      ////                        }
+    267                      ////                        else if(Ctrl.Para.dat.sRunPara.SysSta.mtrsim ){
+    268                      ////                            Ctrl.Para.dat.sRunPara.SysSta.mtrsim =  0;
+    269                      ////                            uprintf("mtr");
+    270                      ////                            
+    271                      ////                            //return ( task_event ^ OS_EVT_DISP_TICKS );
+    272                      ////                        }else if(Ctrl.Para.dat.sRunPara.SysSta.mtrsend)
+    273                      ////                        {
+    274                      ////                            Ctrl.Para.dat.sRunPara.SysSta.mtrsend =  0;
+    275                      ////                            uprintf("send");
+    276                      ////
+    277                      ////                        }
+    278                      ////                        
+    279                      ////                        BSP_DispEvtProcess(); 
+    280                      ////                        goto exit;
+    281                      //        
+    282                      //                        break;                              //有故障显示故障代码
+    283                      }
+    284                      
+    285                      break;
+    286                  }
+    287                  
+    288                  disflg = BSP_DispEvtProcess();                      //执行显示操作，有内容显示，不赋值。否者油量赋值
+   \                     ??TaskDispEvtProcess_5: (+1)
+   \   0000014E   0x.... 0x....      BL       BSP_DispEvtProcess
+   \   00000152   0x7068             STRB     R0,[R5, #+1]
+    289              exit:            
+    290                  osal_start_timerEx( OS_TASK_ID_DISP,
+    291                                     OS_EVT_DISP_TICKS,
+    292                                     800);                           //0.8s显示一次
+   \   00000154   0xF44F 0x7248      MOV      R2,#+800
+   \   00000158   0x2101             MOVS     R1,#+1
+   \   0000015A   0x2002             MOVS     R0,#+2
+   \   0000015C   0x.... 0x....      BL       osal_start_timerEx
+    293                  return ( task_event ^ OS_EVT_DISP_TICKS );
+   \   00000160   0xF084 0x0001      EOR      R0,R4,#0x1
+   \   00000164   0xBD32             POP      {R1,R4,R5,PC}
+    294              }
+    295              return  task_event;
+   \                     ??TaskDispEvtProcess_2: (+1)
+   \   00000166   0x4620             MOV      R0,R4
+   \   00000168   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    296          }
+
+   \                                 In section .bss, align 4
+   \                     dis_mode:
+   \   00000000                      DS8 1
+   \   00000001                      DS8 1
+   \   00000002                      DS8 2
+   \   00000004                      DS8 4
+    297          
+    298          
+    299          /*******************************************************************************
+    300           * 名    称： APP_DispInit
+    301           * 功    能： 任务初始化
+    302           * 入口参数： 无
+    303           * 出口参数： 无
+    304           * 作　 　者： wumingshen.
+    305           * 创建日期： 2015-12-08
+    306           * 修    改：
+    307           * 修改日期：
+    308           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    309          void TaskInitDisp(void)
+    310          {    
+   \                     TaskInitDisp: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    311          //    /***********************************************
+    312          //    * 描述： 初始化本任务用到的相关硬件
+    313          //    */
+    314              BSP_DispInit();
+   \   00000002   0x.... 0x....      BL       BSP_DispInit
+    315          
+    316              BSP_DispOff();
+   \   00000006   0x.... 0x....      BL       BSP_DispOff
+    317              
+    318              BSP_DispSetBrightness(10);
+   \   0000000A   0x200A             MOVS     R0,#+10
+   \   0000000C   0x.... 0x....      BL       BSP_DispSetBrightness
+    319              BSP_DispClrAll();
+   \   00000010   0x.... 0x....      BL       BSP_DispClrAll
+    320              uprintf("88888888");
+   \   00000014   0x.... 0x....      ADR.W    R0,?_5
+   \   00000018   0x.... 0x....      BL       uprintf
+    321              BSP_DispEvtProcess();
+   \   0000001C   0x.... 0x....      BL       BSP_DispEvtProcess
+    322              
+    323          
+    324              /***********************************************
+    325              * 描述： 在看门狗标志组注册本任务的看门狗标志
+    326              */
+    327              OSRegWdtFlag( WDT_FLAG_DISP );
+   \   00000020   0x2040             MOVS     R0,#+64
+   \   00000022   0x.... 0x....      BL       OSRegWdtFlag
+    328          
+    329              /*************************************************
+    330              * 描述：启动事件查询
+    331              */
+    332              osal_start_timerEx( OS_TASK_ID_DISP,
+    333                                  OS_EVT_DISP_TICKS,
+    334                                  100);
+   \   00000026   0x2264             MOVS     R2,#+100
+   \   00000028   0x2101             MOVS     R1,#+1
+   \   0000002A   0x2002             MOVS     R0,#+2
+   \   0000002C   0xE8BD 0x4008      POP      {R3,LR}
+   \   00000030   0x.... 0x....      B.W      osal_start_timerEx
+    335          }
+    336          
+
+   \                                 In section .text, align 2, keep-with-next
+    337          void    comm_mtr_err_judye(void)
+    338          {
+    339              /*******************************************************************
+    340              * 描述：油尺串口通讯故障判断
+    341              */
+    342          //    static  uint32  comm_mtr_err_times = 0;
+    343          //    
+    344          //    if(         Ctrl.Mtr.ConnCtrl[0].ErrFlg == 1 
+    345          //       &&       Ctrl.Mtr.ConnCtrl[1].ErrFlg == 1){
+    346          //
+    347          //        comm_mtr_err_times++;                   //错误次数
+    348          //        
+    349          //        if(comm_mtr_err_times > 4 && Ctrl.sRunPara.SysSta == 0 ){
+    350          //            Ctrl.sRunPara.SysSta   = 83;       //测量装置1、测量装置2均有故障
+    351          //            
+    352          //            Ctrl.sRec.ErrorCode    = Ctrl.sRunPara.SysSta;    //错误代码赋值
+    353          //        }
+    354          //    }else if(   Ctrl.Mtr.ConnCtrl[0].ErrFlg == 1){
+    355          //        comm_mtr_err_times++;                   //错误次数
+    356          //        
+    357          //        if(comm_mtr_err_times > 8 && Ctrl.sRunPara.SysSta == 0 ){
+    358          //            Ctrl.sRunPara.SysSta   = 71;       //测量装置1故障
+    359          //            
+    360          //            Ctrl.sRec.ErrorCode    = Ctrl.sRunPara.SysSta;    //错误代码赋值
+    361          //        }
+    362          //        
+    363          //    }else if(   Ctrl.Mtr.ConnCtrl[1].ErrFlg == 1){
+    364          //        comm_mtr_err_times++;                   //错误次数
+    365          //        
+    366          //        if(comm_mtr_err_times > 8 && Ctrl.sRunPara.SysSta == 0 )
+    367          //            Ctrl.sRunPara.SysSta   = 81;       //测量装置2故障
+    368          //        
+    369          //            Ctrl.sRec.ErrorCode    = Ctrl.sRunPara.SysSta;    //错误代码赋值
+    370          //    }else {
+    371          //        comm_mtr_err_times = 0;                 //错误次数
+    372          //
+    373          //        if(     Ctrl.sRunPara.SysSta == 81
+    374          //            ||  Ctrl.sRunPara.SysSta == 71
+    375          //            ||  Ctrl.sRunPara.SysSta == 83){
+    376          //            uprintf("E-%d",Ctrl.sRunPara.SysSta+100);  //显示故障代码+100
+    377          //            
+    378          //            Ctrl.sRec.ErrorCode    = Ctrl.sRunPara.SysSta+100;//错误代码赋值
+    379          //            Ctrl.sRunPara.SysSta   = 0;        //清除故障代码
+    380          //        }
+    381          //    }
+    382          }
+   \                     comm_mtr_err_judye: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12:
+   \   00000000   0x25 0x64          DC8      0x25, 0x64, 0x00, 0x00
+   \              0x00 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_1:
+   \   00000000   0x25 0x64          DC8      "%d."
+   \              0x2E 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_2:
+   \   00000000   0x54 0x00          DC8      "T",0x0,0x0
+   \              0x00 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_3:
+   \   00000000   0x25 0x34          DC8      "%4d"
+   \              0x64 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_4:
+   \   00000000   0x48 0x32          DC8      "H2o"
+   \              0x6F 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_5:
+   \   00000000   0x6F 0x31          DC8      "o1L"
+   \              0x4C 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_6:
+   \   00000000   0x........         DC32     dis_mode
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_7:
+   \   00000000   0x........         DC32     Ctrl+0x2
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_8:
+   \   00000000   0x........         DC32     Ctrl
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_9:
+   \   00000000   0x........         DC32     Ctrl+0x10A
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x25 0x30          DC8 "%02X.%02X."
+   \              0x32 0x58    
+   \              0x2E 0x25    
+   \              0x30 0x32    
+   \              0x58 0x2E    
+   \              0x00         
+   \   0000000B   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x25 0x64          DC8 "%d"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_3:
+   \   00000000   0x25 0x64          DC8 "%d."
+   \              0x2E 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_2:
+   \   00000000   0x48 0x56          DC8 "HV1.0"
+   \              0x31 0x2E    
+   \              0x30 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_4:
+   \   00000000   0x20 0x20          DC8 "      "
+   \              0x20 0x20    
+   \              0x20 0x20    
+   \              0x00         
+   \   00000007   0x00               DC8 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_5:
+   \   00000000   0x38 0x38          DC8 "88888888"
+   \              0x38 0x38    
+   \              0x38 0x38    
+   \              0x38 0x38    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 2, keep-with-next
+   \                     ?_6:
+   \   00000000   0x54 0x00          DC8 "T"
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_7:
+   \   00000000   0x25 0x34          DC8 "%4d"
+   \              0x64 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_8:
+   \   00000000   0x48 0x32          DC8 "H2o"
+   \              0x6F 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_10:
+   \   00000000   0x64 0x75          DC8 "dust"
+   \              0x73 0x74    
+   \              0x00         
+   \   00000005   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_9:
+   \   00000000   0x6F 0x31          DC8 "o1L"
+   \              0x4C 0x00    
+    383          /*******************************************************************************
+    384           * 				                    end of file                                *
+    385           *******************************************************************************/
+    386          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   SetDispNow
+         8   -> BSP_DispEvtProcess
+      16   TaskDispEvtProcess
+        16   -> BSP_DispEvtProcess
+        16   -> OSSetWdtFlag
+        16   -> osal_start_timerEx
+        16   -> uprintf
+       8   TaskInitDisp
+         8   -> BSP_DispClrAll
+         8   -> BSP_DispEvtProcess
+         8   -> BSP_DispInit
+         8   -> BSP_DispOff
+         8   -> BSP_DispSetBrightness
+         8   -> OSRegWdtFlag
+         0   -> osal_start_timerEx
+         8   -> uprintf
+       0   comm_mtr_err_judye
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable12
+       4  ??DataTable12_1
+       4  ??DataTable12_2
+       4  ??DataTable12_3
+       4  ??DataTable12_4
+       4  ??DataTable12_5
+       4  ??DataTable12_6
+       4  ??DataTable12_7
+       4  ??DataTable12_8
+       4  ??DataTable12_9
+       4  ?_0
+      12  ?_1
+       8  ?_10
+       8  ?_2
+       4  ?_3
+       8  ?_4
+      12  ?_5
+       2  ?_6
+       4  ?_7
+       4  ?_8
+       4  ?_9
+      14  SetDispNow
+     362  TaskDispEvtProcess
+      52  TaskInitDisp
+       2  comm_mtr_err_judye
+       8  dis_mode
+          disflg
+          times
+
+ 
+   8 bytes in section .bss
+  22 bytes in section .rodata
+ 518 bytes in section .text
+ 
+ 518 bytes of CODE  memory
+  22 bytes of CONST memory
+   8 bytes of DATA  memory
+
+Errors: none
+Warnings: 1

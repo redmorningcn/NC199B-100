@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:35
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:40:24
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -233,7 +233,7 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_pend_multi.c
    \   0000001A   0x8020             STRH     R0,[R4, #+0]
     143                  return ((OS_OBJ_QTY)0);
    \   0000001C   0x2000             MOVS     R0,#+0
-   \   0000001E   0xE099             B.N      ??OSPendMulti_2
+   \   0000001E   0xE085             B.N      ??OSPendMulti_2
     144              }
     145          #endif
     146          
@@ -254,7 +254,7 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_pend_multi.c
    \   0000002C   0x8020             STRH     R0,[R4, #+0]
     154                  return ((OS_OBJ_QTY)0);
    \   0000002E   0x2000             MOVS     R0,#+0
-   \   00000030   0xE090             B.N      ??OSPendMulti_2
+   \   00000030   0xE07C             B.N      ??OSPendMulti_2
     155              }
     156              switch (opt) {
    \                     ??OSPendMulti_4: (+1)
@@ -286,13 +286,13 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_pend_multi.c
    \   0000004C   0x8020             STRH     R0,[R4, #+0]
     171                  return ((OS_OBJ_QTY)0);
    \   0000004E   0x2000             MOVS     R0,#+0
-   \   00000050   0xE080             B.N      ??OSPendMulti_2
+   \   00000050   0xE06C             B.N      ??OSPendMulti_2
     172              }
    \                     ??OSPendMulti_6: (+1)
    \   00000052   0xF645 0x6025      MOVW     R0,#+24101
    \   00000056   0x8020             STRH     R0,[R4, #+0]
    \   00000058   0x2000             MOVS     R0,#+0
-   \   0000005A   0xE07B             B.N      ??OSPendMulti_2
+   \   0000005A   0xE067             B.N      ??OSPendMulti_2
     173          
     174          /*$PAGE*/
     175              CPU_CRITICAL_ENTER();
@@ -318,7 +318,7 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_pend_multi.c
    \   00000082   0x8020             STRH     R0,[R4, #+0]
     181                  return ((OS_OBJ_QTY)nbr_obj_rdy);
    \   00000084   0x4650             MOV      R0,R10
-   \   00000086   0xE065             B.N      ??OSPendMulti_2
+   \   00000086   0xE051             B.N      ??OSPendMulti_2
     182              }
     183          
     184              if ((opt & OS_OPT_PEND_NON_BLOCKING) != (OS_OPT)0) {    /* Caller wants to block if not available?                */
@@ -334,125 +334,114 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_pend_multi.c
    \   0000009C   0x8020             STRH     R0,[R4, #+0]
     187                  return ((OS_OBJ_QTY)0);
    \   0000009E   0x2000             MOVS     R0,#+0
-   \   000000A0   0xE058             B.N      ??OSPendMulti_2
+   \   000000A0   0xE044             B.N      ??OSPendMulti_2
     188              } else {
     189                  if (OSSchedLockNestingCtr > (OS_NESTING_CTR)0) {    /* Can't pend when the scheduler is locked                */
    \                     ??OSPendMulti_9: (+1)
-   \   000000A2   0x.... 0x....      LDR.W    R9,??DataTable3_1
-   \   000000A6   0xF899 0x0000      LDRB     R0,[R9, #+0]
-   \   000000AA   0x2800             CMP      R0,#+0
-   \   000000AC   0xD009             BEQ.N    ??OSPendMulti_10
+   \   000000A2   0x....             LDR.N    R0,??DataTable3_1
+   \   000000A4   0x7800             LDRB     R0,[R0, #+0]
+   \   000000A6   0x2800             CMP      R0,#+0
+   \   000000A8   0xD009             BEQ.N    ??OSPendMulti_10
     190                      CPU_CRITICAL_EXIT();
-   \   000000AE   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   000000B2   0x4628             MOV      R0,R5
-   \   000000B4   0x.... 0x....      BL       CPU_SR_Restore
+   \   000000AA   0x.... 0x....      BL       CPU_IntDisMeasStop
+   \   000000AE   0x4628             MOV      R0,R5
+   \   000000B0   0x.... 0x....      BL       CPU_SR_Restore
     191                     *p_err = OS_ERR_SCHED_LOCKED;
-   \   000000B8   0xF646 0x5063      MOVW     R0,#+28003
-   \   000000BC   0x8020             STRH     R0,[R4, #+0]
+   \   000000B4   0xF646 0x5063      MOVW     R0,#+28003
+   \   000000B8   0x8020             STRH     R0,[R4, #+0]
     192                      return ((OS_OBJ_QTY)0);
-   \   000000BE   0x2000             MOVS     R0,#+0
-   \   000000C0   0xE048             B.N      ??OSPendMulti_2
+   \   000000BA   0x2000             MOVS     R0,#+0
+   \   000000BC   0xE036             B.N      ??OSPendMulti_2
     193                  }
     194              }
     195                                                                      /* Lock the scheduler/re-enable interrupts                */
     196              OS_CRITICAL_ENTER_CPU_EXIT();
-   \                     ??OSPendMulti_10: (+1)
-   \   000000C2   0x2001             MOVS     R0,#+1
-   \   000000C4   0xF889 0x0000      STRB     R0,[R9, #+0]
-   \   000000C8   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   000000CC   0x4628             MOV      R0,R5
-   \   000000CE   0x.... 0x....      BL       CPU_SR_Restore
     197                                                                      /* ------ NO OBJECT READY, PEND ON MULTIPLE OBJECTS ----- */
     198              OS_PendMultiWait(p_pend_data_tbl,                       /* Suspend task until object posted or timeout occurs     */
     199                               tbl_size,
     200                               timeout);
-   \   000000D2   0x4642             MOV      R2,R8
-   \   000000D4   0x4639             MOV      R1,R7
-   \   000000D6   0x4630             MOV      R0,R6
-   \   000000D8   0x.... 0x....      BL       OS_PendMultiWait
+   \                     ??OSPendMulti_10: (+1)
+   \   000000BE   0x4642             MOV      R2,R8
+   \   000000C0   0x4639             MOV      R1,R7
+   \   000000C2   0x4630             MOV      R0,R6
+   \   000000C4   0x.... 0x....      BL       OS_PendMultiWait
     201          
     202              OS_CRITICAL_EXIT_NO_SCHED();
-   \   000000DC   0x.... 0x....      BL       CPU_SR_Save
-   \   000000E0   0x4605             MOV      R5,R0
-   \   000000E2   0x.... 0x....      BL       CPU_IntDisMeasStart
-   \   000000E6   0xF899 0x0000      LDRB     R0,[R9, #+0]
-   \   000000EA   0x1E40             SUBS     R0,R0,#+1
-   \   000000EC   0xF889 0x0000      STRB     R0,[R9, #+0]
-   \   000000F0   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   000000F4   0x4628             MOV      R0,R5
-   \   000000F6   0x.... 0x....      BL       CPU_SR_Restore
+   \   000000C8   0x.... 0x....      BL       CPU_IntDisMeasStop
+   \   000000CC   0x4628             MOV      R0,R5
+   \   000000CE   0x.... 0x....      BL       CPU_SR_Restore
     203          
     204              OSSched();                                              /* Find next highest priority task ready                  */
-   \   000000FA   0x.... 0x....      BL       OSSched
+   \   000000D2   0x.... 0x....      BL       OSSched
     205          
     206              CPU_CRITICAL_ENTER();
-   \   000000FE   0x.... 0x....      BL       CPU_SR_Save
-   \   00000102   0x4605             MOV      R5,R0
-   \   00000104   0x.... 0x....      BL       CPU_IntDisMeasStart
+   \   000000D6   0x.... 0x....      BL       CPU_SR_Save
+   \   000000DA   0x4605             MOV      R5,R0
+   \   000000DC   0x.... 0x....      BL       CPU_IntDisMeasStart
     207              switch (OSTCBCurPtr->PendStatus) {
-   \   00000108   0x....             LDR.N    R0,??DataTable3_2
-   \   0000010A   0x6801             LDR      R1,[R0, #+0]
-   \   0000010C   0xF891 0x1035      LDRB     R1,[R1, #+53]
-   \   00000110   0x2903             CMP      R1,#+3
-   \   00000112   0xD812             BHI.N    ??OSPendMulti_11
-   \   00000114   0xE8DF 0xF001      TBB      [PC, R1]
+   \   000000E0   0x....             LDR.N    R0,??DataTable3_2
+   \   000000E2   0x6801             LDR      R1,[R0, #+0]
+   \   000000E4   0xF891 0x1035      LDRB     R1,[R1, #+53]
+   \   000000E8   0x2903             CMP      R1,#+3
+   \   000000EA   0xD812             BHI.N    ??OSPendMulti_11
+   \   000000EC   0xE8DF 0xF001      TBB      [PC, R1]
    \                     ??OSPendMulti_0:
-   \   00000118   0x02 0x05          DC8      0x2,0x5,0xD,0x9
+   \   000000F0   0x02 0x05          DC8      0x2,0x5,0xD,0x9
    \              0x0D 0x09    
     208                  case OS_STATUS_PEND_OK:                             /* We got one of the objects posted to                    */
     209                      *p_err = OS_ERR_NONE;
    \                     ??OSPendMulti_12: (+1)
-   \   0000011C   0x2100             MOVS     R1,#+0
-   \   0000011E   0x8021             STRH     R1,[R4, #+0]
+   \   000000F4   0x2100             MOVS     R1,#+0
+   \   000000F6   0x8021             STRH     R1,[R4, #+0]
     210                       break;
-   \   00000120   0xE00E             B.N      ??OSPendMulti_13
+   \   000000F8   0xE00E             B.N      ??OSPendMulti_13
     211          
     212                  case OS_STATUS_PEND_ABORT:                          /* Indicate that the multi-pend was aborted               */
     213                      *p_err = OS_ERR_PEND_ABORT;
    \                     ??OSPendMulti_14: (+1)
-   \   00000122   0xF246 0x11A9      MOVW     R1,#+25001
-   \   00000126   0x8021             STRH     R1,[R4, #+0]
+   \   000000FA   0xF246 0x11A9      MOVW     R1,#+25001
+   \   000000FE   0x8021             STRH     R1,[R4, #+0]
     214                       break;
-   \   00000128   0xE00A             B.N      ??OSPendMulti_13
+   \   00000100   0xE00A             B.N      ??OSPendMulti_13
     215          
     216                  case OS_STATUS_PEND_TIMEOUT:                        /* Indicate that we didn't get semaphore within timeout   */
     217                      *p_err = OS_ERR_TIMEOUT;
    \                     ??OSPendMulti_15: (+1)
-   \   0000012A   0xF247 0x21D9      MOVW     R1,#+29401
-   \   0000012E   0x8021             STRH     R1,[R4, #+0]
+   \   00000102   0xF247 0x21D9      MOVW     R1,#+29401
+   \   00000106   0x8021             STRH     R1,[R4, #+0]
     218                       break;
-   \   00000130   0xE006             B.N      ??OSPendMulti_13
+   \   00000108   0xE006             B.N      ??OSPendMulti_13
     219          
     220                  case OS_STATUS_PEND_DEL:                            /* Indicate that an object pended on has been deleted     */
     221                      *p_err = OS_ERR_OBJ_DEL;
    \                     ??OSPendMulti_16: (+1)
-   \   00000132   0xF645 0x51C2      MOVW     R1,#+24002
-   \   00000136   0x8021             STRH     R1,[R4, #+0]
+   \   0000010A   0xF645 0x51C2      MOVW     R1,#+24002
+   \   0000010E   0x8021             STRH     R1,[R4, #+0]
     222                      break;
-   \   00000138   0xE002             B.N      ??OSPendMulti_13
+   \   00000110   0xE002             B.N      ??OSPendMulti_13
     223          
     224                  default:
     225                      *p_err = OS_ERR_STATUS_INVALID;
    \                     ??OSPendMulti_11: (+1)
-   \   0000013A   0xF646 0x612E      MOVW     R1,#+28206
-   \   0000013E   0x8021             STRH     R1,[R4, #+0]
+   \   00000112   0xF646 0x612E      MOVW     R1,#+28206
+   \   00000116   0x8021             STRH     R1,[R4, #+0]
     226                       break;
     227              }
     228          
     229              OSTCBCurPtr->PendStatus = OS_STATUS_PEND_OK;
    \                     ??OSPendMulti_13: (+1)
-   \   00000140   0x2100             MOVS     R1,#+0
-   \   00000142   0x6800             LDR      R0,[R0, #+0]
-   \   00000144   0xF880 0x1035      STRB     R1,[R0, #+53]
+   \   00000118   0x2100             MOVS     R1,#+0
+   \   0000011A   0x6800             LDR      R0,[R0, #+0]
+   \   0000011C   0xF880 0x1035      STRB     R1,[R0, #+53]
     230              CPU_CRITICAL_EXIT();
-   \   00000148   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   0000014C   0x4628             MOV      R0,R5
-   \   0000014E   0x.... 0x....      BL       CPU_SR_Restore
+   \   00000120   0x.... 0x....      BL       CPU_IntDisMeasStop
+   \   00000124   0x4628             MOV      R0,R5
+   \   00000126   0x.... 0x....      BL       CPU_SR_Restore
     231          
     232              return ((OS_OBJ_QTY)1);
-   \   00000152   0x2001             MOVS     R0,#+1
+   \   0000012A   0x2001             MOVS     R0,#+1
    \                     ??OSPendMulti_2: (+1)
-   \   00000154   0xE8BD 0x87F0      POP      {R4-R10,PC}      ;; return
+   \   0000012C   0xE8BD 0x87F0      POP      {R4-R10,PC}      ;; return
     233          }
     234          
     235          /*$PAGE*/
@@ -874,15 +863,15 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_pend_multi.c
        4  ??DataTable3_2
        4  ??DataTable3_3
        4  ??DataTable3_4
-     344  OSPendMulti
+     304  OSPendMulti
      126  OS_PendMultiGetRdy
       58  OS_PendMultiValidate
       96  OS_PendMultiWait
 
  
- 644 bytes in section .text
+ 604 bytes in section .text
  
- 644 bytes of CODE memory
+ 604 bytes of CODE memory
 
 Errors: none
 Warnings: none

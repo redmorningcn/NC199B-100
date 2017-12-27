@@ -331,6 +331,8 @@ osalEvt  TaskStoreEvtProcess(osalTid task_id, osalEvt task_event)
                    OS_EVT_STORE_TICKS,
                    1000);   
         
+        if(Ctrl.Para.dat.sRunPara.StoreCycle > 60 || Ctrl.Para.dat.sRunPara.StoreCycle < 1)
+            Ctrl.Para.dat.sRunPara.StoreCycle = 1;
         
         times++;
         if(times > Ctrl.Para.dat.sRunPara.StoreCycle*60)
@@ -339,15 +341,7 @@ osalEvt  TaskStoreEvtProcess(osalTid task_id, osalEvt task_event)
             times = 0;
         }
         
-        if( Ctrl.Para.dat.sRunPara.MeasureMin < 1 || 
-           Ctrl.Para.dat.sRunPara.MeasureMin > 30  
-               )
-        {
-            Ctrl.Para.dat.sRunPara.MeasureMin = 2;
-        }
-        
         return ( task_event ^ OS_EVT_STORE_TICKS );
-
     }
     
     return  0;

@@ -1,0 +1,358 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  20:53:43
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  F:\iar\NC199B-100\Library\Source\APP\User\app_tax.c
+#    Command line =  
+#        F:\iar\NC199B-100\Library\Source\APP\User\app_tax.c -D
+#        USE_STDPERIPH_DRIVER -D STM32F10X_CL -D RELEASE -D IMAGE_A -D
+#        STM32F103RC -D STM32_FLASH_SIZE=256 -D HSE_VALUE=25000000 -lCN
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\List\
+#        -o
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\Obj\
+#        --no_unroll --no_inline --no_tbaa --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\arm\INC\c\DLib_Config_Full.h" -I
+#        F:\iar\NC199B-100\Library\Project\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\AES\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Config\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\User\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Port\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\OS\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\SIM900A\Config\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Protocol\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\APP\Iap\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Driver\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\IAR\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\uCOS-III\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\CoreSupport\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\CMSIS\CM3\DeviceSupport\ST\STM32F10x\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\St\FWLib\STM32F10x_StdPeriph_Driver\inc\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-LIB\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\BSP\Os\OSAL\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\OSAL\OS\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Cfg\Template\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\OS\uCOS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-MB\Source\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\Micrium\uC-OS-III\Source\
+#        -I F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\ -I
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\Source\FatFs\option\ -Om
+#        --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.3\arm\CMSIS\Include\"
+#    List file    =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\List\app_tax.lst
+#    Object file  =  
+#        F:\iar\NC199B-100\Library\Project\IAR\..\..\..\Output\Lib\Relase-107C-APP\Obj\app_tax.o
+#
+###############################################################################
+
+F:\iar\NC199B-100\Library\Source\APP\User\app_tax.c
+      1          /*******************************************************************************
+      2           *   Filename:      app_tax.c
+      3           *   Revised:       $Date: 2017-07-25$
+      4           *   Revision:      $
+      5           *	 Writer:		Wuming Shen.
+      6           *
+      7           *   Description:
+      8           *   Notes:
+      9           *					QQ:276193028
+     10           *     				E-mail:shenchangwei945@163.com
+     11           *
+     12           *   All copyrights reserved to Wuming Shen.
+     13           *
+     14           *******************************************************************************/
+     15          
+     16          /*******************************************************************************
+     17           * INCLUDES
+     18           */
+     19          #define  SNL_APP_SOURCE
+     20          #include <app_tax.h>
+     21          #include <app_chk.h>
+     22          #include <app_ctrl.h>
+     23          
+     24          #ifdef VSC_INCLUDE_SOURCE_FILE_NAMES
+     25          const  CPU_CHAR  *app_tax__c = "$Id: $";
+     26          #endif
+     27          
+     28          /*******************************************************************************
+     29           * CONSTANTS
+     30           */
+     31               
+     32          /*******************************************************************************
+     33           * MACROS
+     34           */
+     35          
+     36          /*******************************************************************************
+     37           * TYPEDEFS
+     38           */
+     39          
+     40          /*******************************************************************************
+     41           * LOCAL VARIABLES
+     42           */
+     43          
+     44          /*******************************************************************************
+     45           * GLOBAL VARIABLES
+     46           */
+     47          //UnionTAX  Tax;
+     48          
+     49          /*******************************************************************************
+     50           * LOCAL FUNCTIONS
+     51           *
+     52           * 返回类型         函数名称                入口参数
+     53           */
+     54          
+     55          /*******************************************************************************
+     56           * GLOBAL FUNCTIONS
+     57           */
+     58          
+     59          /*******************************************************************************
+     60           * EXTERN VARIABLES
+     61           */
+     62          
+     63          /*******************************************************************************
+     64           * EXTERN FUNCTIONS
+     65           */
+     66          
+     67          /*******************************************************************************
+     68           * 名    称： TAX_FCxx_Handler
+     69           * 功    能： TAX_数据接收处理
+     70           * 入口参数： 无
+     71           * 出口参数： 无
+     72           * 作    者： 无名沈.
+     73           * 创建日期： 2017-07-25
+     74           * 修    改：
+     75           * 修改日期：
+     76           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     77          void  TAX_StartRecv (MODBUS_CH  *pch)
+     78          {
+     79              USART_ITConfig(pch->USARTx, USART_IT_RXNE, ENABLE);
+   \                     TAX_StartRecv: (+1)
+   \   00000000   0x2201             MOVS     R2,#+1
+   \   00000002   0xF240 0x5125      MOVW     R1,#+1317
+   \   00000006   0xF8D0 0x0460      LDR      R0,[R0, #+1120]
+   \   0000000A   0x.... 0x....      B.W      USART_ITConfig
+     80          }
+     81          
+     82          /*******************************************************************************
+     83           * 名    称： TAX_FCxx_Handler
+     84           * 功    能： TAX_数据接收处理
+     85           * 入口参数： 无
+     86           * 出口参数： 无
+     87           * 作    者： 无名沈.
+     88           * 创建日期： 2017-07-25
+     89           * 修    改：
+     90           * 修改日期：
+     91           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     92          void  TAX_StopRecv (MODBUS_CH  *pch, osalTime time)
+     93          {
+   \                     TAX_StopRecv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x460C             MOV      R4,R1
+     94              USART_ITConfig(pch->USARTx, USART_IT_RXNE, DISABLE);
+   \   00000004   0x2200             MOVS     R2,#+0
+   \   00000006   0xF240 0x5125      MOVW     R1,#+1317
+   \   0000000A   0xF8D0 0x0460      LDR      R0,[R0, #+1120]
+   \   0000000E   0x.... 0x....      BL       USART_ITConfig
+     95              osal_start_timerEx( OS_TASK_ID_TMR, OS_EVT_TMR_TAX ,time);
+   \   00000012   0x4622             MOV      R2,R4
+   \   00000014   0x2110             MOVS     R1,#+16
+   \   00000016   0x2001             MOVS     R0,#+1
+   \   00000018   0xE8BD 0x4010      POP      {R4,LR}
+   \   0000001C   0x.... 0x....      B.W      osal_start_timerEx
+     96          }
+     97          
+     98          /*******************************************************************************
+     99           * 名    称： TAX_FCxx_Handler
+    100           * 功    能： TAX_数据接收处理
+    101           * 入口参数： 无
+    102           * 出口参数： 无
+    103           * 作    者： 无名沈.
+    104           * 创建日期： 2017-07-25
+    105           * 修    改：
+    106           * 修改日期：
+    107           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    108          CPU_BOOLEAN  TAX_FCxx_Handler (MODBUS_CH  *pch)
+    109          {
+   \                     TAX_FCxx_Handler: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    110              /***********************************************
+    111              * 描述： 先停止接收
+    112              */
+    113              TAX_StopRecv (pch,1000);
+   \   00000002   0xF44F 0x717A      MOV      R1,#+1000
+   \   00000006   0x.... 0x....      BL       TAX_StopRecv
+    114          //    
+    115          //    /***********************************************
+    116          //    * 描述： 获取指针及数量
+    117          //    */
+    118          //    CPU_INT08U  *pBuf   = pch->RxBuf;    
+    119          //    CPU_INT16U  len     = pch->RxBufByteCnt;    
+    120          //    CPU_INT16U i;
+    121          //    
+    122          //    /***********************************************
+    123          //    * 描述： 如果数量大于72字节
+    124          //    */
+    125          //    if ( len > 72 ) {
+    126          //        /***********************************************
+    127          //        * 描述： 查找是否符合TAX2协议
+    128          //        */
+    129          //        for ( i = 0; i < len-72; i++ ) {
+    130          //            if ( ( pBuf[i] == 0x38 ) && ( pBuf[i+32] == 0x39) ) {
+    131          //                pBuf    = &pBuf[i];
+    132          //                len     = 72;
+    133          //                if ( ( pBuf[71] == GetSumXorChk((uint8_t *)&pBuf[0], (uint16_t)71) ) ||
+    134          //                   ( ( pBuf[31] == GetSumXorChk((uint8_t *)&pBuf[ 0], (uint16_t)31) ) && 
+    135          //                     ( pBuf[71] == GetSumXorChk((uint8_t *)&pBuf[32], (uint16_t)39) ) ) ) {
+    136          //                    memcpy((uint8_t *)&Ctrl.Tax.Dat.buf1[0],(uint8_t *)pBuf,len);   // 老TAX2协议
+    137          //                    goto exit;
+    138          //                }
+    139          //            }
+    140          //        }
+    141          //        /***********************************************
+    142          //        * 描述： 查的是否符合TAX3协议
+    143          //        */
+    144          //        for ( i = 0; i < len-72; i++ ) {
+    145          //            if ( ( pBuf[i] == 0xF0 ) || ( pBuf[i] == 0xFA) ) {
+    146          //                pBuf    = &pBuf[i];
+    147          //                len     = 72;
+    148          //                if ( pBuf[71] == GetSumXorChk((uint8_t *)pBuf, (uint16_t)71) ) {
+    149          //                    memcpy((uint8_t *)&Ctrl.Tax.Dat.buf1[0],(uint8_t *)pBuf,len);
+    150          //                    goto exit;
+    151          //                }
+    152          //            }
+    153          //        }
+    154          //    } else if ( len == 72 ) {
+    155          //        goto next;
+    156          //    }
+    157          //    return FALSE;
+    158          //next: 
+    159          //    CPU_INT08U  head    = pBuf[0];
+    160          //    /***********************************************
+    161          //    * 描述：
+    162          //    */
+    163          //    switch ( head ) {
+    164          //    /***********************************************
+    165          //    * 描述： TAX2015协议：=0XF0：TAX2设备；
+    166          //    */
+    167          //    case 0xFA:
+    168          //    /***********************************************
+    169          //    * 描述： TAX2015协议：=0XFA：TAX3设备
+    170          //    */
+    171          //    case 0xF0:
+    172          //        if( len == 72 ) {
+    173          //            if ( pBuf[71] == GetSumXorChk((uint8_t *)pBuf, (uint16_t)71) ) {
+    174          //                memcpy((uint8_t *)&Ctrl.Tax.Dat.buf1[0],(uint8_t *)pBuf,len);
+    175          //                goto exit;
+    176          //            }
+    177          //        }
+    178          //        break;
+    179          //    /***********************************************
+    180          //    * 描述： 老TAX2协议
+    181          //    */
+    182          //    case 0x38:
+    183          //        if ( len == 72 ) {
+    184          //            if ( ( pBuf[71] == GetSumXorChk((uint8_t *)&pBuf[0], (uint16_t)71) ) ||
+    185          //                 ( ( pBuf[31] == GetSumXorChk((uint8_t *)&pBuf[ 0], (uint16_t)31) ) && 
+    186          //                   ( pBuf[71] == GetSumXorChk((uint8_t *)&pBuf[32], (uint16_t)39) ) ) 
+    187          //                  ) {
+    188          //                memcpy((uint8_t *)&Ctrl.Tax.Dat.buf1[0],(uint8_t *)pBuf,len);   // 老TAX2协议
+    189          //                goto exit;
+    190          //            }
+    191          //        }
+    192          //        break;
+    193          //    /***********************************************
+    194          //    * 描述： 老TAX2协议
+    195          //    */
+    196          //    case 0x39:
+    197          //        if ( len == 40 ) { 
+    198          //            if ( pBuf[39] == GetSumXorChk((uint8_t *)&pBuf[ 0], (uint16_t)39) ) {
+    199          //                memcpy((uint8_t *)&Ctrl.Tax.Dat.buf1[32],(uint8_t *)pBuf,len);   // 老TAX2协议
+    200          //                goto exit;
+    201          //            }
+    202          //        }
+    203          //        break;
+    204          //    }
+    205          //
+    206          //    /***********************************************
+    207          //    * 描述： 不符合TAX协议，返回失败，把数据给后面的函数处理
+    208          //    */
+    209          //    return FALSE;
+    210          //exit:
+    211          //    /***********************************************
+    212          //    * 描述： 符合TAX协议，且处理结束，关闭接收串口中断1秒钟
+    213          //    *        当1秒定时到后，在对应的事件中开启TAX接收中断，继续接收数据
+    214          //    */
+    215          //    //TAX_StopRecv (pch);
+    216          //    
+    217          //    Ctrl.Tax.ConnectTimeOut = 0;                    // 重置接收超时计数器
+    218          //    Ctrl.Tax.ConnectFlag    = TRUE;                 // 置接收成功标志
+    219          //    
+    220              return TRUE;
+   \   0000000A   0x2001             MOVS     R0,#+1
+   \   0000000C   0xBD02             POP      {R1,PC}          ;; return
+    221          }
+    222          
+    223          /*******************************************************************************
+    224           * 				end of file
+    225           *******************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   TAX_FCxx_Handler
+         8   -> TAX_StopRecv
+       0   TAX_StartRecv
+         0   -> USART_ITConfig
+       8   TAX_StopRecv
+         8   -> USART_ITConfig
+         0   -> osal_start_timerEx
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      14  TAX_FCxx_Handler
+      14  TAX_StartRecv
+      32  TAX_StopRecv
+
+ 
+ 60 bytes in section .text
+ 
+ 60 bytes of CODE memory
+
+Errors: none
+Warnings: none

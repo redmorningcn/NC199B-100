@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:36
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:40:25
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -546,82 +546,53 @@ F:\iar\NC199B-100\Library\Source\OSAL\OS\osal_timer.c
     303          byte osal_start_timerEx( osalTid taskID, osalEvt event_id, osalTime timeout_value )
     304          {
    \                     osal_start_timerEx: (+1)
-   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
-   \   00000004   0x4605             MOV      R5,R0
-   \   00000006   0x460E             MOV      R6,R1
-   \   00000008   0x4617             MOV      R7,R2
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   \   00000004   0x460D             MOV      R5,R1
+   \   00000006   0x4616             MOV      R6,R2
     305              halIntState_t     cpu_sr;
     306              osalTimerRec_t   *newTimer;
     307              OS_CRITICAL_ENTER();  // Hold off interrupts.
-   \   0000000A   0x.... 0x....      BL       CPU_SR_Save
-   \   0000000E   0x4680             MOV      R8,R0
-   \   00000010   0x.... 0x....      BL       CPU_IntDisMeasStart
-   \   00000014   0x....             LDR.N    R4,??DataTable7_2
-   \   00000016   0x7820             LDRB     R0,[R4, #+0]
-   \   00000018   0x1C40             ADDS     R0,R0,#+1
-   \   0000001A   0x7020             STRB     R0,[R4, #+0]
-   \   0000001C   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   00000020   0xFA5F 0xF888      UXTB     R8,R8
-   \   00000024   0x4640             MOV      R0,R8
-   \   00000026   0x.... 0x....      BL       CPU_SR_Restore
+   \   00000008   0x.... 0x....      BL       CPU_SR_Save
+   \   0000000C   0x4607             MOV      R7,R0
+   \   0000000E   0x.... 0x....      BL       CPU_IntDisMeasStart
     308          
     309              // Add timer
     310              newTimer = osalAddTimer( taskID, event_id, timeout_value );
-   \   0000002A   0x463A             MOV      R2,R7
-   \   0000002C   0x4631             MOV      R1,R6
-   \   0000002E   0x4628             MOV      R0,R5
-   \   00000030   0x.... 0x....      BL       osalAddTimer
-   \   00000034   0x0005             MOVS     R5,R0
+   \   00000012   0x4632             MOV      R2,R6
+   \   00000014   0x4629             MOV      R1,R5
+   \   00000016   0x4620             MOV      R0,R4
+   \   00000018   0x.... 0x....      BL       osalAddTimer
+   \   0000001C   0x0004             MOVS     R4,R0
     311              if ( newTimer ) {
-   \   00000036   0xD006             BEQ.N    ??osal_start_timerEx_0
+   \   0000001E   0xD006             BEQ.N    ??osal_start_timerEx_0
     312                  // Does the timer need to be started?
     313                  if ( timerActive == FALSE ) {
-   \   00000038   0x....             LDR.N    R0,??DataTable7_1
-   \   0000003A   0x7800             LDRB     R0,[R0, #+0]
-   \   0000003C   0x2800             CMP      R0,#+0
-   \   0000003E   0xD102             BNE.N    ??osal_start_timerEx_0
+   \   00000020   0x....             LDR.N    R0,??DataTable7_1
+   \   00000022   0x7800             LDRB     R0,[R0, #+0]
+   \   00000024   0x2800             CMP      R0,#+0
+   \   00000026   0xD102             BNE.N    ??osal_start_timerEx_0
     314                      osal_timer_activate( TRUE );
-   \   00000040   0x2001             MOVS     R0,#+1
-   \   00000042   0x.... 0x....      BL       osal_timer_activate
+   \   00000028   0x2001             MOVS     R0,#+1
+   \   0000002A   0x.... 0x....      BL       osal_timer_activate
     315                  }
     316              }
     317          
     318              OS_CRITICAL_EXIT();   // Re-enable interrupts.
    \                     ??osal_start_timerEx_0: (+1)
-   \   00000046   0x.... 0x....      BL       CPU_SR_Save
-   \   0000004A   0x4606             MOV      R6,R0
-   \   0000004C   0xB2F6             UXTB     R6,R6
-   \   0000004E   0x.... 0x....      BL       CPU_IntDisMeasStart
-   \   00000052   0x7820             LDRB     R0,[R4, #+0]
-   \   00000054   0x1E40             SUBS     R0,R0,#+1
-   \   00000056   0x7020             STRB     R0,[R4, #+0]
-   \   00000058   0xB2C0             UXTB     R0,R0
-   \   0000005A   0x2800             CMP      R0,#+0
-   \   0000005C   0xD10B             BNE.N    ??osal_start_timerEx_1
-   \   0000005E   0x....             LDR.N    R0,??DataTable7_3
-   \   00000060   0x8800             LDRH     R0,[R0, #+0]
-   \   00000062   0x2800             CMP      R0,#+0
-   \   00000064   0xD007             BEQ.N    ??osal_start_timerEx_1
-   \   00000066   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   0000006A   0x4630             MOV      R0,R6
-   \   0000006C   0x.... 0x....      BL       CPU_SR_Restore
-   \   00000070   0x.... 0x....      BL       OS_Sched0
-   \   00000074   0xE004             B.N      ??osal_start_timerEx_2
-   \                     ??osal_start_timerEx_1: (+1)
-   \   00000076   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   0000007A   0x4630             MOV      R0,R6
-   \   0000007C   0x.... 0x....      BL       CPU_SR_Restore
+   \   0000002E   0x.... 0x....      BL       CPU_IntDisMeasStop
+   \   00000032   0xB2FF             UXTB     R7,R7
+   \   00000034   0x4638             MOV      R0,R7
+   \   00000036   0x.... 0x....      BL       CPU_SR_Restore
     319          
     320              return ( (newTimer != NULL) ? ZSUCCESS : NO_TIMER_AVAIL );
-   \                     ??osal_start_timerEx_2: (+1)
-   \   00000080   0x2D00             CMP      R5,#+0
-   \   00000082   0xD001             BEQ.N    ??osal_start_timerEx_3
-   \   00000084   0x2000             MOVS     R0,#+0
-   \   00000086   0xE000             B.N      ??osal_start_timerEx_4
-   \                     ??osal_start_timerEx_3: (+1)
-   \   00000088   0x200C             MOVS     R0,#+12
-   \                     ??osal_start_timerEx_4: (+1)
-   \   0000008A   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
+   \   0000003A   0x2C00             CMP      R4,#+0
+   \   0000003C   0xD001             BEQ.N    ??osal_start_timerEx_1
+   \   0000003E   0x2000             MOVS     R0,#+0
+   \   00000040   0xBDF2             POP      {R1,R4-R7,PC}
+   \                     ??osal_start_timerEx_1: (+1)
+   \   00000042   0x200C             MOVS     R0,#+12
+   \   00000044   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
     321          }
     322          /*******************************************************************************
     323           * @fn      osal_start_timerRl
@@ -642,86 +613,57 @@ F:\iar\NC199B-100\Library\Source\OSAL\OS\osal_timer.c
     336          byte osal_start_timerRl( osalTid taskID, osalEvt event_id, osalTime timeout_value )
     337          {
    \                     osal_start_timerRl: (+1)
-   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
-   \   00000004   0x4605             MOV      R5,R0
-   \   00000006   0x460E             MOV      R6,R1
-   \   00000008   0x4617             MOV      R7,R2
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x4604             MOV      R4,R0
+   \   00000004   0x460D             MOV      R5,R1
+   \   00000006   0x4616             MOV      R6,R2
     338              halIntState_t     cpu_sr;
     339              osalTimerRec_t   *newTimer;
     340              // Hold off interrupts.
     341              OS_CRITICAL_ENTER();
-   \   0000000A   0x.... 0x....      BL       CPU_SR_Save
-   \   0000000E   0x4680             MOV      R8,R0
-   \   00000010   0x.... 0x....      BL       CPU_IntDisMeasStart
-   \   00000014   0x....             LDR.N    R4,??DataTable7_2
-   \   00000016   0x7820             LDRB     R0,[R4, #+0]
-   \   00000018   0x1C40             ADDS     R0,R0,#+1
-   \   0000001A   0x7020             STRB     R0,[R4, #+0]
-   \   0000001C   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   00000020   0xFA5F 0xF888      UXTB     R8,R8
-   \   00000024   0x4640             MOV      R0,R8
-   \   00000026   0x.... 0x....      BL       CPU_SR_Restore
+   \   00000008   0x.... 0x....      BL       CPU_SR_Save
+   \   0000000C   0x4607             MOV      R7,R0
+   \   0000000E   0x.... 0x....      BL       CPU_IntDisMeasStart
     342          
     343              // Add timer
     344              newTimer = osalAddTimer( taskID, event_id, timeout_value );
-   \   0000002A   0x463A             MOV      R2,R7
-   \   0000002C   0x4631             MOV      R1,R6
-   \   0000002E   0x4628             MOV      R0,R5
-   \   00000030   0x.... 0x....      BL       osalAddTimer
-   \   00000034   0x0005             MOVS     R5,R0
+   \   00000012   0x4632             MOV      R2,R6
+   \   00000014   0x4629             MOV      R1,R5
+   \   00000016   0x4620             MOV      R0,R4
+   \   00000018   0x.... 0x....      BL       osalAddTimer
+   \   0000001C   0x0004             MOVS     R4,R0
     345              if ( newTimer ) {
-   \   00000036   0xD008             BEQ.N    ??osal_start_timerRl_0
+   \   0000001E   0xD008             BEQ.N    ??osal_start_timerRl_0
     346                  newTimer->reload    = newTimer->timeout;
-   \   00000038   0x68A8             LDR      R0,[R5, #+8]
-   \   0000003A   0x6128             STR      R0,[R5, #+16]
+   \   00000020   0x68A0             LDR      R0,[R4, #+8]
+   \   00000022   0x6120             STR      R0,[R4, #+16]
     347                  // Does the timer need to be started?
     348                  if ( timerActive == FALSE ) {
-   \   0000003C   0x....             LDR.N    R0,??DataTable7_1
-   \   0000003E   0x7800             LDRB     R0,[R0, #+0]
-   \   00000040   0x2800             CMP      R0,#+0
-   \   00000042   0xD102             BNE.N    ??osal_start_timerRl_0
+   \   00000024   0x....             LDR.N    R0,??DataTable7_1
+   \   00000026   0x7800             LDRB     R0,[R0, #+0]
+   \   00000028   0x2800             CMP      R0,#+0
+   \   0000002A   0xD102             BNE.N    ??osal_start_timerRl_0
     349                      osal_timer_activate( TRUE );
-   \   00000044   0x2001             MOVS     R0,#+1
-   \   00000046   0x.... 0x....      BL       osal_timer_activate
+   \   0000002C   0x2001             MOVS     R0,#+1
+   \   0000002E   0x.... 0x....      BL       osal_timer_activate
     350                  }
     351              }
     352          
     353              OS_CRITICAL_EXIT();   // Re-enable interrupts.
    \                     ??osal_start_timerRl_0: (+1)
-   \   0000004A   0x.... 0x....      BL       CPU_SR_Save
-   \   0000004E   0x4606             MOV      R6,R0
-   \   00000050   0xB2F6             UXTB     R6,R6
-   \   00000052   0x.... 0x....      BL       CPU_IntDisMeasStart
-   \   00000056   0x7820             LDRB     R0,[R4, #+0]
-   \   00000058   0x1E40             SUBS     R0,R0,#+1
-   \   0000005A   0x7020             STRB     R0,[R4, #+0]
-   \   0000005C   0xB2C0             UXTB     R0,R0
-   \   0000005E   0x2800             CMP      R0,#+0
-   \   00000060   0xD10B             BNE.N    ??osal_start_timerRl_1
-   \   00000062   0x....             LDR.N    R0,??DataTable7_3
-   \   00000064   0x8800             LDRH     R0,[R0, #+0]
-   \   00000066   0x2800             CMP      R0,#+0
-   \   00000068   0xD007             BEQ.N    ??osal_start_timerRl_1
-   \   0000006A   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   0000006E   0x4630             MOV      R0,R6
-   \   00000070   0x.... 0x....      BL       CPU_SR_Restore
-   \   00000074   0x.... 0x....      BL       OS_Sched0
-   \   00000078   0xE004             B.N      ??osal_start_timerRl_2
-   \                     ??osal_start_timerRl_1: (+1)
-   \   0000007A   0x.... 0x....      BL       CPU_IntDisMeasStop
-   \   0000007E   0x4630             MOV      R0,R6
-   \   00000080   0x.... 0x....      BL       CPU_SR_Restore
+   \   00000032   0x.... 0x....      BL       CPU_IntDisMeasStop
+   \   00000036   0xB2FF             UXTB     R7,R7
+   \   00000038   0x4638             MOV      R0,R7
+   \   0000003A   0x.... 0x....      BL       CPU_SR_Restore
     354          
     355              return ( (newTimer != NULL) ? ZSUCCESS : NO_TIMER_AVAIL );
-   \                     ??osal_start_timerRl_2: (+1)
-   \   00000084   0x2D00             CMP      R5,#+0
-   \   00000086   0xD001             BEQ.N    ??osal_start_timerRl_3
-   \   00000088   0x2000             MOVS     R0,#+0
-   \   0000008A   0xE000             B.N      ??osal_start_timerRl_4
-   \                     ??osal_start_timerRl_3: (+1)
-   \   0000008C   0x200C             MOVS     R0,#+12
-   \                     ??osal_start_timerRl_4: (+1)
-   \   0000008E   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
+   \   0000003E   0x2C00             CMP      R4,#+0
+   \   00000040   0xD001             BEQ.N    ??osal_start_timerRl_1
+   \   00000042   0x2000             MOVS     R0,#+0
+   \   00000044   0xBDF2             POP      {R1,R4-R7,PC}
+   \                     ??osal_start_timerRl_1: (+1)
+   \   00000046   0x200C             MOVS     R0,#+12
+   \   00000048   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
     356          }
     357          /*******************************************************************************
     358           * @fn      osal_stop_timerEx
@@ -919,14 +861,6 @@ F:\iar\NC199B-100\Library\Source\OSAL\OS\osal_timer.c
    \                                 In section .text, align 4, keep-with-next
    \                     ??DataTable7_1:
    \   00000000   0x........         DC32     timerActive
-
-   \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable7_2:
-   \   00000000   0x........         DC32     OSSchedLockNestingCtr
-
-   \                                 In section .text, align 4, keep-with-next
-   \                     ??DataTable7_3:
-   \   00000000   0x........         DC32     OSIntQNbrEntries
     457          
     458          /*******************************************************************************
     459           * 				     end of file                               *
@@ -950,7 +884,6 @@ F:\iar\NC199B-100\Library\Source\OSAL\OS\osal_timer.c
         24   -> CPU_IntDisMeasStop
         24   -> CPU_SR_Restore
         24   -> CPU_SR_Save
-        24   -> OS_Sched0
         24   -> osalAddTimer
         24   -> osal_timer_activate
       24   osal_start_timerRl
@@ -958,7 +891,6 @@ F:\iar\NC199B-100\Library\Source\OSAL\OS\osal_timer.c
         24   -> CPU_IntDisMeasStop
         24   -> CPU_SR_Restore
         24   -> CPU_SR_Save
-        24   -> OS_Sched0
         24   -> osalAddTimer
         24   -> osal_timer_activate
       16   osal_stop_timerEx
@@ -979,16 +911,14 @@ F:\iar\NC199B-100\Library\Source\OSAL\OS\osal_timer.c
    -----  --------------
        4  ??DataTable7
        4  ??DataTable7_1
-       4  ??DataTable7_2
-       4  ??DataTable7_3
       94  osalAddTimer
       62  osalDeleteTimer
       28  osalFindTimer
      400  osalTimer
       52  osalTimerInit
      102  osalTimerUpdate
-     142  osal_start_timerEx
-     146  osal_start_timerRl
+      70  osal_start_timerEx
+      74  osal_start_timerRl
       56  osal_stop_timerEx
       14  osal_timer_activate
        2  osal_timer_hw_setup
@@ -998,9 +928,9 @@ F:\iar\NC199B-100\Library\Source\OSAL\OS\osal_timer.c
 
  
  412 bytes in section .bss
- 714 bytes in section .text
+ 562 bytes in section .text
  
- 714 bytes of CODE memory
+ 562 bytes of CODE memory
  412 bytes of DATA memory
 
 Errors: none

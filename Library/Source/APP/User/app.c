@@ -118,7 +118,7 @@ extern  void        App_Main                (void);
  * @brief   &:First function called after startup.
  * @return  &:don't care
  ******************************************************************************/
-int main (void)
+    int main (void)
 {
     OS_ERR  err;
 

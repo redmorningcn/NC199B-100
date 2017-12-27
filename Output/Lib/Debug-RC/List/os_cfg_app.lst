@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:21:34
+# IAR ANSI C/C++ Compiler V7.50.1.10123/W32 for ARM       26/Dec/2017  15:40:23
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -135,16 +135,8 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_cfg_app.c
    \   00000000                      DS8 256
      56          
      57          #if (OS_CFG_ISR_POST_DEFERRED_EN > 0u)
-
-   \                                 In section .bss, align 4
      58          OS_INT_Q       OSCfg_IntQ          [OS_CFG_INT_Q_SIZE];
-   \                     OSCfg_IntQ:
-   \   00000000                      DS8 3200
-
-   \                                 In section .bss, align 4
      59          CPU_STK        OSCfg_IntQTaskStk   [OS_CFG_INT_Q_TASK_STK_SIZE];
-   \                     OSCfg_IntQTaskStk:
-   \   00000000                      DS8 512
      60          #endif
      61          
      62          #if (OS_CFG_ISR_STK_SIZE > 0u)
@@ -221,49 +213,49 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_cfg_app.c
      93          
      94          
      95          #if (OS_CFG_ISR_POST_DEFERRED_EN > 0u)
+     96          OS_INT_Q     * const  OSCfg_IntQBasePtr          = (OS_INT_Q   *)&OSCfg_IntQ[0];
+     97          OS_OBJ_QTY     const  OSCfg_IntQSize             = (OS_OBJ_QTY  )OS_CFG_INT_Q_SIZE;
+     98          CPU_INT32U     const  OSCfg_IntQSizeRAM          = (CPU_INT32U  )sizeof(OSCfg_IntQ);
+     99          CPU_STK      * const  OSCfg_IntQTaskStkBasePtr   = (CPU_STK    *)&OSCfg_IntQTaskStk[0];
+    100          CPU_STK_SIZE   const  OSCfg_IntQTaskStkLimit     = (CPU_STK_SIZE)OS_CFG_INT_Q_TASK_STK_LIMIT;
+    101          CPU_STK_SIZE   const  OSCfg_IntQTaskStkSize      = (CPU_STK_SIZE)OS_CFG_INT_Q_TASK_STK_SIZE;
+    102          CPU_INT32U     const  OSCfg_IntQTaskStkSizeRAM   = (CPU_INT32U  )sizeof(OSCfg_IntQTaskStk);
+    103          #else
 
    \                                 In section .rodata, align 4, keep-with-next
-     96          OS_INT_Q     * const  OSCfg_IntQBasePtr          = (OS_INT_Q   *)&OSCfg_IntQ[0];
+    104          OS_INT_Q     * const  OSCfg_IntQBasePtr          = (OS_INT_Q   *)0;
    \                     OSCfg_IntQBasePtr:
-   \   00000000   0x........         DC32 OSCfg_IntQ
+   \   00000000   0x00000000         DC32 0H
 
    \                                 In section .rodata, align 2, keep-with-next
-     97          OS_OBJ_QTY     const  OSCfg_IntQSize             = (OS_OBJ_QTY  )OS_CFG_INT_Q_SIZE;
-   \                     OSCfg_IntQSize:
-   \   00000000   0x0064             DC16 100
-
-   \                                 In section .rodata, align 4, keep-with-next
-     98          CPU_INT32U     const  OSCfg_IntQSizeRAM          = (CPU_INT32U  )sizeof(OSCfg_IntQ);
-   \                     OSCfg_IntQSizeRAM:
-   \   00000000   0x00000C80         DC32 3200
-
-   \                                 In section .rodata, align 4, keep-with-next
-     99          CPU_STK      * const  OSCfg_IntQTaskStkBasePtr   = (CPU_STK    *)&OSCfg_IntQTaskStk[0];
-   \                     OSCfg_IntQTaskStkBasePtr:
-   \   00000000   0x........         DC32 OSCfg_IntQTaskStk
-
-   \                                 In section .rodata, align 4, keep-with-next
-    100          CPU_STK_SIZE   const  OSCfg_IntQTaskStkLimit     = (CPU_STK_SIZE)OS_CFG_INT_Q_TASK_STK_LIMIT;
-   \                     OSCfg_IntQTaskStkLimit:
-   \   00000000   0x0000000C         DC32 12
-
-   \                                 In section .rodata, align 4, keep-with-next
-    101          CPU_STK_SIZE   const  OSCfg_IntQTaskStkSize      = (CPU_STK_SIZE)OS_CFG_INT_Q_TASK_STK_SIZE;
-   \                     OSCfg_IntQTaskStkSize:
-   \   00000000   0x00000080         DC32 128
-
-   \                                 In section .rodata, align 4, keep-with-next
-    102          CPU_INT32U     const  OSCfg_IntQTaskStkSizeRAM   = (CPU_INT32U  )sizeof(OSCfg_IntQTaskStk);
-   \                     OSCfg_IntQTaskStkSizeRAM:
-   \   00000000   0x00000200         DC32 512
-    103          #else
-    104          OS_INT_Q     * const  OSCfg_IntQBasePtr          = (OS_INT_Q   *)0;
     105          OS_OBJ_QTY     const  OSCfg_IntQSize             = (OS_OBJ_QTY  )0;
+   \                     OSCfg_IntQSize:
+   \   00000000   0x0000             DC16 0
+
+   \                                 In section .rodata, align 4, keep-with-next
     106          CPU_INT32U     const  OSCfg_IntQSizeRAM          = (CPU_INT32U  )0;
+   \                     OSCfg_IntQSizeRAM:
+   \   00000000   0x00000000         DC32 0
+
+   \                                 In section .rodata, align 4, keep-with-next
     107          CPU_STK      * const  OSCfg_IntQTaskStkBasePtr   = (CPU_STK    *)0;
+   \                     OSCfg_IntQTaskStkBasePtr:
+   \   00000000   0x00000000         DC32 0H
+
+   \                                 In section .rodata, align 4, keep-with-next
     108          CPU_STK_SIZE   const  OSCfg_IntQTaskStkLimit     = (CPU_STK_SIZE)0;
+   \                     OSCfg_IntQTaskStkLimit:
+   \   00000000   0x00000000         DC32 0
+
+   \                                 In section .rodata, align 4, keep-with-next
     109          CPU_STK_SIZE   const  OSCfg_IntQTaskStkSize      = (CPU_STK_SIZE)0;
+   \                     OSCfg_IntQTaskStkSize:
+   \   00000000   0x00000000         DC32 0
+
+   \                                 In section .rodata, align 4, keep-with-next
     110          CPU_INT32U     const  OSCfg_IntQTaskStkSizeRAM   = (CPU_INT32U  )0;
+   \                     OSCfg_IntQTaskStkSizeRAM:
+   \   00000000   0x00000000         DC32 0
     111          #endif
     112          
     113          
@@ -467,7 +459,7 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_cfg_app.c
    \                                 In section .rodata, align 4, keep-with-next
     194          CPU_INT32U     const  OSCfg_DataSizeRAM          = sizeof(OSCfg_IdleTaskStk)
    \                     OSCfg_DataSizeRAM:
-   \   00000000   0x00001E90         DC32 7824
+   \   00000000   0x00001010         DC32 4112
     195          
     196          #if (OS_CFG_ISR_POST_DEFERRED_EN > 0u)
     197                                                           + sizeof(OSCfg_IntQ)
@@ -600,11 +592,9 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_cfg_app.c
        4  OSCfg_IdleTaskStkSize
        4  OSCfg_IdleTaskStkSizeRAM
        2  OSCfg_Init
-    3200  OSCfg_IntQ
        4  OSCfg_IntQBasePtr
        2  OSCfg_IntQSize
        4  OSCfg_IntQSizeRAM
-     512  OSCfg_IntQTaskStk
        4  OSCfg_IntQTaskStkBasePtr
        4  OSCfg_IntQTaskStkLimit
        4  OSCfg_IntQTaskStkSize
@@ -642,13 +632,13 @@ F:\iar\NC199B-100\Library\Source\Micrium\uC-OS-III\Source\os_cfg_app.c
        4  OSCfg_TmrWheelSizeRAM
 
  
- 7 824 bytes in section .bss
+ 4 112 bytes in section .bss
    147 bytes in section .rodata
      2 bytes in section .text
  
      2 bytes of CODE  memory
    147 bytes of CONST memory
- 7 824 bytes of DATA  memory
+ 4 112 bytes of DATA  memory
 
 Errors: none
 Warnings: none
